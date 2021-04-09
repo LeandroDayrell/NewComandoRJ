@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ps_phone</title>
+
+    <!-- CSS File's -->
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="./css/tooltip.css">
+    <link rel="stylesheet" href="./css/settings.css">
+    <link rel="stylesheet" href="./css/phone.css">
+    <link rel="stylesheet" href="./css/spotify.css">
+    <link rel="stylesheet" href="./css/bank.css">
+    <link rel="stylesheet" href="./css/whatsapp.css">
+    <link rel="stylesheet" href="./css/calculator.css">
+    <link rel="stylesheet" href="./css/instagram-filters.min.css">
+    <link rel="stylesheet" href="./css/instagram.css">
+    <link rel="stylesheet" href="./css/messages.css">
+    <!-- CDN's -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- JQuery -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.js"></script>
+    <!-- Color CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+    <!-- Color CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- Bootstrap -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/locale/pt-br.js'></script>
+</head>
+
+<body style="background-color: transparent !important">
+    <div class="container">
+        <img src="./img/xs.png" class="phone-frame">
+        <div class="phone-container phone-background">
+            <!-- Phone Header -->
+            <div class="phone-header">
+                <div id="phone-time">08:05</div>
+                <div id="phone-icons">
+                    <i class="fas fa-signal" id="phone-signal" data-toggle="tooltip" data-placement="left" title="5G"></i>
+                    <i class="fas fa-battery-three-quarters" id="phone-battery"></i>
+                </div>
+            </div>
+
+            <!-- Phone Notification -->
+            <div class="phone-notification-container">
+                <div class="notification-icon"></div>
+                <div class="notification-title"></div>
+                <div class="notification-text"></div>
+            </div>
+            <div class="device">
+                <div class="device-viewport">
+                    <!-- Begin custom content -->
+                    <div class="containerlock">
+                        <!-- Home Applications -->
+                        <div class="phone-applications">
+                            <div class="phone-footer-applications">
+                                <div class="phone-application icon-telefone" data-toggle="tooltip" data-app="phone" data-placement="top" title="Telefone" data-appslot="1"></div>
+                                <div class="phone-application icon-whatsapp" data-toggle="tooltip" data-app="whatsapp" data-placement="top" title="WhatsApp" data-appslot="2"></div>
+                                <div class="phone-application icon-configuracoes" data-toggle="tooltip" data-app="settings" data-placement="top" title="Configurações" data-appslot="3">
+                                </div>
+                                <div class="phone-application icon-camera" data-toggle="tooltip" data-app="camera" data-placement="top" title="Câmera" data-appslot="4"></div>
+                            </div>
+                            <div class="phone-home-applications">
+                                <div class="phone-application icon-instagram" data-app="instagram" data-toggle="tooltip" data-placement="top" title="Instagram" data-appslot="4"></div>
+                                <div class="phone-application icon-calculadora" data-app="calculator" data-toggle="tooltip" data-placement="bottom" title="Calculadora" data-appslot="5">
+                                </div>
+                                <div class="phone-application icon-banco" data-app="bank" data-toggle="tooltip" data-placement="bottom" title="Banco" data-appslot="6"></div>
+                                <div class="phone-application icon-spotify" data-app="spotify" data-toggle="tooltip" data-placement="left" title="Spotify" data-appslot="7"></div>
+                            </div>
+                        </div>
+                        <div class="pin-display" style="display: none;">
+                            <div class="circle-lock--container">
+                                <div class="circle-lock">
+                                    <i class="material-icons lock-icon">lock</i>
+                                </div>
+                            </div>
+                            <div class="confirmation-dots">
+                                <svg>
+                                    <g>
+                                        <circle class="pin-circle" cx="10" cy="10" r="8"></circle>
+                                        <circle class="pin-circle" cx="50" cy="10" r="8"></circle>
+                                        <circle class="pin-circle" cx="90" cy="10" r="8"></circle>
+                                        <circle class="pin-circle" cx="130" cy="10" r="8"></circle>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="keypad">
+                                <div class="keypad--row">
+                                    <div class="keypad--button" data-value="1">1</div>
+                                    <div class="keypad--button" data-value="2">2</div>
+                                    <div class="keypad--button" data-value="3">3</div>
+                                </div>
+                                <div class="keypad--row">
+                                    <div class="keypad--button" data-value="4">4</div>
+                                    <div class="keypad--button" data-value="5">5</div>
+                                    <div class="keypad--button" data-value="6">6</div>
+                                </div>
+                                <div class="keypad--row">
+                                    <div class="keypad--button" data-value="7">7</div>
+                                    <div class="keypad--button" data-value="8">8</div>
+                                    <div class="keypad--button" data-value="9">9</div>
+                                </div>
+                                <div class="keypad--row">
+                                    <div class="keypad--button keyboard--button__back-arrow"><i class="material-icons">arrow_back</i></div>
+                                    <div class="keypad--button" data-value="0">0</div>
+                                    <div class="keypad--button keyboard--button__x">x</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end custom content -->
+                </div>
+            </div>
+
+
+            <!-- Unread Alerts -->
+            <!-- <div class="app-unread-alerts">1</div> -->
+
+            <!-- Container for all application's -->
+            <div class="phone-application-container">
+                <!--Configurações-->
+                <div class="settings-app">
+                    <div class="settings-app-header">
+                        <p>Configurações</p>
+                    </div>
+
+                    <div class="settings-app-tab-global settings-app-tab-appereance">
+                        <div class="settings-app-tab" data-settingstab="background">
+                            <div class="settings-tab-icon"><i class="fas fa-palette" style="color: #9b59b6;"></i></div>
+                            <div class="settings-tab-title">
+                                <p>Papel de Parede</p>
+                            </div>
+                            <div class="settings-tab-description">
+                                <p>Padrão</p>
+                            </div>
+                        </div>
+                        <div class="settings-app-tab secondTab" data-settingstab="noturnmode" style="display: none;">
+                            <!-- Rounded switch -->
+                            <label class="switch">
+                                <input class="noturnmode-box" type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+
+                            <div class="settings-tab-icon"><i class="fas fa-adjust" style="color: #333;"></i>
+                            </div>
+                            <div class="settings-tab-title">
+                                <p>Tema Escuro</p>
+                            </div>
+                            <div class="settings-tab-description" id="noturnmode">
+                                <p>Desativado</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="settings-app-tab-global settings-app-tab-information">
+                        <div class="settings-app-tab secondTab" data-settingstab="myPhone">
+                            <div class="settings-tab-icon"><i class="fas fa-phone-alt" style="color: #e67e22;"></i>
+                            </div>
+                            <div class="settings-tab-title">
+                                <p>Meu Número</p>
+                            </div>
+                            <div class="settings-tab-description" id="myPhoneNumber">
+                                <p>000-000</p>
+                            </div>
+                        </div>
+                        <div class="settings-app-tab secondTab" data-settingstab="numberrecognition">
+                            <!-- Rounded switch -->
+                            <label class="switch">
+                                <input class="numberrec-box" type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+
+                            <div class="settings-tab-icon"><i class="fas fa-user-secret" style="color: #333;"></i>
+                            </div>
+                            <div class="settings-tab-title">
+                                <p>Chamada Anônima</p>
+                            </div>
+                            <div class="settings-tab-description" id="numberrecognition">
+                                <p>Desativado</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="settings-background-tab">
+                        <div class="settings-app-header">
+                            <p>Papel de Parede</p>
+                        </div>
+
+                        <div class="background-options">
+                            <div class="background-option" data-background="default-qbus">
+                                <div class="background-option-icon"> <i class="fas fa-paint-brush"></i> </div>
+                                <div class="background-option-title"> Padrão </div>
+                                <div class="background-option-description"> Usar papel de parede padrão .</div>
+                                <div class="background-option-current"><i class="fas fa-check-circle"></i></div>
+                            </div>
+                            <div class="background-option" data-background="custom-background">
+                                <div class="background-option-icon"><i class="fas fa-paint-brush"></i></div>
+                                <div class="background-option-title">Personalizado</div>
+                                <div class="background-option-description"> Seu próprio papel de parede com um URL.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="background-buttons">
+                            <div class="background-button" id="accept-background">
+                                <p>Confirmar</p>
+                            </div>
+                            <div class="background-button" id="cancel-background">
+                                <p>Cancelar</p>
+                            </div>
+                        </div>
+
+                        <div class="background-custom">
+                            <div class="background-custom-title">Papel de Parede Personalizado</div>
+                            <input type="text" class="custom-background-input" placeholder="URL (.jpg/.png)" spellcheck="false">
+
+                            <div class="background-custom-buttons">
+                                <div class="custom-background-button" id="accept-custom-background">
+                                    <p>Confirmar</p>
+                                </div>
+                                <div class="custom-background-button" id="cancel-custom-background">
+                                    <p>Cancelar</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="phone-call-app">
+                    <div class="phone-call-incoming">
+                        <div class="phone-call-incoming-title">Chamada recebida</div>
+                        <div class="phone-call-incoming-caller"></div>
+                        <div class="phone-call-incoming-picture"></div>
+
+                        <i class="fas fa-phone" id="incoming-answer"></i>
+                        <i class="fas fa-phone" id="incoming-deny"></i>
+                    </div>
+
+                    <div class="phone-call-outgoing">
+                        <div class="phone-call-outgoing-title">Ligando...</div>
+                        <div class="phone-call-outgoing-caller"></div>
+                        <div class="phone-call-outgoing-picture"></div>
+
+                        <i class="fas fa-phone" id="outgoing-cancel"></i>
+                    </div>
+
+                    <div class="phone-call-ongoing">
+                        <div class="phone-call-ongoing-title">Em Ligação</div>
+                        <div class="phone-call-ongoing-caller"></div>
+                        <div class="phone-call-ongoing-picture"></div>
+                        <div class="phone-call-ongoing-time"></div>
+
+                        <i class="fas fa-phone" id="ongoing-cancel"></i>
+                    </div>
+                </div>
+
+                <div class="phone-app">
+                    <div class="phone-app-header">
+                        <p>Lista Contatos</p>
+                        <span id="total-contacts">0 contatos</span>
+                    </div>
+
+                    <div class="phone-contacts">
+                        <div class="phone-contacts-header">
+                            <input type="text" id="contact-search" placeholder="Nome de contato" spellcheck="false">
+                            <i id="phone-search-icon" class="fas fa-search"></i>
+                            <i id="phone-plus-icon" class="fas fa-plus"></i>
+                        </div>
+
+                        <div class="phone-contact-list"></div>
+                    </div>
+
+                    <div class="phone-recent">
+                        <div class="phone-recent-header">
+                            <p>Chamadas Recentes</p>
+                        </div>
+
+                        <div class="phone-recent-calls"></div>
+                    </div>
+
+                    <div class="phone-keypad noselect">
+                        <div class="phone-keypad-header">
+                            <p>Telefone</p>
+                        </div>
+                        <div id="phone-keypad-input"></div>
+
+                        <div class="phone-keypad-keys">
+                            <div class="phone-keypad-key" data-keypadvalue="1">1</div>
+                            <div class="phone-keypad-key" data-keypadvalue="2">2</div>
+                            <div class="phone-keypad-key" data-keypadvalue="3">3</div>
+                            <div class="phone-keypad-key" data-keypadvalue="4">4</div>
+                            <div class="phone-keypad-key" data-keypadvalue="5">5</div>
+                            <div class="phone-keypad-key" data-keypadvalue="6">6</div>
+                            <div class="phone-keypad-key" data-keypadvalue="7">7</div>
+                            <div class="phone-keypad-key" data-keypadvalue="8">8</div>
+                            <div class="phone-keypad-key" data-keypadvalue="9">9</div>
+                            <div class="phone-keypad-key" data-keypadvalue="-">-</div>
+                            <div class="phone-keypad-key" data-keypadvalue="0">0</div>
+                            <div class="phone-keypad-key" data-keypadvalue="#">#</div>
+                        </div>
+                        <div class="phone-keypad-key-call"><i class="fas fa-phone-alt"></i></div>
+                        <div class="phone-keypad-key-clear"><i class="fas fa-backspace"></i></div>
+                    </div>
+
+                    <div class="phone-add-contact">
+                        <div class="phone-add-contact-header">
+                            <p>Adicionar contato</p>
+                        </div>
+
+                        <i id="phone-add-contact-name-icon" class="fas fa-user"></i>
+                        <input type="text" class="phone-add-contact-name" placeholder="Nome de contato" required spellcheck="false">
+
+                        <i id="phone-add-contact-number-icon" class="fas fa-phone-alt"></i>
+                        <input type="text" class="phone-add-contact-number" placeholder="Número de telefone" required spellcheck="false">
+
+                        <i id="phone-add-contact-iban-icon" class="fas fa-money-check"></i>
+                        <input type="text" class="phone-add-contact-iban" placeholder="Número do banco (não obrigatório)" required spellcheck="false">
+
+                        <div class="phone-add-contact-buttons">
+                            <div class="phone-add-contact-button" id="add-contact-save">
+                                <p>Salvar</p>
+                            </div>
+                            <div class="phone-add-contact-button" id="add-contact-cancel">
+                                <p>Cancelar</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="phone-edit-contact">
+                        <div class="phone-edit-contact-header">
+                            <p>Editar contato</p>
+                        </div>
+
+                        <i id="phone-edit-contact-name-icon" class="fas fa-user"></i>
+                        <input type="text" class="phone-edit-contact-name" placeholder="Nome de contato" required spellcheck="false">
+
+                        <i id="phone-edit-contact-number-icon" class="fas fa-phone-alt"></i>
+                        <input type="number" class="phone-edit-contact-number" placeholder="Número de telefone" required spellcheck="false">
+
+                        <i id="phone-edit-contact-iban-icon" class="fas fa-money-check"></i>
+                        <input type="text" class="phone-edit-contact-iban" placeholder="Número do banco (não obrigatório)" required spellcheck="false">
+
+                        <div class="phone-edit-contact-buttons">
+                            <div class="phone-edit-contact-button" id="edit-contact-save">
+                                <p>Salvar</p>
+                            </div>
+                            <div class="phone-edit-contact-button" id="edit-contact-delete">
+                                <p>Deletar</p>
+                            </div>
+                            <div class="phone-edit-contact-button" id="edit-contact-cancel">
+                                <p>Cancelar</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="phone-app-footer">
+                        <div class="phone-app-footer-button phone-selected-footer-tab" data-phonefootertab="keypad">
+                            <p>Discador</p>
+                        </div>
+                        <div class="phone-app-footer-button" data-phonefootertab="recent">
+                            <p>Recente</p>
+                        </div>
+                        <div class="phone-app-footer-button" data-phonefootertab="contacts">
+                            <p>Contatos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="spotify-app">
+                    <iframe name="I1" id="if1" width="100%" height="520" style="visibility:visible" src="http://mysound.ge/index.php"></iframe>
+                </div>
+
+                <div class="calculator-app">
+                    <div class="calcBG text-center">
+                        <div class="row text-left">
+                            <small>Calculadora</small>
+                        </div>
+                        <div class="row" id="result">
+                            <form name="calc">
+                                <input type="text" class="screen text-right" name="result" readonly>
+                            </form>
+                        </div>
+                        <div class="row">
+                            <button id="allClear" type="button" onclick="clearScreen()">AC</button>
+                            <button id="clear" type="button" onclick="clearScreen()">CE</button>
+                            <button id="%" type="button" onclick="calculatorFunction(this.id)">%</button>
+                            <button id="/" type="button" onclick="calculatorFunction(this.id)">÷</button>
+                        </div>
+                        <div class="row">
+                            <button id="7" type="button" onclick="calculatorFunction(this.id)">7</button>
+                            <button id="8" type="button" onclick="calculatorFunction(this.id)">8</button>
+                            <button id="9" type="button" onclick="calculatorFunction(this.id)">9</button>
+                            <button id="*" type="button" onclick="calculatorFunction(this.id)">x</button>
+                        </div>
+                        <div class="row">
+                            <button id="4" type="button" onclick="calculatorFunction(this.id)">4</button>
+                            <button id="5" type="button" onclick="calculatorFunction(this.id)">5</button>
+                            <button id="6" type="button" onclick="calculatorFunction(this.id)">6</button>
+                            <button id="-" type="button" onclick="calculatorFunction(this.id)">-</button>
+                        </div>
+                        <div class="row">
+                            <button id="1" type="button" onclick="calculatorFunction(this.id)">1</button>
+                            <button id="2" type="button" onclick="calculatorFunction(this.id)">2</button>
+                            <button id="3" type="button" onclick="calculatorFunction(this.id)">3</button>
+                            <button id="+" type="button" onclick="calculatorFunction(this.id)">+</button>
+                        </div>
+                        <div class="row">
+                            <button type="button">+/-</button>
+                            <button id="0" type="button" onclick="calculatorFunction(this.id)">0</button>
+                            <button id="." type="button" onclick="calculatorFunction(this.id)">.</button>
+                            <button id="equals" type="button" onclick="calculate()">=</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Banco-->
+                <div class="bank-app">
+                    <div class="bank-app-loading">
+                        <img src="../html/img/apps/bank.png" class="qbank-logo">
+                        <span id="qbank-text">PSBank</span>
+                    </div>
+                    <div class="bank-app-loaded">
+                        <div class="bank-app-header">
+                            <div data-headertype="accounts" class="bank-app-header-button bank-app-header-button-selected"> <i class="fas fa-align-left"></i>
+                                <p>Geral</p>
+                            </div>
+                            <div data-headertype="invoices" class="bank-app-header-button"> <i class="fas fa-file-invoice"></i>
+                                <p>Faturas</p>
+                            </div>
+                        </div>
+
+                        <div class="bank-app-accounts">
+                            <div class="bank-app-account">
+                                <div class="bank-app-account-title">Número da Conta</div>
+                                <input type="text" class="bank-app-account-number" id="iban-account" readonly spellcheck="false">
+                                <div class="bank-app-account-balance">&#36; 5000,00</div>
+                            </div>
+
+                            <div class="bank-app-account-actions">
+                                <i id="transfer-money" class="fas fa-exchange-alt bank-app-account-action-transfer"></i>
+                            </div>
+                        </div>
+
+                        <div class="bank-app-transfer">
+                            <div class="bank-app-transfer-header">Transferir dinheiro</div>
+
+                            <i class="bank-transfer-iban-icon fas fa-credit-card"></i>
+                            <input type="text" id="bank-transfer-iban" class="bank-transfer-input" required spellcheck="false" placeholder="Conta">
+                            <i class="bank-transfer-mycontacts-icon fas fa-address-book"></i>
+
+                            <i class="bank-transfer-amount-icon fas fa-dollar-sign"></i>
+                            <input type="number" id="bank-transfer-amount" class="bank-transfer-input" required spellcheck="false" placeholder="Valor">
+
+                            <div class="bank-app-transfer-buttons">
+                                <div class="bank-app-transfer-button" id="accept-transfer">Transferir</div>
+                                <div class="bank-app-transfer-button" id="cancel-transfer">Cancelar</div>
+                            </div>
+                        </div>
+
+                        <div class="bank-app-invoices">
+                            <div class="bank-app-invoices-list">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bank-app-my-contacts">
+                        <div class="bank-app-my-contacts-header">Meus Contatos</div>
+                        <div class="bank-app-my-contacts-list-header">
+                            <input type="text" id="bank-app-my-contact-search" placeholder="Nome do contato" spellcheck="false">
+                        </div>
+                        <div class="bank-app-my-contacts-list"></div>
+                        <div class="bank-app-my-contacts-list-back">Voltar</div>
+                    </div>
+                </div>
+
+                <!--WhatsApp-->
+                <div class="whatsapp-app">
+                    <div class="not-logged">
+                        <div class="whatsapp-header">
+                            <div class="whatsapp-header-top"></div>
+                            <div class="whatsapp-header-footer">
+                                <p>Whatsapp</p>
+                            </div>
+                        </div>
+                        <div class="login-box">
+                            <!-- Header end -->
+                            <div class="form-wrap">
+                                <div class="error" style="display: none;">
+                                    <p></p>
+                                </div>
+                                <form class="form addaccountwpp">
+                                    <div class="input-box">
+                                        <input type="text" name="name" id="name" placeholder="Nome Completo" maxlength="30" autocapitalize="off" autocorrect="off" value="" required>
+                                    </div>
+
+                                    <div class="input-box">
+                                        <input type="text" name="phone" id="phone" placeholder="Número de Telefone" maxlength="7" autocapitalize="off" autocorrect="off" value="" required>
+                                    </div>
+
+                                    <div class="input-box">
+                                        <input type="password" name="password" id="password" placeholder="Senha" maxlength="30" autocapitalize="off" autocorrect="off" required>
+                                    </div>
+
+                                    <span class="button-box">
+                                        <button class="btn" type="submit" name="submit">Cadastra-se</button>
+                                    </span>
+                                </form>
+                            </div>
+                            <!-- Form-wrap end -->
+                        </div>
+                        <!-- Login-box end -->
+                    </div>
+                    <div class="logged" style="display: none;">
+                        <div class="whatsapp-header">
+                            <div class="whatsapp-header-top"></div>
+                            <div class="whatsapp-header-footer">
+                                <p>Whatsapp</p>
+                                <i id="whatsapp-search-chats" class="fas fa-search"></i>
+                                <i id="whatsapp-options-menus" class="fas fa-ellipsis-v"></i>
+                                <input type="text" id="whatsapp-search-input" placeholder="Nome de contato" spellcheck="false">
+                                <ul class="nav nav-stacked whatsapp-menu">
+                                    <li role="presentation"><a href="javascript:void(0)" class="create-group">Novo
+                                            Grupo</a></li>
+                                    <li role="presentation"><a href="javascript:void(0)" class="edit-profile">Editar
+                                            Perfil</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="whatsapp-tabs">
+
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs nav-justified" role="tablist">
+                                <li role="presentation" class="active">
+                                    <a href="#messages" aria-controls="messages" role="tab" data-toggle="tab" aria-expanded="true" class="getchats">Conversas</a>
+                                </li>
+                                <li role="presentation" class="">
+                                    <a href="#groups" aria-controls="groups" role="tab" data-toggle="tab" aria-expanded="false" class="getgroups">Grupos</a>
+                                </li>
+                                <li role="presentation" class="">
+                                    <a href="#status" aria-controls="status" role="tab" data-toggle="tab" aria-expanded="false" class="getstatus">Status</a>
+                                </li>
+
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="messages"></div>
+                                <div role="tabpanel" class="tab-pane" id="groups"></div>
+                                <div role="tabpanel" class="tab-pane" id="status">
+                                    <h3>Status</h3>
+                                    <div class="whatsapp-status-new">
+                                        <div class="whatsapp-chat-picture">
+                                            <i class="fas fa-plus-circle"></i>
+                                        </div>
+                                        <div class="whatsapp-chat-name">
+                                            <p>Meu Status</p>
+                                        </div>
+                                        <div class="whatsapp-chat-lastmessage">
+                                            <p>Adicionar ao meu status</p>
+                                        </div>
+                                    </div>
+                                    <p>Status Recentes</p>
+                                    <div class="whatsapp-stories"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="whatsapp-openedchat">
+                            <div class="whatsapp-header-openedchat">
+                                <div class="whatsapp-header-top-openedchat"></div>
+                                <div class="whatsapp-header-footer-openedchat">
+                                    <div class="whatsapp-openedchat-picture"></div>
+                                    <div class="whatsapp-openedchat-name">
+                                        <p></p>
+                                    </div>
+                                    <i id="whatsapp-openedchat-back" class="fas fa-arrow-left"></i>
+                                    <!-- <i id="whatsapp-openedchat-call" class="fas fa-phone-alt"></i>-->
+                                </div>
+                            </div>
+                            <div class="whatsapp-openedchat-messages">
+
+                            </div>
+                            <div class="whatsapp-openedchat-input">
+                                <div class="whatsapp-extra-buttons">
+                                    <div class="whatsapp-extra-button" id="send-location"><i class="fas fa-map-marker-alt"></i></div>
+                                    <div class="whatsapp-extra-button" id="send-image"><i class="fas fa-camera"></i>
+                                    </div>
+                                </div>
+                                <input type="text" id="whatsapp-openedchat-message" placeholder="Mensagem" spellcheck="false">
+                                <i class="fas fa-paper-plane" id="whatsapp-openedchat-send"></i>
+                                <i class="fas fa-ellipsis-v" id="whatsapp-openedchat-message-extras"></i>
+                            </div>
+                        </div>
+
+                        <div class="whatsapp-openedgroup">
+                            <div class="whatsapp-header-openedchat">
+                                <div class="whatsapp-header-top-openedchat"></div>
+                                <div class="whatsapp-header-footer-openedchat">
+                                    <div class="whatsapp-openedgroup-picture"></div>
+                                    <div class="whatsapp-openedgroup-name">
+                                        <p></p>
+                                    </div>
+                                    <i id="whatsapp-openedgroup-back" class="fas fa-arrow-left"></i>
+                                    <i id="whatsapp-openedgroup-edit" class="fas fa-pen"></i>
+                                </div>
+                            </div>
+                            <div class="whatsapp-openedgroup-messages">
+
+                            </div>
+                            <div class="whatsapp-openedgroup-input">
+                                <div class="whatsapp-extra-buttons">
+                                    <div class="whatsapp-extra-button" id="send-location-group"><i class="fas fa-map-marker-alt"></i></div>
+                                    <div class="whatsapp-extra-button" id="send-image-group"><i class="fas fa-camera"></i></div>
+                                </div>
+                                <input type="text" id="whatsapp-openedgroup-message" placeholder="Mensagem" spellcheck="false">
+                                <i class="fas fa-paper-plane" id="whatsapp-openedgroup-send"></i>
+                                <i class="fas fa-ellipsis-v" id="whatsapp-openedgroup-message-extras"></i>
+                            </div>
+                        </div>
+
+                        <div class="whatsapp-create-group">
+                            <div class="whatsapp-header-create-group">
+                                <div class="whatsapp-header-top-create-group"></div>
+                                <div class="whatsapp-header-footer-create-group">
+                                    <div class="whatsapp-create-group-name">Criar Grupo</div>
+                                    <i id="whatsapp-create-group-back" class="fas fa-arrow-left"></i>
+                                </div>
+                            </div>
+
+                            <div class="login-box">
+                                <!-- Header end -->
+                                <div class="form-wrap">
+                                    <div class="error" style="display: none;">
+                                        <p></p>
+                                    </div>
+                                    <form class="form addgroupwpp">
+                                        <div class="input-box">
+                                            <input type="text" name="image" id="image" placeholder="Imagem do Grupo (URL .jpg .png)" autocapitalize="off" autocorrect="off" value="" required>
+                                        </div>
+
+                                        <div class="input-box">
+                                            <input type="text" name="name" id="name" placeholder="Nome do Grupo" maxlength="30" autocapitalize="off" autocorrect="off" value="" required>
+                                        </div>
+
+                                        <span class="button-box">
+                                            <button class="btn sendpicturegroup" type="button">Tirar foto do
+                                                Grupo</button>
+                                        </span>
+
+                                        <span class="button-box">
+                                            <button class="btn" type="submit" name="submit">Criar Grupo</button>
+                                        </span>
+                                    </form>
+                                </div>
+                                <!-- Form-wrap end -->
+                            </div>
+
+                            <!-- Login-box end -->
+                        </div>
+
+                        <div class="whatsapp-edit-group">
+                            <div class="whatsapp-header-edit-group">
+                                <div class="whatsapp-header-top-edit-group"></div>
+                                <div class="whatsapp-header-footer-edit-group">
+                                    <div class="whatsapp-edit-group-name">Editar Grupo</div>
+                                    <i id="whatsapp-edit-group-back" class="fas fa-arrow-left"></i>
+                                </div>
+                            </div>
+
+                            <!--  editar grupo wpp -->
+                            <div class="login-box">
+                                <!-- Header end -->
+                                <div class="form-wrap">
+                                    <div class="error" style="display: none;">
+                                        <p></p>
+                                    </div>
+                                    <form class="form editgroupwpp">
+                                        <div class="input-box">
+                                            <input type="text" name="image" id="image" placeholder="Trocar imagem do Grupo (URL .jpg .png)" autocapitalize="off" autocorrect="off" value="" required>
+                                        </div>
+
+                                        <div class="input-box">
+                                            <input type="text" name="name" id="name" placeholder="Nome do Grupo" maxlength="30" autocapitalize="off" autocorrect="off" value="" required>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="users-container">
+                                                <div class="chat-search-box">
+                                                    <div class="input-group">
+                                                        <input class="form-control" id="number-member" name="number-member" placeholder="Adicionar Membro" minlength="7" maxlength="7">
+                                                        <div class="input-group-btn">
+                                                            <button type="button" class="btn btn-sucess addmemberwpp"> <i class="fa fa-check"></i> </button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <ul class="users"></ul>
+
+                                            </div>
+                                        </div>
+
+                                        <span class="button-box">
+                                            <button class="btn sendpicturegroupedit" type="button">Tirar foto do Grupo</button>
+                                        </span>
+
+                                        <span class="button-box">
+                                            <button class="btn" type="submit" name="submit">Salvar</button>
+                                        </span>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- Form-wrap end -->
+                        </div>
+
+
+
+
+                        <!-- Login-box end -->
+
+
+
+
+                        <div class="whatsapp-edit-profile">
+                            <div class="whatsapp-header-create-group">
+                                <div class="whatsapp-header-top-create-group"></div>
+                                <div class="whatsapp-header-footer-create-group">
+                                    <div class="whatsapp-create-group-name">Editar Perfil</div>
+                                    <i id="whatsapp-edit-profile-back" class="fas fa-arrow-left"></i>
+                                </div>
+                            </div>
+
+                            <div class="login-box">
+                                <!-- Header end -->
+                                <div class="form-wrap">
+                                    <div class="error" style="display: none;">
+                                        <p></p>
+                                    </div>
+                                    <form class="form editeprofilewpp">
+                                        <div class="input-box">
+                                            <input type="text" name="avatar" id="avatar" placeholder="Imagem Perfil (URL .jpg .png)" autocapitalize="off" autocorrect="off" value="" required>
+                                        </div>
+
+                                        <div class="input-box">
+                                            <input type="text" name="name" id="name" placeholder="Nome Completo" maxlength="30" autocapitalize="off" autocorrect="off" value="" required>
+                                        </div>
+
+                                        <div class="input-box">
+                                            <input type="text" name="phone" id="phone" placeholder="Número de Telefone" maxlength="7" autocapitalize="off" autocorrect="off" value="" disabled>
+                                        </div>
+
+                                        <span class="button-box">
+                                            <button class="btn sendpictureprofilewpp" type="button">Tirar foto de
+                                                Perfil</button>
+                                        </span>
+
+                                        <span class="button-box">
+                                            <button class="btn" type="submit" name="submit">Editar Perfil</button>
+                                        </span>
+                                    </form>
+                                </div>
+                                <!-- Form-wrap end -->
+                            </div>
+                            <!-- Login-box end -->
+
+                        </div>
+                    </div>
+                </div>
+
+                <!--Instagram-->
+                <div class="instagram-app">
+                    <div class="not-logged">
+                        <div class="login-box">
+                            <div class="header">
+                                <img class="logo" src="img/apps/instagram.png" alt="Instagram">
+                            </div>
+                            <!-- Header end -->
+                            <div class="form-wrap">
+                                <div class="error" style="display: none;">
+                                    <p></p>
+                                </div>
+                                <form class="form addaccountinsta">
+                                    <div class="input-box">
+                                        <input type="text" name="name" id="name" placeholder="Nome Completo" maxlength="30" autocapitalize="off" autocorrect="off" value="" required>
+                                    </div>
+
+                                    <div class="input-box">
+                                        <input type="text" name="username" id="username" placeholder="Nome de Usuário" maxlength="30" autocapitalize="off" autocorrect="off" value="" required>
+                                    </div>
+
+                                    <div class="input-box">
+                                        <input type="password" name="password" id="password" placeholder="Senha" maxlength="30" autocapitalize="off" autocorrect="off" required>
+                                    </div>
+
+                                    <span class="button-box">
+                                        <button class="btn" type="submit" name="submit">Cadastra-se</button>
+                                    </span>
+                                </form>
+                            </div>
+                            <!-- Form-wrap end -->
+                        </div>
+                        <!-- Login-box end -->
+                    </div>
+                    <div class="logged" style="display: none;">
+                        <div class="instagram-header">
+                            <div class="instagram-logo">
+                                <img src="img/apps/instagram.png" alt="Instagram">
+                            </div>
+                            <div class="instagram-links" style="display: none;">
+                                <a href="#insta-direct" aria-controls="insta-direct" role="tab" data-toggle="tab" aria-expanded="false"><i class="far fa-paper-plane"></i></a>
+                            </div>
+                        </div>
+                        <div class="instagram-stories">
+                        </div>
+
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <!--Insta Home-->
+                            <div role="tabpanel" class="tab-pane active insta-posts" id="insta-home">
+                            </div>
+
+                            <!--Insta Direct-->
+                            <div role="tabpanel" class="tab-pane" id="insta-direct">
+                                <h3><a href="#insta-home" aria-controls="insta-home" role="tab" data-toggle="tab" aria-expanded="true"><i class="fas fa-angle-left"></i></a> Direct</h3>
+                                <div class="chat">
+                                    <div class="chat-picture"></div>
+                                    <div class="chat-name">
+                                        <p>felipe.coder</p>
+                                    </div>
+                                    <div class="chat-send-image">
+                                        <i class="fas fa-camera"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Insta Search-->
+                            <div role="tabpanel" class="tab-pane" id="insta-search">
+                                <div class="search">
+                                    <i class="fas fa-search"></i>
+                                    <input type="text" placeholder="Pesquisar">
+                                </div>
+                                <div id="grid"></div>
+                            </div>
+
+                            <!--Insta Profile Page-->
+                            <div role="tabpanel" class="tab-pane myprofiletab" id="insta-profile">
+                                <h3><a href="#insta-home" aria-controls="insta-home" role="tab" data-toggle="tab" aria-expanded="true"><i class="fas fa-angle-left"></i></a></h3>
+                                <div class="mainbox">
+                                    <div class="profileTop">
+                                        <div class="profileImg">
+                                            <img src="" name="Imagem Perfil" tag="Imagem Perfil" />
+                                        </div>
+                                        <div class="profileFollow"></div>
+                                    </div>
+                                    <div class="profileDetail">
+                                        <p class="name"></p>
+                                        <p class="description"></p>
+                                    </div>
+                                    <div class="ImgTab"></div>
+                                </div>
+                            </div>
+
+                            <!--Chat Direct-->
+                            <div class="direct-openedchat">
+                                <div class="direct-header-openedchat">
+
+                                    <div class="direct-header-footer-openedchat">
+                                        <div class="direct-openedchat-picture"></div>
+                                        <div class="direct-openedchat-name">
+                                            <p></p>
+                                        </div>
+                                        <i id="direct-openedchat-back" class="fas fa-angle-left"></i>
+                                    </div>
+                                </div>
+                                <div class="direct-openedchat-messages">
+
+                                </div>
+                                <div class="direct-openedchat-input">
+                                    <div class="direct-extra-buttons">
+                                        <div class="direct-extra-button" id="send-location"><i class="fas fa-map-marker-alt"></i></div>
+                                        <div class="direct-extra-button" id="send-image"><i class="fas fa-camera"></i>
+                                        </div>
+                                    </div>
+                                    <input type="text" id="direct-openedchat-message" placeholder="Mensagem" spellcheck="false">
+                                    <i class="fas fa-paper-plane" id="direct-openedchat-send"></i>
+                                    <i class="fas fa-ellipsis-v" id="direct-openedchat-message-extras"></i>
+                                </div>
+                            </div>
+
+                            <!--Post Foto Filtros-->
+                            <div class="post-photo-filter">
+
+                                <h3><a href="javascript:void(0)" id="back-post-photo-filter"><i
+                                            class="fas fa-angle-left"></i></a></h3>
+                                <h3 class="next">Próximo</h3>
+
+                                <div class="image-preview">
+                                    <figure class="sem-filtro">
+                                        <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg" alt="image-preview">
+                                    </figure>
+                                </div>
+
+                                <div class="filters">
+                                    <ul>
+                                        <li>
+                                            <label>Sem Filtro</label>
+                                            <figure class="changefilter sem-filtro">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>1977</label>
+                                            <figure class="changefilter filter-1977">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Aden</label>
+                                            <figure class="changefilter filter-aden">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Amaro</label>
+                                            <figure class="changefilter filter-amaro">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Brannan</label>
+                                            <figure class="changefilter filter-brannan">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Brooklyn</label>
+                                            <figure class="changefilter filter-brooklyn">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Charmes</label>
+                                            <figure class="changefilter filter-charmes">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Clarendon</label>
+                                            <figure class="changefilter filter-clarendon">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Crema</label>
+                                            <figure class="changefilter filter-crema">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Dogpatch</label>
+                                            <figure class="changefilter filter-dogpatch">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Earlybird</label>
+                                            <figure class="changefilter filter-earlybird">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Gingham</label>
+                                            <figure class="changefilter filter-gingham">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Ginza</label>
+                                            <figure class="changefilter filter-ginza">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Hefe</label>
+                                            <figure class="changefilter filter-hefe">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Helena</label>
+                                            <figure class="changefilter filter-helena">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Hudson</label>
+                                            <figure class="changefilter filter-hudson">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Inkwell</label>
+                                            <figure class="changefilter filter-inkwell">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Kelvin</label>
+                                            <figure class="changefilter filter-kelvin">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Kuno</label>
+                                            <figure class="changefilter filter-kuno">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Lark</label>
+                                            <figure class="changefilter filter-lark">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Lo-Fi</label>
+                                            <figure class="changefilter filter-lofi">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Ludwig</label>
+                                            <figure class="changefilter filter-ludwig">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Maven</label>
+                                            <figure class="changefilter filter-maven">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Mayfair</label>
+                                            <figure class="changefilter filter-mayfair">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Moon</label>
+                                            <figure class="changefilter filter-moon">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Nashville</label>
+                                            <figure class="changefilter filter-nashville">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Perpetua</label>
+                                            <figure class="changefilter filter-perpetua">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Poprocket</label>
+                                            <figure class="changefilter filter-poprocket">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Reyes</label>
+                                            <figure class="changefilter filter-reyes">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Rise</label>
+                                            <figure class="changefilter filter-rise">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Sierra</label>
+                                            <figure class="changefilter filter-sierra">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Skyline</label>
+                                            <figure class="changefilter filter-skyline">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Slumber</label>
+                                            <figure class="changefilter filter-slumber">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Stinson</label>
+                                            <figure class="changefilter filter-stinson">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Sutro</label>
+                                            <figure class="changefilter filter-sutro">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Toaster</label>
+                                            <figure class="changefilter filter-toaster">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Valencia</label>
+                                            <figure class="changefilter filter-valencia">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Vesper</label>
+                                            <figure class="changefilter filter-vesper">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Walden</label>
+                                            <figure class="changefilter filter-walden">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>Willow</label>
+                                            <figure class="changefilter filter-willow">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <label>X-Pro II</label>
+                                            <figure class="changefilter filter-xpro-ii">
+                                                <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                            </figure>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="post-preview">
+
+                                <h3><i class="fas fa-angle-left" id="back-post-preview"></i></h3>
+                                <h3 class="next">Compartilhar</h3>
+
+                                <div class="image-preview">
+                                    <figure class="filter-xpro-ii">
+                                        <img src="https://i.pinimg.com/originals/98/18/11/9818111a85d5a62cf9b885b42e071352.jpg">
+                                    </figure>
+                                </div>
+                                <div class="text">
+                                    <textarea placeholder="Descrição..."></textarea>
+                                </div>
+
+                                <div class="tab-position">
+                                    <!-- Rounded switch -->
+                                    <label class="switch">
+                                        <input class="sendposition-box" type="checkbox">
+                                        <span class="slider round"></span>
+                                    </label>
+
+                                    <div class="title">
+                                        <p>Compartilhar Localização</p>
+                                    </div>
+                                    <div class="description" id="sendposition">
+                                        <p>Desativado</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Insta User Profile-->
+                            <div class="user-profile" id="insta-profile">
+                                <h3>
+                                    <a href="javascript:void(0)" id="back-user-profile">
+                                        <i class="fas fa-angle-left"></i>
+                                    </a>
+                                    <span id="user-name"></span>
+                                </h3>
+                                <h3 class="next"><a href="javascript:void(0)" id="insta-unfollow" title="Deixar de Seguir" data-user><i class="fas fa-ban"></i></a></h3>
+                                <div class="mainbox">
+                                    <div class="profileTop">
+                                        <div class="profileImg">
+                                            <img src="" name="Imagem Perfil" tag="Imagem Perfil" />
+                                        </div>
+                                        <div class="profileFollow"></div>
+                                    </div>
+                                    <div class="profileDetail">
+                                        <p class="name"></p>
+                                        <p class="description"></p>
+                                    </div>
+                                    <div class="ImgTab"></div>
+                                </div>
+                            </div>
+
+                            <!--Insta Edit Profile-->
+                            <div class="user-edit-profile">
+                                <h3><i class="fas fa-angle-left" id="back-user-edit-profile"></i></h3>
+                                <form class="form-horizontal" id="edit-profile">
+                                    <div class="form-group">
+                                        <label for="avatar" class="col-sm-12">Imagem Perfil (URL .jpg .png)</label>
+                                        <div class="col-sm-12">
+                                            <input type="text" class="form-control" id="avatar" placeholder="Imagem Perfil">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="name" class="col-sm-12">Nome</label>
+                                        <div class="col-sm-12">
+                                            <input type="text" class="form-control" id="name" placeholder="Nome">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="username" class="col-sm-12">Nome de usuário</label>
+                                        <div class="col-sm-12">
+                                            <input type="text" class="form-control" id="username" placeholder="Nome de usuário">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="description" class="col-sm-12">Biografia</label>
+                                        <div class="col-sm-12">
+                                            <textarea id="description" class="form-control" placeholder="Biografia"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-6">
+                                            <button type="button" class="btn btn-danger col-sm-12 sendpictureprofile">Tirar Foto</button>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <button type="button" class="btn btn-default col-sm-12 saveprofileinsta">Salvar</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="instagram-tabs">
+                            <!-- Nav tabs -->
+                            <ul role="tablist">
+                                <li role="presentation" class="">
+                                    <a href="#insta-home" aria-controls="insta-home" role="tab" data-toggle="tab" aria-expanded="false"><i class="fas fa-home"></i></a>
+                                </li>
+                                <li role="presentation" class="">
+                                    <a href="#insta-search" aria-controls="insta-search" role="tab" data-toggle="tab" aria-expanded="false" class="searchprofiles"><i class="fas fa-search"></i></a>
+                                </li>
+                                <li role="presentation" class="">
+                                    <a href="#insta-stories" aria-controls="insta-stories" role="tab" data-toggle="tab" aria-expanded="false" class="addpost"><i class="fas fa-camera-retro"></i></a>
+                                </li>
+                                <li role="presentation" class="">
+                                    <a href="#insta-profile" aria-controls="insta-profile" role="tab" data-toggle="tab" aria-expanded="false" class="myprofile">
+                                        <div class="bg-profile"></div>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Mensagens-->
+                <div class="messages-app">
+                    <div class="messages-app-header">
+                        <p>Mensagens</p>
+                        <span id="total-contacts">0 contatos</span>
+                    </div>
+
+                    <div class="messages">
+                        <div class="messages-header">
+                            <i id="phone-plus-icon" class="fas fa-plus"></i>
+                        </div>
+
+                        <div class="messages-list">
+                            <div class="messages-recent">
+                                <div class="messages-recent-image">P</div>
+                                <div class="messages-recent-name">Pieter Post</div>
+                                <div class="messages-recent-text">Lorem ipsum dolor adsaklfnlknf´dklfplknsdpljfndkbnfposdbfpojsdbflkpnsd´fklsd´k
+                                </div>
+                                <div class="messages-recent-time">12:05</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="phone-time-giga">
+                <h1 id="phone-time-hour">13</h1>
+                <p id="phone-time-weeked">terça, 09 de fevereiro </p>
+            </div>
+
+            <div class="phone-currentcall-container">
+                <div class="phone-currentcall-icon"><i class="fas fa-phone"></i></div>
+                <div class="phone-currentcall-title">Outgoing call</div>
+                <div class="phone-currentcall-contact">with 0612345678</div>
+            </div>
+
+            <!-- Phone Home Button -->
+            <div class="phone-footer">
+                <ul class="phone-navigation">
+                    <li class="navigation-left"></li>
+                    <li class="navigation-center"></li>
+                    <li class="navigation-right"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="screen-notifications-container">
+        <div class="screen-notification-icon"><i class="fab fa-twitter"></i></div>
+        <div class="screen-notification-title">
+            <p>New Tweet!</p>
+        </div>
+        <div class="screen-notification-content">
+            <p>This is a test notification JOINK 222222222222222222222222222222</p>
+        </div>
+    </div>
+
+    <div class="call-notifications">
+        <div class="call-notifications-icon"><i class="fas fa-phone"></i></div>
+        <div class="call-notifications-title">
+            <p>Incoming Call</p>
+        </div>
+        <div class="call-notifications-content">
+            <p>You have an incoming call from Test</p>
+        </div>
+    </div>
+
+    <!-- JavaScript File's -->
+    <script src="./js/config.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/settings.js"></script>
+    <script src="./js/spotify.js"></script>
+    <script src="./js/phone.js"></script>
+    <script src="./js/bank.js"></script>
+    <script src="./js/whatsapp.js"></script>
+    <script src="./js/calculator.js"></script>
+    <script src="./js/instagram.js"></script>
+</body>
+
+</html>

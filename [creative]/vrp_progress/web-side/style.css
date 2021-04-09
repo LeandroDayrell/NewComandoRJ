@@ -1,0 +1,17 @@
+#body {
+	display: none;
+	overflow: hidden;
+}
+
+#outerdiv {
+	right: 50px;
+	bottom: 38px;
+	height: 7px;
+	position: fixed;
+	background: rgba(0,0,0,0.4);
+}
+
+#innerdiv {
+	background: rgba(255,255,255,0.3);
+	height: 100%;
+}

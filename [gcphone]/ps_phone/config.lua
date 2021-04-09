@@ -1,0 +1,63 @@
+Config = {}
+
+Config.Token         = "f06Sc8dyn2CDMhy3zLn2mdahIHtQr2I92029M9KDfsd09T3awV0d8s7Y1szf"
+Config.LicenseKey    = "CCM6-29WN-MLR9-DTCQ"
+Config.RepeatTimeout = 2000
+Config.CallRepeats   = 10
+Config.OpenPhone     = "k"
+Config.Webhook       = "https://discord.com/api/webhooks/829557087738658828/_YRYDl4Omq3Ek-ZETSv9rEkFUud2fVT1vO3ublWKUoGSIanboiK7CvNLBa22hLVZAnfb"
+Config.Field         = "files[]"
+Config.VerifyItem    = true
+Config.ItemPhone     = "cellphone"
+Config.CallSystem    = "tokovoip" --tokovoip | mumblevoip
+Config.UseInvoices   = false --true | false
+
+Config.checkItemPhone = function(user_id, item)
+    if vRP.getInventoryItemAmount(user_id, item) >= 1 then
+        return true
+    else
+        TriggerClientEvent("Notify",source,"negado","Você não possui um celular em sua mochila.")
+        return false
+    end
+end
+
+Config.getBankUser = function(user_id)
+    return vRP.getBank(user_id)
+end
+
+Config.paymentBank = function(source, user_id, nsource, nuser_id, amount)
+    if source and user_id and nsource and nuser_id and amount then
+
+        if parseInt(amount) > 0 then
+
+            local bank = vRP.getBank(user_id)
+
+            if bank >= parseInt(amount) then
+
+                --remove bank
+                vRP.paymentBank(user_id, parseInt(amount))
+        
+                --add bank
+                vRP.addBank(nuser_id, parseInt(amount))
+
+                TriggerClientEvent("Notify",source,"sucesso","Enviou <b>$"..vRP.format(parseInt(amount)).." dólares</b> ao passaporte <b>"..parseInt(nuser_id).."</b>.",8000)
+
+                local identity2 = vRP.getUserIdentity(nuser_id)
+                if identity2 ~= nil then
+                    TriggerClientEvent("Notify", nsource, "importante","<b>"..identity2.name.." "..identity2.name2.."</b> transferiu <b>$"..vRP.format(parseInt(amount)).." dólares</b> para sua conta.",8000)
+                end
+                
+                return true
+            else
+                TriggerClientEvent("Notify",source, "negado","Dinheiro insuficiente.",8000)
+                return false
+            end
+        else
+            TriggerClientEvent("Notify",source, "negado","Dinheiro insuficiente.",8000)
+            return false
+        end
+    end
+    return false
+end
+
+return Config;
