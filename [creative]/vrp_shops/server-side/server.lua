@@ -147,8 +147,7 @@ local shops = {
 			["ominitrix"] = 350,
 			["bracelet"] = 500,
 			["dildo"] = 250,
-			["postit"] = 10,
-			["dollars2"] = 40
+			["postit"] = 10
 		}
 	},
 	["fishingStore"] = {
@@ -196,7 +195,6 @@ local shops = {
 			["compost"] = 10,
 			["silk"] = 3,
 			["coffee"] = 18,
-			["plastic"] = 80,
 			["taurina"] = 80,
 			["paperbag"] = 50,
 			["firecracker"] = 1000
@@ -265,6 +263,27 @@ local shops = {
 			["water"] = 40
 		}
 	},
+	["policeSell"] = {
+		["mode"] = "Sell",
+		["type"] = "Cash",
+		["perm"] = "Police",
+		["list"] = {
+			["vest"] = 5000,
+			["gsrkit"] = 200,
+			["gdtkit"] = 200,
+			["WEAPON_SMG"] = 10000,
+			["WEAPON_PUMPSHOTGUN"] = 15000,
+			["WEAPON_SAWNOFFSHOTGUN"] = 15000,
+			["WEAPON_CARBINERIFLE"] = 25000,
+			["WEAPON_RIFLE_AMMO"] =5,
+			["WEAPON_PISTOL_AMMO"] = 1,
+			["WEAPON_SMG_AMMO"] = 3,
+			["WEAPON_FIREEXTINGUISHER"] = 1000,
+			["WEAPON_STUNGUN"] = 5000,
+			["WEAPON_NIGHTSTICK"] = 1000,
+			["WEAPON_COMBATPISTOL"] = 7500
+		}
+	},
 	["policeStore"] = {
 		["mode"] = "Buy",
 		["type"] = "Cash",
@@ -275,7 +294,11 @@ local shops = {
 			["gdtkit"] = 200,
 			["WEAPON_SMG"] = 10000,
 			["WEAPON_PUMPSHOTGUN"] = 15000,
+			["WEAPON_SAWNOFFSHOTGUN"] = 15000,
 			["WEAPON_CARBINERIFLE"] = 25000,
+			["WEAPON_RIFLE_AMMO"] =5,
+			["WEAPON_PISTOL_AMMO"] = 1,
+			["WEAPON_SMG_AMMO"] = 3,
 			["WEAPON_FIREEXTINGUISHER"] = 1000,
 			["WEAPON_STUNGUN"] = 5000,
 			["WEAPON_NIGHTSTICK"] = 1000,
@@ -412,6 +435,7 @@ function cRP.functionShops(shopType,shopItem,shopAmount,slot)
 				if shops[shopType]["type"] == "Cash" then
 					if vRP.tryGetInventoryItem(parseInt(user_id),shopItem,parseInt(shopAmount),true,slot) then
 						vRP.giveInventoryItem(parseInt(user_id),"dollars",parseInt(shops[shopType]["list"][shopItem]*shopAmount),false)
+						TriggerClientEvent("Notify",source,"aviso","Voce recebeu $"..shops[shopType]["list"][shopItem]*shopAmount.." dolares.",5000)
 					end
 				elseif shops[shopType]["type"] == "Consume" then
 					if vRP.tryGetInventoryItem(parseInt(user_id),shopItem,parseInt(shopAmount),true,slot) then

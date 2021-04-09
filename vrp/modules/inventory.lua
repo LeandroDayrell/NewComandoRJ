@@ -506,6 +506,24 @@ local itemlist = {
 		type = "use",
 		weight = 0.1
 	},
+	["laptop_h"] = {
+		index = "laptop_h",
+		name = "Laptop Hacker",
+		type = "use",
+		weight = 1.0
+	},
+	["diamond"] = {
+		index = "diamond",
+		name = "Diamante",
+		type = "use",
+		weight = 0.1
+	},
+	["thermal_charge"] = {
+		index = "thermal_charge",
+		name = "Thermal",
+		type = "use",
+		weight = 1.0
+	},
 	["bluecard"] = {
 		index = "bluecard",
 		name = "Cartão Azul",
@@ -823,6 +841,13 @@ local itemlist = {
 	["WEAPON_CARBINERIFLE"] = {
 		index = "m4a1",
 		name = "M4A1",
+		type = "equip",
+		ammo = "WEAPON_RIFLE_AMMO",
+		weight = 8.0
+	},
+	["WEAPON_SPECIALCARBINE"] = {
+		index = "parafal",
+		name = "Parafal",
 		type = "equip",
 		ammo = "WEAPON_RIFLE_AMMO",
 		weight = 8.0

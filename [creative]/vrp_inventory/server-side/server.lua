@@ -1975,3 +1975,4 @@ function cRP.checkInventory()
 		return true
 	end
 end
+

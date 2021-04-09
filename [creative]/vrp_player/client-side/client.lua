@@ -741,6 +741,7 @@ local weapons = {
 	"WEAPON_SNSPISTOL_MK2",
 	"WEAPON_VINTAGEPISTOL",
 	"WEAPON_CARBINERIFLE",
+	"WEAPON_SPECIALCARBINE",
 	"WEAPON_SMG",
 	"WEAPON_PUMPSHOTGUN",
 	"WEAPON_SAWNOFFSHOTGUN",
@@ -817,13 +818,12 @@ end
 -- DISTANCESERVICE
 -----------------------------------------------------------------------------------------------------------------------------------------
 local disService = {
-	{ 312.96,-594.5,43.29,"Paramedic" }, -- Los Santos Cima
-	{ -250.57,6335.63,32.43,"Paramedic" }, -- Paleto Bay
-	{ 441.91,-978.95,30.69,"Police" }, -- Los Santos
-	{ -449.49,6012.54,31.71,"Police" }, -- Paleto Bay
-	{ 1853.28,3690.05,34.26,"Police" } -- Sandy Shores
+	{ -348.82,-126.0,39.01,"Mechanic" }, -- Los Santos Cima
+	{ 436.9,-314.92,34.92,"Mechanic" }, -- Los Santos aeroporto
+	{ -438.02,-318.1,34.89,"Paramedic" }, -- Hosp
+	{ 441.23,-982.1,30.69,"Police" } -- DP
 }
------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
 -- DISTANCESERVICE
 -----------------------------------------------------------------------------------------------------------------------------------------
 function cRP.distanceService()
@@ -872,6 +872,9 @@ local wLux = {
 	},
 	["WEAPON_CARBINERIFLE"] = {
 		"COMPONENT_CARBINERIFLE_VARMOD_LUXE"
+	},
+	["WEAPON_SPECIALCARBINE"] = {
+		"COMPONENT_SPECIALCARBINE_VARMOD_LUXE"
 	},
 	["WEAPON_PUMPSHOTGUN"] = {
 		"COMPONENT_PUMPSHOTGUN_VARMOD_LOWRIDER"

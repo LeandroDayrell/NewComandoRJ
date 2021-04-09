@@ -144,7 +144,7 @@ const updateMochila = () => {
 
 			if (data.inventario[slot] !== undefined) {
 				const v = data.inventario[slot];
-				const item = `<div class="item populated" style="background-image: url('images/${v.index}.png');" data-item-key="${v.key}" data-name-key="${v.name}" data-slot="${slot}">
+				const item = `<div class="item populated" style="background-image: url('http://131.196.198.113/imagens/${v.index}.png');" data-item-key="${v.key}" data-name-key="${v.name}" data-slot="${slot}">
 					<div id="peso">${(v.peso*v.amount).toFixed(2)}</div>
 					<div id="quantity">${formatarNumero(v.amount)}x</div>
 					<div id="itemname">${v.name}</div>
