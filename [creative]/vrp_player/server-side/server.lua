@@ -193,12 +193,12 @@ end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CALL
 -----------------------------------------------------------------------------------------------------------------------------------------
-RegisterCommand("call",function(source,args,rawCommand)
+RegisterCommand("atendimento",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
 		if not vCLIENT.getHandcuff(source) then
-			local service = vRP.prompt(source,"911: Polícia     |     112: Paramédico","")
-			if service == "" or (parseInt(service) ~= 911 and parseInt(service) ~= 112 and parseInt(service) ~= 443) then
+			local service = vRP.prompt(source,"190: Polícia     |     192: Paramédico","")
+			if service == "" or (parseInt(service) ~= 190 and parseInt(service) ~= 192 and parseInt(service) ~= 443) then
 				return
 			end
 
@@ -209,9 +209,9 @@ RegisterCommand("call",function(source,args,rawCommand)
 
 			local players = {}
 			local answered = false
-			if parseInt(service) == 911 then
+			if parseInt(service) == 190 then
 				players = vRP.numPermission("Police")
-			elseif parseInt(service) == 112 then
+			elseif parseInt(service) == 192 then
 				players = vRP.numPermission("Paramedic")
 			end
 
@@ -364,7 +364,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- SERVICE
 -----------------------------------------------------------------------------------------------------------------------------------------
-RegisterCommand("service",function(source,args,rawCommand)
+RegisterCommand("servico",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
 		if not vCLIENT.getHandcuff(source) then
@@ -399,15 +399,30 @@ RegisterCommand("service",function(source,args,rawCommand)
 						vRP.execute("vRP/upd_group",{ user_id = user_id, permiss = "waitParamedic", newpermiss = "Paramedic" })
 					end
 				end
+
+
+				if service == "Mechanic" then
+					if vRP.hasPermission(user_id,"Mechanic") then
+						vRP.removePermission(source,"Mechanic")
+						TriggerEvent("vrp_blipsystem:serviceExit",source)
+						TriggerClientEvent("Notify",source,"importante","Você saiu de serviço.",5000)
+						vRP.execute("vRP/upd_group",{ user_id = user_id, permiss = "Mechanic", newpermiss = "waitMechanic" })
+					elseif vRP.hasPermission(user_id,"waitMechanic") then
+						vRP.insertPermission(source,"Mechanic")
+						TriggerEvent("vrp_blipsystem:serviceEnter",source,"Mecanico",83)
+						TriggerClientEvent("Notify",source,"importante","Você entrou em serviço.",5000)
+						vRP.execute("vRP/upd_group",{ user_id = user_id, permiss = "waitMechanic", newpermiss = "Mechanic" })
+					end
+				end
 			end
 		end
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
--- CUFF
+-- Algemar
 -----------------------------------------------------------------------------------------------------------------------------------------
 local poCuff = {}
-RegisterCommand("cuff",function(source,args,rawCommand)
+RegisterCommand("algemar",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
 		if vRP.hasPermission(user_id,"Police") then
@@ -480,9 +495,9 @@ function cRP.shotsFired()
 	end
 end
 -----------------------------------------------------------------------------------------------------------------------------------------
--- CARRY
+-- CARREGAR
 -----------------------------------------------------------------------------------------------------------------------------------------
-RegisterCommand("carry",function(source,args,rawCommand)
+RegisterCommand("carregar",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
 		if vRP.hasPermission(user_id,"Police") or vRP.hasPermission(user_id,"Paramedic") then
@@ -498,7 +513,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CARRY
 -----------------------------------------------------------------------------------------------------------------------------------------
-RegisterCommand("carry2",function(source,args,rawCommand)
+RegisterCommand("carregar2",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
 		if vRP.hasPermission(user_id,"Police") or vRP.hasPermission(user_id,"Paramedic") then
@@ -556,7 +571,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CHECK
 -----------------------------------------------------------------------------------------------------------------------------------------
-RegisterCommand("check",function(source,args,rawCommand)
+RegisterCommand("rg",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
 		if vRP.hasPermission(user_id,"Police") then

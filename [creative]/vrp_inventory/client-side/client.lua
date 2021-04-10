@@ -35,7 +35,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- MOC
 -----------------------------------------------------------------------------------------------------------------------------------------
-RegisterCommand("moc",function(source,args)
+RegisterCommand("moch",function(source,args)
 	if not IsPlayerFreeAiming(PlayerId()) and GetEntityHealth(PlayerPedId()) > 101 then
 		SetNuiFocus(true,true)
 		SetCursorLocation(0.5,0.5)
@@ -45,8 +45,8 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- MOC
 -----------------------------------------------------------------------------------------------------------------------------------------
-RegisterKeyMapping("moc","Abrir a mochila","keyboard","f1")
------------------------------------------------------------------------------------------------------------------------------------------
+RegisterKeyMapping("moch","Abrir mochila","keyboard","f1")
+-----------------------------------------------------------------------------------------------------------------------------------------	
 -- DROPITEM
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterNUICallback("dropItem",function(data)
@@ -403,7 +403,6 @@ local wComponents = {
 	},
 	["WEAPON_SPECIALCARBINE"] = {
 		"COMPONENT_AT_AR_FLSH",
-		"COMPONENT_AT_SCOPE_MEDIUM",
 		"COMPONENT_AT_AR_AFGRIP"
 	},
 	["WEAPON_SPECIALCARBINE_MK2"] = {
@@ -465,6 +464,7 @@ local weapon_ammos = {
 	["WEAPON_RIFLE_AMMO"] = {
 		"WEAPON_CARBINERIFLE",
 		"WEAPON_ASSAULTRIFLE",
+		"WEAPON_SPECIALCARBINE",
 		"WEAPON_ASSAULTRIFLE_MK2"
 	},
 	["WEAPON_SHOTGUN_AMMO"] = {

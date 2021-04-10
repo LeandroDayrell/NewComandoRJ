@@ -185,7 +185,7 @@ local craftList = {
 					["rubber"] = 5
 				}
 			},
-			["C4"] = {
+			["c4"] = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
