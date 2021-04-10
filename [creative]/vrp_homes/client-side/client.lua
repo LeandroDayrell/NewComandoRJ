@@ -113,7 +113,7 @@ RegisterCommand("enter",function(source,args)
 				createMiddle(ped,v[5],v[6],1500.0)
 			end
 
-			SetTimecycleModifier("AmbientPUSH")
+			SetTimecycleModifier("AmbientPUSH") -- Verificar este modificador de tempo.
 
 			Citizen.Wait(1000)
 

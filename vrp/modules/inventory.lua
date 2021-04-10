@@ -128,6 +128,12 @@ local itemlist = {
 		type = "use",
 		weight = 0.3
 	},
+	["pecadearma"] = {
+		index = "pecadearma",
+		name = "Peça de Arma",
+		type = "use",
+		weight = 0.1
+	},
 	["lean"] = {
 		index = "lean",
 		name = "Lean",
