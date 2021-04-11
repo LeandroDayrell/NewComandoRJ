@@ -56,6 +56,42 @@ local itemlist = {
 		type = "use",
 		weight = 0.5
 	},
+	["graos"] = {
+		index = "graos",
+		name = "Graos",
+		type = "use",
+		weight = 0.5
+	},
+	["graosimpuros"] = {
+		index = "graosimpuros",
+		name = "Graos Impuros",
+		type = "use",
+		weight = 0.5
+	},
+	["perolatratada"] = {
+		index = "perolatratada",
+		name = "Perola Tratada",
+		type = "use",
+		weight = 0.5
+	},
+	["perola"] = {
+		index = "perola",
+		name = "Perola",
+		type = "use",
+		weight = 0.5
+	},
+	["tapafuro"] = {
+		index = "tapafuro",
+		name = "Reparo",
+		type = "use",
+		weight = 0.5
+	},
+	["efidrina"] = {
+		index = "efidrina",
+		name = "Efidrina",
+		type = "use",
+		weight = 0.5
+	},
 	["woodlog"] = {
 		index = "woodlog",
 		name = "Tora de Madeira",

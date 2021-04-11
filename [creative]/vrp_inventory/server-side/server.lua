@@ -906,7 +906,7 @@ AddEventHandler("vrp_inventory:useItem",function(slot,rAmount)
 										TriggerEvent("setPlatePlayers",vehPlate,user_id)
 									end
 
-									if math.random(100) >= 75 then
+									if 100 >= 100 then
 										local x,y,z = vRPclient.getPositions(source)
 										local copAmount = vRP.numPermission("Police")
 										for k,v in pairs(copAmount) do
@@ -940,7 +940,7 @@ AddEventHandler("vrp_inventory:useItem",function(slot,rAmount)
 										TriggerClientEvent("vrp_inventory:lockpickVehicle",-1,vehNet)
 									end
 
-									if math.random(100) >= 75 then
+									if 100 >= 100 then
 										local x,y,z = vRPclient.getPositions(source)
 										local copAmount = vRP.numPermission("Police")
 										for k,v in pairs(copAmount) do
@@ -1002,7 +1002,7 @@ AddEventHandler("vrp_inventory:useItem",function(slot,rAmount)
 											vCLIENT.blockButtons(source,false)
 											vRP.giveInventoryItem(user_id,"dollars2",math.random(4,6),true)
 
-											if math.random(100) >= 75 then
+											if 100 >= 100 then
 												vRP.wantedTimer(user_id,60)
 												local copAmount = vRP.numPermission("Police")
 												for k,v in pairs(copAmount) do

@@ -36,7 +36,11 @@ Citizen.CreateThread(function()
 						DrawMarker(21,v[1],v[2],v[3]-0.6,0,0,0,0.0,0,0,0.5,0.5,0.4,100,185,230,50,0,0,0,1)
 						if distance <= 0.6 and IsControlJustPressed(1,38) and timeSeconds <= 0 and GetEntityModel(GetPlayersLastVehicle()) == vehModel then
 							timeSeconds = 2
-							vSERVER.paymentMethod(parseInt(k))
+							vRP._playAnim(false,{"anim@amb@clubhouse@tutorial@bkr_tut_ig3@","machinic_loop_mechandplayer"},true)
+							SetTimeout(2000, function()	
+								vSERVER.paymentMethod(parseInt(k))
+								vRP._stopAnim(false)					
+							end)
 						end
 					end
 				end

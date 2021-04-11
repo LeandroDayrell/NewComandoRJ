@@ -41,13 +41,13 @@ local shops = {
 		["mode"] = "Buy",
 		["type"] = "Cash",
 		["list"] = {
-			["gauze"] = 800,
+			["gauze"] = 1000,
 			["bandage"] = 750,
 			["analgesic"] = 100,
-			["warfarin"] = 2500,
+			["warfarin"] = 25000,
 			["sinkalmy"] = 1500,
 			["ritmoneury"] = 2000,
-			["adrenaline"] = 5000
+			["adrenaline"] = 15000
 		}
 	},
 	["foodGrill"] = {

@@ -49,7 +49,7 @@ end)
 function oC.checkPermissao()
     local source = source
     local user_id = vRP.getUserId(source)
-    if vRP.hasPermission(user_id,"Mafia") or vRP.hasPermission(user_id,"Unktec") or vRP.hasPermission(user_id,"Milicia") or vRP.hasPermission(user_id,"Bennys") or vRP.hasPermission(user_id,"Bahamas") or vRP.hasPermission(user_id,"Galaxy") or vRP.hasPermission(user_id,"Lowrider") then
+    if vRP.hasPermission(user_id,"mercadonegro.permissao") or vRP.hasPermission(user_id,"milicia.permissao") then
         return true
     end
 end
@@ -57,7 +57,7 @@ end
 function oC.checkinventario()
     local source = source
     local user_id = vRP.getUserId(source)
-    if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("pecadearma") <= vRP.getInventoryMaxWeight(user_id) then
+    if vRP.computeInvWeight(user_id)+vRP.itemWeightList("pecadearma") <= vRP.getBackpack(user_id) then
         return true
     end
 end
@@ -95,7 +95,7 @@ function oC.checkPaymentfacil()
 	local source = source
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("pecadearma")*quantidadefacil[source] <= vRP.getInventoryMaxWeight(user_id) then
+		if vRP.computeInvWeight(user_id)+vRP.itemWeightList("pecadearma")*quantidadefacil[source] <= vRP.getBackpack(user_id) then
 		vRP.giveInventoryItem(user_id,"pecadearma",quantidadefacil[source])
 		TriggerClientEvent("Notify",source,"sucesso","<b>"..quantidadefacil[source].."x</b> peças coletadas com <b>sucesso</b>.") -- NOTIFICAÇÃO
 		quantidadefacil[source] = nil
@@ -109,7 +109,7 @@ function oC.checkPaymentmediano()
 	local source = source
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("pecadearma")*quantidademediano[source] <= vRP.getInventoryMaxWeight(user_id) then
+		if vRP.computeInvWeight(user_id)+vRP.itemWeightList("pecadearma")*quantidademediano[source] <= vRP.getBackpack(user_id) then
 		vRP.giveInventoryItem(user_id,"pecadearma",quantidademediano[source])
 		TriggerClientEvent("Notify",source,"sucesso","<b>"..quantidademediano[source].."x</b> peças coletadas com <b>sucesso</b>.") -- NOTIFICAÇÃO
 		quantidademediano[source] = nil
@@ -123,7 +123,7 @@ function oC.checkPaymentdificil()
 	local source = source
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("pecadearma")*quantidadedificil[source] <= vRP.getInventoryMaxWeight(user_id) then
+		if vRP.computeInvWeight(user_id)+vRP.itemWeightList("pecadearma")*quantidadedificil[source] <= vRP.getBackpack(user_id) then
 		vRP.giveInventoryItem(user_id,"pecadearma",quantidadedificil[source])
 		TriggerClientEvent("Notify",source,"sucesso","<b>"..quantidadedificil[source].."x</b> peças coletadas com <b>sucesso</b>.") -- NOTIFICAÇÃO
 		quantidadedificil[source] = nil
@@ -142,7 +142,7 @@ function oC.MarcarOcorrencia()
 	local x,y,z = vRPclient.getPosition(source)
 	local identity = vRP.getUserIdentity(user_id)
 	if user_id then
-		local soldado = vRP.getUsersByPermission("Police") -- Permissão Polícia
+		local soldado = vRP.getUsersByPermission("policia.permissao") -- Permissão Polícia
 		for l,w in pairs(soldado) do
 			local player = vRP.getUserSource(parseInt(w))
 			if player then

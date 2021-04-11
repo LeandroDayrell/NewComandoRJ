@@ -645,7 +645,7 @@ function garbageMakeList(status)
 		[623] = { -154.74,-1412.53,30.86,106.25 },
 		[624] = { -167.1,-1413.56,30.98,40.81 },
 		[625] = { -187.98,-1373.08,31.26,50.4 },
-		[626] = { -189.76,-1374.14,31.26,54.91 },
+		[626] = { -189.76,-1374.14,31.26,54.91 },--
 		[627] = { -192.23,-1375.49,31.26,19.45 },
 		[628] = { -241.55,-1471.41,31.5,330.19 },
 		[629] = { -242.74,-1473.14,31.48,65.74 },
@@ -759,7 +759,7 @@ function cRP.paymentMethod(garbageId)
 		if vRP.computeInvWeight(user_id) + 1 > vRP.getBackpack(user_id) then
 			return
 		end
-
+		--- ADICIONAR AQUI A ANIMACAO 
 		local random = math.random(100)
 		if parseInt(random) >= 81 then
 			vRP.giveInventoryItem(user_id,"plastic",math.random(8),true)
