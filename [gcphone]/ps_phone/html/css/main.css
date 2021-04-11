@@ -176,7 +176,7 @@ body {
 }
 
 .phone-background {
-    background-image: url('../img/backgrounds/bg.jpg');
+    background-image: url('../img/backgrounds/background.jpg');
     background-size: cover;
     background-position-y: 1.05vh;
     background-position-x: -0.3vh;

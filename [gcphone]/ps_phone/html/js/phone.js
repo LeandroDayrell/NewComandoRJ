@@ -274,11 +274,11 @@ PS.Phone.Functions.LoadContacts = function(myContacts) {
 
     if (myContacts !== null) {
         $.each(myContacts, function(i, contact) {
-            // var ContactElement = '<div class="phone-contact" data-contactid="' + i + '"><div class="phone-contact-firstletter" style="background-color: #e74c3c;">' + contact.display.charAt(0).toUpperCase() + '</div><div class="phone-contact-name">' + contact.display + '</div><div class="phone-contact-actions"><i class="fas fa-sort-down"></i></div><div class="phone-contact-action-buttons"> <i class="fas fa-phone-volume" id="phone-start-call"></i> <i class="fas fa-comment" id="new-chat-message"></i> <i class="fab fa-whatsapp" id="new-chat-phone" style="font-size: 2.5vh;"></i> <i class="fas fa-user-edit" id="edit-contact"></i> </div></div>'
-            var ContactElement = '<div class="phone-contact" data-contactid="' + i + '"><div class="phone-contact-firstletter" style="background-color: #e74c3c;">' + contact.display.charAt(0).toUpperCase() + '</div><div class="phone-contact-name">' + contact.display + '</div><div class="phone-contact-actions"><i class="fas fa-sort-down"></i></div><div class="phone-contact-action-buttons"> <i class="fas fa-phone-volume" id="phone-start-call"></i> <i class="fab fa-whatsapp" id="new-chat-phone" style="font-size: 2.5vh;"></i> <i class="fas fa-user-edit" id="edit-contact"></i> </div></div>'
+            var ContactElement = '<div class="phone-contact" data-contactid="' + i + '"><div class="phone-contact-firstletter" style="background-color: #e74c3c;">' + contact.display.charAt(0).toUpperCase() + '</div><div class="phone-contact-name">' + contact.display + '</div><div class="phone-contact-actions"><i class="fas fa-sort-down"></i></div><div class="phone-contact-action-buttons"> <i class="fas fa-phone-volume" id="phone-start-call"></i> <i class="fas fa-comment" id="new-chat-message"></i> <i class="fab fa-whatsapp" id="new-chat-phone" style="font-size: 2.5vh;"></i> <i class="fas fa-user-edit" id="edit-contact"></i> </div></div>'
+                // var ContactElement = '<div class="phone-contact" data-contactid="' + i + '"><div class="phone-contact-firstletter" style="background-color: #e74c3c;">' + contact.display.charAt(0).toUpperCase() + '</div><div class="phone-contact-name">' + contact.display + '</div><div class="phone-contact-actions"><i class="fas fa-sort-down"></i></div><div class="phone-contact-action-buttons"> <i class="fas fa-phone-volume" id="phone-start-call"></i> <i class="fab fa-whatsapp" id="new-chat-phone" style="font-size: 2.5vh;"></i> <i class="fas fa-user-edit" id="edit-contact"></i> </div></div>'
             if (contact.status) {
-                // ContactElement = '<div class="phone-contact" data-contactid="' + i + '"><div class="phone-contact-firstletter" style="background-color: #2ecc71;">' + contact.display.charAt(0).toUpperCase() + '</div><div class="phone-contact-name">' + contact.display + '</div><div class="phone-contact-actions"><i class="fas fa-sort-down"></i></div><div class="phone-contact-action-buttons"> <i class="fas fa-phone-volume" id="phone-start-call"></i> <i class="fas fa-comment" id="new-chat-message"></i> <i class="fab fa-whatsapp" id="new-chat-phone" style="font-size: 2.5vh;"></i> <i class="fas fa-user-edit" id="edit-contact"></i> </div></div>'
-                ContactElement = '<div class="phone-contact" data-contactid="' + i + '"><div class="phone-contact-firstletter" style="background-color: #2ecc71;">' + contact.display.charAt(0).toUpperCase() + '</div><div class="phone-contact-name">' + contact.display + '</div><div class="phone-contact-actions"><i class="fas fa-sort-down"></i></div><div class="phone-contact-action-buttons"> <i class="fas fa-phone-volume" id="phone-start-call"></i> <i class="fab fa-whatsapp" id="new-chat-phone" style="font-size: 2.5vh;"></i> <i class="fas fa-user-edit" id="edit-contact"></i> </div></div>'
+                ContactElement = '<div class="phone-contact" data-contactid="' + i + '"><div class="phone-contact-firstletter" style="background-color: #2ecc71;">' + contact.display.charAt(0).toUpperCase() + '</div><div class="phone-contact-name">' + contact.display + '</div><div class="phone-contact-actions"><i class="fas fa-sort-down"></i></div><div class="phone-contact-action-buttons"> <i class="fas fa-phone-volume" id="phone-start-call"></i> <i class="fas fa-comment" id="new-chat-message"></i> <i class="fab fa-whatsapp" id="new-chat-phone" style="font-size: 2.5vh;"></i> <i class="fas fa-user-edit" id="edit-contact"></i> </div></div>'
+                    // ContactElement = '<div class="phone-contact" data-contactid="' + i + '"><div class="phone-contact-firstletter" style="background-color: #2ecc71;">' + contact.display.charAt(0).toUpperCase() + '</div><div class="phone-contact-name">' + contact.display + '</div><div class="phone-contact-actions"><i class="fas fa-sort-down"></i></div><div class="phone-contact-action-buttons"> <i class="fas fa-phone-volume" id="phone-start-call"></i> <i class="fab fa-whatsapp" id="new-chat-phone" style="font-size: 2.5vh;"></i> <i class="fas fa-user-edit" id="edit-contact"></i> </div></div>'
             }
             TotalContacts = TotalContacts + 1
             $(ContactsObject).append(ContactElement);
@@ -295,6 +295,8 @@ $(document).on('click', '#new-chat-phone', function(e) {
     var ContactData = $("[data-contactid='" + ContactId + "']").data('contactData');
 
     if (ContactData.number !== PS.Phone.Data.UserData.identity.phone) {
+
+        $(".preload-messages-wpp").show();
         $.post('http://ps_phone/GetWhatsappChats', JSON.stringify({}), function(chats) {
             LoadWhatsappChats(chats);
         });
@@ -345,6 +347,69 @@ $(document).on('click', '#new-chat-phone', function(e) {
                 });
             });
         }, 400)
+    } else {
+        PS.Phone.Notifications.Add("fa fa-phone-alt", "Telefone", "Você não pode mandar mensagens para você mesmo", "default", 3500);
+    }
+});
+
+$(document).on('click', '#new-chat-message', function(e) {
+    var ContactId = $(this).parent().parent().data('contactid');
+    var ContactData = $("[data-contactid='" + ContactId + "']").data('contactData');
+
+    if (ContactData.number !== PS.Phone.Data.UserData.identity.phone) {
+
+        $(".preload-messages-imessage").show();
+        $.post('http://ps_phone/GetMessages', JSON.stringify({}), function(messages) {
+            PS.Phone.Functions.LoadMessages(messages);
+        });
+
+        $('.phone-application-container').animate({
+            top: -160 + "%"
+        });
+        PS.Phone.Functions.HeaderTextColor("white", 400);
+        setTimeout(function() {
+            $('.phone-application-container').animate({
+                top: 0 + "%"
+            });
+
+            PS.Phone.Functions.ToggleApp("phone", "none");
+            PS.Phone.Functions.ToggleApp("messages", "block");
+            PS.Phone.Data.currentApplication = "messages";
+
+            if (ContactData.number == PS.Phone.Data.UserData.identity.phone) {
+                var type = 'phone';
+                var phone = ContactData.number;
+            } else {
+                var type = 'number';
+                var phone = ContactData.number;
+            }
+
+            var data = {
+                phone: PS.Phone.Data.UserData.identity.phone,
+                number: ContactData.number
+            }
+
+            OpenedChatData.messagesdata = data;
+
+            $.post('http://ps_phone/GetMessagesChat', JSON.stringify({
+                type: type,
+                phone: phone
+            }), function(chat) {
+
+                var messages = JSON.parse(chat);
+
+                SetupMessages(messages);
+            });
+
+            $('.phone-containter .phone').animate({ scrollTop: 9999 }, 150);
+
+            $(".messages-openedchat header h1").text(ContactData.display);
+
+            $(".messages-openedchat").css({ "display": "block" });
+            $(".messages-openedchat").animate({
+                left: 0 + "vh"
+            }, 200);
+        }, 400);
     } else {
         PS.Phone.Notifications.Add("fa fa-phone-alt", "Telefone", "Você não pode mandar mensagens para você mesmo", "default", 3500);
     }

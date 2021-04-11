@@ -25,12 +25,17 @@ PS.Phone.Data = {
     SendLocation: false,
     InstagramAccount: null,
     WhatsAppAccount: null,
+    TwiiterAccount: null,
 }
 
 OpenedChatData = {
     phone: null,
     group: null,
+    messages: null,
+    messagesdata: null,
 }
+
+var iphost = "http://127.0.0.1/";
 
 PS.Phone.Audio = null;
 
@@ -88,6 +93,10 @@ $(document).on('click', '.phone-application', function(e) {
 
                 if (PressedApplication == "settings") {
                     $("#myPhoneNumber").text(PS.Phone.Data.UserData.identity.phone);
+                } else if (PressedApplication == "twitter") {
+                    $.post('http://ps_phone/GetUserProfileTwitter', JSON.stringify({}), function(account) {
+                        PS.Phone.Functions.ReceiveAccountTwitter(account);
+                    });
                 } else if (PressedApplication == "bank") {
                     PS.Phone.Functions.DoBankOpen();
                     $.post('http://ps_phone/GetBankContacts', JSON.stringify({}), function(contacts) {
@@ -109,6 +118,10 @@ $(document).on('click', '.phone-application', function(e) {
                 } else if (PressedApplication == "instagram") {
                     $.post('http://ps_phone/GetUserProfileInsta', JSON.stringify({}), function(account) {
                         PS.Phone.Functions.ReceiveAccount(account);
+                    });
+                } else if (PressedApplication == "messages") {
+                    $.post('http://ps_phone/GetMessages', JSON.stringify({}), function(messages) {
+                        PS.Phone.Functions.LoadMessages(messages)
                     });
                 }
             }
@@ -367,7 +380,10 @@ PS.Phone.Notifications.Add = function(icon, title, text, color, timeout) {
 PS.Phone.Functions.LoadPhoneData = function(data) {
     PS.Phone.Data.UserData = data.UserData;
     PS.Phone.Functions.LoadBackground(data.PhoneData.background);
-    PS.Phone.Functions.LoadContacts(data.PhoneData.Contacts);
+    if (PS.Phone.Functions.LoadContacts() != undefined) {
+        PS.Phone.Functions.LoadContacts(data.PhoneData.Contacts);
+
+    }
 }
 
 PS.Phone.Functions.UpdateTime = function(data) {
@@ -423,6 +439,8 @@ PS.Screen.Notification = function(title, content, icon, timeout, color) {
     });
 }
 
+// PS.Screen.Notification("Nieuwe Tweet", "Dit is een test tweet like #YOLO", "fab fa-twitter", 4000);
+
 $(document).ready(function() {
     moment.locale('pt-br');
     var deviceTime = document.querySelector('#phone-time');
@@ -452,6 +470,9 @@ $(document).ready(function() {
                 PS.Phone.Data.IsOpen = true;
                 PS.Phone.Data.UserData = event.data.UserData;
                 break;
+                // case "LoadPhoneApplications":
+                //     PS.Phone.Functions.SetupApplications(event.data);
+                //     break;
             case "LoadPhoneData":
                 PS.Phone.Functions.LoadPhoneData(event.data);
                 break;
@@ -466,6 +487,9 @@ $(document).ready(function() {
                 break;
             case "RefreshAppAlerts":
                 PS.Phone.Functions.SetupAppWarnings(event.data.AppData);
+                break;
+            case "UpdateMentionedTweets":
+                PS.Phone.Notifications.LoadMentionedTweets(event.data.Tweets);
                 break;
             case "UpdateBank":
                 $(".bank-app-account-balance").html("&#36; " + event.data.NewBalance);
@@ -492,6 +516,10 @@ $(document).ready(function() {
                         CancelOutgoingCall();
                     }
                 });
+
+                if (PS.Phone.Audio) {
+                    PS.Phone.Audio.pause();
+                }
                 break;
             case "IncomingCallAlert":
                 $.post('http://ps_phone/HasPhone', JSON.stringify({}), function(HasPhone) {
@@ -499,6 +527,10 @@ $(document).ready(function() {
                         IncomingCallAlert(event.data.CallData, event.data.Canceled, event.data.AnonymousCall);
                     }
                 });
+
+                if (PS.Phone.Audio) {
+                    PS.Phone.Audio.pause();
+                }
                 break;
             case "SetupHomeCall":
                 PS.Phone.Functions.SetupCurrentCall(event.data.CallData);
@@ -586,6 +618,9 @@ $(document).ready(function() {
             case "RefreshPostsInsta":
                 PS.Phone.Functions.ReceivePosts(event.data.posts);
                 break;
+            case "UpdateIPAddress":
+                iphost = event.data.ipaddress;
+                break;
         }
     })
 });
@@ -597,5 +632,3 @@ $(document).on('keydown', function() {
             break;
     }
 });
-
-// PS.Phone.Functions.Open();

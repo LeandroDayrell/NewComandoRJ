@@ -59,6 +59,7 @@ CREATE TABLE IF NOT EXISTS `ps_phone_messages` (
   	`id` int(11) NOT NULL AUTO_INCREMENT,
   	`phone` varchar(50) NOT NULL,
   	`number` varchar(50) NOT NULL,
+  	`owner` varchar(50) NOT NULL,
   	`message` TEXT NOT NULL,
   	`type` varchar(50) NOT NULL,
 	`read` TINYINT(4) NOT NULL DEFAULT '0',
@@ -86,21 +87,21 @@ CREATE TABLE `ps_phone_whatsapp_stories` (
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `ps_phone_whatsapp_calls` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `phone` varchar(50) NOT NULL,
-  `number` varchar(50) NOT NULL,
-  `type` varchar(50) NOT NULL,
-  `status` int(11) NOT NULL,
-  `created` DATETIME NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`phone` varchar(50) NOT NULL,
+	`number` varchar(50) NOT NULL,
+	`type` varchar(50) NOT NULL,
+	`status` int(11) NOT NULL,
+	`created` DATETIME NULL DEFAULT NULL,
+	PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `ps_phone_whatsapp_chats` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `phone` varchar(50) NOT NULL,
-  `number` varchar(50) NULL DEFAULT NULL,
-  `created` DATETIME NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`phone` varchar(50) NOT NULL,
+	`number` varchar(50) NULL DEFAULT NULL,
+	`created` DATETIME NULL DEFAULT NULL,
+	PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `ps_phone_whatsapp_messages` (
@@ -117,14 +118,14 @@ CREATE TABLE `ps_phone_whatsapp_messages` (
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `ps_phone_whatsapp_groups` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `phone` varchar(50) NOT NULL,
-  `number` varchar(50) NULL DEFAULT NULL,
-  `type` varchar(50) NOT NULL,
-  `name` varchar(50) NULL DEFAULT NULL,
-  `image` varchar(255) NULL DEFAULT NULL,
-  `created` DATETIME NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`phone` varchar(50) NOT NULL,
+	`number` varchar(50) NULL DEFAULT NULL,
+	`type` varchar(50) NOT NULL,
+	`name` varchar(50) NULL DEFAULT NULL,
+	`image` varchar(255) NULL DEFAULT NULL,
+	`created` DATETIME NULL DEFAULT NULL,
+	PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `ps_phone_whatsapp_groups_users` (
@@ -156,4 +157,39 @@ CREATE TABLE `ps_phone_settings` (
 	PRIMARY KEY (`id`) USING BTREE
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE TABLE `ps_phone_twiiter_account` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`name` VARCHAR(50) NOT NULL,
+	`username` VARCHAR(50) NOT NULL,
+	`password` VARCHAR(50) NOT NULL,
+	`avatar` TEXT NULL DEFAULT NULL,
+	`description` TEXT NULL DEFAULT NULL,
+	PRIMARY KEY (`id`) USING BTREE
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE TABLE `ps_phone_twiiter_tweets` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`username` VARCHAR(50) NOT NULL,
+	`message` TEXT NOT NULL,
+	`hashtags` TEXT DEFAULT NULL,
+	`mentions` TEXT DEFAULT NULL,
+  	`image` varchar(255) NULL DEFAULT NULL,
+	`created` DATETIME NOT NULL,
+	PRIMARY KEY (`id`) USING BTREE
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `ps_phone_twiiter_hashtags` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`name` VARCHAR(50) NOT NULL,
+	`created` DATETIME NOT NULL,
+	PRIMARY KEY (`id`) USING BTREE
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `ps_phone_twiiter_mentions` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`id_tweet` INT(11) NOT NULL,
+	`username` VARCHAR(50) NOT NULL,
+	`mentioned` VARCHAR(50) NOT NULL,
+	`created` DATETIME NOT NULL,
+	PRIMARY KEY (`id`) USING BTREE
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;

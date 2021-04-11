@@ -6,7 +6,7 @@ $(document).on('click', '.bank-app-account', function(e) {
     copyText.setSelectionRange(0, 99999);
     document.execCommand("copy");
 
-    PS.Phone.Notifications.Add("fas fa-university", "HYPEBank", "Número da conta bancária copiado!", "#badc58", 1750);
+    PS.Phone.Notifications.Add("fas fa-university", "PSBank", "Número da conta bancária copiado!", "#badc58", 1750);
 });
 
 var CurrentTab = "accounts";
@@ -144,17 +144,17 @@ $(document).on('click', '#accept-transfer', function(e) {
                     data.NewAmount = (data.NewAmount).toFixed();
                     $(".bank-app-account-balance").html("&#36; " + data.NewAmount);
                     $(".bank-app-account-balance").data('balance', data.NewAmount);
-                    PS.Phone.Notifications.Add("fas fa-university", "HYPEBank", "&#36; " + amount + ",- transferido!", "#badc58", 1500);
+                    PS.Phone.Notifications.Add("fas fa-university", "PSBank", "&#36; " + amount + ",- transferido!", "#badc58", 1500);
                 } else {
-                    PS.Phone.Notifications.Add("fas fa-university", "HYPEBank", "Você não tem saldo suficiente!", "#badc58", 1500);
+                    PS.Phone.Notifications.Add("fas fa-university", "PSBank", "Você não tem saldo suficiente!", "#badc58", 1500);
                 }
             })
             PS.Phone.Animations.TopSlideUp(".bank-app-transfer", 400, -100);
         } else {
-            PS.Phone.Notifications.Add("fas fa-university", "HYPEBank", "Você não tem saldo suficiente!", "#badc58", 1500);
+            PS.Phone.Notifications.Add("fas fa-university", "PSBank", "Você não tem saldo suficiente!", "#badc58", 1500);
         }
     } else {
-        PS.Phone.Notifications.Add("fas fa-university", "HYPEBank", "Preencha todos os campos! ", "#badc58", 1750);
+        PS.Phone.Notifications.Add("fas fa-university", "PSBank", "Preencha todos os campos! ", "#badc58", 1750);
     }
 });
 
@@ -188,17 +188,17 @@ $(document).on('click', '.pay-invoice', function(event) {
                         $("#" + InvoiceId).remove();
                     }, 100);
                 });
-                PS.Phone.Notifications.Add("fas fa-university", "HYPEBank", "&#36;" + InvoiceData.amount + " paid!", "#badc58", 1500);
+                PS.Phone.Notifications.Add("fas fa-university", "PSBank", "&#36;" + InvoiceData.amount + " paid!", "#badc58", 1500);
                 var amountData = $(".bank-app-account-balance").data('balance');
                 var NewAmount = (amountData - InvoiceData.amount).toFixed();
                 $("#bank-transfer-amount").val(NewAmount);
                 $(".bank-app-account-balance").data('balance', NewAmount);
             } else {
-                PS.Phone.Notifications.Add("fas fa-university", "HYPEBank", "You do not have enough balance!", "#badc58", 1500);
+                PS.Phone.Notifications.Add("fas fa-university", "PSBank", "You do not have enough balance!", "#badc58", 1500);
             }
         });
     } else {
-        PS.Phone.Notifications.Add("fas fa-university", "QBank", "You do not have enough balance!", "#badc58", 1500);
+        PS.Phone.Notifications.Add("fas fa-university", "PSBank", "You do not have enough balance!", "#badc58", 1500);
     }
 });
 
@@ -219,7 +219,7 @@ $(document).on('click', '.decline-invoice', function(event) {
             $("#" + InvoiceId).remove();
         }, 100);
     });
-    PS.Phone.Notifications.Add("fas fa-university", "HYPEBank", "&#36;" + InvoiceData.amount + " paid!", "#badc58", 1500);
+    PS.Phone.Notifications.Add("fas fa-university", "PSBank", "&#36;" + InvoiceData.amount + " paid!", "#badc58", 1500);
 });
 
 PS.Phone.Functions.LoadBankInvoices = function(invoices) {
@@ -278,7 +278,7 @@ $(document).on('click', '.bank-app-my-contact', function(e) {
     if (PressedContactData.iban !== "" && PressedContactData.iban !== undefined && PressedContactData.iban !== null) {
         $("#bank-transfer-iban").val(PressedContactData.iban);
     } else {
-        PS.Phone.Notifications.Add("fas fa-university", "HYPEBank", "Não há IBAN vinculado a este contato!", "#badc58", 2500);
+        PS.Phone.Notifications.Add("fas fa-university", "PSBank", "Não há IBAN vinculado a este contato!", "#badc58", 2500);
     }
     PS.Phone.Animations.TopSlideUp(".bank-app-my-contacts", 400, -100);
 });

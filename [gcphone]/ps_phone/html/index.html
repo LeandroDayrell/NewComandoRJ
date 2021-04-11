@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
     <title>ps_phone</title>
 
     <!-- CSS File's -->
@@ -14,12 +15,17 @@
     <link rel="stylesheet" href="./css/settings.css">
     <link rel="stylesheet" href="./css/phone.css">
     <link rel="stylesheet" href="./css/spotify.css">
+    <link rel="stylesheet" href="./css/twitter.css">
     <link rel="stylesheet" href="./css/bank.css">
     <link rel="stylesheet" href="./css/whatsapp.css">
+    <link rel="stylesheet" href="./css/mail.css">
     <link rel="stylesheet" href="./css/calculator.css">
     <link rel="stylesheet" href="./css/instagram-filters.min.css">
     <link rel="stylesheet" href="./css/instagram.css">
     <link rel="stylesheet" href="./css/messages.css">
+    <link rel="stylesheet" href="./css/stories.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
     <!-- CDN's -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -37,6 +43,7 @@
     <!-- Bootstrap -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/locale/pt-br.js'></script>
+    <link rel="stylesheet" href="https://unpkg.com/placeholder-loading/dist/css/placeholder-loading.min.css">
 </head>
 
 <body style="background-color: transparent !important">
@@ -66,17 +73,20 @@
                         <div class="phone-applications">
                             <div class="phone-footer-applications">
                                 <div class="phone-application icon-telefone" data-toggle="tooltip" data-app="phone" data-placement="top" title="Telefone" data-appslot="1"></div>
-                                <div class="phone-application icon-whatsapp" data-toggle="tooltip" data-app="whatsapp" data-placement="top" title="WhatsApp" data-appslot="2"></div>
+                                <div class="phone-application icon-messages" data-toggle="tooltip" data-app="messages" data-placement="top" title="Mensagens" data-appslot="2"></div>
                                 <div class="phone-application icon-configuracoes" data-toggle="tooltip" data-app="settings" data-placement="top" title="Configurações" data-appslot="3">
                                 </div>
                                 <div class="phone-application icon-camera" data-toggle="tooltip" data-app="camera" data-placement="top" title="Câmera" data-appslot="4"></div>
                             </div>
                             <div class="phone-home-applications">
-                                <div class="phone-application icon-instagram" data-app="instagram" data-toggle="tooltip" data-placement="top" title="Instagram" data-appslot="4"></div>
-                                <div class="phone-application icon-calculadora" data-app="calculator" data-toggle="tooltip" data-placement="bottom" title="Calculadora" data-appslot="5">
+                                <div class="phone-application icon-whatsapp" data-toggle="tooltip" data-app="whatsapp" data-placement="top" title="WhatsApp" data-appslot="5"></div>
+                                <div class="phone-application icon-twitter" data-app="twitter" data-toggle="tooltip" data-placement="bottom" title="Twitter" data-appslot="6"></div>
+                                <div class="phone-application icon-instagram" data-app="instagram" data-toggle="tooltip" data-placement="top" title="Instagram" data-appslot="7"></div>
+                                <!-- <div class="phone-application icon-noticias" data-app="advert" data-toggle="tooltip" data-placement="bottom" title="Anúncios" data-appslot="8"></div> -->
+                                <div class="phone-application icon-calculadora" data-app="calculator" data-toggle="tooltip" data-placement="bottom" title="Calculadora" data-appslot="8">
                                 </div>
-                                <div class="phone-application icon-banco" data-app="bank" data-toggle="tooltip" data-placement="bottom" title="Banco" data-appslot="6"></div>
-                                <div class="phone-application icon-spotify" data-app="spotify" data-toggle="tooltip" data-placement="left" title="Spotify" data-appslot="7"></div>
+                                <div class="phone-application icon-banco" data-app="bank" data-toggle="tooltip" data-placement="bottom" title="Banco" data-appslot="9"></div>
+                                <div class="phone-application icon-spotify" data-app="spotify" data-toggle="tooltip" data-placement="left" title="Spotify" data-appslot="10"></div>
                             </div>
                         </div>
                         <div class="pin-display" style="display: none;">
@@ -241,7 +251,7 @@
                 <div class="phone-call-app">
                     <div class="phone-call-incoming">
                         <div class="phone-call-incoming-title">Chamada recebida</div>
-                        <div class="phone-call-incoming-caller"></div>
+                        <div class="phone-call-incoming-caller">Test Yeey</div>
                         <div class="phone-call-incoming-picture"></div>
 
                         <i class="fas fa-phone" id="incoming-answer"></i>
@@ -250,7 +260,7 @@
 
                     <div class="phone-call-outgoing">
                         <div class="phone-call-outgoing-title">Ligando...</div>
-                        <div class="phone-call-outgoing-caller"></div>
+                        <div class="phone-call-outgoing-caller">Test Yeey</div>
                         <div class="phone-call-outgoing-picture"></div>
 
                         <i class="fas fa-phone" id="outgoing-cancel"></i>
@@ -258,9 +268,9 @@
 
                     <div class="phone-call-ongoing">
                         <div class="phone-call-ongoing-title">Em Ligação</div>
-                        <div class="phone-call-ongoing-caller"></div>
+                        <div class="phone-call-ongoing-caller">Test Yeey</div>
                         <div class="phone-call-ongoing-picture"></div>
-                        <div class="phone-call-ongoing-time"></div>
+                        <div class="phone-call-ongoing-time">05:05</div>
 
                         <i class="fas fa-phone" id="ongoing-cancel"></i>
                     </div>
@@ -279,7 +289,20 @@
                             <i id="phone-plus-icon" class="fas fa-plus"></i>
                         </div>
 
-                        <div class="phone-contact-list"></div>
+                        <div class="phone-contact-list">
+                            <!-- <div class="phone-contact" data-contactid="1">
+                                    <div class="phone-contact-firstletter">P</div>
+                                    <div class="phone-contact-name">Pieter Post</div>
+                                    <div class="phone-contact-actions"><i class="fas fa-sort-down"></i></div>
+
+                                    <div class="phone-contact-action-buttons">
+                                        <i class="fas fa-phone-volume"></i>
+                                        <i class="fas fa-comment"></i>
+                                        <i class="fab fa-whatsapp" style="font-size: 2.5vh;"></i>
+                                        <i class="fas fa-user-edit"></i>
+                                    </div>
+                                </div>-->
+                        </div>
                     </div>
 
                     <div class="phone-recent">
@@ -287,7 +310,9 @@
                             <p>Chamadas Recentes</p>
                         </div>
 
-                        <div class="phone-recent-calls"></div>
+                        <div class="phone-recent-calls">
+                            <!-- <div class="phone-recent-call"> <div class="phone-recent-call-image">P</div> <div class="phone-recent-call-name">Pieter Post</div> <div class="phone-recent-call-type"><i class="fas fa-phone-slash"></i></div> <div class="phone-recent-call-time">12:05</div> </div> -->
+                        </div>
                     </div>
 
                     <div class="phone-keypad noselect">
@@ -310,6 +335,7 @@
                             <div class="phone-keypad-key" data-keypadvalue="0">0</div>
                             <div class="phone-keypad-key" data-keypadvalue="#">#</div>
                         </div>
+                        <!-- <div class="phone-keypad-key-call-video"><i class="fas fa-video"></i></div> -->
                         <div class="phone-keypad-key-call"><i class="fas fa-phone-alt"></i></div>
                         <div class="phone-keypad-key-clear"><i class="fas fa-backspace"></i></div>
                     </div>
@@ -347,7 +373,7 @@
                         <input type="text" class="phone-edit-contact-name" placeholder="Nome de contato" required spellcheck="false">
 
                         <i id="phone-edit-contact-number-icon" class="fas fa-phone-alt"></i>
-                        <input type="number" class="phone-edit-contact-number" placeholder="Número de telefone" required spellcheck="false">
+                        <input type="text" class="phone-edit-contact-number" placeholder="Número de telefone" required spellcheck="false">
 
                         <i id="phone-edit-contact-iban-icon" class="fas fa-money-check"></i>
                         <input type="text" class="phone-edit-contact-iban" placeholder="Número do banco (não obrigatório)" required spellcheck="false">
@@ -380,6 +406,88 @@
 
                 <div class="spotify-app">
                     <iframe name="I1" id="if1" width="100%" height="520" style="visibility:visible" src="http://mysound.ge/index.php"></iframe>
+                </div>
+
+                <div class="advert-app">
+                    <div class="advert-home">
+                        <div class="advert-header">
+                            <span id="advert-header-text">Ads</span>
+                            <span id="advert-header-name"></span>
+                        </div>
+
+                        <div class="advert-list">
+                            <!-- <div class="advert">
+                                    <span class="advert-sender">@JayNandes | 0612345678</span>
+                                    <p>Dit is een test advert Dit is een test advert Dit is een test advert Dit is een test advert Dit is een test advert</p>
+                                </div> -->
+                        </div>
+
+                        <div class="test-slet">
+                            <i class="fas fa-plus test-icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="new-advert">
+                        <div class="new-advert-header">
+                            <span id="new-advert-header-text">New advertisiment</span>
+                        </div>
+
+                        <textarea class="new-advert-textarea" spellcheck="false" required></textarea>
+
+
+                        <div class="new-advert-footer">
+                            <div class="new-advert-footer-item" id="new-advert-submit">
+                                <i class="fas fa-check-circle new-advert-icon"></i>
+                            </div>
+                            <div class="new-advert-footer-item" id="new-advert-back">
+                                <i class="fas fa-arrow-circle-left new-advert-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mail-app">
+                    <div class="mail-home">
+                        <div class="mail-header">
+                            <span id="mail-header-text">Inbox</span>
+                            <span id="mail-header-mail">fivemscripting@gmail.com</span>
+                            <span id="mail-header-lastsync">Last synchronization 18:31</span>
+                        </div>
+
+                        <div class="mail-list">
+                            <!-- <div class="mail">
+                                    <span class="mail-sender">Instagram</span>
+                                    <div class="mail-text"><p>Dit is een test mail en wordt dus niet volledig weergeven want dat is het gene wat ik aan het testen ben</p></div>
+                                    <div class="mail-time">18:31</div>
+                                </div> -->
+                        </div>
+                    </div>
+
+                    <div class="opened-mail">
+                        <div class="opened-mail-header">
+                            <div class="mail-back"><i class="fas fa-chevron-left" id="mail-back"></i></div>
+                            <div class="mail-subject">
+                                <p>Topic</p>
+                            </div>
+                            <div class="mail-date">
+                                <p>19 February 2019 &nbsp; 08:19</p>
+                            </div>
+                            <div class="mail-spacing"></div>
+                            <div class="mail-content">
+                                <p>
+                                    This is a test mail and is therefore not fully displayed because that is what I am testing.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="opened-mail-footer">
+                            <div class="opened-mail-footer-item">
+                                <i class="fas fa-check-circle" id="accept-mail"></i>
+                            </div>
+                            <div class="opened-mail-footer-item">
+                                <i class="fas fa-trash-alt" id="remove-mail"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="calculator-app">
@@ -425,6 +533,130 @@
                     </div>
                 </div>
 
+                <!--Twitter-->
+                <div class="twitter-app">
+                    <div class="not-logged">
+                        <div class="login-box">
+                            <div class="header">
+                                <img class="logo" src="img/apps/twitter.png" alt="Twitter">
+                            </div>
+                            <!-- Header end -->
+                            <div class="form-wrap">
+                                <div class="error" style="display: none;">
+                                    <p></p>
+                                </div>
+                                <form class="form addaccounttwitter">
+                                    <div class="input-box">
+                                        <input type="text" name="name" id="name" placeholder="Nome Completo" maxlength="30" autocapitalize="off" autocorrect="off" value="" required>
+                                    </div>
+
+                                    <div class="input-box">
+                                        <input type="text" name="username" id="username" placeholder="Nome de Usuário" maxlength="30" autocapitalize="off" autocorrect="off" value="" required>
+                                    </div>
+
+                                    <div class="input-box">
+                                        <input type="password" name="password" id="password" placeholder="Senha" maxlength="30" autocapitalize="off" autocorrect="off" required>
+                                    </div>
+
+                                    <span class="button-box">
+                                        <button class="btn" type="submit" name="submit">Cadastra-se</button>
+                                    </span>
+                                </form>
+                            </div>
+                            <!-- Form-wrap end -->
+                        </div>
+                        <!-- Login-box end -->
+                    </div>
+
+                    <div class="logged" style="display: none;">
+
+                        <div class="twitter-home-tab">
+                            <!-- <div class="twitter-tweet" data-twthandler="@'+TwitterHandle.replace(" ", "_")+'">
+                                <div class="tweet-reply"><i class="fas fa-reply"></i></div>
+                                <div class="tweet-tweeter">'+Tweet.firstName+' '+Tweet.lastName+' &nbsp;<span>@'+TwitterHandle.replace(" ", "_")+' &middot; '+TimeAgo+'</span></div>
+                                <div class="tweet-message">@JAY</div>
+                                <div class="twt-img" style="top: 1vh;"><img src="'+PictureUrl+'" class="tweeter-image"></div>
+                            </div> -->
+                            <div class="twitter-no-tweets">
+                                <p>Sem tweets!</p>
+                            </div>
+                        </div>
+
+                        <div class="twitter-mentions-tab">
+                            <!-- <div class="twitter-mentioned-tweet"> 
+                                <div class="tweet-tweeter">Test &nbsp;<span>@Test &middot; 2 m</span></div>
+                                <div class="tweet-message">Dit is test tweet yeey. :) ggggggggggggggggggggggggggg gggggggggggggggggg</div>
+                                <div class="twt-img" style="top: 1vh;"><img src="'+PictureUrl+'" class="tweeter-image"></div>
+                            </div> -->
+                            <div class="twitter-no-tweets">
+                                <p>Sem menção aos tweets! </p>
+                            </div>
+                        </div>
+
+                        <div class="twitter-self-tab">
+                            <!-- <div class="twitter-tweet" data-twthandler="@'+TwitterHandle.replace(" ", "_")+'">
+                                <div class="tweet-reply"><i class="fas fa-reply"></i></div>
+                                <div class="tweet-tweeter">'+Tweet.firstName+' '+Tweet.lastName+' &nbsp;<span>@'+TwitterHandle.replace(" ", "_")+' &middot; '+TimeAgo+'</span></div>
+                                <div class="tweet-message">@JAY</div>
+                                <div class="twt-img" style="top: 1vh;"><img src="'+PictureUrl+'" class="tweeter-image"></div>
+                            </div> -->
+                            <div class="twitter-no-tweets">
+                                <p>Sem tweets!</p>
+                            </div>
+                        </div>
+
+                        <div class="twitter-hashtags-tab">
+                            <div class="twitter-hashtag-tweets">
+                                <div class="twitter-tweet">
+                                    <!-- <div class="tweet-tweeter">Test &nbsp;<span>@Test &middot; 2 m</span></div>
+                                    <div class="tweet-message">Dit is test tweet yeey. :) ggggggggggggggggggggggggggg gggggggggggggggggg</div>
+                                    <div class="twt-img" style="top: 1vh;"><img src="'+PictureUrl+'" class="tweeter-image"></div> -->
+                                </div>
+                            </div>
+                            <div class="twitter-hashtags">
+                                <div class="twitter-no-tweets">
+                                    <p>Sem hastags!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="twitter-new-tweet">
+                            <i class="fas fa-feather-alt"></i>
+                        </div>
+
+                        <div class="twitter-new-tweet-tab">
+                            <div class="twitter-new-tweet-header">
+                                <p>Enviar Tweet</p>
+                            </div>
+
+                            <textarea id="tweet-new-message" style="text-align:left; padding-top:10px; padding-left:15px;" placeholder="Mensagem" cols="30" rows="10" spellcheck="false" required></textarea>
+                            <textarea id="tweet-new-mentions" style="text-align:left; padding-left:15px;" placeholder="Mencionar: @ (separe por virgula)" cols="30" rows="10" spellcheck="false"></textarea>
+                            <textarea id="tweet-new-hashtags" style="text-align:left; padding-left:15px;" placeholder="Hashtags: # (separe por virgula)" cols="30" rows="10" spellcheck="false"></textarea>
+                            <textarea id="tweet-new-url" style="text-align:left; padding-left:15px;" placeholder="Imagem URL" cols="30" rows="10" spellcheck="false"></textarea>
+
+                            <div class="twitter-new-tweet-buttons">
+                                <div class="twitter-new-tweet-button" id="send-tweet">
+                                    <p>Enviar</p>
+                                </div>
+                                <div class="twitter-new-tweet-button send-photo" id="send-photo">
+                                    <p>Tirar fotos</p>
+                                </div>
+                                <div class="twitter-new-tweet-button" id="cancel-tweet">
+                                    <p>Cancelar</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="twitter-header">
+                            <div id="twitter-home" data-twittertab="twitter-home" class="twitter-header-tab selected-twitter-header-tab"><i class="fas fa-home"></i></div>
+                            <div id="twitter-mentions" data-twittertab="twitter-mentions" class="twitter-header-tab"><i class="fas fa-at"></i></div>
+                            <div id="twitter-hashtags" data-twittertab="twitter-hashtags" class="twitter-header-tab"><i class="fas fa-hashtag"></i></div>
+                            <div id="twitter-self" data-twittertab="twitter-self" class="twitter-header-tab"><i class="fas fa-user"></i></div>
+
+                        </div>
+                    </div>
+                </div>
+
                 <!--Banco-->
                 <div class="bank-app">
                     <div class="bank-app-loading">
@@ -444,6 +676,7 @@
                         <div class="bank-app-accounts">
                             <div class="bank-app-account">
                                 <div class="bank-app-account-title">Número da Conta</div>
+                                <!-- <div class="bank-app-account-number" id="iban-account">NL01QBBA012341234123</div> -->
                                 <input type="text" class="bank-app-account-number" id="iban-account" readonly spellcheck="false">
                                 <div class="bank-app-account-balance">&#36; 5000,00</div>
                             </div>
@@ -471,6 +704,7 @@
 
                         <div class="bank-app-invoices">
                             <div class="bank-app-invoices-list">
+                                <!-- <div class="bank-app-invoice"> <div class="bank-app-invoice-title">Pedido de Pagamento <span style="font-size: 1vh; color: gray;">(Remetente: 0612345678)</span></div> <div class="bank-app-invoice-amount">&#36; 5000,</div> <div class="bank-app-invoice-buttons"> <i class="fas fa-check-circle pay-invoice"></i></div> </div> -->
                             </div>
                         </div>
                     </div>
@@ -480,7 +714,9 @@
                         <div class="bank-app-my-contacts-list-header">
                             <input type="text" id="bank-app-my-contact-search" placeholder="Nome do contato" spellcheck="false">
                         </div>
-                        <div class="bank-app-my-contacts-list"></div>
+                        <div class="bank-app-my-contacts-list">
+                            <!-- <div class="bank-app-my-contact"> <div class="bank-app-my-contact-firstletter">P</div> <div class="bank-app-my-contact-name">Pieter Post</div> </div> -->
+                        </div>
                         <div class="bank-app-my-contacts-list-back">Voltar</div>
                     </div>
                 </div>
@@ -551,11 +787,218 @@
                                 <li role="presentation" class="">
                                     <a href="#status" aria-controls="status" role="tab" data-toggle="tab" aria-expanded="false" class="getstatus">Status</a>
                                 </li>
+                                <!-- <li role="presentation" class="">
+                                    <a href="#calls" aria-controls="calls" role="tab" data-toggle="tab" aria-expanded="false" class="getcalls">Ligações</a>
+                                </li> -->
 
                             </ul>
 
                             <!-- Tab panes -->
                             <div class="tab-content">
+
+                                <div class="preload-messages-wpp">
+                                    <div class="ph-item" style="margin-bottom: 0;">
+                                        <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                            <div class="ph-avatar"></div>
+                                        </div>
+                                        <div>
+                                            <div class="ph-row">
+                                                <div class="ph-col-12"></div>
+                                                <div class="ph-col-10 empty"></div>
+                                                <div class="ph-col-2"></div>
+                                                <div class="ph-col-8"></div>
+                                                <div class="ph-col-4"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ph-item" style="margin-bottom: 0;">
+                                        <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                            <div class="ph-avatar"></div>
+                                        </div>
+                                        <div>
+                                            <div class="ph-row">
+                                                <div class="ph-col-12"></div>
+                                                <div class="ph-col-10 empty"></div>
+                                                <div class="ph-col-2"></div>
+                                                <div class="ph-col-8"></div>
+                                                <div class="ph-col-4"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ph-item" style="margin-bottom: 0;">
+                                        <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                            <div class="ph-avatar"></div>
+                                        </div>
+                                        <div>
+                                            <div class="ph-row">
+                                                <div class="ph-col-12"></div>
+                                                <div class="ph-col-10 empty"></div>
+                                                <div class="ph-col-2"></div>
+                                                <div class="ph-col-8"></div>
+                                                <div class="ph-col-4"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ph-item" style="margin-bottom: 0;">
+                                        <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                            <div class="ph-avatar"></div>
+                                        </div>
+                                        <div>
+                                            <div class="ph-row">
+                                                <div class="ph-col-12"></div>
+                                                <div class="ph-col-10 empty"></div>
+                                                <div class="ph-col-2"></div>
+                                                <div class="ph-col-8"></div>
+                                                <div class="ph-col-4"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ph-item" style="margin-bottom: 0;">
+                                        <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                            <div class="ph-avatar"></div>
+                                        </div>
+                                        <div>
+                                            <div class="ph-row">
+                                                <div class="ph-col-12"></div>
+                                                <div class="ph-col-10 empty"></div>
+                                                <div class="ph-col-2"></div>
+                                                <div class="ph-col-8"></div>
+                                                <div class="ph-col-4"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ph-item" style="margin-bottom: 0;">
+                                        <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                            <div class="ph-avatar"></div>
+                                        </div>
+                                        <div>
+                                            <div class="ph-row">
+                                                <div class="ph-col-12"></div>
+                                                <div class="ph-col-10 empty"></div>
+                                                <div class="ph-col-2"></div>
+                                                <div class="ph-col-8"></div>
+                                                <div class="ph-col-4"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ph-item" style="margin-bottom: 0;">
+                                        <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                            <div class="ph-avatar"></div>
+                                        </div>
+                                        <div>
+                                            <div class="ph-row">
+                                                <div class="ph-col-12"></div>
+                                                <div class="ph-col-10 empty"></div>
+                                                <div class="ph-col-2"></div>
+                                                <div class="ph-col-8"></div>
+                                                <div class="ph-col-4"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="preload-groups-wpp" style="display: none;">
+                                    <div class="ph-item" style="margin-bottom: 0;">
+                                        <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                            <div class="ph-avatar"></div>
+                                        </div>
+                                        <div>
+                                            <div class="ph-row">
+                                                <div class="ph-col-12"></div>
+                                                <div class="ph-col-10 empty"></div>
+                                                <div class="ph-col-2"></div>
+                                                <div class="ph-col-8"></div>
+                                                <div class="ph-col-4"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ph-item" style="margin-bottom: 0;">
+                                        <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                            <div class="ph-avatar"></div>
+                                        </div>
+                                        <div>
+                                            <div class="ph-row">
+                                                <div class="ph-col-12"></div>
+                                                <div class="ph-col-10 empty"></div>
+                                                <div class="ph-col-2"></div>
+                                                <div class="ph-col-8"></div>
+                                                <div class="ph-col-4"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ph-item" style="margin-bottom: 0;">
+                                        <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                            <div class="ph-avatar"></div>
+                                        </div>
+                                        <div>
+                                            <div class="ph-row">
+                                                <div class="ph-col-12"></div>
+                                                <div class="ph-col-10 empty"></div>
+                                                <div class="ph-col-2"></div>
+                                                <div class="ph-col-8"></div>
+                                                <div class="ph-col-4"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ph-item" style="margin-bottom: 0;">
+                                        <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                            <div class="ph-avatar"></div>
+                                        </div>
+                                        <div>
+                                            <div class="ph-row">
+                                                <div class="ph-col-12"></div>
+                                                <div class="ph-col-10 empty"></div>
+                                                <div class="ph-col-2"></div>
+                                                <div class="ph-col-8"></div>
+                                                <div class="ph-col-4"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ph-item" style="margin-bottom: 0;">
+                                        <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                            <div class="ph-avatar"></div>
+                                        </div>
+                                        <div>
+                                            <div class="ph-row">
+                                                <div class="ph-col-12"></div>
+                                                <div class="ph-col-10 empty"></div>
+                                                <div class="ph-col-2"></div>
+                                                <div class="ph-col-8"></div>
+                                                <div class="ph-col-4"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ph-item" style="margin-bottom: 0;">
+                                        <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                            <div class="ph-avatar"></div>
+                                        </div>
+                                        <div>
+                                            <div class="ph-row">
+                                                <div class="ph-col-12"></div>
+                                                <div class="ph-col-10 empty"></div>
+                                                <div class="ph-col-2"></div>
+                                                <div class="ph-col-8"></div>
+                                                <div class="ph-col-4"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ph-item" style="margin-bottom: 0;">
+                                        <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                            <div class="ph-avatar"></div>
+                                        </div>
+                                        <div>
+                                            <div class="ph-row">
+                                                <div class="ph-col-12"></div>
+                                                <div class="ph-col-10 empty"></div>
+                                                <div class="ph-col-2"></div>
+                                                <div class="ph-col-8"></div>
+                                                <div class="ph-col-4"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
                                 <div role="tabpanel" class="tab-pane active" id="messages"></div>
                                 <div role="tabpanel" class="tab-pane" id="groups"></div>
                                 <div role="tabpanel" class="tab-pane" id="status">
@@ -572,11 +1015,163 @@
                                         </div>
                                     </div>
                                     <p>Status Recentes</p>
-                                    <div class="whatsapp-stories"></div>
+
+                                    <div class="preload-status-wpp">
+                                        <div class="ph-item" style="margin-bottom: 0;">
+                                            <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                                <div class="ph-avatar"></div>
+                                            </div>
+                                            <div>
+                                                <div class="ph-row">
+                                                    <div class="ph-col-12"></div>
+                                                    <div class="ph-col-10 empty"></div>
+                                                    <div class="ph-col-2"></div>
+                                                    <div class="ph-col-8"></div>
+                                                    <div class="ph-col-4"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ph-item" style="margin-bottom: 0;">
+                                            <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                                <div class="ph-avatar"></div>
+                                            </div>
+                                            <div>
+                                                <div class="ph-row">
+                                                    <div class="ph-col-12"></div>
+                                                    <div class="ph-col-10 empty"></div>
+                                                    <div class="ph-col-2"></div>
+                                                    <div class="ph-col-8"></div>
+                                                    <div class="ph-col-4"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ph-item" style="margin-bottom: 0;">
+                                            <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                                <div class="ph-avatar"></div>
+                                            </div>
+                                            <div>
+                                                <div class="ph-row">
+                                                    <div class="ph-col-12"></div>
+                                                    <div class="ph-col-10 empty"></div>
+                                                    <div class="ph-col-2"></div>
+                                                    <div class="ph-col-8"></div>
+                                                    <div class="ph-col-4"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ph-item" style="margin-bottom: 0;">
+                                            <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                                <div class="ph-avatar"></div>
+                                            </div>
+                                            <div>
+                                                <div class="ph-row">
+                                                    <div class="ph-col-12"></div>
+                                                    <div class="ph-col-10 empty"></div>
+                                                    <div class="ph-col-2"></div>
+                                                    <div class="ph-col-8"></div>
+                                                    <div class="ph-col-4"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ph-item" style="margin-bottom: 0;">
+                                            <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                                <div class="ph-avatar"></div>
+                                            </div>
+                                            <div>
+                                                <div class="ph-row">
+                                                    <div class="ph-col-12"></div>
+                                                    <div class="ph-col-10 empty"></div>
+                                                    <div class="ph-col-2"></div>
+                                                    <div class="ph-col-8"></div>
+                                                    <div class="ph-col-4"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ph-item" style="margin-bottom: 0;">
+                                            <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                                <div class="ph-avatar"></div>
+                                            </div>
+                                            <div>
+                                                <div class="ph-row">
+                                                    <div class="ph-col-12"></div>
+                                                    <div class="ph-col-10 empty"></div>
+                                                    <div class="ph-col-2"></div>
+                                                    <div class="ph-col-8"></div>
+                                                    <div class="ph-col-4"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ph-item" style="margin-bottom: 0;">
+                                            <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                                <div class="ph-avatar"></div>
+                                            </div>
+                                            <div>
+                                                <div class="ph-row">
+                                                    <div class="ph-col-12"></div>
+                                                    <div class="ph-col-10 empty"></div>
+                                                    <div class="ph-col-2"></div>
+                                                    <div class="ph-col-8"></div>
+                                                    <div class="ph-col-4"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="whatsapp-stories">
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="calls">
+                                    <div class="whatsapp-chat">
+                                        <div class="whatsapp-chat-picture"></div>
+                                        <div class="whatsapp-chat-name">
+                                            <p>Testt</p>
+                                        </div>
+                                        <div class="whatsapp-chat-lastmessage">
+                                            <p>Ligação Recebida</p>
+                                        </div>
+                                        <div class="whatsapp-chat-lastmessagetime">
+
+                                            <p>07:53</p>
+                                            <p><i class="fas fa-phone text-danger" style="font-size: 1.8vh;"></i></p>
+                                        </div>
+                                    </div>
+                                    <div class="whatsapp-chat">
+                                        <div class="whatsapp-chat-picture"></div>
+                                        <div class="whatsapp-chat-name">
+                                            <p>Testt</p>
+                                        </div>
+                                        <div class="whatsapp-chat-lastmessage">
+                                            <p>Ligação Efetuada</p>
+                                        </div>
+                                        <div class="whatsapp-chat-lastmessagetime">
+
+                                            <p>07:53</p>
+                                            <p><i class="fas fa-phone-alt text-success" style="font-size: 1.8vh;"></i>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="whatsapp-chat">
+                                        <div class="whatsapp-chat-picture"></div>
+                                        <div class="whatsapp-chat-name">
+                                            <p>Testt</p>
+                                        </div>
+                                        <div class="whatsapp-chat-lastmessage">
+                                            <p>Ligação Perdida</p>
+                                        </div>
+                                        <div class="whatsapp-chat-lastmessagetime">
+
+                                            <p>07:53</p>
+                                            <p><i class="fas fa-phone-slash text-danger" style="font-size: 1.8vh;"></i>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
                         </div>
+
+
+
                         <div class="whatsapp-openedchat">
                             <div class="whatsapp-header-openedchat">
                                 <div class="whatsapp-header-top-openedchat"></div>
@@ -597,9 +1192,11 @@
                                     <div class="whatsapp-extra-button" id="send-location"><i class="fas fa-map-marker-alt"></i></div>
                                     <div class="whatsapp-extra-button" id="send-image"><i class="fas fa-camera"></i>
                                     </div>
+                                    <!-- <div class="whatsapp-extra-button" id="send-location"><i class="fas fa-money-bill"></i></div> -->
                                 </div>
                                 <input type="text" id="whatsapp-openedchat-message" placeholder="Mensagem" spellcheck="false">
                                 <i class="fas fa-paper-plane" id="whatsapp-openedchat-send"></i>
+                                <i class="fas fa-microphone" id="whatsapp-openedchat-sendaudio"></i>
                                 <i class="fas fa-ellipsis-v" id="whatsapp-openedchat-message-extras"></i>
                             </div>
                         </div>
@@ -623,9 +1220,11 @@
                                 <div class="whatsapp-extra-buttons">
                                     <div class="whatsapp-extra-button" id="send-location-group"><i class="fas fa-map-marker-alt"></i></div>
                                     <div class="whatsapp-extra-button" id="send-image-group"><i class="fas fa-camera"></i></div>
+                                    <!-- <div class="whatsapp-extra-button" id="send-location"><i class="fas fa-money-bill"></i></div> -->
                                 </div>
                                 <input type="text" id="whatsapp-openedgroup-message" placeholder="Mensagem" spellcheck="false">
                                 <i class="fas fa-paper-plane" id="whatsapp-openedgroup-send"></i>
+                                <i class="fas fa-microphone" id="whatsapp-openedgroup-sendaudio"></i>
                                 <i class="fas fa-ellipsis-v" id="whatsapp-openedgroup-message-extras"></i>
                             </div>
                         </div>
@@ -701,7 +1300,8 @@
                                                     <div class="input-group">
                                                         <input class="form-control" id="number-member" name="number-member" placeholder="Adicionar Membro" minlength="7" maxlength="7">
                                                         <div class="input-group-btn">
-                                                            <button type="button" class="btn btn-sucess addmemberwpp"> <i class="fa fa-check"></i> </button>
+                                                            <button type="button" class="btn btn-sucess addmemberwpp">
+                                                                <i class="fa fa-check"></i> </button>
                                                         </div>
                                                     </div>
 
@@ -712,7 +1312,8 @@
                                         </div>
 
                                         <span class="button-box">
-                                            <button class="btn sendpicturegroupedit" type="button">Tirar foto do Grupo</button>
+                                            <button class="btn sendpicturegroupedit" type="button">Tirar foto do
+                                                Grupo</button>
                                         </span>
 
                                         <span class="button-box">
@@ -724,14 +1325,7 @@
                             <!-- Form-wrap end -->
                         </div>
 
-
-
-
                         <!-- Login-box end -->
-
-
-
-
                         <div class="whatsapp-edit-profile">
                             <div class="whatsapp-header-create-group">
                                 <div class="whatsapp-header-top-create-group"></div>
@@ -821,12 +1415,152 @@
                                 <a href="#insta-direct" aria-controls="insta-direct" role="tab" data-toggle="tab" aria-expanded="false"><i class="far fa-paper-plane"></i></a>
                             </div>
                         </div>
+                        <div class="preload-stories-insta">
+                            <div class="ph-item" style="margin-bottom: 0; padding: 0; background: none; border: none; margin: 0 5px; float: left;">
+                                <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                    <div class="ph-avatar"></div>
+                                </div>
+                            </div>
+                            <div class="ph-item" style="margin-bottom: 0; padding: 0; background: none; border: none; margin: 0 5px; float: left;">
+                                <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                    <div class="ph-avatar"></div>
+                                </div>
+                            </div>
+                            <div class="ph-item" style="margin-bottom: 0; padding: 0; background: none; border: none; margin: 0 5px; float: left;">
+                                <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                    <div class="ph-avatar"></div>
+                                </div>
+                            </div>
+                            <div class="ph-item" style="margin-bottom: 0; padding: 0; background: none; border: none; margin: 0 5px; float: left;">
+                                <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                    <div class="ph-avatar"></div>
+                                </div>
+                            </div>
+                            <div class="ph-item" style="margin-bottom: 0; padding: 0; background: none; border: none; margin: 0 5px; float: left;">
+                                <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                    <div class="ph-avatar"></div>
+                                </div>
+                            </div>
+                            <div class="ph-item" style="margin-bottom: 0; padding: 0; background: none; border: none; margin: 0 5px; float: left;">
+                                <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                    <div class="ph-avatar"></div>
+                                </div>
+                            </div>
+                            <div class="ph-item" style="margin-bottom: 0; padding: 0; background: none; border: none; margin: 0 5px;">
+                                <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                    <div class="ph-avatar"></div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="instagram-stories">
                         </div>
+
 
                         <!-- Tab panes -->
                         <div class="tab-content">
                             <!--Insta Home-->
+
+                            <div class="preload-posts-insta">
+                                <div class="ph-item" style="margin-bottom: 0;">
+                                    <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                        <div class="ph-avatar"></div>
+                                    </div>
+                                    <div>
+                                        <div class="ph-row">
+                                            <div class="ph-col-12"></div>
+                                            <div class="ph-col-10 empty"></div>
+                                            <div class="ph-col-2"></div>
+                                            <div class="ph-col-8"></div>
+                                            <div class="ph-col-4"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ph-item" style="margin-bottom: 0;">
+                                    <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                        <div class="ph-avatar"></div>
+                                    </div>
+                                    <div>
+                                        <div class="ph-row">
+                                            <div class="ph-col-12"></div>
+                                            <div class="ph-col-10 empty"></div>
+                                            <div class="ph-col-2"></div>
+                                            <div class="ph-col-8"></div>
+                                            <div class="ph-col-4"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ph-item" style="margin-bottom: 0;">
+                                    <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                        <div class="ph-avatar"></div>
+                                    </div>
+                                    <div>
+                                        <div class="ph-row">
+                                            <div class="ph-col-12"></div>
+                                            <div class="ph-col-10 empty"></div>
+                                            <div class="ph-col-2"></div>
+                                            <div class="ph-col-8"></div>
+                                            <div class="ph-col-4"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ph-item" style="margin-bottom: 0;">
+                                    <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                        <div class="ph-avatar"></div>
+                                    </div>
+                                    <div>
+                                        <div class="ph-row">
+                                            <div class="ph-col-12"></div>
+                                            <div class="ph-col-10 empty"></div>
+                                            <div class="ph-col-2"></div>
+                                            <div class="ph-col-8"></div>
+                                            <div class="ph-col-4"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ph-item" style="margin-bottom: 0;">
+                                    <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                        <div class="ph-avatar"></div>
+                                    </div>
+                                    <div>
+                                        <div class="ph-row">
+                                            <div class="ph-col-12"></div>
+                                            <div class="ph-col-10 empty"></div>
+                                            <div class="ph-col-2"></div>
+                                            <div class="ph-col-8"></div>
+                                            <div class="ph-col-4"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ph-item" style="margin-bottom: 0;">
+                                    <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                        <div class="ph-avatar"></div>
+                                    </div>
+                                    <div>
+                                        <div class="ph-row">
+                                            <div class="ph-col-12"></div>
+                                            <div class="ph-col-10 empty"></div>
+                                            <div class="ph-col-2"></div>
+                                            <div class="ph-col-8"></div>
+                                            <div class="ph-col-4"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ph-item" style="margin-bottom: 0;">
+                                    <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                        <div class="ph-avatar"></div>
+                                    </div>
+                                    <div>
+                                        <div class="ph-row">
+                                            <div class="ph-col-12"></div>
+                                            <div class="ph-col-10 empty"></div>
+                                            <div class="ph-col-2"></div>
+                                            <div class="ph-col-8"></div>
+                                            <div class="ph-col-4"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div role="tabpanel" class="tab-pane active insta-posts" id="insta-home">
                             </div>
 
@@ -848,7 +1582,7 @@
                             <div role="tabpanel" class="tab-pane" id="insta-search">
                                 <div class="search">
                                     <i class="fas fa-search"></i>
-                                    <input type="text" placeholder="Pesquisar">
+                                    <input type="text" placeholder="Pesquisar" id="search-profile">
                                 </div>
                                 <div id="grid"></div>
                             </div>
@@ -1201,7 +1935,7 @@
                                     </a>
                                     <span id="user-name"></span>
                                 </h3>
-                                <h3 class="next"><a href="javascript:void(0)" id="insta-unfollow" title="Deixar de Seguir" data-user><i class="fas fa-ban"></i></a></h3>
+                                <h3 class="next"><a href="javascript:void(0)" id="insta-unfollow" title="Deixar de Seguir"><i class="fas fa-ban"></i></a></h3>
                                 <div class="mainbox">
                                     <div class="profileTop">
                                         <div class="profileImg">
@@ -1260,7 +1994,7 @@
                             <!-- Nav tabs -->
                             <ul role="tablist">
                                 <li role="presentation" class="">
-                                    <a href="#insta-home" aria-controls="insta-home" role="tab" data-toggle="tab" aria-expanded="false"><i class="fas fa-home"></i></a>
+                                    <a href="#insta-home" aria-controls="insta-home" role="tab" data-toggle="tab" aria-expanded="false" class="getposts"><i class="fas fa-home"></i></a>
                                 </li>
                                 <li role="presentation" class="">
                                     <a href="#insta-search" aria-controls="insta-search" role="tab" data-toggle="tab" aria-expanded="false" class="searchprofiles"><i class="fas fa-search"></i></a>
@@ -1283,23 +2017,153 @@
                 <div class="messages-app">
                     <div class="messages-app-header">
                         <p>Mensagens</p>
-                        <span id="total-contacts">0 contatos</span>
                     </div>
 
                     <div class="messages">
-                        <div class="messages-header">
-                            <i id="phone-plus-icon" class="fas fa-plus"></i>
-                        </div>
-
-                        <div class="messages-list">
-                            <div class="messages-recent">
-                                <div class="messages-recent-image">P</div>
-                                <div class="messages-recent-name">Pieter Post</div>
-                                <div class="messages-recent-text">Lorem ipsum dolor adsaklfnlknf´dklfplknsdpljfndkbnfposdbfpojsdbflkpnsd´fklsd´k
+                        <div class="preload-messages-imessage">
+                            <div class="ph-item" style="margin-bottom: 0;">
+                                <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                    <div class="ph-avatar"></div>
                                 </div>
-                                <div class="messages-recent-time">12:05</div>
+                                <div>
+                                    <div class="ph-row">
+                                        <div class="ph-col-12"></div>
+                                        <div class="ph-col-10 empty"></div>
+                                        <div class="ph-col-2"></div>
+                                        <div class="ph-col-8"></div>
+                                        <div class="ph-col-4"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ph-item" style="margin-bottom: 0;">
+                                <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                    <div class="ph-avatar"></div>
+                                </div>
+                                <div>
+                                    <div class="ph-row">
+                                        <div class="ph-col-12"></div>
+                                        <div class="ph-col-10 empty"></div>
+                                        <div class="ph-col-2"></div>
+                                        <div class="ph-col-8"></div>
+                                        <div class="ph-col-4"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ph-item" style="margin-bottom: 0;">
+                                <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                    <div class="ph-avatar"></div>
+                                </div>
+                                <div>
+                                    <div class="ph-row">
+                                        <div class="ph-col-12"></div>
+                                        <div class="ph-col-10 empty"></div>
+                                        <div class="ph-col-2"></div>
+                                        <div class="ph-col-8"></div>
+                                        <div class="ph-col-4"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ph-item" style="margin-bottom: 0;">
+                                <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                    <div class="ph-avatar"></div>
+                                </div>
+                                <div>
+                                    <div class="ph-row">
+                                        <div class="ph-col-12"></div>
+                                        <div class="ph-col-10 empty"></div>
+                                        <div class="ph-col-2"></div>
+                                        <div class="ph-col-8"></div>
+                                        <div class="ph-col-4"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ph-item" style="margin-bottom: 0;">
+                                <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                    <div class="ph-avatar"></div>
+                                </div>
+                                <div>
+                                    <div class="ph-row">
+                                        <div class="ph-col-12"></div>
+                                        <div class="ph-col-10 empty"></div>
+                                        <div class="ph-col-2"></div>
+                                        <div class="ph-col-8"></div>
+                                        <div class="ph-col-4"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ph-item" style="margin-bottom: 0;">
+                                <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                    <div class="ph-avatar"></div>
+                                </div>
+                                <div>
+                                    <div class="ph-row">
+                                        <div class="ph-col-12"></div>
+                                        <div class="ph-col-10 empty"></div>
+                                        <div class="ph-col-2"></div>
+                                        <div class="ph-col-8"></div>
+                                        <div class="ph-col-4"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ph-item" style="margin-bottom: 0;">
+                                <div class="ph-col-2" style="padding: 0; margin-bottom: 0;">
+                                    <div class="ph-avatar"></div>
+                                </div>
+                                <div>
+                                    <div class="ph-row">
+                                        <div class="ph-col-12"></div>
+                                        <div class="ph-col-10 empty"></div>
+                                        <div class="ph-col-2"></div>
+                                        <div class="ph-col-8"></div>
+                                        <div class="ph-col-4"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        <div class="messages-list">
+                        </div>
+                    </div>
+
+                    <!--mensagens-->
+                    <div class="messages-openedchat">
+                        <header>
+                            <div class="volta"><i id="messages-openedchat-back" class="fas fa-angle-left"></i></div>
+                            <h1>Nome do contato</h1>
+                        </header>
+                        <div class="phone-containter">
+                            <div id="phone" class="phone"></div>
+
+                            <div class="send-container">
+                                <div class="publisher bt-1 border-light">
+                                    <input class="publisher-input" type="text" placeholder="Mensagem">
+                                    <span class="publisher-btn file-group"> <i class="fas fa-camera"></i></span>
+                                    <a class="publisher-btn send-location" href="javascript:void(0)" data-abc="true"><i
+                                            class="fas fa-street-view"></i></i></a>
+                                    <a class="publisher-btn text-info" href="javascript:void(0)" data-abc="true"><i
+                                            class="fas fa-chevron-circle-up"></i></a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- STORIES INSTA -->
+            <div class="stories-opened">
+                <div class="instagram-stories__page">
+                    <!-- <button class="instagram-stories__btn-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button> -->
+                    <!-- <button class="instagram-stories__btn-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button> -->
+                    <div class="cub">
+                        <div class="face face-up"></div>
+                        <div class="face face-right"></div>
+                        <div class="face face-down"></div>
+                        <div class="face face-left"></div>
                     </div>
                 </div>
             </div>
@@ -1349,13 +2213,17 @@
     <!-- JavaScript File's -->
     <script src="./js/config.js"></script>
     <script src="./js/app.js"></script>
+    <script src="./js/stories.js"></script>
     <script src="./js/settings.js"></script>
     <script src="./js/spotify.js"></script>
     <script src="./js/phone.js"></script>
+    <script src="./js/twitter.js"></script>
     <script src="./js/bank.js"></script>
     <script src="./js/whatsapp.js"></script>
+    <script src="./js/mail.js"></script>
     <script src="./js/calculator.js"></script>
     <script src="./js/instagram.js"></script>
+    <script src="./js/messages.js"></script>
 </body>
 
 </html>

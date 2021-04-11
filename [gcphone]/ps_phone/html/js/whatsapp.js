@@ -1,6 +1,10 @@
 var WhatsappSearchActive = false;
 var WhatsappMenuActive = false;
 var OpenedChatPicture = null;
+var audiochat, audiogroup = false;
+var audiotimechat = 0;
+var audiotimegroup = 0;
+var recorder, gumStream;
 
 $(document).ready(function() {
     $("#whatsapp-search-input").on("keyup", function() {
@@ -61,27 +65,29 @@ $(document).on('click', '.whatsapp-chat', function(e) {
         SetupChatMessages(ChatData);
     });
 
-    // $.post('http://ps_phone/ClearAlerts', JSON.stringify({
-    //     number: ChatData.contact_phone
-    // }));
-
     if (WhatsappSearchActive) {
         $("#whatsapp-search-input").fadeOut(150);
     }
 
-    $(".whatsapp-openedchat").css({ "display": "block" });
+    $(".whatsapp-openedchat").css({
+        "display": "block"
+    });
     $(".whatsapp-openedchat").animate({
         left: 0 + "vh"
     }, 200);
 
-    $('.whatsapp-openedchat-messages').animate({ scrollTop: 9999 }, 150);
+    $('.whatsapp-openedchat-messages').animate({
+        scrollTop: 9999
+    }, 150);
 
     if (OpenedChatPicture == null) {
         OpenedChatPicture = "./img/default.png";
         if (ChatData.avatar != null || ChatData.avatar != undefined || ChatData.avatar != "default.png") {
             OpenedChatPicture = ChatData.avatar
         }
-        $(".whatsapp-openedchat-picture").css({ "background-image": "url(" + OpenedChatPicture + ")" });
+        $(".whatsapp-openedchat-picture").css({
+            "background-image": "url(" + OpenedChatPicture + ")"
+        });
     }
 });
 
@@ -108,24 +114,31 @@ $(document).on('click', '.whatsapp-group', function(e) {
         $("#whatsapp-search-input").fadeOut(150);
     }
 
-    $(".whatsapp-openedgroup").css({ "display": "block" });
+    $(".whatsapp-openedgroup").css({
+        "display": "block"
+    });
     $(".whatsapp-openedgroup").animate({
         left: 0 + "vh"
     }, 200);
 
-    $('.whatsapp-openedgroup-messages').animate({ scrollTop: 9999 }, 150);
+    $('.whatsapp-openedgroup-messages').animate({
+        scrollTop: 9999
+    }, 150);
 
     if (OpenedChatPicture == null) {
         OpenedChatPicture = "./img/default.png";
         if (ChatData.image != null || ChatData.image != undefined || ChatData.image != "default.png") {
             OpenedChatPicture = ChatData.image
         }
-        $(".whatsapp-openedgroup-picture").css({ "background-image": "url(" + OpenedChatPicture + ")" });
+        $(".whatsapp-openedgroup-picture").css({
+            "background-image": "url(" + OpenedChatPicture + ")"
+        });
     }
 });
 
 $(document).on('click', '#whatsapp-openedchat-back', function(e) {
     e.preventDefault();
+    $(".preload-messages-wpp").show();
     $.post('http://ps_phone/GetWhatsappChats', JSON.stringify({}), function(chats) {
         LoadWhatsappChats(chats);
     });
@@ -133,13 +146,16 @@ $(document).on('click', '#whatsapp-openedchat-back', function(e) {
     $(".whatsapp-openedchat").animate({
         left: -35 + "vh"
     }, 200, function() {
-        $(".whatsapp-openedchat").css({ "display": "none" });
+        $(".whatsapp-openedchat").css({
+            "display": "none"
+        });
     });
     OpenedChatPicture = null;
 });
 
 $(document).on('click', '#whatsapp-openedgroup-back', function(e) {
     e.preventDefault();
+    $(".preload-groups-wpp").show();
     $.post('http://ps_phone/GetWhatsappGroups', JSON.stringify({}), function(groups) {
         LoadWhatsappGroups(groups);
     });
@@ -147,7 +163,9 @@ $(document).on('click', '#whatsapp-openedgroup-back', function(e) {
     $(".whatsapp-openedgroup").animate({
         left: -35 + "vh"
     }, 200, function() {
-        $(".whatsapp-openedgroup").css({ "display": "none" });
+        $(".whatsapp-openedgroup").css({
+            "display": "none"
+        });
     });
     OpenedChatPicture = null;
 });
@@ -187,7 +205,9 @@ $(document).on('click', '#whatsapp-openedgroup-edit', function(e) {
         }
     });
 
-    $(".whatsapp-edit-group").css({ "display": "block" });
+    $(".whatsapp-edit-group").css({
+        "display": "block"
+    });
     $(".whatsapp-edit-group").animate({
         left: 0 + "vh"
     }, 200);
@@ -197,7 +217,9 @@ $(document).on('click', '.create-group', function(e) {
     e.preventDefault();
     $(".whatsapp-menu").fadeOut(150);
     WhatsappMenuActive = false;
-    $(".whatsapp-create-group").css({ "display": "block" });
+    $(".whatsapp-create-group").css({
+        "display": "block"
+    });
     $(".whatsapp-create-group").animate({
         left: 0 + "vh"
     }, 200);
@@ -208,7 +230,9 @@ $(document).on('click', '#whatsapp-create-group-back', function(e) {
     $(".whatsapp-create-group").animate({
         left: -35 + "vh"
     }, 200, function() {
-        $(".whatsapp-create-group").css({ "display": "none" });
+        $(".whatsapp-create-group").css({
+            "display": "none"
+        });
     });
 });
 
@@ -217,7 +241,9 @@ $(document).on('click', '#whatsapp-edit-group-back', function(e) {
     $(".whatsapp-edit-group").animate({
         left: -35 + "vh"
     }, 200, function() {
-        $(".whatsapp-edit-group").css({ "display": "none" });
+        $(".whatsapp-edit-group").css({
+            "display": "none"
+        });
     });
 });
 
@@ -232,7 +258,9 @@ $(document).on('click', '.edit-profile', function(e) {
 
             $(".whatsapp-menu").fadeOut(150);
             WhatsappMenuActive = false;
-            $(".whatsapp-edit-profile").css({ "display": "block" });
+            $(".whatsapp-edit-profile").css({
+                "display": "block"
+            });
             $(".whatsapp-edit-profile").animate({
                 left: 0 + "vh"
             }, 200);
@@ -245,7 +273,9 @@ $(document).on('click', '#whatsapp-edit-profile-back', function(e) {
     $(".whatsapp-edit-profile").animate({
         left: -35 + "vh"
     }, 200, function() {
-        $(".whatsapp-edit-profile").css({ "display": "none" });
+        $(".whatsapp-edit-profile").css({
+            "display": "none"
+        });
     });
 });
 
@@ -255,12 +285,12 @@ $(document).on('click', '.addmemberwpp', function(e) {
     var phone = $(".whatsapp-edit-group #number-member").val();
     var number = OpenedChatData.group;
 
-    if (phone.length > 7) {
-        PS.Phone.Notifications.Add("fas fa-exclamation-circle", "Editar grupo", "O número deve ser no máxino 7 digitos");
+    if (phone.length > 9) {
+        PS.Phone.Notifications.Add("fas fa-exclamation-circle", "Editar grupo", "O número deve ser no máxino 9 digitos");
         return false;
     }
 
-    if (phone.length < 6) {
+    if (phone.length < 7) {
         PS.Phone.Notifications.Add("fas fa-exclamation-circle", "Editar grupo", "O número deve ser no mínimo 7 digitos");
         return false;
     }
@@ -274,7 +304,9 @@ $(document).on('click', '.addmemberwpp', function(e) {
             $(".whatsapp-edit-group").animate({
                 left: -35 + "vh"
             }, 200, function() {
-                $(".whatsapp-edit-group").css({ "display": "none" });
+                $(".whatsapp-edit-group").css({
+                    "display": "none"
+                });
             });
         }
     });
@@ -342,11 +374,17 @@ function LoadWhatsappChats(chats) {
 
         if (chat.read > 0 && chat.read !== undefined && chat.read !== null) {
             $(".unread-chat-id-" + i).html(chat.read);
-            $(".unread-chat-id-" + i).css({ "display": "block" });
+            $(".unread-chat-id-" + i).css({
+                "display": "block"
+            });
         } else {
-            $(".unread-chat-id-" + i).css({ "display": "none" });
+            $(".unread-chat-id-" + i).css({
+                "display": "none"
+            });
         }
     });
+
+    $(".preload-messages-wpp").hide();
 }
 
 function LoadWhatsappGroups(groups) {
@@ -382,20 +420,29 @@ function LoadWhatsappGroups(groups) {
 
         if (group.read != 0 && group.read !== undefined && group.read !== null) {
             $(".unread-chat-id-" + i).html(chat.read);
-            $(".unread-chat-id-" + i).css({ "display": "block" });
+            $(".unread-chat-id-" + i).css({
+                "display": "block"
+            });
         } else {
-            $(".unread-chat-id-" + i).css({ "display": "none" });
+            $(".unread-chat-id-" + i).css({
+                "display": "none"
+            });
         }
     });
+    $(".preload-groups-wpp").hide();
 }
 
 function ReloadWhatsappAlerts(chats) {
     $.each(chats, function(i, chat) {
         if (chat.Unread > 0 && chat.Unread !== undefined && chat.Unread !== null) {
             $(".unread-chat-id-" + i).html(chat.Unread);
-            $(".unread-chat-id-" + i).css({ "display": "block" });
+            $(".unread-chat-id-" + i).css({
+                "display": "block"
+            });
         } else {
-            $(".unread-chat-id-" + i).css({ "display": "none" });
+            $(".unread-chat-id-" + i).css({
+                "display": "none"
+            });
         }
     });
 }
@@ -454,8 +501,24 @@ $(document).on('click', '#whatsapp-openedchat-send', function(e) {
         });
         $("#whatsapp-openedchat-message").val("");
     } else {
-        NotificationsAdd("fab fa-whatsapp", "Whatsapp", "Você não pode enviar uma mensagem em branco!", "#25D366", 1750);
+        PS.Phone.Notifications.Add("fab fa-whatsapp", "Whatsapp", "Você não pode enviar uma mensagem em branco!", "#25D366", 1750);
     }
+});
+
+$(document).on('click', '#whatsapp-openedchat-sendaudio', function(e) {
+    e.preventDefault();
+
+    $(this).addClass('active');
+
+    toggleRecordingChat();
+});
+
+$(document).on('click', '#whatsapp-openedgroup-sendaudio', function(e) {
+    e.preventDefault();
+
+    $(this).addClass('active');
+
+    toggleRecordingGroup();
 });
 
 $(document).on('click', '#whatsapp-openedgroup-send', function(e) {
@@ -475,7 +538,7 @@ $(document).on('click', '#whatsapp-openedgroup-send', function(e) {
         });
         $("#whatsapp-openedgroup-message").val("");
     } else {
-        NotificationsAdd("fab fa-whatsapp", "Whatsapp", "Você não pode enviar uma mensagem em branco!", "#25D366", 1750);
+        PS.Phone.Notifications.Add("fab fa-whatsapp", "Whatsapp", "Você não pode enviar uma mensagem em branco!", "#25D366", 1750);
     }
 });
 
@@ -496,7 +559,7 @@ $(document).on('keypress', function(e) {
                 });
                 $("#whatsapp-openedchat-message").val("");
             } else {
-                NotificationsAdd("fab fa-whatsapp", "Whatsapp", "Você não pode enviar uma mensagem em branco!", "#25D366", 1750);
+                PS.Phone.Notifications.Add("fab fa-whatsapp", "Whatsapp", "Você não pode enviar uma mensagem em branco!", "#25D366", 1750);
             }
         }
     }
@@ -517,7 +580,7 @@ $(document).on('keypress', function(e) {
                 });
                 $("#whatsapp-openedgroup-message").val("");
             } else {
-                NotificationsAdd("fab fa-whatsapp", "Whatsapp", "YVocê não pode enviar uma mensagem em branco!", "#25D366", 1750);
+                PS.Phone.Notifications.Add("fab fa-whatsapp", "Whatsapp", "YVocê não pode enviar uma mensagem em branco!", "#25D366", 1750);
             }
         }
     }
@@ -554,11 +617,9 @@ $(document).on('click', '#send-location-group', function(e) {
 $(document).on('click', '#send-image', function(e) {
     e.preventDefault();
 
-    console.log(OpenedChatData);
     var phone = OpenedChatData.phone;
 
     if (phone.length <= 0) {
-        console.log(phone);
         return false;
     }
 
@@ -616,10 +677,14 @@ function SetupChatMessages(cData, NewChatData) {
                 if (npicture != "default.png" && npicture != null) {
                     OpenedChatPicture = npicture
                 }
-                $(".whatsapp-openedchat-picture").css({ "background-image": "url(" + OpenedChatPicture + ")" });
+                $(".whatsapp-openedchat-picture").css({
+                    "background-image": "url(" + OpenedChatPicture + ")"
+                });
             });
         } else {
-            $(".whatsapp-openedchat-picture").css({ "background-image": "url(" + OpenedChatPicture + ")" });
+            $(".whatsapp-openedchat-picture").css({
+                "background-image": "url(" + OpenedChatPicture + ")"
+            });
         }
 
         $(".whatsapp-openedchat-name").html("<p>" + cData.contact_name + "</p>");
@@ -647,7 +712,9 @@ function SetupChatMessages(cData, NewChatData) {
             time = hours + ":" + minutes;
 
             var Sender = "me";
-            if (chat.owner !== PS.Phone.Data.WhatsAppAccount.phone) { Sender = "other"; }
+            if (chat.owner !== PS.Phone.Data.WhatsAppAccount.phone) {
+                Sender = "other";
+            }
             var MessageElement = '';
             if (chat.type == "message") {
                 var message = chat.message;
@@ -667,11 +734,15 @@ function SetupChatMessages(cData, NewChatData) {
             } else if (chat.type == "location") {
                 var pos = JSON.parse(chat.message);
                 MessageElement = '<div class="whatsapp-openedchat-message whatsapp-openedchat-message-' + Sender + ' whatsapp-shared-location" data-x="' + pos.x + '" data-y="' + pos.y + '"><span style="font-size: 1.2vh;"><i class="fas fa-thumbtack" style="font-size: 1vh;"></i> Localização</span><div class="whatsapp-openedchat-message-time">' + time + '</div></div><div class="clearfix"></div>'
+            } else if (chat.type == "audio") {
+                MessageElement = '<div class="whatsapp-openedchat-message whatsapp-openedchat-message-' + Sender + '"><audio controls><source src="' + chat.message + '" type="audio/wav"></audio><div class="whatsapp-openedchat-message-time">' + time + '</div></div><div class="clearfix"></div>';
             }
 
             $(".whatsapp-openedchat-messages").append(MessageElement);
         });
-        $('.whatsapp-openedchat-messages').animate({ scrollTop: 9999 }, 1);
+        $('.whatsapp-openedchat-messages').animate({
+            scrollTop: 9999
+        }, 1);
     } else {
 
         console.log(NewChatData);
@@ -686,7 +757,9 @@ function SetupChatMessages(cData, NewChatData) {
                 if (npicture != "default.png" && npicture != null) {
                     OpenedChatPicture = npicture
                 }
-                $(".whatsapp-openedchat-picture").css({ "background-image": "url(" + OpenedChatPicture + ")" });
+                $(".whatsapp-openedchat-picture").css({
+                    "background-image": "url(" + OpenedChatPicture + ")"
+                });
             });
         }
 
@@ -712,7 +785,9 @@ function SetupChatMessages(cData, NewChatData) {
         $(".whatsapp-openedchat-messages").append(ChatDiv);
     }
 
-    $('.whatsapp-openedchat-messages').animate({ scrollTop: 9999 }, 1);
+    $('.whatsapp-openedchat-messages').animate({
+        scrollTop: 9999
+    }, 1);
 }
 
 function SetupGroupMessages(cData) {
@@ -728,10 +803,14 @@ function SetupGroupMessages(cData) {
                 if (npicture != "default.png" && npicture != null) {
                     OpenedChatPicture = npicture
                 }
-                $(".whatsapp-openedgroup-picture").css({ "background-image": "url(" + OpenedChatPicture + ")" });
+                $(".whatsapp-openedgroup-picture").css({
+                    "background-image": "url(" + OpenedChatPicture + ")"
+                });
             });
         } else {
-            $(".whatsapp-openedgroup-picture").css({ "background-image": "url(" + OpenedChatPicture + ")" });
+            $(".whatsapp-openedgroup-picture").css({
+                "background-image": "url(" + OpenedChatPicture + ")"
+            });
         }
 
         $(".whatsapp-openedgroup-name").html("<p>" + cData.name + "</p>");
@@ -759,7 +838,9 @@ function SetupGroupMessages(cData) {
             time = hours + ":" + minutes;
 
             var Sender = "me";
-            if (chat.owner !== PS.Phone.Data.WhatsAppAccount.phone) { Sender = "other"; }
+            if (chat.owner !== PS.Phone.Data.WhatsAppAccount.phone) {
+                Sender = "other";
+            }
             var MessageElement = '';
             if (chat.type == "message") {
                 var message = chat.message;
@@ -779,14 +860,20 @@ function SetupGroupMessages(cData) {
             } else if (chat.type == "location") {
                 var pos = JSON.parse(chat.message);
                 MessageElement = '<div class="whatsapp-openedgroup-message whatsapp-openedgroup-message-' + Sender + ' whatsapp-shared-location" data-x="' + pos.x + '" data-y="' + pos.y + '"><b>' + chat.name + '</b><br><span style="font-size: 1.2vh;"><i class="fas fa-thumbtack" style="font-size: 1vh;"></i> Localização</span><div class="whatsapp-openedgroup-message-time">' + time + '</div></div><div class="clearfix"></div>'
+            } else if (chat.type == "audio") {
+                MessageElement = '<div class="whatsapp-openedgroup-message whatsapp-openedgroup-message-' + Sender + '"><audio controls><source src="' + chat.message + '" type="audio/wav"></audio><div class="whatsapp-openedgroup-message-time">' + time + '</div></div><div class="clearfix"></div>';
             }
 
             $(".whatsapp-openedgroup-messages").append(MessageElement);
         });
-        $('.whatsapp-openedgroup-messages').animate({ scrollTop: 9999 }, 1);
+        $('.whatsapp-openedgroup-messages').animate({
+            scrollTop: 9999
+        }, 1);
     }
 
-    $('.whatsapp-openedgroup-messages').animate({ scrollTop: 9999 }, 1);
+    $('.whatsapp-openedgroup-messages').animate({
+        scrollTop: 9999
+    }, 1);
 }
 
 function LoadMessages(messages) {
@@ -815,7 +902,9 @@ function LoadMessages(messages) {
         time = hours + ":" + minutes;
 
         var Sender = "me";
-        if (chat.owner !== PS.Phone.Data.WhatsAppAccount.phone) { Sender = "other"; }
+        if (chat.owner !== PS.Phone.Data.WhatsAppAccount.phone) {
+            Sender = "other";
+        }
         var MessageElement = '';
         if (chat.type == "message") {
             var message = chat.message;
@@ -831,15 +920,17 @@ function LoadMessages(messages) {
                 message = "<img src='" + chat.message + "' />"
             }
 
-            MessageElement = '<div class="whatsapp-openedchat-message whatsapp-openedchat-message-' + Sender + '">' + message + '<div class="whatsapp-openedchat-message-time">' + time + '</div></div><div class="clearfix"></div>'
+            MessageElement = '<div class="whatsapp-openedchat-message whatsapp-openedchat-message-' + Sender + '">' + message + '<div class="whatsapp-openedchat-message-time">' + time + '</div></div><div class="clearfix"></div>';
         } else if (chat.type == "location") {
             var pos = JSON.parse(chat.message);
-            MessageElement = '<div class="whatsapp-openedchat-message whatsapp-openedchat-message-' + Sender + ' whatsapp-shared-location" data-x="' + pos.x + '" data-y="' + pos.y + '"><span style="font-size: 1.2vh;"><i class="fas fa-thumbtack" style="font-size: 1vh;"></i> Localização</span><div class="whatsapp-openedchat-message-time">' + time + '</div></div><div class="clearfix"></div>'
+            MessageElement = '<div class="whatsapp-openedchat-message whatsapp-openedchat-message-' + Sender + ' whatsapp-shared-location" data-x="' + pos.x + '" data-y="' + pos.y + '"><span style="font-size: 1.2vh;"><i class="fas fa-thumbtack" style="font-size: 1vh;"></i> Localização</span><div class="whatsapp-openedchat-message-time">' + time + '</div></div><div class="clearfix"></div>';
+        } else if (chat.type == "audio") {
+            MessageElement = '<div class="whatsapp-openedchat-message whatsapp-openedchat-message-' + Sender + '"><audio controls><source src="' + chat.message + '" type="audio/wav"></audio><div class="whatsapp-openedchat-message-time">' + time + '</div></div><div class="clearfix"></div>';
         }
 
         $(".whatsapp-openedchat-messages").append(MessageElement);
     });
-    $('.whatsapp-openedchat-messages').animate({ scrollTop: 9999 }, 1);
+    // $('.whatsapp-openedchat-messages').animate({ scrollTop: 9999 }, 1);
 }
 
 function LoadMessagesGroup(messages) {
@@ -868,7 +959,9 @@ function LoadMessagesGroup(messages) {
         time = hours + ":" + minutes;
 
         var Sender = "me";
-        if (chat.owner !== PS.Phone.Data.WhatsAppAccount.phone) { Sender = "other"; }
+        if (chat.owner !== PS.Phone.Data.WhatsAppAccount.phone) {
+            Sender = "other";
+        }
         var MessageElement = '';
         if (chat.type == "message") {
             var message = chat.message;
@@ -888,11 +981,13 @@ function LoadMessagesGroup(messages) {
         } else if (chat.type == "location") {
             var pos = JSON.parse(chat.message);
             MessageElement = '<div class="whatsapp-openedgroup-message whatsapp-openedgroup-message-' + Sender + ' whatsapp-shared-location" data-x="' + pos.x + '" data-y="' + pos.y + '"><b>' + chat.name + '</b><br><span style="font-size: 1.2vh;"><i class="fas fa-thumbtack" style="font-size: 1vh;"></i> Localização</span><div class="whatsapp-openedgroup-message-time">' + time + '</div></div><div class="clearfix"></div>'
+        } else if (chat.type == "audio") {
+            MessageElement = '<div class="whatsapp-openedgroup-message whatsapp-openedgroup-message-' + Sender + '"><audio controls><source src="' + chat.message + '" type="audio/wav"></audio><div class="whatsapp-openedgroup-message-time">' + time + '</div></div><div class="clearfix"></div>';
         }
 
         $(".whatsapp-openedgroup-messages").append(MessageElement);
     });
-    $('.whatsapp-openedgroup-messages').animate({ scrollTop: 9999 }, 1);
+    // $('.whatsapp-openedgroup-messages').animate({ scrollTop: 9999 }, 1);
 }
 
 $(document).on('click', '.whatsapp-shared-location', function(e) {
@@ -912,7 +1007,9 @@ $(document).on('click', '#whatsapp-openedchat-message-extras', function(e) {
     e.preventDefault();
 
     if (!ExtraButtonsOpen) {
-        $(".whatsapp-extra-buttons").css({ "display": "block" }).animate({
+        $(".whatsapp-extra-buttons").css({
+            "display": "block"
+        }).animate({
             left: 0 + "vh"
         }, 250);
         ExtraButtonsOpen = true;
@@ -920,7 +1017,9 @@ $(document).on('click', '#whatsapp-openedchat-message-extras', function(e) {
         $(".whatsapp-extra-buttons").animate({
             left: -10 + "vh"
         }, 250, function() {
-            $(".whatsapp-extra-buttons").css({ "display": "block" });
+            $(".whatsapp-extra-buttons").css({
+                "display": "block"
+            });
             ExtraButtonsOpen = false;
         });
     }
@@ -930,7 +1029,9 @@ $(document).on('click', '#whatsapp-openedgroup-message-extras', function(e) {
     e.preventDefault();
 
     if (!ExtraButtonsOpen) {
-        $(".whatsapp-extra-buttons").css({ "display": "block" }).animate({
+        $(".whatsapp-extra-buttons").css({
+            "display": "block"
+        }).animate({
             left: 0 + "vh"
         }, 250);
         ExtraButtonsOpen = true;
@@ -938,7 +1039,9 @@ $(document).on('click', '#whatsapp-openedgroup-message-extras', function(e) {
         $(".whatsapp-extra-buttons").animate({
             left: -10 + "vh"
         }, 250, function() {
-            $(".whatsapp-extra-buttons").css({ "display": "block" });
+            $(".whatsapp-extra-buttons").css({
+                "display": "block"
+            });
             ExtraButtonsOpen = false;
         });
     }
@@ -968,8 +1071,8 @@ $(document).on('submit', '.addaccountwpp', function(e) {
         return false;
     }
 
-    if (phone.length > 7) {
-        $(".whatsapp-app .not-logged .error p").html("O número deve no máxino 7 digitos");
+    if (phone.length > 9) {
+        $(".whatsapp-app .not-logged .error p").html("O número deve no máxino 9 digitos");
         $(".whatsapp-app .not-logged .error").show();
         return false;
     }
@@ -992,6 +1095,9 @@ $(document).on('submit', '.addaccountwpp', function(e) {
         $(".whatsapp-app .not-logged").hide();
         $(".whatsapp-app .logged").show();
 
+        PS.Phone.Notifications.Add("fas fa-check", "Cria conta", "Conta criada com sucesso! Finalize e abra novamente o aplicativo", "green");
+
+        $(".preload-messages-wpp").show();
         $.post('http://ps_phone/GetWhatsappChats', JSON.stringify({}), function(chats) {
             LoadWhatsappChats(chats);
         });
@@ -1025,6 +1131,7 @@ $(document).on('click', '.whatsapp-status-new .whatsapp-chat-picture', function(
 $(document).on('click', '.getchats', function(e) {
     e.preventDefault();
 
+    $(".preload-messages-wpp").show();
     $.post('http://ps_phone/GetWhatsappChats', JSON.stringify({}), function(chats) {
         LoadWhatsappChats(chats);
     });
@@ -1033,6 +1140,7 @@ $(document).on('click', '.getchats', function(e) {
 $(document).on('click', '.getgroups', function(e) {
     e.preventDefault();
 
+    $(".preload-groups-wpp").show();
     $.post('http://ps_phone/GetWhatsappGroups', JSON.stringify({}), function(groups) {
         LoadWhatsappGroups(groups);
     });
@@ -1041,6 +1149,7 @@ $(document).on('click', '.getgroups', function(e) {
 $(document).on('click', '.getstatus', function(e) {
     e.preventDefault();
 
+    $(".preload-status-wpp").show();
     $.post('http://ps_phone/GetStoriesWhatsApp', JSON.stringify({}), function(stories) {
         PS.Phone.Functions.ReceiveStoriesWhatsApp(stories);
     });
@@ -1186,12 +1295,35 @@ $(document).on('submit', '.editgroupwpp', function(e) {
 
 });
 
+$(document).on('click', '.whatsapp-chat-picture', function(e) {
+    e.preventDefault();
+
+    var image = $(this).css("background-image");
+    image = image.split(/"/)[1];
+
+    const mystorie = [{
+            user: {
+                name: 'Nome do Usuario',
+                imageURL: 'https://www.rockstargames.com/br/img/global/downloads/buddyiconsconavatars/v_afterhours_taleofus2_256x256.jpg',
+            },
+            images: [
+                image,
+            ],
+        },
+
+    ];
+
+    renderInFace(0, createStorie(mystorie[0]));
+
+});
+
 PS.Phone.Functions.ReceiveAccountWhatsApp = function(account) {
     if (account) {
         PS.Phone.Data.WhatsAppAccount = account;
         $(".whatsapp-app .not-logged").hide();
         $(".whatsapp-app .logged").show();
 
+        $(".preload-messages-wpp").show();
         $.post('http://ps_phone/GetWhatsappChats', JSON.stringify({}), function(chats) {
             LoadWhatsappChats(chats);
         });
@@ -1203,10 +1335,6 @@ PS.Phone.Functions.ReceiveAccountWhatsApp = function(account) {
         $.post('http://ps_phone/GetMyStorieWhatsApp', JSON.stringify({}), function(stories) {
             PS.Phone.Functions.ReceiveMyStorieWhatsApp(stories);
         });
-
-        // $.post('http://ps_phone/GetPostsInstagram', JSON.stringify({}), function(posts) {
-        //     PS.Phone.Functions.ReceivePosts(posts);
-        // });
     } else {
         $(".whatsapp-app .not-logged").show();
         $(".whatsapp-app .logged").hide();
@@ -1237,6 +1365,8 @@ PS.Phone.Functions.ReceiveStoriesWhatsApp = function(data) {
             $(".whatsapp-stories").append(newhtml);
         });
     }
+
+    $(".preload-status-wpp").hide();
 }
 
 PS.Phone.Functions.ReceiveMyStorieWhatsApp = function(data) {
@@ -1303,12 +1433,52 @@ PS.Phone.Functions.ReceiveMyStorieWhatsApp = function(data) {
 
 
 setInterval(function() {
-    verifyopenchat();
+    verifyopentabmessages();
+    verifyopentabgroups();
+    verifyopentabstatus();
+
+    var audiochatcheck = $('.whatsapp-openedchat-message audio');
+    var audiogroupcheck = $('.whatsapp-openedgroup-message audio');
+
+    if (audiochatcheck.paused) {
+        verifyopenchat();
+    }
+
+    if (audiogroupcheck.paused) {
+        verifyopengroup();
+    }
+
 }, 5000);
 
-setInterval(function() {
-    verifyopengroup();
-}, 5000);
+function verifyopentabmessages() {
+    var opentabmessages = $('.whatsapp-tabs #messages').is(':visible');
+
+    if (opentabmessages) {
+        $.post('http://ps_phone/GetWhatsappChats', JSON.stringify({}), function(chats) {
+            LoadWhatsappChats(chats);
+        });
+    }
+}
+
+function verifyopentabgroups() {
+    var opentabgroups = $('.whatsapp-tabs #groups').is(':visible');
+
+    if (opentabgroups) {
+        $.post('http://ps_phone/GetWhatsappGroups', JSON.stringify({}), function(groups) {
+            LoadWhatsappGroups(groups);
+        });
+    }
+}
+
+function verifyopentabstatus() {
+    var opentabstatus = $('.whatsapp-tabs #status').is(':visible');
+
+    if (opentabstatus) {
+        $.post('http://ps_phone/GetStoriesWhatsApp', JSON.stringify({}), function(stories) {
+            PS.Phone.Functions.ReceiveStoriesWhatsApp(stories);
+        });
+    }
+}
 
 function verifyopenchat() {
     var openedchat = $('.whatsapp-openedchat-messages').is(':visible');
@@ -1334,6 +1504,159 @@ function verifyopengroup() {
             if (messages) {
                 LoadMessagesGroup(messages);
             }
+        });
+    }
+}
+
+function timeaudiochat() {
+
+    var timeaudiointerval = null;
+
+    if (audiochat) {
+        var timeaudiointerval = setInterval(function() {
+
+            if (!audiochat) {
+                audiotimechat = 0;
+                clearInterval(timeaudiointerval);
+                $("#whatsapp-openedchat-message").val('');
+            } else {
+
+                audiotimechat = audiotimechat + 1;
+
+                var gravando = "Gravando: " + audiotimechat + "s";
+
+                $("#whatsapp-openedchat-message").val(gravando);
+
+            }
+        }, 1000);
+    } else {
+        $("#whatsapp-openedchat-message").val('');
+    }
+}
+
+function toggleRecordingChat() {
+    if (recorder && recorder.state == "recording") {
+        $("#whatsapp-openedchat-sendaudio").removeClass('active');
+        audiochat = false;
+        timeaudiochat();
+        recorder.stop();
+        gumStream.getAudioTracks()[0].stop();
+    } else {
+        navigator.mediaDevices.getUserMedia({
+            audio: true
+        }).then(function(stream) {
+            audiochat = true;
+            timeaudiochat();
+            gumStream = stream;
+            recorder = new MediaRecorder(stream);
+            recorder.ondataavailable = function(e) {
+                // var url = URL.createObjectURL(e.data);
+                var filename = new Date().toISOString();
+
+                var xhr = new XMLHttpRequest();
+                xhr.onload = function(e) {
+                    if (this.readyState === 4) {
+                        var response = JSON.parse(e.target.responseText);
+
+                        if (response.success) {
+                            var url = iphost + "ps_phone/audios/" + response.file;
+
+                            if (url !== null && url !== undefined && url !== "") {
+                                $.post('http://ps_phone/SendMessage', JSON.stringify({
+                                    phone: OpenedChatData.phone,
+                                    message: url,
+                                    type: "audio",
+                                }), function(messages) {
+                                    if (messages) {
+                                        LoadMessages(messages);
+                                    }
+                                });
+                            }
+                        }
+                    }
+                };
+                var fd = new FormData();
+                fd.append("audio", e.data, filename);
+                xhr.open("POST", "" + iphost + "ps_phone/index.php", true);
+                xhr.send(fd);
+            }
+            recorder.start();
+        });
+    }
+}
+
+function timeaudiogroup() {
+
+    var timeaudiointerval = null;
+
+    if (audiogroup) {
+        var timeaudiointerval = setInterval(function() {
+
+            if (!audiogroup) {
+                audiotimegroup = 0;
+                clearInterval(timeaudiointerval);
+                $("#whatsapp-openedgroup-message").val('');
+            } else {
+
+                audiotimegroup = audiotimegroup + 1;
+
+                var gravando = "Gravando: " + audiotimegroup + "s";
+
+                $("#whatsapp-openedgroup-message").val(gravando);
+
+            }
+        }, 1000);
+    } else {
+        $("#whatsapp-openedgroup-message").val('');
+    }
+}
+
+function toggleRecordingGroup() {
+    if (recorder && recorder.state == "recording") {
+        $("#whatsapp-openedgroup-sendaudio").removeClass('active');
+        audiogroup = false;
+        timeaudiogroup();
+        recorder.stop();
+        gumStream.getAudioTracks()[0].stop();
+    } else {
+        navigator.mediaDevices.getUserMedia({
+            audio: true
+        }).then(function(stream) {
+            audiogroup = true;
+            timeaudiogroup();
+            gumStream = stream;
+            recorder = new MediaRecorder(stream);
+            recorder.ondataavailable = function(e) {
+                var filename = new Date().toISOString();
+
+                var xhr = new XMLHttpRequest();
+                xhr.onload = function(e) {
+                    if (this.readyState === 4) {
+                        var response = JSON.parse(e.target.responseText);
+
+                        if (response.success) {
+                            var url = iphost + "ps_phone/audios/" + response.file;
+
+                            if (url !== null && url !== undefined && url !== "") {
+                                $.post('http://ps_phone/SendMessageGroup', JSON.stringify({
+                                    number: OpenedChatData.group,
+                                    message: url,
+                                    type: "audio",
+                                }), function(messages) {
+                                    if (messages) {
+                                        LoadMessagesGroup(messages);
+                                    }
+                                });
+                            }
+                        }
+                    }
+                };
+                var fd = new FormData();
+                fd.append("audio", e.data, filename);
+                xhr.open("POST", "" + iphost + "ps_phone/index.php", true);
+                xhr.send(fd);
+            }
+            recorder.start();
         });
     }
 }

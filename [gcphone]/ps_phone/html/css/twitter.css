@@ -3,7 +3,7 @@
     display: none;
     height: 100%;
     width: 100%;
-    background: #283344;
+    background: #fff;
     overflow: hidden;
 }
 
@@ -12,24 +12,24 @@
     top: 6.7vh;
     width: 100%;
     height: 5vh;
-    background: #283344;
-    border-bottom: .2vh solid rgba(20, 23, 26, 0.37);
+    background: #fff;
 }
 
 .twitter-header-tab {
     position: relative;
     float: left;
-    width: 23.33%;
+    width: 25%;
     height: 95%;
     text-align: center;
     line-height: 5vh;
     font-size: 1.5vh;
-    color: rgba(239, 240, 241, 0.774);
+    color: #333;
     transition: .07s;
+    border-bottom: .2vh solid #333;
 }
 
 .twitter-header-tab:hover {
-    background-color: #AAB8C2;
+    color: #1DA1F2;
 }
 
 .selected-twitter-header-tab {
@@ -48,7 +48,7 @@
     display: block;
     position: absolute;
     height: 90%;
-    background: #2D384D;
+    background: #fff;
     width: 100%;
     top: 12vh;
     overflow: hidden;
@@ -74,7 +74,7 @@
     height: 100%;
     width: 100%;
     top: 12vh;
-    background: #2D384D;
+    background: #fff;
     overflow: hidden;
     overflow-y: scroll !important;
     overflow-x: hidden !important;
@@ -98,7 +98,7 @@
     height: 100%;
     width: 100%;
     top: 12vh;
-    background: #2D384D;
+    background: #fff;
     overflow: hidden;
     overflow-y: scroll !important;
     overflow-x: hidden !important;
@@ -122,7 +122,7 @@
     height: 100%;
     width: 100%;
     top: 10vh;
-    background: #2D384D;
+    background: #fff;
     overflow: hidden;
     overflow-y: scroll !important;
     overflow-x: hidden !important;
@@ -151,7 +151,7 @@
     position: relative;
     width: 100%;
     margin: 1rem;
-    border-bottom: 2px solid #283344;
+    border-bottom: thin solid #ccc;
 }
 
 .twitter-tweet:hover {
@@ -162,7 +162,7 @@
     position: relative;
     height: auto;
     width: 100%;
-    border-top: 2px solid rgba(20, 23, 26, 0.37);
+    border-bottom: thin solid #ccc;
     margin-bottom: 2.5vh;
 }
 
@@ -188,7 +188,7 @@
 }
 
 .tweet-reply {
-    color: whitesmoke;
+    color: #333;
     margin-left: 4vh;
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -200,7 +200,7 @@
 }
 
 .tweet-delete {
-    color: whitesmoke;
+    color: #333;
     margin-left: 4vh;
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -220,7 +220,7 @@
     padding-top: .6vh;
     font-family: 'Heebo', sans-serif;
     font-size: 1.1vh;
-    color: white;
+    color: rgb(91, 112, 131);
 }
 
 .tweet-tweeter>span {
@@ -237,7 +237,7 @@
     font-size: 1.3vh;
     padding-bottom: 1vh;
     overflow-wrap: break-word;
-    color: whitesmoke;
+    color: #333;
     word-wrap: break-word;
 }
 
@@ -259,7 +259,7 @@
     right: 0;
     width: 5.5vh;
     height: 5.5vh;
-    background-color: #2A3344;
+    background-color: rgb(29, 161, 242);
     margin: 2.2vh;
     border-radius: 50%;
     text-align: center;
@@ -286,7 +286,7 @@
     top: -100%;
     height: 100%;
     width: 100%;
-    background: #F5F8FA;
+    background: #fff;
     overflow: hidden;
     z-index: 105;
 }
@@ -315,7 +315,49 @@
     font-size: 1.4vh;
     top: 12vh;
     width: 30vh;
-    border-radius: 1vh 1vh 0 0;
+    border-radius: 1vh;
+    box-shadow: inset 0 0 2vh 0 rgba(0, 0, 0, 0.089);
+}
+
+#tweet-new-mentions {
+    position: absolute;
+    border: none;
+    height: 5vh;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    background-color: rgb(233, 233, 233);
+    outline: none;
+    border-bottom: 2px solid #1da0f200;
+    resize: none;
+    transition: border-bottom 0.1s ease-in-out;
+    font-family: 'Heebo', sans-serif;
+    padding: 0.87vh;
+    font-size: 1.4vh;
+    top: 30vh;
+    width: 30vh;
+    border-radius: 1vh;
+    box-shadow: inset 0 0 2vh 0 rgba(0, 0, 0, 0.089);
+}
+
+#tweet-new-hashtags {
+    position: absolute;
+    border: none;
+    height: 5vh;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    background-color: rgb(233, 233, 233);
+    outline: none;
+    border-bottom: 2px solid #1da0f200;
+    resize: none;
+    transition: border-bottom 0.1s ease-in-out;
+    font-family: 'Heebo', sans-serif;
+    padding: 0.87vh;
+    font-size: 1.4vh;
+    top: 37vh;
+    width: 30vh;
+    border-radius: 1vh;
     box-shadow: inset 0 0 2vh 0 rgba(0, 0, 0, 0.089);
 }
 
@@ -334,9 +376,9 @@
     font-family: 'Heebo', sans-serif;
     padding: 0.87vh;
     font-size: 1.4vh;
-    top: 30vh;
+    top: 44vh;
     width: 30vh;
-    border-radius: 1vh 1vh 0 0;
+    border-radius: 1vh;
     box-shadow: inset 0 0 2vh 0 rgba(0, 0, 0, 0.089);
 }
 
@@ -388,7 +430,7 @@
     width: 100%;
     font-size: 2vh;
     font-family: 'Heebo', sans-serif;
-    color: whitesmoke;
+    color: #333;
 }
 
 .mentioned-tag {
@@ -459,6 +501,7 @@
     position: absolute;
     display: block;
     width: 100%;
+    top: 500px;
 }
 
 .twitter-hashtag-tweets {
@@ -483,4 +526,13 @@
 
 .twitter-hashtag-tweets::-webkit-scrollbar-track {
     background-color: #ebebeb00;
+}
+
+.twitter-app .not-logged .login-box .header .logo {
+    width: 100px;
+}
+
+.twitter-app .not-logged .login-box .form .button-box .btn {
+    background: rgb(29, 161, 242);
+    border: rgb(29, 161, 242);
 }

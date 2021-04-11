@@ -1,8 +1,8 @@
 PS.Phone.Settings = {};
-PS.Phone.Settings.Background = "bg";
+PS.Phone.Settings.Background = "background";
 PS.Phone.Settings.OpenedTab = null;
 PS.Phone.Settings.Backgrounds = {
-    'bg': {
+    'background': {
         label: "Papel de parede padrão definido!"
     }
 };
@@ -70,13 +70,13 @@ PS.Phone.Functions.LoadBackground = function(background) {
     if (background !== null && background !== undefined) {
         PS.Phone.Settings.Background = background;
     } else {
-        PS.Phone.Settings.Background = "/html/img/backgrounds/bg.jpg";
+        PS.Phone.Settings.Background = "background";
     }
 
     var hasCustomBackground = PS.Phone.Functions.IsBackgroundCustom();
 
     if (!hasCustomBackground) {
-        $(".phone-background").css({ "background-image": "url('/html/img/backgrounds/" + PS.Phone.Settings.Background + ".jpg')" })
+        $(".phone-background").css({ "background-image": "url('/html/img/backgrounds/" + PS.Phone.Settings.Background + ".png')" })
     } else {
         $(".phone-background").css({ "background-image": "url('" + PS.Phone.Settings.Background + "')" });
     }

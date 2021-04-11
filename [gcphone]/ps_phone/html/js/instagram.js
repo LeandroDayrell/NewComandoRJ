@@ -134,6 +134,52 @@ $(document).on('keyup', '.add-comment input', function(e) {
     }
 });
 
+$(document).on('click', '.instagram-stories .img img', function(e) {
+    e.preventDefault();
+
+    var image = $(this).attr("src")
+    const mystorie = [{
+            user: {
+                name: 'Nome do Usuario',
+                imageURL: 'https://www.rockstargames.com/br/img/global/downloads/buddyiconsconavatars/v_afterhours_taleofus2_256x256.jpg',
+            },
+            images: [
+                image,
+            ],
+        },
+
+    ];
+
+    renderInFace(0, createStorie(mystorie[0]));
+});
+
+$(document).on('blur', '#search-profile', function(e) {
+    console.log('teste');
+
+    var search = $(this).val();
+
+    $.post('http://ps_phone/GetProfilesInstagramLike', JSON.stringify({
+        search: search
+    }), function(profiles) {
+        if (profiles) {
+
+            var nprofiles = JSON.parse(profiles);
+
+            $.each(nprofiles, function(i, profile) {
+
+                if (profile.avatar == 'default.png') {
+                    var avatar = "img/default.png";
+                } else {
+                    var avatar = profile.avatar;
+                }
+
+                var newhtml = '<img src="' + avatar + '" alt="' + profile.username + '" class="viewprofile" data-id="' + profile.id + '">';
+                $("#insta-search #grid").append(newhtml);
+            });
+        }
+    });
+});
+
 
 PS.Phone.Functions.ReceiveAccount = function(account) {
     if (account) {
@@ -141,10 +187,12 @@ PS.Phone.Functions.ReceiveAccount = function(account) {
         $(".instagram-app .not-logged").hide();
         $(".instagram-app .logged").show();
 
+        $(".preload-stories-insta").show();
         $.post('http://ps_phone/GetStoriesInstagram', JSON.stringify({}), function(stories) {
             PS.Phone.Functions.ReceiveStories(stories);
         });
 
+        $(".preload-posts-insta").show();
         $.post('http://ps_phone/GetPostsInstagram', JSON.stringify({}), function(posts) {
             PS.Phone.Functions.ReceivePosts(posts);
         });
@@ -220,6 +268,8 @@ PS.Phone.Functions.ReceiveStories = function(data) {
             $(".instagram-stories").append(newhtml);
         });
     }
+
+    $(".preload-stories-insta").hide();
 }
 
 PS.Phone.Functions.ReceiveMyStorie = function(data) {
@@ -309,6 +359,8 @@ PS.Phone.Functions.ReceivePosts = function(data) {
             $(".insta-posts").append(html);
         });
     }
+
+    $(".preload-posts-insta").hide();
 }
 
 $(document).on('submit', '.addaccountinsta', function(e) {
@@ -352,8 +404,16 @@ $(document).on('submit', '.addaccountinsta', function(e) {
         $(".instagram-app .not-logged").hide();
         $(".instagram-app .logged").show();
 
+        PS.Phone.Notifications.Add("fas fa-check", "Cria conta", "Conta criada com sucesso! Finalize e abra novamente o aplicativo", "green");
+
+        $(".preload-stories-insta").show();
         $.post('http://ps_phone/GetStoriesInstagram', JSON.stringify({}), function(stories) {
             PS.Phone.Functions.ReceiveStories(stories);
+        });
+
+        $(".preload-posts-insta").show();
+        $.post('http://ps_phone/GetPostsInstagram', JSON.stringify({}), function(posts) {
+            PS.Phone.Functions.ReceivePosts(posts);
         });
     });
 
@@ -452,6 +512,12 @@ $(document).on('click', '.post-preview .next', function(e) {
         }
     });
 
+});
+
+$(document).on('click', '.getposts', function(e) {
+    verifyopenstories();
+    verifyopenposts();
+    e.preventDefault();
 });
 
 $(document).on('click', '.searchprofiles', function(e) {
@@ -576,6 +642,7 @@ $(document).on('click', '.viewprofiletwo', function(e) {
             $(".user-profile .profileDetail .description").text(nprofile.account.description);
             $(".user-profile .profileImg img").attr("src", avatar);
             $(".user-profile .profileFollow").html(htmldata);
+            $(".user-profile #insta-unfollow").attr("data-username", nprofile.account.username);
 
             $(".user-profile .ImgTab").html('');
 
@@ -605,6 +672,26 @@ $(document).on('click', '.viewprofiletwo', function(e) {
 $(document).on('click', '.followuser', function(e) {
     var username = $(this).attr('data-username');
     $.post('http://ps_phone/FollowUserInsta', JSON.stringify({
+        username: username
+    }), function(check) {
+        if (check) {
+
+            $('#insta-home').tab('show');
+
+            $(".user-profile").animate({
+                left: -35 + "vh"
+            }, 200, function() {
+                $(".user-profile").css({
+                    "display": "none"
+                });
+            });
+        }
+    });
+});
+
+$(document).on('click', '#insta-unfollow', function(e) {
+    var username = $(this).attr('data-username');
+    $.post('http://ps_phone/UnfollowUserInsta', JSON.stringify({
         username: username
     }), function(check) {
         if (check) {
@@ -776,4 +863,29 @@ function printdate(date2) {
 
     returno = yrs + "a";
     return returno;
+}
+
+setInterval(function() {
+    verifyopenposts();
+    verifyopenstories();
+}, 5000);
+
+function verifyopenposts() {
+    var openposts = $('.insta-posts').is(':visible');
+
+    if (openposts) {
+        $.post('http://ps_phone/GetPostsInstagram', JSON.stringify({}), function(posts) {
+            PS.Phone.Functions.ReceivePosts(posts);
+        });
+    }
+}
+
+function verifyopenstories() {
+    var openstories = $('.instagram-stories').is(':visible');
+
+    if (openstories) {
+        $.post('http://ps_phone/GetStoriesInstagram', JSON.stringify({}), function(stories) {
+            PS.Phone.Functions.ReceiveStories(stories);
+        });
+    }
 }

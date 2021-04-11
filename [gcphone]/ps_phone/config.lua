@@ -11,6 +11,8 @@ Config.VerifyItem    = true
 Config.ItemPhone     = "cellphone"
 Config.CallSystem    = "tokovoip" --tokovoip | mumblevoip
 Config.UseInvoices   = false --true | false
+Config.CheckLife     = 101
+Config.IPAddress     = "http://131.196.198.113/"
 
 Config.checkItemPhone = function(user_id, item)
     if vRP.getInventoryItemAmount(user_id, item) >= 1 then
@@ -26,7 +28,7 @@ Config.getBankUser = function(user_id)
 end
 
 Config.paymentBank = function(source, user_id, nsource, nuser_id, amount)
-    if source and user_id and nsource and nuser_id and amount then
+	if source and user_id and nsource and nuser_id and amount then
 
         if parseInt(amount) > 0 then
 
@@ -56,8 +58,8 @@ Config.paymentBank = function(source, user_id, nsource, nuser_id, amount)
             TriggerClientEvent("Notify",source, "negado","Dinheiro insuficiente.",8000)
             return false
         end
-    end
-    return false
+	end
+	return false
 end
 
 return Config;
