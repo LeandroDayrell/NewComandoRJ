@@ -1873,7 +1873,7 @@ function cRP.paymentTheft(mobile)
 
 		vRP.upgradeStress(user_id,1)
 
-		if math.random(100) >= 40 then
+		if math.random(100) >= 80 then
 			vRP.wantedTimer(parseInt(user_id),120)
 			TriggerClientEvent("Notify",source,"importante","As autoridades foram notificadas da tentativa de roubo.",5000)
 			local x,y,z = vRPclient.getPositions(source)
