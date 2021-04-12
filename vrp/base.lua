@@ -330,23 +330,7 @@ AddEventHandler("baseModule:idLoaded",function(source,user_id,model)
 		if registration == nil then
 			vRP.execute("vRP/update_characters",{ id = parseInt(user_id), registration = vRP.generateRegistrationNumber(), phone = vRP.generatePhoneNumber() })
 		end
-		
-		TriggerEvent("vRP:playerSpawn",user_id,source)
 
-	end
-end)
------------------------------------------------------------------------------------------------------------------------------------------
--- SPAWN
------------------------------------------------------------------------------------------------------------------------------------------
-AddEventHandler("vRP:playerSpawn",function(user_id,source)
-	local source = source
-	local user_id = vRP.getUserId(source)
-	if user_id then
-		local identity = vRP.getUserIdentity(user_id)
-		if identity then
-			vRP.setUData(user_id,"Datatable",json.encode(vRP.user_tables[user_id]))
-			TriggerClientEvent("vRP:showIds",-1,showIds)
-			--SendWebhookMessage(webhookjoins,"```prolog\n[ID]: "..user_id.." \n[IP]: "..GetPlayerEndpoint(source).." \n[ENTROU NO SERVIDOR] "..os.date("\n[Data]: %d/%m/%Y [Hora]: %H:%M:%S").." \r```")
-		end
+		TriggerEvent("vRP:playerSpawn",user_id,source)
 	end
 end)

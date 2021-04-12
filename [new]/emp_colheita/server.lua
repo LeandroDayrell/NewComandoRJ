@@ -12,7 +12,7 @@ function emP.checkPayment()
     if user_id then
         randgraos = math.random(1,3)
         if vRP.computeInvWeight(user_id)+vRP.itemWeightList() <= vRP.getBackpack(user_id) then----
-            vRP.giveInventoryItem(user_id,"weed",parseInt(randgraos),true)
+            vRP.giveInventoryItem(user_id,"weed",parseInt(randgraos))
             TriggerClientEvent("Notify",source,"sucesso","Você recebeu <b>"..randgraos.."</b> Grãos.")
         else
             TriggerClientEvent("Notify",source,"negado","<b>Mochila</b> cheia.")
@@ -26,7 +26,7 @@ function emP.checkGraos()
 	local source = source
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if vRP.getInventoryItemAmount(user_id,"weed",true) >= 5 then
+		if vRP.getInventoryItemAmount(user_id,"graosimpuros") >= 5 then
 			return true 
 		else
 			TriggerClientEvent("Notify",source,"negado","<b>Grãos</b> insuficientes.") 
@@ -39,9 +39,9 @@ function emP.separarGraos()
     local source = source
     local user_id = vRP.getUserId(source)
     if user_id then
-        if vRP.tryGetInventoryItem(user_id,"weed",5,true) then
+        if vRP.tryGetInventoryItem(user_id,"graosimpuros",5) then
             rgraos = math.random(2,4)
-            vRP.giveInventoryItem(user_id,"hood",parseInt(rgraos),true)
+            vRP.giveInventoryItem(user_id,"graos",parseInt(rgraos))
             TriggerClientEvent("Notify",source,"sucesso","Você recebeu <b>"..rgraos.."</b> Grãos.")
         end
     end

@@ -307,18 +307,7 @@ local shops = {
 			["WEAPON_COMBATPISTOL"] = 7500
 		}
 	},
-	["contrabando"] = {
-		["mode"] = "Buy",
-		["type"] = "Consume",
-		["item"] = "dollars2",
-		["list"] = {
-			["handcuff"] = 26,
-			["hood"] = 18,
-			["cannabisseed"] = 18,
-			["rope"] = 8
-		}
-	},
-	["drugsSelling"] = {
+--[[ 	["drugsSelling"] = {
 		["mode"] = "Buy",
 		["type"] = "Consume",
 		["item"] = "dollars2",
@@ -326,6 +315,18 @@ local shops = {
 			["meth"] = 26,
 			["lean"] = 18,
 			["ecstasy"] = 8
+		}
+	}, ]]
+	["contrabando"] = {
+		["mode"] = "Buy",
+		["type"] = "Consume",
+		["item"] = "dollars",
+		["list"] = {
+			["handcuff"] = 26,
+			["hood"] = 18,
+			["cannabisseed"] = 18,
+			["efidrina"] = 18,
+			["rope"] = 8
 		}
 	}
 }

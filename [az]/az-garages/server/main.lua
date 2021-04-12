@@ -628,22 +628,6 @@ RegisterCommand('estoque', function(source,args,rawCommand)
     end
 end)
 
-
-
-
-
------------------------------------------------------------------------------------------------------------------------------------------
-RegisterCommand('car',function(source,args,rawCommand)
-	local user_id = vRP.getUserId(source)
-    if vRP.hasPermission(user_id, "Admin") then		
-	--vRP.logInfoToFile("logRJ/spawncarro.txt",user_id.." spawnou "..rawCommand.." .")
-		if args[1] then
-			TriggerClientEvent('spawnarveiculo',source,args[1])
-		end
-	end
-end)
-
-
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- ADD CAR
 -----------------------------------------------------------------------------------------------------------------------------------------

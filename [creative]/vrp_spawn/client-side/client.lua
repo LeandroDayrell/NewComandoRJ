@@ -7,32 +7,19 @@ vRP = Proxy.getInterface("vRP")
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CONNECTION
 -----------------------------------------------------------------------------------------------------------------------------------------
-cnVRP = {}
-Tunnel.bindInterface("vrp_spawn",cnVRP)
+cRP = {}
+Tunnel.bindInterface("vrp_spawn",cRP)
 vSERVER = Tunnel.getInterface("vrp_spawn")
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- VARIABLES
 -----------------------------------------------------------------------------------------------------------------------------------------
-cam = nil
-
-function removeCamActive()
-    if cam and IsCamActive(cam) then
-        SetCamCoord(cam, GetGameplayCamCoords())
-        SetCamRot(cam, GetGameplayCamRot(2), 2)
-        RenderScriptCams(0, 0, 0, 0, 0)
-        EnableGameplayCam(true)
-        SetCamActive(cam, false)
-        DestroyCam(cam)
-        cam = nil
-    end
-end
+local cam = nil
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- SETUPCHARS
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterNetEvent("vrp_spawn:setupChars")
 AddEventHandler("vrp_spawn:setupChars",function()
 	SetEntityVisible(PlayerPedId(),false,false)
-	FreezeEntityPosition(PlayerPedId(),true)
 	SetEntityInvincible(PlayerPedId(),true)
 
 	cam = CreateCamWithParams("DEFAULT_SCRIPTED_CAMERA",232.42,-419.45,224.98,360.0,0.0,140.0,60.0,false,0)
@@ -59,10 +46,10 @@ RegisterNetEvent("vrp_spawn:spawnChar")
 AddEventHandler("vrp_spawn:spawnChar",function(status)
 	DoScreenFadeOut(1000)
 	Citizen.Wait(1000)
-	SetEntityVisible(PlayerPedId(),true,true)
-	FreezeEntityPosition(PlayerPedId(),false)
-	SetEntityInvincible(PlayerPedId(),false)
-	removeCamActive()
+
+	SetCamActive(cam,false)
+	DestroyCam(cam,true)
+	cam = nil
 
 	TriggerEvent("vrp_login:Spawn",status)
 end)
@@ -74,31 +61,20 @@ RegisterNUICallback("GetCharacters",function(data,cb)
 	Citizen.Wait(1000)
 	cb(chars)
 end)
-
-
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CHARACTERCHOSEN
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterNUICallback("CharacterChosen",function(data,cb)
-	SetEntityVisible(PlayerPedId(),true,true)
-	FreezeEntityPosition(PlayerPedId(),false)
-	SetEntityInvincible(PlayerPedId(),false)
 	TriggerServerEvent("vrp_spawn:charChosen",tonumber(data.id))
 	SetNuiFocus(false,false)
-	removeCamActive()
 	cb("ok")
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CHARACTERCREATED
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterNUICallback("CharacterCreated",function(data,cb)
-	SetEntityVisible(PlayerPedId(),true,true)
-	FreezeEntityPosition(PlayerPedId(),false)
-	SetEntityInvincible(PlayerPedId(),false)	
 	TriggerServerEvent("vrp_spawn:createChar",data.name,data.name2,data.sex)
 	SetNuiFocus(false,false)
-	removeCamActive()
-
 	cb("ok")
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------

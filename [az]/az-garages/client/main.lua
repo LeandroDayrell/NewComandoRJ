@@ -64,31 +64,6 @@ Citizen.CreateThread(function()
 	end
 end)
 
-
------------------------------------------------------------------------------------------------------------------------------------------
--- SPAWNAR VEICULO
------------------------------------------------------------------------------------------------------------------------------------------
-RegisterNetEvent('spawnarveiculo')
-AddEventHandler('spawnarveiculo',function(name)
-	local mhash = GetHashKey(name)
-	while not HasModelLoaded(mhash) do
-		RequestModel(mhash)
-		Citizen.Wait(10)
-	end
-
-	if HasModelLoaded(mhash) then
-		local ped = PlayerPedId()
-		local nveh = CreateVehicle(mhash,GetEntityCoords(ped),GetEntityHeading(ped),true,false)
-
-		SetVehicleOnGroundProperly(nveh)
-		SetVehicleNumberPlateText(nveh,vRP.getRegistrationNumber())
-		SetEntityAsMissionEntity(nveh,true,true)
-		TaskWarpPedIntoVehicle(ped,nveh,-1)
-
-		SetModelAsNoLongerNeeded(mhash)
-	end
-end)
-
 Citizen.CreateThread(function()
 	for garage,details in pairs(vAZ.config.garages.personal) do
 		if details.blip.id == nil then
