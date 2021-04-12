@@ -282,6 +282,13 @@ RegisterCommand("fix",function(source,args,rawCommand)
 		end
 	end
 end)
+
+RegisterCommand("limpainv",function(source,args,rawCommand)
+	local user_id = vRP.getUserId(source)
+		if vRP.hasPermission(user_id,"Admin") then
+			vCLIENT.limparinventory(source)
+		end
+end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- LIMPAREA
 -----------------------------------------------------------------------------------------------------------------------------------------

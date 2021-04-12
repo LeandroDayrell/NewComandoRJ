@@ -24,6 +24,11 @@ end
 function cRP.vehicleHash(vehicle)
 	print(GetEntityModel(vehicle))
 end
+
+
+function cRP.limparinventory(source)
+	TriggerServerEvent("clearInventory")
+end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- TELEPORTWAY
 -----------------------------------------------------------------------------------------------------------------------------------------
