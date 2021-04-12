@@ -181,7 +181,7 @@ body {
 	right: 0px;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	background-color: rgba(24,27,32,0.9);
+	background-color: rgba(25, 26, 27, 0.9);
 	overflow: hidden;
 }
 
@@ -223,7 +223,7 @@ form {
 .tab .active {
 	color: white;
 	font-weight: bold;
-	background: #34548e;
+	background: #272727;
 }
 
 .tab .visage::before {
@@ -298,7 +298,7 @@ form {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	padding: 12px 15px 15px;
-	background-color: rgba(56,58,64,0.6);
+	background-color: rgba(32, 32, 32, 0.6);
 }
 
 .block .input .type-range .arrow {
@@ -397,7 +397,7 @@ form {
 	height: 100px;
 	display: block;
 	border: none;
-	background-color: #34548e;
+	background-color: #272727;
 	font-size: 20px;
 	line-height: 70px;
 	color: white;
@@ -410,7 +410,7 @@ form {
 }
 
 .submit:hover {
-	background-color: #34548e;
+	background-color: #272727;
 }
 
 .popup {
@@ -446,7 +446,7 @@ form {
 }
 
 .popup .buttons .button {
-	background-color: #1e3358;
+	background-color: #1a1a1a;
 	text-align: center;
 	vertical-align: middle;
 	width: 80px;
@@ -458,5 +458,5 @@ form {
 }
 
 .popup .buttons .yes {
-	background-color: #34548e;
+	background-color: #272727;
 }

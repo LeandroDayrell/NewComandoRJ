@@ -11,6 +11,7 @@ local selecionado = 0
 local CoordenadaX = 751.89
 local CoordenadaY = 6458.85
 local CoordenadaZ = 31.53
+local inService = false
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- RESIDENCIAS
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -54,21 +55,23 @@ local locs = {
 Citizen.CreateThread(function()
 	while true do
 		local crjSleep = 500
-		if not servico then
-			local ped = PlayerPedId()
-			local x,y,z = table.unpack(GetEntityCoords(ped))
-			local bowz,cdz = GetGroundZFor_3dCoord(CoordenadaX,CoordenadaY,CoordenadaZ)
-			local distance = GetDistanceBetweenCoords(CoordenadaX,CoordenadaY,cdz,x,y,z,true)
-			if distance <= 60 then
-				crjSleep = 1
-				DrawMarker(21,CoordenadaX,CoordenadaY,CoordenadaZ-0.6,0,0,0,0.0,0,0,0.5,0.5,0.4,128,1,210,50,0,0,0,1)
-				if distance <= 1.2 then
-					drawTxt("PRESSIONE  ~r~E~w~  PARA INICIAR A COLHEITA",4,0.5,0.93,0.50,255,255,255,180)
-					if IsControlJustPressed(0,38) then
-						servico = true
-						selecionado = 1
-						CriandoBlip(locs,selecionado)
-						TriggerEvent("Notify","sucesso","Você entrou em serviço.")
+		if inService then
+			if not servico then
+				local ped = PlayerPedId()
+				local x,y,z = table.unpack(GetEntityCoords(ped))
+				local bowz,cdz = GetGroundZFor_3dCoord(CoordenadaX,CoordenadaY,CoordenadaZ)
+				local distance = GetDistanceBetweenCoords(CoordenadaX,CoordenadaY,cdz,x,y,z,true)
+				if distance <= 5 then
+					crjSleep = 1
+					DrawMarker(21,CoordenadaX,CoordenadaY,CoordenadaZ-0.6,0,0,0,0.0,0,0,0.5,0.5,0.4,128,1,210,50,0,0,0,1)
+					if distance <= 1.2 then
+						drawTxt("PRESSIONE  ~r~E~w~  PARA INICIAR A COLHEITA",4,0.5,0.93,0.50,255,255,255,180)
+						if IsControlJustPressed(0,38) then
+							servico = true
+							selecionado = 1
+							CriandoBlip(locs,selecionado)
+							TriggerEvent("Notify","sucesso","Você entrou em serviço.")
+						end
 					end
 				end
 			end
@@ -76,6 +79,21 @@ Citizen.CreateThread(function()
 		Citizen.Wait(crjSleep)
 	end
 end)
+
+RegisterCommand("colheita",function(source,args)
+	if GetEntityHealth(PlayerPedId()) > 101 then
+		if inService then
+			inService = false
+			TriggerEvent("Notify","sucesso","Sistema desativado com sucesso.",5000)
+		else
+			inService = true
+			TriggerEvent("Notify","sucesso","Sistema ativado com sucesso.",5000)
+			servico = false
+		end
+	end
+end)
+
+		
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- SERVIÇO
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -140,33 +158,35 @@ local locais = {
 Citizen.CreateThread(function()
 	while true do
 		local crjSleep = 500
-		if not processo then
-			for _,v in pairs(locais) do
-				local ped = PlayerPedId()
-				local x,y,z = table.unpack(GetEntityCoords(ped))
-				local bowz,cdz = GetGroundZFor_3dCoord(v.x,v.y,v.z)
-				local distance2 = GetDistanceBetweenCoords(v.x,v.y,cdz,x,y,z,true)
-				local vehicle = GetPlayersLastVehicle()
-				if distance2 <= 20 then
-					crjSleep = 1
-					DrawMarker(21,1709.34,4729.58,42.16-0.6,0,0,0,0.0,0,0,0.5,0.5,0.4,128,1,210,50,0,0,0,1)
-					if distance2 <= 2 and not andamento then
-						drawTxt("PRESSIONE  ~r~E~w~  PARA INICIAR A SEPARAÇÃO DOS GRÃOS",4,0.5,0.93,0.50,255,255,255,180)
-						if IsControlJustPressed(0,38) and emP.checkGraos() and not IsPedInAnyVehicle(ped) and GetEntityModel(vehicle) == -1207771834 then
-							processo = true
-							segundos = 5
-							vRP._playAnim(true,{{"pickup_object","pickup_low"}},false)
-							SetTimeout(4000,function()
-							emP.separarGraos()
-							end)
+		if inService then
+			if not processo then
+				for _,v in pairs(locais) do
+					local ped = PlayerPedId()
+					local x,y,z = table.unpack(GetEntityCoords(ped))
+					local bowz,cdz = GetGroundZFor_3dCoord(v.x,v.y,v.z)
+					local distance2 = GetDistanceBetweenCoords(v.x,v.y,cdz,x,y,z,true)
+					local vehicle = GetPlayersLastVehicle()
+					if distance2 <= 20 then
+						crjSleep = 1
+						DrawMarker(21,1709.34,4729.58,42.16-0.6,0,0,0,0.0,0,0,0.5,0.5,0.4,128,1,210,50,0,0,0,1)
+						if distance2 <= 2 and not andamento then
+							drawTxt("PRESSIONE  ~r~E~w~  PARA INICIAR A SEPARAÇÃO DOS GRÃOS",4,0.5,0.93,0.50,255,255,255,180)
+							if IsControlJustPressed(0,38) and emP.checkGraos() and not IsPedInAnyVehicle(ped) and GetEntityModel(vehicle) == -1207771834 then
+								processo = true
+								segundos = 5
+								vRP._playAnim(true,{{"pickup_object","pickup_low"}},false)
+								SetTimeout(4000,function()
+								emP.separarGraos()
+								end)
+							end
 						end
 					end
 				end
 			end
-		end
-		if processo then
-			crjSleep = 1
-			drawTxt("AGUARDE ~g~"..segundos.."~w~ SEGUNDOS ATÉ FINALIZAR A SEPARAÇÃO DOS GRÃOS",4,0.5,0.93,0.50,255,255,255,180)
+			if processo then
+				crjSleep = 1
+				drawTxt("AGUARDE ~g~"..segundos.."~w~ SEGUNDOS ATÉ FINALIZAR A SEPARAÇÃO DOS GRÃOS",4,0.5,0.93,0.50,255,255,255,180)
+			end
 		end
 		Citizen.Wait(crjSleep)
 	end
@@ -174,7 +194,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- TIMERS
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+--[[ Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(1000)
 		if segundos > 0 then
@@ -187,7 +207,7 @@ Citizen.CreateThread(function()
 			end
 		end
 	end
-end)
+end) ]]
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- FUNÇÕES
 -----------------------------------------------------------------------------------------------------------------------------------------

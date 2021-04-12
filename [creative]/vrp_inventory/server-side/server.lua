@@ -445,7 +445,6 @@ AddEventHandler("vrp_inventory:useItem",function(slot,rAmount)
 							Citizen.Wait(0)
 						until active[user_id] == nil
 					end
-					
 
 					if itemName == "cigarette" then
 						if vRP.getInventoryItemAmount(user_id,"lighter") < 1 then
@@ -1724,7 +1723,7 @@ AddEventHandler("vrp_inventory:useItem",function(slot,rAmount)
 									active[user_id] = 30
 									vCLIENT.closeInventory(source)
 									vCLIENT.blockButtons(source,true)
-									TriggerClientEvent("Progress",source,30000, "Utilizando")
+									TriggerClientEvent("Progress",source,30000)
 									vRPclient._playAnim(source,true,{"anim@amb@clubhouse@tutorial@bkr_tut_ig3@","machinic_loop_mechandplayer"},true)
 
 									repeat
