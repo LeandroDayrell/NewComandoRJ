@@ -7,12 +7,12 @@ vRP = Proxy.getInterface("vRP")
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CONNECTION
 -----------------------------------------------------------------------------------------------------------------------------------------
-cRP = {}
-Tunnel.bindInterface("vrp_spawn",cRP)
+cnVRP = {}
+Tunnel.bindInterface("vrp_spawn",cnVRP)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- SETUPCHARS
 -----------------------------------------------------------------------------------------------------------------------------------------
-function cRP.setupChars()
+function cnVRP.setupChars()
 	local source = source
 	local steam = vRP.getSteam(source)
 
@@ -23,7 +23,7 @@ end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- DELETECHAR
 -----------------------------------------------------------------------------------------------------------------------------------------
-function cRP.deleteChar(id)
+function cnVRP.deleteChar(id)
 	local source = source
 	local steam = vRP.getSteam(source)
 
@@ -43,12 +43,13 @@ AddEventHandler("vrp_spawn:charChosen",function(id)
 	TriggerClientEvent("hudActived",source,true)
 	TriggerEvent("baseModule:idLoaded",source,id,nil)
 
-	if spawnLogin[parseInt(id)] then
-		TriggerClientEvent("vrp_spawn:spawnChar",source,false)
-	else
-		spawnLogin[parseInt(id)] = true
-		TriggerClientEvent("vrp_spawn:spawnChar",source,true)
-	end
+	-- if spawnLogin[parseInt(id)] then
+	-- 	-- TriggerClientEvent("vrp_spawn:spawnChar",source,false)
+	-- else
+	-- 	spawnLogin[parseInt(id)] = true
+	-- 	-- TriggerClientEvent("vrp_spawn:spawnChar",source,true)	
+	-- end
+	TriggerEvent("ks-CharacterSpawn", source, id)
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CREATECHAR
@@ -86,8 +87,9 @@ AddEventHandler("vrp_spawn:createChar",function(name,name2,sex)
 
 	spawnLogin[parseInt(newId)] = true
 	TriggerClientEvent("hudActived",source,true)
-	TriggerClientEvent("vrp_spawn:spawnChar",source,true)
+	-- TriggerClientEvent("vrp_spawn:spawnChar",source,true)
 	TriggerEvent("baseModule:idLoaded",source,newId,model)
+	TriggerEvent("ks-CharacterSpawn", source, newId)
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- GETPLAYERCHARACTERS
