@@ -18,7 +18,7 @@ end
 
 local src = {
 
-	[1] = { ['re'] = "analgesic", ['reqtd'] = 5, ['item'] = "metil", ['itemqtd'] = 10 },
+	[1] = { ['re'] = "efidrina", ['reqtd'] = 5, ['item'] = "metil", ['itemqtd'] = 10 },
 	[2] = { ['re'] = "metil", ['reqtd'] = 10, ['item'] = "methliquid", ['itemqtd'] = 15 },
 	[3] = { ['re'] = "methliquid", ['reqtd'] = 15, ['item'] = "meth", ['itemqtd'] = 20 },
 
