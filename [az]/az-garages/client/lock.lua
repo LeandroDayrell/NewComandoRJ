@@ -1,8 +1,8 @@
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(1)
-		if IsControlJustPressed(0,38) then
-			local vehicle = vRP.getNearestVehicle(5)
+		if IsControlJustPressed(0,182) then
+			local vehicle = vRP.getNearVehicle(5)
 			if IsEntityAVehicle(vehicle) then
 				if not vAZ.whitelistClassVehicle(vAZ.config.class, vehicle) then
 					vAZserver.ToggleVehicleLock(vehicle, GetEntityModel(vehicle), GetVehicleNumberPlateText(vehicle))

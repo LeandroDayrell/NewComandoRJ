@@ -321,7 +321,7 @@ vAZ.checkVehicleAlreadyOnStreet = function(model, plate)
 end
 
 vAZ.getVehicleNearest = function(radius)
-	local vehicle = vRP.getNearestVehicle(radius)
+	local vehicle = vRP.getNearVehicle(radius)
 	if IsEntityAVehicle(vehicle) then
 		local vehicleDB = vAZserver.getServerVehicle('hash', GetEntityModel(vehicle))
 		if vehicleDB ~= nil then

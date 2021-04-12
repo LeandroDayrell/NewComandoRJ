@@ -9,7 +9,7 @@ vAZ.config.ipva = 0.02
 vAZ.config.garages = {}
 vAZ.config.garages.service = {
      [1] = {
-        permission = 'pmerj.permissao',
+        permission = 'Police',
         vehicles = {
             "corollarj",
             "r1250rj",
@@ -22,7 +22,6 @@ vAZ.config.garages.service = {
             "bmwm8prf",
             "amarokprf",
             "q8pc",
-            "jeeppc",
             "pranger",
             "pbus",
             "policet",
@@ -30,20 +29,20 @@ vAZ.config.garages.service = {
         }
     },
     [2] = {
-        permission = 'pmerj.permissao',
+        permission = 'Police',
         vehicles = {
             "predator"
         }
     },
     [3] = {
-        permission = 'pmerj.permissao',
+        permission = 'Police',
         vehicles = {
             "polmav",
             "swift"
         }
     },
     [4] = {
-        permission = 'paramedico.permissao',
+        permission = 'Paramedic',
         vehicles = {
             "mercambulancia",
 		    "fordambulancia",
@@ -54,42 +53,36 @@ vAZ.config.garages.service = {
         }
     },
     [5] = {
-        permission = 'weazel.permissao',
+        permission = 'Jornal',
         vehicles = {
-            "rumpo",
+            "rumpo"
         }
     },
     [6] = {
-        permission = 'paramedico.permissao',
+        permission = 'Paramedic',
         vehicles = {
-            "samumav",
+            "samumav"
         }
     },
     [7] = {  
-        permission = 'mecanico.permissao',
+        permission = 'LosSantos',
         vehicles = {
             "flatbed",
-            "slamtruck",
-            "flatbed3",
+            "slamtruck"
         }
     },
     [8] = {
-        permission = 'taxista.permissao',
         vehicles = {
-            "taxi"
+            "bus"
         }
     },
     [9] = {
-        permission = 'bope.permissao',
         vehicles = {
-            "amarokbope",
-            "frontierbope",
-            "caveiraobope",
-            "riot"
+            "stockade"
         }
     },
     [10] = {
-        permission = 'motoclub.permissao',
+        permission = 'TheLost',
         vehicles = {
             "deathbike",
             "hexer",
@@ -98,13 +91,13 @@ vAZ.config.garages.service = {
         }
     },
     [11] = {
-        permission = 'weazel.permissao',
+        permission = 'Jornal',
         vehicles = {
             "frogger"
         }
     },
     [12] = {
-        permission = 'dkfarm.permissao',
+        permission = 'Lowrider',
         vehicles = {
             "buccanner2",
             "faction2",
@@ -118,14 +111,12 @@ vAZ.config.garages.service = {
    
     [13] = {
         vehicles = {
-            "boxville2",
-            "tribike3"
+            "mule3"
         }
     },
     [14] = {
         vehicles = {
-            "trash",
-            "trash2"
+            "trash"
         }
     },
     [15] = {
@@ -135,7 +126,6 @@ vAZ.config.garages.service = {
         }
     },
     [16] = {
-		permission = 'pescador.garagem',
         vehicles = {
             "dinghy"
         }
@@ -146,7 +136,6 @@ vAZ.config.garages.service = {
         }
     },
     [18] = {
-		permission = 'pescador.garagem',
         vehicles = {
             "dinghy"
         }
@@ -158,22 +147,56 @@ vAZ.config.garages.service = {
     },
     [20] = {
         vehicles = {
-            "bus"
+            "taco"
         }
     },
 	[21] = {
         vehicles = {
-            "seashark3",
+            "seashark3"
         }
     },
 	[22] = {
         vehicles = {
-            "avisa",
+            "avisa"
         }
     },
-	[23] = {
+    [23] = {
+        price = 100,
         vehicles = {
-            "rebel",
+            'tractor2',
+            'rebel'
+        }
+    },
+	[24] = {
+        vehicles = {
+            "flatbed"
+        }
+    },
+    [25] = {
+        vehicles = {
+            "flatbed"
+        }
+    },
+    [26] = {
+        vehicles = {
+            "taxi"
+        }
+    },
+    [27] = {
+        vehicles = {
+            "boxville4"
+        }
+    },
+    [28] = {
+        permission = 'Mafia',
+        vehicles = {
+            "ztype",
+            "btype3"
+        }
+    },
+    [29] = {
+        vehicles = {
+            "gburrito2"
         }
     }
 }
@@ -213,13 +236,6 @@ vAZ.config.garages.rental = {
             'fixter',
             'cruiser',
             'bmx'
-        }
-    },
-    [4] = {
-        price = 100,
-        vehicles = {
-            'tractor2',
-            'rebel'
         }
     }
 }

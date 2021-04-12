@@ -5,6 +5,8 @@ local Tunnel = module("vrp","lib/Tunnel")
 local Proxy = module("vrp","lib/Proxy")
 vRP = Proxy.getInterface("vRP")
 vRPclient = Tunnel.getInterface("vRP")
+
+vAZgarage = Proxy.getInterface('az-garages')
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CONNECTION
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -15,12 +17,59 @@ vHOMES = Tunnel.getInterface("vrp_homes")
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CONNECTPLAYERS
 -----------------------------------------------------------------------------------------------------------------------------------------
-AddEventHandler("vRP:playerSpawn",function(user_id,source)
+--[[ AddEventHandler("vRP:playerSpawn",function(user_id,source)
 	local identity = vRP.getUserIdentity(user_id)
 	if identity then
 		vCLIENT.setDiscord(source,"#"..user_id.." "..identity.name.." "..identity.name2)
 	end
+end) ]]
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- DV
+-----------------------------------------------------------------------------------------------------------------------------------------
+--[[ RegisterCommand("dv",function(source,args,rawCommand)
+    local user_id = vRP.getUserId(source)
+    if vRP.hasPermission(user_id,"Admin") then --vRP.hasPermission(user_id,"mecanico.permissao") or vRP.hasPermission(user_id,"diretor.permissao") or vRP.hasPermission(user_id,"playerzin.permissao") then
+        local vehicle = vRPclient.getNearVehicle(source,7)
+		if vehicle then
+			print('teste 01')
+			vAZgarage.forceDespawnUserVehicle(source, vRPclient.getNetVehicle(source, vehicle))
+			print('teste 2')
+			print(vehicle)
+			print(source)
+			--SendWebhookMessage(webhooklinkchat,  "```" ..user_id.." Usou o comando " ..rawCommand.. "```")
+        end
+    end
 end)
+RegisterNetEvent('deletarveiculo')
+AddEventHandler('deletarveiculo',function(vehicle)
+    TriggerServerEvent("vrp_garages:admDelete",VehToNet(vehicle))
+	print('DELETAR VEICULO SERVER')
+end)
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- TRYDELETEVEH
+-----------------------------------------------------------------------------------------------------------------------------------------
+RegisterServerEvent("trydeleteveh")
+AddEventHandler("trydeleteveh",function(index)
+	TriggerClientEvent("syncdeleteveh",-1,index)
+	print('TRY DELETE VEH')
+end) ]]
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- CAR
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+RegisterCommand("car",function(source,args,rawCommand)
+	local user_id = vRP.getUserId(source)
+	if vRP.hasPermission(user_id,"Admin") then
+	vRP.logInfoToFile("logRJ/spawncarro.txt",user_id.." spawnou "..rawCommand.." .")
+		if args[1] then
+			TriggerClientEvent('spawnarveiculo',source,args[1])
+		end
+	end
+end)
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- ITEM
 -----------------------------------------------------------------------------------------------------------------------------------------

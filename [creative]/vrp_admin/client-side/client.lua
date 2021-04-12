@@ -12,7 +12,7 @@ Tunnel.bindInterface("vrp_admin",cRP)
 vSERVER = Tunnel.getInterface("vrp_admin")
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- DISCORD
------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------- --------------------------------------------------------------------------------------------------
 function cRP.setDiscord(status)
 	SetDiscordAppId(494493006418673703)
 	SetDiscordRichPresenceAsset("logotive")
@@ -29,6 +29,57 @@ end
 function cRP.limparinventory(source)
 	TriggerServerEvent("clearInventory")
 end
+
+--[[ 
+RegisterNetEvent('deletarveiculo')
+AddEventHandler('deletarveiculo',function(vehicle)
+	TriggerServerEvent("vrp_garages:admDelete",VehToNet(vehicle),GetVehicleEngineHealth(vehicle),GetVehicleBodyHealth(vehicle),GetVehicleFuelLevel(vehicle))
+	TriggerServerEvent("trydeleteveh",VehToNet(vehicle))
+end)
+
+RegisterNetEvent("syncdeleteveh")
+AddEventHandler("syncdeleteveh",function(index)
+	Citizen.CreateThread(function()
+		if NetworkDoesNetworkIdExist(index) then
+			SetVehicleAsNoLongerNeeded(index)
+			SetEntityAsMissionEntity(index,true,true)
+			local v = NetToVeh(index)
+			if DoesEntityExist(v) then
+				SetVehicleHasBeenOwnedByPlayer(v,false)
+				PlaceObjectOnGroundProperly(v)
+				SetEntityAsNoLongerNeeded(v)
+				SetEntityAsMissionEntity(v,true,true)
+				DeleteVehicle(v)
+			end
+		end
+	end)
+end) ]]
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- SPAWNAR VEICULO
+-----------------------------------------------------------------------------------------------------------------------------------------
+RegisterNetEvent('spawnarveiculo')
+AddEventHandler('spawnarveiculo',function(name)
+	local mhash = GetHashKey(name)
+	while not HasModelLoaded(mhash) do
+		RequestModel(mhash)
+		Citizen.Wait(10)
+	end
+
+	if HasModelLoaded(mhash) then
+		local ped = PlayerPedId()
+		local nveh = CreateVehicle(mhash,GetEntityCoords(ped),GetEntityHeading(ped),true,false)
+
+		SetVehicleOnGroundProperly(nveh)
+		--SetVehicleNumberPlateText(nveh,vRP.getRegistrationNumber())
+		SetEntityAsMissionEntity(nveh,true,true)
+		TaskWarpPedIntoVehicle(ped,nveh,-1)
+
+		SetModelAsNoLongerNeeded(mhash)
+	end
+end)
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- TELEPORTWAY
 -----------------------------------------------------------------------------------------------------------------------------------------

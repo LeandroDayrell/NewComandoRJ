@@ -452,6 +452,7 @@ end
 
 vAZ.forceDespawnUserVehicle = function(source, entity)
     local source = source
+    print('aaaaaa')
     local user_id = vRP.getUserId(source)
     if vAZ.user.vehicles[user_id] == nil then
         vAZ.user.vehicles[user_id] = {}
@@ -460,14 +461,21 @@ vAZ.forceDespawnUserVehicle = function(source, entity)
         vAZ.user.cooldown[user_id] = 0
     end
     local garage = false
+    print('TESTE 03')
     for user,vehicles in pairs(vAZ.user.vehicles) do
+        print('TESTE 04')
         for id,vehicle in pairs(vehicles) do
+            print(vehicles)
+            print('TESTE 05')
             if parseInt(vehicle.net) == parseInt(entity) then
+                print('TESTE 06')
                 garage = true
-                if vAZclient.checkVehicleAlreadyOnStreet(source, vehicle.model, vehicle.plate) then
+                if vAZclient.checkVehicleAlreadyOnStreet(source, vehicle.model, vehicle.plate) then print('TESTE 07')
                     if vehicle.type == 'personal' or vehicle.type == 'home' then
+                        print('TESTE 08')
                         local status,engine,body,fuel = vAZclient.getVehicleEngine(source, vehicle.net)
                         if status then
+                            print('TESTE 09')
                             vRP.execute("vAZ/SetPlayerStateVehicle", { user_id = vehicle.owner, model = vehicle.model, state = 0 })
                             vRP.execute("vAZ/SetPlayerSpecificVehicle", { user_id = vehicle.owner, model = vehicle.model, engine = engine, body = body, fuel = fuel })
                         end
@@ -481,6 +489,7 @@ vAZ.forceDespawnUserVehicle = function(source, entity)
     end
     if not garage then
         TriggerClientEvent('az-garages:deletevehicle', source, entity)
+        print('bbbbbb')
     end
 end
 

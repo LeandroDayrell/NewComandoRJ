@@ -150,19 +150,19 @@ local itemlist = {
 		index = "weed",
 		name = "Maconha",
 		type = "use",
-		weight = 0.3
+		weight = 0.5
 	},
 	["weedendolada"] = {
 		index = "weedendolada",
 		name = "Maconha Endolada",
 		type = "use",
-		weight = 0.3
+		weight = 0.5
 	},
 	["joint"] = {
 		index = "joint",
 		name = "Baseado",
 		type = "use",
-		weight = 0.3
+		weight = 0.5
 	},
 	["pecadearma"] = {
 		index = "pecadearma",
@@ -192,7 +192,7 @@ local itemlist = {
 		index = "methendolada",
 		name = "Meta Endolada",
 		type = "use",
-		weight = 0.4
+		weight = 0.5
 	},
 	["metil"] = {
 		index = "metil",
@@ -204,7 +204,7 @@ local itemlist = {
 		index = "meth",
 		name = "Metanfetamina",
 		type = "use",
-		weight = 0.4
+		weight = 0.5
 	},
 	["methliquid"] = {
 		index = "methliquid",
