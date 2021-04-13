@@ -38,6 +38,17 @@ $(document).on('click', '.messages-openedchat .text-info', function(e) {
     }
 });
 
+$(document).on('click', '.message-shared-location', function(e) {
+    e.preventDefault();
+    var messageCoords = {}
+    messageCoords.x = $(this).data('x');
+    messageCoords.y = $(this).data('y');
+
+    $.post('http://ps_phone/SharedLocationMessage', JSON.stringify({
+        coords: messageCoords,
+    }))
+});
+
 // $(document).on('keypress', function(e) {
 //     if (OpenedChatData.message !== null) {
 //         if (e.which === 13) {
@@ -259,7 +270,7 @@ function SetupMessages(cData) {
             } else if (chat.type == "location") {
                 var pos = JSON.parse(chat.message);
                 MessageElement = `<div class="message ${Sender}">
-                    <div class="message-text" data-x="${pos.x}" data-y="${pos.y}">
+                    <div class="message-text message-shared-location" data-x="${pos.x}" data-y="${pos.y}">
                     <span style="font-size: 1.2vh;"><i class="fas fa-thumbtack" style="font-size: 1vh;"></i> Localização</span>
                     </div>
                 </div>`;

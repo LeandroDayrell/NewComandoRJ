@@ -1001,7 +1001,7 @@ AddEventHandler("vrp_inventory:useItem",function(slot,rAmount)
 											vRP.upgradeStress(user_id,1)
 											vRPclient._removeObjects(source)
 											vCLIENT.blockButtons(source,false)
-											vRP.giveInventoryItem(user_id,"dollars2",math.random(4,6),true)
+											vRP.giveInventoryItem(user_id,"dollars2",math.random(150,300),true)
 
 											if 100 >= 100 then
 												vRP.wantedTimer(user_id,60)
@@ -1300,8 +1300,8 @@ AddEventHandler("vrp_inventory:useItem",function(slot,rAmount)
 							end
 
 							if vTASKBAR.taskFishing(source) then
-								local rand = parseInt(math.random(3))
-								local fishs = { "octopus","shrimp","carp" }
+								local rand = parseInt(math.random(5))
+								local fishs = { "octopus","shrimp","carp","plastic","rubber"}
 
 								if vRP.computeInvWeight(user_id) + vRP.itemWeightList(fishs[rand]) * rand <= vRP.getBackpack(user_id) then
 									if vRP.tryGetInventoryItem(user_id,"bait",rand,true) then

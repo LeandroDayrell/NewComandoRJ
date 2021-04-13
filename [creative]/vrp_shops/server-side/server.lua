@@ -19,7 +19,6 @@ local shops = {
 		["type"] = "Cash",
 		["list"] = {
 			["postit"] = 20,
-			["energetic"] = 50,
 			["hamburger"] = 30,
 			["emptybottle"] = 40,
 			["cigarette"] = 20,
@@ -140,7 +139,7 @@ local shops = {
 			["mouse"] = 225,
 			["ring"] = 200,
 			["watch"] = 350,
-			["goldbar"] = 500,
+			["goldbar"] = 40000,
 			["playstation"] = 400,
 			["xbox"] = 400,
 			["legos"] = 200,
@@ -191,7 +190,6 @@ local shops = {
 			["cola"] = 18,
 			["teddy"] = 500,
 			["rose"] = 50,
-			["bucket"] = 200,
 			["compost"] = 10,
 			["silk"] = 3,
 			["coffee"] = 18,
@@ -217,7 +215,7 @@ local shops = {
 		["mode"] = "Buy",
 		["type"] = "Cash",
 		["list"] = {
-			["coffee"] = 18
+			["coffee"] = 2500
 		}
 	},
 	["sodaMachine"] = {
@@ -268,21 +266,21 @@ local shops = {
 		["type"] = "Cash",
 		["perm"] = "Police",
 		["list"] = {
-			["vest"] = 5000,
-			["gsrkit"] = 200,
-			["gdtkit"] = 200,
-			["WEAPON_SMG"] = 10000,
-			["WEAPON_PUMPSHOTGUN"] = 15000,
-			["WEAPON_SAWNOFFSHOTGUN"] = 15000,
-			["WEAPON_CARBINERIFLE"] = 25000,
-			["WEAPON_SPECIALCARBINE"] = 25000,
+			["vest"] = 5,
+			["gsrkit"] = 2,
+			["gdtkit"] = 2,
+			["WEAPON_SMG"] = 100,
+			["WEAPON_PUMPSHOTGUN"] = 100,
+			["WEAPON_SAWNOFFSHOTGUN"] = 100,
+			["WEAPON_CARBINERIFLE"] = 150,
+			["WEAPON_SPECIALCARBINE"] = 150,
 			["WEAPON_RIFLE_AMMO"] =5,
 			["WEAPON_PISTOL_AMMO"] = 1,
 			["WEAPON_SMG_AMMO"] = 3,
 			["WEAPON_FIREEXTINGUISHER"] = 1000,
 			["WEAPON_STUNGUN"] = 5000,
-			["WEAPON_NIGHTSTICK"] = 1000,
-			["WEAPON_COMBATPISTOL"] = 7500
+			["WEAPON_NIGHTSTICK"] = 10,
+			["WEAPON_COMBATPISTOL"] = 50
 		}
 	},
 	["policeStore"] = {
@@ -290,21 +288,47 @@ local shops = {
 		["type"] = "Cash",
 		["perm"] = "Police",
 		["list"] = {
-			["vest"] = 5000,
-			["gsrkit"] = 200,
-			["gdtkit"] = 200,
-			["WEAPON_SMG"] = 10000,
-			["WEAPON_PUMPSHOTGUN"] = 15000,
-			["WEAPON_SAWNOFFSHOTGUN"] = 15000,
-			["WEAPON_CARBINERIFLE"] = 25000,
-			["WEAPON_SPECIALCARBINE"] = 25000,
+			["vest"] = 5,
+			["gsrkit"] = 2,
+			["gdtkit"] = 2,
+			["WEAPON_SMG"] = 100,
+			["WEAPON_PUMPSHOTGUN"] = 100,
+			["WEAPON_SAWNOFFSHOTGUN"] = 100,
+			["WEAPON_CARBINERIFLE"] = 150,
+			["WEAPON_SPECIALCARBINE"] = 150,
 			["WEAPON_RIFLE_AMMO"] =5,
 			["WEAPON_PISTOL_AMMO"] = 1,
 			["WEAPON_SMG_AMMO"] = 3,
 			["WEAPON_FIREEXTINGUISHER"] = 1000,
 			["WEAPON_STUNGUN"] = 5000,
-			["WEAPON_NIGHTSTICK"] = 1000,
-			["WEAPON_COMBATPISTOL"] = 7500
+			["WEAPON_NIGHTSTICK"] = 10,
+			["WEAPON_COMBATPISTOL"] = 50
+		}
+	},
+	["lavagemmc"] = {
+		["mode"] = "Sell",
+		["type"] = "Cash",
+		["perm"] = "TheLost",
+		["list"] = {
+			["goldbar"] = 75000,
+			["dollars2"] = 0.75
+		}
+	},
+	["lavagemyakuza"] = {
+		["mode"] = "Sell",
+		["type"] = "Cash",
+		["perm"] = "Yakuza",
+		["list"] = {
+			["goldbar"] = 75000,
+			["dollars2"] = 0.75
+		}
+	},
+	["lossantos"] = {
+		["mode"] = "Buy",
+		["type"] = "Cash",
+		["list"] = {
+			["tires"] = 2500,
+			["toolbox"] = 5000
 		}
 	},
 --[[ 	["drugsSelling"] = {

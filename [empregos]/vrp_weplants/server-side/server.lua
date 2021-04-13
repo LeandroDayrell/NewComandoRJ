@@ -132,9 +132,9 @@ function cnVRP.checkTimers(id)
 				vRPclient._stopAnim(source,false)
 				TriggerClientEvent("cancelando",source,false)
 				vRP.giveInventoryItem(user_id,"weed",parseInt(weAmount[source]))
-				vRP.giveInventoryItem(user_id,"bucket",1)
-				if math.random(100) >= 50 then
-					vRP.giveInventoryItem(user_id,"cannabisseed",1)
+				vRP.giveInventoryItem(user_id,"bucket",1,true)
+				if math.random(100) >= 70 then
+					vRP.giveInventoryItem(user_id,"cannabisseed",1,true)
 				end
 				weAmount[source] = nil
 				return true

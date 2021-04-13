@@ -580,7 +580,7 @@ $(document).on('keypress', function(e) {
                 });
                 $("#whatsapp-openedgroup-message").val("");
             } else {
-                PS.Phone.Notifications.Add("fab fa-whatsapp", "Whatsapp", "YVocê não pode enviar uma mensagem em branco!", "#25D366", 1750);
+                // PS.Phone.Notifications.Add("fab fa-whatsapp", "Whatsapp", "YVocê não pode enviar uma mensagem em branco!", "#25D366", 1750);
             }
         }
     }

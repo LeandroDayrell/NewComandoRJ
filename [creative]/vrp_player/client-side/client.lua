@@ -818,8 +818,8 @@ end
 -- DISTANCESERVICE
 -----------------------------------------------------------------------------------------------------------------------------------------
 local disService = {
-	{ -348.82,-126.0,39.01,"Mechanic" }, -- Los Santos Cima
-	{ 436.9,-314.92,34.92,"Mechanic" }, -- Los Santos aeroporto
+	{ -348.82,-126.0,39.01,"LosSantos" }, -- Los Santos Cima
+	{ 436.9,-314.92,34.92,"LosSantos" }, -- Los Santos aeroporto
 	{ -438.02,-318.1,34.89,"Paramedic" }, -- Hosp
 	{ 441.23,-982.1,30.69,"Police" } -- DP
 }

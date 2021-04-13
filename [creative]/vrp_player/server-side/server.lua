@@ -401,17 +401,17 @@ RegisterCommand("servico",function(source,args,rawCommand)
 				end
 
 
-				if service == "Mechanic" then
-					if vRP.hasPermission(user_id,"Mechanic") then
-						vRP.removePermission(source,"Mechanic")
+				if service == "LosSantos" then
+					if vRP.hasPermission(user_id,"LosSantos") then
+						vRP.removePermission(source,"LosSantos")
 						TriggerEvent("vrp_blipsystem:serviceExit",source)
 						TriggerClientEvent("Notify",source,"importante","Você saiu de serviço.",5000)
-						vRP.execute("vRP/upd_group",{ user_id = user_id, permiss = "Mechanic", newpermiss = "waitMechanic" })
-					elseif vRP.hasPermission(user_id,"waitMechanic") then
-						vRP.insertPermission(source,"Mechanic")
-						TriggerEvent("vrp_blipsystem:serviceEnter",source,"Mecanico",83)
+						vRP.execute("vRP/upd_group",{ user_id = user_id, permiss = "LosSantos", newpermiss = "waitLosSantos" })
+					elseif vRP.hasPermission(user_id,"waitLosSantos") then
+						vRP.insertPermission(source,"LosSantos")
+						TriggerEvent("vrp_blipsystem:serviceEnter",source,"LosSantos",83)
 						TriggerClientEvent("Notify",source,"importante","Você entrou em serviço.",5000)
-						vRP.execute("vRP/upd_group",{ user_id = user_id, permiss = "waitMechanic", newpermiss = "Mechanic" })
+						vRP.execute("vRP/upd_group",{ user_id = user_id, permiss = "waitLosSantos", newpermiss = "LosSantos" })
 					end
 				end
 			end
@@ -1133,13 +1133,98 @@ end)
 -- LIVERY
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterCommand("livery",function(source,args,rawCommand)
-	local user_id = vRP.getUserId(source)
+	local user_id = vRP.hasPermission(source)
 	if user_id then
 		if (vRP.hasPermission(user_id,"Police") or vRP.hasPermission(user_id,"Paramedic")) and parseInt(args[1]) > 0 then
 			vCLIENT.toggleLivery(source,parseInt(args[1]))
 		end
 	end
 end)
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- sistema de ver quantidade de players na cidade
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+RegisterCommand('ptrid',function(source,args,rawCommand)
+    local policia = vRP.hasPermission("Police")
+	local users_id = ""
+	print('Teste 1')
+	for k,v in pairs(policia) do
+		users_id = users_id..v..", "
+		print('Teste 2')
+	end
+	print('Teste 3')
+	TriggerClientEvent('chatMessage',source,"Alerta",{255,0,0},users_id)
+end)
+
+RegisterCommand('samuid',function(source,args,rawCommand)
+    local policia = vRP.hasPermission("Medic")
+	local users_id = ""
+	for k,v in pairs(policia) do
+		users_id = users_id..v..", "
+	end
+	TriggerClientEvent('chatMessage',source,"Alerta",{255,0,0},users_id)
+end)
+
+
+
+
+RegisterCommand('ptr',function(source,args,rawCommand)
+	local policia = vRP.hasPermission("Police")
+		local players = ""
+		print('teste')
+		for k,v in pairs(policia) do
+			if k ~= #policia then
+				players = players..", "
+			end
+			players = players..k
+			print('------------')
+			print(players)
+		end
+		TriggerClientEvent('chatMessage',source,"ID's ONLINE",{1, 136, 0},players)
+
+end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+RegisterCommand('pon',function(source,args,rawCommand)
+	local user_id = vRP.getUserId(source)
+	if vRP.hasPermission(user_id,"Admin") then
+		local users = vRP.getUsers()
+		local players = ""
+		local quantidade = 0
+		for k,v in pairs(users) do
+			print(users)
+			if k ~= #users then
+				players = players..", "
+			end
+			players = players..k
+			quantidade = quantidade + 1
+			print('------------')
+			print(players)
+		end
+		TriggerClientEvent('chatMessage',source,"TOTAL ONLINE",{1, 136, 0},quantidade)
+		TriggerClientEvent('chatMessage',source,"ID's ONLINE",{1, 136, 0},players)
+	end
+end)
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- ADD
 -----------------------------------------------------------------------------------------------------------------------------------------

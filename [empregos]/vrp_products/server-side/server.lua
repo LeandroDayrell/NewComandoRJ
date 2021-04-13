@@ -19,21 +19,20 @@ local amount = {}
 -----------------------------------------------------------------------------------------------------------------------------------------
 local itemList = {
 	{ item = "cocaine", priceMin = 2, priceMax = 10, randMin = 3, randMax = 6 },
-	{ item = "weedendolada", priceMin = 2, priceMax = 10, randMin = 3, randMax = 6 },
-	{ item = "methendolada", priceMin = 2, priceMax = 10, randMin = 3, randMax = 6 },
-	{ item = "ecstasy", priceMin = 2, priceMax = 10, randMin = 3, randMax = 6 },
-	{ item = "lean", priceMin = 2, priceMax = 10, randMin = 3, randMax = 6 },
-	{ item = "keyboard", priceMin = 6, priceMax = 12, randMin = 1, randMax = 3 },
-	{ item = "mouse", priceMin = 6, priceMax = 12, randMin = 1, randMax = 3 },
-	{ item = "ring", priceMin = 6, priceMax = 12, randMin = 2, randMax = 4 },
-	{ item = "watch", priceMin = 14, priceMax = 18, randMin = 3, randMax = 6 },
-	{ item = "goldbar", priceMin = 20, priceMax = 24, randMin = 2, randMax = 4 },
-	{ item = "playstation", priceMin = 12, priceMax = 14, randMin = 1, randMax = 1 },
-	{ item = "xbox", priceMin = 12, priceMax = 14, randMin = 1, randMax = 1 },
-	{ item = "legos", priceMin = 6, priceMax = 10, randMin = 1, randMax = 1 },
-	{ item = "ominitrix", priceMin = 10, priceMax = 14, randMin = 1, randMax = 1 },
-	{ item = "bracelet", priceMin = 14, priceMax = 16, randMin = 1, randMax = 1 },
-	{ item = "dildo", priceMin = 8, priceMax = 12, randMin = 1, randMax = 1 }
+	{ item = "weedendolada", priceMin = 155, priceMax = 165, randMin = 3, randMax = 6 },
+	{ item = "methendolada", priceMin = 200, priceMax = 210, randMin = 3, randMax = 6 },
+	{ item = "ecstasy", priceMin = 340, priceMax = 350, randMin = 3, randMax = 6 },
+	{ item = "lean", priceMin = 340, priceMax = 350, randMin = 3, randMax = 6 },
+	{ item = "keyboard", priceMin = 420, priceMax = 425, randMin = 1, randMax = 2 },
+	{ item = "mouse", priceMin = 380, priceMax = 385, randMin = 1, randMax = 2 },
+	{ item = "ring", priceMin = 335, priceMax = 345, randMin = 1, randMax = 2 },
+	{ item = "watch", priceMin =590, priceMax = 595, randMin = 1, randMax = 2 },
+	{ item = "playstation", priceMin = 670, priceMax = 680, randMin = 1, randMax = 1 },
+	{ item = "xbox", priceMin = 670, priceMax = 680, randMin = 1, randMax = 1 },
+	{ item = "legos", priceMin = 330, priceMax = 340, randMin = 1, randMax = 1 },
+	{ item = "ominitrix", priceMin = 590, priceMax = 595, randMin = 1, randMax = 1 },
+	{ item = "bracelet", priceMin = 820, priceMax = 850, randMin = 1, randMax = 1 },
+	{ item = "dildo", priceMin = 420, priceMax = 425, randMin = 1, randMax = 1 }
 }
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CHECKAMOUNT
@@ -50,7 +49,7 @@ function cnVRP.checkAmount()
 
 				TriggerClientEvent("vrp_products:lastItem",source,v.item)
 
-				if (v.item == "joint" or v.item == "lean" or v.item == "meth" or v.item == "ecstasy" or v.item == "cocaine") and math.random(100) >= 75 then
+				if (v.item == "weedendolada" or v.item == "lean" or v.item == "methendolada" or v.item == "ecstasy" or v.item == "cocaine") and math.random(100) >= 75 then
 					local x,y,z = vRPclient.getPositions(source)
 					local copAmount = vRP.numPermission("Police")
 					for k,v in pairs(copAmount) do

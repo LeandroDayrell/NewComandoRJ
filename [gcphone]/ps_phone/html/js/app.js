@@ -85,7 +85,7 @@ $(document).on('click', '.phone-application', function(e) {
 
                 PS.Phone.Data.currentApplication = PressedApplication;
 
-                if (PressedApplication != "twitter" && PressedApplication != "bank") {
+                if (PressedApplication != "bank") {
                     $(".phone-navigation .navigation-center").addClass("black");
                 } else {
                     $(".phone-navigation .navigation-center").removeClass("black");

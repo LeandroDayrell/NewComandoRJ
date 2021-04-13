@@ -76,7 +76,7 @@ PS.Phone.Functions.LoadBackground = function(background) {
     var hasCustomBackground = PS.Phone.Functions.IsBackgroundCustom();
 
     if (!hasCustomBackground) {
-        $(".phone-background").css({ "background-image": "url('/html/img/backgrounds/" + PS.Phone.Settings.Background + ".png')" })
+        $(".phone-background").css({ "background-image": "url('/html/img/backgrounds/" + PS.Phone.Settings.Background + ".jpg')" })
     } else {
         $(".phone-background").css({ "background-image": "url('" + PS.Phone.Settings.Background + "')" });
     }

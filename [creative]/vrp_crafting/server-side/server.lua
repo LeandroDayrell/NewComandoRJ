@@ -39,8 +39,8 @@ local craftList = {
 				["amount"] = 10,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 20,
-					["glass"] = 15
+					["aluminum"] = 25,
+					["glass"] = 25
 				}
 			}
 		}
@@ -70,8 +70,8 @@ local craftList = {
 				["amount"] = 10,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 20,
-					["glass"] = 15
+					["aluminum"] = 25,
+					["glass"] = 25
 				}
 			}
 		}
@@ -110,8 +110,8 @@ local craftList = {
 				["amount"] = 10,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 10,
-					["glass"] = 10
+					["aluminum"] = 15,
+					["glass"] = 15
 				}
 			}
 		}
@@ -150,8 +150,8 @@ local craftList = {
 				["amount"] = 10,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 10,
-					["glass"] = 10
+					["aluminum"] = 15,
+					["glass"] = 15
 				}
 			}
 		}
@@ -172,8 +172,8 @@ local craftList = {
 				["amount"] = 10,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 10,
-					["glass"] = 10
+					["aluminum"] = 15,
+					["glass"] = 15
 				}
 			},
 			["pendriveh"] = {
@@ -200,7 +200,7 @@ local craftList = {
 	["lowriderCrafting"] = {
 		["perm"] = "Lowrider",
 		["list"] = {
-			["WEAPON_SNSPISTOL"] = {
+			["WEAPON_SNSPISTOL_MK2"] = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
@@ -213,8 +213,8 @@ local craftList = {
 				["amount"] = 10,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 15,
-					["glass"] = 10
+					["aluminum"] = 20,
+					["glass"] = 20
 				}
 			},
 			["lockpick"] = {
@@ -222,8 +222,8 @@ local craftList = {
 				["destroy"] = true,
 				["require"] = {
 					["aluminum"] = 30,
-					["copper"] = 10,
-					["plastic"] = 10
+					["copper"] = 30,
+					["plastic"] = 30
 				}
 			},
 			["raceticket"] = {
@@ -269,8 +269,8 @@ local craftList = {
 				["amount"] = 10,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 15,
-					["glass"] = 10
+					["aluminum"] = 20,
+					["glass"] = 20
 				}
 			},
 			["lockpick"] = {
@@ -338,8 +338,8 @@ local craftList = {
 				["amount"] = 10,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 10,
-					["glass"] = 10
+					["aluminum"] = 15,
+					["glass"] = 15
 				}
 			},
 			["rope"] = {
@@ -378,6 +378,14 @@ local craftList = {
                     ["plastic"] = 1
 				}
 			},
+			["bucket"] = {
+                ["amount"] = 1,
+                ["destroy"] = true,
+                ["require"] = {
+                    ["plastic"] = 20,
+                    ["dollars"] = 150
+				}
+			},
 			["methendolada"] = {
 				["amount"] = 5,
 				["destroy"] = true,
@@ -397,6 +405,14 @@ local craftList = {
                 ["require"] = {
                     ["weed"] = 5,
                     ["plastic"] = 1
+				}
+			},
+			["bucket"] = {
+                ["amount"] = 1,
+                ["destroy"] = true,
+                ["require"] = {
+                    ["plastic"] = 20,
+                    ["dollars"] = 150
 				}
 			},
 			["methendolada"] = {
@@ -420,6 +436,14 @@ local craftList = {
                     ["plastic"] = 1
 				}
 			},
+			["bucket"] = {
+                ["amount"] = 1,
+                ["destroy"] = true,
+                ["require"] = {
+                    ["plastic"] = 20,
+                    ["dollars"] = 150
+				}
+			},
 			["methendolada"] = {
 				["amount"] = 5,
 				["destroy"] = true,
@@ -441,6 +465,14 @@ local craftList = {
                     ["plastic"] = 1
 				}
 			},
+			["bucket"] = {
+                ["amount"] = 1,
+                ["destroy"] = true,
+                ["require"] = {
+                    ["plastic"] = 20,
+                    ["dollars"] = 150
+				}
+			},
 			["methendolada"] = {
 				["amount"] = 5,
 				["destroy"] = true,
@@ -452,16 +484,17 @@ local craftList = {
 		}
 	},
 	["mecanicoCrafting"] = {
-		["perm"] = "bennys",
+		["perm"] = "LosSantos",
 		["list"] = {
-			 ["fueltech"] = {
+			 ["toolbox"] = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
-					["cpuchip"] = 10
+					["aluminum"] = 10,
+					["rubber"] = 10,
 				}
 			},
-			["tyres"] = {
+			["tires"] = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
