@@ -14,6 +14,30 @@ cRP = {}
 Tunnel.bindInterface("vrp_admin",cRP)
 vCLIENT = Tunnel.getInterface("vrp_admin")
 vHOMES = Tunnel.getInterface("vrp_homes")
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- DV
+-----------------------------------------------------------------------------------------------------------------------------------------
+RegisterCommand('dv',function(source,args,rawCommand)
+    local user_id = vRP.getUserId(source)
+	--print('teste 0.1')
+    if vRP.hasPermission(user_id,"Admin") then --vRP.hasPermission(user_id,"mecanico.permissao") or vRP.hasPermission(user_id,"diretor.permissao") or vRP.hasPermission(user_id,"playerzin.permissao") then
+        local vehicle = vRPclient.getNearVehicle(source,7)
+		--print('teste 0.2')
+		if vehicle then
+			--print('teste 01')
+			vAZgarage.forceDespawnUserVehicle(source, vRPclient.getNetVehicle(source, vehicle))
+			SendWebhookMessage(webhooklinkchat,  "```" ..user_id.." Usou o comando " ..rawCommand.. "```")
+        end
+    end
+end)
+RegisterNetEvent('deletarveiculo')
+AddEventHandler('deletarveiculo',function(vehicle)
+    TriggerServerEvent("vrp_garages:admDelete",VehToNet(vehicle))
+	--print('teste 02')
+end)
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CONNECTPLAYERS
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -320,7 +344,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- FIX
 -----------------------------------------------------------------------------------------------------------------------------------------
-RegisterCommand("fix",function(source,args,rawCommand)
+--[[ RegisterCommand("fix2",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
 		if vRP.hasPermission(user_id,"Admin") then
@@ -330,6 +354,21 @@ RegisterCommand("fix",function(source,args,rawCommand)
 			end
 		end
 	end
+end) ]]
+
+RegisterCommand('fix',function(source,args,rawCommand)
+	local user_id = vRP.getUserId(source)
+	if vRP.hasPermission(user_id,"Admin") then
+		local vehicle = vRPclient.getNearVehicle(source,7)
+		if vehicle then
+			TriggerClientEvent('reparar',source,vehicle)
+		end
+	end
+end)
+
+RegisterServerEvent("tryreparar")
+AddEventHandler("tryreparar",function(nveh)
+	TriggerClientEvent("syncreparar",-1,nveh)
 end)
 
 RegisterCommand("limpainv",function(source,args,rawCommand)

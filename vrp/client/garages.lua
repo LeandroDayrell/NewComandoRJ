@@ -761,3 +761,14 @@ function tvRP.vehiclePlate()
 		return GetVehicleNumberPlateText(veh)
 	end
 end
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- NAO SEI
+-----------------------------------------------------------------------------------------------------------------------------------------
+function tvRP.getNetVehicle(vehicle, radius)
+	if vehicle == nil then
+		vehicle = tvRP.getNearVehicle(radius)
+		if radius == nil then radius = 2 end
+	end
+	return VehToNet(vehicle)
+end

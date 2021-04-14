@@ -13,11 +13,39 @@ vSERVER = Tunnel.getInterface("vrp_admin")
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- DISCORD
 ---------------------------------------- --------------------------------------------------------------------------------------------------
-function cRP.setDiscord(status)
+--[[ function cRP.setDiscord(status)
 	SetDiscordAppId(494493006418673703)
 	SetDiscordRichPresenceAsset("logotive")
 	SetRichPresence(status)
-end
+end ]]
+
+
+
+
+------ FIX  ---------------
+-----------------------------------------------------------------------------------------------------------------------------------------
+RegisterNetEvent('reparar')
+AddEventHandler('reparar',function(vehicle)
+	TriggerServerEvent("tryreparar",VehToNet(vehicle))
+end)
+
+RegisterNetEvent('syncreparar')
+AddEventHandler('syncreparar',function(index)
+	if NetworkDoesNetworkIdExist(index) then
+		local v = NetToVeh(index)
+		local fuel = GetVehicleFuelLevel(v)
+		if DoesEntityExist(v) then
+			if IsEntityAVehicle(v) then
+				SetVehicleFixed(v)
+				SetVehicleDirtLevel(v,0.0)
+				SetVehicleUndriveable(v,false)
+				SetEntityAsMissionEntity(v,true,true)
+				SetVehicleOnGroundProperly(v)
+				SetVehicleFuelLevel(v,fuel)
+			end
+		end
+	end
+end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- TELEPORTWAY
 -----------------------------------------------------------------------------------------------------------------------------------------

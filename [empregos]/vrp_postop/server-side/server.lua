@@ -39,7 +39,7 @@ function cRP.paymentMethod()
 	local source = source
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		local value = math.random(400,600)
+		local value = math.random(390,410)
 		local myBonus = vRP.bonusPostOp(user_id)
 		vRP.giveInventoryItem(user_id,"dollars",parseInt(value+(value*myBonus/100)),true)
 		TriggerClientEvent("vrp_sound:source",source,"coin",0.5)

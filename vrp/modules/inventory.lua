@@ -62,6 +62,24 @@ local itemlist = {
 		type = "use",
 		weight = 0.5
 	},
+	["pepitadeouro"] = {
+		index = "pepitadeouro",
+		name = "Pepita de Ouro",
+		type = "use",
+		weight = 0.05
+	},
+	["pepitadeprata"] = {
+		index = "pepitadeprata",
+		name = "Pepita de Prata",
+		type = "use",
+		weight = 0.05
+	},
+	["pepitadebronze"] = {
+		index = "pepitadebronze",
+		name = "Pepita de Bronze",
+		type = "use",
+		weight = 0.05
+	},
 	["graosimpuros"] = {
 		index = "graosimpuros",
 		name = "Graos Impuros",
@@ -540,7 +558,7 @@ local itemlist = {
 		index = "dollars2",
 		name = "Rolo de Dinheiro",
 		type = "use",
-		weight = 0.0100
+		weight = 0.0004
 	},
 	["blackcard"] = {
 		index = "blackcard",

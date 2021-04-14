@@ -72,7 +72,7 @@ local craftList = {
     { 1270.75,-202.44,101.29,"laranjaCrafting" },
     { 1383.63,-774.53,67.36,"azulCrafting" },
     { 1268.07,-204.56,103.61,"vermelhoCrafting" },
-    { 2827.59,2793.61,57.68,"verdeCrafting" },
+    { 1001.86,987.56,234.49,"verdeCrafting" },
 	{ -347.43,-117.01,39.25,"mecanicoCrafting" }
 	
 }

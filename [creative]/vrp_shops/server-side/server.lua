@@ -32,7 +32,6 @@ local shops = {
 			["backpackp"] = 5000,
 			["backpackm"] = 10000,
 			["backpackg"] = 15000,
-			["backpackx"] = 20000,
 			["divingsuit"] = 5000
 		}
 	},
@@ -73,21 +72,21 @@ local shops = {
 		["type"] = "Cash",
 		["list"] = {
 			["GADGET_PARACHUTE"] = 1000,
-			["WEAPON_KNIFE"] = 4000,
-			["WEAPON_HATCHET"] = 4000,
-			["WEAPON_BAT"] = 4000,
-			["WEAPON_BATTLEAXE"] = 4000,
-			["WEAPON_BOTTLE"] = 4000,
-			["WEAPON_CROWBAR"] = 4000,
-			["WEAPON_DAGGER"] = 4000,
-			["WEAPON_GOLFCLUB"] = 4000,
-			["WEAPON_HAMMER"] = 4000,
-			["WEAPON_MACHETE"] = 4000,
-			["WEAPON_POOLCUE"] = 4000,
-			["WEAPON_STONE_HATCHET"] = 4000,
-			["WEAPON_SWITCHBLADE"] = 4000,
-			["WEAPON_WRENCH"] = 4000,
-			["WEAPON_KNUCKLE"] = 4000
+			["WEAPON_KNIFE"] = 2000,
+			["WEAPON_HATCHET"] = 2000,
+			["WEAPON_BAT"] = 2000,
+			["WEAPON_BATTLEAXE"] = 2000,
+			["WEAPON_BOTTLE"] = 2000,
+			["WEAPON_CROWBAR"] = 2000,
+			["WEAPON_DAGGER"] = 2000,
+			["WEAPON_GOLFCLUB"] = 2000,
+			["WEAPON_HAMMER"] = 2000,
+			["WEAPON_MACHETE"] = 2000,
+			["WEAPON_POOLCUE"] = 2000,
+			["WEAPON_STONE_HATCHET"] = 2000,
+			["WEAPON_SWITCHBLADE"] = 2000,
+			["WEAPON_WRENCH"] = 2000,
+			["WEAPON_KNUCKLE"] = 2000
 		}
 	},
 	["premiumStore"] = {
@@ -107,9 +106,9 @@ local shops = {
 		["mode"] = "Sell",
 		["type"] = "Cash",
 		["list"] = {
-			["shrimp"] = 50,
-			["octopus"] = 45,
-			["carp"] = 40
+			["shrimp"] = 45,
+			["octopus"] = 50,
+			["carp"] = 55
 		}
 	},
 	["recyclingSell"] = {
@@ -310,8 +309,8 @@ local shops = {
 		["type"] = "Cash",
 		["perm"] = "TheLost",
 		["list"] = {
-			["goldbar"] = 75000,
-			["dollars2"] = 0.75
+			["goldbar"] = 80000,
+			["dollars2"] = 0.8
 		}
 	},
 	["lavagemyakuza"] = {
@@ -319,8 +318,8 @@ local shops = {
 		["type"] = "Cash",
 		["perm"] = "Yakuza",
 		["list"] = {
-			["goldbar"] = 75000,
-			["dollars2"] = 0.75
+			["goldbar"] = 80000,
+			["dollars2"] = 0.8
 		}
 	},
 	["lossantos"] = {
@@ -346,11 +345,11 @@ local shops = {
 		["type"] = "Consume",
 		["item"] = "dollars",
 		["list"] = {
-			["handcuff"] = 26,
-			["hood"] = 18,
+			["handcuff"] = 2000,
+			["hood"] = 5000,
 			["cannabisseed"] = 18,
 			["efidrina"] = 18,
-			["rope"] = 8
+			["rope"] = 3000
 		}
 	}
 }

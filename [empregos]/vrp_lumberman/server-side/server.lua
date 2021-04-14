@@ -22,8 +22,8 @@ local amount = {}
 local amountMin = 4
 local amountMax = 8
 
-local paymentMin = 125
-local paymentMax = 175
+local paymentMin = 140
+local paymentMax = 150
 local consumeItem = "woodlog"
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- TRANSPORTER

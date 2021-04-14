@@ -198,6 +198,11 @@ vAZ.config.garages.service = {
         vehicles = {
             "gburrito2"
         }
+    },
+    [30] = {
+        vehicles = {
+            "ratloader"
+        }
     }
 }
 
