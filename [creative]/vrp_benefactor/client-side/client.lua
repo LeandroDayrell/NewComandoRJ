@@ -7,8 +7,8 @@ vRP = Proxy.getInterface("vRP")
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CONNECTION
 -----------------------------------------------------------------------------------------------------------------------------------------
-cRP = {}
-Tunnel.bindInterface("vrp_benefactor",cRP)
+cnVRP = {}
+Tunnel.bindInterface("vrp_benefactor",cnVRP)
 vSERVER = Tunnel.getInterface("vrp_benefactor")
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- VARIABLES
@@ -18,21 +18,8 @@ local typeBikes = {}
 local localVehicles = {}
 local vehicles = {}
 local vehIds = {}
-local open = vector3(-30.09,-1105.0,26.43)
-local zone = PolyZone:Create({
-	vector2(-28.33,-1120.86),
-	vector2(-44.92,-1122.70),
-	vector2(-64.26,-1123.11),
-	vector2(-71.02,-1117.35),
-	vector2(-68.44,-1108.67),
-	vector2(-57.19,-1079.97),
-	vector2(-43.52,-1083.67),
-	vector2(-36.62,-1089.40),
-	vector2(-30.89,-1087.63),
-	vector2(-25.52,-1089.94),
-	vector2(-27.49,-1094.88),
-	vector2(-18.20,-1099.08)
-},{ name="pdm", minZ = 22, maxZ = 40 })
+local open = vector3(-56.58,-1097.04,26.43)
+local zone = vector3(-30.09,-1105.0,26.43)
 
 local coords = {
 	[1] = { cds = vector3(-43.79,-1101.67,25.97), h = 11.34 },
@@ -95,7 +82,8 @@ Citizen.CreateThread(function()
 	while true do
 		local ped = PlayerPedId()
 		local coords = GetEntityCoords(ped)
-		if zone:isPointInside(coords) then
+		local distance = #(coords - zone)
+		if distance <= 32.1 then
 			if not inside then
 				inside = true
 				spawnVehicles()
@@ -106,6 +94,7 @@ Citizen.CreateThread(function()
 				despawnVehicles()
 			end
 		end
+		
 
 		Citizen.Wait(500)
 	end

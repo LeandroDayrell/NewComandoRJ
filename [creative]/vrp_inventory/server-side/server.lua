@@ -1598,11 +1598,11 @@ AddEventHandler("vrp_inventory:useItem",function(slot,rAmount)
 								return
 							end
 
-							--local weCounts = vWEPLANTSS.getAmount(user_id)
-							--if parseInt(weCounts) >= 50 then
-								--TriggerClientEvent("Notify",source,"negado","O limite máximo de plantações foi atingido.",3000)
-								--return
-							--else
+							local weCounts = exports.vrp_weplants:getAmount(user_id)
+							if parseInt(weCounts) >= 50 then
+								TriggerClientEvent("Notify",source,"negado","O limite máximo de plantações foi atingido.",3000)
+								return
+							else
 								local status,x,y,z = vWEPLANTS.entityInWorldCoords(source)
 								if status and vRP.getInventoryItemAmount(user_id,"compost") >= 1 and vRP.getInventoryItemAmount(user_id,"bucket") >= 1 and vRP.getInventoryItemAmount(user_id,"cannabisseed") >= 1 then
 									active[user_id] = 7
@@ -1628,6 +1628,7 @@ AddEventHandler("vrp_inventory:useItem",function(slot,rAmount)
 									until active[user_id] == nil
 								else
 									TriggerClientEvent("Notify",source,"negado","Voce nao possui todos os itens.",6000)
+									end
 								end
 							--end
 						end

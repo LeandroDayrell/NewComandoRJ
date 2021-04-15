@@ -32,10 +32,10 @@ client_scripts {
 }
 
 files {
-	"loading/index.html",
-	"loading/background.jpg",
-	"loading/logo.png",
-	"loading/css.css",
+	--"loading/index.html",
+	--"loading/background.jpg",
+	--"loading/logo.png",
+	--"loading/css.css",
 	"lib/Tunnel.lua",
 	"lib/Proxy.lua",
 	"lib/Luaseq.lua",

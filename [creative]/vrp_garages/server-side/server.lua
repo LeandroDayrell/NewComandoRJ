@@ -8,8 +8,8 @@ vRPclient = Tunnel.getInterface("vRP")
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CONNECTION
 -----------------------------------------------------------------------------------------------------------------------------------------
-cRP = {}
-Tunnel.bindInterface("vrp_garages",cRP)
+cnVRP = {}
+Tunnel.bindInterface("vrp_garages",cnVRP)
 vCLIENT = Tunnel.getInterface("vrp_garages")
 vHUD = Tunnel.getInterface("vrp_hud")
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -18,6 +18,8 @@ vHUD = Tunnel.getInterface("vrp_hud")
 local vehlist = {}
 local trydoors = {}
 local stealVehs = {}
+local spanwedVehs = {}
+local vehChest = {}
 local deleteVehicles = {}
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- SETPLATEEVERYONE
@@ -70,6 +72,7 @@ local garages = {
 	[21] = { ["name"] = "Police", ["payment"] = true, ["perm"] = "Police" },
 	[22] = { ["name"] = "Police", ["payment"] = true, ["perm"] = "Police" },
 	[23] = { ["name"] = "Police", ["payment"] = true, ["perm"] = "Police" },
+	[759] = { ["name"] = "Police", ["payment"] = true, ["perm"] = "Police" },
 	[24] = { ["name"] = "Helipolice", ["payment"] = true, ["perm"] = "Police" },
 	[25] = { ["name"] = "Helipolice", ["payment"] = true, ["perm"] = "Police" },
 	[26] = { ["name"] = "Helipolice", ["payment"] = true, ["perm"] = "Police" },
@@ -92,6 +95,7 @@ local garages = {
 	[43] = { ["name"] = "TheLost", ["payment"] = true, ["perm"] = "TheLost" },
 	[44] = { ["name"] = "PostOp", ["payment"] = true, ["public"] = true },
 	[45] = { ["name"] = "Garage", ["payment"] = true, ["public"] = true },
+	[46] = { ["name"] = "Ilegal", ["payment"] = true, ["public"] = true },
 	[501] = { ["name"] = "Middle001", ["payment"] = false, ["perm"] = false },
 	[502] = { ["name"] = "Middle002", ["payment"] = false, ["perm"] = false },
 	[503] = { ["name"] = "Middle003", ["payment"] = false, ["perm"] = false },
@@ -410,6 +414,9 @@ local workgarage = {
 	["Taxi"] = {
 		"taxi"
 	},
+	["Ilegal"] = {
+		"gburrito2"
+	},
 	["PostOp"] = {
 		"boxville4"
 	}
@@ -417,7 +424,7 @@ local workgarage = {
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- MYVEHICLES
 -----------------------------------------------------------------------------------------------------------------------------------------
-function cRP.myVehicles(work)
+function cnVRP.myVehicles(work)
 	local source = source
 	local user_id = vRP.getUserId(source)
 	if user_id then
@@ -427,15 +434,103 @@ function cRP.myVehicles(work)
 			for k,v in pairs(workgarage[work]) do
 				local veh = vRP.query("vRP/get_vehicles",{ user_id = parseInt(user_id), vehicle = tostring(v) })
 				if veh[1] then
-					table.insert(myvehicles,{ name = veh[1].vehicle, name2 = vRP.vehicleName(veh[1].vehicle), engine = parseInt(veh[1].engine*0.1), body = parseInt(veh[1].body*0.1), fuel = parseInt(veh[1].fuel) })
+					table.insert(myvehicles,{ name = veh[1].vehicle, name2 = vRP.vehicleName(veh[1].vehicle), engine = parseInt(veh[1].engine*0.1), body = parseInt(veh[1].body*0.1), fuel = parseInt(veh[1].fuel), engine2 = "DESATIVADO", freio = "DESATIVADO", transm = "DESATIVADO", susp = "DESATIVADO", blind = "DESATIVADO", turbo = "DESATIVADO" })
 				else
-					table.insert(myvehicles,{ name = v, name2 = vRP.vehicleName(v), engine = 100, body = 100, fuel = 100 })
+					table.insert(myvehicles,{ name = v, name2 = vRP.vehicleName(v), engine = 100, body = 100, fuel = 100, engine2 = "DESATIVADO", freio = "DESATIVADO", transm = "DESATIVADO", susp = "DESATIVADO", blind = "DESATIVADO", turbo = "DESATIVADO" })
 				end
 			end
 		else
 			for k,v in ipairs(vehicle) do
 				if v.work == "false" then
-					table.insert(myvehicles,{ name = vehicle[k].vehicle, name2 = vRP.vehicleName(vehicle[k].vehicle), engine = parseInt(vehicle[k].engine*0.1), body = parseInt(vehicle[k].body*0.1), fuel = parseInt(vehicle[k].fuel) })
+					local tuning = json.decode(vRP.getSData("custom:"..user_id..":"..vehicle[k].vehicle))
+					local nVehicle = { name = vehicle[k].vehicle, name2 = vRP.vehicleName(vehicle[k].vehicle), engine = parseInt(vehicle[k].engine*0.1), body = parseInt(vehicle[k].body*0.1), fuel = parseInt(vehicle[k].fuel), engine2 = "DESATIVADO", freio = "DESATIVADO", transm = "DESATIVADO", susp = "DESATIVADO", blind = "DESATIVADO", turbo = "DESATIVADO" }
+					if tuning then
+						nVehicle.engine2 = tuning.engine
+						nVehicle.freio = tuning.brakes
+						nVehicle.transm = tuning.transmission
+						nVehicle.susp = tuning.suspension
+						nVehicle.blind = tuning.armor
+						nVehicle.turbo = tuning.turbo
+
+						if nVehicle.engine2 == -1 then
+							nVehicle.engine2 = "DESATIVADO"
+						elseif nVehicle.engine2 == 0 then
+							nVehicle.engine2 = "Nível 1 / 5"
+						elseif nVehicle.engine2 == 1 then
+							nVehicle.engine2 = "Nível 2 / 5"
+						elseif nVehicle.engine2 == 2 then
+							nVehicle.engine2 = "Nível 3 / 5"
+						elseif nVehicle.engine2 == 3 then
+							nVehicle.engine2 = "Nível 4 / 5"
+						elseif nVehicle.engine2 == 4 then
+							nVehicle.engine2 = "Nível 5 / 5"
+						end
+				
+						if nVehicle.freio == -1 then
+							nVehicle.freio = "DESATIVADO"
+						elseif nVehicle.freio == 0 then
+							nVehicle.freio = "Nível 1 / 3"
+						elseif nVehicle.freio == 1 then
+							nVehicle.freio = "Nível 2 / 3"
+						elseif nVehicle.freio == 2 then
+							nVehicle.freio = "Nível 3 / 3"
+						end
+				
+						if nVehicle.transm == -1 then
+							nVehicle.transm = "DESATIVADO"
+						elseif nVehicle.transm == 0 then
+							nVehicle.transm = "Nível 1 / 4"
+						elseif nVehicle.transm == 1 then
+							nVehicle.transm = "Nível 2 / 4"
+						elseif nVehicle.transm == 2 then
+							nVehicle.transm = "Nível 3 / 4"
+						elseif nVehicle.transm == 3 then
+							nVehicle.transm = "Nível 4 / 4"
+						end
+
+						if nVehicle.susp == -1 then
+							nVehicle.susp = "DESATIVADO"
+						elseif nVehicle.susp == 0 then
+							nVehicle.susp = "Nível 1 / 5"
+						elseif nVehicle.susp == 1 then
+							nVehicle.susp = "Nível 2 / 5"
+						elseif nVehicle.susp == 2 then
+							nVehicle.susp = "Nível 3 / 5"
+						elseif nVehicle.susp == 3 then
+							nVehicle.susp = "Nível 4 / 5"
+						elseif nVehicle.susp == 4 then
+							nVehicle.susp = "Nível 5 / 5"
+						end
+					
+						if nVehicle.blind == -1 then
+							nVehicle.blind = "DESATIVADO"
+						elseif nVehicle.blind == 0 then
+							nVehicle.blind = "Nível 1 / 5"
+						elseif nVehicle.blind == 1 then
+							nVehicle.blind = "Nível 2 / 5"
+						elseif nVehicle.blind == 2 then
+							nVehicle.blind = "Nível 3 / 5"
+						elseif nVehicle.blind == 3 then
+							nVehicle.blind = "Nível 4 / 5"
+						elseif nVehicle.blind == 4 then
+							nVehicle.blind = "Nível 5 / 5"
+						end
+					end
+					nVehicle.detido = parseInt(os.time()) <= parseInt(vehicle[k].time+24*60*60)
+
+					vehChest[parseInt(user_id)] = "chest:"..parseInt(user_id)..":"..vehicle[k].vehicle
+					local inv = vRP.getInventory(parseInt(user_id))
+					local data = vRP.getSData(vehChest[parseInt(user_id)])
+					local sdata = json.decode(data) or {}
+					nVehicle.pmalas = vRP.computeChestWeight(sdata)
+					nVehicle.pmalas2 = vRP.vehicleChest(vehicle[k].vehicle)
+					if nVehicle.detido == false then
+						nVehicle.detido = "Nao"
+					elseif nVehicle.detido == true then
+						nVehicle.detido = "Sim"
+					end
+					table.insert(myvehicles, nVehicle)				
+		
 				end
 			end
 		end
@@ -445,15 +540,15 @@ end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- SPAWNVEHICLES
 -----------------------------------------------------------------------------------------------------------------------------------------
-function cRP.spawnVehicles(name,use)
+function cnVRP.spawnVehicles(name,use)
 	local source = source
 	local user_id = vRP.getUserId(source)
 	if user_id and name then
-		if not vCLIENT.returnVehicle(source,name) then
+		if not vCLIENT.returnVehicle(source,name) and spanwedVehs[name..user_id] == nil then
 			local vehicle = vRP.query("vRP/get_vehicles",{ user_id = parseInt(user_id), vehicle = name })
 
 			if vehicle[1] == nil then
-				vRP.execute("vRP/add_vehicle",{ user_id = parseInt(user_id), vehicle = name, plate = vRP.generatePlateNumber(), work = tostring(true) })
+				vRP.execute("vRP/add_vehicle",{ user_id = parseInt(user_id), vehicle = name, plate = vRP.generatePlateNumber(), phone = vRP.getPhone(user_id), work = tostring(true) })
 				vehicle = vRP.query("vRP/get_vehicles",{ user_id = parseInt(user_id), vehicle = name })
 			end
 
@@ -475,6 +570,15 @@ function cRP.spawnVehicles(name,use)
 						TriggerClientEvent("Notify",source,"negado","Dinheiro insuficiente.",5000)
 					end
 				end
+			elseif vRP.vehicleType(tostring(name)) == "donate" and vRP.getCarPremium(name,user_id)then
+				local status = vRP.request(source,"Veículo esta atrasado, deseja renovar este veiculo donate pagando <b>$"..vRP.format(parseInt(vRP.vehiclePrice(name))).."</b> coins?",60)
+				if status then
+					if vRP.remGmsId(user_id,parseInt(vRP.vehiclePrice(name))) then
+						vRP.execute("vRP/set_rental_time",{ user_id = parseInt(user_id), vehicle = name, premiumtime = parseInt(os.time()) })
+					else
+						TriggerClientEvent("Notify",source,"negado","Coins insuficiente.",5000)
+					end
+				end
 			else
 				local tuning = vRP.getSData("custom:"..user_id..":"..name) or {}
 				local custom = json.decode(tuning) or {}
@@ -489,6 +593,8 @@ function cRP.spawnVehicles(name,use)
 						local status,vehid = vCLIENT.spawnVehicle(source,name,vehicle[1].plate,vehicle[1].engine,vehicle[1].body,vehicle[1].fuel,custom,vehicle[1].windows,vehicle[1].doors,vehicle[1].tyres)
 						if status and vRP.paymentBank(parseInt(user_id),parseInt(vRP.vehiclePrice(name)*0.05)) then
 							vehlist[vehid] = { parseInt(user_id),name }
+							spanwedVehs[name..user_id] = true
+
 							TriggerEvent("setPlateEveryone",vehicle[1].plate)
 						end
 					else
@@ -498,6 +604,8 @@ function cRP.spawnVehicles(name,use)
 					local status,vehid = vCLIENT.spawnVehicle(source,name,vehicle[1].plate,vehicle[1].engine,vehicle[1].body,vehicle[1].fuel,custom,vehicle[1].windows,vehicle[1].doors,vehicle[1].tyres)
 					if status then
 						vehlist[vehid] = { parseInt(user_id),name }
+						spanwedVehs[name..user_id] = true
+					
 						TriggerEvent("setPlateEveryone",vehicle[1].plate)
 					end
 				end
@@ -514,7 +622,7 @@ end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- DELETEVEHICLES
 -----------------------------------------------------------------------------------------------------------------------------------------
-function cRP.deleteVehicles()
+function cnVRP.deleteVehicles()
 	local source = source
 	local user_id = vRP.getUserId(source)
 	if user_id then
@@ -537,9 +645,18 @@ RegisterCommand("dv",function(source,args,rawCommand)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
+-- FGARAGE
+-----------------------------------------------------------------------------------------------------------------------------------------
+RegisterCommand("rgarage",function(source,args,rawCommand)
+	local user_id = vRP.getUserId(source)
+	if vRP.hasPermission(user_id,"Admin") then
+		spanwedVehs[args[1]..args[2]] = nil
+	end
+end)
+-----------------------------------------------------------------------------------------------------------------------------------------
 -- VEHICLELOCK
 -----------------------------------------------------------------------------------------------------------------------------------------
-function cRP.vehicleLock()
+function cnVRP.vehicleLock()
 	local source = source
 	local user_id = vRP.getUserId(source)
 	if user_id then
@@ -569,7 +686,7 @@ end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- TRYDELETE
 -----------------------------------------------------------------------------------------------------------------------------------------
-function cRP.tryDelete(vehid,vehengine,vehbody,vehfuel,vehDoors,vehWindows,vehTyres,vehPlate)
+function cnVRP.tryDelete(vehid,vehengine,vehbody,vehfuel,vehDoors,vehWindows,vehTyres,vehPlate)
 	local source = source
 	if vehlist[vehid] and vehid ~= 0 then
 		local user_id = vehlist[vehid][1]
@@ -598,6 +715,7 @@ function cRP.tryDelete(vehid,vehengine,vehbody,vehfuel,vehDoors,vehWindows,vehTy
 
 		local vehicle = vRP.query("vRP/get_vehicles",{ user_id = parseInt(user_id), vehicle = tostring(vehname) })
 		if vehicle[1] ~= nil then
+			spanwedVehs[vehname..user_id] = nil
 			vRP.execute("vRP/set_update_vehicles",{ user_id = parseInt(user_id), vehicle = tostring(vehname), engine = parseInt(vehengine), body = parseInt(vehbody), fuel = parseInt(vehfuel), doors = json.encode(vehDoors), windows = json.encode(vehWindows), tyres = json.encode(vehTyres) })
 		end
 
@@ -618,7 +736,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- RETURNHOUSES
 -----------------------------------------------------------------------------------------------------------------------------------------
-function cRP.returnHouses(nome,garage)
+function cnVRP.returnHouses(nome,garage)
 	local source = source
 	local user_id = vRP.getUserId(source)
 	if user_id then
@@ -652,11 +770,11 @@ end
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterCommand("car",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
-  if user_id then
+ 	if user_id then
 		if vRP.hasPermission(user_id,"Admin") and args[1] then
-      local plate = "55DTA141"
+      		local plate = "55DTA141"
 			TriggerClientEvent("adminVehicle",source,args[1],plate)
-      TriggerEvent("setPlateEveryone",plate)
+      		TriggerEvent("setPlateEveryone",plate)
 			TriggerEvent("setPlatePlayers",plate,user_id)
 		end
 	end
@@ -685,7 +803,7 @@ RegisterCommand("vehs",function(source,args,rawCommand)
 				end
 
 				local identity = vRP.getUserIdentity(parseInt(args[3]))
-				if vRP.request(source,"Deseja transferir o veículo <b>"..vRP.vehicleName(tostring(args[2])).."</b> para <b>"..identity.name.." "..identity.name2.."</b>?",30) then
+				if vRP.request(source,"Deseja transferir o veículo <b>"..vRP.vehicleName(tostring(args[2])).."</b> para <b>"..identity.name.."</b>?",30) then
 					local vehicle = vRP.query("vRP/get_vehicles",{ user_id = parseInt(args[3]), vehicle = tostring(args[2]) })
 					if vehicle[1] then
 						TriggerClientEvent("Notify",source,"negado","<b>"..identity.name.." "..identity.name2.."</b> já possui este modelo de veículo.",5000)

@@ -14,5 +14,7 @@ server_scripts {
 }
 
 files {
-	"web-side/*"
+	"web-side/*",
+	"web-side/css/*",
+	"web-side/js/*"
 }

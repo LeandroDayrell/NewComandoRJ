@@ -8,8 +8,8 @@ vRPclient = Tunnel.getInterface("vRP")
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CONNECTION
 -----------------------------------------------------------------------------------------------------------------------------------------
-cRP = {}
-Tunnel.bindInterface("vrp_benefactor",cRP)
+cnVRP = {}
+Tunnel.bindInterface("vrp_benefactor",cnVRP)
 vCLIENT = Tunnel.getInterface("vrp_benefactor")
 vPLAYER = Tunnel.getInterface("vrp_player")
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -23,6 +23,7 @@ local beneModels = {
     [3] = { model = "faction2" },
     [4] = { model = "mesa" }
 }
+local lockReq = {}
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADVEHICLES
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -54,7 +55,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- GETOWNED
 -----------------------------------------------------------------------------------------------------------------------------------------
-function cRP.getOwned()
+function cnVRP.getOwned()
 	local source = source
 	local user_id = vRP.getUserId(source)
 	if user_id then
@@ -69,7 +70,7 @@ end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- REQUESTBUY
 -----------------------------------------------------------------------------------------------------------------------------------------
-function cRP.requestBuy(name,form)
+function cnVRP.requestBuy(name,form)
 	local source = source
 	local user_id = vRP.getUserId(source)
 	if user_id then
@@ -100,7 +101,7 @@ function cRP.requestBuy(name,form)
 			return
 		else
 			if vRP.paymentBank(user_id,parseInt(vRP.vehiclePrice(vehName))) then
-				vRP.execute("vRP/add_vehicle",{ user_id = parseInt(user_id), vehicle = vehName, plate = vRP.generatePlateNumber(), work = tostring(false) })
+				vRP.execute("vRP/add_vehicle",{ user_id = parseInt(user_id), vehicle = vehName, plate = vRP.generatePlateNumber(), phone = vRP.getPhone(user_id), work = tostring(false) })
 				TriggerClientEvent("Notify",source,"sucesso","A compra foi concluída com sucesso.",5000)
 			else
 				TriggerClientEvent("Notify",source,"negado","Dinheiro insuficiente na sua conta bancária.",5000)
@@ -109,43 +110,32 @@ function cRP.requestBuy(name,form)
 	end
 end
 -----------------------------------------------------------------------------------------------------------------------------------------
--- ACTIVED
------------------------------------------------------------------------------------------------------------------------------------------
-local actived = {}
-Citizen.CreateThread(function()
-	while true do
-		for k,v in pairs(actived) do
-			if actived[k] > 0 then
-				actived[k] = v - 1
-
-				if actived[k] <= 0 then
-					actived[k] = nil
-				end
-			end
-		end
-		Citizen.Wait(100)
-	end
-end)
------------------------------------------------------------------------------------------------------------------------------------------
 -- REQUESTSELL
 -----------------------------------------------------------------------------------------------------------------------------------------
-function cRP.requestSell(vehName)
+function cnVRP.requestSell(name)
 	local source = source
-	local user_id = vRP.getUserId(source)
+	local user_id = vRP.getUserId(source)	
 	if user_id then
-		if actived[user_id] == nil then
-			actived[user_id] = 10
+		if vRP.vehicleType(name) ~= nil or vRP.vehicleType(name) == "donate" then
+			if not lockReq[user_id] or lockReq[user_id] <= os.time() then
+				lockReq[user_id] = os.time() + 300
+				local vehName = tostring(name)
+				local getInvoice = vRP.getInvoice(user_id)
+				if getInvoice[1] ~= nil then
+					TriggerClientEvent("Notify",source,"negado","Encontramos faturas pendentes.",3000)
+					return
+				end
 
-			local getInvoice = vRP.getInvoice(user_id)
-			if getInvoice[1] ~= nil then
-				TriggerClientEvent("Notify",source,"negado","Encontramos faturas pendentes.",3000)
-				return
+				vRP.execute("vRP/rem_srv_data",{ dkey = "custom:"..parseInt(user_id)..":"..vehName })
+				vRP.execute("vRP/rem_srv_data",{ dkey = "chest:"..parseInt(user_id)..":"..vehName })
+				vRP.execute("vRP/rem_vehicle",{ user_id = parseInt(user_id), vehicle = vehName })
+				vRP.addBank(user_id,parseInt(vRP.vehiclePrice(name)*0.75))
+				TriggerClientEvent("Notify",source,"sucesso","Venda concluida com sucesso.",7000)
+			else
+				TriggerClientEvent("Notify",source,"negado","Aguarde 5 minutos para vender novamente.",7000)
 			end
-
-			vRP.execute("vRP/rem_srv_data",{ dkey = "custom:"..parseInt(user_id)..":"..vehName })
-			vRP.execute("vRP/rem_srv_data",{ dkey = "chest:"..parseInt(user_id)..":"..vehName })
-			vRP.execute("vRP/rem_vehicle",{ user_id = parseInt(user_id), vehicle = vehName })
-			vRP.addBank(user_id,parseInt(vRP.vehiclePrice(vehName)*0.75))
+		else
+			TriggerClientEvent("Notify",source,"negado","Voce nao pode vender este veiculo.",7000)
 		end
 	end
 end

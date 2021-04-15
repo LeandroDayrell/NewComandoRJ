@@ -8,7 +8,6 @@ vRPclient = Tunnel.getInterface("vRP")
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CONNECTION
 -----------------------------------------------------------------------------------------------------------------------------------------
-cnVRP = {}
 cRP = {}
 Tunnel.bindInterface("vrp_weplants",cRP)
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -28,7 +27,7 @@ Citizen.CreateThread(function()
 	weCounts = json.decode(weCountsFile)
 
 	while true do
-		Citizen.Wait(72000)
+		Citizen.Wait(25000)
 
 		for k,v in pairs(wePlants) do
 			v[4] = v[4] + 2
@@ -103,8 +102,8 @@ exports("getAmount",getAmount)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CHECKTIMERS
 -----------------------------------------------------------------------------------------------------------------------------------------
-function cnVRP.checkTimers(id)
-	cnVRP.amountService()
+function cRP.checkTimers(id)
+	cRP.amountService()
 
 	local source = source
 	local user_id = vRP.getUserId(source)
@@ -131,11 +130,8 @@ function cnVRP.checkTimers(id)
 
 				vRPclient._stopAnim(source,false)
 				TriggerClientEvent("cancelando",source,false)
-				vRP.giveInventoryItem(user_id,"weed",parseInt(weAmount[source]))
+				vRP.giveInventoryItem(user_id,"weed",parseInt(weAmount[source]),true)
 				vRP.giveInventoryItem(user_id,"bucket",1,true)
-				if math.random(100) >= 70 then
-					vRP.giveInventoryItem(user_id,"cannabisseed",1,true)
-				end
 				weAmount[source] = nil
 				return true
 			else

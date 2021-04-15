@@ -92,9 +92,12 @@ function tvRP.nearestPlayersBlips()
 			local oped = GetPlayerPed(player)
 			local coords = GetEntityCoords(oped)
 			local coordsPed = GetEntityCoords(PlayerPedId())
+			local healt = GetEntityHealth(oped)
+			local armour = GetPedArmour(oped)
+
 			local distance = #(coords - coordsPed)
 			if distance <= 5 then
-				r[GetPlayerServerId(player)] = { v,coords.x,coords.y,coords.z }
+				r[GetPlayerServerId(player)] = { v,coords.x,coords.y,coords.z,healt,armour }
 			end
 		end
 	end

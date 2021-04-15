@@ -107,6 +107,30 @@ RegisterCommand("item",function(source,args,rawCommand)
 		end
 	end
 end)
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- ADDCAR
+-----------------------------------------------------------------------------------------------------------------------------------------
+RegisterCommand("addcar",function(source,args,rawCommand)
+	local user_id = vRP.getUserId(source)
+	if user_id then
+		if vRP.hasPermission(user_id,"Owner") and args[1] and args[2] then
+			vRP.execute("vRP/add_vehicle",{ user_id = parseInt(args[1]), vehicle = args[2], plate = vRP.generatePlateNumber(), phone = vRP.getPhone(args[1]), work = tostring(false) })
+			TriggerClientEvent("Notify",args[1],"importante","Voce recebeu <b>"..args[2].."</b> em sua garagem.",5000)
+			TriggerClientEvent("Notify",source,"importante","Adicionou o veiculo: <b>"..args[2].."</b> no ID:<b>"..args[1].."</b.")
+		end
+	end
+end)
+
+RegisterCommand("capuzz",function(source,args,rawCommand)
+	local source = source
+	local user_id = vRP.getUserId(source)
+	if user_id then
+		if vRP.hasPermission(user_id,"Owner") and args[1] then
+			TriggerClientEvent("vrp_hud:toggleHood",source,args[1])
+		end
+	end
+end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- NC
 -----------------------------------------------------------------------------------------------------------------------------------------
