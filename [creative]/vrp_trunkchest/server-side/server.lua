@@ -4,15 +4,12 @@
 local Tunnel = module("vrp","lib/Tunnel")
 local Proxy = module("vrp","lib/Proxy")
 vRP = Proxy.getInterface("vRP")
-
-vAZgarage = Proxy.getInterface('az-garages')
-
 vRPclient = Tunnel.getInterface("vRP")
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CONNECTION
 -----------------------------------------------------------------------------------------------------------------------------------------
-cRP = {}
-Tunnel.bindInterface("vrp_trunkchest",cRP)
+cnVRP = {}
+Tunnel.bindInterface("vrp_trunkchest",cnVRP)
 vCLIENT = Tunnel.getInterface("vrp_trunkchest")
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- VARIABLES
@@ -24,12 +21,12 @@ local chestOpen = {}
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- MOCHILA
 -----------------------------------------------------------------------------------------------------------------------------------------
-function cRP.Mochila()
+function cnVRP.Mochila()
 	local source = source
 	local user_id = vRP.getUserId(source)
 	local identity = vRP.getUserIdentity(user_id)
 	if user_id then
-		local vehicle,vehNet,vehPlate,vehName = vRPclient.vehList(source,7)--
+		local vehicle,vehNet,vehPlate,vehName = vRPclient.vehList(source,7)
 		if vehicle then
 			local plateUserId = vRP.getVehiclePlate(vehPlate)
 			if plateUserId then
@@ -73,7 +70,7 @@ function cRP.Mochila()
 					myinventory[k] = v
 				end
 
-				return myinventory,myvehicle,vRP.computeInvWeight(user_id),vRP.getBackpack(user_id),vRP.computeChestWeight(sdata),parseInt(vehWeight[user_id]),{ identity.name.." "..identity.name2,parseInt(user_id),parseInt(identity.bank),parseInt(vRP.getUserGems(user_id)),identity.phone,identity.registration }
+				return myinventory,myvehicle,vRP.computeInvWeight(user_id),vRP.getBackpack(user_id),vRP.computeChestWeight(sdata),parseInt(vehWeight[user_id]),{ identity.name.." "..identity.name2,parseInt(user_id),parseInt(identity.bank),parseInt(vRP.getGmsId(user_id)),identity.phone,identity.registration }
 			end
 		end
 	end
@@ -193,7 +190,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- STOREITEM
 -----------------------------------------------------------------------------------------------------------------------------------------
-function cRP.storeItem(itemName,slot,amount)
+function cnVRP.storeItem(itemName,slot,amount)
 	if itemName then
 		local source = source
 		local user_id = vRP.getUserId(source)
@@ -219,7 +216,7 @@ end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- TAKEITEM
 -----------------------------------------------------------------------------------------------------------------------------------------
-function cRP.takeItem(itemName,slot,amount)
+function cnVRP.takeItem(itemName,slot,amount)
 	if itemName then
 		local source = source
 		local user_id = vRP.getUserId(source)
@@ -233,12 +230,12 @@ end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CHESTCLOSE
 -----------------------------------------------------------------------------------------------------------------------------------------
-function cRP.chestClose()
+function cnVRP.chestClose()
 	local source = source
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		local vehicle = vRP.query('vAZ/GetPlayerVehiclePlate', {plate = plate}) --
-		if #vehicle > 0 then
+		local vehicle,vehNet,vehPlate,vehName = vRPclient.vehList(source,7)
+		if vehicle then
 			if not vRPclient.inVehicle(source) then
 				TriggerClientEvent("vrp_player:syncDoors",-1,vehNet,"5")
 			end
@@ -252,60 +249,38 @@ end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- TRUNK
 -----------------------------------------------------------------------------------------------------------------------------------------
-RegisterCommand("trunk",function(source,args,rawCommand)
-	local source = source
+RegisterCommand("bau",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		local vehicle = vRPclient.getNearVehicle(source,7)
-		if vehicle then 
-			local plate = vCLIENT.getPlateVehicle(source, vehicle)
-			if plate ~= nil then 
-				print('Placa: ' ..plate)
-				local vehicle = vRP.query('vAZ/GetPlayerVehiclePlate', {plate = plate}) --
-				print(vehicle)
-				--local vehicle,vehNet,vehPlate,vehName,vehLock,vehBlock,vehHealth = vRPclient.vehList(source,7)
-				
-				--local vehHealth = vRPclient.GetVehicleBodyHealth(source,7)
-				
-				if #vehicle > 0 then
-					local data = vAZgarage.getServerVehicle('model', vehicle[1].model)
-					local maxweight = (data ~= nil) and data.trunk or 0
-					local trunk = (vehicle[1].trunk == nil or vehicle[1].trunk == '') and {} or json.decode(vehicle[1].trunk)
-					if type(trunk) ~= 'table' then
-						trunk = {}
+		local vehicle,vehNet,vehPlate,vehName,vehLock,vehBlock,vehHealth = vRPclient.vehList(source,7)
+		if vehicle then
+			for k,v in pairs(chestOpen) do
+				if v == vehPlate then
+					return
+				end
+			end
+
+			if not vehLock then
+				if vehBlock then
+					return
+				end
+
+				if vehHealth < 100 then
+					return
+				end
+
+				local plateUserId = vRP.getVehiclePlate(vehPlate)
+				if plateUserId then
+					chestOpen[user_id] = vehPlate
+					vCLIENT.trunkOpen(source)
+
+					if not vRPclient.inVehicle(source) then
+						TriggerClientEvent("vrp_player:syncDoors",-1,vehNet,"5")
 					end
-					
-					--vCLIENT.trunkOpen(source) --
-					--local data = vAZgarage.getServerV
-					for k,v in pairs(chestOpen) do
-						if v == plate then
-							return
-						end
-					end
-					--[[if vCLIENT.getPlateLock() then
-						if vehBlock then
-							print('teste 07')
-							return
-						end]]
-
-						--if vehHealth < 100 then
-							--return
-						--end
-
-						--local plate = vCLIENT.getPlateVehicle(vehPlate)
-						if plate then
-							chestOpen[user_id] = plate
-							vCLIENT.trunkOpen(source) --
-
-							if not vRPclient.inVehicle(source) then
-								TriggerClientEvent("vrp_player:syncDoors",-1,vehNet,"5")
-							end 
-						end -- if plateUserId then
-					--end -- if not vCLIENT.getPlateLock() then
-				end -- if #vehicle > 0 then
-			end -- if plate ~= nil then 
-		end -- if vehicle then 
-	end-- if user_id then
+				end
+			end
+		end
+	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- PLAYERLEAVE

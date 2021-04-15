@@ -37,10 +37,9 @@ Citizen.CreateThread(function()
 						if distance <= 0.6 and IsControlJustPressed(1,38) and timeSeconds <= 0 and GetEntityModel(GetPlayersLastVehicle()) == vehModel then
 							timeSeconds = 2
 							vRP._playAnim(false,{"anim@amb@clubhouse@tutorial@bkr_tut_ig3@","machinic_loop_mechandplayer"},true)
-							SetTimeout(2000, function()	
+							Wait(1000)
 								vSERVER.paymentMethod(parseInt(k))
 								vRP._stopAnim(false)					
-							end)
 						end
 					end
 				end

@@ -4,12 +4,11 @@
 local Tunnel = module("vrp","lib/Tunnel")
 local Proxy = module("vrp","lib/Proxy")
 vRP = Proxy.getInterface("vRP")
-
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CONNECTION
 -----------------------------------------------------------------------------------------------------------------------------------------
-cRP = {}
-Tunnel.bindInterface("vrp_trunkchest",cRP)
+cnVRP = {}
+Tunnel.bindInterface("vrp_trunkchest",cnVRP)
 vSERVER = Tunnel.getInterface("vrp_trunkchest")
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- STARTFOCUS
@@ -23,60 +22,15 @@ end)
 RegisterNUICallback("invClose",function(data,cb)
 	vSERVER.chestClose()
 	SetNuiFocus(false,false)
+	TransitionFromBlurred(1000)
   SendNUIMessage({ action = "hideMenu" })
   cb("ok")
 end)
-
-function cRP.getPlateVehicle(vehicle, radius)
-	if radius == nil then radius = 2 end
-	if vehicle == nil then vehicle = tvRP.getNearestVehicle(radius) end
-	return GetVehicleNumberPlateText(vehicle)
-end
-
-function cRP.getPlateLock(vehicle,radius)
-	if radius == nil then 
-		radius = 2 
-	end
-	if vehicle == nil then 
-	vehicle = tvRP.getNearestVehicle(radius) 
-	end
-	if GetVehicleDoorLockStatus(vehicle) == 1 then
-			return;
-	end 
-end
-
-
------------------------------------------------------------------------------------------------------------------------------------------
--- DV
------------------------------------------------------------------------------------------------------------------------------------------
-RegisterNetEvent('deletarveiculo')
-AddEventHandler('deletarveiculo',function(vehicle)
-	TriggerServerEvent("vrp_garages:admDelete",VehToNet(vehicle),GetVehicleEngineHealth(vehicle),GetVehicleBodyHealth(vehicle),GetVehicleFuelLevel(vehicle))
-	TriggerServerEvent("trydeleteveh",VehToNet(vehicle))
-end)
-
-RegisterNetEvent("syncdeleteveh")
-AddEventHandler("syncdeleteveh",function(index)
-	Citizen.CreateThread(function()
-		if NetworkDoesNetworkIdExist(index) then
-			SetVehicleAsNoLongerNeeded(index)
-			SetEntityAsMissionEntity(index,true,true)
-			local v = NetToVeh(index)
-			if DoesEntityExist(v) then
-				SetVehicleHasBeenOwnedByPlayer(v,false)
-				PlaceObjectOnGroundProperly(v)
-				SetEntityAsNoLongerNeeded(v)
-				SetEntityAsMissionEntity(v,true,true)
-				DeleteVehicle(v)
-			end
-		end
-	end)
-end)
-
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- TRUNK
 -----------------------------------------------------------------------------------------------------------------------------------------
-function cRP.trunkOpen()
+function cnVRP.trunkOpen()
+	TransitionToBlurred(1000)
 	SetNuiFocus(true,true)
 	SendNUIMessage({ action = "showMenu" })
 end

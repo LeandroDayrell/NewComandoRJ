@@ -318,16 +318,16 @@ RegisterNUICallback(
             if testDriveEntity ~= nil then
                 DeleteEntity(testDriveEntity)
             end
-        
-            testDriveEntity = CreateVehicle(hash, -11.87, -1080.87, 25.71, 132.0, 1, 1)
+            
+            testDriveEntity = CreateVehicle(hash, -995.79,-3470.07,13.95,57.81, 1, 1)
             SetPedIntoVehicle(PlayerPedId(), testDriveEntity, -1)
             local timeGG = GetGameTimer()
-            print('Teste Aqui')            
+            ---print('Teste Aqui')            
             local vehicle,vehNet,vehPlate,vehName = vRP.vehList(7)
             -- CRIAR UNLOCK DO VEICULO AQUI
             TriggerServerEvent("setPlateEveryone",vehPlate)
             TriggerEvent("setPlatePlayers",vehPlate,user_id)
-            print(vehPlate)
+            --print(vehPlate)
 
         --    SetVehicleCustomPrimaryColour(testDriveEntity,  math.ceil(rgbColorSelected[1]), math.ceil(rgbColorSelected[2]), math.ceil(rgbColorSelected[3]))
          --   SetVehicleCustomSecondaryColour(testDriveEntity,  math.ceil(rgbSecondaryColorSelected[1]), math.ceil(rgbSecondaryColorSelected[2]), math.ceil(rgbSecondaryColorSelected[3]))
@@ -424,7 +424,7 @@ function DrawText3Ds(x,y,z, text)
 	DrawRect(_x,_y+0.0125,0.01+factor,0.03,0,0,0,100)
 end
 -----------------------------------------------------------------------------------------------------------------------------------------
---[[ function drawTxt(text,font,x,y,scale,r,g,b,a)
+ function drawTxt(text,font,x,y,scale,r,g,b,a)
 	SetTextFont(font)
 	SetTextScale(scale,scale)
 	SetTextColour(r,g,b,a)
@@ -433,12 +433,12 @@ end
 	SetTextEntry("STRING")
 	AddTextComponentString(text)
 	DrawText(x,y)
-end ]]
+end 
 
 
 local blip 
 
---[[ -- Create Blips
+--[[ -- -- Create Blips
 Citizen.CreateThread(function ()
 
     for i = 1, #vehicleshopCoords do    
@@ -454,7 +454,7 @@ Citizen.CreateThread(function ()
         AddTextComponentString("Cardealer")
         EndTextCommandSetBlipName(blip)
     end
-end) ]]
+end)  ]]
 
 AddEventHandler(
     "onResourceStop",

@@ -1,26 +1,40 @@
-$(document).ready(function(){
-	window.addEventListener("message",function(event){
-		switch(event.data.action){
+const mySlots = 50;
+const inSlots = 100;
+let shiftPressed = false;
+
+$(document).ready(function () {
+	window.addEventListener("message", function (event) {
+		switch (event.data.action) {
 			case "showMenu":
-				updateMochila();
-				$("#body").fadeIn(100);
-			break;
+				updateChest();
+				$(".inventory").css("display", "flex")
+				break;
 
 			case "hideMenu":
-				$("#body").fadeOut(100);
-			break;
+				$(".inventory").css("display", "none")
+				break;
 
 			case "updateMochila":
-				updateMochila();
-			break;
+				updateChest();
+				break;
 		}
 	});
 
-	document.onkeyup = function(data){
-		if (data.which == 27){
-			$.post("http://vrp_trunkchest/invClose", JSON.stringify({}));
+	document.onkeydown = data => {
+		const key = data.key;
+		if (key === "Shift") {
+			shiftPressed = true;
 		}
-	};
+	}
+
+	document.onkeyup = data => {
+		const key = data.key;
+		if (key === "Escape") {
+			$.post("http://vrp_trunkchest/invClose", JSON.stringify({}));
+		} else if (key === "Shift") {
+			shiftPressed = false;
+		}
+	}
 });
 
 const updateDrag = () => {
@@ -30,108 +44,162 @@ const updateDrag = () => {
 
 	$('.empty').droppable({
 		hoverClass: 'hoverControl',
-		drop: function(event,ui){
-			const origin = ui.draggable.parent()[0].id;
+		drop: function (event, ui) {
+			const origin = ui.draggable.parent()[0].className;
 			if (origin === undefined) return;
+			const tInv = $(this).parent()[0].className;
 
-			const tInv = $(this).parent()[0].id;
+			itemData = { key: ui.draggable.data('item-key'), slot: ui.draggable.data('slot') };
+			const target = $(this).data('slot');
 
-			if ( tInv === "invleft" ) {
-				if ( origin === "invleft" ) {
-					itemData = { key: ui.draggable.data('item-key'), slot: ui.draggable.data('slot') };
-					const target = $(this).data('slot');
+			if (itemData.key === undefined || target === undefined) return;
 
-					if (itemData.key === undefined || target === undefined) return;
+			let amount = $(".amount").val();
+			if (shiftPressed) amount = ui.draggable.data('amount');
 
-					$.post("http://vrp_trunkchest/populateSlot",JSON.stringify({
+			if (tInv === "invLeft") {
+				if (origin === "invLeft") {
+					$.post("http://vrp_trunkchest/populateSlot", JSON.stringify({
 						item: itemData.key,
 						slot: itemData.slot,
 						target: target,
-						amount: parseInt($(".amount").val())
+						amount: parseInt(amount)
 					}))
 
-					$('.amount').val("")
-				} else if ( origin === "invright" ) {
-					itemData = { key: ui.draggable.data('item-key') };
-					const target = $(this).data('slot');
-
-					if (itemData.key === undefined || target === undefined) return;
-
-					$.post("http://vrp_trunkchest/takeItem",JSON.stringify({
+					$('.amount').val("");
+				} else if (origin === "invRight") {
+					$.post("http://vrp_trunkchest/takeItem", JSON.stringify({
 						item: itemData.key,
 						slot: target,
-						amount: parseInt($(".amount").val())
-					}))
+						amount: parseInt(amount)
+					}));
 
-					$('.amount').val("")
+					$('.amount').val("");
 				}
-			} else if ( tInv === "invright" ) {
-				itemData = { key: ui.draggable.data('item-key'), slot: ui.draggable.data('slot') };
+			} else if (tInv === "invRight") {
+				if (origin === "invLeft") {
+					$.post("http://vrp_trunkchest/storeItem", JSON.stringify({
+						item: itemData.key,
+						slot: itemData.slot,
+						amount: parseInt(amount)
+					}));
 
-				if (itemData.key === undefined) return;
-
-				$.post("http://vrp_trunkchest/storeItem",JSON.stringify({
-					item: itemData.key,
-					slot: itemData.slot,
-					amount: parseInt($(".amount").val())
-				}))
-
-				$('.amount').val("")
+					$('.amount').val("");
+				}
 			}
 		}
 	});
 
 	$('.populated').droppable({
 		hoverClass: 'hoverControl',
-		drop: function(event,ui){
-			const origin = ui.draggable.parent()[0].id;
+		drop: function (event, ui) {
+			const origin = ui.draggable.parent()[0].className;
 			if (origin === undefined) return;
+			const tInv = $(this).parent()[0].className;
 
-			const tInv = $(this).parent()[0].id;
+			itemData = { key: ui.draggable.data('item-key'), slot: ui.draggable.data('slot') };
+			const target = $(this).data('slot');
 
-			if ( tInv === "invleft" ) {
-				if ( origin === "invleft" ) {
-					itemData = { key: ui.draggable.data('item-key'), slot: ui.draggable.data('slot') };
-					const target = $(this).data('slot');
+			if (itemData.key === undefined || target === undefined) return;
 
-					if (itemData.key === undefined || target === undefined) return;
+			let amount = $(".amount").val();
+			if (shiftPressed) amount = ui.draggable.data('amount');
 
-					$.post("http://vrp_trunkchest/updateSlot",JSON.stringify({
+
+			if (tInv === "invLeft") {
+				if (origin === "invLeft") {
+					$.post("http://vrp_trunkchest/updateSlot", JSON.stringify({
 						item: itemData.key,
 						slot: itemData.slot,
 						target: target,
-						amount: parseInt($(".amount").val())
-					}))
+						amount: parseInt(amount)
+					}));
 
-					$('.amount').val("")
-				} else if (origin === "invright") {
-					itemData = { key: ui.draggable.data('item-key') };
-					const target = $(this).data('slot');
-
-					if (itemData.key === undefined || target === undefined) return;
-
-					$.post("http://vrp_trunkchest/sumSlot",JSON.stringify({
+					$('.amount').val("");
+				} else if (origin === "invRight") {
+					$.post("http://vrp_trunkchest/sumSlot", JSON.stringify({
 						item: itemData.key,
 						slot: target,
-						amount: parseInt($(".amount").val())
-					}))
+						amount: parseInt(amount)
+					}));
 
-					$('.amount').val("")
+					$('.amount').val("");
 				}
-			} else if ( tInv === "invright" ) {
-				itemData = { key: ui.draggable.data('item-key'), slot: ui.draggable.data('slot') };
+			} else if (tInv === "invRight") {
+				if (origin === "invLeft") {
+					$.post("http://vrp_trunkchest/storeItem", JSON.stringify({
+						item: itemData.key,
+						slot: itemData.slot,
+						amount: parseInt(amount)
+					}));
 
-				if (itemData.key === undefined) return;
-
-				$.post("http://vrp_trunkchest/storeItem",JSON.stringify({
-					item: itemData.key,
-					slot: itemData.slot,
-					amount: parseInt($(".amount").val())
-				}))
-
-				$('.amount').val("")
+					$('.amount').val("");
+				}
 			}
 		}
+	});
+}
+
+const updateChest = () => {
+	$.post("http://vrp_trunkchest/requestMochila", JSON.stringify({}), (data) => {
+		$(".myInfos").html(`
+			<b>${data.infos[0]} <i>#${data.infos[1]}</i></b>
+			<div class="infosContent">
+				<span><s>TELEFONE:</s> ${data.infos[2]}</span>
+				<span><s>RG:</s> ${data.infos[3]}</span>
+				<span><s>BANCO:</s> $${formatarNumero(data.infos[4])}</span>
+				<span>${(data.peso).toFixed(2)} / ${(data.maxpeso).toFixed(2)}</span>
+				<span>${(data.peso2).toFixed(2)} / ${(data.maxpeso2).toFixed(2)}</span>
+			</div>
+		`);
+
+		const nameList2 = data.inventario2.sort((a, b) => (a.name > b.name) ? 1 : -1);
+
+		$(".invLeft").html("");
+		$(".invRight").html("");
+
+		for (let x = 1; x <= mySlots; x++) {
+			const slot = x.toString();
+
+			if (data.inventario[slot] !== undefined) {
+				const v = data.inventario[slot];
+				const item = `<div class="item populated" style="background-image: url('http://131.196.198.113/imagens/${v.index}.png'); background-position: center; background-repeat: no-repeat;" data-amount="${v.amount}" data-peso="${v.peso}" data-item-key="${v.key}" data-name-key="${v.name}" data-slot="${slot}">
+				<div class="top">
+				<div class="itemWeight"></div>
+				<div class="itemAmount">${formatarNumero(v.amount)}x   |   ${(v.peso * v.amount).toFixed(2)}</div>
+			</div>
+				<div class="itemname">${v.name}</div>
+			</div>`;
+
+				$(".invLeft").append(item);
+			} else {
+				const item = `<div class="item empty" data-slot="${slot}"></div>`;
+
+				$(".invLeft").append(item);
+			}
+		}
+
+		for (let x = 1; x <= inSlots; x++) {
+			const slot = x.toString();
+
+			if (nameList2[x - 1] !== undefined) {
+				const v = nameList2[x - 1];
+				const item = `<div class="item populated" style="background-image: url('http://131.196.198.113/imagens/${v.index}.png'); background-position: center; background-repeat: no-repeat;" data-amount="${v.amount}" data-peso="${v.peso}" data-item-key="${v.key}" data-name-key="${v.name}" data-slot="${slot}">
+				<div class="top">
+				<div class="itemWeight"></div>
+				<div class="itemAmount">${formatarNumero(v.amount)}x   |   ${(v.peso * v.amount).toFixed(2)}</div>
+			</div>
+				<div class="itemname">${v.name}</div>
+			</div>`;
+
+				$(".invRight").append(item);
+			} else {
+				const item = `<div class="item empty" data-slot="${slot}"></div>`;
+
+				$(".invRight").append(item);
+			}
+		}
+		updateDrag();
 	});
 }
 
@@ -140,97 +208,10 @@ const formatarNumero = (n) => {
 	var r = '';
 	var x = 0;
 
-	for (var i = n.length; i > 0; i--){
+	for (var i = n.length; i > 0; i--) {
 		r += n.substr(i - 1, 1) + (x == 2 && i != 1 ? '.' : '');
 		x = x == 2 ? 0 : x + 1;
 	}
 
 	return r.split('').reverse().join('');
-}
-
-const updateMochila = () => {
-	const mySlots = 50;
-	const inSlots = 100;
-
-	$.post("http://vrp_trunkchest/requestMochila",JSON.stringify({}),(data) => {
-		$("#myInfos").html(`
-			<b>${data.infos[0]} <i>#${data.infos[1]}</i></b>
-			<div id="myInfosContent">
-				<span><s>Nº:</s> ${data.infos[4]}</span>
-				<span><s>RG:</s> ${data.infos[5]}</span>
-				<span><s>BANCO:</s> $${formatarNumero(data.infos[2])}</span>
-				<span><s>GEMAS:</s> ${formatarNumero(data.infos[3])}</span>
-				<span><s>PESO:</s> ${(data.peso).toFixed(2)} / ${(data.maxpeso).toFixed(2)}</span>
-			</div>
-		`);
-
-		$("#invweight").html(`
-			<div id="myWeight">
-				<div id="myWeightContent" style="width: ${parseInt(data.peso/data.maxpeso*100)}%"></div>
-			</div>
-			<div id="chestWeight">
-				<div id="chestWeightContent" style="width: ${parseInt(data.peso2/data.maxpeso2*100)}%"></div>
-			</div>
-		`);
-
-		const nameList2 = data.inventario2.sort((a,b) => (a.name > b.name) ? 1: -1);
-
-		$("#invleft").html("");
-		$("#invright").html("");
-
-		for (let x=1; x <= mySlots; x++) {
-			const slot = x.toString();
-
-			if (data.inventario[slot] !== undefined) {
-				const v = data.inventario[slot];
-				const item = `<div class="item populated" style="background-image: url('nui://vrp_inventory/web-side/images/${v.index}.png');" data-item-key="${v.key}" data-name-key="${v.name}" data-slot="${slot}">
-					<div id="peso">${(v.peso*v.amount).toFixed(2)}</div>
-					<div id="quantity">${formatarNumero(v.amount)}x</div>
-					<div id="itemname">${v.name}</div>
-
-					${v.durability !== undefined ? `<div id="durability"><div id="durability2" style="width: ${v.durability*10}%"></div></div>`:`<div id="nonebility"></div>`}
-				</div>`;
-
-				document.getElementById("invleft").innerHTML = `${document.getElementById("invleft").innerHTML} ${item}`;
-			} else {
-				const item = `<div class="item empty" data-slot="${slot}"></div>`;
-
-				document.getElementById("invleft").innerHTML = `${document.getElementById("invleft").innerHTML} ${item}`;
-			}
-		}
-
-		for (let x=1; x <= inSlots; x++) {
-			const slot = x.toString();
-
-			if (nameList2[x-1] !== undefined) {
-				const v = nameList2[x-1];
-				const item = `<div class="item2 populated" style="background-image: url('nui://vrp_inventory/web-side/images/${v.index}.png');" data-item-key="${v.key}" data-name-key="${v.name}" data-slot="${slot}">
-					<div id="peso">${(v.peso*v.amount).toFixed(2)}</div>
-					<div id="quantity">${formatarNumero(v.amount)}x</div>
-					<div id="itemname">${v.name}</div>
-
-					${v.durability !== undefined ? `<div id="durability"><div id="durability2" style="width: ${v.durability*10}%"></div></div>`:`<div id="nonebility"></div>`}
-				</div>`;
-
-				document.getElementById("invright").innerHTML = `${document.getElementById("invright").innerHTML} ${item}`;
-			} else {
-				const item = `<div class="item2 empty" data-slot="${slot}"></div>`;
-
-				document.getElementById("invright").innerHTML = `${document.getElementById("invright").innerHTML} ${item}`;
-			}
-		}
-		updateDrag();
-	});
-}
-
-function somenteNumeros(e){
-	var charCode = e.charCode ? e.charCode : e.keyCode;
-	if (charCode != 8 && charCode != 9){
-		var max = 9;
-		var num = $(".amount").val();
-
-		if ((charCode < 48 || charCode > 57)||(num.length >= max)){
-			return false;
-		}
-	}
 }

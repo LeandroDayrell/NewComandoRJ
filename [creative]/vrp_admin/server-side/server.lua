@@ -18,7 +18,7 @@ vHOMES = Tunnel.getInterface("vrp_homes")
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- DV
------------------------------------------------------------------------------------------------------------------------------------------
+--[[ -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterCommand('dv',function(source,args,rawCommand)
     local user_id = vRP.getUserId(source)
 	--print('teste 0.1')
@@ -36,7 +36,7 @@ RegisterNetEvent('deletarveiculo')
 AddEventHandler('deletarveiculo',function(vehicle)
     TriggerServerEvent("vrp_garages:admDelete",VehToNet(vehicle))
 	--print('teste 02')
-end)
+end) ]]
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CONNECTPLAYERS
@@ -83,7 +83,7 @@ end) ]]
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CAR
 -----------------------------------------------------------------------------------------------------------------------------------------
-
+--[[ 
 RegisterCommand("car",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if vRP.hasPermission(user_id,"Admin") then
@@ -92,7 +92,7 @@ RegisterCommand("car",function(source,args,rawCommand)
 			TriggerClientEvent('spawnarveiculo',source,args[1])
 		end
 	end
-end)
+end) ]]
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- ITEM

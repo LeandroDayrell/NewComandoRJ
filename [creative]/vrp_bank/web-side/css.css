@@ -64,7 +64,7 @@ button:hover {
 #bank-left a {
 	width: 240px;
 	padding: 15px 20px;
-	background-image: linear-gradient(#f3a000,#d57800);
+	background-image: linear-gradient(#ffffff,#a2ebf5);
 	float: left;
 	color: #523600;
 	margin: 0 0 10px 0;
@@ -87,7 +87,7 @@ button:hover {
 
 .title {
 	float: left;
-	color: #cdffef;
+	color: #ffffff;
 	width: 647px;
 	font-size: 24px;
 	font-weight: 700;
@@ -140,28 +140,28 @@ button:hover {
 	color: #155e39;
 	font-weight: 700;
 	position: absolute;
-	background: #2dc177;
+	background: #fff;
 	padding: 12px 12px 11px;
 	margin: -1px 0 0 500px;
 	border-radius: 2px;
 }
 
 .multas:hover {
-	background: #31d080;
+	background: #fff;
 }
 
 .faturas {
 	color: #155e39;
 	font-weight: 700;
 	position: absolute;
-	background: #2dc177;
+	background: #fff;
 	padding: 12px 12px 11px;
 	margin: -1px 0 0 500px;
 	border-radius: 2px;
 }
 
 .faturas:hover {
-	background: #31d080;
+	background: #fff;
 }
 
 .menu-depositar {
@@ -188,9 +188,9 @@ button:hover {
 .depositar, .sacar {
 	width: 100px;
 	text-align: center;
-	color: #155e39;
+	color: #ffffff;
 	font-weight: 700;
-	background: #2dc177;
+	background: #46155e;
 	padding: 15px 10px;
 	font-size: 20px;
 	border-radius: 2px;
