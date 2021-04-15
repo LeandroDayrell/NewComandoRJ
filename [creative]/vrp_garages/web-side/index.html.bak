@@ -28,8 +28,15 @@
             </div>
         </div>
         <div class="actions" style="padding: 0 15px 0 15px">
-            <span id="retirar" class="material-icons">Retirar</span>
-            <span id="guardar" class="material-icons">Guardar</span>
+            <button onclick="garage.spawn();" disabled>
+                <span class="material-icons" style="margin-right: 3px;font-size: 18px;margin-top: -1px;">alt_route</span> Retirar
+            </button>
+            <button onclick="garage.despawn();" disabled>
+                <span class="material-icons" style="margin-right: 2px;font-size: 22px;margin-top: -2px;">transit_enterexit</span> Guardar
+            </button>
+            <button onclick="garage.fare();" disabled>
+                <span class="material-icons" style="margin-right: 6px;font-size: 19px;margin-top: -2px;">payments</span> Pagar
+            </button>
         </div>
         <div class="infocar container" id="infocar">
             <div class="loading">
