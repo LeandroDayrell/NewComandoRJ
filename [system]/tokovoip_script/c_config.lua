@@ -9,9 +9,9 @@ TokoVoipConfig = {
 	keySwitchChannelsSecondary = Keys["PAGEDOWN"],
 	keyProximity = Keys["HOME"],
 	plugin_data = {
-		TSChannel = "TOKOVOIP",
-		TSPassword = "connected2020",
-		TSChannelWait = "WAITING",
+		TSChannel = "CRJ - TokoVOIP",
+		TSPassword = "crj2020",
+		TSChannelWait = "Aguardando",
 		local_click_on = true,
 		local_click_off = true,
 		remote_click_on = false,
@@ -25,7 +25,7 @@ TokoVoipConfig = {
 AddEventHandler("onClientResourceStart",function(resource)
 	if (resource == GetCurrentResourceName()) then
 		Citizen.CreateThread(function()
-			TokoVoipConfig.plugin_data.localName = "Creative Roleplay"
+			TokoVoipConfig.plugin_data.localName = "Comando RJ"
 		end)
 		TriggerEvent("initializeVoip")
 	end

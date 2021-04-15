@@ -1145,7 +1145,7 @@ end)
 -- sistema de ver quantidade de players na cidade
 -----------------------------------------------------------------------------------------------------------------------------------------
 
-RegisterCommand('ptrid',function(source,args,rawCommand)
+--[[ RegisterCommand('ptrid',function(source,args,rawCommand)
     local policia = vRP.hasPermission("Police")
 	local users_id = ""
 	print('Teste 1')
@@ -1172,7 +1172,7 @@ end)
 RegisterCommand('ptr',function(source,args,rawCommand)
 	local policia = vRP.hasPermission("Police")
 		local players = ""
-		print('teste')
+		--print('teste')
 		for k,v in pairs(policia) do
 			if k ~= #policia then
 				players = players..", "
@@ -1185,7 +1185,7 @@ RegisterCommand('ptr',function(source,args,rawCommand)
 
 end)
 
-
+ ]]
 
 
 

@@ -28,10 +28,17 @@ local PegarRota = {
 }
 
 local locs = {
-	[1] = { ['x'] = 256.45819091797, ['y'] = 3106.9914550781, ['z'] = 42.487155914307},
-	[1] = { ['x'] = -432.66369628906, ['y'] = 1589.5456542969, ['z'] = 357.10824584961},
-	[2] = { ['x'] = 1126.87, ['y'] = -1302.52, ['z'] = 34.73 },
-	[3] = { ['x'] = -569.02294921875, ['y'] = 5253.2524414063, ['z'] = 70.487228393555},
+	--[1] = { ['x'] = 256.45819091797, ['y'] = 3106.9914550781, ['z'] = 42.487155914307},
+
+
+	[1] = { ['x'] = -638.66, ['y'] = -1222.32, ['z'] = 11.63},
+	[2] = { ['x'] = -642.52, ['y'] = -1217.38, ['z'] = 11.5},
+	[3] = { ['x'] = -646.85, ['y'] = -1216.51, ['z'] = 11.11},
+
+
+	-- [1] = { ['x'] = -432.66369628906, ['y'] = 1589.5456542969, ['z'] = 357.10824584961},
+	-- [2] = { ['x'] = 1126.87, ['y'] = -1302.52, ['z'] = 34.73 },
+	-- [3] = { ['x'] = -569.02294921875, ['y'] = 5253.2524414063, ['z'] = 70.487228393555},
 	[4] = { ['x'] = -60.444828033447, ['y'] = -1433.5377197266, ['z'] = 32.163711547852},
 	[5] = { ['x'] = -2612.7600097656, ['y'] = 2949.5141601563, ['z'] = 9.6540851593018},
 	[6] = { ['x'] = -128.01301574707, ['y'] = -1648.1463623047, ['z'] = 36.51416015625},
@@ -175,7 +182,8 @@ Citizen.CreateThread(function()
 						--if oC.checkPaymentfacil() then
 							local random = math.random(100)
 							if random >= 98 then
-								oC.MarcarOcorrencia()
+								oC.callPolice(x,y,z)
+								print('Voce iniciou a coleta facil')
 							end
 							TriggerEvent('cancelando',true)
 							armas = CreateObject(GetHashKey("gr_prop_gr_crates_weapon_mix_01a"),locs[selecionado].x-1.0,locs[selecionado].y,locs[selecionado].z-1.1,true,true,true)
@@ -187,8 +195,8 @@ Citizen.CreateThread(function()
 							local coords = GetEntityCoords(player)
 							local cash_hash = GetHashKey("w_ar_assaultrifle")
 							--loadModel(cash_hash)
-							RequestAnimDict('anim@heists@ornate_bank@grab_cash')
-							vRP._playAnim(false,{{'anim@heists@ornate_bank@grab_cash','intro'}},true)
+							--RequestAnimDict('anim@heists@ornate_bank@grab_cash')
+							vRP._playAnim(false,{"anim@amb@clubhouse@tutorial@bkr_tut_ig3@","machinic_loop_mechandplayer"},true)
 							local bagHash2 = GetHashKey('p_ld_heist_bag_s_pro_o')
 							--loadModel(bagHash2)
 							local bagProp2 = CreateObject(bagHash2, coords, true, false)
@@ -204,7 +212,7 @@ Citizen.CreateThread(function()
 								vRP._stopAnim(false)
 							end)
 							SetTimeout(2000,function()
-								vRP._playAnim(false,{{'anim@heists@ornate_bank@grab_cash','grab'}},true)
+								vRP._playAnim(false,{"anim@amb@clubhouse@tutorial@bkr_tut_ig3@","machinic_loop_mechandplayer"},true)
 							end)
 
 							SetTimeout(10000,function()
@@ -245,6 +253,7 @@ Citizen.CreateThread(function()
 		if servicomediano then
 			local ped = PlayerPedId()
 			local x,y,z = table.unpack(GetEntityCoords(ped))
+			--local coords = GetEntityCoords(ped)
 			local bowz,cdz = GetGroundZFor_3dCoord(locs[selecionado].x,locs[selecionado].y,locs[selecionado].z)
 			local distance = GetDistanceBetweenCoords(locs[selecionado].x,locs[selecionado].y,cdz,x,y,z,true)
 			
@@ -257,7 +266,8 @@ Citizen.CreateThread(function()
 						--if oC.checkPaymentmediano() then
 							local random = math.random(100)
 							if random >= 95 then
-								oC.MarcarOcorrencia()
+								oC.callPolice(x,y,z)
+								print('Voce iniciou a coleta mediana')
 							end
 							TriggerEvent('cancelando',true)
 							armas = CreateObject(GetHashKey("gr_prop_gr_crates_weapon_mix_01a"),locs[selecionado].x-1.0,locs[selecionado].y,locs[selecionado].z-1.1,true,true,true)
@@ -269,8 +279,8 @@ Citizen.CreateThread(function()
 							local coords = GetEntityCoords(player)
 							local cash_hash = GetHashKey("w_ar_assaultrifle")
 							--loadModel(cash_hash)
-							RequestAnimDict('anim@heists@ornate_bank@grab_cash')
-							vRP._playAnim(false,{{'anim@heists@ornate_bank@grab_cash','intro'}},true)
+							--RequestAnimDict('anim@heists@ornate_bank@grab_cash')
+							vRP._playAnim(false,{"anim@amb@clubhouse@tutorial@bkr_tut_ig3@","machinic_loop_mechandplayer"},true)
 							local bagHash2 = GetHashKey('p_ld_heist_bag_s_pro_o')
 							--loadModel(bagHash2)
 							local bagProp2 = CreateObject(bagHash2, coords, true, false)
@@ -286,7 +296,7 @@ Citizen.CreateThread(function()
 								vRP._stopAnim(false)
 							end)
 							SetTimeout(2000,function()
-								vRP._playAnim(false,{{'anim@heists@ornate_bank@grab_cash','grab'}},true)
+								vRP._playAnim(false,{"anim@amb@clubhouse@tutorial@bkr_tut_ig3@","machinic_loop_mechandplayer"},true)
 							end)
 
 							SetTimeout(15000,function()
@@ -325,7 +335,9 @@ Citizen.CreateThread(function()
 	while true do
 		local idle = 2000
 		if servicodificil then
+			---print('TESTE 01')
 			local ped = PlayerPedId()
+			--local coords = GetEntityCoords(ped)
 			local x,y,z = table.unpack(GetEntityCoords(ped))
 			local bowz,cdz = GetGroundZFor_3dCoord(locs[selecionado].x,locs[selecionado].y,locs[selecionado].z)
 			local distance = GetDistanceBetweenCoords(locs[selecionado].x,locs[selecionado].y,cdz,x,y,z,true)
@@ -333,15 +345,21 @@ Citizen.CreateThread(function()
 			if distance <= 3 then
 				idle = 5
 				DrawMarker(21,locs[selecionado].x,locs[selecionado].y,locs[selecionado].z-0.6,0,0,0,0.0,0,0,0.5,0.5,0.4,255,0,0,50,0,0,0,1)
-				if distance <= 1.2 then
+				if distance <= 3 then
+					--print('TESTE 02')
 					DrawText3D(locs[selecionado].x,locs[selecionado].y,locs[selecionado].z, "[~r~E~w~] para coletar as ~r~PEÇAS DE ARMA~w~.")
 					if IsControlJustPressed(0,38) and oC.checkPermissao() and not IsPedInAnyVehicle(ped) then
+						--print('TESTE 3')
 						--if oC.checkPaymentdificil() then
 							local random = math.random(100)
-							if random >= 70 then
-								oC.MarcarOcorrencia()
+							--print(random)
+							if random >= 1 then
+								--print(random)
+								oC.callPolice(x,y,z)
+								--print('Voce iniciou a coleta dificil')
 							end
 							TriggerEvent('cancelando',true)
+							--print('TESTE 04')
 							armas = CreateObject(GetHashKey("gr_prop_gr_crates_weapon_mix_01a"),locs[selecionado].x-1.0,locs[selecionado].y,locs[selecionado].z-1.1,true,true,true)
 							RemoveBlip(blips)
 							backentrega = selecionado
@@ -351,8 +369,9 @@ Citizen.CreateThread(function()
 							local coords = GetEntityCoords(player)
 							local cash_hash = GetHashKey("w_ar_assaultrifle")
 							--loadModel(cash_hash)
-							RequestAnimDict('anim@heists@ornate_bank@grab_cash')
-							vRP._playAnim(false,{{'anim@heists@ornate_bank@grab_cash','intro'}},true)
+							--RequestAnimDict('anim@heists@ornate_bank@grab_cash')
+							--vRP._playAnim(false,{{'anim@heists@ornate_bank@grab_cash','intro'}},true)
+							vRP._playAnim(false,{"anim@amb@clubhouse@tutorial@bkr_tut_ig3@","machinic_loop_mechandplayer"},true)
 							local bagHash2 = GetHashKey('p_ld_heist_bag_s_pro_o')
 							--loadModel(bagHash2)
 							local bagProp2 = CreateObject(bagHash2, coords, true, false)
@@ -368,7 +387,8 @@ Citizen.CreateThread(function()
 								vRP._stopAnim(false)
 							end)
 							SetTimeout(2000,function()
-								vRP._playAnim(false,{{'anim@heists@ornate_bank@grab_cash','grab'}},true)
+								--vRP._playAnim(false,{{'anim@heists@ornate_bank@grab_cash','grab'}},true)
+								vRP._playAnim(false,{"anim@amb@clubhouse@tutorial@bkr_tut_ig3@","machinic_loop_mechandplayer"},true)
 							end)
 
 							SetTimeout(20000,function()
