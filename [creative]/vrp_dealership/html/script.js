@@ -18,68 +18,74 @@ window.addEventListener('message', function(event) {
 
         isEnableTestDrive = event.data.testDrive;
 
-        document.getElementById("top-menu").innerHTML = '<a href="#all" onclick="menuVehicle(event)" value="all" class="selected">all</a>';       
+        document.getElementById("top-menu").innerHTML = '<a href="#all" onclick="menuVehicle(event)" value="all" class="selected">all</a>';
 
-        for(var [key,value] of Object.entries(data.data)){   
+        for (var [key, value] of Object.entries(data.data)) {
 
             $('.top-menu').append(`
                 <a href="#` + key + `" onclick="menuVehicle(event)" value="` + key + `">` + key + `</a>            
             `);
 
-            for(var [k,v] of Object.entries(value)){
-                dataVehicles.push(v);          
-            }             
+            for (var [k, v] of Object.entries(value)) {
+                dataVehicles.push(v);
+            }
         }
         Dealership.Open(dataVehicles);
 
-      //  document.getElementById("playerName").innerHTML = data.playerName;        
-      //  document.getElementById("playerMoney").innerHTML = data.playerMoney;
+        //  document.getElementById("playerName").innerHTML = data.playerName;        
+        //  document.getElementById("playerMoney").innerHTML = data.playerMoney;
     }
 
     if (event.data.type == "hide") {
         $("body").fadeOut();
     }
-    
+
     if (event.data.type == "menu") {
 
-        for(var [k,v] of Object.entries(data.data)){
-            dataVehicles.push(v);          
-        }    
+        for (var [k, v] of Object.entries(data.data)) {
+            dataVehicles.push(v);
+        }
         Dealership.Open(dataVehicles);
     }
 
-        
+
     if (event.data.type == "sussess-buy") {
         var data = event.data
 
-        $("#messagePopup").css("background-color","rgba(0,0,0,0.4)");   
+        $("#messagePopup").css("background-color", "rgba(0,0,0,0.4)");
 
-        $("#messagePopup").fadeIn(500);      
-        
+        $("#messagePopup").fadeIn(500);
+
         $('#messagePopup').append(`
 
-        <span>You bought: ` + data.vehicleName + ` for ` + data.value/1000 + `</span>    
+        <span>You bought: ` + data.vehicleName + ` for ` + data.value / 1000 + `</span>    
         
         `)
-        
-        setTimeout(function(){ $("#messagePopup").fadeOut(500);         document.getElementById("messagePopup").innerHTML = ''; }, 3000);
+
+        setTimeout(function() {
+            $("#messagePopup").fadeOut(500);
+            document.getElementById("messagePopup").innerHTML = '';
+        }, 3000);
 
     }
 
-    if (event.data.type == "notify") {       
+    if (event.data.type == "notify") {
         var data = event.data;
 
-        $("#messagePopup").css("background-color","rgb(252, 18, 89)");      
+        $("#messagePopup").css("background-color", "rgb(252, 18, 89)");
 
-        $("#messagePopup").fadeIn(500);      
-        
+        $("#messagePopup").fadeIn(500);
+
         $('#messagePopup').append(`
 
-        <span>`+ data.message +`</span>    
+        <span>` + data.message + `</span>    
         
         `)
-        
-        setTimeout(function(){ $("#messagePopup").fadeOut(500);         document.getElementById("messagePopup").innerHTML = ''; }, 3000);
+
+        setTimeout(function() {
+            $("#messagePopup").fadeOut(500);
+            document.getElementById("messagePopup").innerHTML = '';
+        }, 3000);
 
     }
 
@@ -87,18 +93,18 @@ window.addEventListener('message', function(event) {
         var data = event.data;
         handlingVehicle = data.data;
 
-        vehicleSelected.sale = vehicleSelected.sale*1000
+        vehicleSelected.sale = vehicleSelected.sale * 1000
         var priceVehicle = vehicleSelected.sale.toLocaleString('pt-br');
 
         $('#contentVehicle').append(`
                     <div class="row spacebetween">
-                        <span class="priceVehicle">$`+ priceVehicle +`</span>
+                        <span class="priceVehicle">$` + priceVehicle + `</span>
                     </div>     
 
                     <div class="column spacebetween info">
                         <span class="title">Handling</span>
                         <div class="bar">
-                            <span class="percent" style="width:`+Math.ceil(10*handlingVehicle.traction*1.6)+`%"></span>
+                            <span class="percent" style="width:` + Math.ceil(10 * handlingVehicle.traction * 1.6) + `%"></span>
                         </div>
                      
                     </div>
@@ -106,7 +112,7 @@ window.addEventListener('message', function(event) {
                     <div class="column spacebetween info">
                         <span class="title">Top Speed</span>
                         <div class="bar">
-                            <span class="percent" style="width:`+Math.ceil(handlingVehicle.maxSpeed*1.4)+`%"></span>
+                            <span class="percent" style="width:` + Math.ceil(handlingVehicle.maxSpeed * 1.4) + `%"></span>
                         </div>
 
                     </div>
@@ -114,30 +120,30 @@ window.addEventListener('message', function(event) {
                     <div class="column spacebetween info">
                         <span class="title">Acceleration</span>
                         <div class="bar">
-                            <span class="percent" style="width:`+Math.ceil(100*handlingVehicle.acceleration)+`%"></span>
+                            <span class="percent" style="width:` + Math.ceil(100 * handlingVehicle.acceleration) + `%"></span>
                         </div>
                     </div>
 
                     <div class="column spacebetween info">
                         <span class="title">Breaking</span>
                         <div class="bar">
-                            <span class="percent" style="width:`+Math.ceil(100*handlingVehicle.breaking)+`%"></span>
+                            <span class="percent" style="width:` + Math.ceil(100 * handlingVehicle.breaking) + `%"></span>
                         </div>
                     </div>         
 
                     <div class="row" id="actionButton">
-                        <a class="buyButton" style=" color:#FC1259;" onclick="openModalMenu()"> Buy </a>
+                        <a class="buyButton" style=" color:#FC1259;" onclick="openModalMenu()"> COMPRAR </a>
                     </div>
                 `);
 
-                if (isEnableTestDrive) {
-                    $('#actionButton').append(`
-                        <a class="tdButtton" onclick="testDrive()"> Test Drive </a>
+        if (isEnableTestDrive) {
+            $('#actionButton').append(`
+                        <a class="tdButtton" onclick="testDrive()"> TESTAR </a>
                     `);
-                }
+        }
     }
 
-    if (event.data.type == "updateMoney") {  
+    if (event.data.type == "updateMoney") {
         document.getElementById("playerMoney").innerHTML = data.playerMoney;
     }
 
@@ -145,14 +151,14 @@ window.addEventListener('message', function(event) {
 
 $(document).ready(function() {
     $('.upper-bottom-container').on('afterChange', function(event, slick, currentSlide) {
-        
+
         $('.button-container').appendTo(currentSlide);
     });
 });
 
 function menuVehicle(event) {
     var div = $(event.target).parent().find('.selected');
-        
+
     $(div).removeClass('selected');
 
     $(event.currentTarget).addClass('selected');
@@ -160,26 +166,26 @@ function menuVehicle(event) {
     categoryVehicleSelected = $(event.currentTarget).attr('value');
 
     document.getElementById("nameBrand").innerHTML = '';
-    document.getElementById("contentVehicle").innerHTML = '';              
+    document.getElementById("contentVehicle").innerHTML = '';
     document.getElementById("vehiclebrand").innerHTML = '';
     document.getElementById("carouselCars").innerHTML = '';
 
-    dataVehicles = [] 
-    
-    $.post('http://vrp_dealership/menuSelected', JSON.stringify({menuId: categoryVehicleSelected.toLowerCase()}));
+    dataVehicles = []
+
+    $.post('http://vrp_dealership/menuSelected', JSON.stringify({ menuId: categoryVehicleSelected.toLowerCase() }));
 }
 
-function testDrive(){
-    $.post('http://vrp_dealership/TestDrive', JSON.stringify({vehicleModel: vehicleSelected.modelcar}));    
-    $('body').css("display","none");
+function testDrive() {
+    $.post('http://vrp_dealership/TestDrive', JSON.stringify({ vehicleModel: vehicleSelected.modelcar }));
+    $('body').css("display", "none");
 }
 
 
 
-function openModalMenu(){    
+function openModalMenu() {
     document.getElementById("closemenu").innerHTML = '';
     $("body").fadeIn();
-    $('.modal').css("display","flex");
+    $('.modal').css("display", "flex");
 
     $('#closemenu').append(`
         <div class="background-circle"></div>
@@ -187,14 +193,14 @@ function openModalMenu(){
             <p class="title">Purchase confirmation:</p>
             <p class="vehicle">Vehicle</p>         
 
-            <p>Brand: <span class="brand">`+vehicleSelected.brand+`</span></p>
-            <p>Model: <span class="model">`+vehicleSelected.modelcar+`</span></p>
+            <p>Brand: <span class="brand">` + vehicleSelected.brand + `</span></p>
+            <p>Model: <span class="model">` + vehicleSelected.modelcar + `</span></p>
         </div>
 
         <div class="modal-footer">
             <div class="modal-price">
-                <p class='price sale'>$ `+ vehicleSelected.sale/1000+` k</p>
-                <p class='price discount'>$ `+ parseFloat(vehicleSelected.sale/1000 * 1.1).toFixed(3)+` k</p>                  
+                <p class='price sale'>$ ` + vehicleSelected.sale / 1000 + ` k</p>
+                <p class='price discount'>$ ` + parseFloat(vehicleSelected.sale / 1000 * 1.1).toFixed(3) + ` k</p>                  
             </div>
             <div class="modal-buttons">     
                 <div>
@@ -212,14 +218,14 @@ function openModalMenu(){
 
 
 function buyVehicle(option) {
-    $('.modal').css("display","none");
-    switch(option){
+    $('.modal').css("display", "none");
+    switch (option) {
         case 'cancel':
             break;
         case 'confirm':
             $.post('http://vrp_dealership/Buy', JSON.stringify(vehicleSelected));
             break;
-    }   
+    }
 }
 
 
@@ -227,30 +233,30 @@ function buyVehicle(option) {
 var scrollAmount = 0
 
 $(document).on('keydown', function() {
-    switch(event.keyCode) {
+    switch (event.keyCode) {
         case 27: // ESC
             $.post('http://vrp_dealership/Close');
-            $('body').css("display","none");
-            document.getElementById("top-menu").innerHTML = '';       
+            $('body').css("display", "none");
+            document.getElementById("top-menu").innerHTML = '';
             break;
         case 9: // TAB
             break;
         case 17: // TAB
             break;
         case 68: // LEFT A
-            $.post('http://vrp_dealership/rotate', JSON.stringify({key: "left"}))
-            break;            
-        case 65: // RIGHT D
-            $.post('http://vrp_dealership/rotate', JSON.stringify({key: "right"}))
+            $.post('http://vrp_dealership/rotate', JSON.stringify({ key: "left" }))
             break;
-        case 39: 
+        case 65: // RIGHT D
+            $.post('http://vrp_dealership/rotate', JSON.stringify({ key: "right" }))
+            break;
+        case 39:
             scrollAmount = scrollAmount + 300
-            $('.carousel-cars').animate({scrollLeft:scrollAmount}, 'fast');
+            $('.carousel-cars').animate({ scrollLeft: scrollAmount }, 'fast');
             // seta direita
             break;
         case 37:
             scrollAmount = scrollAmount - 300
-            $('.carousel-cars').animate({scrollLeft:scrollAmount}, 'fast');
+            $('.carousel-cars').animate({ scrollLeft: scrollAmount }, 'fast');
             // seta esquerda
             break;
     }
@@ -264,24 +270,22 @@ $(document).on('keydown', function(ev) {
     if (ev.which == 68) {
         if (num === false) {
             _key = "left"
-        }
-        else if (num) {
+        } else if (num) {
             input.val(parseInt(input.val()) + 1)
-            inputChange(input,true)
+            inputChange(input, true)
         }
     }
     if (ev.which == 65) {
         if (num === false) {
             _key = "right"
-        }
-        else if (num) {
+        } else if (num) {
             input.val(parseInt(input.val()) - 1)
-            inputChange(input,false)
+            inputChange(input, false)
         }
     }
 
     if (_key) {
-        $.post('http://vrp_dealership/rotate', JSON.stringify({key: _key}))
+        $.post('http://vrp_dealership/rotate', JSON.stringify({ key: _key }))
     }
 
 });
@@ -298,73 +302,73 @@ $(document).on('keydown', function(ev) {
 // $("#carouselCars").on( 'scroll', function(){
 //     console.log('Event Fired');
 //  });
- 
 
 
 
-$(document).on('mousedown', ".item-cars", function(event){
 
-    switch(event.which) {        
-        case 3:          
+$(document).on('mousedown', ".item-cars", function(event) {
+
+    switch (event.which) {
+        case 3:
             // click direito
-       
+
             break;
         case 1:
             // click esquerdo
 
-            var div = $(this).parent().find('.selectedVehicle');        
+            var div = $(this).parent().find('.selectedVehicle');
             $(div).removeClass('selectedVehicle');
 
             var classList = $(event.currentTarget).attr('class').split(/\s+/);
             var itemDisabled = false;
 
             $.each(classList, function(index, item) {
-                if (item === 'disable') {        
+                if (item === 'disable') {
                     itemDisabled = true;
                 }
             });
 
-            if(!itemDisabled) {
-                $(event.currentTarget).addClass('selectedVehicle');         
+            if (!itemDisabled) {
+                $(event.currentTarget).addClass('selectedVehicle');
 
-                $('#colorPicker').css("display","flex");
-                
+                $('#colorPicker').css("display", "flex");
+
                 var dataCar = $(event.currentTarget).find('.specification').find('span');
 
-                var scroll =  $(event.currentTarget).position();
+                var scroll = $(event.currentTarget).position();
 
 
-        
-                if(scroll.left > 500) {
+
+                if (scroll.left > 500) {
                     scrollAmount = scrollAmount + scroll.left
-                } else if( scroll.left < 0 ) {
-                    scrollAmount = scrollAmount - scrollAmount/2 + scroll.left
+                } else if (scroll.left < 0) {
+                    scrollAmount = scrollAmount - scrollAmount / 2 + scroll.left
                 } else {
                     scrollAmount = scrollAmount - scroll.left
-                }           
+                }
 
-                $('.carousel-cars').animate({scrollLeft:scrollAmount}, 'fast');
+                $('.carousel-cars').animate({ scrollLeft: scrollAmount }, 'fast');
 
-                $('.modal').css("display","none");
+                $('.modal').css("display", "none");
 
-                document.getElementById("nameBrand").innerHTML = '';                
+                document.getElementById("nameBrand").innerHTML = '';
                 document.getElementById("vehiclebrand").innerHTML = '';
                 document.getElementById("contentVehicle").innerHTML = '';
-                          
-                document.getElementById("vehiclebrand").innerHTML = ' <img id="vehicle_brand_image" src="../imgs/brands/'+dataCar[0].outerText+'.png">';
+
+                document.getElementById("vehiclebrand").innerHTML = ' <img id="vehicle_brand_image" src="../imgs/brands/' + dataCar[0].outerText + '.png">';
 
                 $('#nameBrand').append(`               
-                    <span id="vehicle_name">`+dataCar[1].outerText+`</span> 
+                    <span id="vehicle_name">` + dataCar[1].outerText + `</span> 
                     <span id="vehicle_line"></span> 
-                    <span id="vehicle_brand">`+dataCar[0].outerText+`</span> 
+                    <span id="vehicle_brand">` + dataCar[0].outerText + `</span> 
                 `);
-                
-                $(".changeVehicleColor").css("display","block");
 
-                vehicleSelected = {brand: dataCar[0].outerText, modelcar: dataCar[9].outerText, sale: dataCar[7].outerText/1000, name: dataCar[1].outerText }
+                $(".changeVehicleColor").css("display", "block");
+
+                vehicleSelected = { brand: dataCar[0].outerText, modelcar: dataCar[9].outerText, sale: dataCar[7].outerText / 1000, name: dataCar[1].outerText }
 
                 //vehicleSelected = JSON.stringify({ brand: dataCar[0].outerText, modelcar: dataCar[8].outerText, price: dataCar[6].outerText })   
-                
+
                 $.post("http://vrp_dealership/SpawnVehicle", JSON.stringify({ modelcar: dataCar[9].outerText, price: dataCar[7].outerText }));
 
 
@@ -372,80 +376,79 @@ $(document).on('mousedown', ".item-cars", function(event){
                     document.getElementById("buttonbuy").innerHTML = '<span class="sold-out-text">Sold OUT</span>';
                 }
             }
-        break;
+            break;
     }
 });
 
 (() => {
     Dealership = {};
 
-    
-        
-    Dealership.Open = function(data) { 
-        for(i = 0; i < (data.length); i++) {   
 
-            var modelUper = data[i].model;                
-            
+
+    Dealership.Open = function(data) {
+        for (i = 0; i < (data.length); i++) {
+
+            var modelUper = data[i].model;
+
             if (data[i].qtd < 1) {
                 $(".carousel-cars").append(`
                 <div class="item-cars"> 
                     <div class="col-lg-3 col-md-6 "> 
                         <div class="specification" style="opacity:0.0; position:absolute;">
-                            <span id="brand">`+ data[i].brand +`</span>
-                            <span id="name">`+ data[i].name +`</span>
-                            <span id="fabrication">`+ data[i].fabrication +`</span>
-                            <span id="handling">`+ data[i].handling +`</span>
-                            <span id="topspeed">`+ data[i].topspeed +`</span>
-                            <span id="power">`+ data[i].power +`</span>
-                            <span id="breaking">`+ data[i].breaking +`</span>
-                            <span id="price">`+ data[i].price +`</span>
-                            <span id="qtd">`+ data[i].qtd +`</span>
-                            <span id="model">`+ data[i].model +`</span>
-                            <span id="category">`+ data[i].category +`</span>
+                            <span id="brand">` + data[i].brand + `</span>
+                            <span id="name">` + data[i].name + `</span>
+                            <span id="fabrication">` + data[i].fabrication + `</span>
+                            <span id="handling">` + data[i].handling + `</span>
+                            <span id="topspeed">` + data[i].topspeed + `</span>
+                            <span id="power">` + data[i].power + `</span>
+                            <span id="breaking">` + data[i].breaking + `</span>
+                            <span id="price">` + data[i].price + `</span>
+                            <span id="qtd">` + data[i].qtd + `</span>
+                            <span id="model">` + data[i].model + `</span>
+                            <span id="category">` + data[i].category + `</span>
                         </div> 
                         <div class="soldOut">SOLD OUT</div>                 
-                        <div class="img-fluid" style="background-image: url(../imgs/` + modelUper.toUpperCase() +`.png);"> <span class="exibeName">`+ data[i].name +`</span></div>
+                        <div class="img-fluid" style="background-image: url(../imgs/` + modelUper.toUpperCase() + `.png);"> <span class="exibeName">` + data[i].name + `</span></div>
                     </div>
                 </div>`);
-            }                 
-            else if (data[i].qtd > 0) {
+            } else if (data[i].qtd > 0) {
                 $(".carousel-cars").append(`
                 <div class="item-cars" >
                     <div class="col-lg-3 col-md-6 ">
                         <div class="specification" style="opacity:0.0; position:absolute;">
-                            <span id="brand">`+ data[i].brand +`</span>
-                            <span id="name">`+ data[i].name +`</span>
-                            <span id="fabrication">`+ data[i].fabrication +`</span>
-                            <span id="handling">`+ data[i].handling +`</span>
-                            <span id="topspeed">`+ data[i].topspeed +`</span>
-                            <span id="power">`+ data[i].power +`</span>
-                            <span id="breaking">`+ data[i].breaking +`</span>
-                            <span id="price">`+ data[i].price +`</span>
-                            <span id="qtd">`+ data[i].qtd +`</span>
-                            <span id="model">`+ data[i].model +`</span>
-                            <span id="category">`+ data[i].category +`</span>
+                            <span id="brand">` + data[i].brand + `</span>
+                            <span id="name">` + data[i].name + `</span>
+                            <span id="fabrication">` + data[i].fabrication + `</span>
+                            <span id="handling">` + data[i].handling + `</span>
+                            <span id="topspeed">` + data[i].topspeed + `</span>
+                            <span id="power">` + data[i].power + `</span>
+                            <span id="breaking">` + data[i].breaking + `</span>
+                            <span id="price">` + data[i].price + `</span>
+                            <span id="qtd">` + data[i].qtd + `</span>
+                            <span id="model">` + data[i].model + `</span>
+                            <span id="category">` + data[i].category + `</span>
                         </div>
                        
-                        <div class="img-fluid" style="background-image:  url(../imgs/` + modelUper.toUpperCase() +`.png);"> <span class="exibeName">`+ data[i].name +`</span></div>
+                        <div class="img-fluid" style="background-image:  url(../imgs/` + modelUper.toUpperCase() + `.png);"> <span class="exibeName">` + data[i].name + `</span></div>
                     </div>
                 </div>`);
-            }            
-        }     
+            }
+        }
     }
     Dealership.Open(dataVehicles)
 })();
 
 
 
-function openOption(option){
+function openOption(option) {
 
     pickr.show();
-  
+
 }
 
 
 // function setVehicleColorRGB(R,G,B){
-    
+
 //     if (selectedColor == 'primary'){
 //         $.post("http://vrp_dealership/RGBVehicle", JSON.stringify({primary: true, R: R, G: G, B: B}));
 //     } else {
@@ -453,4 +456,3 @@ function openOption(option){
 //     }
 
 // }
-                        

@@ -4,6 +4,7 @@ local Proxy = module("vrp", "lib/Proxy")
 vRP = Proxy.getInterface("vRP")
 vRPclient = Tunnel.getInterface("vRP")
 vRPNserver = Tunnel.getInterface("vrp_identidade")
+vGARAGE = Tunnel.getInterface("vrp_garages")
 
 local lastSelectedVehicleEntity
 local startCountDown
@@ -31,17 +32,16 @@ local vehicleshopCoords = {
 Citizen.CreateThread(
     function()
         while true do
-           local crjSleep = 500
+            Citizen.Wait(3)
             local ped = PlayerPedId()
             for i = 1, #vehicleshopCoords do
             local actualShop = vehicleshopCoords[i]
             local dist = #(actualShop - GetEntityCoords(ped))
-                if dist <= 10.0 then   
-                    crjSleep = 1 
+                if dist <= 50.0 then    
                     if dist <= 4.0 then                 
-                        DrawText3Ds(actualShop.x, actualShop.y, actualShop.z,"PRESS ~r~E~w~ TO OPEN VEHICLE SHOP")
+                        DrawText3Ds(actualShop.x, actualShop.y, actualShop.z,"APERTE ~r~E~w~ PARA COMPRAR O VEICULO")
                     end
-                    DrawMarker(23, actualShop.x, actualShop.y, actualShop.z - 0.97, 0, 0, 0, 0, 0, 0, 1.0, 1.0, 0.7, 200, 10, 10, 100, 0, 0, 0, 0, 0, 0, 0)
+                   -- DrawMarker(23, actualShop.x, actualShop.y, actualShop.z - 0.97, 0, 0, 0, 0, 0, 0, 1.0, 1.0, 0.7, 200, 10, 10, 100, 0, 0, 0, 0, 0, 0, 0)
                     if dist <= 2.0 then
                         if IsControlJustPressed(0, 38) then
                             OpenVehicleShop()
@@ -49,7 +49,6 @@ Citizen.CreateThread(
                     end
                 end
             end
-            Citizen.Wait(crjSleep)
         end
     end
 )
@@ -291,7 +290,6 @@ AddEventHandler('vehicleshop.spawnVehicle', function(model)
             Citizen.Wait(10)
         end
     end
-    
     local vehicleBuy = CreateVehicle(hash, -11.87, -1080.87, 25.71, 132.0, 1, 1)
     SetPedIntoVehicle(PlayerPedId(), vehicleBuy, -1)
         
@@ -322,10 +320,15 @@ RegisterNUICallback(
             end
         
             testDriveEntity = CreateVehicle(hash, -11.87, -1080.87, 25.71, 132.0, 1, 1)
-            -- CRIOAR AQUI UM SISTEMA DE UNLOCK
             SetPedIntoVehicle(PlayerPedId(), testDriveEntity, -1)
             local timeGG = GetGameTimer()
-            
+            print('Teste Aqui')            
+            local vehicle,vehNet,vehPlate,vehName = vRP.vehList(7)
+            -- CRIAR UNLOCK DO VEICULO AQUI
+            TriggerServerEvent("setPlateEveryone",vehPlate)
+            TriggerEvent("setPlatePlayers",vehPlate,user_id)
+            print(vehPlate)
+
         --    SetVehicleCustomPrimaryColour(testDriveEntity,  math.ceil(rgbColorSelected[1]), math.ceil(rgbColorSelected[2]), math.ceil(rgbColorSelected[3]))
          --   SetVehicleCustomSecondaryColour(testDriveEntity,  math.ceil(rgbSecondaryColorSelected[1]), math.ceil(rgbSecondaryColorSelected[2]), math.ceil(rgbSecondaryColorSelected[3]))
 
@@ -336,7 +339,7 @@ RegisterNUICallback(
                 Citizen.Wait(1)
                 if GetGameTimer() < timeGG+tonumber(1000*Config.TestDriveTime) then
                     local secondsLeft = GetGameTimer() - timeGG
-                    drawTxt("TIME LEFT TO TEST DRIVE " .. math.ceil(Config.TestDriveTime - secondsLeft/1000),4,0.5,0.93,0.50,255,255,255,180)
+                    drawTxt("TEMPO RESTANTE PARA TESTAR O CARRO " .. math.ceil(Config.TestDriveTime - secondsLeft/1000),4,0.5,0.93,0.50,255,255,255,180)
                 else
                     DeleteEntity(testDriveEntity)
                     SetEntityCoords(PlayerPedId(), lastPlayerCoords)
@@ -408,21 +411,20 @@ end
 
 function DrawText3Ds(x,y,z, text)
     local onScreen,_x,_y=World3dToScreen2d(x,y,z)
-    local px,py,pz=table.unpack(GetGameplayCamCoords())
+   -- local px,py,pz=table.unpack(GetGameplayCamCoords())
     
-    SetTextScale(0.35, 0.35)
     SetTextFont(4)
-    SetTextProportional(1)
-    SetTextColour(255, 255, 255, 215)
-    SetTextEntry("STRING")
-    SetTextCentre(1)
-    AddTextComponentString(text)
-    DrawText(_x,_y)
-    local factor = (string.len(text)) / 370
-    DrawRect(_x,_y+0.0125, 0.015+ factor, 0.03, 41, 11, 41, 68)
+	SetTextScale(0.35,0.35)
+	SetTextColour(255,255,255,100)
+	SetTextEntry("STRING")
+	SetTextCentre(1)
+	AddTextComponentString(text)
+	DrawText(_x,_y)
+	local factor = (string.len(text)) / 400
+	DrawRect(_x,_y+0.0125,0.01+factor,0.03,0,0,0,100)
 end
 -----------------------------------------------------------------------------------------------------------------------------------------
-function drawTxt(text,font,x,y,scale,r,g,b,a)
+--[[ function drawTxt(text,font,x,y,scale,r,g,b,a)
 	SetTextFont(font)
 	SetTextScale(scale,scale)
 	SetTextColour(r,g,b,a)
@@ -431,12 +433,12 @@ function drawTxt(text,font,x,y,scale,r,g,b,a)
 	SetTextEntry("STRING")
 	AddTextComponentString(text)
 	DrawText(x,y)
-end
+end ]]
 
 
 local blip 
 
--- Create Blips
+--[[ -- Create Blips
 Citizen.CreateThread(function ()
 
     for i = 1, #vehicleshopCoords do    
@@ -452,7 +454,7 @@ Citizen.CreateThread(function ()
         AddTextComponentString("Cardealer")
         EndTextCommandSetBlipName(blip)
     end
-end)
+end) ]]
 
 AddEventHandler(
     "onResourceStop",
