@@ -135,6 +135,9 @@ local shops = {
 			["vape"] = 15000,
 			["pager"] = 3000,
 			["keyboard"] = 250,
+			["pepitadeouro"] = 150,
+			["pepitadeprata"] = 120,
+			["pepitadebronze"] = 100,
 			["mouse"] = 225,
 			["ring"] = 200,
 			["watch"] = 350,
@@ -279,6 +282,8 @@ local shops = {
 			["WEAPON_FIREEXTINGUISHER"] = 1000,
 			["WEAPON_STUNGUN"] = 5000,
 			["WEAPON_NIGHTSTICK"] = 10,
+			["WEAPON_MACHINEPISTOL"] = 10,
+			["WEAPON_APPISTOL"] = 10,
 			["WEAPON_COMBATPISTOL"] = 50
 		}
 	},
@@ -293,6 +298,8 @@ local shops = {
 			["WEAPON_SMG"] = 100,
 			["WEAPON_PUMPSHOTGUN"] = 100,
 			["WEAPON_SAWNOFFSHOTGUN"] = 100,
+			["WEAPON_MACHINEPISTOL"] = 10,
+			["WEAPON_APPISTOL"] = 10,
 			["WEAPON_CARBINERIFLE"] = 150,
 			["WEAPON_SPECIALCARBINE"] = 150,
 			["WEAPON_RIFLE_AMMO"] =5,

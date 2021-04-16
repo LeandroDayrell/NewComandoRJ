@@ -62,6 +62,24 @@ local itemlist = {
 		type = "use",
 		weight = 0.5
 	},
+	["ouro"] = {
+		index = "ouro",
+		name = "Ouro",
+		type = "use",
+		weight = 0.05
+	},
+	["prata"] = {
+		index = "prata",
+		name = "Prata",
+		type = "use",
+		weight = 0.05
+	},
+	["bronze"] = {
+		index = "bronze",
+		name = "Bronze",
+		type = "use",
+		weight = 0.05
+	},
 	["pepitadeouro"] = {
 		index = "pepitadeouro",
 		name = "Pepita de Ouro",

@@ -67,35 +67,30 @@ local garages = {
 	[16] = { ["name"] = "Garage", ["payment"] = true, ["public"] = true },
 	[17] = { ["name"] = "Garage", ["payment"] = true, ["public"] = true },
 	[18] = { ["name"] = "Garage", ["payment"] = true, ["public"] = true },
-	[19] = { ["name"] = "Paramedic", ["payment"] = true, ["perm"] = "Paramedic" },
-	[20] = { ["name"] = "Heliparamedic", ["payment"] = true, ["perm"] = "Paramedic" },
-	[21] = { ["name"] = "Police", ["payment"] = true, ["perm"] = "Police" },
-	[22] = { ["name"] = "Police", ["payment"] = true, ["perm"] = "Police" },
-	[23] = { ["name"] = "Police", ["payment"] = true, ["perm"] = "Police" },
-	[759] = { ["name"] = "Police", ["payment"] = true, ["perm"] = "Police" },
-	[24] = { ["name"] = "Helipolice", ["payment"] = true, ["perm"] = "Police" },
-	[25] = { ["name"] = "Helipolice", ["payment"] = true, ["perm"] = "Police" },
-	[26] = { ["name"] = "Helipolice", ["payment"] = true, ["perm"] = "Police" },
-	[27] = { ["name"] = "Driver", ["payment"] = true, ["public"] = true },
-	[28] = { ["name"] = "Boats", ["payment"] = true, ["public"] = true },
-	[29] = { ["name"] = "Boats", ["payment"] = true, ["public"] = true },
-	[30] = { ["name"] = "Boats", ["payment"] = true, ["public"] = true },
-	[31] = { ["name"] = "Benefactor", ["payment"] = true, ["public"] = true },
-	[32] = { ["name"] = "Transporter", ["payment"] = true, ["public"] = true },
-	[33] = { ["name"] = "Lumberman", ["payment"] = true, ["public"] = true },
-	[34] = { ["name"] = "Fisherman", ["payment"] = true, ["public"] = true },
-	[35] = { ["name"] = "Boats", ["payment"] = true, ["public"] = true },
-	[36] = { ["name"] = "Garbageman", ["payment"] = true, ["public"] = true },
-	[37] = { ["name"] = "Garage", ["payment"] = true, ["public"] = true },
-	[38] = { ["name"] = "Prison", ["payment"] = true, ["perm"] = "Police" },
-	[39] = { ["name"] = "Tacos", ["payment"] = true, ["public"] = true },
-	[40] = { ["name"] = "Tow", ["payment"] = true, ["public"] = true },
-	[41] = { ["name"] = "Tow", ["payment"] = true, ["public"] = true },
-	[42] = { ["name"] = "Taxi", ["payment"] = true, ["public"] = true },
-	[43] = { ["name"] = "TheLost", ["payment"] = true, ["perm"] = "TheLost" },
-	[44] = { ["name"] = "PostOp", ["payment"] = true, ["public"] = true },
-	[45] = { ["name"] = "Garage", ["payment"] = true, ["public"] = true },
-	[46] = { ["name"] = "Ilegal", ["payment"] = true, ["public"] = true },
+	[19] = { ["name"] = "Police", ["payment"] = false, ["perm"] = "Police" },
+	[20] = { ["name"] = "BPolice", ["payment"] = false, ["perm"] = "Police" },
+	[21] = { ["name"] = "HPolice", ["payment"] = false, ["perm"] = "Police" },
+	[22] = { ["name"] = "Paramedic", ["payment"] = false, ["perm"] = "Paramedic" },
+	[23] = { ["name"] = "HParamedic", ["payment"] = false, ["perm"] = "Paramedic" },
+	[24] = { ["name"] = "LosSantos", ["payment"] = false, ["perm"] = "LosSantos" },
+	[25] = { ["name"] = "Driver", ["payment"] = true, ["public"] = true },
+	[26] = { ["name"] = "Transporter", ["payment"] = true, ["public"] = true },
+	[27] = { ["name"] = "Lumberman", ["payment"] = true, ["public"] = true },
+	[28] = { ["name"] = "Garbageman", ["payment"] = true, ["public"] = true },
+	[29] = { ["name"] = "Tacos", ["payment"] = true, ["public"] = true },
+	[30] = { ["name"] = "Tow", ["payment"] = true, ["public"] = true },
+	[31] = { ["name"] = "Tow", ["payment"] = true, ["public"] = true },
+	[32] = { ["name"] = "Taxi", ["payment"] = true, ["perm"] = "Taxi" },
+	[33] = { ["name"] = "Ilegal", ["payment"] = true, ["public"] = true },
+	[34] = { ["name"] = "HJornal", ["payment"] = true, ["perm"] = "Jornal" },
+	[35] = { ["name"] = "Jornal", ["payment"] = true, ["perm"] = "Jornal" },
+	[36] = { ["name"] = "Mafia", ["payment"] = true, ["perm"] = "Mafia" },
+	[37] = { ["name"] = "TheLost", ["payment"] = true, ["perm"] = "TheLost" },
+	[38] = { ["name"] = "Lowrider", ["payment"] = true, ["perm"] = "Lowrider" },
+	[39] = { ["name"] = "Minerador", ["payment"] = true, ["public"] = true },
+	[40] = { ["name"] = "Boats", ["payment"] = true, ["public"] = true },
+	[41] = { ["name"] = "Boats", ["payment"] = true, ["public"] = true },
+	[42] = { ["name"] = "Boats", ["payment"] = true, ["public"] = true },
 	[501] = { ["name"] = "Middle001", ["payment"] = false, ["perm"] = false },
 	[502] = { ["name"] = "Middle002", ["payment"] = false, ["perm"] = false },
 	[503] = { ["name"] = "Middle003", ["payment"] = false, ["perm"] = false },
@@ -359,39 +354,46 @@ local garages = {
 -- GARAGES
 -----------------------------------------------------------------------------------------------------------------------------------------
 local workgarage = {
-	["Paramedic"] = {
-		"ambulance"
-	},
-	["Heliparamedic"] = {
-		"polmav"
-	},
 	["Police"] = {
-		"fbi",
-		"fbi2",
-		"riot",
-		"policebike",
-		"crownvictoria",
-		"dodgecharger2014",
-		"dodgecharger2015",
-		"fordexplorer",
-		"fordraptor",
-		"fordtaurus",
-		"fordmustanggt"
+		"corollarj",
+        "r1250rj",
+        "xtz",
+        "focusrj",
+        "urusrj",
+        "frontierrj",
+        "hiluxpolicia",
+        "bmwm8prf",
+        "amarokprf",
+        "q8pc",
+        "pranger",
+        "pbus",
+        "policet",
+        "amarokrj"
 	},
-	["Helipolice"] = {
-		"polmav"
+	["BPolice"] = {
+		"predator"
 	},
-	["Prison"] = {
-		"pbus"
+	["HPolice"] = {
+		"polmav",
+        "swift"
+	},
+	["Paramedic"] = {
+		"mercambulancia",
+		"fordambulancia",
+		"wheelchair",
+		"hiluxpolicia",
+		"ambulance",
+		"jeepsamu"
+	},
+	["HParamedic"] = {
+		"samumav"
+	},
+	["LosSantos"] = {
+		"flatbed",
+        "slamtruck"
 	},
 	["Driver"] = {
 		"bus"
-	},
-	["Boats"] = {
-		"marquis",
-		"seashark",
-		"predator",
-		"dinghy"
 	},
 	["Transporter"] = {
 		"stockade"
@@ -417,7 +419,39 @@ local workgarage = {
 	["Ilegal"] = {
 		"gburrito2"
 	},
-	["PostOp"] = {
+	["HJornal"] = {
+		"frogger"
+	},
+	["Jornal"] = {
+		"rumpo"
+	},
+	["Mafia"] = {
+		"ztype",
+        "btype3"
+	},
+	["TheLost"] = {
+		"deathbike",
+		"hexer",
+		"sanctus",
+		"gargoyle"
+	},
+	["Lowrider"] = {
+		"faction2",
+		"faction3",
+		"moonbeam2",
+		"sabregt2",
+		"voodoo",
+		"chino2"
+	},
+	["Minerador"] = {
+		"tiptruck2"
+	},
+	["Boats"] = {
+		"marquis",
+		"seashark",
+		"dinghy"
+	},
+ 	["PostOp"] = {
 		"boxville4"
 	}
 }

@@ -116,6 +116,34 @@ local craftList = {
 			}
 		}
 	},
+	["mineradorCrafting"] = {
+		["list"] = {
+			["Ouro"] = {
+				["amount"] = 1,
+				["destroy"] = true,
+				["require"] = {
+					["pepitadeouro"] = 5,
+					["cobre"] = 2
+				}
+			},
+			["Prata"] = {
+				["amount"] = 1,
+				["destroy"] = true,
+				["require"] = {
+					["pepitadeprata"] = 5,
+					["cobre"] = 2
+				}
+			},
+			["Bronze"] = {
+				["amount"] = 1,
+				["destroy"] = true,
+				["require"] = {
+					["pepitadebronze"] = 5,
+					["cobre"] = 2
+				}
+			}
+		}
+	},
 	["miliciaCrafting"] = {
 		["perm"] = "Milicia",
 		["list"] = {
