@@ -479,7 +479,7 @@ local vars = {
 			{ ["item"] = "dollars2", ["min"] = 40000, ["max"] = 50000 }
 		}
 	},
-	[31] = {
+--[[	[31] = {
 		["x"] = -1210.409,
 		["y"] = -336.485,
 		["z"] = 38.29,
@@ -538,7 +538,7 @@ local vars = {
 		["itens"] = {
 			{ ["item"] = "goldbar", ["min"] = 4, ["max"] = 5 }
 		}
-	},
+	},]]--
 	[35] = {
 		["x"] = -2956.449,
 		["y"] = 482.090,
@@ -554,7 +554,7 @@ local vars = {
 			{ ["item"] = "goldbar", ["min"] = 4, ["max"] = 5 }
 		}
 	},
-	[36] = {
+	--[[[36] = {
 		["x"] = 1175.66,
 		["y"] = 2712.939,
 		["z"] = 38.59,
@@ -568,7 +568,7 @@ local vars = {
 		["itens"] = {
 			{ ["item"] = "goldbar", ["min"] = 4, ["max"] = 5 }
 		}
-	},
+	}, ]]
 	[37] = {
 		["x"] = 134.124,
 		["y"] = -1708.138,
@@ -743,7 +743,7 @@ local vars = {
 		["distance"] = 12,
 		["type"] = "convn",
 		["cooldown"] = 7200,
-		["name"] = "Yellow Jack",
+		["name"] = "YellowJack",
 		["required"] = "bluecard",
 		["itens"] = {
 			{ ["item"] = "dollars2", ["min"] = 120000, ["max"] = 150000 }

@@ -28,7 +28,7 @@ function cRP.checkPolice(vehPlate)
 
 	local source = source
 	local police = vRP.numPermission("Police")
-	if parseInt(#police) <= 4 then
+	if parseInt(#police) <= 0 then
 		TriggerClientEvent("Notify",source,"aviso","Sistema indisponível no momento, tente mais tarde.",5000)
 		return false
 	end

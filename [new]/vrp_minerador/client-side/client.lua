@@ -34,12 +34,17 @@ Citizen.CreateThread(function()
 					if distance <= 30 then
 						timeDistance = 4 --
 						DrawMarker(21,v[1],v[2],v[3]-0.6,0,0,0,0.0,0,0,0.5,0.5,0.4,100,185,230,50,0,0,0,1)
-						if distance <= 0.6 and IsControlJustPressed(1,38) and timeSeconds <= 0 and GetEntityModel(GetPlayersLastVehicle()) == vehModel then
-							timeSeconds = 2
-							vRP._playAnim(false,{"amb@world_human_const_drill@male@drill@base","base"},true)
-							Wait(1000)
-								vSERVER.paymentMethod(parseInt(k))
-								vRP._stopAnim(false)					
+						if distance <= 0.6 and IsControlJustPressed(1,38) and timeSeconds <= 0  then
+							if GetEntityModel(GetPlayersLastVehicle()) == vehModel then 
+								timeSeconds = 2
+								vRP._playAnim(false,{"amb@world_human_const_drill@male@drill@base","base"},true)
+								Wait(1000)
+									vSERVER.paymentMethod(parseInt(k))
+									vRP._stopAnim(false)					
+							else 
+								--TriggerEvent("Notify","importante","Todas as macas estão ocupadas, aguarde.",5000)
+								TriggerEvent("Notify","negado","Voce precisa de um veiculo.",3000)
+							end
 						end
 					end
 				end

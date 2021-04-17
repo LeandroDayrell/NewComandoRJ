@@ -73,24 +73,26 @@ local garages = {
 	[22] = { ["name"] = "Paramedic", ["payment"] = false, ["perm"] = "Paramedic" },
 	[23] = { ["name"] = "HParamedic", ["payment"] = false, ["perm"] = "Paramedic" },
 	[24] = { ["name"] = "LosSantos", ["payment"] = false, ["perm"] = "LosSantos" },
-	[25] = { ["name"] = "Driver", ["payment"] = true, ["public"] = true },
-	[26] = { ["name"] = "Transporter", ["payment"] = true, ["public"] = true },
-	[27] = { ["name"] = "Lumberman", ["payment"] = true, ["public"] = true },
-	[28] = { ["name"] = "Garbageman", ["payment"] = true, ["public"] = true },
-	[29] = { ["name"] = "Tacos", ["payment"] = true, ["public"] = true },
-	[30] = { ["name"] = "Tow", ["payment"] = true, ["public"] = true },
-	[31] = { ["name"] = "Tow", ["payment"] = true, ["public"] = true },
-	[32] = { ["name"] = "Taxi", ["payment"] = true, ["perm"] = "Taxi" },
-	[33] = { ["name"] = "Ilegal", ["payment"] = true, ["public"] = true },
-	[34] = { ["name"] = "HJornal", ["payment"] = true, ["perm"] = "Jornal" },
-	[35] = { ["name"] = "Jornal", ["payment"] = true, ["perm"] = "Jornal" },
-	[36] = { ["name"] = "Mafia", ["payment"] = true, ["perm"] = "Mafia" },
-	[37] = { ["name"] = "TheLost", ["payment"] = true, ["perm"] = "TheLost" },
-	[38] = { ["name"] = "Lowrider", ["payment"] = true, ["perm"] = "Lowrider" },
-	[39] = { ["name"] = "Minerador", ["payment"] = true, ["public"] = true },
-	[40] = { ["name"] = "Boats", ["payment"] = true, ["public"] = true },
-	[41] = { ["name"] = "Boats", ["payment"] = true, ["public"] = true },
-	[42] = { ["name"] = "Boats", ["payment"] = true, ["public"] = true },
+	[25] = { ["name"] = "Driver", ["payment"] = false, ["public"] = true },
+	[26] = { ["name"] = "Transporter", ["payment"] = false, ["public"] = true },
+	[27] = { ["name"] = "Lumberman", ["payment"] = false, ["public"] = true },
+	[28] = { ["name"] = "Garbageman", ["payment"] = false, ["public"] = true },
+	[29] = { ["name"] = "Tacos", ["payment"] = false, ["public"] = true },
+	[30] = { ["name"] = "Tow", ["payment"] = false, ["public"] = true },
+	[31] = { ["name"] = "Tow", ["payment"] = false, ["public"] = true },
+	[32] = { ["name"] = "Taxi", ["payment"] = false, ["perm"] = "Taxi" },
+	[33] = { ["name"] = "Ilegal", ["payment"] = false, ["public"] = false },
+	[34] = { ["name"] = "HJornal", ["payment"] = false, ["perm"] = "Jornal" },
+	[35] = { ["name"] = "Jornal", ["payment"] = false, ["perm"] = "Jornal" },
+	[36] = { ["name"] = "Mafia", ["payment"] = false, ["perm"] = "Mafia" },
+	[37] = { ["name"] = "TheLost", ["payment"] = false, ["perm"] = "TheLost" },
+	[38] = { ["name"] = "Lowrider", ["payment"] = false, ["perm"] = "Lowrider" },
+	[39] = { ["name"] = "Minerador", ["payment"] = false, ["public"] = true },
+	[40] = { ["name"] = "Boats", ["payment"] = false, ["public"] = true },
+	[41] = { ["name"] = "Boats", ["payment"] = false, ["public"] = true },
+	[42] = { ["name"] = "Boats", ["payment"] = false, ["public"] = true },
+	[43] = { ["name"] = "HPolice", ["payment"] = false, ["perm"] = "Police" },
+	[44] = { ["name"] = "Police", ["payment"] = false, ["perm"] = "Police" },
 	[501] = { ["name"] = "Middle001", ["payment"] = false, ["perm"] = false },
 	[502] = { ["name"] = "Middle002", ["payment"] = false, ["perm"] = false },
 	[503] = { ["name"] = "Middle003", ["payment"] = false, ["perm"] = false },
@@ -368,6 +370,9 @@ local workgarage = {
         "pranger",
         "pbus",
         "policet",
+        "caveiraobope",
+        "riot",
+        "frontierbope",
         "amarokrj"
 	},
 	["BPolice"] = {
@@ -551,6 +556,7 @@ function cnVRP.myVehicles(work)
 						end
 					end
 					nVehicle.detido = parseInt(os.time()) <= parseInt(vehicle[k].time+24*60*60)
+					nVehicle.desmanche = parseInt(os.time()) <= parseInt(vehicle[k].time+24*60*60)
 
 					vehChest[parseInt(user_id)] = "chest:"..parseInt(user_id)..":"..vehicle[k].vehicle
 					local inv = vRP.getInventory(parseInt(user_id))
@@ -558,11 +564,22 @@ function cnVRP.myVehicles(work)
 					local sdata = json.decode(data) or {}
 					nVehicle.pmalas = vRP.computeChestWeight(sdata)
 					nVehicle.pmalas2 = vRP.vehicleChest(vehicle[k].vehicle)
+					
+					
+					if nVehicle.desmanche == false then
+						nVehicle.desmanche = "Nao"
+					elseif nVehicle.desmanche == true then
+						nVehicle.desmanche = "Sim"
+					end
+
+
 					if nVehicle.detido == false then
 						nVehicle.detido = "Nao"
 					elseif nVehicle.detido == true then
 						nVehicle.detido = "Sim"
 					end
+
+
 					table.insert(myvehicles, nVehicle)				
 		
 				end
@@ -574,7 +591,7 @@ end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- SPAWNVEHICLES
 -----------------------------------------------------------------------------------------------------------------------------------------
-function cnVRP.spawnVehicles(name,use)
+function cnVRP.spawnVehicles(name,use) --
 	local source = source
 	local user_id = vRP.getUserId(source)
 	if user_id and name then
@@ -586,15 +603,25 @@ function cnVRP.spawnVehicles(name,use)
 				vehicle = vRP.query("vRP/get_vehicles",{ user_id = parseInt(user_id), vehicle = name })
 			end
 
-			if parseInt(os.time()) <= parseInt(vehicle[1].time+24*60*60) then
-				local status = vRP.request(source,"Veículo detido, deseja acionar o seguro pagando <b>$"..vRP.format(parseInt(vRP.vehiclePrice(name)*0.5)).."</b> dólares?",60)
+			if parseInt(vehicle[1].desmanche) >= 1 then
+				local status = vRP.request(source,"Veículo foi DESMANCHADO, deseja acionar o seguro pagando <b>$"..vRP.format(parseInt(vRP.vehiclePrice(name)*0.1)).."</b> dólares?",60)
 				if status then
-					if vRP.paymentBank(user_id,parseInt(vRP.vehiclePrice(name)*0.5)) then
-						vRP.execute("vRP/set_arrest",{ user_id = parseInt(user_id), vehicle = name, arrest = 0, time = 0 })
+					if vRP.paymentBank(user_id,parseInt(vRP.vehiclePrice(name)*0.1)) then
+						vRP.execute("vRP/set_desmanche",{ user_id = parseInt(user_id), vehicle = name, desmanche = 0, time = 0 })
 					else
 						TriggerClientEvent("Notify",source,"negado","Dinheiro insuficiente.",5000)
 					end
 				end
+
+			elseif parseInt(os.time()) <= parseInt(vehicle[1].time+24*60*60) then
+					local status = vRP.request(source,"Veículo detido, deseja acionar o seguro pagando <b>$"..vRP.format(parseInt(vRP.vehiclePrice(name)*0.5)).."</b> dólares?",60)
+					if status then
+						if vRP.paymentBank(user_id,parseInt(vRP.vehiclePrice(name)*0.5)) then
+							vRP.execute("vRP/set_arrest",{ user_id = parseInt(user_id), vehicle = name, arrest = 0, time = 0 })
+						else
+							TriggerClientEvent("Notify",source,"negado","Dinheiro insuficiente.",5000)
+						end
+					end
 			elseif parseInt(vehicle[1].arrest) >= 1 then
 				local status = vRP.request(source,"Veículo detido, deseja acionar o seguro pagando <b>$"..vRP.format(parseInt(vRP.vehiclePrice(name)*0.1)).."</b> dólares?",60)
 				if status then

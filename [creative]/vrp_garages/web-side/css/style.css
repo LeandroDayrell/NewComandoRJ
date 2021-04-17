@@ -3,12 +3,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
-
 body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-	display:none;
+    /*//////////////
+   display:none;
+//////////////*/
     font-family: "Poppins";
 }
 
@@ -39,19 +40,21 @@ p {
     position: absolute;
     top: 58%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
+
 
 /*//////////////
     HEADER C
 //////////////*/
+
 .container header {
     width: 100%;
 }
 
 .container header .header_name {
     width: 100%;
-    color:#fff;
+    color: #fff;
     font-size: 12px;
     padding: 10px 20px;
 }
@@ -80,6 +83,7 @@ p {
     top: 50%;
     transform: translate(-50%, -50%);
 }
+
 
 /*//////////////
     SECTION C
@@ -134,7 +138,7 @@ p {
 .container .section_content .section_content_all .section_content_header .section_content_nav {
     width: 18px;
     height: 55%;
-    margin-top: 10px;    
+    margin-top: 10px;
     display: flex;
     font-size: 12px;
     color: #999999;
@@ -162,7 +166,7 @@ p {
     top: 50%;
     right: 10px;
     color: #FFFFFF65;
-    transform: translate(0,-50%);
+    transform: translate(0, -50%);
 }
 
 .container .section_content .section_content_all .section_content_header .section_content_search input {
@@ -190,11 +194,10 @@ p {
     box-shadow: 0px 0px 5px .5px rgba(186, 51, 212, 0.563);
 }
 
-
 .container .section_content .section_content_all .section_content_itens img {
     max-height: 80px;
     position: absolute;
-    max-width: 150px;   
+    max-width: 150px;
     right: 0px;
     opacity: .7;
     z-index: 0;
@@ -253,7 +256,7 @@ p {
     margin-left: 20px;
 }
 
-.container footer .footer_content .action {   
+.container footer .footer_content .action {
     display: flex;
     position: relative;
     margin-right: 5px;
@@ -264,7 +267,7 @@ p {
     padding: 7px 10px;
     border-radius: .3rem;
     background-color: rgb(186, 51, 212);
-    width: 40px;    
+    width: 40px;
 }
 
 .container footer .footer_content .action span {
@@ -274,6 +277,7 @@ p {
     position: absolute;
     font-size: 20px;
 }
+
 
 /*
 .container footer .footer_content .active {
@@ -310,10 +314,10 @@ p {
     border-radius: .1rem;
     background-color: #1C1C1C;
 }
-  
+
 ::-webkit-scrollbar-thumb {
     border-radius: 30px;
-    background: #474747; 
+    background: #474747;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.616);
 }
 
@@ -321,9 +325,11 @@ p {
     opacity: .8;
 }
 
-.container .section_content 
-.section_content_all .section_content_itens 
-.section_content_item:last-child {
+.container .section_content .section_content_all .section_content_itens .section_content_item:hover p {
+    color: #fff;
+}
+
+.container .section_content .section_content_all .section_content_itens .section_content_item:last-child {
     margin-bottom: 0px;
 }
 
@@ -331,14 +337,12 @@ p {
     margin-right: 15px;
 }
 
-.container .section_content 
-.section_content_all .section_content_itens 
-.section_content_item .section_content_info span {
+.container .section_content .section_content_all .section_content_itens .section_content_item .section_content_info span {
     color: rgb(186, 51, 212);
 }
 
 .title {
-    display: flex;  
+    display: flex;
     width: 100%;
     height: 50px;
     color: #fff;
@@ -349,7 +353,7 @@ p {
     justify-content: center;
     font-family: "Bebas Neue";
     background-color: rgb(186, 51, 212);
-  }
+}
 
 .loading {
     position: absolute;
@@ -360,15 +364,16 @@ p {
 }
 
 .multa a {
-    font-size: 25px;
+    font-size: 20px;
     color: #fff;
     letter-spacing: 1px;
     text-transform: uppercase;
     font-family: "Bebas Neue";
-  }
+}
+
 .multa {
     width: 250px;
-    font-size: 20px;
+    font-size: 15px;
     margin-bottom: 10px;
     /* font-family: "Roboto"; */
     text-transform: uppercase;
@@ -376,7 +381,7 @@ p {
     display: grid;
 }
 
-  .actions {
+.actions {
     position: absolute;
     bottom: 10px;
     display: flex;
@@ -419,7 +424,7 @@ p {
     color: #fff;
     left: 410px;
     font-family: 'Bebas Neue';
-    font-size: 25px;
+    font-size: 20px;
     padding: 20px;
     border-radius: 37px;
     height: unset;
@@ -427,16 +432,16 @@ p {
 }
 
 .imgcar {
-    position: absolute;
+    /*     position: absolute;
     width: 29vw;
     right: -9.7vw;
     height: 12vw;
-    bottom: 16vw;
+    bottom: 16vw; */
 }
 
 #imgcar {
-    width: 20vw;
-    height: 10vw;
+    width: 10vw;
+    height: 5vw;
     position: absolute;
 }
 
@@ -459,9 +464,9 @@ p {
 }
 
 .details {
-	color: #fff;
-      opacity: .75;
+    color: #fff;
+    opacity: .75;
     display: grid;
     position: absolute;
-    top: 335px;
+    top: 380px;
 }

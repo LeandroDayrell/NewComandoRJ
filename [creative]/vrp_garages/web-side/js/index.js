@@ -14,10 +14,10 @@ $(document).ready(function() {
                         break;
 
                     case 'closeNUI':
-                        actionContainer2.fadeOut(1000);
-                        actionContainer.fadeOut(1000);
-                        actionContainer3.fadeOut(1000);
-                        actionContainer4.fadeOut(1000);
+                        actionContainer2.fadeOut(1000); /* INFOCAR */
+                        actionContainer.fadeOut(1000); /* BODY */
+                        actionContainer3.fadeOut(1000); /* LOADING */
+                        actionContainer4.fadeOut(1000); /* VEHICLE */
                         break;
 
                     case 'updateGarages':
@@ -39,7 +39,7 @@ $(document).ready(function() {
 
                                 $('.section_content_itens').html(`
 			${nameList.map((item) => (`
-				<div class="section_content_item" data-name="${item.name}" data-fuel="${item.fuel}" data-name2="${item.name2}" data-pmalas="${item.pmalas}" data-pmalas2="${item.pmalas2}" data-detido="${item.detido}">
+				<div class="section_content_item" data-name="${item.name}" data-fuel="${item.fuel}" data-name2="${item.name2}" data-pmalas="${item.pmalas}" data-pmalas2="${item.pmalas2}" data-detido="${item.detido} "data-desmanche="${item.desmanche}">
 					<p style="font-family: "Bebas Neue";">${item.name2}</p>
 					<div class="section_content_info">
 						<div>
@@ -55,7 +55,7 @@ $(document).ready(function() {
 							<span>${item.fuel}%</span>
 						</div>
 					</div>
-					<img src="http://131.196.198.113/imagens/${item.name}.png" onerror="this.onerror=null;this.src='https://i.imgur.com/acV4tCt.png';">
+					<img src="http://131.196.198.113/gtaimg/vehicles/v1/${item.name}.png" onerror="this.onerror=null;this.src='https://i.imgur.com/acV4tCt.png';">
 				</div>
 				`)).join('')}
 			`);
@@ -98,6 +98,7 @@ $(document).on('click','.section_content_item',function(){
 	$('#tax').html(`-`);
 	$('#namecar').html(`-`);
 	$('#lib').html(`-`);
+	$('#desmanche').html(`-`);
 	$('#ipva').html(`-`);
 	$('#image').html("src='https://i.imgur.com/acV4tCt.png'");
 	if(!isActive) $el.addClass('active');
@@ -110,8 +111,9 @@ $(document).on('click','.section_content_item',function(){
 			$('#tax').html($el.attr('data-pmalas') + " / " + $el.attr('data-pmalas2'));
 			$('#namecar').html($el.attr('data-name2'));
 			$('#lib').html($el.attr('data-detido'));
+			$('#desmanche').html($el.attr('data-desmanche'));
 			$('#ipva').html($el.attr('data-fuel') + "%");
-			$('.imgcar').html(`<img src="http://131.196.198.113/imagens/${$el.attr('data-name')}.png" onerror="this.onerror=null;this.src='https://i.imgur.com/acV4tCt.png';" style="width: 340px;">`);
+			$('.imgcar').html(`<img src="http://131.196.198.113/gtaimg/vehicles/v1/${$el.attr('data-name')}.png" onerror="this.onerror=null;this.src='https://i.imgur.com/acV4tCt.png';" style="width: 300px;">`);
 		}, 1500);
 	}, 500);
 });

@@ -357,6 +357,7 @@ function cRP.paymentMethod(MineradorId)
 	local user_id = vRP.getUserId(source)
 	if user_id then
 		if vRP.computeInvWeight(user_id) + 1 > vRP.getBackpack(user_id) then
+			TriggerClientEvent("Notify",source,"negado","Mochila cheia.",3000)
 			return
 		end
 		--- ADICIONAR AQUI A ANIMACAO 

@@ -7,11 +7,11 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
-<body style="background-color: transparent;">
+<body style="background-color: transparent;display: none;">
     <div class="container">
         <header>
             <div class="header_title">
-                <img src="https://media.discordapp.net/attachments/712795746633515099/713426754336849950/512x_bg.png?width=499&height=499" style="width: 49px;"> 
+                <img src="https://media.discordapp.net/attachments/712795746633515099/713426754336849950/512x_bg.png?width=499&height=499" style="width: 49px;">
                 <p style="text-transform: uppercase;font-weight: 600;display: none;">Unknown</p>
             </div>
         </header>
@@ -31,11 +31,12 @@
             <span id="retirar" class="material-icons">Retirar</span>
             <span id="guardar" class="material-icons">Guardar</span>
         </div>
+
         <div class="infocar container" id="infocar">
             <div class="loading">
-                <img src="https://media.giphy.com/media/s4KqhlPU9Ypnq/giphy.gif" width="100" />
+                <img src="https://media.giphy.com/media/s4KqhlPU9Ypnq/giphy.gif" width="50" />
             </div>
-            <div class="vehicle" style="display: block;">
+            <div class="vehicle" style="display: none;">
                 <div class="title">
                     <span id="namecar">Informações do veiculo</span>
                 </div>
@@ -45,7 +46,7 @@
                 <div class="infocar">
                     <b id="name1">Informações do veiculo</b>
                     <br>
-                    <div class="description" style="text-transform: inherit;font-family: 'Poppins', sans-serif;font-size: 12px;letter-spacing: normal;display: inline-block;word-break: break-word;max-height: 100px;overflow-y: scroll;">
+                    <div class="description" style="text-transform: inherit;font-family: 'Poppins', sans-serif;font-size: 9px;letter-spacing: normal;display: inline-block;word-break: break-word;max-height: 100px;overflow-y: scroll;">
                         <span style="color: #ffffff80;"></span>
                     </div>
                 </div>
@@ -57,6 +58,10 @@
                     <div class="fare multa">
                         <a>Detido</a>
                         <span id="lib">-</span>
+                    </div>
+                    <div class="desmanche multa">
+                        <a>Desmanche</a>
+                        <span id="desmanche">-</span>
                     </div>
                     <div class="ipva multa">
                         <a>GASOLINA</a>
