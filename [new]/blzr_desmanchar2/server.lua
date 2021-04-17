@@ -1,10 +1,3 @@
---[[
-    PROPOSTA:
-
-
-
-]]
-
 local Tunnel = module("vrp","lib/Tunnel")
 local Proxy = module("vrp","lib/Proxy")
 vRP = Proxy.getInterface("vRP")
@@ -41,6 +34,8 @@ local CarrosDesmanches = {
 -------------------------------------------------------------------------| 
     
     ['150'] = 8500,
+    ['cyclone'] = 8500,
+    ['contender'] = 8500,
     ['amarok'] = 380000,
     ['biz25'] = 5000,
     ['bros60'] = 15000,
@@ -150,7 +145,7 @@ function blzr.CheckPerm()
     local source = source
     local user_id = vRP.getUserId(source)
     if RestritoParaDesmanche then
-        if vRP.hasPermission(user_id, PermissaoDesmanche) then
+        if vRP.hasPermission(user_id,"Admin") then
             return true
         end
         return false
@@ -181,9 +176,48 @@ function blzr.GerarPagamento(placa, nomeFeio, nomeBonito)
         if string.upper(k) == string.upper(nomeFeio) then
             local pagamento = v
             -- vRP.giveMoney(user_id,pagamento) -- DINHEIRO LIMPO
+            vRP.giveInventoryItem(user_id,'dollars',pagamento,true) -- DINHEIRO SUJO
+            local vehicle,vehNet,vehName = vRPclient.vehList(source,7)
+            print('Placa 01: '..placa)
+            local plateUser = placa
+            print('Placa 02')
+            print(plateUser)
+            print('Placa 02: '..placa)
+            print(nomeFeio)
+            print(nomeBonito)
+            --local plateUser = vRP.getVehiclePlate(vehPlate)
+		    local inVehicle = vRP.query("vRP/get_vehicles",{ user_id = parseInt(plateUser), vehicle = vehName })
+            print('Placa 03')
+             vRP.execute("vRP/set_desmanche",{ user_id = parseInt(plateUser), vehicle = vehName, desmanche = 1, time = parseInt(os.time()) })
+             print('---------------------')
+             print(user_id)
+             print(plateUser)
+             print(vehicle)
+             print(NomeFeio)
+
+           -- TriggerClientEvent('Notify', source, 'sucesso', 'Vendedor Desmanche', 'Você recebeu <b>R$'..vRP.format(pagamento)..'</b> pelo desmanche de um <b>'..nomeBonito..' ('.. nomeFeio..' - PLACA [' .. placa .. '])</b>.' )
+            print('teste 04')
+        end
+    end
+end  
+
+
+
+--[[ -- FUNÇÃO PARA GERAR O PAGAMENTO E OS ITENS
+function blzr.GerarPagamento(placa, nomeFeio, nomeBonito)
+    local source = source
+    local user_id = vRP.getUserId(source)
+    local identity = vRP.getUserIdentity(user_id)
+    for k, v in pairs(CarrosDesmanches) do
+        print('Placa 01: '..placa)
+        if string.upper(k) == string.upper(nomeFeio) then
+            local pagamento = v
+            -- vRP.giveMoney(user_id,pagamento) -- DINHEIRO LIMPO
             vRP.giveInventoryItem(user_id,'dinheirosujo',pagamento) -- DINHEIRO SUJO
 
             local puser_id = vRP.getUserByRegistration(placa)
+            print('Placa 02: '..placa)
+            print('Placa 03: '..puser_id)
             if puser_id then
                 local value = vRP.getUData(puser_id,'vRP:multas')
                 local multas = json.decode(value) or 0
@@ -199,6 +233,30 @@ function blzr.GerarPagamento(placa, nomeFeio, nomeBonito)
             SendWebhookMessage(desmanche,"```prolog\n[PASSAPORTE]: "..user_id.." \n[NOME]: "..identity.name.." "..identity.firstname.." \n[DESMANCHOU]: "..nomeBonito.."  \n[PLACA]: ".. placa .." \n[E RECEBEU]: ".. vRP.format(pagamento) .." "..os.date("\n[Data]: %d/%m/%y \n[Hora]: %H/%M/%S").." \r```")
         end
     end
-end
+end ]]
+
+
+
+
+
+
+
+
+
+
+--[[             local puser_id = vRP.getUserByRegistration(placa)
+            if puser_id then
+                local value = vRP.getUData(puser_id,'vRP:multas')
+                local multas = json.decode(value) or 0
+                multas = multas + pagamento
+                vRP.setUData(puser_id,'vRP:multas',json.encode(parseInt(multas)))
+                local nsource = vRP.getUserSource(puser_id)
+                if nsource then
+                    TriggerClientEvent('Notify', nsource, 'aviso', 'AVISO SEGURADORA', 'Você foi multado em <b>R$' .. vRP.format(pagamento) .. '</b> referente ao seguro do veículo <b>' .. nomeBonito .. ' (' .. nomeFeio .. ')</b>.')
+                end
+            end
+            end
+    end
+end ]]
 
 

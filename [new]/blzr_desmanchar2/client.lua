@@ -84,17 +84,17 @@ Citizen.CreateThread(function()
                                             SetVehicleDoorsLocked(veh, 4)
                                             
                                         else
-                                            TriggerEvent('Notify', 'negado', 'ERRO AO INICIAR O SERVIÇO!', 'Você necessita de um <b>cartão de desmanche</b> para iniciar o serviço.')
+                                            TriggerEvent('Notify', 'negado', 'ERRO AO INICIAR O SERVIÇO! 1', 'Você necessita de um <b>cartão de desmanche</b> para iniciar o serviço.')
                                         end
                                     else
-                                        TriggerEvent('Notify', 'negado', 'ERRO AO INICIAR O SERVIÇO!', 'Esse veículo não pode ser desmanchado.')
+                                        TriggerEvent('Notify', 'negado', 'ERRO AO INICIAR O SERVIÇO! 2', 'Esse veículo não pode ser desmanchado.')
                                     end
                                 else
-                                    TriggerEvent('Notify', 'negado', 'ERRO AO INICIAR O SERVIÇO!', 'O veículo precisa ser um carro, van ou moto.')
+                                    TriggerEvent('Notify', 'negado', 'ERRO AO INICIAR O SERVIÇO! 3', 'O veículo precisa ser um carro, van ou moto.')
                                 end
                             else 
                                 -- NOTIFICACAO AQUI
-                                TriggerEvent('Notify', 'negado ', 'ERRO AO INICIAR O SERVIÇO!', 'Não há nenhum carro próximo para ser desmanchado.')
+                                TriggerEvent('Notify', 'negado ', 'ERRO AO INICIAR O SERVIÇO! 4', 'Não há nenhum carro próximo para ser desmanchado.')
                             end
                         end
                     end
@@ -123,10 +123,10 @@ Citizen.CreateThread(function()
                             end
                             FreezeEntityPosition(ped, true)
                             SetEntityHeading(ped, LocalFerramentas[4])
-                            vRP.playAnim(false, {{"amb@medic@standing@kneel@idle_a", "idle_a"}}, true)
+                            vRP._playAnim(false,{"anim@amb@clubhouse@tutorial@bkr_tut_ig3@","machinic_loop_mechandplayer"},true)
                             TriggerEvent('progress', 5000, 'PEGANDO FERRAMENTAS')
 
-                            Wait(5000)  
+                            -- Wait(5000)  TESTEEEEE  
 
                             etapa = 2
                             TriggerEvent('Notify', 'sucesso', 'FERRAMENTAS PEGAS!', 'Você pegou todas as ferramentas, vá e desmanche o veículo.')
@@ -159,7 +159,7 @@ Citizen.CreateThread(function()
                                     else
                                         vRP.playAnim(false, {{"amb@medic@standing@tendtodead@idle_a" , "idle_a"}}, true)
                                     end
-                                    Wait(5000)
+                                    -- -- Wait(5000)  TESTEEEEE  TESTEEEEE
                                     ClearPedTasks(ped)
                                     PecasRemovidas[k] = true
                                     qtdPecasRemovidas = qtdPecasRemovidas + 1
@@ -204,11 +204,12 @@ Citizen.CreateThread(function()
                             SetEntityHeading(ped, AnuncioChassi[4])
                             vRP.playAnim(false, {{"anim@heists@prison_heistig1_p1_guard_checks_bus", "loop"}}, true)
                             TriggerEvent('progress', 5000, 'ANUNCIANDO CHASSI DO VEÍCULO')
-                            Wait(5000)
+                            -- Wait(5000)  TESTEEEEE
                             FreezeEntityPosition(ped, false)
                             ClearPedTasks(ped)
                             vSERVER.GerarPagamento(placa, nomeCarro, modeloCarro)
                             DeletarVeiculo(veh)
+                            deleteVehicle(source,veh) --teste
                             etapa = 0 
                             PosVeh = {}
                             PecasRemovidas = {}
@@ -256,7 +257,7 @@ end)
             -- print('N PERMITIDO')
             permitido = false
         end
-        Wait(5000)
+        -- Wait(5000)  TESTEEEEE
     end
 end) ]]
 

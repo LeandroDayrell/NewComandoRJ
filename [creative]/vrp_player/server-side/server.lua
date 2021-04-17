@@ -351,6 +351,10 @@ RegisterCommand("detido",function(source,args,rawCommand)
 					if inVehicle[1] then
 						if inVehicle[1].arrest <= 0 then
 							vRP.execute("vRP/set_arrest",{ user_id = parseInt(plateUser), vehicle = vehName, arrest = 1, time = parseInt(os.time()) })
+							print(user_id)
+							print(plateUser)
+							print(vehicle)
+							print(vehName)
 							TriggerClientEvent("Notify",source,"sucesso","O veículo foi apreendido no galpão da polícia.",5000)
 						else
 							TriggerClientEvent("Notify",source,"importante","O veículo está no galpão da polícia.",5000)
