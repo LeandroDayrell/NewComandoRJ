@@ -94,6 +94,7 @@ local garages = {
 	[42] = { ["name"] = "Boats", ["payment"] = false, ["public"] = true },
 	[43] = { ["name"] = "HPolice", ["payment"] = false, ["perm"] = "Police" },
 	[44] = { ["name"] = "Police", ["payment"] = false, ["perm"] = "Police" },
+	[45] = { ["name"] = "PostOP", ["payment"] = false, ["public"] = true },
 	[501] = { ["name"] = "Middle001", ["payment"] = false, ["perm"] = false },
 	[502] = { ["name"] = "Middle002", ["payment"] = false, ["perm"] = false },
 	[503] = { ["name"] = "Middle003", ["payment"] = false, ["perm"] = false },

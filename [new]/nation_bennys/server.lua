@@ -17,12 +17,14 @@ function sergin.checkPermission()
     return vRP.hasPermission(vRP.getUserId(source), "Admin")
 end
 
-function sergin.getSavedMods(vehicle_plate)
-    local vehicle = cnVRP.getServerVehicleByPlate(vehicle_plate)
-    if vehicle ~= nil then
-        return json.decode(vehicle.tuning) or {}
-    end
-    return ni
+function sergin.getSavedMods(vehicle_name, vehicle_plate)
+    local vehicle,vehNet,vehPlate,vehName = vRP.vehList(source,7)
+    local source = source
+    local user_id = vRP.getUserId(source)
+    --local vehicle_owner_id = vRP.getUserByRegistration(vehicle_plate)
+    print('Save no custom')
+   --print(vehicle_owner_id)
+    return json.decode(vRP.getSData("custom:u" .. user_id .. "veh_" .. tostring(vehicle_name)) or {}) or {}
 end
 
 function sergin.checkPayment(amount)
@@ -32,7 +34,7 @@ function sergin.checkPayment(amount)
 
     local source = source
     local user_id = vRP.getUserId(source)
-    if not vRP.giveInventoryItem(user_id,"dollars", tonumber(amount)) or vRP.paymentBank(user_id, tonumber(amount)) then
+    if not vRP.tryGetInventoryItem(user_id, "dollars",tonumber(amount)) then
         TriggerClientEvent("Notify",source,"negado","Você não possui dinheiro suficiente.",7000)
         return false
     end
@@ -41,7 +43,7 @@ function sergin.checkPayment(amount)
 end
 
 function sergin.repairVehicle(vehicle, damage)
-
+    local vehicle,vehNet,vehPlate,vehName = vRPclient.vehList(source,7)
     TriggerEvent("tryreparar", vehicle)
     return true
 end
@@ -59,8 +61,12 @@ function sergin.checkVehicle(vehicle)
     return true
 end
 function sergin.saveVehicle(vehicle_name, vehicle_plate, vehicle_mods)
-    local vehicle_owner_id = vRP.getUserByRegistration(vehicle_plate)
-    vRP.setSData("custom:u" .. vehicle_owner_id .. "veh_" .. tostring(vehicle_name),json.encode(vehicle_mods))
+   -- local vehicle_owner_id = vRP.getUserByRegistration(vehicle_plate)
+   local source = source
+   local user_id = vRP.getUserId(source)
+    local vehicle,vehNet,vehPlate,vehName = vRP.vehList(source,7)
+    local vehPlate = vehicle_owner_id
+    vRP.setSData("custom:u" .. user_id .. "veh_" .. tostring(vehicle_name),json.encode(vehicle_mods))
     return true
 end
 

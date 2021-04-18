@@ -167,15 +167,15 @@ end)
 
 RegisterNUICallback("pagar",function(data)
 	if cart["total"] and func.checkPayment(cart["total"]) then
-		SetNuiFocus(false,false)
+		--SetNuiFocus(false,false)
 		SendNUIMessage({ action = "applying" })
 		if not IsPedInAnyVehicle(PlayerPedId()) then
-			vRP.playAnim(false,{{"mini@repair","fixing_a_player"}},true)
+			--vRP.playAnim(false,{{"mini@repair","fixing_a_player"}},true)
 		end
-		TriggerEvent("progress",10000,"aplicando modificações")
-		Wait(10000)
+		--TriggerEvent("progress",10000,"aplicando modificações")
+		---Wait(10000)
 		--TriggerEvent("Notify","sucesso","Modificações aplicadas com <b>sucesso</b>.",7000)
-		vRP.stopAnim(false)
+		--vRP.stopAnim(false)
 		myveh = getAllVehicleMods(vehicle)
 		local vehname = GetDisplayNameFromVehicleModel(GetEntityModel(vehicle)):lower()
 		local vehplate = GetVehicleNumberPlateText(vehicle)
