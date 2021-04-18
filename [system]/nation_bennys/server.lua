@@ -22,7 +22,7 @@ function sergin.getSavedMods(vehicle_plate)
     if vehicle ~= nil then
         return json.decode(vehicle.tuning) or {}
     end
-    return nil
+    return ni
 end
 
 function sergin.checkPayment(amount)
