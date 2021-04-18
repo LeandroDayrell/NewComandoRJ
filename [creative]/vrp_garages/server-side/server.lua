@@ -39,6 +39,7 @@ AddEventHandler("setPlatePlayers",function(vehPlate,user_id)
 		stealVehs[vehPlate] = parseInt(user_id)
 	end
 end)
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- PLAYERSPAWN
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -743,6 +744,25 @@ function cnVRP.vehicleLock()
 			end
 		end
 	end
+end
+
+
+
+cnVRP.setTuningVehicleByPlate = function(plate, custom)
+    local vehicle = vRP.query("vRP/get_vehicle_plate", {plate = plate})    --
+	if #vehicle > 0 then
+		vRP.execute("vRP/SetPlayerTuningVehicle", {plate = plate, tuning = json.encode(custom)})
+        return true
+    end
+    return false
+end
+
+cnVRP.getServerVehicleByPlate = function(plate)
+    local vehicle = vRP.query("vRP/get_vehicle_plate", {plate = plate})    
+	if #vehicle > 0 then
+		return vehicle[1]
+    end
+    return nil
 end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- TRYDELETE

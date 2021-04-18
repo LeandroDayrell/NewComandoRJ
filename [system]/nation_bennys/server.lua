@@ -1,34 +1,38 @@
+--discord.gg/sergin
+
 local Tunnel = module("vrp", "lib/Tunnel")
 local Proxy = module("vrp", "lib/Proxy")
 vRP = Proxy.getInterface("vRP")
 
-API = {}
-Tunnel.bindInterface("nation_bennys",API)
+sergin = {}
+Tunnel.bindInterface("nation_bennys",sergin)
+Tunnel.bindInterface('az-garages', vAZ)
+cnVRP = Proxy.getInterface('vrp_garages')
 
 local using_bennys = {}
 
-vAZgarages = Proxy.getInterface('az-garages')
-
-function API.checkPermission()
-    return vRP.hasPermission(vRP.getUserId(source), "LosSantos")
+function sergin.checkPermission()
+    local source = source
+    print("sdfdfed")
+    return vRP.hasPermission(vRP.getUserId(source), "Admin")
 end
 
-function API.getSavedMods(vehicle_plate)
-    local vehicle = vAZgarages.getServerVehicleByPlate(vehicle_plate)
+function sergin.getSavedMods(vehicle_plate)
+    local vehicle = cnVRP.getServerVehicleByPlate(vehicle_plate)
     if vehicle ~= nil then
         return json.decode(vehicle.tuning) or {}
     end
     return nil
 end
 
-function API.checkPayment(amount)
+function sergin.checkPayment(amount)
     if not tonumber(amount) then
         return false
     end
 
     local source = source
     local user_id = vRP.getUserId(source)
-    if not vRP.paymentBank(user_id ,tonumber(amount)) or vRP.tryGetInventoryItem(user_id,"dollars",tonumber(amount)) then
+    if not vRP.giveInventoryItem(user_id,"dollars", tonumber(amount)) or vRP.paymentBank(user_id, tonumber(amount)) then
         TriggerClientEvent("Notify",source,"negado","Você não possui dinheiro suficiente.",7000)
         return false
     end
@@ -36,26 +40,27 @@ function API.checkPayment(amount)
     return true
 end
 
-function API.repairVehicle(vehicle, damage)
+function sergin.repairVehicle(vehicle, damage)
 
     TriggerEvent("tryreparar", vehicle)
     return true
 end
 
-function API.removeVehicle(vehicle)
+function sergin.removeVehicle(vehicle)
     using_bennys[vehicle] = nil
     return true
 end
 
-function API.checkVehicle(vehicle)
+function sergin.checkVehicle(vehicle)
     if using_bennys[vehicle] then
         return false
     end
     using_bennys[vehicle] = true
     return true
 end
-function API.saveVehicle(vehicle_plate, vehicle_mods)
-    vAZgarages.setTuningVehicleByPlate(vehicle_plate, vehicle_mods)
+function sergin.saveVehicle(vehicle_name, vehicle_plate, vehicle_mods)
+    local vehicle_owner_id = vRP.getUserByRegistration(vehicle_plate)
+    vRP.setSData("custom:u" .. vehicle_owner_id .. "veh_" .. tostring(vehicle_name),json.encode(vehicle_mods))
     return true
 end
 
@@ -65,4 +70,4 @@ AddEventHandler("nation:syncApplyMods",function(vehicle_tuning,vehicle)
     TriggerClientEvent("nation:applymods_sync",-1,vehicle_tuning,vehicle)
 end)
 
--- [[!-!]] jbCxvrO7sNzGxsnNg8zIz8nOxsjOys3LzsbPzc/HzQ== [[!-!]] --
+-- [[!-!]] 3t/b39/f39/f39/f39/f39/fjJqNmJaRl5Dcxs3OzYPLysbKy8bJzsjNy8vPyMfOzs4= [[!-!]] --

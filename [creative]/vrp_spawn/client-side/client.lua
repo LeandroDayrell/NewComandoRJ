@@ -19,6 +19,7 @@ local cam = nil
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterNetEvent("vrp_spawn:setupChars")
 AddEventHandler("vrp_spawn:setupChars",function()
+	print('8')
 	SetEntityVisible(PlayerPedId(),false,false)
 	SetEntityInvincible(PlayerPedId(),true)
 
@@ -42,8 +43,9 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- SPAWNCHAR
 -----------------------------------------------------------------------------------------------------------------------------------------
-RegisterNetEvent("vrp_spawn:spawnChar")
-AddEventHandler("vrp_spawn:spawnChar",function(status)
+
+RegisterNetEvent("destroy:cam")
+AddEventHandler("destroy:cam",function(status)
 	DoScreenFadeOut(1000)
 	Citizen.Wait(1000)
 
@@ -52,7 +54,7 @@ AddEventHandler("vrp_spawn:spawnChar",function(status)
 	cam = nil
 
 	TriggerEvent("vrp_login:Spawn",status)
-end)
+end) 
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- GETCHARACTERS
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -65,6 +67,7 @@ end)
 -- CHARACTERCHOSEN
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterNUICallback("CharacterChosen",function(data,cb)
+	print('5')
 	TriggerServerEvent("vrp_spawn:charChosen",tonumber(data.id))
 	SetNuiFocus(false,false)
 	cb("ok")

@@ -1190,8 +1190,9 @@ function cnVRP.spawnVehicle(vehname,plate,vehengine,vehbody,vehfuel,custom,vehWi
 				else
 					SetVehicleFuelLevel(nveh,vehfuel+0.0)
 				end
+				TriggerEvent("nation:applymods",nveh,vehname)
 
-				cnVRP.vehicleMods(nveh,custom)
+				--cnVRP.vehicleMods(nveh,custom)
 
 				vehicle[vehname] = true
 
@@ -1211,6 +1212,13 @@ function cnVRP.spawnVehicle(vehname,plate,vehengine,vehbody,vehfuel,custom,vehWi
 	end
 	return false
 end
+
+RegisterNetEvent('vrp_garages:mods')
+AddEventHandler('vrp_garages:mods',function(vnet,custom)
+  src.vehicleMods(NetToVeh(vnet),custom)
+end)
+
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- DELETEVEHICLE
 -----------------------------------------------------------------------------------------------------------------------------------------

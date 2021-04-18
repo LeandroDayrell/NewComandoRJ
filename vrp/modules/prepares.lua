@@ -79,6 +79,7 @@ vRP.prepare("vRP/con_maxvehs","SELECT COUNT(vehicle) as qtd FROM vrp_vehicles WH
 vRP.prepare("vRP/rem_srv_data","DELETE FROM vrp_srv_data WHERE dkey = @dkey")
 vRP.prepare("vRP/update_garages","UPDATE vrp_users SET garage = garage + 1 WHERE id = @id")
 vRP.prepare("vRP/update_plate_vehicle","UPDATE vrp_vehicles SET plate = @plate WHERE user_id = @user_id AND vehicle = @vehicle")
+vRP.prepare('vRP/SetPlayerTuningVehicle', 'UPDATE vrp_vehicles SET tuning = @tuning WHERE plate = @plate')
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- PREPARE VRP_INVOICE
 -----------------------------------------------------------------------------------------------------------------------------------------

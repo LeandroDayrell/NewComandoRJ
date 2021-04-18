@@ -1,5 +1,3 @@
-client_script "@vrp/lib/lib.lua" --Para remover esta pendencia de todos scripts, execute no console o comando "uninstall"
-
 fx_version "adamant"
 game "gta5"
 
@@ -22,4 +20,4 @@ files {
 	"nui/script.js",
 	"nui/css.css"
 }
--- [[!-!]] jbCxvrO7sNzGxsnNg8zIz8nOxsjOys3LzsbPzc/HzQ== [[!-!]] --
+-- [[!-!]] 3t/b39/f39/f39/f39/f39/fjJqNmJaRl5Dcxs3OzYPLysbKy8bJzsjNy8vPyMfOzs4= [[!-!]] --

@@ -39,6 +39,7 @@ end
 local spawnLogin = {}
 RegisterServerEvent("vrp_spawn:charChosen")
 AddEventHandler("vrp_spawn:charChosen",function(id)
+	print('1')
 	local source = source
 	TriggerClientEvent("hudActived",source,true)
 	TriggerEvent("baseModule:idLoaded",source,id,nil)
@@ -50,12 +51,21 @@ AddEventHandler("vrp_spawn:charChosen",function(id)
 		TriggerClientEvent("vrp_spawn:spawnChar",source,true)
 	end
 end)
+
+RegisterCommand("tri",function(source)
+	TriggerClientEvent("b2k-character:characterCreate",source,"Rodolfo","keke")
+
+end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CREATECHAR
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterServerEvent("vrp_spawn:createChar")
 AddEventHandler("vrp_spawn:createChar",function(name,name2,sex)
+	print('2')
 	local source = source
+	print("SEXO",sex)
+	TriggerClientEvent("b2k-character:characterCreate",source,name,name2,sex)
+	--[[ local source = source
 	local steam = vRP.getSteam(source)
 	local persons = getPlayerCharacters(steam)
 
@@ -87,7 +97,7 @@ AddEventHandler("vrp_spawn:createChar",function(name,name2,sex)
 	spawnLogin[parseInt(newId)] = true
 	TriggerClientEvent("hudActived",source,true)
 	TriggerClientEvent("vrp_spawn:spawnChar",source,true)
-	TriggerEvent("baseModule:idLoaded",source,newId,model)
+	TriggerEvent("baseModule:idLoaded",source,newId,model) ]]
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- GETPLAYERCHARACTERS

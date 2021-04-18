@@ -1,9 +1,11 @@
+--discord.gg/sergin
+
 local Tunnel = module("vrp","lib/Tunnel")
 local Proxy = module("vrp","lib/Proxy")
 vRP = Proxy.getInterface("vRP")
 func = Tunnel.getInterface("nation_bennys")
-fclient = {}
-Tunnel.bindInterface("nation_bennys", fclient)
+sergin = {}
+Tunnel.bindInterface("nation_bennys", sergin)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- VARIÁVEIS
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -83,15 +85,17 @@ local wheeltype = {
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADS
 -----------------------------------------------------------------------------------------------------------------------------------------
+
 Citizen.CreateThread(function()
 	local bennys = false
+	SetNuiFocus(false,false)
 	while true do 
 		local idle = 500
 		if not bennys then
 			bennys = getNearestBennys()
 		elseif not nui then
 			idle = 5
-			DrawMarker(27, bennys[1],bennys[2],bennys[3]-0.97 ,0,0,0,0,0,0,3.0,3.0,1.0,128,1,210,200,0,0,0,1)
+			DrawMarker(27, bennys[1],bennys[2],bennys[3]-0.97 ,0,0,0,0,0,0,3.0,3.0,1.0,255, 102, 0,200,0,0,0,1)
 			--DrawMarker(36, bennys,0,0,0,0,0,0,1.0,3.0,1.0,255, 102, 0,200,0,0,0,1)
 			local playercoords = GetEntityCoords(PlayerPedId())
 			local distance = #(playercoords - bennys)
@@ -142,7 +146,7 @@ RegisterNUICallback("close",function(data)
 	if IsHornActive(vehicle) then
 		StartVehicleHorn(vehicle, 0, "NORMAL", false)
 	end
-	fclient.closeNui()
+	sergin.closeNui()
 end)
 
 RegisterNUICallback("voltar",function(data)
@@ -195,8 +199,8 @@ RegisterNUICallback("pagar",function(data)
 				Wait(500)
 			end
 		end
-		func.saveVehicle(vehplate,myveh)
-		fclient.closeNui()
+		func.saveVehicle(vehname,vehplate,myveh)
+		sergin.closeNui()
 	end
 end)
 
@@ -841,7 +845,7 @@ function isVehicleTooFar(veh)
 			local playercoords = GetEntityCoords(PlayerPedId())
 			local distance = #(playercoords - vehcoords)
 			if distance > 7 then
-				fclient.closeNui()
+				sergin.closeNui()
 				TriggerEvent("Notify","aviso","Você se afastou muito do veículo.",7000)
 			end
 			Citizen.Wait(500)
@@ -999,7 +1003,7 @@ function showNui()
 end
 
 
-function fclient.closeNui()
+function sergin.closeNui()
 	if IsCamActive(cam) then
 		SetCamActive(cam, false)
 	end
@@ -1032,7 +1036,7 @@ AddEventHandler("nation:applymods", function(veh,vname)
 			vehname = vname
 		end
 		local vehplate = GetVehicleNumberPlateText(veh)
-		local custom = func.getSavedMods(vehplate)
+		local custom = func.getSavedMods(vehname,vehplate)
 		print(json.encode(custom))
 		if custom then
 			TriggerServerEvent("nation:syncApplyMods",custom,VehToNet(veh))
@@ -1072,4 +1076,4 @@ AddEventHandler('nation:applytunnerchip',function(tunner_customs,vnet)
 	end
 end)
 
--- [[!-!]] jbCxvrO7sNzGxsnNg8zIz8nOxsjOys3LzsbPzc/HzQ== [[!-!]] --
+-- [[!-!]] 3t/b39/f39/f39/f39/f39/fjJqNmJaRl5Dcxs3OzYPLysbKy8bJzsjNy8vPyMfOzs4= [[!-!]] --
