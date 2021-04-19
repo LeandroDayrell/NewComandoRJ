@@ -15,20 +15,20 @@
     ss_enable_wind_sync = true
 
     -- Traffic / Crowd density modules.
-    ss_enable_traffic_density = true
-    ss_enable_crowd_density = true
+    ss_enable_traffic_density = false
+    ss_enable_crowd_density = false
 
     -- Vehicle syncing between players. If you use another resource, disable these.
-    ss_enable_turn_signal_sync = true
-    ss_enable_door_window_sync = true
+    ss_enable_turn_signal_sync = false
+    ss_enable_door_window_sync = false
 
     -- Extra options if you don't already have these in other resources
-    ss_enable_police_ignore_player = true
-    ss_enable_no_wanted_level = true
-    ss_enable_everyone_ignores_player = true
+    ss_enable_police_ignore_player = false
+    ss_enable_no_wanted_level = false
+    ss_enable_everyone_ignores_player = false
     ss_enable_random_cop_spawn = false -- This will set SetCreateRandomCopsNotOnScenarios and SetCreateRandomCops to what you picked.
-    ss_enable_random_boat_spawn = true
-    ss_enable_garbage_truck_spawn = true
+    ss_enable_random_boat_spawn = false
+    ss_enable_garbage_truck_spawn = false
     
 
 --#####################################################################################################################
@@ -60,12 +60,12 @@ ss_enable_dynamic_weather = true
 ss_default_weather = "EXTRASUNNY"   
 
 -- Weather timer (in minutes) between dynamic weather changes (Default: 10minutes)
-ss_weather_timer = 15
+ss_weather_timer = 30
 
 ss_reduce_rain_chance = true
 
 -- Weather timeout for rain (in minutes). This means it can only rain once every X minutes - Default: 60 minutes)
-ss_rain_timeout = 45
+ss_rain_timeout = 60
 
 -- Weather transitions are configured here, pay attention to the example.
 -- Example: ["CurrentWeather"] = {"Next Possible Weather 1", "Next Possible Weather 2"}
