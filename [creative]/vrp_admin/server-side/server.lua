@@ -15,6 +15,21 @@ Tunnel.bindInterface("vrp_admin",cRP)
 vCLIENT = Tunnel.getInterface("vrp_admin")
 vHOMES = Tunnel.getInterface("vrp_homes")
 
+local webhooklinkgod = "https://discord.com/api/webhooks/833842795189895228/EZEJOrfck35t_xvHhltEfjaaGqj3gHnAYS0NjGIZ54KIL2jJrlfcRvJyAepMa-yHrQmt"
+local webhooklinkDinheiroeItem = "https://discord.com/api/webhooks/833842712893194300/2cZgtDf3vWkamVm8RiuZ39_3cwDhqOphFEznMBNaUPrGWFXrQQGLVN-sSmKrzY9f8eQ1"
+local webhooklinkGrupo = "https://discord.com/api/webhooks/833842978560671782/rIjI6h2Xd-9t2zozHcMss9ehmTKEeqBQOnwfsKQEatzWiPJjbmuRhxP79DC7LS-pL6N0"
+
+
+
+local webhooklinkBan = "https://discord.com/api/webhooks/833842858234478652/XFI6DF2jJwk2rF4j9Ge0Q1_nNpYf76DJUBL9e-9njwduyETWalCaEE_aeB15Iw9dY83S"
+local webhooklinkWl = "https://discord.com/api/webhooks/833842893352468480/Do7FMDIUKhWgikoEYxs0x-c3vdPJRlEXj8V49FrOpUiYw_y90VRo1KqCdK8ASF26eITw"
+
+function SendWebhookMessage(webhook,message)
+	if webhook ~= nil and webhook ~= "" then
+		PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' })
+	end
+end
+
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- DV
@@ -93,6 +108,7 @@ RegisterCommand("item",function(source,args,rawCommand)
 		if vRP.hasPermission(user_id,"Admin") then
 			if args[1] and args[2] and vRP.itemNameList(args[1]) ~= nil then
 				vRP.giveInventoryItem(user_id,args[1],parseInt(args[2]),true)
+				SendWebhookMessage(webhooklinkDinheiroeItem,  "UserID: [" ..user_id.."]  Item: " ..args[1].. " Qnt: "..parseInt(args[2])..  "  . ")
 			end
 		end
 	end
@@ -153,6 +169,8 @@ RegisterCommand("ban",function(source,args,rawCommand)
 			local identity = vRP.getUserIdentity(parseInt(args[1]))
 			if identity then
 				vRP.execute("vRP/set_banned",{ steam = tostring(identity.steam), banned = 1 })
+				SendWebhookMessage(webhooklinkBan,  "UserID: [" ..user_id.."]  Aplicou ban em: " ..parseInt(args[1]).. "  Steam: " ..steam.. " . ")
+
 			end
 		end
 	end
@@ -165,6 +183,7 @@ RegisterCommand("wl",function(source,args,rawCommand)
 	if user_id then
 		if vRP.hasPermission(user_id,"Admin") then
 			vRP.execute("vRP/set_whitelist",{ steam = tostring(args[1]), whitelist = 1 })
+			SendWebhookMessage(webhooklinkWl,  "UserID: [" ..user_id.."] WL: " ..tostring(args[1]).. " . ")
 		end
 	end
 end)
@@ -178,6 +197,7 @@ RegisterCommand("unwl",function(source,args,rawCommand)
 			local identity = vRP.getUserIdentity(parseInt(args[1]))
 			if identity then
 				vRP.execute("vRP/set_whitelist",{ steam = tostring(identity.steam), whitelist = 0 })
+				SendWebhookMessage(webhooklinkWl,  "UserID: [" ..user_id.."] Removeu WL: " ..tostring(args[1]).. " . ")
 			end
 		end
 	end
@@ -207,6 +227,7 @@ RegisterCommand("unban",function(source,args,rawCommand)
 			local identity = vRP.getUserIdentity(parseInt(args[1]))
 			if identity then
 				vRP.execute("vRP/set_banned",{ steam = tostring(identity.steam), banned = 0 })
+				SendWebhookMessage(webhooklinkBan,  "UserID: [" ..user_id.."]  Removeu ban em: " ..parseInt(args[1]).. "  Steam: " ..steam.. " . ")
 			end
 		end
 	end
@@ -252,6 +273,8 @@ RegisterCommand("group",function(source,args,rawCommand)
 		if vRP.hasPermission(user_id,"Admin") then
 			if not vRP.hasPermission(parseInt(args[1]),tostring(args[2])) then
 				vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = tostring(args[2]) })
+				SendWebhookMessage(webhooklinkGrupo,  "UserID: [" ..user_id.."]  Adicinou: " ..args[1].. " Grupo: "..tostring(args[2])..  "  . ")
+				--SendWebhookMessage(webhooklinkGrupo,  "TESTEEEEEE")
 			end
 		end
 	end
@@ -265,6 +288,7 @@ RegisterCommand("ungroup",function(source,args,rawCommand)
 		if vRP.hasPermission(user_id,"Admin") then
 			if vRP.hasPermission(parseInt(args[1]),tostring(args[2])) then
 				vRP.execute("vRP/del_group",{ user_id = parseInt(args[1]), permiss = tostring(args[2]) })
+				SendWebhookMessage(webhooklinkGrupo,  "UserID: [" ..user_id.."]  Removeu: " ..args[1].. " Grupo: "..tostring(args[2])..  "  . ")
 			end
 		end
 	end
@@ -372,10 +396,15 @@ end) ]]
 
 RegisterCommand('fix',function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
+	local x,y,z = vRPclient.getPositions(source)
+	
 	if vRP.hasPermission(user_id,"Admin") then
 		local vehicle = vRPclient.getNearVehicle(source,7)
-		if vehicle then
+		local vehicle,vehNet,vehPlate,vehName = vRPclient.vehList(source,7)
+		local plateUser = vRP.getVehiclePlate(vehPlate)
+		if vehicle then 
 			TriggerClientEvent('reparar',source,vehicle)
+			SendWebhookMessage(webhooklinkgod,  "UserID: [" ..user_id.."]  Usou Fix Coords: "..x..", "..y..", "..z..  "  Placa: " ..vehPlate.. " .")
 		end
 	end
 end)
