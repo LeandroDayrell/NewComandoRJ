@@ -194,15 +194,12 @@ function blzr.GerarPagamento(placa, nomeFeio, nomeBonito)
     local user_id = vRP.getUserId(source)
     local identity = vRP.getUserIdentity(user_id)
     for k, v in pairs(CarrosDesmanches) do
-        print('Placa 01: '..placa)
         if string.upper(k) == string.upper(nomeFeio) then
             local pagamento = v
             -- vRP.giveMoney(user_id,pagamento) -- DINHEIRO LIMPO
             vRP.giveInventoryItem(user_id,'dinheirosujo',pagamento) -- DINHEIRO SUJO
 
             local puser_id = vRP.getUserByRegistration(placa)
-            print('Placa 02: '..placa)
-            print('Placa 03: '..puser_id)
             if puser_id then
                 local value = vRP.getUData(puser_id,'vRP:multas')
                 local multas = json.decode(value) or 0

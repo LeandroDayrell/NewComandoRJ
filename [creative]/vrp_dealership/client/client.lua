@@ -323,13 +323,11 @@ RegisterNUICallback(
             
             testDriveEntity = CreateVehicle(hash, -995.79,-3470.07,13.95,57.81, 1, 1)
             SetPedIntoVehicle(PlayerPedId(), testDriveEntity, -1)
-            local timeGG = GetGameTimer()
-            ---print('Teste Aqui')            
+            local timeGG = GetGameTimer()         
             local vehicle,vehNet,vehPlate,vehName = vRP.vehList(7)
             -- CRIAR UNLOCK DO VEICULO AQUI
             TriggerServerEvent("setPlateEveryone",vehPlate)
             TriggerEvent("setPlatePlayers",vehPlate,user_id)
-            --print(vehPlate)
 
         --    SetVehicleCustomPrimaryColour(testDriveEntity,  math.ceil(rgbColorSelected[1]), math.ceil(rgbColorSelected[2]), math.ceil(rgbColorSelected[3]))
          --   SetVehicleCustomSecondaryColour(testDriveEntity,  math.ceil(rgbSecondaryColorSelected[1]), math.ceil(rgbSecondaryColorSelected[2]), math.ceil(rgbSecondaryColorSelected[3]))

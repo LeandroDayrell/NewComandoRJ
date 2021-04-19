@@ -13,7 +13,6 @@ local using_bennys = {}
 
 function sergin.checkPermission()
     local source = source
-    print("sdfdfed")
     return vRP.hasPermission(vRP.getUserId(source), "Admin")
 end
 
@@ -22,8 +21,6 @@ function sergin.getSavedMods(vehicle_name, vehicle_plate)
     local source = source
     local user_id = vRP.getUserId(source)
     --local vehicle_owner_id = vRP.getUserByRegistration(vehicle_plate)
-    print('Save no custom')
-   --print(vehicle_owner_id)
     return json.decode(vRP.getSData("custom:u" .. user_id .. "veh_" .. tostring(vehicle_name)) or {}) or {}
 end
 

@@ -175,7 +175,6 @@ Citizen.CreateThread(function()
 							local random = math.random(100)
 							if random >= 98 then
 								oC.callPolice(x,y,z)
-								print('Voce iniciou a coleta facil')
 							end
 							TriggerEvent('cancelando',true)
 							armas = CreateObject(GetHashKey("gr_prop_gr_crates_weapon_mix_01a"),locs[selecionado].x-1.0,locs[selecionado].y,locs[selecionado].z-1.1,true,true,true)
@@ -259,7 +258,6 @@ Citizen.CreateThread(function()
 							local random = math.random(100)
 							if random >= 95 then
 								oC.callPolice(x,y,z)
-								print('Voce iniciou a coleta mediana')
 							end
 							TriggerEvent('cancelando',true)
 							armas = CreateObject(GetHashKey("gr_prop_gr_crates_weapon_mix_01a"),locs[selecionado].x-1.0,locs[selecionado].y,locs[selecionado].z-1.1,true,true,true)
@@ -327,7 +325,6 @@ Citizen.CreateThread(function()
 	while true do
 		local idle = 2000
 		if servicodificil then
-			---print('TESTE 01')
 			local ped = PlayerPedId()
 			--local coords = GetEntityCoords(ped)
 			local x,y,z = table.unpack(GetEntityCoords(ped))
@@ -338,20 +335,14 @@ Citizen.CreateThread(function()
 				idle = 5
 				DrawMarker(21,locs[selecionado].x,locs[selecionado].y,locs[selecionado].z-0.6,0,0,0,0.0,0,0,0.5,0.5,0.4,255,0,0,50,0,0,0,1)
 				if distance <= 3 then
-					--print('TESTE 02')
 					DrawText3D(locs[selecionado].x,locs[selecionado].y,locs[selecionado].z, "[~r~E~w~] para coletar as ~r~PEÇAS DE ARMA~w~.")
 					if IsControlJustPressed(0,38) and oC.checkPermissao() and not IsPedInAnyVehicle(ped) then
-						--print('TESTE 3')
 						--if oC.checkPaymentdificil() then
 							local random = math.random(100)
-							--print(random)
 							if random >= 1 then
-								--print(random)
 								oC.callPolice(x,y,z)
-								--print('Voce iniciou a coleta dificil')
 							end
 							TriggerEvent('cancelando',true)
-							--print('TESTE 04')
 							armas = CreateObject(GetHashKey("gr_prop_gr_crates_weapon_mix_01a"),locs[selecionado].x-1.0,locs[selecionado].y,locs[selecionado].z-1.1,true,true,true)
 							RemoveBlip(blips)
 							backentrega = selecionado

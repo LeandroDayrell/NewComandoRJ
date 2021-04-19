@@ -351,10 +351,6 @@ RegisterCommand("detido",function(source,args,rawCommand)
 					if inVehicle[1] then
 						if inVehicle[1].arrest <= 0 then
 							vRP.execute("vRP/set_arrest",{ user_id = parseInt(plateUser), vehicle = vehName, arrest = 1, time = parseInt(os.time()) })
-							print(user_id)
-							print(plateUser)
-							print(vehicle)
-							print(vehName)
 							TriggerClientEvent("Notify",source,"sucesso","O veículo foi apreendido no galpão da polícia.",5000)
 						else
 							TriggerClientEvent("Notify",source,"importante","O veículo está no galpão da polícia.",5000)
@@ -1152,12 +1148,9 @@ end)
 --[[ RegisterCommand('ptrid',function(source,args,rawCommand)
     local policia = vRP.hasPermission("Police")
 	local users_id = ""
-	print('Teste 1')
 	for k,v in pairs(policia) do
 		users_id = users_id..v..", "
-		print('Teste 2')
 	end
-	print('Teste 3')
 	TriggerClientEvent('chatMessage',source,"Alerta",{255,0,0},users_id)
 end)
 
@@ -1176,14 +1169,11 @@ end)
 RegisterCommand('ptr',function(source,args,rawCommand)
 	local policia = vRP.hasPermission("Police")
 		local players = ""
-		--print('teste')
 		for k,v in pairs(policia) do
 			if k ~= #policia then
 				players = players..", "
 			end
 			players = players..k
-			print('------------')
-			print(players)
 		end
 		TriggerClientEvent('chatMessage',source,"ID's ONLINE",{1, 136, 0},players)
 
@@ -1215,14 +1205,11 @@ RegisterCommand('pon',function(source,args,rawCommand)
 		local players = ""
 		local quantidade = 0
 		for k,v in pairs(users) do
-			print(users)
 			if k ~= #users then
 				players = players..", "
 			end
 			players = players..k
 			quantidade = quantidade + 1
-			print('------------')
-			print(players)
 		end
 		TriggerClientEvent('chatMessage',source,"TOTAL ONLINE",{1, 136, 0},quantidade)
 		TriggerClientEvent('chatMessage',source,"ID's ONLINE",{1, 136, 0},players)

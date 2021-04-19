@@ -27,8 +27,6 @@ Citizen.CreateThread(function()
 		if not IsPedInAnyVehicle(ped) then
 			local coords = GetEntityCoords(ped)
 
-			--local coordss = GetOffsetFromEntityInWorldCoords(ped,0.0,0.45,1.0)
-			--print(coordss.x,coordss.y,coordss.z)
 
 			for k,v in pairs(vars) do
 				local distance = #(coords - vector3(v.x,v.y,v.z))

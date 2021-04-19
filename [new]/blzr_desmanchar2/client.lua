@@ -139,7 +139,6 @@ Citizen.CreateThread(function()
 
                 if qtdPecasRemovidas == PecasVeh then
                     etapa = 3
-                    -- print('Tudo desmontado, passando proxima etapa')
                     TriggerEvent('Notify', 'sucesso', 'VEÍCULO DESMANCHADO COM SUCESSO!', 'Vá até a bancada e anuncie o chassi do veículo.')
                 end
 
@@ -252,9 +251,7 @@ end)
     while true do
         if vSERVER.CheckPerm() then
             permitido = true
-            -- print('PERMITIDO')
         else
-            -- print('N PERMITIDO')
             permitido = false
         end
         -- Wait(5000)  TESTEEEEE

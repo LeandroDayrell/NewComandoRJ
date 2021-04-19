@@ -21,12 +21,9 @@ vHOMES = Tunnel.getInterface("vrp_homes")
 --[[ -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterCommand('dv',function(source,args,rawCommand)
     local user_id = vRP.getUserId(source)
-	--print('teste 0.1')
     if vRP.hasPermission(user_id,"Admin") then --vRP.hasPermission(user_id,"mecanico.permissao") or vRP.hasPermission(user_id,"diretor.permissao") or vRP.hasPermission(user_id,"playerzin.permissao") then
         local vehicle = vRPclient.getNearVehicle(source,7)
-		--print('teste 0.2')
 		if vehicle then
-			--print('teste 01')
 			vAZgarage.forceDespawnUserVehicle(source, vRPclient.getNetVehicle(source, vehicle))
 			SendWebhookMessage(webhooklinkchat,  "```" ..user_id.." Usou o comando " ..rawCommand.. "```")
         end
@@ -35,7 +32,6 @@ end)
 RegisterNetEvent('deletarveiculo')
 AddEventHandler('deletarveiculo',function(vehicle)
     TriggerServerEvent("vrp_garages:admDelete",VehToNet(vehicle))
-	--print('teste 02')
 end) ]]
 
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -56,11 +52,7 @@ end) ]]
     if vRP.hasPermission(user_id,"Admin") then --vRP.hasPermission(user_id,"mecanico.permissao") or vRP.hasPermission(user_id,"diretor.permissao") or vRP.hasPermission(user_id,"playerzin.permissao") then
         local vehicle = vRPclient.getNearVehicle(source,7)
 		if vehicle then
-			print('teste 01')
 			vAZgarage.forceDespawnUserVehicle(source, vRPclient.getNetVehicle(source, vehicle))
-			print('teste 2')
-			print(vehicle)
-			print(source)
 			--SendWebhookMessage(webhooklinkchat,  "```" ..user_id.." Usou o comando " ..rawCommand.. "```")
         end
     end
@@ -68,7 +60,6 @@ end)
 RegisterNetEvent('deletarveiculo')
 AddEventHandler('deletarveiculo',function(vehicle)
     TriggerServerEvent("vrp_garages:admDelete",VehToNet(vehicle))
-	print('DELETAR VEICULO SERVER')
 end)
 
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -77,7 +68,6 @@ end)
 RegisterServerEvent("trydeleteveh")
 AddEventHandler("trydeleteveh",function(index)
 	TriggerClientEvent("syncdeleteveh",-1,index)
-	print('TRY DELETE VEH')
 end) ]]
 
 -----------------------------------------------------------------------------------------------------------------------------------------

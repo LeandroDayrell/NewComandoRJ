@@ -145,7 +145,6 @@ end
 	local copAmount = vRP.numPermission("Police")
 	for k,v in pairs(copAmount) do
 		async(function()
-			print('teste 1')
 			local id = idgens:gen()
 			--TriggerClientEvent("NotifyPush",v,{ code = 31, title = "Ocorrencia Peca de arma ", x = x, y = y, z = z, rgba = {170,80,25} })
 			TriggerClientEvent("NotifyPush",v,{ code = 31, title = "Ocorrencia de peca de arma", x = x, y = y, z = z, rgba = {15,110,110} })
@@ -173,8 +172,6 @@ function oC.callPolice(x,y,z)
 					--blips[id] = vRPclient.addBlip(player,x,y,z,10,84,"Ocorrência",0.5,false)
 					--vRPclient._playSound(player,"CONFIRM_BEEP","HUD_MINI_GAME_SOUNDSET")
 					TriggerEvent("NotifyPush",v,{ code = 31, title = "Ocorrencia de peca de arma", x = x, y = y, z = z, rgba = {15,110,110} })
-					print('Coordenadas '..x..', '..y..', '..z..' .')
-					print('teste')
 					SetTimeout(20000,function() vRPclient.removeBlip(player,blips[id]) idgens:free(id) end)
 				end)
 			end
