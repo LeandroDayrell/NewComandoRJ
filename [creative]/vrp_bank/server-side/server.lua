@@ -12,16 +12,16 @@ Tunnel.bindInterface("vrp_bank",cRP)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- REQUESTWANTED
 -----------------------------------------------------------------------------------------------------------------------------------------
-function cRP.requestWanted()
-	local source = source
-	local user_id = vRP.getUserId(source)
-	if user_id then
-		if not vRP.wantedReturn(user_id) then
-			return true
-		end
-		return false
-	end
-end
+-- function cRP.requestWanted()
+-- 	local source = source
+-- 	local user_id = vRP.getUserId(source)
+-- 	if user_id then
+-- 		if not vRP.wantedReturn(user_id) then
+-- 			return true
+-- 		end
+-- 		return false
+-- 	end
+-- end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- REQUESTBANK
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -30,7 +30,7 @@ function cRP.requestBank()
 	local user_id = vRP.getUserId(source)
 	if user_id then
 		local identity = vRP.getUserIdentity(user_id)
-		return vRP.getBank(user_id),identity.name,identity.name2
+		return identity.bank
 	end
 end
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -66,6 +66,33 @@ function cRP.finesPayment(id,price)
 		else
 			TriggerClientEvent("Notify",source,"negado","Dinheiro insuficiente na sua conta bancária.",5000)
 		end
+	end
+end
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- REQUESTSALARY
+-----------------------------------------------------------------------------------------------------------------------------------------
+function cRP.requestMySalarys()
+	local source = source
+	local user_id = vRP.getUserId(source)
+	if user_id then
+		local salary = {}
+		local consult = vRP.getSalary(user_id)
+		for k,v in pairs(consult) do
+			table.insert(salary,{ id = v.id, user_id = parseInt(v.user_id),  date = v.date, price = parseInt(v.price) })
+		end
+		return salary
+	end
+end
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- SALARYPAYMENT
+-----------------------------------------------------------------------------------------------------------------------------------------
+function cRP.salaryPayment(id,price)
+	local source = source
+	local user_id = vRP.getUserId(source)
+	if user_id then
+		TriggerClientEvent("vrp_bank:Update",source,"requestMySalarys")
+		vRP.execute("vRP/del_salary",{ id = parseInt(id), user_id = parseInt(user_id) })
+		vRP.addBank(user_id,tonumber(price))
 	end
 end
 -----------------------------------------------------------------------------------------------------------------------------------------

@@ -187,8 +187,8 @@ $(document).on("click",".salario",debounce(function(){
 }));
 
 const requestInicio = () => {
-	$('#bank-right').html(`<div class="menu-depositar">
-	
+	$('#bank-right').html(`
+		<div class="menu-depositar">
 			<div class="title-sacar"><b>DEPOSITAR</b><br>Faça um depósito rápido na sua conta bancária.</div>
 			<input id="deposito" class="deposito" maxlength="9" spellcheck="false" value="" placeholder="VALOR..">
 			<div class="depositar">ENVIAR</div>

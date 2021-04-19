@@ -22,6 +22,7 @@ local inService = false
 -- GANGS
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterCommand("gangs",function(source,args)
+	if vSERVER.checkPermission() then
 	if GetEntityHealth(PlayerPedId()) > 101 then
 		if inService then
 			inService = false
@@ -30,6 +31,9 @@ RegisterCommand("gangs",function(source,args)
 			inService = true
 			TriggerEvent("Notify","sucesso","Sistema ativado com sucesso.",5000)
 		end
+	end
+	else
+		TriggerEvent("Notify","negado","Voce nao tem permissao.",5000)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------

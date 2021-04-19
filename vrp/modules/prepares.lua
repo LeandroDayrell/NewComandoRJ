@@ -16,6 +16,12 @@ vRP.prepare("vRP/set_bank","UPDATE vrp_users SET bank = @bank WHERE id = @id")
 vRP.prepare("vRP/add_bank","UPDATE vrp_users SET bank = bank + @bank WHERE id = @id")
 vRP.prepare("vRP/del_bank","UPDATE vrp_users SET bank = bank - @bank WHERE id = @id")
 -----------------------------------------------------------------------------------------------------------------------------------------
+-- PREPARE vRP_SALARY
+-----------------------------------------------------------------------------------------------------------------------------------------
+vRP.prepare("vRP/add_salary","INSERT INTO vrp_salary(user_id,date,price) VALUES(@user_id,@date,@price)")
+vRP.prepare("vRP/get_salary","SELECT * FROM vrp_salary WHERE user_id = @user_id")
+vRP.prepare("vRP/del_salary","DELETE FROM vrp_salary WHERE id = @id AND user_id = @user_id")
+-----------------------------------------------------------------------------------------------------------------------------------------
 -- PREPARE VRP_USERS
 -----------------------------------------------------------------------------------------------------------------------------------------
 vRP.prepare("vRP/create_user","INSERT INTO vrp_infos(steam) VALUES(@steam)")

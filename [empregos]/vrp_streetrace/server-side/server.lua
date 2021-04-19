@@ -41,11 +41,20 @@ end
 function cRP.startRace()
 	local copAmount = vRP.numPermission("Police")
 	for k,v in pairs(copAmount) do
-		async(function()
+		async(function() ---
 			TriggerClientEvent("Notify",v,"importante","Recebemos um relato de um corredor ilegal.",5000)
 		end)
 	end
 	return parseInt(race)
+end
+
+function cRP.callPolice(x,y,z)
+	local copAmount = vRP.numPermission("Police")
+	for k,v in pairs(copAmount) do
+		async(function()
+			TriggerClientEvent("NotifyPush",v,{ code = 31, title = "UM CORREDOR ILEGAL PASSOU EM UM RADAR", x = x, y = y, z = z, rgba = {170,80,25} })
+		end)
+	end
 end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- RANDOMPOINT

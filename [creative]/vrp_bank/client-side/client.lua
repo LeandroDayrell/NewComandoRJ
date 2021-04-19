@@ -38,7 +38,7 @@ Citizen.CreateThread(function()
 				if distance <= 2 then
 					timeDistance = 4
 					DrawText3D(v[1],v[2],v[3],"~g~E~w~   ABRIR")
-					if IsControlJustPressed(1,38) and vSERVER.requestWanted() then				
+					if IsControlJustPressed(1,38) --[[ and vSERVER.requestWanted()]] then				
 						SetNuiFocus(true,true)
 						SendNUIMessage({ action = "showMenu" })
 					end
@@ -60,9 +60,12 @@ end)
 -- REQUESTBANK
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterNUICallback("requestBank",function(data,cb)
-	local resultado,nome,sobrenome = vSERVER.requestBank()
+	local resultado = vSERVER.requestBank()
+	while identity do
+		Citizen.Wait(10)
+	end
 	if resultado then
-		cb({ resultado = resultado, nome = nome, sobrenome = sobrenome })
+		cb({ resultado = resultado })
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -70,6 +73,11 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterNUICallback("requestFines",function(data,cb)
 	local resultado = vSERVER.requestFines()
+	while not resultado do
+		resultado = vSERVER.requestFines()
+		Citizen.Wait(10)
+	end
+
 	if resultado then
 		cb({ resultado = resultado })
 	end
@@ -83,10 +91,37 @@ RegisterNUICallback("finesPayment",function(data)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
+-- REQUESTSALARY
+-----------------------------------------------------------------------------------------------------------------------------------------
+RegisterNUICallback("requestMySalarys",function(data,cb)
+	local resultado = vSERVER.requestMySalarys()
+	while not resultado do
+		resultado = vSERVER.requestMySalarys()
+		Citizen.Wait(10)
+	end
+
+	if resultado then
+		cb({ resultado = resultado })
+	end
+end)
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- SALARYPAYMENT
+-----------------------------------------------------------------------------------------------------------------------------------------
+RegisterNUICallback("salaryRecipe",function(data)
+	if data.id ~= nil then
+		vSERVER.salaryPayment(data.id,data.price)
+	end
+end)
+-----------------------------------------------------------------------------------------------------------------------------------------
 -- REQUESTINVOICES
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterNUICallback("requestInvoices",function(data,cb)
 	local resultado = vSERVER.requestInvoices()
+	while not resultado do
+		resultado = vSERVER.requestInvoices()
+		Citizen.Wait(10)
+	end
+
 	if resultado then
 		cb({ resultado = resultado })
 	end
@@ -96,6 +131,11 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterNUICallback("requestMyInvoices",function(data,cb)
 	local resultado = vSERVER.requestMyInvoices()
+	while not resultado do
+		resultado = vSERVER.requestMyInvoices()
+		Citizen.Wait(10)
+	end
+
 	if resultado then
 		cb({ resultado = resultado })
 	end

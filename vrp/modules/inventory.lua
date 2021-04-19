@@ -570,13 +570,13 @@ local itemlist = {
 		index = "dollars",
 		name = "Dinheiro",
 		type = "use",
-		weight = 0.0002
+		weight = 0.0001
 	},
 	["dollars2"] = {
 		index = "dollars2",
 		name = "Rolo de Dinheiro",
 		type = "use",
-		weight = 0.0004
+		weight = 0.0001
 	},
 	["blackcard"] = {
 		index = "blackcard",

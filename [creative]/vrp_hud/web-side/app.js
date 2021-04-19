@@ -108,7 +108,7 @@ $(document).ready(function(){
 				}
 
 				$("#vehicleGas").html("<s>GAS</s> "+ parseInt(event.data.fuel));
-				$("#vehicleSpeed").html("<s>MPH</s> "+ parseInt(event.data.speed));
+				$("#vehicleSpeed").html("<s>KM/H</s> "+ parseInt(event.data.speed));
 			}
 		}
 

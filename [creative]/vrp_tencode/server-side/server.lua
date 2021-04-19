@@ -14,13 +14,10 @@ Tunnel.bindInterface("vrp_tencode",cRP)
 -- VARIABLES
 -----------------------------------------------------------------------------------------------------------------------------------------
 local codes = {
-	[10] = "Confronto em andamento",
-	[13] = "Oficial ferido",
-	[20] = "Localização",
-	[32] = "Homem armado",
-	[38] = "Parando veículo suspeito",
-	[50] = "Acidente de trânsito",
-	[78] = "Reforço solicitado"
+	[10] = "Q.T.I - A caminho",
+    [20] = "Q.R.T - Oficial ferido",
+    [30] = "Q.T.H - Localização",
+    [40] = "Q.R.R - Reforço solicitado"
 }
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- SENDCODE

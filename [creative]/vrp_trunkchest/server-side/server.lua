@@ -118,6 +118,15 @@ local storeVehs = {
 	["stockade"] = {
 		["pouch"] = true
 	},
+	["dinghy"] = {
+		["bait"] = true
+	},
+	["marquis"] = {
+		["bait"] = true
+	},
+	["seashark"] = {
+		["bait"] = true
+	},
 	["trash"] = {
 		["plastic"] = true,
 		["glass"] = true,

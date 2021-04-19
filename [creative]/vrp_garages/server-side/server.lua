@@ -95,6 +95,7 @@ local garages = {
 	[43] = { ["name"] = "HPolice", ["payment"] = false, ["perm"] = "Police" },
 	[44] = { ["name"] = "Police", ["payment"] = false, ["perm"] = "Police" },
 	[45] = { ["name"] = "PostOP", ["payment"] = false, ["public"] = true },
+	[46] = { ["name"] = "Fisherman", ["payment"] = false, ["public"] = true },
 	[501] = { ["name"] = "Middle001", ["payment"] = false, ["perm"] = false },
 	[502] = { ["name"] = "Middle002", ["payment"] = false, ["perm"] = false },
 	[503] = { ["name"] = "Middle003", ["payment"] = false, ["perm"] = false },
@@ -440,6 +441,7 @@ local workgarage = {
 		"deathbike",
 		"hexer",
 		"sanctus",
+		"gburrito",
 		"gargoyle"
 	},
 	["Lowrider"] = {
@@ -652,9 +654,11 @@ function cnVRP.spawnVehicles(name,use) --
 				end
 
 				if garages[use].payment and not vRP.getPremium(parseInt(user_id)) then
-					if vRP.getBank(parseInt(user_id)) >= parseInt(vRP.vehiclePrice(name)*0.05) then
+					if vRP.getBank(parseInt(user_id)) >= parseInt(200) then
+					--if vRP.getBank(parseInt(user_id)) >= parseInt(vRP.vehiclePrice(name)*0.05) then
 						local status,vehid = vCLIENT.spawnVehicle(source,name,vehicle[1].plate,vehicle[1].engine,vehicle[1].body,vehicle[1].fuel,custom,vehicle[1].windows,vehicle[1].doors,vehicle[1].tyres)
-						if status and vRP.paymentBank(parseInt(user_id),parseInt(vRP.vehiclePrice(name)*0.05)) then
+						if vRP.getBank(parseInt(user_id)) >= parseInt(200) then
+						--if status and vRP.paymentBank(parseInt(user_id),parseInt(vRP.vehiclePrice(name)*0.05)) then
 							vehlist[vehid] = { parseInt(user_id),name }
 							spanwedVehs[name..user_id] = true
 

@@ -621,7 +621,6 @@ Citizen.CreateThread(function()
 	while true do
 		local timeDistance = 100
 		local ped = PlayerPedId()
-
 		if IsPedInAnyVehicle(ped) then
 			local coords = GetEntityCoords(ped)
 
@@ -663,8 +662,20 @@ Citizen.CreateThread(function()
 							inRace = false
 							raceTime = 0
 						else
-							racePos = racePos + 1
-							SetNewWaypoint(race[raceSelect][racePos][1]+0.0001,race[raceSelect][racePos][2]+0.0001)
+								racePos = racePos + 1
+								SetNewWaypoint(race[raceSelect][racePos][1]+0.0001,race[raceSelect][racePos][2]+0.0001)
+								local x,y,z = GetEntityCoords(ped)
+								local random = math.random(100)
+								if random >= 70 then
+
+									local ped = PlayerPedId()
+									--local coords = GetEntityCoords(ped)
+									local x,y,z = table.unpack(GetEntityCoords(ped))
+									--local x,y,z = vRPclient.getPositions(source)
+									vSERVER.callPolice(x,y,z)
+									print(random)
+									print('CHAMOU A POLICIA ZÉ')
+								end
 						end
 					end
 				end

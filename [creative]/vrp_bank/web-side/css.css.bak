@@ -30,6 +30,7 @@ button {
 	background: url("images/x.png");
 	transform: translate(-50%,-50%);
 	border: 0;
+	border-radius: 100px;
 	margin-top: -265px;
 	margin-left: 465px;
 }
