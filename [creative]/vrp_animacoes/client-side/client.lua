@@ -592,7 +592,7 @@ local animacoes = {
 	["boboalegre"] = { dict = "rcm_barry2", anim = "clown_idle_0" , andar = false , loop = true },
 	["boboalegre2"] = { dict = "rcm_barry2", anim = "clown_idle_1" , andar = false , loop = true },
 	["boboalegre3"] = { dict = "rcm_barry2", anim = "clown_idle_3" , andar = false , loop = true },
-	["namaste"] = { dict = "timetable@amanda@ig_4", anim = "ig_4_base" , andar = false , loop = true }
+	["namaste"] = { dict = "timetable@amanda@ig_4", anim = "ig_4_base" , andar = false , loop = true },
 
 	["sentar2"] = { dict = "amb@world_human_picnic@male@base" , anim = "base" , andar = false , loop = true },
 	["sentar3"] = { dict = "anim@heists@fleeca_bank@ig_7_jetski_owner" , anim = "owner_idle" , andar = false , loop = true },
@@ -614,7 +614,7 @@ local animacoes = {
 	["sentar"] = { dict = "timetable@ron@ig_3_couch" , anim = "base" , andar = false , loop = true },
 	["sentar19"] = { dict = "timetable@jimmy@mics3_ig_15@" , anim = "mics3_15_base_tracy" , andar = false , loop = true },
 	["sentar20"] = { dict = "timetable@maid@couch@" , anim = "base" , andar = false , loop = true },
-	["sentar21"] = { dict = "timetable@ron@ron_ig_2_alt1" , anim = "ig_2_alt1_base" , andar = false , loop = true },\
+	["sentar21"] = { dict = "timetable@ron@ron_ig_2_alt1" , anim = "ig_2_alt1_base" , andar = false , loop = true },
 	["colher"] = { dict = "creatures@rottweiler@tricks@" , anim = "petting_franklin" , andar = false , loop = false },
 	["meditar2"] = { dict = "rcmepsilonism3" , anim = "ep_3_rcm_marnie_meditating" , andar = false , loop = true },
 	["meditar3"] = { dict = "rcmepsilonism3" , anim = "base_loop" , andar = false , loop = true },
