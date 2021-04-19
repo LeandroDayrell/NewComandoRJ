@@ -155,7 +155,7 @@ function TriggerCreateCharacter()
 	StartFade()
 	continuousFadeOutNetwork = true
 	TriggerCamController(-2)
-	print("PEDI PRA SETAR",sex)
+
 	if sex == "F" then
 		changeGender("mp_f_freemode_01")
 		currentCharacterMode.gender = 1
@@ -325,7 +325,7 @@ RegisterNUICallback('cDoneSave',function(data,cb)
 			NetworkFadeInEntity(GetPlayerPed(id),true)
 		end
 	end
-	print(myInfo.name,myInfo.name2,json.encode(currentCharacterMode))
+
 	TriggerServerEvent("b2k-character:finishedCharacter",myInfo.name,myInfo.name2,currentCharacterMode)
 
 	-- back to vrp_spawn
@@ -429,7 +429,7 @@ function TaskUpdateFaceOptions()
 end
 
 RegisterNUICallback('UpdateHeadOptions',function(data,cb)
-	print(json.encode(currentCharacterMode))
+
 	currentCharacterMode.hairModel = data.hairModel
 	currentCharacterMode.firstHairColor = data.firstHairColor
 	currentCharacterMode.secondHairColor = data.secondHairColor
@@ -521,20 +521,21 @@ end
 
 RegisterNetEvent("vrp_spawn:spawnChar")
 AddEventHandler("vrp_spawn:spawnChar",function(status, gender)
-
-	Citizen.Wait(1000)
 	TriggerEvent("destroy:cam")
+	Citizen.Wait(1000)
 	FreezeEntityPosition(PlayerPedId(),false)
 	
 	SetCamActive(cam,false)
 	DestroyCam(cam,true)
 	cam = nil
 	if status then
+	
 		TriggerCamController(-1)
 		EndFade()
 		doStatus = 2
 		TriggerCamController(doStatus)
 	else
+		
 		TriggerCamController(-1)
 		TriggerEvent("vrp_login:Spawn",true)
 	end

@@ -34,6 +34,7 @@ local CarrosDesmanches = {
 -------------------------------------------------------------------------| 
     
     ['150'] = 8500,
+    ['brioso'] = 8500,
     ['cyclone'] = 8500,
     ['contender'] = 8500,
     ['amarok'] = 380000,
@@ -175,28 +176,12 @@ function blzr.GerarPagamento(placa, nomeFeio, nomeBonito)
     for k, v in pairs(CarrosDesmanches) do
         if string.upper(k) == string.upper(nomeFeio) then
             local pagamento = v
-            -- vRP.giveMoney(user_id,pagamento) -- DINHEIRO LIMPO
-            vRP.giveInventoryItem(user_id,'dollars',pagamento,true) -- DINHEIRO SUJO
+            vRP.giveInventoryItem(user_id,'dollars2',pagamento,true) -- DINHEIRO SUJO
             local vehicle,vehNet,vehName = vRPclient.vehList(source,7)
-            print('Placa 01: '..placa)
             local plateUser = placa
-            print('Placa 02')
-            print(plateUser)
-            print('Placa 02: '..placa)
-            print(nomeFeio)
-            print(nomeBonito)
-            --local plateUser = vRP.getVehiclePlate(vehPlate)
-		    local inVehicle = vRP.query("vRP/get_vehicles",{ user_id = parseInt(plateUser), vehicle = vehName })
-            print('Placa 03')
-             vRP.execute("vRP/set_desmanche",{ user_id = parseInt(plateUser), vehicle = vehName, desmanche = 1, time = parseInt(os.time()) })
-             print('---------------------')
-             print(user_id)
-             print(plateUser)
-             print(vehicle)
-             print(NomeFeio)
-
-           -- TriggerClientEvent('Notify', source, 'sucesso', 'Vendedor Desmanche', 'Você recebeu <b>R$'..vRP.format(pagamento)..'</b> pelo desmanche de um <b>'..nomeBonito..' ('.. nomeFeio..' - PLACA [' .. placa .. '])</b>.' )
-            print('teste 04')
+            local vehName = nomeFeio
+             vRP.execute("vRP/set_desmanche",{ user_id = parseInt(user_id), vehicle = vehName, desmanche = 1, time = parseInt(os.time()) }) 
+            vCLIENT.deleteVehicle(source,vehicle)
         end
     end
 end  

@@ -19,10 +19,10 @@ vRPclient = Proxy.getInterface("vRP")
 -- CONFIG
 ---------------------------------------------------------------------
 -- FV
-local IniciarServico = {1550.1058349609,3513.2780761719,36.00191116333} -- Onde se inicia o serviço e verifica a existência de um carro
+local IniciarServico = {1549.85,3513.42,36.0} -- Onde se inicia o serviço e verifica a existência de um carro
 local LocalDesmancharCarro = {1534.2850341797,3547.125,36.959651947021} -- Onde deve haver o carro que será desmanchado para poder continuar o desmanche
-local LocalFerramentas = {1545.8757324219,3535.7072753906,35.362930297852} -- Local onde 'pegará' as ferramentas
-local AnuncioChassi = {1556.4431152344,3523.3920898438,36.119968414307} -- Onde finalizará a missão para entregar o chassi e receber dinheiro e itens
+local LocalFerramentas = {1553.51,3515.0,36.01} -- Local onde 'pegará' as ferramentas
+local AnuncioChassi = {1556.33,3523.36,36.12} -- Onde finalizará a missão para entregar o chassi e receber dinheiro e itens
 local Computador = {1, 1, 1} -- Local onde ficará o computador de venda
 ---------------------------------------------------------------------
 --VARIAVEIS
@@ -126,7 +126,7 @@ Citizen.CreateThread(function()
                             vRP._playAnim(false,{"anim@amb@clubhouse@tutorial@bkr_tut_ig3@","machinic_loop_mechandplayer"},true)
                             TriggerEvent('progress', 5000, 'PEGANDO FERRAMENTAS')
 
-                            -- Wait(5000)  TESTEEEEE  
+                            Wait(5000) 
 
                             etapa = 2
                             TriggerEvent('Notify', 'sucesso', 'FERRAMENTAS PEGAS!', 'Você pegou todas as ferramentas, vá e desmanche o veículo.')
@@ -204,12 +204,12 @@ Citizen.CreateThread(function()
                             SetEntityHeading(ped, AnuncioChassi[4])
                             vRP.playAnim(false, {{"anim@heists@prison_heistig1_p1_guard_checks_bus", "loop"}}, true)
                             TriggerEvent('progress', 5000, 'ANUNCIANDO CHASSI DO VEÍCULO')
-                            -- Wait(5000)  TESTEEEEE
+                            Wait(5000)
                             FreezeEntityPosition(ped, false)
                             ClearPedTasks(ped)
                             vSERVER.GerarPagamento(placa, nomeCarro, modeloCarro)
                             DeletarVeiculo(veh)
-                            deleteVehicle(source,veh) --teste
+                           -- deleteVehicle(source,veh) --teste
                             etapa = 0 
                             PosVeh = {}
                             PecasRemovidas = {}

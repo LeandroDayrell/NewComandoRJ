@@ -18,6 +18,9 @@ local config = {
 	["procopio"] = { -772.94,5593.45,33.49 },
 	["davis"] = { 27.66,-1763.32,29.32 }
 }
+
+
+local first = false
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- VARIABLES
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -34,6 +37,7 @@ AddEventHandler("vrp_login:Spawn",function(status)
 
 		SetNuiFocus(true,true)
 		SendNUIMessage({ display = true })
+		first = true
 	else
 		SetEntityVisible(ped,true,false)
 		SetEntityInvincible(ped,false)
@@ -51,6 +55,12 @@ end)
 -- SPAWN
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterNUICallback("spawn",function(data,cb)
+
+	if first then
+		TriggerEvent("spawndebug")
+	end
+
+
 	local ped = PlayerPedId()
 	if data.choice == "spawn" then
 		SetNuiFocus(false)
@@ -88,7 +98,6 @@ RegisterNUICallback("spawn",function(data,cb)
 
 		SetCamCoord(cam,x,y,z+200.0)
 		local i = z + 200.0
-
 		while i > config[data.choice][3] + 1.5 do
 			Citizen.Wait(5)
 			i = i - speed
@@ -107,7 +116,12 @@ RegisterNUICallback("spawn",function(data,cb)
 				break
 			end
 		end
+	
 	end
+
+	
 
 	cb("ok")
 end)
+
+

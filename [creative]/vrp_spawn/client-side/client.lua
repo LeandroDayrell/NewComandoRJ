@@ -19,7 +19,7 @@ local cam = nil
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterNetEvent("vrp_spawn:setupChars")
 AddEventHandler("vrp_spawn:setupChars",function()
-	print('8')
+
 	SetEntityVisible(PlayerPedId(),false,false)
 	SetEntityInvincible(PlayerPedId(),true)
 
@@ -67,7 +67,7 @@ end)
 -- CHARACTERCHOSEN
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterNUICallback("CharacterChosen",function(data,cb)
-	print('5')
+
 	TriggerServerEvent("vrp_spawn:charChosen",tonumber(data.id))
 	SetNuiFocus(false,false)
 	cb("ok")

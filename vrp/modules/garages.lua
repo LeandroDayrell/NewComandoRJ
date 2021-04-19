@@ -502,6 +502,7 @@ local vehglobal = {
 	["peyote"] = { "Peyote",40,100,"cars" },
 	["pigalle"] = { "Pigalle",40,100,"cars" },
 	["rapidgt3"] = { "Rapidgt 3",40,190000,"cars" },
+	["adder"] = { "Adder",20,190000,"cars" },
 	["retinue"] = { "Retinue",40,100,"cars" },
 	["savestra"] = { "Savestra",40,200000,"cars" },
 	["stinger"] = { "Stinger",40,100,"cars" },
