@@ -18,6 +18,16 @@ local vehChest = {}
 local vehNames = {}
 local vehWeight = {}
 local chestOpen = {}
+
+
+local webhooklinkBAU = "https://discord.com/api/webhooks/833835000650137620/7_5QVpyFoL2NZeaF5VGraYc7qAF3giAV5xWG_6laAwpe27Y9SCQwTFDBdh8fRgQ_K1aq"
+
+function SendWebhookMessage(webhook,message)
+	if webhook ~= nil and webhook ~= "" then
+		PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' })
+	end
+end
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- MOCHILA
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -203,6 +213,7 @@ function cnVRP.storeItem(itemName,slot,amount)
 	if itemName then
 		local source = source
 		local user_id = vRP.getUserId(source)
+		local vehicle,vehNet,vehPlate,vehName = vRPclient.vehList(source,7)
 		if user_id then
 			if storeVehs[vehNames[parseInt(user_id)]] then
 				if not storeVehs[vehNames[parseInt(user_id)]][itemName] then
@@ -217,6 +228,7 @@ function cnVRP.storeItem(itemName,slot,amount)
 			end
 
 			if vRP.storeChestItem(user_id,vehChest[parseInt(user_id)],itemName,amount,parseInt(vehWeight[user_id]),slot) then
+				SendWebhookMessage(webhooklinkBAU,  "UserID: [" ..user_id.."]  Colocou: " ..itemName.. "    Qnt:"..amount.. "    Placa: " ..vehPlate.. " .")
 				TriggerClientEvent("vrp_trunkchest:Update",source,"updateMochila")
 			end
 		end
@@ -229,8 +241,10 @@ function cnVRP.takeItem(itemName,slot,amount)
 	if itemName then
 		local source = source
 		local user_id = vRP.getUserId(source)
+		local vehicle,vehNet,vehPlate,vehName = vRPclient.vehList(source,7)
 		if user_id then
 			if vRP.tryChestItem(user_id,vehChest[parseInt(user_id)],itemName,amount,slot) then
+				SendWebhookMessage(webhooklinkBAU,  "UserID: [" ..user_id.."]  Pegou: " ..itemName.. "    Qnt:"..amount.. "    Placa: " ..vehPlate.. " .")
 				TriggerClientEvent("vrp_trunkchest:Update",source,"updateMochila")
 			end
 		end

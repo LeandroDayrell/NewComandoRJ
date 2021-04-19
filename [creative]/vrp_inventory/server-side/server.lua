@@ -24,6 +24,20 @@ local active = {}
 local dropList = {}
 local firecracker = {}
 local registerTimers = {}
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- DISCORD LOG
+-----------------------------------------------------------------------------------------------------------------------------------------
+function SendWebhookMessage(webhook,message)
+	if webhook ~= nil and webhook ~= "" then
+		PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' })
+	end
+end
+
+local webhooklinkitemenviar = "https://discord.com/api/webhooks/833826430663917640/Y80lpsnILWuQYw7koL72dJ1sadsHuMH5_Fdlk_9tAaeh2WS6lYPKlZESbbgar_pnpTu9"
+local webhooklinkitemusar = "https://discord.com/api/webhooks/833826430663917640/Y80lpsnILWuQYw7koL72dJ1sadsHuMH5_Fdlk_9tAaeh2WS6lYPKlZESbbgar_pnpTu9"
+local webhooklinklockpick = "https://discord.com/api/webhooks/833831615565398037/yecnePzu8K_b4CWMfsCmY3ykAEjQnAwJdrPub0C0XD_dtI-ESq38CqURjZihLjKZ4l-s"
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- REGISTERTIMERS
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -890,6 +904,9 @@ AddEventHandler("vrp_inventory:useItem",function(slot,rAmount)
 
 					if itemName == "lockpick" then
 						local vehicle,vehNet,vehPlate,vehName,vehLock,vehBlock,vehHealth,vehModel,vehClass = vRPclient.vehList(source,3)
+						local source = source
+						local user_id = vRP.getUserId(source)
+						local x,y,z = vRPclient.getPositions(source)
 						if vehicle and vehClass ~= 15 and vehClass ~= 16 then
 							if vRPclient.inVehicle(source) then
 								active[user_id] = 100
@@ -905,6 +922,8 @@ AddEventHandler("vrp_inventory:useItem",function(slot,rAmount)
 									if math.random(100) >= 20 then
 										TriggerEvent("setPlateEveryone",vehPlate)
 										TriggerEvent("setPlatePlayers",vehPlate,user_id)
+										--SendWebhookMessage(webhooklinklockpick,  "```" ..user_id.." enviou para " ..nuser_id.. " Item: " ..itemName.. " Qnt: " .. amount.. ". " "```")
+										SendWebhookMessage(webhooklinklockpick,  "VEICULO - LockPick UserID: [" ..user_id.."]  Placa: " ..vehPlate.. " Local: "..x..", "..y..", "..z..  "  . ")
 									end
 
 									if 100 >= 100 then
@@ -939,6 +958,8 @@ AddEventHandler("vrp_inventory:useItem",function(slot,rAmount)
 									if math.random(100) >= 50 then
 										TriggerEvent("setPlateEveryone",vehPlate)
 										TriggerClientEvent("vrp_inventory:lockpickVehicle",-1,vehNet)
+										--SendWebhookMessage(webhooklinklockpick,  "``` LockPick [" ..user_id.."]  Placa; " ..vehPlate.. " local "..x..","..y..","..z..  "```")
+										SendWebhookMessage(webhooklinklockpick,  "VEICULO - LockPick UserID: [" ..user_id.."]  Placa: " ..vehPlate.. " Local: "..x..", "..y..", "..z..  "  . ")
 									end
 
 									if 100 >= 100 then
@@ -974,9 +995,11 @@ AddEventHandler("vrp_inventory:useItem",function(slot,rAmount)
 									vRP.upgradeStress(user_id,4)
 									vHOMES.enterHomesTheft(source,homeName)
 									TriggerEvent("vrp:homes:ApplyTime",homeName)
+									--SendWebhookMessage(webhooklinklockpick,  "``` LockPick [" ..user_id.."]  Casa; " ..homeName.. " local "..x..","..y..","..z..  "```")
+									SendWebhookMessage(webhooklinklockpick,  "HOME LockPick UserID: [" ..user_id.."]  Placa: " ..homeName.. " Local: "..x..", "..y..", "..z..  "  . ")
 								end
 
-								if parseInt(math.random(1000)) >= 950 then
+								if parseInt(math.random(1000)) >= 800 then
 									vRP.removeInventoryItem(user_id,itemName,1,true,slot)
 								end
 
@@ -1908,6 +1931,7 @@ AddEventHandler("vrp_inventory:sendItem",function(itemName,amount)
 						if vRP.computeInvWeight(nuser_id) + vRP.itemWeightList(itemName) * parseInt(amount) <= vRP.getBackpack(nuser_id) then
 							if vRP.tryGetInventoryItem(user_id,itemName,parseInt(amount),true) then
 								vRP.giveInventoryItem(nuser_id,itemName,parseInt(amount),true)
+								SendWebhookMessage(webhooklinkitemenviar,  "UserID: " ..user_id.." enviou para " ..nuser_id.. " Item: " ..itemName.. " Qnt: " .. amount.. ". ")
 								TriggerClientEvent("vrp_inventory:Update",source,"updateMochila")
 								TriggerClientEvent("vrp_inventory:Update",nplayer,"updateMochila")
 								vRPclient._playAnim(source,true,{"pickup_object","putdown_low"},false)
