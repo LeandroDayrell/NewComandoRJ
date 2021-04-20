@@ -610,7 +610,7 @@ function cnVRP.spawnVehicles(name,use) --
 			if parseInt(vehicle[1].desmanche) >= 1 then
 				local status = vRP.request(source,"Veículo foi DESMANCHADO, deseja acionar o seguro pagando <b>$"..vRP.format(parseInt(vRP.vehiclePrice(name)*0.1)).."</b> dólares?",60)
 				if status then
-					if vRP.paymentBank(user_id,parseInt(vRP.vehiclePrice(name)*0.1)) then
+					if vRP.paymentBank(user_id,parseInt(vRP.vehiclePrice(name)*0.04)) then
 						vRP.execute("vRP/set_desmanche",{ user_id = parseInt(user_id), vehicle = name, desmanche = 0, time = 0 })
 					else
 						TriggerClientEvent("Notify",source,"negado","Dinheiro insuficiente.",5000)
@@ -620,7 +620,7 @@ function cnVRP.spawnVehicles(name,use) --
 			elseif parseInt(os.time()) <= parseInt(vehicle[1].time+24*60*60) then
 					local status = vRP.request(source,"Veículo detido, deseja acionar o seguro pagando <b>$"..vRP.format(parseInt(vRP.vehiclePrice(name)*0.5)).."</b> dólares?",60)
 					if status then
-						if vRP.paymentBank(user_id,parseInt(vRP.vehiclePrice(name)*0.5)) then
+						if vRP.paymentBank(user_id,parseInt(vRP.vehiclePrice(name)*0.04)) then
 							vRP.execute("vRP/set_arrest",{ user_id = parseInt(user_id), vehicle = name, arrest = 0, time = 0 })
 						else
 							TriggerClientEvent("Notify",source,"negado","Dinheiro insuficiente.",5000)
@@ -629,7 +629,7 @@ function cnVRP.spawnVehicles(name,use) --
 			elseif parseInt(vehicle[1].arrest) >= 1 then
 				local status = vRP.request(source,"Veículo detido, deseja acionar o seguro pagando <b>$"..vRP.format(parseInt(vRP.vehiclePrice(name)*0.1)).."</b> dólares?",60)
 				if status then
-					if vRP.paymentBank(user_id,parseInt(vRP.vehiclePrice(name)*0.1)) then
+					if vRP.paymentBank(user_id,parseInt(vRP.vehiclePrice(name)*0.04)) then
 						vRP.execute("vRP/set_arrest",{ user_id = parseInt(user_id), vehicle = name, arrest = 0, time = 0 })
 					else
 						TriggerClientEvent("Notify",source,"negado","Dinheiro insuficiente.",5000)

@@ -118,28 +118,28 @@ local craftList = {
 	},
 	["mineradorCrafting"] = {
 		["list"] = {
-			["Ouro"] = {
+			["ouro"] = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
 					["pepitadeouro"] = 5,
-					["cobre"] = 2
+					["copper"] = 2
 				}
 			},
-			["Prata"] = {
+			["prata"] = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
 					["pepitadeprata"] = 5,
-					["cobre"] = 2
+					["copper"] = 2
 				}
 			},
-			["Bronze"] = {
+			["bronze"] = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
 					["pepitadebronze"] = 5,
-					["cobre"] = 2
+					["copper"] = 2
 				}
 			}
 		}

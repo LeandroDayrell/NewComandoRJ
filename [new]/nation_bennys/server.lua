@@ -8,6 +8,7 @@ sergin = {}
 Tunnel.bindInterface("nation_bennys",sergin)
 Tunnel.bindInterface('az-garages', vAZ)
 cnVRP = Proxy.getInterface('vrp_garages')
+vGARAGE = Tunnel.getInterface("vrp_garages")
 
 local using_bennys = {}
 
@@ -41,7 +42,7 @@ end
 
 function sergin.repairVehicle(vehicle, damage)
     local vehicle,vehNet,vehPlate,vehName = vRPclient.vehList(source,7)
-    TriggerEvent("tryreparar", vehicle)
+    TriggerEvent("tryreparar", vehicle) -- CORRIGIR TRYREPARAR VEICULO
     return true
 end
 

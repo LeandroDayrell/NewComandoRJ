@@ -440,6 +440,12 @@ local itemlist = {
 		type = "use",
 		weight = 5.0
 	},
+	["pendriveh"] = {
+		index = "pendriveh",
+		name = "Pen Drive Hacker",
+		type = "use",
+		weight = 0.5
+	},
 	["handcuff"] = {
 		index = "handcuff",
 		name = "Algemas",
@@ -570,13 +576,13 @@ local itemlist = {
 		index = "dollars",
 		name = "Dinheiro",
 		type = "use",
-		weight = 0.0001
+		weight = 0.0
 	},
 	["dollars2"] = {
 		index = "dollars2",
 		name = "Rolo de Dinheiro",
 		type = "use",
-		weight = 0.0001
+		weight = 0.0
 	},
 	["blackcard"] = {
 		index = "blackcard",
