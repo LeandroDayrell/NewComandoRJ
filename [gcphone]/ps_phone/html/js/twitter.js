@@ -587,16 +587,20 @@ $(document).on('submit', '.addaccounttwitter', function(e) {
     $(".twitter-app .not-logged .error p").html();
     $(".twitter-app .not-logged .error").hide();
 
+    PS.Phone.Notifications.Add("fas fa-check", "Cria conta", "Conta criada com sucesso!", "green", 5000);
+    PS.Phone.Functions.ToggleApp("twitter", "none");
+    PS.Phone.Data.currentApplication = "";
+
     $.post('http://ps_phone/AddAccountTwitter', JSON.stringify({
         name: name,
         username: username,
         password: password
     }), function(account) {
+        PS.Phone.Functions.ToggleApp("twitter", "block");
+        PS.Phone.Data.currentApplication = "twitter";
         PS.Phone.Data.TwiiterAccount = account;
         $(".twitter-app .not-logged").hide();
         $(".twitter-app .logged").show();
-
-        PS.Phone.Notifications.Add("fas fa-check", "Cria conta", "Conta criada com sucesso! Finalize e abra novamente o aplicativo", "green");
 
         $.post('http://ps_phone/GetMentionedTweets', JSON.stringify({}), function(MentionedTweets) {
             PS.Phone.Notifications.LoadMentionedTweets(MentionedTweets)

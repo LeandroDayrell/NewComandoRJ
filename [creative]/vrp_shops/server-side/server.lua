@@ -93,13 +93,9 @@ local shops = {
 		["mode"] = "Buy",
 		["type"] = "Premium",
 		["list"] = {
-			["premium01"] = 8,
-			["premium02"] = 16,
-			["premium03"] = 34,
-			["premium04"] = 60,
-			["premiumplate"] = 15,
-			["bonusDelivery"] = 2,
-			["bonusPostOp"] = 2
+			["premiumplate"] = 50,
+			["bonusDelivery"] = 20,
+			["bonusPostOp"] = 20
 		}
 	},
 	["fishingSell"] = {

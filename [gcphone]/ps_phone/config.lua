@@ -13,6 +13,7 @@ Config.CallSystem    = "tokovoip" --tokovoip | mumblevoip
 Config.UseInvoices   = false --true | false
 Config.CheckLife     = 101
 Config.IPAddress     = "http://131.196.198.113/"
+Config.Permission    = "Admin" -- Grupo de Permisssão para adicionar verificado
 
 Config.checkItemPhone = function(user_id, item)
     if vRP.getInventoryItemAmount(user_id, item) >= 1 then
@@ -28,7 +29,7 @@ Config.getBankUser = function(user_id)
 end
 
 Config.paymentBank = function(source, user_id, nsource, nuser_id, amount)
-	if source and user_id and nsource and nuser_id and amount then
+    if source and user_id and nsource and nuser_id and amount then
 
         if parseInt(amount) > 0 then
 
@@ -44,7 +45,7 @@ Config.paymentBank = function(source, user_id, nsource, nuser_id, amount)
 
                 TriggerClientEvent("Notify",source,"sucesso","Enviou <b>$"..vRP.format(parseInt(amount)).." dólares</b> ao passaporte <b>"..parseInt(nuser_id).."</b>.",8000)
 
-                local identity2 = vRP.getUserIdentity(nuser_id)
+                local identity2 = vRP.getUserIdentity(user_id)
                 if identity2 ~= nil then
                     TriggerClientEvent("Notify", nsource, "importante","<b>"..identity2.name.." "..identity2.name2.."</b> transferiu <b>$"..vRP.format(parseInt(amount)).." dólares</b> para sua conta.",8000)
                 end
@@ -58,8 +59,8 @@ Config.paymentBank = function(source, user_id, nsource, nuser_id, amount)
             TriggerClientEvent("Notify",source, "negado","Dinheiro insuficiente.",8000)
             return false
         end
-	end
-	return false
+    end
+    return false
 end
 
-return Config;
+return Config

@@ -180,8 +180,13 @@ $(document).on('click', '#whatsapp-openedgroup-edit', function(e) {
     }), function(group) {
         if (group) {
             group = JSON.parse(group);
+            var avatar = group.data.image;
+            if (group.data.image == "default.png") {
+                avatar = "img/default.png";
+            }
 
             $(".whatsapp-edit-group #image").val(group.data.image);
+            $(".whatsapp-edit-group-image").attr("src", avatar);
             $(".whatsapp-edit-group #name").val(group.data.name);
 
             $(".whatsapp-edit-group .users").html("");
@@ -252,9 +257,16 @@ $(document).on('click', '.edit-profile', function(e) {
 
     $.post('http://ps_phone/GetUserProfileWhatsApp', JSON.stringify({}), function(account) {
         if (account) {
+
+            var avatar = account.avatar;
+            if (account.avatar == "default.png") {
+                avatar = "img/default.png";
+            }
+
             $(".editeprofilewpp #avatar").val(account.avatar);
             $(".editeprofilewpp #name").val(account.name);
             $(".editeprofilewpp #phone").val(account.phone);
+            $(".whatsapp-edit-profile-image").attr("src", avatar);
 
             $(".whatsapp-menu").fadeOut(150);
             WhatsappMenuActive = false;
@@ -285,7 +297,7 @@ $(document).on('click', '.addmemberwpp', function(e) {
     var phone = $(".whatsapp-edit-group #number-member").val();
     var number = OpenedChatData.group;
 
-    if (phone.length > 9) {
+    if (phone.length > 10) {
         PS.Phone.Notifications.Add("fas fa-exclamation-circle", "Editar grupo", "O número deve ser no máxino 9 digitos");
         return false;
     }
@@ -367,7 +379,21 @@ function LoadWhatsappChats(chats) {
 
         time = hours + ":" + minutes;
 
-        var ChatElement = '<div class="whatsapp-chat" id="whatsapp-chat-' + i + '"><div class="whatsapp-chat-picture" style="background-image: url(' + profilepicture + ');"></div><div class="whatsapp-chat-name"><p>' + chat.contact_name + '</p></div><div class="whatsapp-chat-lastmessage"><p>' + chat.message + '</p></div> <div class="whatsapp-chat-lastmessagetime"><p>' + time + '</p></div><div class="whatsapp-chat-unreadmessages unread-chat-id-' + i + '">1</div></div>';
+        var message = chat.message;
+
+        if (message == null) {
+            message = '...';
+        }
+
+        if (message.includes('http://')) {
+            message = "...";
+        }
+
+        if (message.includes('https://')) {
+            message = "...";
+        }
+
+        var ChatElement = '<div class="whatsapp-chat" id="whatsapp-chat-' + i + '"><div class="whatsapp-chat-picture" style="background-image: url(' + profilepicture + ');"></div><div class="whatsapp-chat-name"><p>' + chat.contact_name + '</p></div><div class="whatsapp-chat-lastmessage"><p>' + message + '</p></div> <div class="whatsapp-chat-lastmessagetime"><p>' + time + '</p></div><div class="whatsapp-chat-unreadmessages unread-chat-id-' + i + '">1</div></div>';
 
         $("#messages").append(ChatElement);
         $("#whatsapp-chat-" + i).data('chatdata', chat);
@@ -413,7 +439,21 @@ function LoadWhatsappGroups(groups) {
 
         time = hours + ":" + minutes;
 
-        var ChatElement = '<div class="whatsapp-group" id="whatsapp-group-' + i + '"><div class="whatsapp-chat-picture" style="background-image: url(' + groupImage + ');"></div><div class="whatsapp-chat-name"><p>' + group.name + '</p></div><div class="whatsapp-chat-lastmessage"><p>' + group.message + '</p></div> <div class="whatsapp-chat-lastmessagetime"><p>' + time + '</p></div><div class="whatsapp-chat-unreadmessages unread-chat-id-' + i + '">1</div></div>';
+        var message = group.message;
+
+        if (message == null) {
+            message = '...';
+        }
+
+        if (message.includes('http://')) {
+            message = "...";
+        }
+
+        if (message.includes('https://')) {
+            message = "...";
+        }
+
+        var ChatElement = '<div class="whatsapp-group" id="whatsapp-group-' + i + '"><div class="whatsapp-chat-picture" style="background-image: url(' + groupImage + ');"></div><div class="whatsapp-chat-name"><p>' + group.name + '</p></div><div class="whatsapp-chat-lastmessage"><p>' + message + '</p></div> <div class="whatsapp-chat-lastmessagetime"><p>' + time + '</p></div><div class="whatsapp-chat-unreadmessages unread-chat-id-' + i + '">1</div></div>';
 
         $("#groups").append(ChatElement);
         $("#whatsapp-group-" + i).data('groupdata', group);
@@ -559,7 +599,7 @@ $(document).on('keypress', function(e) {
                 });
                 $("#whatsapp-openedchat-message").val("");
             } else {
-                PS.Phone.Notifications.Add("fab fa-whatsapp", "Whatsapp", "Você não pode enviar uma mensagem em branco!", "#25D366", 1750);
+                // PS.Phone.Notifications.Add("fab fa-whatsapp", "Whatsapp", "Você não pode enviar uma mensagem em branco!", "#25D366", 1750);
             }
         }
     }
@@ -733,7 +773,8 @@ function SetupChatMessages(cData, NewChatData) {
                 MessageElement = '<div class="whatsapp-openedchat-message whatsapp-openedchat-message-' + Sender + '">' + message + '<div class="whatsapp-openedchat-message-time">' + time + '</div></div><div class="clearfix"></div>'
             } else if (chat.type == "location") {
                 var pos = JSON.parse(chat.message);
-                MessageElement = '<div class="whatsapp-openedchat-message whatsapp-openedchat-message-' + Sender + ' whatsapp-shared-location" data-x="' + pos.x + '" data-y="' + pos.y + '"><span style="font-size: 1.2vh;"><i class="fas fa-thumbtack" style="font-size: 1vh;"></i> Localização</span><div class="whatsapp-openedchat-message-time">' + time + '</div></div><div class="clearfix"></div>'
+                var message = "<img src='img/apps/map.png' />"
+                MessageElement = '<div class="whatsapp-openedchat-message whatsapp-openedchat-message-' + Sender + ' whatsapp-shared-location" data-x="' + pos.x + '" data-y="' + pos.y + '">' + message + '<div class="whatsapp-openedchat-message-time">' + time + '</div></div><div class="clearfix"></div>';
             } else if (chat.type == "audio") {
                 MessageElement = '<div class="whatsapp-openedchat-message whatsapp-openedchat-message-' + Sender + '"><audio controls><source src="' + chat.message + '" type="audio/wav"></audio><div class="whatsapp-openedchat-message-time">' + time + '</div></div><div class="clearfix"></div>';
             }
@@ -859,9 +900,10 @@ function SetupGroupMessages(cData) {
                 MessageElement = '<div class="whatsapp-openedgroup-message whatsapp-openedgroup-message-' + Sender + '"><b>' + chat.name + '</b><br>' + message + '<div class="whatsapp-openedgroup-message-time">' + time + '</div></div><div class="clearfix"></div>'
             } else if (chat.type == "location") {
                 var pos = JSON.parse(chat.message);
-                MessageElement = '<div class="whatsapp-openedgroup-message whatsapp-openedgroup-message-' + Sender + ' whatsapp-shared-location" data-x="' + pos.x + '" data-y="' + pos.y + '"><b>' + chat.name + '</b><br><span style="font-size: 1.2vh;"><i class="fas fa-thumbtack" style="font-size: 1vh;"></i> Localização</span><div class="whatsapp-openedgroup-message-time">' + time + '</div></div><div class="clearfix"></div>'
+                var message = "<img src='img/apps/map.png' />"
+                MessageElement = '<div class="whatsapp-openedchat-message whatsapp-openedchat-message-' + Sender + ' whatsapp-shared-location" data-x="' + pos.x + '" data-y="' + pos.y + '"><b>' + chat.name + '</b><br>' + message + '<div class="whatsapp-openedchat-message-time">' + time + '</div></div><div class="clearfix"></div>';
             } else if (chat.type == "audio") {
-                MessageElement = '<div class="whatsapp-openedgroup-message whatsapp-openedgroup-message-' + Sender + '"><audio controls><source src="' + chat.message + '" type="audio/wav"></audio><div class="whatsapp-openedgroup-message-time">' + time + '</div></div><div class="clearfix"></div>';
+                MessageElement = '<div class="whatsapp-openedchat-message whatsapp-openedchat-message-' + Sender + '"><b>' + chat.name + '</b><br><audio controls><source src="' + chat.message + '" type="audio/wav"></audio><div class="whatsapp-openedchat-message-time">' + time + '</div></div><div class="clearfix"></div>';
             }
 
             $(".whatsapp-openedgroup-messages").append(MessageElement);
@@ -923,7 +965,8 @@ function LoadMessages(messages) {
             MessageElement = '<div class="whatsapp-openedchat-message whatsapp-openedchat-message-' + Sender + '">' + message + '<div class="whatsapp-openedchat-message-time">' + time + '</div></div><div class="clearfix"></div>';
         } else if (chat.type == "location") {
             var pos = JSON.parse(chat.message);
-            MessageElement = '<div class="whatsapp-openedchat-message whatsapp-openedchat-message-' + Sender + ' whatsapp-shared-location" data-x="' + pos.x + '" data-y="' + pos.y + '"><span style="font-size: 1.2vh;"><i class="fas fa-thumbtack" style="font-size: 1vh;"></i> Localização</span><div class="whatsapp-openedchat-message-time">' + time + '</div></div><div class="clearfix"></div>';
+            var message = "<img src='img/apps/map.png' />"
+            MessageElement = '<div class="whatsapp-openedchat-message whatsapp-openedchat-message-' + Sender + ' whatsapp-shared-location" data-x="' + pos.x + '" data-y="' + pos.y + '">' + message + '<div class="whatsapp-openedchat-message-time">' + time + '</div></div><div class="clearfix"></div>';
         } else if (chat.type == "audio") {
             MessageElement = '<div class="whatsapp-openedchat-message whatsapp-openedchat-message-' + Sender + '"><audio controls><source src="' + chat.message + '" type="audio/wav"></audio><div class="whatsapp-openedchat-message-time">' + time + '</div></div><div class="clearfix"></div>';
         }
@@ -980,9 +1023,10 @@ function LoadMessagesGroup(messages) {
             MessageElement = '<div class="whatsapp-openedgroup-message whatsapp-openedgroup-message-' + Sender + '"><b>' + chat.name + '</b><br>' + message + '<div class="whatsapp-openedgroup-message-time">' + time + '</div></div><div class="clearfix"></div>'
         } else if (chat.type == "location") {
             var pos = JSON.parse(chat.message);
-            MessageElement = '<div class="whatsapp-openedgroup-message whatsapp-openedgroup-message-' + Sender + ' whatsapp-shared-location" data-x="' + pos.x + '" data-y="' + pos.y + '"><b>' + chat.name + '</b><br><span style="font-size: 1.2vh;"><i class="fas fa-thumbtack" style="font-size: 1vh;"></i> Localização</span><div class="whatsapp-openedgroup-message-time">' + time + '</div></div><div class="clearfix"></div>'
+            var message = "<img src='img/apps/map.png' />"
+            MessageElement = '<div class="whatsapp-openedchat-message whatsapp-openedchat-message-' + Sender + ' whatsapp-shared-location" data-x="' + pos.x + '" data-y="' + pos.y + '"><b>' + chat.name + '</b><br>' + message + '<div class="whatsapp-openedchat-message-time">' + time + '</div></div><div class="clearfix"></div>';
         } else if (chat.type == "audio") {
-            MessageElement = '<div class="whatsapp-openedgroup-message whatsapp-openedgroup-message-' + Sender + '"><audio controls><source src="' + chat.message + '" type="audio/wav"></audio><div class="whatsapp-openedgroup-message-time">' + time + '</div></div><div class="clearfix"></div>';
+            MessageElement = '<div class="whatsapp-openedchat-message whatsapp-openedchat-message-' + Sender + '"><b>' + chat.name + '</b><br><audio controls><source src="' + chat.message + '" type="audio/wav"></audio><div class="whatsapp-openedchat-message-time">' + time + '</div></div><div class="clearfix"></div>';
         }
 
         $(".whatsapp-openedgroup-messages").append(MessageElement);
@@ -1071,7 +1115,7 @@ $(document).on('submit', '.addaccountwpp', function(e) {
         return false;
     }
 
-    if (phone.length > 9) {
+    if (phone.length > 10) {
         $(".whatsapp-app .not-logged .error p").html("O número deve no máxino 9 digitos");
         $(".whatsapp-app .not-logged .error").show();
         return false;
@@ -1086,16 +1130,20 @@ $(document).on('submit', '.addaccountwpp', function(e) {
     $(".whatsapp-app .not-logged .error p").html();
     $(".whatsapp-app .not-logged .error").hide();
 
+    PS.Phone.Notifications.Add("fas fa-check", "Cria conta", "Conta criada com sucesso!", "green", 5000);
+    PS.Phone.Functions.ToggleApp("whatsapp", "none");
+    PS.Phone.Data.currentApplication = "";
+
     $.post('http://ps_phone/AddAccountWhatsApp', JSON.stringify({
         name: name,
         phone: phone,
         password: password
     }), function(account) {
+        PS.Phone.Functions.ToggleApp("whatsapp", "block");
+        PS.Phone.Data.currentApplication = "whatsapp";
         PS.Phone.Data.WhatsAppAccount = account;
         $(".whatsapp-app .not-logged").hide();
         $(".whatsapp-app .logged").show();
-
-        PS.Phone.Notifications.Add("fas fa-check", "Cria conta", "Conta criada com sucesso! Finalize e abra novamente o aplicativo", "green");
 
         $(".preload-messages-wpp").show();
         $.post('http://ps_phone/GetWhatsappChats', JSON.stringify({}), function(chats) {
@@ -1263,8 +1311,8 @@ $(document).on('submit', '.addgroupwpp', function(e) {
 $(document).on('submit', '.editgroupwpp', function(e) {
     e.preventDefault();
 
-    var image = $(".editgroupwpp #image").val();
-    var name = $(".editgroupwpp #name").val();
+    var image = $(".whatsapp-edit-group #image").val();
+    var name = $(".whatsapp-edit-group #name").val();
     var number = OpenedChatData.group;
 
     if (image != "" && name != "") {
@@ -1440,11 +1488,11 @@ setInterval(function() {
     var audiochatcheck = $('.whatsapp-openedchat-message audio');
     var audiogroupcheck = $('.whatsapp-openedgroup-message audio');
 
-    if (audiochatcheck.paused) {
+    if (!audiochatcheck.play) {
         verifyopenchat();
     }
 
-    if (audiogroupcheck.paused) {
+    if (!audiogroupcheck.play) {
         verifyopengroup();
     }
 

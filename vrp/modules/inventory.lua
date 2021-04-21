@@ -280,25 +280,37 @@ local itemlist = {
 	},
 	["premium01"] = {
 		index = "premium01",
-		name = "Premium 3D",
+		name = "VIP Bronze",
 		type = "use",
 		weight = 0.0
 	},
 	["premium02"] = {
 		index = "premium02",
-		name = "Premium 7D",
+		name = "VIP Prata",
 		type = "use",
 		weight = 0.0
 	},
 	["premium03"] = {
 		index = "premium03",
-		name = "Premium 15D",
+		name = "VIP Ouro",
 		type = "use",
 		weight = 0.0
 	},
 	["premium04"] = {
 		index = "premium04",
-		name = "Premium 30D",
+		name = "VIP Mafioso",
+		type = "use",
+		weight = 0.0
+	},
+	["premium05"] = {
+		index = "premium05",
+		name = "VIP Magnata",
+		type = "use",
+		weight = 0.0
+	},
+	["premium06"] = {
+		index = "premium06",
+		name = "VIP ComandoRJ",
 		type = "use",
 		weight = 0.0
 	},

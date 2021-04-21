@@ -44,6 +44,9 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/locale/pt-br.js'></script>
     <link rel="stylesheet" href="https://unpkg.com/placeholder-loading/dist/css/placeholder-loading.min.css">
+    <!-- Green Audio Player -->
+    <link rel="stylesheet" type="text/css" href="./css/audio.css">
+    <script src="./js/audio.js"></script>
 </head>
 
 <body style="background-color: transparent !important">
@@ -661,7 +664,7 @@
                 <div class="bank-app">
                     <div class="bank-app-loading">
                         <img src="../html/img/apps/bank.png" class="qbank-logo">
-                        <span id="qbank-text">CRJ Bank</span>
+                        <span id="qbank-text">PSBank</span>
                     </div>
                     <div class="bank-app-loaded">
                         <div class="bank-app-header">
@@ -727,34 +730,52 @@
                         <div class="whatsapp-header">
                             <div class="whatsapp-header-top"></div>
                             <div class="whatsapp-header-footer">
-                                <p>Whatsapp</p>
+                                <p><b class="wpp-preloader-title">Bem-vindo(a) ao WhatsApp</b></p>
                             </div>
+                            <img src="img/apps/wpp1.png" alt="wpp" width="200" class="wpp-preloader-img">
+                            <p class="wpp-preloader-terms">
+                                Leia nossa <b>Política de privacidade</b>, Toque em CONCORDAR E CONTINUAR para aceitar os <b>Termos de Serviço.</b></p>
                         </div>
-                        <div class="login-box">
-                            <!-- Header end -->
-                            <div class="form-wrap">
-                                <div class="error" style="display: none;">
-                                    <p></p>
+                        <div class="interior">
+                            <a class="btn" href="#open-modal">Concordar e Continuar</a>
+                        </div>
+
+
+
+                        <div id="open-modal" class="modal-window">
+                            <div style="margin: 0 auto;">
+                                <img src="img/apps/wpp-create-account.png" alt="Minha Figura" class="wpp-create-accoount-image">
+
+                                <div class="login-box" style="padding: 0 20px;">
+
+                                    <!-- Header end -->
+                                    <div class="form-wrap">
+                                        <div class="error" style="display: none;">
+                                            <p></p>
+                                        </div>
+                                        <form class="form addaccountwpp">
+                                            <div class="input-box">
+                                                <input type="text" name="name" id="name" placeholder="Nome Completo" maxlength="30" autocapitalize="off" autocorrect="off" value="" required="">
+                                            </div>
+
+                                            <div class="input-box">
+                                                <input type="text" name="phone" id="phone" placeholder="Número de Telefone" maxlength="10" autocapitalize="off" autocorrect="off" value="" required="">
+                                            </div>
+
+                                            <div class="input-box">
+                                                <input type="password" name="password" id="password" placeholder="Senha" maxlength="30" autocapitalize="off" autocorrect="off" required="">
+                                            </div>
+
+                                            <span class="button-box" style="margin-top: 80px;">
+                                                <button class="btn" type="submit" name="submit">Cadastra-se</button>
+                                            </span>
+                                        </form>
+                                        <p style="text-align: center;font-size: 12px;padding: 16px;"> Depois de clicar em Cadastrar-se <a href="#" title="Close">clique aqui</a> para voltar e acessar sua conta do aplicativo</p>
+                                    </div>
+                                    <!-- Form-wrap end -->
                                 </div>
-                                <form class="form addaccountwpp">
-                                    <div class="input-box">
-                                        <input type="text" name="name" id="name" placeholder="Nome Completo" maxlength="30" autocapitalize="off" autocorrect="off" value="" required>
-                                    </div>
 
-                                    <div class="input-box">
-                                        <input type="text" name="phone" id="phone" placeholder="Número de Telefone" maxlength="9" autocapitalize="off" autocorrect="off" value="" required>
-                                    </div>
-
-                                    <div class="input-box">
-                                        <input type="password" name="password" id="password" placeholder="Senha" maxlength="30" autocapitalize="off" autocorrect="off" required>
-                                    </div>
-
-                                    <span class="button-box">
-                                        <button class="btn" type="submit" name="submit">Cadastra-se</button>
-                                    </span>
-                                </form>
                             </div>
-                            <!-- Form-wrap end -->
                         </div>
                         <!-- Login-box end -->
                     </div>
@@ -762,7 +783,7 @@
                         <div class="whatsapp-header">
                             <div class="whatsapp-header-top"></div>
                             <div class="whatsapp-header-footer">
-                                <p>Whatsapp</p>
+                                <p style="color: white;font-size: 15px;padding-top: 7px;">Whatsapp</p>
                                 <i id="whatsapp-search-chats" class="fas fa-search"></i>
                                 <i id="whatsapp-options-menus" class="fas fa-ellipsis-v"></i>
                                 <input type="text" id="whatsapp-search-input" placeholder="Nome de contato" spellcheck="false">
@@ -778,18 +799,19 @@
 
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs nav-justified" role="tablist">
+                                <li role="presentation" class="">
+                                    <a href="#status" aria-controls="status" role="tab" data-toggle="tab" aria-expanded="false" class="getstatus">
+                                        <div icon="true" class="material-icons" style="flex: 0 1 0%; text-align: center; color: rgba(255, 255, 255, 0.5); margin-right: 16px; font-size: 1.4rem;">
+                                            camera_alt</div>
+                                    </a>
+                                </li>
                                 <li role="presentation" class="active">
                                     <a href="#messages" aria-controls="messages" role="tab" data-toggle="tab" aria-expanded="true" class="getchats">Conversas</a>
                                 </li>
                                 <li role="presentation" class="">
                                     <a href="#groups" aria-controls="groups" role="tab" data-toggle="tab" aria-expanded="false" class="getgroups">Grupos</a>
                                 </li>
-                                <li role="presentation" class="">
-                                    <a href="#status" aria-controls="status" role="tab" data-toggle="tab" aria-expanded="false" class="getstatus">Status</a>
-                                </li>
-                                <!-- <li role="presentation" class="">
-                                    <a href="#calls" aria-controls="calls" role="tab" data-toggle="tab" aria-expanded="false" class="getcalls">Ligações</a>
-                                </li> -->
+
 
                             </ul>
 
@@ -998,7 +1020,6 @@
                                     </div>
                                 </div>
 
-
                                 <div role="tabpanel" class="tab-pane active" id="messages"></div>
                                 <div role="tabpanel" class="tab-pane" id="groups"></div>
                                 <div role="tabpanel" class="tab-pane" id="status">
@@ -1117,61 +1138,11 @@
                                         </div>
                                     </div>
 
-                                    <div class="whatsapp-stories">
-                                    </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane" id="calls">
-                                    <div class="whatsapp-chat">
-                                        <div class="whatsapp-chat-picture"></div>
-                                        <div class="whatsapp-chat-name">
-                                            <p>Testt</p>
-                                        </div>
-                                        <div class="whatsapp-chat-lastmessage">
-                                            <p>Ligação Recebida</p>
-                                        </div>
-                                        <div class="whatsapp-chat-lastmessagetime">
-
-                                            <p>07:53</p>
-                                            <p><i class="fas fa-phone text-danger" style="font-size: 1.8vh;"></i></p>
-                                        </div>
-                                    </div>
-                                    <div class="whatsapp-chat">
-                                        <div class="whatsapp-chat-picture"></div>
-                                        <div class="whatsapp-chat-name">
-                                            <p>Testt</p>
-                                        </div>
-                                        <div class="whatsapp-chat-lastmessage">
-                                            <p>Ligação Efetuada</p>
-                                        </div>
-                                        <div class="whatsapp-chat-lastmessagetime">
-
-                                            <p>07:53</p>
-                                            <p><i class="fas fa-phone-alt text-success" style="font-size: 1.8vh;"></i>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="whatsapp-chat">
-                                        <div class="whatsapp-chat-picture"></div>
-                                        <div class="whatsapp-chat-name">
-                                            <p>Testt</p>
-                                        </div>
-                                        <div class="whatsapp-chat-lastmessage">
-                                            <p>Ligação Perdida</p>
-                                        </div>
-                                        <div class="whatsapp-chat-lastmessagetime">
-
-                                            <p>07:53</p>
-                                            <p><i class="fas fa-phone-slash text-danger" style="font-size: 1.8vh;"></i>
-                                            </p>
-                                        </div>
-                                    </div>
+                                    <div class="whatsapp-stories"></div>
                                 </div>
                             </div>
 
                         </div>
-
-
-
                         <div class="whatsapp-openedchat">
                             <div class="whatsapp-header-openedchat">
                                 <div class="whatsapp-header-top-openedchat"></div>
@@ -1192,7 +1163,6 @@
                                     <div class="whatsapp-extra-button" id="send-location"><i class="fas fa-map-marker-alt"></i></div>
                                     <div class="whatsapp-extra-button" id="send-image"><i class="fas fa-camera"></i>
                                     </div>
-                                    <!-- <div class="whatsapp-extra-button" id="send-location"><i class="fas fa-money-bill"></i></div> -->
                                 </div>
                                 <input type="text" id="whatsapp-openedchat-message" placeholder="Mensagem" spellcheck="false">
                                 <i class="fas fa-paper-plane" id="whatsapp-openedchat-send"></i>
@@ -1220,7 +1190,6 @@
                                 <div class="whatsapp-extra-buttons">
                                     <div class="whatsapp-extra-button" id="send-location-group"><i class="fas fa-map-marker-alt"></i></div>
                                     <div class="whatsapp-extra-button" id="send-image-group"><i class="fas fa-camera"></i></div>
-                                    <!-- <div class="whatsapp-extra-button" id="send-location"><i class="fas fa-money-bill"></i></div> -->
                                 </div>
                                 <input type="text" id="whatsapp-openedgroup-message" placeholder="Mensagem" spellcheck="false">
                                 <i class="fas fa-paper-plane" id="whatsapp-openedgroup-send"></i>
@@ -1245,21 +1214,41 @@
                                         <p></p>
                                     </div>
                                     <form class="form addgroupwpp">
-                                        <div class="input-box">
-                                            <input type="text" name="image" id="image" placeholder="Imagem do Grupo (URL .jpg .png)" autocapitalize="off" autocorrect="off" value="" required>
-                                        </div>
+                                        <figure class="fir-image-figure">
+
+                                            <img class="fir-author-image fir-clickcircle" src="img/apps/creatgroup.png">
+
+                                            <figcaption>
+                                                <div class="fig-author-figure-title">Por favor, informe o assunto do grupo e, opcionalmente, ícone do grupo.</div>
+
+
+                                            </figcaption>
+                                        </figure>
+
+
 
                                         <div class="input-box">
-                                            <input type="text" name="name" id="name" placeholder="Nome do Grupo" maxlength="30" autocapitalize="off" autocorrect="off" value="" required>
+
+                                            <input type="text" name="name" id="name" placeholder="Nome do Grupo" maxlength="30" autocapitalize="off" autocorrect="off" value="" required="" style=" border-bottom: 1px solid #008f81;">
+                                        </div>
+                                        <div class="input-box">
+                                            <div class="input-box">
+                                                <div style="margin-top: 18%;color: #00bfa5;background-color: white;">
+                                                    Imagem Personalizada
+                                                    <br>
+                                                </div>
+                                                <input type="text" name="image" id="image" placeholder="Imagem do Grupo (URL .jpg .png)" autocapitalize="off" autocorrect="off" value="" required="" style=" border-bottom: 1px solid #008f81;">
+                                            </div>
                                         </div>
 
-                                        <span class="button-box">
-                                            <button class="btn sendpicturegroup" type="button">Tirar foto do
-                                                Grupo</button>
+
+
+                                        <span class="button-box" style="bottom: 185px;left: 27px;">
+                                            <button class="btn sendpicturegroup" type="button" style="width: 30px;  background: #ffffff !important;  border: 1px solid #008f81 !important;  height: 30px;  border-radius: 50%; color: #008f81 !important;"><i class="fa fa-camera" aria-hidden="true"></i></button>
                                         </span>
 
                                         <span class="button-box">
-                                            <button class="btn" type="submit" name="submit">Criar Grupo</button>
+                                            <button class="btn" type="submit" name="submit" style=" background: #008f81; border: 1px solid #008f81;">Criar Grupo</button>
                                         </span>
                                     </form>
                                 </div>
@@ -1278,27 +1267,40 @@
                                 </div>
                             </div>
 
+                            <img src="" alt="group foto" width="340" class="whatsapp-edit-group-image">
+
                             <!--  editar grupo wpp -->
-                            <div class="login-box">
+                            <div class="login-box" style="margin-top: 120px;">
                                 <!-- Header end -->
                                 <div class="form-wrap">
                                     <div class="error" style="display: none;">
                                         <p></p>
                                     </div>
-                                    <form class="form editgroupwpp">
+                                    <input type="text" name="name" id="name" placeholder="Nome do Grupo" maxlength="30" autocapitalize="off" autocorrect="off" value="" required="" class="input-group-name">
+
+                                    <form class="form editgroupwpp" style=" padding-top: 5px;">
                                         <div class="input-box">
-                                            <input type="text" name="image" id="image" placeholder="Trocar imagem do Grupo (URL .jpg .png)" autocapitalize="off" autocorrect="off" value="" required>
+                                            <div style="/* margin-top: 20%; */color: #00bfa5;background-color: white;">
+                                                Imagem Personalizada
+                                                <br>
+                                            </div>
+                                            <input type="text" name="image" id="image" placeholder="Trocar imagem do Grupo (URL .jpg .png)" autocapitalize="off" autocorrect="off" value="" required="" style=" border: 1px solid #e8e6e6d4;">
                                         </div>
 
-                                        <div class="input-box">
-                                            <input type="text" name="name" id="name" placeholder="Nome do Grupo" maxlength="30" autocapitalize="off" autocorrect="off" value="" required>
+
+                                        <div style="margin-top: 5px;color: #00bfa5;background-color: white;">
+                                            Participantes do grupo
+                                            <br>
                                         </div>
+
 
                                         <div class="col-md-12">
                                             <div class="users-container">
+
+
                                                 <div class="chat-search-box">
                                                     <div class="input-group">
-                                                        <input class="form-control" id="number-member" name="number-member" placeholder="Adicionar Membro" minlength="9" maxlength="7">
+                                                        <input class="form-control" id="number-member" name="number-member" placeholder="Adicionar Membro" minlength="7" maxlength="10">
                                                         <div class="input-group-btn">
                                                             <button type="button" class="btn btn-sucess addmemberwpp">
                                                                 <i class="fa fa-check"></i> </button>
@@ -1306,24 +1308,30 @@
                                                     </div>
 
                                                 </div>
+
                                                 <ul class="users"></ul>
+
 
                                             </div>
                                         </div>
 
-                                        <span class="button-box">
-                                            <button class="btn sendpicturegroupedit" type="button">Tirar foto do
-                                                Grupo</button>
+                                        <span class="button-box" style="bottom: 370px;left: 148px;">
+                                            <button class="btn sendpicturegroupedit" type="button"
+                                                style="width: 40px; height: 40px; border-radius: 50%;  background: #1a8e8100; border: 1px solid #1a8e8100;"><i
+                                                    class="fa fa-camera" aria-hidden="true"
+                                                    style="padding: 2px;"></i></button>
                                         </span>
 
-                                        <span class="button-box">
-                                            <button class="btn" type="submit" name="submit">Salvar</button>
+                                        <span class="button-box" style="bottom: 413px;left: 191px;">
+                                            <button class="btn" type="submit" name="submit" style="width: 30px;height: 30px;border-radius: 50%;color: #1a8e81 !important;background: #fff !important;border: 1px solid #1a8e81 !important;">
+                                            <i class="fa fa-check" aria-hidden="true"></i></button>
                                         </span>
                                     </form>
                                 </div>
                             </div>
                             <!-- Form-wrap end -->
                         </div>
+
 
                         <!-- Login-box end -->
                         <div class="whatsapp-edit-profile">
@@ -1335,32 +1343,55 @@
                                 </div>
                             </div>
 
-                            <div class="login-box">
+                            <img src="" alt="profile wpp" class="whatsapp-edit-profile-image">
+
+                            <div class="login-box" style="/* display: block; *//* margin-left: auto; *//* margin-right: auto; */padding-top: 144px;">
                                 <!-- Header end -->
+
+
                                 <div class="form-wrap">
                                     <div class="error" style="display: none;">
                                         <p></p>
                                     </div>
                                     <form class="form editeprofilewpp">
+
+
                                         <div class="input-box">
-                                            <input type="text" name="avatar" id="avatar" placeholder="Imagem Perfil (URL .jpg .png)" autocapitalize="off" autocorrect="off" value="" required>
+                                            <div style="/* margin-top: 20%; */color: #00bfa5;background-color: white;">
+                                                Imagem Personalizada
+                                                <br>
+                                            </div>
+                                            <input type="text" name="avatar" id="avatar" placeholder="Imagem Perfil (URL .jpg .png .gif)" autocapitalize="off" autocorrect="off" value="" required="">
                                         </div>
 
                                         <div class="input-box">
-                                            <input type="text" name="name" id="name" placeholder="Nome Completo" maxlength="30" autocapitalize="off" autocorrect="off" value="" required>
+                                            <div style="margin-top: 12%;color: #00bfa5;background-color: white;">
+                                                Seu Nome
+                                                <br>
+                                            </div>
+                                            <input type="text" name="name" id="name" placeholder="Nome Completo" maxlength="30" autocapitalize="off" autocorrect="off" value="" required="">
                                         </div>
+                                        <p style="padding: 2%"></p>
+                                        <span class="text-muted" style="margin-left: auto; margin-right: auto; width: 26em; font-size: 11px;">Este
+                                            não é o seu nome de usuário ou pin. Isso ficará visível para seus
+                                            contatos.</span>
 
                                         <div class="input-box">
-                                            <input type="text" name="phone" id="phone" placeholder="Número de Telefone" maxlength="9" autocapitalize="off" autocorrect="off" value="" disabled>
+                                            <div style="margin-top: 20px;color: #00bfa5; background-color: white;">
+                                                Telefone
+                                                <br>
+                                            </div>
+                                            <input type="text" name="phone" id="phone" placeholder="Número de Telefone" maxlength="10" autocapitalize="off" autocorrect="off" value="" disabled="">
                                         </div>
 
-                                        <span class="button-box">
-                                            <button class="btn sendpictureprofilewpp" type="button">Tirar foto de
-                                                Perfil</button>
+                                        <span class="button-box" style="bottom: 340px; left: 130px;">
+                                            <button class="btn sendpictureprofilewpp" type="button"
+                                                style=" width: 40px; height: 40px; border-radius: 50%;  background: #1a8e81;  border: 1px solid #1a8e81;"><i
+                                                    class="fa fa-camera" aria-hidden="true" style="padding: 2px;"></i></button>
                                         </span>
 
-                                        <span class="button-box">
-                                            <button class="btn" type="submit" name="submit">Editar Perfil</button>
+                                        <span class="button-box" style="top: -40px;">
+                                            <button class="btn" type="submit" name="submit" style="/* width: 50px; *//* height: 50px; *//* border-radius: 50%; */background: #1a8e81;border: 1px solid #1a8e81;/* top: 19px; */">Salvar</button>
                                         </span>
                                     </form>
                                 </div>
@@ -2191,12 +2222,12 @@
     </div>
 
     <div class="screen-notifications-container">
-        <div class="screen-notification-icon"><i class="fab fa-twitter"></i></div>
+        <div class="screen-notification-icon"><img src="img/icons/instagram.png"></div>
         <div class="screen-notification-title">
-            <p>New Tweet!</p>
+            <p>Nova Mensagem!</p>
         </div>
         <div class="screen-notification-content">
-            <p>This is a test notification JOINK 222222222222222222222222222222</p>
+            <p>Asd ...</p>
         </div>
     </div>
 

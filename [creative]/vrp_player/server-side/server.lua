@@ -163,10 +163,10 @@ AddEventHandler("vrp_player:salary",function()
 	local source = source
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if vRP.getPremium(parseInt(user_id)) then
+		--[[ if vRP.getPremium(parseInt(user_id)) then
 			vRP.setSalary(parseInt(user_id),1000)
 			TriggerClientEvent("Notify",source,"sucesso","Voce recebeu seu salario.",5000)
-		end
+		end ]]
 
 		if vRP.hasPermission(parseInt(user_id),"Police") then
 			vRP.setSalary(parseInt(user_id),5000)
@@ -187,6 +187,37 @@ AddEventHandler("vrp_player:salary",function()
 			vRP.setSalary(parseInt(user_id),6000)
 			TriggerClientEvent("Notify",source,"sucesso","Voce recebeu seu salario.",5000)
 		end
+
+		if vRP.hasPermission(parseInt(user_id),"VIPBronze") then
+			vRP.setSalary(parseInt(user_id),650)
+			TriggerClientEvent("Notify",source,"sucesso","Voce recebeu seu salario.",650)
+		end
+
+		if vRP.hasPermission(parseInt(user_id),"VIPPrata") then
+			vRP.setSalary(parseInt(user_id),1000)
+			TriggerClientEvent("Notify",source,"sucesso","Voce recebeu seu salario.",1000)
+		end
+
+		if vRP.hasPermission(parseInt(user_id),"VIPOuro") then
+			vRP.setSalary(parseInt(user_id),1400)
+			TriggerClientEvent("Notify",source,"sucesso","Voce recebeu seu salario.",1400)
+		end
+
+		if vRP.hasPermission(parseInt(user_id),"VIPMafioso") then
+			vRP.setSalary(parseInt(user_id),1800)
+			TriggerClientEvent("Notify",source,"sucesso","Voce recebeu seu salario.",1800)
+		end
+
+		if vRP.hasPermission(parseInt(user_id),"VIPMagnata") then
+			vRP.setSalary(parseInt(user_id),2500)
+			TriggerClientEvent("Notify",source,"sucesso","Voce recebeu seu salario.",2500)
+		end
+
+		if vRP.hasPermission(parseInt(user_id),"VIPComando") then
+			vRP.setSalary(parseInt(user_id),2500)
+			TriggerClientEvent("Notify",source,"sucesso","Voce recebeu seu salario.",2500)
+		end
+		
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------

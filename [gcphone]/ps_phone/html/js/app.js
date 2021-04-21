@@ -407,12 +407,19 @@ var NotificationTimeout = null;
 PS.Screen.Notification = function(title, content, icon, timeout, color) {
     $.post('http://ps_phone/HasPhone', JSON.stringify({}), function(HasPhone) {
         if (HasPhone) {
-            if (color != null && color != undefined) {
-                $(".screen-notifications-container").css({
-                    "background-color": color
-                });
+            PS.Phone.Audio = new Audio("/html/sound/tchatNotification.ogg");
+            PS.Phone.Audio.volume = 1;
+            PS.Phone.Audio.play();
+
+            if (content.includes('http://')) {
+                content = "Link / Imagem";
             }
-            $(".screen-notification-icon").html('<i class="' + icon + '"></i>');
+
+            if (content.includes('https://')) {
+                content = "Link / Imagem";
+            }
+
+            $(".screen-notification-icon").html('<img src="img/icons/' + icon + '.png">');
             $(".screen-notification-title").text(title);
             $(".screen-notification-content").text(content);
             $(".screen-notifications-container").css({

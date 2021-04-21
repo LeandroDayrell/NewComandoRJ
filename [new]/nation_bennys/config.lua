@@ -40,13 +40,13 @@ config.prices = {
 		startprice = 10000,
 	},
 ----------Pneu custom--------
-	["custom"] = {
-		startprice = 1000,
-	},
+	 ["custom"] = {
+	 	startprice = 1000,
+	 },
 ----------Pneu a prova de balas--------
-	--["bulletproof"] = {
-	--	startprice = 240000,
-	--},
+	["bulletproof"] = {
+		startprice = 240000,
+	},
 ----------Placa--------
 	["placa"] = {
 		startprice = 500,

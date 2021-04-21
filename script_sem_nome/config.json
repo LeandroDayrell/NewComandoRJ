@@ -4,13 +4,13 @@
   "mysql": {
     "host": "localhost",
     "port": 3306,
-    "database": "vrp",
+    "database": "comandorj",
     "user": "root",
     "password": ""
   },
   "snowflake": {
     "database_prefix": "vrp",
-    "vehicles": "vrp_user_vehicles",
+    "vehicles": "vrp_vehicles",
     "priority": "vrp_priority",
     "homes": "vrp_homes_permissions",
     "esx": {
@@ -20,7 +20,7 @@
     }
   },
   "requireOnlineToDelivery": false,
-  "plugins": ["@comandorj"],
+  "plugins": ["@comandorj","@raiocity","creative2"],
   "chat": {
     "enabled": true,
     "global": true,

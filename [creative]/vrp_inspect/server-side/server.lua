@@ -15,7 +15,7 @@ vCLIENT = Tunnel.getInterface("vrp_inspect")
 -- VARIABLES
 -----------------------------------------------------------------------------------------------------------------------------------------
 local opened = {}
------------------------------------------------------------------------------------------------------------------------------------------
+--[[ -----------------------------------------------------------------------------------------------------------------------------------------
 -- REVISTAR
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterCommand("revistar",function(source,args,rawCommand)
@@ -42,7 +42,7 @@ RegisterCommand("revistar",function(source,args,rawCommand)
 				else
 					if not vRP.wantedReturn(nuser_id) then
 						local policia = vRP.numPermission("Police")
-						if parseInt(#policia) > 4 then
+						if parseInt(#policia) > 1 then
 							if vRPclient.getHealth(nplayer) > 101 then
 								local request = vRP.request(nplayer,"Você está sendo revistado, você permite?",60)
 								if request then
@@ -70,10 +70,93 @@ RegisterCommand("revistar",function(source,args,rawCommand)
 						end
 					end
 				end
+			else 
+				TriggerClientEvent("Notify",source,"negado","Voce nao pode revistar um Policial",5000)
+			end
+		end
+	end
+end) ]]
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- REVISTAR
+-----------------------------------------------------------------------------------------------------------------------------------------
+RegisterCommand("revistar",function(source,args,rawCommand)
+	local user_id = vRP.getUserId(source)
+	if user_id then
+		local nplayer = vRPclient.nearestPlayer(source,5)
+		if nplayer then
+			local nuser_id = vRP.getUserId(nplayer)
+			if not vRP.hasPermission(nuser_id,"Police") then
+				if vRP.hasPermission(user_id,"Police") then
+					vCLIENT.toggleCarry(nplayer,source)
+					vRPclient._playAnim(nplayer,true,{"random@arrests@busted","idle_a"},true)
+					local weapons = vRPclient.replaceWeapons(nplayer)
+					for k,v in pairs(weapons) do
+						vRP.giveInventoryItem(nuser_id,k,1)
+						if v.ammo > 0 then
+							vRP.giveInventoryItem(nuser_id,vRP.itemAmmoList(k),v.ammo)
+						end
+					end
+
+					vRPclient.updateWeapons(nplayer)
+					opened[user_id] = parseInt(nuser_id)
+					vCLIENT.openInspect(source)
+				else
+					if not vRP.wantedReturn(nuser_id) then
+						local policia = vRP.numPermission("Police")
+						if parseInt(#policia) > 1 then
+							if vRPclient.getHealth(nplayer) > 101 then
+								local request = vRP.request(nplayer,"Você está sendo revistado, você permite?",60)
+								if request then
+									vRPclient._playAnim(nplayer,true,{"random@arrests@busted","idle_a"},true)
+									vCLIENT.toggleCarry(nplayer,source)
+							
+									local weapons = vRPclient.replaceWeapons(nplayer)
+									for k,v in pairs(weapons) do
+										vRP.giveInventoryItem(nuser_id,k,1)
+										if v.ammo > 0 then
+											vRP.giveInventoryItem(nuser_id,vRP.itemAmmoList(k),v.ammo)
+										end
+									end
+									TriggerClientEvent("Notify",nplayer,"aviso","Voce esta sendo revistado",5000)
+
+									vRP.wantedTimer(user_id,60)
+									vRPclient.updateWeapons(nplayer)
+									opened[user_id] = parseInt(nuser_id)
+									vCLIENT.openInspect(source)
+								else
+									TriggerClientEvent("Notify",source,"negado","Pedido de revista recusado.",5000)
+								end
+							else
+									--print('Teste')
+									vCLIENT.toggleCarry(nplayer,source)
+									local weapons = vRPclient.replaceWeapons(nplayer)
+									for k,v in pairs(weapons) do
+										vRP.giveInventoryItem(nuser_id,k,1)
+										if v.ammo > 0 then
+											vRP.giveInventoryItem(nuser_id,vRP.itemAmmoList(k),v.ammo)
+										end
+									end
+									vRP.wantedTimer(user_id,60)
+									vRPclient.updateWeapons(nplayer)
+									opened[user_id] = parseInt(nuser_id)
+									vCLIENT.openInspect(source)
+									TriggerClientEvent("Notify",nuser_id,"aviso","Voce esta sendo revistado",5000)
+
+							end
+						else
+							TriggerClientEvent("Notify",source,"negado","Sistema indisponível no momento.",5000)
+						end
+					end
+				end
+			else 
+				TriggerClientEvent("Notify",source,"negado","Voce nao pode revistar um Policial",5000)
 			end
 		end
 	end
 end)
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- OPENCHEST
 -----------------------------------------------------------------------------------------------------------------------------------------

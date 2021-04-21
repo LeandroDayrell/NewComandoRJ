@@ -1602,10 +1602,14 @@ AddEventHandler("vrp_inventory:useItem",function(slot,rAmount)
 					end
 
 					if itemName == "backpackx" then
-						local exp = vRP.getBackpack(user_id)
-						if exp >= 75 and exp < 100 then
-							if vRP.tryGetInventoryItem(user_id,itemName,1,true,slot) then
-								vRP.setBackpack(user_id,100)
+						if vRP.getPremium(user_id) then
+							local exp = vRP.getBackpack(user_id)
+							if exp >= 75 and exp < 100 then
+								if vRP.tryGetInventoryItem(user_id,itemName,1,true,slot) then
+									vRP.setBackpack(user_id,100)
+								end
+							else
+								TriggerClientEvent("Notify",source,"aviso","No momento você não pode usar essa mochila.",5000)
 							end
 						else
 							TriggerClientEvent("Notify",source,"aviso","No momento você não pode usar essa mochila.",5000)
@@ -1827,9 +1831,9 @@ AddEventHandler("vrp_inventory:useItem",function(slot,rAmount)
 						if identity then
 							if vRP.tryGetInventoryItem(user_id,itemName,1,true,slot) then
 								if not vRP.getPremium(user_id) then
-									vRP.execute("vRP/set_premium",{ steam = identity.steam, premium = parseInt(os.time()), predays = 3, priority = 20 })
+									vRP.execute("vRP/set_premium",{ steam = identity.steam, premium = parseInt(os.time()), predays = 30, priority = 20 })
 								else
-									vRP.execute("vRP/update_premium",{ steam = identity.steam, predays = 3 })
+									vRP.execute("vRP/update_premium",{ steam = identity.steam, predays = 30 })
 								end
 							end
 						end
@@ -1840,9 +1844,9 @@ AddEventHandler("vrp_inventory:useItem",function(slot,rAmount)
 						if identity then
 							if vRP.tryGetInventoryItem(user_id,itemName,1,true,slot) then
 								if not vRP.getPremium(user_id) then
-									vRP.execute("vRP/set_premium",{ steam = identity.steam, premium = parseInt(os.time()), predays = 7, priority = 30 })
+									vRP.execute("vRP/set_premium",{ steam = identity.steam, premium = parseInt(os.time()), predays = 30, priority = 30 })
 								else
-									vRP.execute("vRP/update_premium",{ steam = identity.steam, predays = 7 })
+									vRP.execute("vRP/update_premium",{ steam = identity.steam, predays = 30 })
 								end
 							end
 						end
@@ -1855,7 +1859,7 @@ AddEventHandler("vrp_inventory:useItem",function(slot,rAmount)
 								if not vRP.getPremium(user_id) then
 									vRP.execute("vRP/set_premium",{ steam = identity.steam, premium = parseInt(os.time()), predays = 15, priority = 40 })
 								else
-									vRP.execute("vRP/update_premium",{ steam = identity.steam, predays = 15 })
+									vRP.execute("vRP/update_premium",{ steam = identity.steam, predays = 30 })
 								end
 							end
 						end
@@ -1869,6 +1873,32 @@ AddEventHandler("vrp_inventory:useItem",function(slot,rAmount)
 									vRP.execute("vRP/set_premium",{ steam = identity.steam, premium = parseInt(os.time()), predays = 30, priority = 50 })
 								else
 									vRP.execute("vRP/update_premium",{ steam = identity.steam, predays = 30 })
+								end
+							end
+						end
+	                end
+
+					if itemName == "premium05" then
+						local identity = vRP.getUserIdentity(user_id)
+						if identity then
+							if vRP.tryGetInventoryItem(user_id,itemName,1,true,slot) then
+								if not vRP.getPremium(user_id) then
+									vRP.execute("vRP/set_premium",{ steam = identity.steam, premium = parseInt(os.time()), predays = 30, priority = 80 })
+								else
+									vRP.execute("vRP/update_premium",{ steam = identity.steam, predays = 30 })
+								end
+							end
+						end
+	                end
+
+					if itemName == "premium06" then
+						local identity = vRP.getUserIdentity(user_id)
+						if identity then
+							if vRP.tryGetInventoryItem(user_id,itemName,1,true,slot) then
+								if not vRP.getPremium(user_id) then
+									vRP.execute("vRP/set_premium",{ steam = identity.steam, premium = parseInt(os.time()), predays = 60, priority = 90 })
+								else
+									vRP.execute("vRP/update_premium",{ steam = identity.steam, predays = 60 })
 								end
 							end
 						end

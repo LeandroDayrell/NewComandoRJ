@@ -183,9 +183,18 @@ $(document).on('blur', '#search-profile', function(e) {
 
 PS.Phone.Functions.ReceiveAccount = function(account) {
     if (account) {
+
         PS.Phone.Data.InstagramAccount = account;
         $(".instagram-app .not-logged").hide();
         $(".instagram-app .logged").show();
+
+        if (account.avatar == 'default.png') {
+            var avatar = "img/default.png";
+        } else {
+            var avatar = account.avatar;
+        }
+
+        $(".instagram-app .instagram-tabs .bg-profile").css({ "background-image": "url('" + avatar + "')" });
 
         $(".preload-stories-insta").show();
         $.post('http://ps_phone/GetStoriesInstagram', JSON.stringify({}), function(stories) {
@@ -333,28 +342,54 @@ PS.Phone.Functions.ReceivePosts = function(data) {
             //     </div>
             // </div>`;
 
-            var html = `<div class="card">
-                <div class="card-header">
-                    <div class="profile-img">
-                        <img class="profile-img viewprofiletwo" src="${avatar}" data-username="${post.username}"/>
+            if (post.verify) {
+                var html = `<div class="card">
+                    <div class="card-header">
+                        <div class="profile-img">
+                            <img class="profile-img viewprofiletwo" src="${avatar}" data-username="${post.username}"/>
+                        </div>
+                        <div class="profile-info">
+                            <div class="name viewprofiletwo" data-username="${post.username}">${post.username} <span class="verify"></span></div>
+                            <div class="location">${post.location}</div>
+                        </div>
+                        <div class="time">${time}</div>
                     </div>
-                    <div class="profile-info">
-                        <div class="name viewprofiletwo" data-username="${post.username}">${post.username}</div>
-                        <div class="location">${post.location}</div>
+                    <div class="content">
+                        <figure class="${post.filter}">
+                            <img src="${post.image}" class="content" />
+                        </figure>
                     </div>
-                    <div class="time">${time}</div>
-                </div>
-                <div class="content">
-                    <figure class="${post.filter}">
-                        <img src="${post.image}" class="content" />
-                    </figure>
-                </div>
-                <div class="card-footer">
-                    <div class="footer-content">
-                        <p><span>${post.username}</span> ${post.description}</p>
+                    <div class="card-footer">
+                        <div class="footer-content">
+                            <p><span>${post.username}</span> ${post.description}</p>
+                        </div>
                     </div>
-                </div>
-            </div>`;
+                </div>`;
+
+            } else {
+                var html = `<div class="card">
+                    <div class="card-header">
+                        <div class="profile-img">
+                            <img class="profile-img viewprofiletwo" src="${avatar}" data-username="${post.username}"/>
+                        </div>
+                        <div class="profile-info">
+                            <div class="name viewprofiletwo" data-username="${post.username}">${post.username}</div>
+                            <div class="location">${post.location}</div>
+                        </div>
+                        <div class="time">${time}</div>
+                    </div>
+                    <div class="content">
+                        <figure class="${post.filter}">
+                            <img src="${post.image}" class="content" />
+                        </figure>
+                    </div>
+                    <div class="card-footer">
+                        <div class="footer-content">
+                            <p><span>${post.username}</span> ${post.description}</p>
+                        </div>
+                    </div>
+                </div>`;
+            }
 
             $(".insta-posts").append(html);
         });
@@ -395,16 +430,28 @@ $(document).on('submit', '.addaccountinsta', function(e) {
     $(".instagram-app .not-logged .error p").html();
     $(".instagram-app .not-logged .error").hide();
 
+    PS.Phone.Notifications.Add("fas fa-check", "Cria conta", "Conta criada com sucesso!", "green", 5000);
+    PS.Phone.Functions.ToggleApp("instagram", "none");
+    PS.Phone.Data.currentApplication = "";
+
     $.post('http://ps_phone/AddAccountInsta', JSON.stringify({
         name: name,
         username: username,
         password: password
     }), function(account) {
+        PS.Phone.Functions.ToggleApp("instagram", "block");
+        PS.Phone.Data.currentApplication = "instagram";
         PS.Phone.Data.InstagramAccount = account;
+
+        if (account.avatar == 'default.png') {
+            var avatar = "img/default.png";
+        } else {
+            var avatar = account.avatar;
+        }
+
+        $(".bg-profile").css("background-image", avatar);
         $(".instagram-app .not-logged").hide();
         $(".instagram-app .logged").show();
-
-        PS.Phone.Notifications.Add("fas fa-check", "Cria conta", "Conta criada com sucesso! Finalize e abra novamente o aplicativo", "green");
 
         $(".preload-stories-insta").show();
         $.post('http://ps_phone/GetStoriesInstagram', JSON.stringify({}), function(stories) {
@@ -578,6 +625,11 @@ $(document).on('click', '.viewprofile', function(e) {
             $(".user-profile .next").hide();
             $(".user-profile .profileFollow").html(htmldata);
 
+            if (nprofile.account.verify) {
+                var htmlverify = "<span class='verify'></span>";
+                $(".user-profile .profileDetail .name").append(htmlverify);
+            }
+
             $(".user-profile .ImgTab").html('');
 
             $.each(nprofile.posts, function(i, post) {
@@ -645,6 +697,11 @@ $(document).on('click', '.viewprofiletwo', function(e) {
             $(".user-profile #insta-unfollow").attr("data-username", nprofile.account.username);
 
             $(".user-profile .ImgTab").html('');
+
+            if (nprofile.account.verify) {
+                var htmlverify = "<span class='verify'></span>";
+                $(".user-profile .profileDetail .name").append(htmlverify);
+            }
 
             $.each(nprofile.posts, function(i, post) {
 
@@ -742,6 +799,11 @@ $(document).on('click', '.myprofile', function(e) {
             $(".myprofiletab .profileDetail .description").text(nprofile.account.description);
             $(".myprofiletab .profileImg img").attr("src", avatar);
             $(".myprofiletab .profileFollow").html(htmldata);
+
+            if (nprofile.account.verify) {
+                var htmlverify = "<span class='verify'></span>";
+                $(".myprofiletab .profileDetail .name").append(htmlverify);
+            }
 
             $(".myprofiletab .ImgTab").html('');
 
@@ -866,8 +928,8 @@ function printdate(date2) {
 }
 
 setInterval(function() {
-    verifyopenposts();
-    verifyopenstories();
+    // verifyopenposts();
+    // verifyopenstories();
 }, 5000);
 
 function verifyopenposts() {

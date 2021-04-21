@@ -421,12 +421,12 @@ body {
 .call-notifications {
     /* display: none; */
     position: absolute;
-    background: #e67d22ea;
-    height: 9vh;
-    width: 34vh;
+    background: rgba(0, 0, 0, 0.5);
+    height: 68px;
+    width: 250px;
     bottom: 16vh;
     right: -35vh;
-    border-radius: 1.7vh;
+    border-radius: 999px;
     z-index: -5;
 }
 
@@ -474,58 +474,57 @@ body {
 }
 
 .screen-notifications-container {
-    /* display: none; */
     position: absolute;
-    background: rgba(29, 160, 242, 0.9);
-    height: 9vh;
-    width: 34vh;
-    bottom: 5vh;
+    background: #fff;
+    height: 68px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+    color: #333;
+    width: 250px;
+    bottom: 25vh;
     right: -35vh;
-    border-radius: 1.7vh;
-    z-index: -5;
+    border-radius: 999px;
 }
 
 .screen-notification-icon {
-    position: absolute;
-    line-height: 9.3vh;
-    left: 2vh;
-    font-size: 3.75vh;
-    color: white;
+    float: left;
+    width: 50px;
+    margin: 9px;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.screen-notification-icon img {
+    max-width: 100%;
 }
 
 .screen-notification-title {
-    position: absolute;
-    line-height: 5.5vh;
-    left: 7.5vh;
-    font-size: 1.5vh;
-    color: white;
+    float: left;
+    font-weight: 600;
+    margin-top: 5px;
     font-family: 'SFPro Display Regular';
+    width: 170px;
+}
+
+.screen-notification-title p {
+    margin-bottom: 0;
 }
 
 .screen-notification-content {
-    position: absolute;
-    top: 4.2vh;
-    left: 7.5vh;
-    font-size: 1.2vh;
-    color: white;
     font-family: 'SFPro Display Medium';
-    height: 3.5vh;
-    width: 26vh;
-    overflow: hidden;
 }
 
 .call-notifications-icon {
     position: absolute;
-    line-height: 9.3vh;
+    line-height: 7vh;
     left: 2vh;
-    font-size: 3.75vh;
+    font-size: 2.75vh;
     color: white;
     transform: rotate(90deg);
 }
 
 .call-notifications-title {
     position: absolute;
-    line-height: 5.5vh;
+    line-height: 4.5vh;
     left: 7.5vh;
     font-size: 1.5vh;
     color: white;
@@ -534,13 +533,13 @@ body {
 
 .call-notifications-content {
     position: absolute;
-    top: 4.2vh;
+    top: 3.2vh;
     left: 7.5vh;
     font-size: 1.2vh;
     color: white;
     font-family: 'SFPro Display Medium';
     height: 3.5vh;
-    width: 26vh;
+    width: 170px;
     overflow: hidden;
 }
 
