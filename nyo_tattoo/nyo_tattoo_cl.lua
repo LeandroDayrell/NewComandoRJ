@@ -99,6 +99,18 @@ function atualizarTattoo()
     })
 end
 
+CreateThread(function()
+    while true do 
+        Wait(300)
+        if not in_loja then 
+            ClearPedDecorations(PlayerPedId())
+            for k,v in pairs(atualTattoo) do
+                 AddPedDecorationFromHashes(PlayerPedId(),GetHashKey(v[1]),GetHashKey(k))
+            end
+        end      
+    end
+end)
+
 function nyoTattooC.applyTatto()
     ClearPedDecorations(PlayerPedId())
     for k,v in pairs(atualTattoo) do

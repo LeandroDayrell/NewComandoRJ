@@ -403,7 +403,8 @@ RegisterCommand('fix',function(source,args,rawCommand)
 		local vehicle,vehNet,vehPlate,vehName = vRPclient.vehList(source,7)
 		local plateUser = vRP.getVehiclePlate(vehPlate)
 		if vehicle then 
-			TriggerClientEvent('reparar',source,vehicle)
+			--print('Teste 01')
+			TriggerClientEvent('reparar',source,vehicle)--
 			SendWebhookMessage(webhooklinkgod,  "UserID: [" ..user_id.."]  Usou Fix Coords: "..x..", "..y..", "..z..  "  Placa: " ..vehPlate.. " .")
 		end
 	end

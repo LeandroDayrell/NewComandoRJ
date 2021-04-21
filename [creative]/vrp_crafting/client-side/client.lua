@@ -70,8 +70,8 @@ local craftList = {
 	{ -1391.24,-607.94,30.32,"bahamas2Crafting" },
     { 472.1,-1310.81,29.22,"bennysCrafting" },
     { 145.98,-2199.72,4.69,"lowriderCrafting" },
-    { 1270.75,-202.44,101.29,"laranjaCrafting" },
-    { 1383.63,-774.53,67.36,"azulCrafting" },
+    { -468.88,1559.97,378.66,"laranjaCrafting" },
+    { 3227.43,5173.63,36.23,"azulCrafting" },
     { 1268.07,-204.56,103.61,"vermelhoCrafting" },
     { 1001.86,987.56,234.49,"verdeCrafting" },
 	{ -347.43,-117.01,39.25,"mecanicoCrafting" }

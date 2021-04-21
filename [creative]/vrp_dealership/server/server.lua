@@ -44,30 +44,37 @@ AddEventHandler('vehicleshop.CheckMoneyForVeh', function(veh, price, type, name,
         local stockQtd = rows[1].stock       
   
         local get_veh = vRP.query("vRP/get_vehicles", {user_id = user_id, vehicle = vehicleModel})
+        -- = tostring(name)
+		local maxVehs = vRP.query("vRP/con_maxvehs",{ user_id = parseInt(user_id) })
+		local myGarages = vRP.getInformation(user_id)
+        
+        if vRP.getPremium(user_id) then
+			if parseInt(maxVehs[1].qtd) >= parseInt(myGarages[1].garage) + 2 then
+				TriggerClientEvent("Notify",source,"importante","Você atingiu o máximo de veículos em sua garagem.",3000)
+				return
+			end
+		else
+			if parseInt(maxVehs[1].qtd) >= parseInt(myGarages[1].garage) then
+				TriggerClientEvent("Notify",source,"importante","Você atingiu o máximo de veículos em sua garagem.",3000)
+				return
+			end
+		end
+
 
         if #get_veh <= 0 then
+         
             if stockQtd > 0 then
+
                 
                 --local balance = vRP.getBankMoney(user_id)
 
                 --if balance >= parseInt(vehiclePrice) then
                     stockQtd = stockQtd - 1	
                     vRP.paymentBank(user_id,parseInt(vehiclePrice))
-                   -- vRP.setBankMoney(user_id,balance-tonumber(vehiclePrice))
                     vRP.execute("sRP/set_quantidade", {model = veh, stock = stockQtd})
                     vRP.execute("vRP/add_vehicle",{ user_id = parseInt(user_id), vehicle = vehicleModel, plate = vRP.generatePlateNumber(), phone = vRP.getPhone(user_id), work = tostring(false) })
-                    --vRP.execute("vRP/add_vehicle", {user_id = user_id, vehicle = vehicleModel})
-                    -- CRIAR LOG AQUI 
-                    -- VEHICLEMODEL = NOME DO CARRO
-                    -- USER ID = ID DO PLAYER
-                    -- VEHICLEPRICE = vVALOR DO VEICULO 
                     TriggerClientEvent("vehicleshop.sussessbuy", source, name, vehiclePrice)
                     TriggerClientEvent('vehicleshop.receiveInfo', source, bank)   
-                    --TriggerClientEvent('vehicleshop.spawnVehicle', source, vehicleModel)
-               --[[  else
-                    TriggerClientEvent("vehicleshop.notify", source, 'error', 'You dont have money.')
-                   --TriggerClientEvent("Notify",source,"negado","Dinheiro insuficiente.")
-                end ]]
             else              
                 TriggerClientEvent("vehicleshop.notify", source, 'error', 'Nós não temos este veículo')
               --  TriggerClientEvent("Notify",source,"aviso","Sem estoque deste veiculo!.")

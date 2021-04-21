@@ -211,13 +211,13 @@ RegisterNUICallback("callbacks",function(data)
 				return
 			end
 			block = true
-			if func.repairVehicle(vehicle,damage) then
+			if func.repairVehicle(vehicle,damage) then --
 				SetVehicleDoorOpen(vehicle, 4, 0, 0)
 				if not IsPedInAnyVehicle(PlayerPedId()) then
 					vRP.playAnim(false,{{"mini@repair","fixing_a_player"}},true)
 				end
-				TriggerEvent("progress",10000,"reparando")
-				Wait(10000)
+				--TriggerEvent("progress",10000,"reparando")
+				--Wait(10000)
 				SetVehicleFixed(vehicle)
 				SetVehicleDirtLevel(vehicle,0.0)
 				SetVehicleUndriveable(vehicle,false)
@@ -280,7 +280,7 @@ RegisterNUICallback("callbacks",function(data)
 				SetVehicleMod(vehicle,mod["dianteira"],modindex,false)
 				SetVehicleTyresCanBurst(vehicle,true)
 				updateCart(myveh, "fabrica", 0)
-			elseif type == "custom" then
+			elseif type == "custom" then --
 				SetVehicleMod(vehicle,mod["dianteira"],modindex,true)
 				updateCart(myveh, "custom", 1)
 			elseif type == "bulletproof" then

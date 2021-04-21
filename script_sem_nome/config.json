@@ -12,7 +12,7 @@
     "database_prefix": "vrp",
     "vehicles": "vrp_vehicles",
     "priority": "vrp_priority",
-    "homes": "vrp_homes_permissions",
+    "homes": "vrp_homes",
     "esx": {
       "admin_group": "admin",
       "default_group": "unemployed",

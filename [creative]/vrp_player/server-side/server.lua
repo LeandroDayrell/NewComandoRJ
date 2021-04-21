@@ -1335,6 +1335,59 @@ RegisterCommand("seat",function(source,args,rawCommand)
 		end
 	end
 end)
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- ptrid
+-----------------------------------------------------------------------------------------------------------------------------------------
+RegisterCommand("ptrid",function(source,args,rawCommand)
+	local user_id = vRP.getUserId(source)
+	if user_id then
+		if vRPclient.getHealth(source) > 101 and not vCLIENT.getHandcuff(source) then
+				local onDuty = ""
+				local service = {}
+
+				--if vRP.hasPermission(user_id,"Police") then
+					service = vRP.numPermission("Police")
+				--end
+
+				for k,v in pairs(service) do
+					local nuser_id = vRP.getUserId(v)
+					local identity = vRP.getUserIdentity(nuser_id)
+
+					onDuty = onDuty.."<b>Passaporte:</b> "..vRP.format(parseInt(nuser_id)).."<br>"
+				end
+
+				TriggerClientEvent("Notify",source,"importante",onDuty,30000)
+		end
+	end
+end)
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- ptrid
+-----------------------------------------------------------------------------------------------------------------------------------------
+RegisterCommand("samuid",function(source,args,rawCommand)
+	local user_id = vRP.getUserId(source)
+	if user_id then
+		if vRPclient.getHealth(source) > 101 and not vCLIENT.getHandcuff(source) then
+				local onDuty = ""
+				local service = {}
+
+				--if vRP.hasPermission(user_id,"Paramedic") then
+					service = vRP.numPermission("Paramedic")
+				--end
+
+				for k,v in pairs(service) do
+					local nuser_id = vRP.getUserId(v)
+					local identity = vRP.getUserIdentity(nuser_id)
+
+					onDuty = onDuty.."<b>Passaporte:</b> "..vRP.format(parseInt(nuser_id)).."<br>"
+				end
+
+				TriggerClientEvent("Notify",source,"importante",onDuty,30000)
+		end
+	end
+end)
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- ONDUTY
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -1342,7 +1395,7 @@ RegisterCommand("onduty",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
 		if vRPclient.getHealth(source) > 101 and not vCLIENT.getHandcuff(source) then
-			if vRP.hasPermission(user_id,"Police") or vRP.hasPermission(user_id,"Paramedic") then
+			if vRP.hasPermission(user_id,"Police") or vRP.hasPermission(user_id,"Paramedic") or vRP.hasPermission(user_id,"Taxi") then
 				local onDuty = ""
 				local service = {}
 
@@ -1350,6 +1403,8 @@ RegisterCommand("onduty",function(source,args,rawCommand)
 					service = vRP.numPermission("Police")
 				elseif vRP.hasPermission(user_id,"Paramedic") then
 					service = vRP.numPermission("Paramedic")
+				elseif vRP.hasPermission(user_id,"Taxi") then
+					service = vRP.numPermission("Taxi")
 				end
 
 				for k,v in pairs(service) do

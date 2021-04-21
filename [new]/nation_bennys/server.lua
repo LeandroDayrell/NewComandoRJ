@@ -32,7 +32,7 @@ function sergin.checkPayment(amount)
 
     local source = source
     local user_id = vRP.getUserId(source)
-    if not vRP.tryGetInventoryItem(user_id, "dollars",tonumber(amount)) then
+    if not vRP.paymentBank(user_id,tonumber(amount)) then
         TriggerClientEvent("Notify",source,"negado","Você não possui dinheiro suficiente.",7000)
         return false
     end
@@ -40,9 +40,13 @@ function sergin.checkPayment(amount)
     return true
 end
 
+
+
 function sergin.repairVehicle(vehicle, damage)
-    local vehicle,vehNet,vehPlate,vehName = vRPclient.vehList(source,7)
-    TriggerEvent("tryreparar", vehicle) -- CORRIGIR TRYREPARAR VEICULO
+    local vehicle,vehNet,vehPlate,vehName = vRP.vehList(source,7)
+    --TriggerEvent("tryreparar", vehicle) -- CORRIGIR TRYREPARAR VEICULO
+    ---print('Teste 01')
+    TriggerClientEvent('reparar',source,vehicle)
     return true
 end
 

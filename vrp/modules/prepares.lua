@@ -76,6 +76,7 @@ vRP.prepare("vRP/get_vehicle","SELECT * FROM vrp_vehicles WHERE user_id = @user_
 vRP.prepare("vRP/get_vehicle_plate","SELECT * FROM vrp_vehicles WHERE plate = @plate")
 vRP.prepare("vRP/rem_vehicle","DELETE FROM vrp_vehicles WHERE user_id = @user_id AND vehicle = @vehicle")
 vRP.prepare("vRP/get_vehicles","SELECT * FROM vrp_vehicles WHERE user_id = @user_id AND vehicle = @vehicle")
+vRP.prepare("vRP/get_vehiclesvip","SELECT * FROM vrp_vehicles WHERE user_id = @user_id AND vehicle = @vehicle, vip = @vip") -- TESTE PARA NAO TRANSFERIR VEICULO VIP
 vRP.prepare("vRP/set_update_vehicles","UPDATE vrp_vehicles SET engine = @engine, body = @body, fuel = @fuel, doors = @doors, windows = @windows, tyres = @tyres WHERE user_id = @user_id AND vehicle = @vehicle")
 vRP.prepare("vRP/set_arrest","UPDATE vrp_vehicles SET arrest = @arrest, time = @time WHERE user_id = @user_id AND vehicle = @vehicle")
 vRP.prepare("vRP/set_desmanche","UPDATE vrp_vehicles SET desmanche = @desmanche, time = @time WHERE user_id = @user_id AND vehicle = @vehicle")

@@ -1021,36 +1021,41 @@ end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- VEHICLEMODS
 -----------------------------------------------------------------------------------------------------------------------------------------
-function cnVRP.vehicleMods(veh,custom)
+function src.vehicleMods(veh,custom)
 	if custom and veh then
 		SetVehicleModKit(veh,0)
 
-		if custom.color then
-			SetVehicleColours(veh,tonumber(custom.color["1"]),tonumber(custom.color["2"]))
-			SetVehicleExtraColours(veh,tonumber(custom.extracolor["1"]),tonumber(custom.extracolor["2"]))
-		end
-
-		if custom.tyresmoke then
-			ToggleVehicleMod(veh,20,custom.tyresmoke)
-			SetVehicleTyreSmokeColor(veh,tonumber(custom.smokecolor["1"]),tonumber(custom.smokecolor["2"]),tonumber(custom.smokecolor["3"]))
-		end
-
-		if parseInt(custom.neon) == 1 then
-			SetVehicleNeonLightEnabled(veh,0,true)
-			SetVehicleNeonLightEnabled(veh,1,true)
-			SetVehicleNeonLightEnabled(veh,2,true)
-			SetVehicleNeonLightEnabled(veh,3,true)
-			SetVehicleNeonLightsColour(veh,tonumber(custom.neoncolor["1"]),tonumber(custom.neoncolor["2"]),tonumber(custom.neoncolor["3"]))
+		if not custom.customcolor1 and not custom.customcolor2 then
+			if custom.color then
+				SetVehicleColours(veh,tonumber(custom.color[1]),tonumber(custom.color[2]))
+				SetVehicleExtraColours(veh,tonumber(custom.extracolor[1]),tonumber(custom.extracolor[2]))
+			end
 		else
-			SetVehicleNeonLightEnabled(veh,0,false)
-			SetVehicleNeonLightEnabled(veh,1,false)
-			SetVehicleNeonLightEnabled(veh,2,false)
-			SetVehicleNeonLightEnabled(veh,3,false)
+			SetVehicleCustomPrimaryColour(veh,tonumber(custom.customcolor1[1]),tonumber(custom.customcolor1[2]),tonumber(custom.customcolor1[3]))
+			SetVehicleCustomSecondaryColour(veh,tonumber(custom.customcolor2[1]),tonumber(custom.customcolor2[2]),tonumber(custom.customcolor2[3]))
 		end
 
-		if tonumber(custom.headlights) == 1 then
-			ToggleVehicleMod(veh,22,true)
-			SetVehicleXenonLightsColour(veh,tonumber(custom.xenoncolor))
+		if custom.smokecolor then
+																									  
+			SetVehicleTyreSmokeColor(veh,tonumber(custom.smokecolor[1]),tonumber(custom.smokecolor[2]),tonumber(custom.smokecolor[3]))
+		end
+
+		if custom.neon then
+			SetVehicleNeonLightEnabled(veh,0,1)
+			SetVehicleNeonLightEnabled(veh,1,1)
+			SetVehicleNeonLightEnabled(veh,2,1)
+			SetVehicleNeonLightEnabled(veh,3,1)
+			SetVehicleNeonLightsColour(veh,tonumber(custom.neoncolor[1]),tonumber(custom.neoncolor[2]),tonumber(custom.neoncolor[3]))
+		else
+			SetVehicleNeonLightEnabled(veh,0,0)
+			SetVehicleNeonLightEnabled(veh,1,0)
+			SetVehicleNeonLightEnabled(veh,2,0)
+			SetVehicleNeonLightEnabled(veh,3,0)
+	 
+
+															   
+								
+																					
 		end
 
 		if custom.plateindex then
@@ -1087,11 +1092,11 @@ function cnVRP.vehicleMods(veh,custom)
 			SetVehicleMod(veh,15,tonumber(custom.suspension))
 			SetVehicleMod(veh,16,tonumber(custom.armor))
 			SetVehicleMod(veh,23,tonumber(custom.tires),custom.tiresvariation)
-
+		
 			if IsThisModelABike(GetEntityModel(veh)) then
 				SetVehicleMod(veh,24,tonumber(custom.btires),custom.btiresvariation)
 			end
-
+		
 			SetVehicleMod(veh,25,tonumber(custom.plateholder))
 			SetVehicleMod(veh,26,tonumber(custom.vanityplates))
 			SetVehicleMod(veh,27,tonumber(custom.trimdesign)) 
@@ -1113,13 +1118,25 @@ function cnVRP.vehicleMods(veh,custom)
 			SetVehicleMod(veh,43,tonumber(custom.aerials))
 			SetVehicleMod(veh,44,tonumber(custom.roofscoops))
 			SetVehicleMod(veh,45,tonumber(custom.tank))
-			SetVehicleMod(veh,46,tonumber(custom.doors2))
+			SetVehicleMod(veh,46,tonumber(custom.doors))
 			SetVehicleMod(veh,48,tonumber(custom.liveries))
+			SetVehicleLivery(veh,tonumber(custom.liveries))
 
+			ToggleVehicleMod(veh,20,tonumber(custom.tyresmoke))
+			ToggleVehicleMod(veh,22,tonumber(custom.headlights))
 			ToggleVehicleMod(veh,18,tonumber(custom.turbo))
 		end
+		if tonumber(custom.headlights) == 1 then
+            SetVehicleHeadlightsColour(veh,tonumber(custom.xenoncolor))
+		end
+		TriggerEvent('nation:applymods',nveh,vehname)
 	end
 end
+
+RegisterNetEvent('vrp_garages:mods')
+AddEventHandler('vrp_garages:mods',function(vnet,custom)
+	src.vehicleMods(NetToVeh(vnet),custom)
+end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- SPAWNVEHICLE
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -1215,11 +1232,6 @@ function cnVRP.spawnVehicle(vehname,plate,vehengine,vehbody,vehfuel,custom,vehWi
 	end
 	return false
 end
-
-RegisterNetEvent('vrp_garages:mods')
-AddEventHandler('vrp_garages:mods',function(vnet,custom)
-  src.vehicleMods(NetToVeh(vnet),custom)
-end)
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------
