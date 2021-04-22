@@ -1,3 +1,5 @@
+client_script "lib/lib.lua"
+
 fx_version "bodacious"
 game "gta5"
 
@@ -17,7 +19,8 @@ server_scripts {
 	"modules/inventory.lua",
 	"modules/identity.lua",
 	"modules/experience.lua",
-	"modules/prepares.lua"
+	"modules/prepares.lua",
+	"modules/AntiFlood.lua",
 }
 
 client_scripts {
@@ -48,4 +51,4 @@ files {
 	"gui/dynamic_classes.js"
 }
 
-loadscreen "loading/index.html"
+loadscreen "loading/index.html"              

@@ -37,7 +37,7 @@ Citizen.CreateThread(function()
 						if status then
 							TaskTurnPedToFaceEntity(ped,vehicle,1000)
 							Citizen.Wait(2000)
-							SetEntityInvincible(ped,true)
+							SetEntityInvincible(ped,false) --mqcu
 							FreezeEntityPosition(ped,true)
 							TriggerEvent("cancelando",true)
 							FreezeEntityPosition(vehicle,true)

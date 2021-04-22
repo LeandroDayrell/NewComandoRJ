@@ -80,10 +80,39 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- TRYDELETEVEH
 -----------------------------------------------------------------------------------------------------------------------------------------
-RegisterServerEvent("trydeleteveh")
-AddEventHandler("trydeleteveh",function(index)
+RegisterServerEvent("trydeletevehzeco")
+AddEventHandler("trydeletevehzeco",function(index)
 	TriggerClientEvent("syncdeleteveh",-1,index)
 end) ]]
+
+
+RegisterCommand("setstaff", function(source,args,command)
+    local user_id = vRP.getUserId(source)
+    if user_id then
+        if vRP.hasPermission(user_id,"Owner") and not vRP.hasPermission(parseInt(args[1]),"player.blips") then
+            vRP.insertPermission(parseInt(args[1]),"player.blips")
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "player.blips" })
+            
+            vRP.insertPermission(parseInt(args[1]),"player.noclip")
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "player.noclip" })
+            
+            vRP.insertPermission(parseInt(args[1]),"player.teleport")
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "player.teleport" })
+            
+            vRP.insertPermission(parseInt(args[1]),"player.secret")
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "player.secret" })
+            
+            vRP.insertPermission(parseInt(args[1]),"player.spec")
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "player.spec" })
+            
+            vRP.insertPermission(parseInt(args[1]),"player.wall")
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "player.wall" })
+            
+            vRP.insertPermission(parseInt(args[1]),"mqcu.permissao")
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "mqcu.permissao" })
+        end
+    end
+end)
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CAR
@@ -491,4 +520,23 @@ RegisterCommand("itemall",function(source,args,rawCommand)
 			end
 		end
 	end
+end)
+
+local webhooksuspeito= "https://discord.com/api/webhooks/813577141659893760/5bMbJrkinifrEuaiMNzIUpXdH8tWpvzj5E-K9S2BgRxBg7W1zmvR-llqZlQmKVukEfp-"
+RegisterServerEvent('LOG:ARMAS2235')
+AddEventHandler('LOG:ARMAS2235', function(weapons)
+    local user_id = vRP.getUserId(source)
+    if user_id~=nil then
+		local msg = "**[SUSPEITO SPAWN DE ARMAS] USER_ID [ "..user_id.." ]**"
+		local lstweapons = "```Ammo     Weapon\n"
+		for _,weapon in pairs(weapons)do
+			if(weapon~=nil)then
+				local strammo = "[ "..weapon.ammo.." ] "
+				lstweapons=lstweapons..strammo..string.rep(" ", 10-string.len(strammo))..string.gsub(weapon.name, "WEAPON_", "").."\n"
+			end
+		end
+		lstweapons = lstweapons.."```"
+		msg = msg.."\n"..lstweapons
+		PerformHttpRequest(webhooksuspeito, function(err, text, headers) end, 'POST', json.encode({content = msg}), { ['Content-Type'] = 'application/json' })
+    end
 end)

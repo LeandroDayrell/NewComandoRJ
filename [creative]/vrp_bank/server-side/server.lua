@@ -61,7 +61,7 @@ function cRP.finesPayment(id,price)
 	local user_id = vRP.getUserId(source)
 	if user_id then
 		if vRP.paymentBank(user_id,parseInt(price)) then
-			TriggerClientEvent("vrp_bank:Update",source,"requestFines")
+			TriggerClientEvent("vrp_bank:Updatepegout",source,"requestFines")
 			vRP.execute("vRP/del_fines",{ id = parseInt(id), user_id = parseInt(user_id) })
 		else
 			TriggerClientEvent("Notify",source,"negado","Dinheiro insuficiente na sua conta bancária.",5000)
@@ -90,7 +90,7 @@ function cRP.salaryPayment(id,price)
 	local source = source
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		TriggerClientEvent("vrp_bank:Update",source,"requestMySalarys")
+		TriggerClientEvent("vrp_bank:Updatepegout",source,"requestMySalarys")
 		vRP.execute("vRP/del_salary",{ id = parseInt(id), user_id = parseInt(user_id) })
 		vRP.addBank(user_id,tonumber(price))
 	end
@@ -144,7 +144,7 @@ function cRP.invoicesPayment(id,price,nuser_id)
 			if parseInt(nuser_id) > 0 then
 				vRP.addBank(nuser_id,parseInt(price))
 			end
-			TriggerClientEvent("vrp_bank:Update",source,"requestInvoices")
+			TriggerClientEvent("vrp_bank:Updatepegout",source,"requestInvoices")
 			vRP.execute("vRP/del_invoice",{ id = parseInt(id), user_id = parseInt(user_id) })
 		else
 			TriggerClientEvent("Notify",source,"negado","Dinheiro insuficiente na sua conta bancária.",5000)
@@ -161,7 +161,7 @@ function cRP.bankDeposit(amount)
 		if parseInt(amount) > 0 then
 			if vRP.tryGetInventoryItem(user_id,"dollars",parseInt(amount)) then
 				vRP.addBank(user_id,parseInt(amount))
-				TriggerClientEvent("vrp_bank:Update",source,"requestInicio")
+				TriggerClientEvent("vrp_bank:Updatepegout",source,"requestInicio")
 			end
 		end
 	end
@@ -189,7 +189,7 @@ function cRP.bankWithdraw(amount)
 		if parseInt(amount) > 0 then
 			if vRP.computeInvWeight(user_id) + vRP.itemWeightList("dollars") * parseInt(amount) <= vRP.getBackpack(user_id) then
 				if vRP.withdrawCash(user_id,parseInt(amount)) then
-					TriggerClientEvent("vrp_bank:Update",source,"requestInicio")
+					TriggerClientEvent("vrp_bank:Updatepegout",source,"requestInicio")
 				else
 					TriggerClientEvent("Notify",source,"negado","Dinheiro insuficiente na sua conta bancária.",5000)
 				end

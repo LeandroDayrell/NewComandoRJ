@@ -69,10 +69,10 @@ AddEventHandler('stopWorking',function(job)
                 inRota = false
                 Fade(1000)
                 if DoesEntityExist(forklift) then
-                    TriggerServerEvent("trydeleteveh",VehToNet(forklift))
+                    TriggerServerEvent("trydeletevehzeco",VehToNet(forklift))
                 end
                 if DoesEntityExist(pounder) then
-                    TriggerServerEvent("trydeleteveh",VehToNet(pounder))
+                    TriggerServerEvent("trydeletevehzeco",VehToNet(pounder))
                 end
                 for k,v in pairs(props_truck) do    
                     if DoesEntityExist(v) then
@@ -135,13 +135,13 @@ AddEventHandler('truck-driver',function()
         retornando = false
         Fade(1000)
         if DoesEntityExist(forklift) then
-            TriggerServerEvent("trydeleteveh",VehToNet(forklift))
+            TriggerServerEvent("trydeletevehzeco",VehToNet(forklift))
         end
         if DoesEntityExist(forklift2) then
-            TriggerServerEvent("trydeleteveh",VehToNet(forklift2))
+            TriggerServerEvent("trydeletevehzeco",VehToNet(forklift2))
         end
         if DoesEntityExist(pounder) then
-            TriggerServerEvent("trydeleteveh",VehToNet(pounder))
+            TriggerServerEvent("trydeletevehzeco",VehToNet(pounder))
         end
         for k,v in pairs(props_truck) do    
             if DoesEntityExist(v) then
@@ -272,7 +272,7 @@ AddEventHandler('truck-driver',function()
     Citizen.Wait(500)
     Fade(1000)
     if DoesEntityExist(forklift) then
-        TriggerServerEvent("trydeleteveh",VehToNet(forklift))
+        TriggerServerEvent("trydeletevehzeco",VehToNet(forklift))
     end
     TriggerEvent('Notify','importante','Vá até <b>'..config_rotas_transportadora[mathvalue].nome,8000)
     while inRota do
@@ -393,7 +393,7 @@ AddEventHandler('truck-driver',function()
     Citizen.Wait(1000)
     Fade(1000)
     if DoesEntityExist(forklift2) then
-        TriggerServerEvent("trydeleteveh",VehToNet(forklift2))
+        TriggerServerEvent("trydeletevehzeco",VehToNet(forklift2))
     end
     if DoesEntityExist(prop1) then
         TriggerServerEvent("trydeleteobj",ObjToNet(prop1))
@@ -432,13 +432,13 @@ AddEventHandler('truck-driver',function()
                     retornando = false
                     Fade(1000)
                     if DoesEntityExist(forklift) then
-                        TriggerServerEvent("trydeleteveh",VehToNet(forklift))
+                        TriggerServerEvent("trydeletevehzeco",VehToNet(forklift))
                     end
                     if DoesEntityExist(forklift2) then
-                        TriggerServerEvent("trydeleteveh",VehToNet(forklift2))
+                        TriggerServerEvent("trydeletevehzeco",VehToNet(forklift2))
                     end
                     if DoesEntityExist(pounder) then
-                        TriggerServerEvent("trydeleteveh",VehToNet(pounder))
+                        TriggerServerEvent("trydeletevehzeco",VehToNet(pounder))
                     end
                     for k,v in pairs(props_truck) do    
                         if DoesEntityExist(v) then

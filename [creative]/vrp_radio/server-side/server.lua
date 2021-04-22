@@ -18,22 +18,22 @@ function cRP.activeFrequency(freq)
 	local user_id = vRP.getUserId(source)
 	if user_id then
 		if parseInt(freq) >= 1 and parseInt(freq) <= 999 then
-			if parseInt(freq) == 911 then
+			if parseInt(freq) == 190 then
 				if vRP.hasPermission(user_id,"Police") then
-					vCLIENT.startFrequency(source,911)
-					TriggerClientEvent("vrp_hud:RadioDisplay",source,911)
+					vCLIENT.startFrequency(source,190)
+					TriggerClientEvent("vrp_hud:RadioDisplay",source,190)
 					TriggerClientEvent("Notify",source,"sucesso","Rádio <b>"..parseInt(freq)..".0Mhz</b>.",5000)
 				end
-			elseif parseInt(freq) == 912 then
+			elseif parseInt(freq) == 191 then
 				if vRP.hasPermission(user_id,"Police") then
-					vCLIENT.startFrequency(source,912)
-					TriggerClientEvent("vrp_hud:RadioDisplay",source,912)
+					vCLIENT.startFrequency(source,191)
+					TriggerClientEvent("vrp_hud:RadioDisplay",source,191)
 					TriggerClientEvent("Notify",source,"sucesso","Rádio <b>"..parseInt(freq)..".0Mhz</b>.",5000)
 				end
-			elseif parseInt(freq) == 112 then
+			elseif parseInt(freq) == 192 then
 				if vRP.hasPermission(user_id,"Paramedic") then
-					vCLIENT.startFrequency(source,112)
-					TriggerClientEvent("vrp_hud:RadioDisplay",source,112)
+					vCLIENT.startFrequency(source,192)
+					TriggerClientEvent("vrp_hud:RadioDisplay",source,192)
 					TriggerClientEvent("Notify",source,"sucesso","Rádio <b>"..parseInt(freq)..".0Mhz</b>.",5000)
 				end
 			else

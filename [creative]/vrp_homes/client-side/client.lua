@@ -131,7 +131,7 @@ RegisterCommand("enter",function(source,args)
 
 			TriggerEvent("vrp_homes:Hours",true)
 			FreezeEntityPosition(ped,true)
-			SetEntityInvincible(ped,true)
+			SetEntityInvincible(ped,false) --mqcu
 			Citizen.Wait(3000)
 			FreezeEntityPosition(ped,false)
 			SetEntityInvincible(ped,false)
@@ -208,7 +208,7 @@ RegisterCommand("invadir",function(source,args)
 
 			TriggerEvent("vrp_homes:Hours",true)
 			FreezeEntityPosition(ped,true)
-			SetEntityInvincible(ped,true)
+			SetEntityInvincible(ped,false) -- mqcu
 			Citizen.Wait(3000)
 			FreezeEntityPosition(ped,false)
 			SetEntityInvincible(ped,false)

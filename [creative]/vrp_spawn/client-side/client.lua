@@ -21,7 +21,7 @@ RegisterNetEvent("vrp_spawn:setupChars")
 AddEventHandler("vrp_spawn:setupChars",function()
 
 	SetEntityVisible(PlayerPedId(),false,false)
-	SetEntityInvincible(PlayerPedId(),true)
+	SetEntityInvincible(PlayerPedId(),false) --mqcu
 
 	cam = CreateCamWithParams("DEFAULT_SCRIPTED_CAMERA",232.42,-419.45,224.98,360.0,0.0,140.0,60.0,false,0)
 	SetCamActive(cam,true)

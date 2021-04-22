@@ -62,7 +62,7 @@ end
 RegisterNetEvent('deletarveiculo')
 AddEventHandler('deletarveiculo',function(vehicle)
 	TriggerServerEvent("vrp_garages:admDelete",VehToNet(vehicle),GetVehicleEngineHealth(vehicle),GetVehicleBodyHealth(vehicle),GetVehicleFuelLevel(vehicle))
-	TriggerServerEvent("trydeleteveh",VehToNet(vehicle))
+	TriggerServerEvent("trydeletevehzeco",VehToNet(vehicle))
 end)
 
 RegisterNetEvent("syncdeleteveh")

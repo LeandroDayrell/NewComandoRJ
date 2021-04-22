@@ -105,7 +105,7 @@ function displayBarbershop(enable)
 			SendNUIMessage({ type = "click" })
 		end
 
-		SetPlayerInvincible(ped,true)
+		SetPlayerInvincible(ped,false) -- mqcu
 
 		if not DoesCamExist(cam) then
 			cam = CreateCam("DEFAULT_SCRIPTED_CAMERA",true)

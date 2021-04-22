@@ -103,7 +103,7 @@ function updateDisplayHud(ped)
 	if IsPedInAnyVehicle(ped) then
 		local vehicle = GetVehiclePedIsUsing(ped)
 		local fuel = GetVehicleFuelLevel(vehicle)
-		local speed = GetEntitySpeed(vehicle) * 2.236936
+		local speed = GetEntitySpeed(vehicle) * 3.6
 
 		SendNUIMessage({ vehicle = true, talking = talking, health = health, armour = armour, thirst = thirst, hunger = hunger, stress = stress, street = street, radio = radioDisplay, hours = hours, minutes = minutes, direction = direction, voice = voice, fuel = fuel, speed = speed, seatbelt = beltLock })
 	else
@@ -229,7 +229,7 @@ Citizen.CreateThread(function()
 			local veh = GetVehiclePedIsUsing(ped)
 			local vehClass = GetVehicleClass(veh)
 			if (vehClass >= 0 and vehClass <= 7) or (vehClass >= 9 and vehClass <= 12) or (vehClass >= 17 and vehClass <= 20) then
-				local speed = GetEntitySpeed(veh) * 3.605936
+				local speed = GetEntitySpeed(veh) * 3.6
 				if speed ~= beltSpeed then
 					--if ((beltSpeed - speed) >= 30 and not beltLock) or ((beltSpeed - speed) >= 90 and beltLock) then
 					if (beltSpeed - speed) >= 30 and not beltLock then

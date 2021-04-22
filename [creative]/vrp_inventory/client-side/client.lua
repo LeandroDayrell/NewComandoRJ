@@ -243,7 +243,8 @@ end)
 -- PARACHUTECOLORS
 -----------------------------------------------------------------------------------------------------------------------------------------
 function cRP.parachuteColors()
-	GiveWeaponToPed(PlayerPedId(),"GADGET_PARACHUTE",1,false,true)
+	--GiveWeaponToPed(PlayerPedId(),"GADGET_PARACHUTE",1,false,true)
+	vRP.giveWeapons({["GADGET_PARACHUTE"] = { ammo = 1 }})
 	SetPedParachuteTintIndex(PlayerPedId(),math.random(7))
 end
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -428,8 +429,8 @@ end)
 -- PUTWEAPONHANDS
 -----------------------------------------------------------------------------------------------------------------------------------------
 function cRP.putWeaponHands(weapon,ammo)
-	GiveWeaponToPed(PlayerPedId(),weapon,ammo,false,true)
-
+	--GiveWeaponToPed(PlayerPedId(),weapon,ammo,false,true)
+	vRP.giveWeapons({[weapon] = { ammo = ammo }})
 	if wComponents[weapon] then
 		for k,v in pairs(wComponents[weapon]) do
 			GiveWeaponComponentToPed(PlayerPedId(),weapon,GetHashKey(v))

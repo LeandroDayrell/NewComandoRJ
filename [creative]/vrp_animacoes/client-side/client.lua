@@ -550,7 +550,8 @@ local animacoes = {
 				local x2,y2,z2 = table.unpack(GetEntityCoords(object))
 				NetworkResurrectLocalPlayer(x2,y2,z2+v[2],GetEntityHeading(object),true,false)
 				SetEntityHealth(ped,health)
-				SetPedArmour(ped,armour)
+				--SetPedArmour(ped,armour)
+				TriggerEvent("newton",armour)
 
 				TriggerEvent("resetBleeding")
 				TriggerEvent("resetDiagnostic")

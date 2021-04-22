@@ -9,7 +9,7 @@ function tvRP.noClip()
 	noclip = not noclip
 	local ped = PlayerPedId()
 	if noclip then
-		SetEntityInvincible(ped,true)
+		SetEntityInvincible(ped,false) --mqcu
 		SetEntityVisible(ped,false,false)
 	else
 		SetEntityInvincible(ped,false)

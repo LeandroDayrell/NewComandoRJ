@@ -30,7 +30,15 @@ AddEventHandler("vRP:playerSpawn",function(user_id,source)
 
 		if data.health then
 			vRPclient.setHealth(source,data.health)
-			vRPclient.setArmour(source,data.armour)
+			local colete = data.armour
+			SetTimeout(10000,function()
+				if data.armour then
+					source = vRP.getUserSource(user_id)
+					if(source~=nil)then
+						vRPclient.setArmour(source,colete)
+					end
+				end
+			end)
 			TriggerClientEvent("statusHunger",source,data.hunger)
 			TriggerClientEvent("statusThirst",source,data.thirst)
 			TriggerClientEvent("statusStress",source,data.stress)
