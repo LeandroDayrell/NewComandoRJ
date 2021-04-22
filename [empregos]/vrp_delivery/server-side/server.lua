@@ -45,7 +45,7 @@ function cRP.paymentMethod()
 					vRP.giveInventoryItem(user_id,"dollars",parseInt(math.random(400,600)),true)
 				end
 			else
-				local value = math.random(300,400)
+				local value = math.random(280,320)
 
 				vRP.giveInventoryItem(user_id,"dollars",parseInt(value+(value*myBonus/100)),true)
 			end

@@ -74,7 +74,7 @@ function cRP.paymentMethod(vehPlate)
 	if user_id then
 		vRP.wantedTimer(user_id,300)
 		TriggerEvent("vrp_blipsystem:serviceExit",source)
-		vRP.giveInventoryItem(user_id,"dollars",parseInt(math.random(4000,5000)),true)
+		vRP.giveInventoryItem(user_id,"dollars2",parseInt(math.random(14000,15000)),true)
 	end
 end
 -----------------------------------------------------------------------------------------------------------------------------------------

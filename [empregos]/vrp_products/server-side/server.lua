@@ -19,10 +19,10 @@ local amount = {}
 -----------------------------------------------------------------------------------------------------------------------------------------
 local itemList = {
 	{ item = "cocaine", priceMin = 2, priceMax = 10, randMin = 3, randMax = 6 },
-	{ item = "weedendolada", priceMin = 155, priceMax = 165, randMin = 3, randMax = 6 },
-	{ item = "methendolada", priceMin = 200, priceMax = 210, randMin = 3, randMax = 6 },
-	{ item = "ecstasy", priceMin = 340, priceMax = 350, randMin = 3, randMax = 6 },
-	{ item = "lean", priceMin = 340, priceMax = 350, randMin = 3, randMax = 6 },
+	{ item = "weedendolada", priceMin = 200, priceMax = 165, randMin = 3, randMax = 6 },
+	{ item = "methendolada", priceMin = 270, priceMax = 210, randMin = 3, randMax = 6 },
+	{ item = "ecstasy", priceMin = 450, priceMax = 350, randMin = 3, randMax = 6 },
+	{ item = "lean", priceMin = 450, priceMax = 350, randMin = 3, randMax = 6 },
 	{ item = "keyboard", priceMin = 420, priceMax = 425, randMin = 1, randMax = 2 },
 	{ item = "mouse", priceMin = 380, priceMax = 385, randMin = 1, randMax = 2 },
 	{ item = "ring", priceMin = 335, priceMax = 345, randMin = 1, randMax = 2 },

@@ -316,6 +316,13 @@ local shops = {
 			["dollars2"] = 0.8
 		}
 	},
+	["mochilax"] = {
+		["mode"] = "Buy",
+		["type"] = "Cash",
+		["list"] = {
+			["backpackx"] = 10000
+		}
+	},
 	["lavagemyakuza"] = {
 		["mode"] = "Sell",
 		["type"] = "Cash",

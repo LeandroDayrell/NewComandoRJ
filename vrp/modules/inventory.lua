@@ -892,6 +892,12 @@ local itemlist = {
 		ammo = "WEAPON_SMG_AMMO",
 		weight = 1.75
 	},
+	["skate"] = {
+		index = "skate",
+		name = "Skate",
+		type = "use",
+		weight = 1.5
+	},	
 	["WEAPON_SNSPISTOL"] = {
 		index = "amt380",
 		name = "AMT 380",

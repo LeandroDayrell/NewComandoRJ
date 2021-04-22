@@ -2031,4 +2031,24 @@ function cRP.checkInventory()
 		return true
 	end
 end
+--[[ -----------------------------------------------------------------------------------------------------------------------------------------
+-- SKATE
+-----------------------------------------------------------------------------------------------------------------------------------------
 
+if itemName == "skate" then
+	active[user_id] = 3
+	vCLIENT.closeInventory(source)
+	vCLIENT.blockButtons(source,true)
+	TriggerClientEvent("Progress",source,3000,"Utilizando...")
+
+	repeat	
+		if active[user_id] == 0 then
+			active[user_id] = nil
+			vCLIENT.blockButtons(source,false)
+			TriggerClientEvent("skate",source)
+			
+		end
+		Citizen.Wait(0)
+	until active[user_id] == nil
+end
+ ]]

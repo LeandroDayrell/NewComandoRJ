@@ -22,8 +22,8 @@ local amount = {}
 local amountMin = 4
 local amountMax = 8
 
-local paymentMin = 80
-local paymentMax = 100
+local paymentMin = 170
+local paymentMax = 190
 local consumeItem = "pouch"
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- TRANSPORTER

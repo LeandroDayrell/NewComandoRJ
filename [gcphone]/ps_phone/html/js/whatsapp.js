@@ -56,8 +56,14 @@ $(document).on('click', '.whatsapp-chat', function(e) {
     var ChatId = $(this).attr('id');
     var ChatData = $("#" + ChatId).data('chatdata');
 
+    if (ChatData.contact_phone != undefined && ChatData.contact_phone != null && ChatData.contact_phone != '') {
+        var phone = ChatData.contact_phone;
+    } else {
+        var phone = ChatData.phone;
+    }
+
     $.post('http://ps_phone/GetWhatsappChat', JSON.stringify({
-        phone: ChatData.contact_phone
+        phone: phone
     }), function(chat) {
 
         ChatData.messages = JSON.parse(chat);
@@ -393,7 +399,25 @@ function LoadWhatsappChats(chats) {
             message = "...";
         }
 
-        var ChatElement = '<div class="whatsapp-chat" id="whatsapp-chat-' + i + '"><div class="whatsapp-chat-picture" style="background-image: url(' + profilepicture + ');"></div><div class="whatsapp-chat-name"><p>' + chat.contact_name + '</p></div><div class="whatsapp-chat-lastmessage"><p>' + message + '</p></div> <div class="whatsapp-chat-lastmessagetime"><p>' + time + '</p></div><div class="whatsapp-chat-unreadmessages unread-chat-id-' + i + '">1</div></div>';
+        var name = chat.contact_name;
+
+        if (chat.contact_name == null) {
+            name = chat.phone;
+        }
+
+        if (chat.contact_name == undefined) {
+            name = chat.phone;
+        }
+
+        if (chat.contact_name == '') {
+            name = chat.phone;
+        }
+
+        if (chat.contact_name == 'undefined') {
+            name = chat.phone;
+        }
+
+        var ChatElement = '<div class="whatsapp-chat" id="whatsapp-chat-' + i + '"><div class="whatsapp-chat-picture" style="background-image: url(' + profilepicture + ');"></div><div class="whatsapp-chat-name"><p>' + name + '</p></div><div class="whatsapp-chat-lastmessage"><p>' + message + '</p></div> <div class="whatsapp-chat-lastmessagetime"><p>' + time + '</p></div><div class="whatsapp-chat-unreadmessages unread-chat-id-' + i + '">1</div></div>';
 
         $("#messages").append(ChatElement);
         $("#whatsapp-chat-" + i).data('chatdata', chat);
@@ -706,7 +730,17 @@ $(document).on('click', '#send-image-group', function(e) {
 
 function SetupChatMessages(cData, NewChatData) {
     if (cData) {
-        OpenedChatData.phone = cData.contact_phone;
+        if (cData.contact_phone != undefined && cData.contact_phone != null && cData.contact_phone != '') {
+            OpenedChatData.phone = cData.contact_phone;
+        } else {
+            OpenedChatData.phone = cData.phone;
+        }
+
+        if (cData.contact_name != undefined || cData.contact_name != null || cData.contact_name != 'null') {
+            var name = cData.contact_name;
+        } else {
+            var name = cData.phone;
+        }
 
         if (OpenedChatPicture == null) {
             $.post('http://ps_phone/GetProfilePicture', JSON.stringify({
@@ -727,7 +761,7 @@ function SetupChatMessages(cData, NewChatData) {
             });
         }
 
-        $(".whatsapp-openedchat-name").html("<p>" + cData.contact_name + "</p>");
+        $(".whatsapp-openedchat-name").html("<p>" + name + "</p>");
         $(".whatsapp-openedchat-messages").html("");
 
         $.each(cData.messages, function(i, chat) {
@@ -785,8 +819,6 @@ function SetupChatMessages(cData, NewChatData) {
             scrollTop: 9999
         }, 1);
     } else {
-
-        console.log(NewChatData);
 
         OpenedChatData.phone = NewChatData.phone;
         if (OpenedChatPicture == null) {
@@ -1096,7 +1128,7 @@ $(document).on('submit', '.addaccountwpp', function(e) {
     var name = $(".addaccountwpp #name").val();
     var phone = $(".addaccountwpp #phone").val();
     var password = $(".addaccountwpp #password").val();
-
+    ''
     if (name.length <= 0 || username.length <= 0 || password.length <= 0) {
         $(".whatsapp-app .not-logged .error p").html("Preencha todos os campos");
         $(".whatsapp-app .not-logged .error").show();

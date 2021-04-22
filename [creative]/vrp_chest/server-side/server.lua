@@ -21,9 +21,15 @@ local chest = {
 	["Police"] = { 5000,"Police" },
 	["Mafia"] = { 1000,"Mafia" },
 	["Verde"] = { 1000,"Verde" },
+	["Lowrider"] = { 1000,"Lowrider" },
+	["Bennys"] = { 1000,"Bennys" },
 	["Yakuza"] = { 1000,"Yakuza" },
 	["Bahamas"] = { 1000,"Bahamas" },
 	["Unktec"] = { 1000,"Unktec" },
+	["Vermelho"] = { 1000,"Vermelho" },
+	["Laranja"] = { 1000,"Laranja" },
+	["Azul"] = { 1000,"Azul" },
+	["Milicia"] = { 1000,"Milicia" },
 	["TheLost"] = { 1000,"TheLost" }
 }
 -----------------------------------------------------------------------------------------------------------------------------------------

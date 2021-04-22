@@ -2064,7 +2064,7 @@ local mobileTheft = {
 		[15] = { "legos",1 },
 		[16] = { "ominitrix",1 },
 		[17] = { "bracelet",1 },
-		[18] = { "dildo",1 }
+		[18] = { "cpuchip",2 }
 	},
 	["MOBILE02"] = {
 		[1] = { "weedendolada",math.random(10) },
@@ -2084,7 +2084,7 @@ local mobileTheft = {
 		[15] = { "legos",1 },
 		[16] = { "ominitrix",1 },
 		[17] = { "bracelet",1 },
-		[18] = { "dildo",1 }
+		[18] = { "cpuchip",2 }
 	},
 	["MOBILE03"] = {
 		[1] = { "weedendolada",math.random(10) },
@@ -2104,7 +2104,7 @@ local mobileTheft = {
 		[15] = { "legos",1 },
 		[16] = { "ominitrix",1 },
 		[17] = { "bracelet",1 },
-		[18] = { "dildo",1 }
+		[18] = { "cpuchip",2 }
 	},
 	["MOBILE04"] = {
 		[1] = { "weedendolada",math.random(10) },

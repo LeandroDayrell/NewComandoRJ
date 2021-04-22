@@ -322,9 +322,9 @@ local craftList = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 550,
-					["copper"] = 200,
-					["blackcard"] = 1
+					["rubber"] = 50,
+					["copper"] = 50,
+					["cpuchip"] = 1
 				}
 			}
 		}
