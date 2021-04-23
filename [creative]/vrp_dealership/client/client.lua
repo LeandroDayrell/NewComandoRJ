@@ -196,6 +196,7 @@ function updateSelectedVehicle(model)
   --  lastSelectedVehicleEntity = CreateVehicle(hash, 404.99, -949.60, -99.98, 50.117, 0, 1)
     
   lastSelectedVehicleEntity = CreateVehicle(hash, 978.19, -3001.99, -40.62, 89.5, 0, 1)
+  SetVehicleNumberPlateText(lastSelectedVehicleEntity,'ABCDE123')
 
 
     local vehicleData = {}
@@ -293,6 +294,7 @@ AddEventHandler('vehicleshop.spawnVehicle', function(model)
         end
     end
     local vehicleBuy = CreateVehicle(hash, -11.87, -1080.87, 25.71, 132.0, 1, 1)
+	SetVehicleNumberPlateText(vehicleBuy,'ABCDE123')
     SetPedIntoVehicle(PlayerPedId(), vehicleBuy, -1)
         
  --   SetVehicleCustomPrimaryColour(vehicleBuy,  rgbColorSelected[1], rgbColorSelected[2], rgbColorSelected[3])
@@ -322,12 +324,13 @@ RegisterNUICallback(
             end
             
             testDriveEntity = CreateVehicle(hash, -995.79,-3470.07,13.95,57.81, 1, 1)
+			SetVehicleNumberPlateText(testDriveEntity,'ABCDE123')
             SetPedIntoVehicle(PlayerPedId(), testDriveEntity, -1)
             local timeGG = GetGameTimer()         
-            local vehicle,vehNet,vehPlate,vehName = vRP.vehList(7)
+            --local vehicle,vehNet,vehPlate,vehName = vRP.vehList(7)
             -- CRIAR UNLOCK DO VEICULO AQUI
-            TriggerServerEvent("setPlateEveryone",vehPlate)
-            TriggerEvent("setPlatePlayers",vehPlate,user_id)
+            TriggerServerEvent("setPlateEveryone",'ABCDE123')
+            TriggerEvent("setPlatePlayers",'ABCDE123',user_id)
 
         --    SetVehicleCustomPrimaryColour(testDriveEntity,  math.ceil(rgbColorSelected[1]), math.ceil(rgbColorSelected[2]), math.ceil(rgbColorSelected[3]))
          --   SetVehicleCustomSecondaryColour(testDriveEntity,  math.ceil(rgbSecondaryColorSelected[1]), math.ceil(rgbSecondaryColorSelected[2]), math.ceil(rgbSecondaryColorSelected[3]))

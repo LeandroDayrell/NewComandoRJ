@@ -46,13 +46,21 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- SETCUSTOMIZATION
 -----------------------------------------------------------------------------------------------------------------------------------------
+
+function ll(n)
+	
+		n = n + 0.0
+		return n
+	
+end
+
 RegisterNetEvent("vrp_barbershop:setCustomization")
 AddEventHandler("vrp_barbershop:setCustomization",function(status)
 	myClothes = {}
-	myClothes = { status[1], status[2], status[3], status[4], status[5], status[6], status[7], status[8], status[9], status[10], status[11], status[12], status[13], status[14], status[15], status[16], status[17], status[18], status[19], status[20], status[21], status[22], status[23], status[24], status[25], status[26] }
-
+	myClothes = { status[1], status[2], status[3], status[4], status[5], status[6], status[7], status[8], status[9], status[10], status[11], status[12], status[13], status[14], status[15], status[16], status[17], status[18], status[19], status[20], status[21], status[22], status[23], status[24], status[25], status[26],status[27], status[28], status[29], status[30], status[31], status[32], status[33], status[34], status[35], status[36], status[37], status[38], status[39], status[40], status[41], status[42], status[43], status[44], status[45], status[46], status[47], status[48], status[49] }
+	TriggerServerEvent("eprint",{myClothes})
 	local ped = PlayerPedId()
-	SetPedHeadBlendData(ped,status[1],0,status[1],status[4],status[4],status[4],status[2]*0.1,status[2]*0.1,1.0,true)
+	SetPedHeadBlendData(ped,status[1],0,status[1],status[4],status[4],status[4],status[2]*0.1,status[2]*0.1,status[27],true)
 	SetPedEyeColor(ped,status[3])
 
 	if status[5] == 0 then
@@ -88,6 +96,40 @@ AddEventHandler("vrp_barbershop:setCustomization",function(status)
 
 	SetPedHeadOverlay(ped,5,status[24],status[25]*0.1)
 	SetPedHeadOverlayColor(ped,5,1,status[26],status[26])
+
+
+
+	-- Nariz
+	SetPedFaceFeature(ped,0,ll(status[30]))
+	SetPedFaceFeature(ped,1,ll(status[31]))
+	SetPedFaceFeature(ped,2,ll(status[32]))
+	SetPedFaceFeature(ped,3,ll(status[33]))
+	SetPedFaceFeature(ped,4,ll(status[34]))
+	SetPedFaceFeature(ped,5,ll(status[35]))
+
+	-- Sombrancelha
+
+	SetPedFaceFeature(ped,6,ll(status[28]))
+	SetPedFaceFeature(ped,7,ll(status[29]))
+	
+	-- Bochechas
+	SetPedFaceFeature(ped,8,ll(status[36]))
+	SetPedFaceFeature(ped,9,ll(status[37]))
+	SetPedFaceFeature(ped,10,ll(status[38]))
+
+	-- Boca/Mandibula
+	SetPedFaceFeature(ped,12,ll(status[49]))
+	SetPedFaceFeature(ped,13,ll(status[39]))
+	SetPedFaceFeature(ped,14,ll(status[40]))
+
+	-- Queixo
+	SetPedFaceFeature(ped,15,ll(status[41]))
+	SetPedFaceFeature(ped,16,ll(status[42]))
+	SetPedFaceFeature(ped,17,ll(status[43]))
+	SetPedFaceFeature(ped,18,ll(status[44]))
+	-- Pescoço
+	SetPedFaceFeature(ped,19,ll(status[45]))
+
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- DISPLAYBARBERSHOP

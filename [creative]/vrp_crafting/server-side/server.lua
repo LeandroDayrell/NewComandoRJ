@@ -32,6 +32,7 @@ local craftList = {
 				["require"] = {
 					["aluminum"] = 250,
 					["copper"] = 150,
+					["pecadearma"] = 100,
 					["blackcard"] = 1
 				}
 			},
@@ -63,6 +64,7 @@ local craftList = {
 				["require"] = {
 					["aluminum"] = 250,
 					["copper"] = 150,
+					["pecadearma"] = 100,
 					["blackcard"] = 1
 				}
 			},
@@ -85,6 +87,7 @@ local craftList = {
 				["require"] = {
 					["aluminum"] = 350,
 					["copper"] = 200,
+					["pecadearma"] = 200,
 					["blackcard"] = 1
 				}
 			},
@@ -94,6 +97,7 @@ local craftList = {
 				["require"] = {
 					["aluminum"] = 150,
 					["copper"] = 100,
+					["pecadearma"] = 100,
 					["blackcard"] = 1
 				}
 			},
@@ -102,6 +106,7 @@ local craftList = {
 				["destroy"] = true,
 				["require"] = {
 					["aluminum"] = 250,
+					["pecadearma"] = 100,
 					["copper"] = 150,
 					["blackcard"] = 1
 				}
@@ -147,11 +152,12 @@ local craftList = {
 	["miliciaCrafting"] = {
 		["perm"] = "Milicia",
 		["list"] = {
-			["WEAPON_ASSAULTRIFLE"] = {
+			["WEAPON_ASSAULTRIFLE_MK2"] = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
 					["aluminum"] = 400,
+					["pecadearma"] = 250,
 					["copper"] = 250,
 					["blackcard"] = 1
 				}
@@ -162,6 +168,7 @@ local craftList = {
 				["require"] = {
 					["aluminum"] = 150,
 					["copper"] = 100,
+					["pecadearma"] = 100,
 					["blackcard"] = 1
 				}
 			},
@@ -171,6 +178,7 @@ local craftList = {
 				["require"] = {
 					["aluminum"] = 250,
 					["copper"] = 150,
+					["pecadearma"] = 100,
 					["blackcard"] = 1
 				}
 			},
@@ -193,6 +201,7 @@ local craftList = {
 				["require"] = {
 					["aluminum"] = 200,
 					["copper"] = 150,
+					["pecadearma"] = 80,
 					["bluecard"] = 1
 				}
 			},
@@ -234,6 +243,7 @@ local craftList = {
 				["require"] = {
 					["aluminum"] = 100,
 					["copper"] = 75,
+					["pecadearma"] = 50,
 					["bluecard"] = 1
 				}
 			},
@@ -290,6 +300,7 @@ local craftList = {
 				["require"] = {
 					["aluminum"] = 200,
 					["copper"] = 150,
+					["pecadearma"] = 80,
 					["bluecard"] = 1
 				}
 			},
@@ -359,6 +370,7 @@ local craftList = {
 				["require"] = {
 					["aluminum"] = 200,
 					["copper"] = 150,
+					["pecadearma"] = 80,
 					["bluecard"] = 1
 				}
 			},

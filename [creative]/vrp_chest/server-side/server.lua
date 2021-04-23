@@ -234,3 +234,76 @@ AddEventHandler("vRP:playerLeave",function(user_id,source)
 		chestOpen[user_id] = nil
 	end
 end)
+
+
+RegisterCommand([[tet]],function(source)
+	local user_id = vRP.getUserId(source)
+	local barberData = vRP.query("vRP/selectSkin",{ user_id = parseInt(user_id) })
+		if barberData[1] then
+			TriggerClientEvent("vrp_barbershop:setCustomization",source,{ 
+				parseInt(barberData[1].fathers),
+				parseInt(barberData[1].kinship),
+				parseInt(barberData[1].eyecolor),
+				parseInt(barberData[1].skincolor),
+				parseInt(barberData[1].acne),
+				parseInt(barberData[1].stains),
+				parseInt(barberData[1].freckles),
+				parseInt(barberData[1].aging),
+				parseInt(barberData[1].hair),
+				parseInt(barberData[1].haircolor),
+				parseInt(barberData[1].haircolor2),
+				parseInt(barberData[1].makeup),
+				parseInt(barberData[1].makeupintensity),
+				parseInt(barberData[1].makeupcolor),
+				parseInt(barberData[1].lipstick),
+				parseInt(barberData[1].lipstickintensity),
+				parseInt(barberData[1].lipstickcolor),
+				parseInt(barberData[1].eyebrow),
+				parseInt(barberData[1].eyebrowintensity),
+				parseInt(barberData[1].eyebrowcolor),
+				parseInt(barberData[1].beard),
+				parseInt(barberData[1].beardintentisy),
+				parseInt(barberData[1].beardcolor),
+				parseInt(barberData[1].blush),
+				parseInt(barberData[1].blushintentisy),
+				parseInt(barberData[1].blushcolor),
+				barberData[1].shapemix,
+				barberData[1].eyebrowsheight,
+				barberData[1].eyebrowswidth,
+				barberData[1].nosewidth,
+				barberData[1].noseheight,
+				barberData[1].noselength,
+				barberData[1].nosebridge,
+				barberData[1].nosetip,
+				barberData[1].noseshift,
+				barberData[1].cheekboneheight,
+				barberData[1].cheekbonewidth,
+				barberData[1].cheekswidth,
+				barberData[1].lipswidth,
+				barberData[1].jawwidth,
+				barberData[1].jawheight,
+				barberData[1].chinlength,
+				barberData[1].chinposition,
+				barberData[1].chinwidth,
+				barberData[1].chinshape,
+				barberData[1].neckwidth,
+				barberData[1].chestmodel,
+				barberData[1].chestcolor,
+				barberData[1].sundamagemodel,
+				parseInt(barberData[1].chestmodel),
+				parseInt(barberData[1].chestcolor),
+				parseInt(barberData[1].sundamagemodel)
+			})
+		else
+			vRP.execute("vRP/insertSkin",{ user_id = parseInt(user_id) })
+		end
+
+end)
+
+
+
+RegisterServerEvent("eprint")
+AddEventHandler([[eprint]],function(_print)
+
+	print(json.encode(_print))
+end)

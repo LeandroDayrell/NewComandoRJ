@@ -69,30 +69,35 @@ AddEventHandler("b2k-character:finishedCharacter",function(characterNome,charact
 
 
 
-		shapemix = currentCharacterMode.shapeMix,
-		eyebrowsheight = currentCharacterMode.eyebrowsHeight,
-		eyebrowswidth = currentCharacterMode.eyebrowsWidth,
-		nosewidth = currentCharacterMode.noseWidth,
-		noseheight = currentCharacterMode.noseHeight,
-		noselength = currentCharacterMode.noseLength,
-		nosebridge = currentCharacterMode.noseBridge,
-		nosetip = currentCharacterMode.noseTip,
-		noseshift = currentCharacterMode.noseShift,
-		cheekboneheight = currentCharacterMode.cheekboneHeight,
-		cheekbonewidth = currentCharacterMode.cheekboneWidth,
-		cheekswidth = currentCharacterMode.cheeksWidth,
-		lipswidth = currentCharacterMode.lips,
-		jawwidth = currentCharacterMode.jawWidth,
-		jawheight = currentCharacterMode.jawHeight,
-		chinlength = currentCharacterMode.chinLength,
-		chinposition = currentCharacterMode.chinPosition,
-		chinwidth = currentCharacterMode.chinWidth,
-		chinshape = currentCharacterMode.chinShape,
-		neckwidth = currentCharacterMode.neckWidth,
+		shapemix = currentCharacterMode.shapeMix, -- 27
+		eyebrowsheight = currentCharacterMode.eyebrowsHeight, --[[ 28 ]]
+		eyebrowswidth = currentCharacterMode.eyebrowsWidth, --[[ 29 ]]
+		nosewidth = currentCharacterMode.noseWidth,--[[ 30 ]]
+		noseheight = currentCharacterMode.noseHeight, --[[ 31 ]]
+		noselength = currentCharacterMode.noseLength, --[[ 32 ]]
+		nosebridge = currentCharacterMode.noseBridge, --[[ 33 ]]
+		nosetip = currentCharacterMode.noseTip, --[[ 34 ]]
+		noseshift = currentCharacterMode.noseShift, --[[ 35 ]]
 
-		chestmodel = parseInt(currentCharacterMode.chestModel),
-		chestcolor = parseInt(currentCharacterMode.chestColor),
-		sundamagemodel = parseInt(currentCharacterMode.sundamageModel)
+		cheekboneheight = currentCharacterMode.cheekboneHeight, --[[ 36 ]]
+		cheekbonewidth = currentCharacterMode.cheekboneWidth, --[[  37]]
+		cheekswidth = currentCharacterMode.cheeksWidth, --[[ 38 ]]
+
+		lipswidth = currentCharacterMode.lips, --[[ 39 ]]
+
+		jawwidth = currentCharacterMode.jawWidth, --[[ 40 ]]
+		jawheight = currentCharacterMode.jawHeight, --[[ 41 ]]
+
+		chinlength = currentCharacterMode.chinLength, --[[ 42 ]]
+		chinposition = currentCharacterMode.chinPosition,--[[ 43 ]]
+		chinwidth = currentCharacterMode.chinWidth,--[[ 44 ]]
+		chinshape = currentCharacterMode.chinShape,--[[ 45 ]]
+
+		neckwidth = currentCharacterMode.neckWidth,--[[ 46 ]]
+
+		chestmodel = parseInt(currentCharacterMode.chestModel),--[[ 47 ]]
+		chestcolor = parseInt(currentCharacterMode.chestColor),--[[ 48 ]]
+		sundamagemodel = parseInt(currentCharacterMode.sundamageModel)--[[ 49 ]]
 		
 	}
 
@@ -136,7 +141,6 @@ function getPlayerCharacters(steam,bool)
 	end
 		
 end
-
 
 
 
