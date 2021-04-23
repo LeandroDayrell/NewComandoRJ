@@ -213,7 +213,7 @@ local craftList = {
 					["glass"] = 15
 				}
 			},
-			["pendriveh"] = {
+			--[[ ["pendriveh"] = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
@@ -221,7 +221,7 @@ local craftList = {
 					["copper"] = 5,
 					["rubber"] = 5
 				}
-			},
+			}, ]]
 			["c4"] = {
 				["amount"] = 1,
 				["destroy"] = true,

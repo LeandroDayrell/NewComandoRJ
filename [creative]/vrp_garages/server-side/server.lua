@@ -868,7 +868,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- VEHS
 -----------------------------------------------------------------------------------------------------------------------------------------
-RegisterCommand("vehs",function(source,args,rawCommand)
+--[[ RegisterCommand("vehs",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
 		if args[1] == "transfer" and parseInt(args[3]) > 0 then
@@ -922,4 +922,4 @@ RegisterCommand("vehs",function(source,args,rawCommand)
 			end
 		end
 	end
-end)
+end) ]]
