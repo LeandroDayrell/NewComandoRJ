@@ -61,7 +61,7 @@ AddEventHandler("b2k-character:finishedCharacter",function(characterNome,charact
 		eyebrowintensity = 10,
 		eyebrowcolor = parseInt(currentCharacterMode.eyebrowsColor),
 		beard = parseInt(currentCharacterMode.beardModel),
-		beardintentisy = 10,
+		beardintentisy = 0,
 		beardcolor = parseInt(currentCharacterMode.beardColor),
 		blush = parseInt(currentCharacterMode.blushModel),
 		blushintentisy = 0,
@@ -123,6 +123,7 @@ AddEventHandler("b2k-character:finishedCharacter",function(characterNome,charact
 
 	Citizen.Wait(1000)
 
+	TriggerClientEvent("update:skin",source,parseInt(currentCharacterMode.fathersID),currentCharacterMode.mothersID,currentCharacterMode.skinColor,currentCharacterMode.shapeMix)
 	TriggerClientEvent("hudActived",source,true)
 	TriggerClientEvent("vrp_spawn:spawnChar",source,true, sex)
 	TriggerEvent("baseModule:idLoaded",source,newId,model)

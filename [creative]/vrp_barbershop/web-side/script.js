@@ -21,7 +21,7 @@ $(document).ready(function(){
 		document.getElementById("acne").value = event.data.acne;
 		document.getElementById("stains").value = event.data.stains;
 		document.getElementById("freckles").value = event.data.freckles;
-		document.getElementById("aging").value = event.data.aging;
+		document.getElementById("aging").value = 15;
 		document.getElementById("hair").value = event.data.hair;
 		document.getElementById("haircolor").value = event.data.haircolor;
 		document.getElementById("haircolor2").value = event.data.haircolor2;
