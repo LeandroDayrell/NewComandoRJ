@@ -365,14 +365,9 @@ RegisterNUICallback('UpdateSkinOptions',function(data,cb)
 	cb('ok')
 end)
 
---[[ RegisterNetEvent("update:skin")
-AddEventHandler("update:skin",function(father,mother,skincolor,shapemix)
-	SetPedHeadBlendData(PlayerPedId(),parseInt(father)parseInt(mother),0,parseInt(skincolor),0,0,f(data.shapeMix),0,0,false)
-end) ]]
 
 function TaskUpdateSkinOptions()
 	local data = currentCharacterMode
-	print(data.fathersID,data.mothersID,data.skinColor,f(data.shapeMix))
 	SetPedHeadBlendData(PlayerPedId(),data.fathersID,data.mothersID,0,data.skinColor,0,0,f(data.shapeMix),0,0,false)
 end
 

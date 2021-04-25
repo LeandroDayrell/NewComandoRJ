@@ -103,10 +103,12 @@ function cRP.setDiving()
 	if IsPedSwimming(ped) then
 		if GetEntityModel(ped) == GetHashKey("mp_m_freemode_01") then
 			SetPedComponentVariation(ped,8,123,0,2)
-			SetPedPropIndex(ped,1,41,0,2)
+			SetPedComponentVariation(ped,7,22,0,2)
+			--SetPedPropIndex(ped,1,41,0,2)
 		elseif GetEntityModel(ped) == GetHashKey("mp_f_freemode_01") then
 			SetPedComponentVariation(ped,8,153,0,2)
-			SetPedPropIndex(ped,1,43,0,2)
+			SetPedComponentVariation(ped,7,22,0,2)
+			--SetPedPropIndex(ped,1,43,0,2)
 		end
 	end
 end

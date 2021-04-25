@@ -57,11 +57,6 @@ AddEventHandler("vrp_barbershop:setCustomization",function(status,bool)
 	myClothes = {}
 	myClothes = { status[1], status[2], status[3], status[4], status[5], status[6], status[7], status[8], status[9], status[10], status[11], status[12], status[13], status[14], status[15], status[16], status[17], status[18], status[19], status[20], status[21], status[22], status[23], status[24], status[25], status[26],status[27], status[28], status[29], status[30], status[31], status[32], status[33], status[34], status[35], status[36], status[37], status[38], status[39], status[40], status[41], status[42], status[43], status[44], status[45], status[46], status[47], status[48], status[49] }
 	local ped = PlayerPedId()
-	if not bool then
-		Wait(1000)
-		SetPedHeadBlendData(ped,status[1],status[2],0,status[4],0,0,status[27],0,0,false)
-		SetPedEyeColor(ped,status[3])
-	end
 
 	if status[5] == 0 then
 		SetPedHeadOverlay(ped,0,status[5],0.0)
@@ -80,6 +75,7 @@ AddEventHandler("vrp_barbershop:setCustomization",function(status,bool)
 	SetPedHeadOverlay(ped,3,status[8],1.0)
 
 	SetPedComponentVariation(ped,2,status[9],0,2)
+
 	SetPedHairColor(ped,status[10],status[11])
 
 	SetPedHeadOverlay(ped,4,status[12],status[13]*0.1)
@@ -129,10 +125,15 @@ AddEventHandler("vrp_barbershop:setCustomization",function(status,bool)
 		SetPedFaceFeature(ped,18,ll(status[44]))
 		-- Pescoço
 		SetPedFaceFeature(ped,19,ll(status[45]))
+
+		-- Rosto
+		Wait(5000)
+		SetPedHeadBlendData(ped,status[1],status[2],0,status[4],0,0,status[27],0,0,false)
+		SetPedEyeColor(ped,status[3])
+
 	end
 
 end)
-
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- DISPLAYBARBERSHOP
@@ -249,7 +250,39 @@ function f(n)
 end
 
 RegisterNetEvent("update:skin")
-AddEventHandler("update:skin",function(father,mother,skincolor,shapemix)
-	Wait(5000)
-	SetPedHeadBlendData(PlayerPedId(),parseInt(father),parseInt(mother),0,parseInt(skincolor),0,0,f(shapemix),0,0,false)
+AddEventHandler("update:skin",function(data)
+	Wait(6000)
+	if data then
+		SetPedHeadBlendData(PlayerPedId(),parseInt(data[1].fathers),parseInt(data[1].kinship),0,parseInt(data[1].skincolor),0,0,f(data[1].shapemix),0,0,false)
+
+		SetPedComponentVariation(PlayerPedId(),2,data[1].hair,0,2)
+		SetPedHairColor(PlayerPedId(),data[1].haircolor,data[1].haircolor2)
+
+		SetPedHeadOverlay(PlayerPedId(),2,data[1].eyebrow,f(data[1].eyebrowintensity))
+		SetPedHeadOverlayColor(PlayerPedId(),2,1,data[1].eyebrowcolor,data[1].eyebrowcolor)
+
+		--[[ Nariz ]]
+		SetPedFaceFeature(PlayerPedId(),0,f(data[1].nosewidth))
+		SetPedFaceFeature(PlayerPedId(),1,f(data[1].noseheight))
+		SetPedFaceFeature(PlayerPedId(),2,f(data[1].noselength))
+		SetPedFaceFeature(PlayerPedId(),3,f(data[1].nosebridge))
+		SetPedFaceFeature(PlayerPedId(),4,f(data[1].nosetip))
+		SetPedFaceFeature(PlayerPedId(),5,f(data[1].noseshift))
+		
+		-- Boca/Mandibula
+		SetPedFaceFeature(PlayerPedId(),12,parseInt(data[1].sundamageModel))
+		SetPedFaceFeature(PlayerPedId(),13,f(data[1].lipswidth))
+		SetPedFaceFeature(PlayerPedId(),14,f(data[1].jawwidth))
+
+		-- Queixo
+		SetPedFaceFeature(PlayerPedId(),15,f(data[1].jawheight))
+		SetPedFaceFeature(PlayerPedId(),16,f(data[1].chinlength))
+		SetPedFaceFeature(PlayerPedId(),17,f(data[1].chinposition))
+		SetPedFaceFeature(PlayerPedId(),18,f(data[1].chinwidth))
+		-- Pescoço
+		SetPedFaceFeature(PlayerPedId(),19,f(data[1].chinshape))
+
+	end
 end)
+
+

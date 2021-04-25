@@ -109,6 +109,7 @@ function RCCar.Spawn()
 	if not IsPedInAnyVehicle(ped) then
 		RCCar.LoadModels({ GetHashKey("rcbandito"),68070371,GetHashKey("p_defilied_ragdoll_01_s"),"pickup_object","move_strafe@stealth" })
 		local spawnCoords,spawnHeading = GetEntityCoords(ped)+GetEntityForwardVector(ped)*2.0,GetEntityHeading(ped)
+		--print
 		RCCar.Entity = CreateVehicle(GetHashKey("rcbandito"),spawnCoords,spawnHeading,true)
 		RCCar.Skate = CreateObject(GetHashKey("p_defilied_ragdoll_01_s"),0.0,0.0,0.0,true,true,true)
 		while not DoesEntityExist(RCCar.Entity) do
@@ -119,6 +120,10 @@ function RCCar.Spawn()
 		end
 		--ForceVehicleEngineAudio(RCCar.Entity,"VOLTIC")
 		SetVehicleHandlingFloat(RCCar.Entity,"CHandlingData","fSuspensionForce",1.5)
+		SetVehicleNumberPlateText(RCCar.Entity,"PLCXAD78")
+		print(nveh)
+		print(plate)
+		print(RCCar.Entity)
 		SetVehicleEngineTorqueMultiplier(RCCar.Entity,0.1)
 		SetEntityNoCollisionEntity(RCCar.Entity,ped,false)
 		SetEntityVisible(RCCar.Entity,false)

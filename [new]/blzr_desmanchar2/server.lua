@@ -265,8 +265,9 @@ function blzr.GerarPagamento(placa, nomeFeio, nomeBonito)
             
             --if vRP.paymentBank(user_id,parseInt(vRP.vehiclePrice(name)*0.1)) then
             --vRP.giveInventoryItem(user_id,'dollars2',pagamento,true) -- DINHEIRO SUJO BACKUP
-            local vehicle = vRP.query("vRP/get_vehicles",{ user_id = parseInt(user_id), vehicle = name })
-            vRP.giveInventoryItem(user_id,'dollars2',parseInt(vRP.vehiclePrice(name)*0.1),true) -- DINHEIRO SUJO
+            --ocal vehicle = vRP.query("vRP/get_vehicles",{ user_id = parseInt(user_id), vehicle = name })
+            vRP.giveInventoryItem(user_id,'dollars2',pagamento,true) -- DINHEIRO SUJO
+            
             local vehicle,vehNet,vehName = vRPclient.vehList(source,7)
             local plateUser = placa
             local vehName = nomeFeio

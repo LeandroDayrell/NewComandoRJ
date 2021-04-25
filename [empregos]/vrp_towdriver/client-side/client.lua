@@ -652,7 +652,6 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 function spawnVehicle(vehName,x,y,z,h)
 	local mHash = GetHashKey(vehName)
-
 	RequestModel(mHash)
 	while not HasModelLoaded(mHash) do
 		RequestModel(mHash)
@@ -673,7 +672,7 @@ function spawnVehicle(vehName,x,y,z,h)
 		SetVehicleEngineHealth(nveh,100.0)
 		SetVehicleBodyHealth(nveh,100.0)
 		SetVehicleFuelLevel(nveh,0.0)
-
+		SetVehicleNumberPlateText(nveh,"PLCXAD78")
 		local netid = VehToNet(nveh)
 		SetNetworkIdExistsOnAllMachines(netid,true)
 		NetworkSetNetworkIdDynamic(netid,true)

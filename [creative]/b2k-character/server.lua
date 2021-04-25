@@ -36,7 +36,6 @@ AddEventHandler("b2k-character:finishedCharacter",function(characterNome,charact
 		end
 	end
 
-
 	local x = {
 		user_id = parseInt(newId), 
 		fathers = parseInt(currentCharacterMode.fathersID),
@@ -57,7 +56,7 @@ AddEventHandler("b2k-character:finishedCharacter",function(characterNome,charact
 		lipstick = parseInt(currentCharacterMode.lipstickModel),
 		lipstickintensity = 0,
 		lipstickcolor = parseInt(currentCharacterMode.lipstickColor),
-		eyebrow = parseInt(currentCharacterMode.eyebrowsModel),
+		eyebrow = parseInt(currentCharacterMode.eyebrowsModel), --18
 		eyebrowintensity = 10,
 		eyebrowcolor = parseInt(currentCharacterMode.eyebrowsColor),
 		beard = parseInt(currentCharacterMode.beardModel),
@@ -72,6 +71,7 @@ AddEventHandler("b2k-character:finishedCharacter",function(characterNome,charact
 		shapemix = currentCharacterMode.shapeMix, -- 27
 		eyebrowsheight = currentCharacterMode.eyebrowsHeight, --[[ 28 ]]
 		eyebrowswidth = currentCharacterMode.eyebrowsWidth, --[[ 29 ]]
+		
 		nosewidth = currentCharacterMode.noseWidth,--[[ 30 ]]
 		noseheight = currentCharacterMode.noseHeight, --[[ 31 ]]
 		noselength = currentCharacterMode.noseLength, --[[ 32 ]]
@@ -123,7 +123,7 @@ AddEventHandler("b2k-character:finishedCharacter",function(characterNome,charact
 
 	Citizen.Wait(1000)
 
-	TriggerClientEvent("update:skin",source,parseInt(currentCharacterMode.fathersID),currentCharacterMode.mothersID,currentCharacterMode.skinColor,currentCharacterMode.shapeMix)
+	TriggerClientEvent("update:skin",source,parseInt(currentCharacterMode.fathersID),currentCharacterMode.mothersID,currentCharacterMode.skinColor,currentCharacterMode.shapeMix,currentCharacterMode.eyebrowsHeight,currentCharacterMode.eyebrowsWidth,currentCharacterMode.secondHairColor)
 	TriggerClientEvent("hudActived",source,true)
 	TriggerClientEvent("vrp_spawn:spawnChar",source,true, sex)
 	TriggerEvent("baseModule:idLoaded",source,newId,model)

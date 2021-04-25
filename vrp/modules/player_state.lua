@@ -109,9 +109,13 @@ AddEventHandler("vRP:playerSpawn",function(user_id,source)
 				parseInt(barberData[1].chestcolor),
 				parseInt(barberData[1].sundamagemodel)
 			})
+			Wait(1000)
+			TriggerClientEvent("update:skin",source,barberData)
+
 		else
 			vRP.execute("vRP/insertSkin",{ user_id = parseInt(user_id) })
 		end
+
 
 		Citizen.Wait(1000)
 
