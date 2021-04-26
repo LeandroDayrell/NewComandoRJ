@@ -561,6 +561,10 @@ $(document).on('click', '#whatsapp-openedchat-send', function(e) {
         }), function(messages) {
             if (messages) {
                 LoadMessages(messages);
+
+                $('.whatsapp-openedchat-messages').animate({
+                    scrollTop: 9999
+                }, 150);
             }
         });
         $("#whatsapp-openedchat-message").val("");
@@ -598,6 +602,10 @@ $(document).on('click', '#whatsapp-openedgroup-send', function(e) {
         }), function(messages) {
             if (messages) {
                 LoadMessagesGroup(messages);
+
+                $('.whatsapp-openedgroup-messages').animate({
+                    scrollTop: 9999
+                }, 150);
             }
         });
         $("#whatsapp-openedgroup-message").val("");
@@ -619,6 +627,10 @@ $(document).on('keypress', function(e) {
                 }), function(messages) {
                     if (messages) {
                         LoadMessages(messages);
+
+                        $('.whatsapp-openedchat-messages').animate({
+                            scrollTop: 9999
+                        }, 150);
                     }
                 });
                 $("#whatsapp-openedchat-message").val("");
@@ -640,6 +652,10 @@ $(document).on('keypress', function(e) {
                 }), function(messages) {
                     if (messages) {
                         LoadMessagesGroup(messages);
+
+                        $('.whatsapp-openedgroup-messages').animate({
+                            scrollTop: 9999
+                        }, 150);
                     }
                 });
                 $("#whatsapp-openedgroup-message").val("");
@@ -660,6 +676,10 @@ $(document).on('click', '#send-location', function(e) {
     }), function(messages) {
         if (messages) {
             LoadMessages(messages);
+
+            $('.whatsapp-openedchat-messages').animate({
+                scrollTop: 9999
+            }, 150);
         }
     });
 });
@@ -674,6 +694,10 @@ $(document).on('click', '#send-location-group', function(e) {
     }), function(messages) {
         if (messages) {
             LoadMessagesGroup(messages);
+
+            $('.whatsapp-openedgroup-messages').animate({
+                scrollTop: 9999
+            }, 150);
         }
     });
 });
@@ -697,6 +721,10 @@ $(document).on('click', '#send-image', function(e) {
                 }), function(messages) {
                     if (messages) {
                         LoadMessages(messages);
+
+                        $('.whatsapp-openedchat-messages').animate({
+                            scrollTop: 9999
+                        }, 150);
                     }
                 });
             }
@@ -719,6 +747,10 @@ $(document).on('click', '#send-image-group', function(e) {
                 }), function(messages) {
                     if (messages) {
                         LoadMessagesGroup(messages);
+
+                        $('.whatsapp-openedgroup-messages').animate({
+                            scrollTop: 9999
+                        }, 150);
                     }
                 });
             }
@@ -1520,11 +1552,11 @@ setInterval(function() {
     var audiochatcheck = $('.whatsapp-openedchat-message audio');
     var audiogroupcheck = $('.whatsapp-openedgroup-message audio');
 
-    if (!audiochatcheck.play) {
+    if (!audiochatcheck.play || audiochatcheck.paused || audiochatcheck.ended) {
         verifyopenchat();
     }
 
-    if (!audiogroupcheck.play) {
+    if (!audiogroupcheck.play || audiogroupcheck.paused || audiogroupcheck.ended) {
         verifyopengroup();
     }
 
@@ -1651,6 +1683,10 @@ function toggleRecordingChat() {
                                         LoadMessages(messages);
                                     }
                                 });
+
+                                $('.whatsapp-openedchat-messages').animate({
+                                    scrollTop: 9999
+                                }, 150);
                             }
                         }
                     }
@@ -1725,6 +1761,10 @@ function toggleRecordingGroup() {
                                 }), function(messages) {
                                     if (messages) {
                                         LoadMessagesGroup(messages);
+
+                                        $('.whatsapp-openedgroup-messages').animate({
+                                            scrollTop: 9999
+                                        }, 150);
                                     }
                                 });
                             }

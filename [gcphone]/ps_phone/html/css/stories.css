@@ -7,12 +7,12 @@
     display: none;
     top: 8px;
     left: -35vh;
-    height: 103%;
+    height: 98%;
     width: 100%;
     background-repeat: no-repeat;
     background-size: inherit;
     background-color: rgba(0, 0, 0, 0.7);
-    z-index: 999;
+    z-index: 141;
 }
 
 .instagram-stories__page {
@@ -77,6 +77,25 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+}
+
+.instagram-storie__image_show {
+    width: 100%;
+    height: 100%;
+    top: 20px;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.instagram-storie__image_show img {
+    position: absolute;
+    width: 100%;
+    top: 37%;
 }
 
 .instagram-storie__header {

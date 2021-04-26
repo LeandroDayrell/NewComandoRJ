@@ -160,10 +160,10 @@ const createStorie = (storieData) => {
               `
               )).join('')}
             </div>
-            <div
-              class="instagram-storie__image"
-              style="background-image: url('${storieData.images[imgIndex]}')"
-            >
+            <div class="instagram-storie__image" style="background-image: url('${storieData.images[imgIndex]}')">
+            </div>
+            <div class="instagram-storie__image_show">
+              <img src="${storieData.images[imgIndex]}" />
             </div>`
       );
 

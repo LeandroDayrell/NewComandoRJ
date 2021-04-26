@@ -9,11 +9,12 @@ Config.Webhook       = "https://discord.com/api/webhooks/831322802400788530/mlew
 Config.Field         = "files[]"
 Config.VerifyItem    = true
 Config.ItemPhone     = "cellphone"
-Config.CallSystem    = "tokovoip" --tokovoip | mumblevoip
+Config.CallSystem    = "tokovoip" --tokovoip | mumblevoip | saltychat
 Config.UseInvoices   = false --true | false
 Config.CheckLife     = 101
 Config.IPAddress     = "http://131.196.198.113/"
 Config.Permission    = "Admin" -- Grupo de Permisssão para adicionar verificado
+Config.NotifyAll     = true -- Ativar notificaçõpes globais no servidor
 
 Config.checkItemPhone = function(user_id, item)
     if vRP.getInventoryItemAmount(user_id, item) >= 1 then

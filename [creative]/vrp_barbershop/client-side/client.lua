@@ -25,7 +25,7 @@ RegisterNUICallback("updateSkin",function(data)
 	if data.value then
 		SetNuiFocus(false)
 		displayBarbershop(false)
-		vSERVER.updateSkin(myClothes)
+		vSERVER.updateSkin(myClothes,true)
 		SendNUIMessage({ openBarbershop = false })
 	end
 
@@ -249,39 +249,16 @@ function f(n)
 	return n
 end
 
+local y = false
 RegisterNetEvent("update:skin")
-AddEventHandler("update:skin",function(data)
-	Wait(6000)
+AddEventHandler("update:skin",function(data) ---
+	Wait(6500)
 	if data then
 		SetPedHeadBlendData(PlayerPedId(),parseInt(data[1].fathers),parseInt(data[1].kinship),0,parseInt(data[1].skincolor),0,0,f(data[1].shapemix),0,0,false)
-
-		SetPedComponentVariation(PlayerPedId(),2,data[1].hair,0,2)
-		SetPedHairColor(PlayerPedId(),data[1].haircolor,data[1].haircolor2)
-
-		SetPedHeadOverlay(PlayerPedId(),2,data[1].eyebrow,f(data[1].eyebrowintensity))
-		SetPedHeadOverlayColor(PlayerPedId(),2,1,data[1].eyebrowcolor,data[1].eyebrowcolor)
-
-		--[[ Nariz ]]
-		SetPedFaceFeature(PlayerPedId(),0,f(data[1].nosewidth))
-		SetPedFaceFeature(PlayerPedId(),1,f(data[1].noseheight))
-		SetPedFaceFeature(PlayerPedId(),2,f(data[1].noselength))
-		SetPedFaceFeature(PlayerPedId(),3,f(data[1].nosebridge))
-		SetPedFaceFeature(PlayerPedId(),4,f(data[1].nosetip))
-		SetPedFaceFeature(PlayerPedId(),5,f(data[1].noseshift))
-		
-		-- Boca/Mandibula
-		SetPedFaceFeature(PlayerPedId(),12,parseInt(data[1].sundamageModel))
-		SetPedFaceFeature(PlayerPedId(),13,f(data[1].lipswidth))
-		SetPedFaceFeature(PlayerPedId(),14,f(data[1].jawwidth))
-
-		-- Queixo
-		SetPedFaceFeature(PlayerPedId(),15,f(data[1].jawheight))
-		SetPedFaceFeature(PlayerPedId(),16,f(data[1].chinlength))
-		SetPedFaceFeature(PlayerPedId(),17,f(data[1].chinposition))
-		SetPedFaceFeature(PlayerPedId(),18,f(data[1].chinwidth))
-		-- Pescoço
-		SetPedFaceFeature(PlayerPedId(),19,f(data[1].chinshape))
-
+		if not y then
+			TriggerServerEvent([[hairdebug]],true)
+		end
+		y = true
 	end
 end)
 

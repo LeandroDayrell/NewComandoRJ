@@ -98,6 +98,7 @@ $(document).on('click', '.phone-application', function(e) {
                         PS.Phone.Functions.ReceiveAccountTwitter(account);
                     });
                 } else if (PressedApplication == "bank") {
+                    $.post('http://ps_phone/RefreshUserData', JSON.stringify({}));
                     PS.Phone.Functions.DoBankOpen();
                     $.post('http://ps_phone/GetBankContacts', JSON.stringify({}), function(contacts) {
                         PS.Phone.Functions.LoadContactsWithNumber(contacts);
@@ -637,5 +638,19 @@ $(document).on('keydown', function() {
         case 27: // ESCAPE
             PS.Phone.Functions.Close();
             break;
+    }
+});
+
+$(document).on('keyup', 'input', function(e) {
+    var value = $(this).val();
+
+    if (value.length > 0) {
+        $.post('http://ps_phone/ChangeIsTyping', JSON.stringify({
+            status: true
+        }), function(IsTyping) {});
+    } else {
+        $.post('http://ps_phone/ChangeIsTyping', JSON.stringify({
+            status: false
+        }), function(IsTyping) {});
     }
 });

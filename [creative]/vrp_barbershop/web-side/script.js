@@ -128,14 +128,6 @@ $(document).ready(function(){
 		e.preventDefault();
 		$.post('http://vrp_barbershop/updateSkin',JSON.stringify({
 			value: true,
-			fathers: $('.fathers').val(),
-			kinship: $('.kinship').val(),
-			eyecolor: $('.eyecolor').val(),
-			skincolor: $('.skincolor').val(),
-			acne: $('.acne').val(),
-			stains: $('.stains').val(),
-			freckles: $('.freckles').val(),
-			aging: $('.aging').val(),
 			hair: $('.hair').val(),
 			haircolor: $('.haircolor').val(),
 			haircolor2: $('.haircolor2').val(),

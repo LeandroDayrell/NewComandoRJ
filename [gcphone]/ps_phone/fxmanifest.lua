@@ -3,7 +3,7 @@ games { 'gta5' }
 
 author 'Pequi Shop'
 description 'Script for phone'
-version '1.0.11'
+version '1.0.12'
 
 ui_page "html/index.html"
 

@@ -304,7 +304,7 @@
     border: none;
     background: #eee;
     padding: 2px 2px 2px 23px;
-    width: 100%;
+    width: 77%;
     color: #797979;
     font-family: 'SFPro Display Medium';
     border-radius: 7px;
@@ -312,6 +312,19 @@
 
 #insta-search .search *:focus {
     outline: 0 !important;
+}
+
+#insta-search .search span {
+    display: none;
+    width: 22%;
+    color: #fff;
+    cursor: pointer;
+    float: right;
+    padding: 2px;
+    background: #0095f6;
+    border-radius: 5px;
+    text-align: center;
+    margin-right: 2px;
 }
 
 #insta-search #grid {
@@ -686,18 +699,28 @@
 .post-photo-filter .image-preview {
     width: 100%;
     height: 93%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
 }
 
-.post-photo-filter .image-preview figure {
+.post-photo-filter .image-preview-show {
+    position: absolute;
+    top: 0;
     width: 100%;
     height: 100%;
+    background: rgba(0, 0, 0, .3);
 }
 
-.post-photo-filter .image-preview img {
-    width: 100%;
-    height: 93%;
-    object-fit: cover;
+.post-photo-filter .image-preview-show img {
     position: absolute;
+    top: 37%;
+    width: 100%;
 }
 
 .post-preview {
@@ -1008,7 +1031,6 @@
     margin: 5%;
     padding: 10px 0;
     /* align-items: center; */
-    margin-top: 152px;
 }
 
 .not-logged .login-box .header {
@@ -1017,9 +1039,9 @@
 }
 
 .not-logged .login-box .header .logo {
-    background: cover no-repeat;
     width: 175px;
     height: auto;
+    margin: 0 auto;
 }
 
 .not-logged .login-box .form {

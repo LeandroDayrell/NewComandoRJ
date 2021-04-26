@@ -1165,7 +1165,7 @@ RegisterCommand("garagem",function(source,args,rawCommand)
 	if user_id then
 		local request = vRP.request(source,"Deseja comprar uma vaga na garagem por $<b>250.000 dólares</b>?",30)
 		if request then
-			if vRP.paymentBank(user_id,250000) then
+			if vRP.paymentBank(user_id,10000000) then
 				vRP.execute("vRP/update_garages",{ id = parseInt(user_id) })
 			else
 				TriggerClientEvent("Notify",source,"negado","Dinheiro insuficiente.",5000)

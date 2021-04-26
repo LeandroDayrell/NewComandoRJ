@@ -54,14 +54,14 @@ $(document).on('click', '.changefilter', function(e) {
     var classe = $(this).attr('class');
     classe = classe.replace("changefilter ", "");
 
-    $(".image-preview figure").removeClass();
-    $(".image-preview figure").addClass(classe);
+    $(".image-preview-show figure").removeClass();
+    $(".image-preview-show figure").addClass(classe);
 
-    if (classe != "sem-filtro") {
-        $(".image-preview figure img").height("100%");
-    } else {
-        $(".image-preview figure img").height("93%");
-    }
+    // if (classe != "sem-filtro") {
+    //     $(".image-preview-show figure img").height("100%");
+    // } else {
+    //     $(".image-preview-show figure img").height("93%");
+    // }
 });
 
 $(document).on('click', '.tab-position', function(e) {
@@ -134,6 +134,18 @@ $(document).on('keyup', '.add-comment input', function(e) {
     }
 });
 
+$(document).on('keyup', '.search input', function(e) {
+    e.preventDefault();
+
+    var val = $(this).val();
+
+    if (val.length > 0) {
+        $(this).parent().find('span').fadeIn(150);
+    } else {
+        $(this).parent().find('span').fadeOut(150);
+    }
+});
+
 $(document).on('click', '.instagram-stories .img img', function(e) {
     e.preventDefault();
 
@@ -153,10 +165,9 @@ $(document).on('click', '.instagram-stories .img img', function(e) {
     renderInFace(0, createStorie(mystorie[0]));
 });
 
-$(document).on('blur', '#search-profile', function(e) {
-    console.log('teste');
+$(document).on('click', '#search-profile', function(e) {
 
-    var search = $(this).val();
+    var search = $(".search input").val();
 
     $.post('http://ps_phone/GetProfilesInstagramLike', JSON.stringify({
         search: search
@@ -306,6 +317,12 @@ PS.Phone.Functions.ReceivePosts = function(data) {
                 var avatar = post.avatar;
             }
 
+            if (post.location == 'Desativado') {
+                var location = "";
+            } else {
+                var location = post.location;
+            }
+
             var time = printdate(post.created);
             time = time.replace("-", "");
 
@@ -342,7 +359,7 @@ PS.Phone.Functions.ReceivePosts = function(data) {
             //     </div>
             // </div>`;
 
-            if (post.verify) {
+            if (post.verify == true) {
                 var html = `<div class="card">
                     <div class="card-header">
                         <div class="profile-img">
@@ -350,7 +367,7 @@ PS.Phone.Functions.ReceivePosts = function(data) {
                         </div>
                         <div class="profile-info">
                             <div class="name viewprofiletwo" data-username="${post.username}">${post.username} <span class="verify"></span></div>
-                            <div class="location">${post.location}</div>
+                            <div class="location">${location}</div>
                         </div>
                         <div class="time">${time}</div>
                     </div>
@@ -497,6 +514,9 @@ $(document).on('click', '.addpost', function(e) {
             if (url.length > 0) {
                 var image = url;
                 $(".post-photo-filter img").attr("src", image)
+                $(".post-photo-filter .image-preview").css({
+                    "background-image": "url('" + image + "')"
+                });
                 $(".post-photo-filter").animate({
                     left: 0 + "vh"
                 }, 200, function() {
@@ -512,11 +532,11 @@ $(document).on('click', '.addpost', function(e) {
 });
 
 $(document).on('click', '.post-photo-filter .next', function(e) {
-    var image = $(".post-photo-filter .image-preview img").attr('src');
-    var filter = $(".post-photo-filter .image-preview figure").attr('class');
+    var image = $(".post-photo-filter .image-preview-show img").attr('src');
+    var filter = $(".post-photo-filter .image-preview-show figure").attr('class');
 
-    $(".post-preview .image-preview img").attr("src", image)
-    $(".post-preview .image-preview figure").removeClass().addClass(filter);
+    $(".post-preview .image-preview-show img").attr("src", image)
+    $(".post-preview .image-preview-show figure").removeClass().addClass(filter);
 
     $(".post-preview").animate({
         left: 0 + "vh"
@@ -529,8 +549,8 @@ $(document).on('click', '.post-photo-filter .next', function(e) {
 });
 
 $(document).on('click', '.post-preview .next', function(e) {
-    var image = $(".post-preview .image-preview img").attr('src');
-    var filter = $(".post-preview .image-preview figure").attr('class');
+    var image = $(".post-preview .image-preview-show img").attr('src');
+    var filter = $(".post-preview .image-preview-show figure").attr('class');
     var description = $(".post-preview .text textarea").val();
     var position = $(".post-preview #sendposition p").html();
 
@@ -928,8 +948,8 @@ function printdate(date2) {
 }
 
 setInterval(function() {
-    // verifyopenposts();
-    // verifyopenstories();
+    verifyopenposts();
+    verifyopenstories();
 }, 5000);
 
 function verifyopenposts() {
