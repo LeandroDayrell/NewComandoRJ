@@ -54,25 +54,12 @@ end
 
 RegisterNetEvent("vrp_barbershop:setCustomization")
 AddEventHandler("vrp_barbershop:setCustomization",function(status,bool)
+	print(bool)
 	myClothes = {}
 	myClothes = { status[1], status[2], status[3], status[4], status[5], status[6], status[7], status[8], status[9], status[10], status[11], status[12], status[13], status[14], status[15], status[16], status[17], status[18], status[19], status[20], status[21], status[22], status[23], status[24], status[25], status[26],status[27], status[28], status[29], status[30], status[31], status[32], status[33], status[34], status[35], status[36], status[37], status[38], status[39], status[40], status[41], status[42], status[43], status[44], status[45], status[46], status[47], status[48], status[49] }
 	local ped = PlayerPedId()
 
-	if status[5] == 0 then
-		SetPedHeadOverlay(ped,0,status[5],0.0)
-	else
-		SetPedHeadOverlay(ped,0,status[5],1.0)
-	end
-
-	SetPedHeadOverlay(ped,6,status[6],1.0)
-
-	if status[7] == 0 then
-		SetPedHeadOverlay(ped,9,status[7],0.0)
-	else
-		SetPedHeadOverlay(ped,9,status[7],1.0)
-	end
-
-	SetPedHeadOverlay(ped,3,status[8],1.0)
+	
 
 	SetPedComponentVariation(ped,2,status[9],0,2)
 
@@ -95,6 +82,30 @@ AddEventHandler("vrp_barbershop:setCustomization",function(status,bool)
 
 
 	if not bool then
+
+		SetPedHeadOverlay(ped,6,status[6],1.0)
+
+
+		if status[7] == 0 then
+			SetPedHeadOverlay(ped,9,status[7],0.0)
+		else
+			SetPedHeadOverlay(ped,9,status[7],1.0)
+		end
+	
+
+
+		SetPedHeadOverlay(ped,3,status[8],1.0)
+
+
+		if status[5] == 0 then
+			print("colocando a acne")
+			SetPedHeadOverlay(ped,0,status[5],0.0)
+		else
+			print("tirando a acne")
+			SetPedHeadOverlay(ped,0,status[5],1.0)
+		end
+
+
 		-- Nariz
 		SetPedFaceFeature(ped,0,ll(status[30]))
 		SetPedFaceFeature(ped,1,ll(status[31]))

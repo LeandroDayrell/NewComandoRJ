@@ -18,9 +18,11 @@ $(document).ready(function(){
 		document.getElementById("kinship").value = event.data.kinship;
 		document.getElementById("eyecolor").value = event.data.eyecolor;
 		document.getElementById("skincolor").value = event.data.skincolor;
+		console.log("acne "+event.data.acne)
 		document.getElementById("acne").value = event.data.acne;
 		document.getElementById("stains").value = event.data.stains;
 		document.getElementById("freckles").value = event.data.freckles;
+		console.log("aging "+event.data.aging)
 		document.getElementById("aging").value = 15;
 		document.getElementById("hair").value = event.data.hair;
 		document.getElementById("haircolor").value = event.data.haircolor;
