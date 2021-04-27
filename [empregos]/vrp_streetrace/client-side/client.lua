@@ -627,7 +627,7 @@ Citizen.CreateThread(function()
 								SetNewWaypoint(race[raceSelect][racePos][1]+0.0001,race[raceSelect][racePos][2]+0.0001)
 								local x,y,z = GetEntityCoords(ped)
 								local random = math.random(100)
-								if random >= 70 then
+								if random >= 75 then
 
 									local ped = PlayerPedId()
 									--local coords = GetEntityCoords(ped)

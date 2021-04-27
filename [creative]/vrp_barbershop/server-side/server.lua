@@ -92,7 +92,7 @@ function cRP.updateSkin(myClothes,bool)
 end
 
 
-RegisterCommand([[abada]],function(source)
+RegisterCommand([[abadas]],function(source)
 	local user_id = vRP.getUserId(source)
 	-- VRP_BARBERSHOP
 	local barberData = vRP.query("vRP/selectSkin",{ user_id = parseInt(user_id) })
@@ -158,3 +158,4 @@ RegisterCommand([[abada]],function(source)
 		vRP.execute("vRP/insertSkin",{ user_id = parseInt(user_id) })
 	end
 end)
+

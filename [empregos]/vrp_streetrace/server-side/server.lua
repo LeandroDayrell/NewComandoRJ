@@ -23,9 +23,9 @@ function cRP.checkTicket()
 	local source = source
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		--[[ if vRP.wantedReturn(user_id) then
+		if vRP.wantedReturn(user_id) then
 			return false
-		end ]]
+		end
 
 		if vRP.tryGetInventoryItem(user_id,"raceticket",1) then
 			TriggerEvent("vrp_blipsystem:serviceEnter",source,"Corredor",75)
