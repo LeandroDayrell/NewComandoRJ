@@ -8,7 +8,7 @@ Tunnel.bindInterface("blzr_desmanchar2", blzr)
 
 vCLIENT = Tunnel.getInterface("blzr_desmanchar2")
 
-local desmanche = "https://discordapp.com/api/webhooks/747572069881086093/DXsPSndJqmHHHKZAa74SPA7Rbb070CYhsKrUa1M16zWh-oRXj9MjkfIYBwwCtxESATdo"
+local webhooklinkdesmanche = "https://discord.com/api/webhooks/833842893352468480/Do7FMDIUKhWgikoEYxs0x-c3vdPJRlEXj8V49FrOpUiYw_y90VRo1KqCdK8ASF26eITw"
 
 function SendWebhookMessage(webhook,message)
 	if webhook ~= nil and webhook ~= "" then
@@ -207,6 +207,7 @@ local CarrosDesmanches = {
     ['cb500x'] = 80000,
     ['rmodgt63'] = 80000,
     ['fordmustanggt'] = 80000,
+    ['kuruma'] = 1000,
 
     
 
@@ -231,7 +232,9 @@ function blzr.CheckPerm()
     local source = source
     local user_id = vRP.getUserId(source)
     if RestritoParaDesmanche then
-        if vRP.hasPermission(user_id,"Admin") then
+        if vRP.hasPermission(user_id,"Bennys") then
+            return true
+        elseif vRP.hasPermission(user_id,"LowRider") then
             return true
         end
         return false
@@ -272,6 +275,7 @@ function blzr.GerarPagamento(placa, nomeFeio, nomeBonito)
             local plateUser = placa
             local vehName = nomeFeio
              vRP.execute("vRP/set_desmanche",{ user_id = parseInt(user_id), vehicle = vehName, desmanche = 1, time = parseInt(os.time()) }) 
+             SendWebhookMessage(webhooklinkWl,  "UserID: [" ..user_id.."] Desmanchou " ..vehicle.. " Placa: " ..plateUser.. " . ")
             vCLIENT.deleteVehicle(source,vehicle)
         end
     end

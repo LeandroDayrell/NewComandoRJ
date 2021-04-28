@@ -17,7 +17,7 @@ vCLIENT = Tunnel.getInterface("vrp_survival")
 RegisterCommand("god",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if vRP.hasPermission(user_id,"Admin") then
+		if vRP.hasPermission(user_id,"sup2000") then
 			if args[1] then
 				local nplayer = vRP.getUserSource(parseInt(args[1]))
 				if nplayer then

@@ -1,4 +1,4 @@
-local webhook_antiflood = ""
+local webhook_antiflood = "https://discord.com/api/webhooks/836676771407069184/O_xn8QCT6XY0eb-HwcWwJCFCVaLWOGBb5m70ua33bJTUqHVWYfmX26GAQKw4S9bFgWeg"
 
 
 --Comando: vRP.antiflood(source,key,limite)

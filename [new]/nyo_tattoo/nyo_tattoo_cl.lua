@@ -407,3 +407,20 @@ AddEventHandler('onResourceStop', function(resource)
         closeGuiLojaTattoo()
     end
 end)
+
+CreateThread(function()
+    while true do 
+        Wait(500)
+       -- print('------------- In Loja ---------')
+      --  print(in_loja)
+        if not in_loja then 
+            --print('------------- AtualTattoo ---------')
+            --print(json.encode(atualTattoo))
+            ClearPedDecorations(PlayerPedId())
+            for k,v in pairs(atualTattoo) do
+                 AddPedDecorationFromHashes(PlayerPedId(),GetHashKey(v[1]),GetHashKey(k))
+            end
+        end  
+       --print('------------- FIM ---------')    
+    end
+end)

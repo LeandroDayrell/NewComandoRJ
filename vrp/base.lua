@@ -317,8 +317,8 @@ AddEventHandler("baseModule:idLoaded",function(source,user_id,model)
 			vRP.user_tables[user_id].skin = GetHashKey(model)
 			--vRP.user_tables[user_id].inventorys["1"] = { item = "skate", amount = 1 }
 			vRP.user_tables[user_id].inventorys["1"] = { item = "identity", amount = 1 }
-			vRP.user_tables[user_id].inventorys["2"] = { item = "water", amount = 5 }
-			vRP.user_tables[user_id].inventorys["3"] = { item = "sandwich", amount = 5 }
+			vRP.user_tables[user_id].inventorys["2"] = { item = "water", amount = 3 }
+			vRP.user_tables[user_id].inventorys["3"] = { item = "sandwich", amount = 3 }
 		end
 
 		local identity = vRP.getUserIdentity(user_id)

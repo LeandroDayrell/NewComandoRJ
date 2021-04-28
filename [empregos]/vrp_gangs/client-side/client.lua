@@ -21,7 +21,7 @@ local inService = false
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- GANGS
 -----------------------------------------------------------------------------------------------------------------------------------------
-RegisterCommand("gangs",function(source,args)
+RegisterCommand("faccao",function(source,args)
 	if vSERVER.checkPermission() then
 	if GetEntityHealth(PlayerPedId()) > 101 then
 		if inService then

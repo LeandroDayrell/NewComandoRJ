@@ -162,6 +162,7 @@ RegisterNetEvent("vrp_player:salary")
 AddEventHandler("vrp_player:salary",function()
 	local source = source
 	local user_id = vRP.getUserId(source)
+	vRP.antiflood(source,"vrp_player:salary",3)
 	if user_id then
 		--[[ if vRP.getPremium(parseInt(user_id)) then
 			vRP.setSalary(parseInt(user_id),1000)
@@ -173,10 +174,10 @@ AddEventHandler("vrp_player:salary",function()
 			TriggerClientEvent("Notify",source,"sucesso","Voce recebeu seu salario.",5000)
 		end
 
-		if vRP.hasPermission(parseInt(user_id),"Mechanic") then
+		--[[ if vRP.hasPermission(parseInt(user_id),"Mechanic") then
 			vRP.setSalary(parseInt(user_id),3000)
 			TriggerClientEvent("Notify",source,"sucesso","Voce recebeu seu salario.",5000)
-		end
+		end ]]
 
 		if vRP.hasPermission(parseInt(user_id),"Taxi") then
 			vRP.setSalary(parseInt(user_id),500)
@@ -1185,6 +1186,8 @@ RegisterCommand("livery",function(source,args,rawCommand)
 	end
 end)
 
+
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- sistema de ver quantidade de players na cidade
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -1244,7 +1247,7 @@ end)
 
 RegisterCommand('pon',function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
-	if vRP.hasPermission(user_id,"Admin") then
+	if vRP.hasPermission(user_id,"sup2000") then
 		local users = vRP.getUsers()
 		local players = ""
 		local quantidade = 0
@@ -1292,7 +1295,7 @@ RegisterCommand("rem",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
 		if parseInt(args[1]) > 0 then
-			if vRP.hasPermission(user_id,"PolMaster") or vRP.hasPermission(user_id,"MecMaster") or vRP.hasPermission(user_id,"ParMaster") then
+			if vRP.hasPermission(user_id,"PoliceCMD") or vRP.hasPermission(user_id,"ParamedicCMD") then
 				vRP.execute("vRP/cle_group",{ user_id = parseInt(args[1]) })
 				TriggerClientEvent("Notify",source,"sucesso","Passaporte <b>"..vRP.format(parseInt(args[1])).."</b> removido com sucesso.",5000)
 			end
@@ -1435,3 +1438,16 @@ end)
 
 ------------------- CELLULAR COMANDO RJ
 
+
+RegisterCommand("beijar2",function(source,args,rawCommand)
+    local user_id = vRP.getUserId(source)
+    local nplayer = vRPclient.nearestPlayer(source,2)
+    if nplayer then
+        local pedido = vRP.request(nplayer,"Deseja iniciar o beijo ?",10)
+        if pedido then
+			vRPclient._playAnim(source,true,{"mp_ped_interaction","kisses_guy_a"},true)    
+			--vRPclient._playAnim(nplayer,true,{"mp_ped_interaction","kisses_guy_b"},true)
+            vRPclient._playAnim(nplayer,true,{"mp_ped_interaction","kisses_guy_b"},true)
+        end
+    end
+end)

@@ -108,7 +108,7 @@ function cRP.checkTimers(id)
 	local source = source
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if vRP.hasPermission(user_id,"Admin") then
+		if vRP.hasPermission(user_id,"FundadorOwner") then
 			TriggerClientEvent("Notify",source,"aviso",parseInt(wePlants[id][5]),5000)
 		end
 

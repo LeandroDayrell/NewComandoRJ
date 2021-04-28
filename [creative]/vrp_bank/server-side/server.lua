@@ -9,6 +9,15 @@ vRP = Proxy.getInterface("vRP")
 -----------------------------------------------------------------------------------------------------------------------------------------
 cRP = {}
 Tunnel.bindInterface("vrp_bank",cRP)
+
+local webhooklinkbanco = "https://discord.com/api/webhooks/836779167910723604/1u2F1ajLIt9VlO8A_tqdOREYO3904Gl77jrPV9-yeSAIOE9UxmQR3yqr5RPsme1e2OoR"
+
+function SendWebhookMessage(webhook,message)
+	if webhook ~= nil and webhook ~= "" then
+		PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' })
+	end
+end
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- REQUESTWANTED
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -146,6 +155,7 @@ function cRP.invoicesPayment(id,price,nuser_id)
 			end
 			TriggerClientEvent("vrp_bank:Updatepegout",source,"requestInvoices")
 			vRP.execute("vRP/del_invoice",{ id = parseInt(id), user_id = parseInt(user_id) })
+			--SendWebhookMessage(webhooklinkbanco,  "UserID: [" ..user_id.."]  transferiu: " ..price.. " para UserID "..nuser_id..  "  . ")
 		else
 			TriggerClientEvent("Notify",source,"negado","Dinheiro insuficiente na sua conta bancária.",5000)
 		end

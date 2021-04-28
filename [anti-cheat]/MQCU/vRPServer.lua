@@ -204,9 +204,10 @@ AddEventHandler('MarqCU#4374:wall', function (user_id)
 	end
 	wallstatus[user_id] = not wallstatus[user_id]
 	local source = vRP.getUserSource(user_id)
-	local x,y,z = vRPclient.getPosition(source)
 	local temp = os.date("%x  %X")
-	local loc = "localização: "..x..","..y..","..z
+	local ped = GetPlayerPed(source)
+	local locx = GetEntityCoords(ped)
+	local loc = "localização: "..locx.x..","..locx.y..","..locx.z
 	local estado = ""
 	if(wallstatus[user_id])then
 		estado = "True"

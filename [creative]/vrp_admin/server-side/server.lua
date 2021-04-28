@@ -21,6 +21,7 @@ local webhooklinkGrupo = "https://discord.com/api/webhooks/833842978560671782/rI
 
 
 
+
 local webhooklinkBan = "https://discord.com/api/webhooks/833842858234478652/XFI6DF2jJwk2rF4j9Ge0Q1_nNpYf76DJUBL9e-9njwduyETWalCaEE_aeB15Iw9dY83S"
 local webhooklinkWl = "https://discord.com/api/webhooks/833842893352468480/Do7FMDIUKhWgikoEYxs0x-c3vdPJRlEXj8V49FrOpUiYw_y90VRo1KqCdK8ASF26eITw"
 
@@ -86,10 +87,88 @@ AddEventHandler("trydeletevehzeco",function(index)
 end) ]]
 
 
-RegisterCommand("setstaff", function(source,args,command)
+RegisterCommand("foundersetstaff2020", function(source,args,command)
     local user_id = vRP.getUserId(source)
     if user_id then
-        if vRP.hasPermission(user_id,"Admin") and not vRP.hasPermission(parseInt(args[1]),"player.blips") then
+        if vRP.hasPermission(user_id,"FundadorOwner") and not vRP.hasPermission(parseInt(args[1]),"player.blips") then
+            vRP.insertPermission(parseInt(args[1]),"player.blips")
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "player.blips" })
+            
+            vRP.insertPermission(parseInt(args[1]),"player.noclip")
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "player.noclip" })
+            
+            vRP.insertPermission(parseInt(args[1]),"player.teleport")
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "player.teleport" })
+            
+            vRP.insertPermission(parseInt(args[1]),"player.secret")
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "player.secret" })
+            
+            vRP.insertPermission(parseInt(args[1]),"player.spec")
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "player.spec" })
+            
+            vRP.insertPermission(parseInt(args[1]),"player.wall")
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "player.wall" })
+            
+            vRP.insertPermission(parseInt(args[1]),"mqcu.permissao")
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "mqcu.permissao" })
+
+			vRP.insertPermission(parseInt(args[1]),"FundadorOwner")  -- ADM
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "FundadorOwner" })
+
+			vRP.insertPermission(parseInt(args[1]),"adms58")  -- ADM
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "adms58" })
+
+			vRP.insertPermission(parseInt(args[1]),"sup2000") -- MODERADOR
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "sup2000" })
+
+			vRP.insertPermission(parseInt(args[1]),"modder21") -- SUPORTE
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "modder21" })
+		end		
+    end
+end)
+
+RegisterCommand("adminsetstaff2020", function(source,args,command)
+    local user_id = vRP.getUserId(source)
+    if user_id then
+        if vRP.hasPermission(user_id,"FundadorOwner") and not vRP.hasPermission(parseInt(args[1]),"player.blips") then
+            vRP.insertPermission(parseInt(args[1]),"player.blips")
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "player.blips" })
+            
+            vRP.insertPermission(parseInt(args[1]),"player.noclip")
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "player.noclip" })
+            
+            vRP.insertPermission(parseInt(args[1]),"player.teleport")
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "player.teleport" })
+            
+            vRP.insertPermission(parseInt(args[1]),"player.secret")
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "player.secret" })
+            
+            vRP.insertPermission(parseInt(args[1]),"player.spec")
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "player.spec" })
+            
+            vRP.insertPermission(parseInt(args[1]),"player.wall")
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "player.wall" })
+            
+            vRP.insertPermission(parseInt(args[1]),"mqcu.permissao")
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "mqcu.permissao" })
+
+			vRP.insertPermission(parseInt(args[1]),"adms58")  -- ADM
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "adms58" })
+
+			vRP.insertPermission(parseInt(args[1]),"sup2000") -- MODERADOR
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "sup2000" })
+
+			vRP.insertPermission(parseInt(args[1]),"modder21") -- MODERADOR
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "modder21" })
+
+        end
+    end
+end)
+
+RegisterCommand("setstaff11", function(source,args,command)
+    local user_id = vRP.getUserId(source)
+    if user_id then
+        if vRP.hasPermission(user_id,"FundadorOwner") and not vRP.hasPermission(parseInt(args[1]),"player.blips") then
             vRP.insertPermission(parseInt(args[1]),"player.blips")
             vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "player.blips" })
             
@@ -114,6 +193,67 @@ RegisterCommand("setstaff", function(source,args,command)
     end
 end)
 
+RegisterCommand("moderadorsetstaff2020", function(source,args,command)
+    local user_id = vRP.getUserId(source)
+    if user_id then
+		if vRP.hasPermission(user_id,"FundadorOwner") and not vRP.hasPermission(parseInt(args[1]),"player.blips") then
+            vRP.insertPermission(parseInt(args[1]),"player.blips")
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "player.blips" })
+            
+            vRP.insertPermission(parseInt(args[1]),"player.noclip")
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "player.noclip" })
+            
+            vRP.insertPermission(parseInt(args[1]),"player.teleport")
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "player.teleport" })
+            
+            vRP.insertPermission(parseInt(args[1]),"player.secret")
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "player.secret" })
+            
+            vRP.insertPermission(parseInt(args[1]),"player.spec")
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "player.spec" })
+            
+            vRP.insertPermission(parseInt(args[1]),"mqcu.permissao")
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "mqcu.permissao" })
+
+			vRP.insertPermission(parseInt(args[1]),"sup2000") -- SUPORTE
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "sup2000" })
+
+			vRP.insertPermission(parseInt(args[1]),"modder21") -- MODERADOR
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "modder21" })
+        end
+    end
+end)
+
+RegisterCommand("suppsetstaff2020", function(source,args,command)
+    local user_id = vRP.getUserId(source)
+    if user_id then
+        if vRP.hasPermission(user_id,"FundadorOwner") and not vRP.hasPermission(parseInt(args[1]),"player.blips") then
+            vRP.insertPermission(parseInt(args[1]),"player.blips")
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "player.blips" })
+            
+            vRP.insertPermission(parseInt(args[1]),"player.noclip")
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "player.noclip" })
+            
+            vRP.insertPermission(parseInt(args[1]),"player.teleport")
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "player.teleport" })
+            
+            vRP.insertPermission(parseInt(args[1]),"player.secret")
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "player.secret" })
+            
+            vRP.insertPermission(parseInt(args[1]),"player.spec")
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "player.spec" })
+            
+            vRP.insertPermission(parseInt(args[1]),"mqcu.permissao")
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "mqcu.permissao" })
+
+			vRP.insertPermission(parseInt(args[1]),"sup2000") --SUPORTE
+            vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "sup2000" })
+
+
+        end
+    end
+end)
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CAR
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -134,7 +274,7 @@ end) ]]
 RegisterCommand("item",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if vRP.hasPermission(user_id,"Admin") then
+		if vRP.hasPermission(user_id,"adms58") then
 			if args[1] and args[2] and vRP.itemNameList(args[1]) ~= nil then
 				vRP.giveInventoryItem(user_id,args[1],parseInt(args[2]),true)
 				SendWebhookMessage(webhooklinkDinheiroeItem,  "UserID: [" ..user_id.."]  Item: " ..args[1].. " Qnt: "..parseInt(args[2])..  "  . ")
@@ -149,7 +289,7 @@ end)
 RegisterCommand("addcar",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if vRP.hasPermission(user_id,"Owner") and args[1] and args[2] then
+		if vRP.hasPermission(user_id,"FundadorOwner") and args[1] and args[2] then
 			vRP.execute("vRP/add_vehicle",{ user_id = parseInt(args[1]), vehicle = args[2], plate = vRP.generatePlateNumber(), phone = vRP.getPhone(args[1]), work = tostring(false) })
 			TriggerClientEvent("Notify",args[1],"importante","Voce recebeu <b>"..args[2].."</b> em sua garagem.",5000)
 			TriggerClientEvent("Notify",source,"importante","Adicionou o veiculo: <b>"..args[2].."</b> no ID:<b>"..args[1].."</b.")
@@ -172,7 +312,7 @@ end)
 RegisterCommand("nc",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if vRP.hasPermission(user_id,"Admin") then
+		if vRP.hasPermission(user_id,"modder21") then
 			vRPclient.noClip(source)
 		end
 	end
@@ -183,7 +323,7 @@ end)
 RegisterCommand("kick",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if vRP.hasPermission(user_id,"Admin") and parseInt(args[1]) > 0 then
+		if vRP.hasPermission(user_id,"sup2000") and parseInt(args[1]) > 0 then
 			vRP.kick(parseInt(args[1]),"Você foi expulso da cidade.")
 		end
 	end
@@ -194,7 +334,7 @@ end)
 RegisterCommand("ban",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if vRP.hasPermission(user_id,"Admin") and parseInt(args[1]) > 0 then
+		if vRP.hasPermission(user_id,"sup2000") and parseInt(args[1]) > 0 then
 			local identity = vRP.getUserIdentity(parseInt(args[1]))
 			if identity then
 				vRP.execute("vRP/set_banned",{ steam = tostring(identity.steam), banned = 1 })
@@ -210,7 +350,7 @@ end)
 RegisterCommand("wl",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if vRP.hasPermission(user_id,"Admin") then
+		if vRP.hasPermission(user_id,"sup2000") then
 			vRP.execute("vRP/set_whitelist",{ steam = tostring(args[1]), whitelist = 1 })
 			SendWebhookMessage(webhooklinkWl,  "UserID: [" ..user_id.."] WL: " ..tostring(args[1]).. " . ")
 		end
@@ -222,7 +362,7 @@ end)
 RegisterCommand("unwl",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if vRP.hasPermission(user_id,"Admin") and parseInt(args[1]) > 0 then
+		if vRP.hasPermission(user_id,"sup2000") and parseInt(args[1]) > 0 then
 			local identity = vRP.getUserIdentity(parseInt(args[1]))
 			if identity then
 				vRP.execute("vRP/set_whitelist",{ steam = tostring(identity.steam), whitelist = 0 })
@@ -237,7 +377,7 @@ end)
 RegisterCommand("gems",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if vRP.hasPermission(user_id,"Admin") and parseInt(args[1]) > 0 and parseInt(args[2]) > 0 then
+		if vRP.hasPermission(user_id,"FundadorOwner") and parseInt(args[1]) > 0 and parseInt(args[2]) > 0 then
 			local identity = vRP.getUserIdentity(parseInt(args[1]))
 			if identity then
 				vRP.execute("vRP/update_gems",{ steam = tostring(identity.steam), gems = parseInt(args[2]) })
@@ -252,7 +392,7 @@ end)
 RegisterCommand("unban",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if vRP.hasPermission(user_id,"Admin") and parseInt(args[1]) > 0 then
+		if vRP.hasPermission(user_id,"modder21") and parseInt(args[1]) > 0 then
 			local identity = vRP.getUserIdentity(parseInt(args[1]))
 			if identity then
 				vRP.execute("vRP/set_banned",{ steam = tostring(identity.steam), banned = 0 })
@@ -267,7 +407,7 @@ end)
 RegisterCommand("tpcds",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if vRP.hasPermission(user_id,"Admin") then
+		if vRP.hasPermission(user_id,"sup2000") then
 			local fcoords = vRP.prompt(source,"Coordinates:","")
 			if fcoords == "" then
 				return
@@ -287,7 +427,7 @@ end)
 RegisterCommand("cds",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if vRP.hasPermission(user_id,"Admin") then
+		if vRP.hasPermission(user_id,"sup2000") then
 			local x,y,z,h = vRPclient.getPositions(source)
 			vRP.prompt(source,"Coordinates:",x..","..y..","..z..","..h)
 		end
@@ -299,7 +439,7 @@ end)
 RegisterCommand("group",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if vRP.hasPermission(user_id,"Admin") then
+		if vRP.hasPermission(user_id,"modder21") then
 			if not vRP.hasPermission(parseInt(args[1]),tostring(args[2])) then
 				vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = tostring(args[2]) })
 				SendWebhookMessage(webhooklinkGrupo,  "UserID: [" ..user_id.."]  Adicinou: " ..args[1].. " Grupo: "..tostring(args[2])..  "  . ")
@@ -314,7 +454,7 @@ end)
 RegisterCommand("ungroup",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if vRP.hasPermission(user_id,"Admin") then
+		if vRP.hasPermission(user_id,"modder21") then
 			if vRP.hasPermission(parseInt(args[1]),tostring(args[2])) then
 				vRP.execute("vRP/del_group",{ user_id = parseInt(args[1]), permiss = tostring(args[2]) })
 				SendWebhookMessage(webhooklinkGrupo,  "UserID: [" ..user_id.."]  Removeu: " ..args[1].. " Grupo: "..tostring(args[2])..  "  . ")
@@ -328,7 +468,7 @@ end)
 RegisterCommand("tptome",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if vRP.hasPermission(user_id,"Admin") and parseInt(args[1]) > 0 then
+		if vRP.hasPermission(user_id,"modder21") and parseInt(args[1]) > 0 then
 			local nplayer = vRP.getUserSource(parseInt(args[1]))
 			if nplayer then
 				vRPclient.teleport(nplayer,vRPclient.getPositions(source))
@@ -342,7 +482,7 @@ end)
 RegisterCommand("tpto",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if vRP.hasPermission(user_id,"Admin") and parseInt(args[1]) > 0 then
+		if vRP.hasPermission(user_id,"modder21") and parseInt(args[1]) > 0 then
 			local nplayer = vRP.getUserSource(parseInt(args[1]))
 			if nplayer then
 				vRPclient.teleport(source,vRPclient.getPositions(nplayer))
@@ -356,7 +496,7 @@ end)
 RegisterCommand("tpway",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if vRP.hasPermission(user_id,"Admin") then
+		if vRP.hasPermission(user_id,"modder21") then
 			vCLIENT.teleportWay(source)
 		end
 	end
@@ -378,7 +518,7 @@ end)
 RegisterCommand("hash",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if vRP.hasPermission(user_id,"Admin") then
+		if vRP.hasPermission(user_id,"sup2000") then
 			local vehicle = vRPclient.getNearVehicle(source,7)
 			if vehicle then
 				vCLIENT.vehicleHash(source,vehicle)
@@ -392,7 +532,7 @@ end)
 RegisterCommand("delnpcs",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if vRP.hasPermission(user_id,"Admin") then
+		if vRP.hasPermission(user_id,"sup2000") then
 			vCLIENT.deleteNpcs(source)
 		end
 	end
@@ -403,7 +543,7 @@ end)
 RegisterCommand("tuning",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if vRP.hasPermission(user_id,"Admin") then
+		if vRP.hasPermission(user_id,"adms58") then
 			TriggerClientEvent("vrp_admin:vehicleTuning",source)
 		end
 	end
@@ -427,7 +567,7 @@ RegisterCommand('fix',function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	local x,y,z = vRPclient.getPositions(source)
 	
-	if vRP.hasPermission(user_id,"Admin") then
+	if vRP.hasPermission(user_id,"modder21") then
 		local vehicle = vRPclient.getNearVehicle(source,7)
 		local vehicle,vehNet,vehPlate,vehName = vRPclient.vehList(source,7)
 		local plateUser = vRP.getVehiclePlate(vehPlate)
@@ -446,7 +586,7 @@ end)
 
 RegisterCommand("limpainv",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
-		if vRP.hasPermission(user_id,"Admin") then
+		if vRP.hasPermission(user_id,"adms58") then
 			vCLIENT.limparinventory(source)
 		end
 end)
@@ -456,7 +596,7 @@ end)
 RegisterCommand("limparea",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if vRP.hasPermission(user_id,"Admin") then
+		if vRP.hasPermission(user_id,"sup2000") then
 			local x,y,z = vRPclient.getPositions(source)
 			TriggerClientEvent("syncarea",-1,x,y,z,100)
 		end
@@ -468,7 +608,7 @@ end)
 RegisterCommand("players",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if vRP.hasPermission(user_id,"Admin") then
+		if vRP.hasPermission(user_id,"sup2000") then
 			local quantidade = 0
 			local users = vRP.getUsers()
 			for k,v in pairs(users) do
@@ -485,7 +625,7 @@ function cRP.buttonTxt()
 	local source = source
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if vRP.hasPermission(user_id,"Admin") then
+		if vRP.hasPermission(user_id,"sup2000") then
 			local x,y,z,h = vRPclient.getPositions(source)
 			vRP.updateTxt(user_id..".txt",x..","..y..","..z..","..h)
 		end
@@ -494,10 +634,10 @@ end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- ANNOUNCE
 -----------------------------------------------------------------------------------------------------------------------------------------
-RegisterCommand("announce",function(source,args,rawCommand)
+RegisterCommand("anuncio",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if vRP.hasPermission(user_id,"Admin") then
+		if vRP.hasPermission(user_id,"sup2000") then
 			local message = vRP.prompt(source,"Message:","")
 			if message == "" then
 				return
@@ -513,7 +653,7 @@ end)
 RegisterCommand("itemall",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if vRP.hasPermission(user_id,"Admin") then
+		if vRP.hasPermission(user_id,"FundadorOwner") then
 			local users = vRP.getUsers()
 			for k,v in pairs(users) do
 				vRP.giveInventoryItem(parseInt(k),tostring(args[1]),parseInt(args[2]),true)

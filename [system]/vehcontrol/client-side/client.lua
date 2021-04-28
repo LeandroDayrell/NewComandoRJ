@@ -1,13 +1,13 @@
 ---------------------------------------------------------------------
 local count_bcast_timer = 0
-local delay_bcast_timer = 200
+local delay_bcast_timer = 100
 ---------------------------------------------------------------------
 local count_sndclean_timer = 0
-local delay_sndclean_timer = 400
+local delay_sndclean_timer = 200
 ---------------------------------------------------------------------
 local actv_ind_timer = false
 local count_ind_timer = 0
-local delay_ind_timer = 180
+local delay_ind_timer = 90
 ---------------------------------------------------------------------
 local actv_lxsrnmute_temp = false
 local srntone_temp = 0

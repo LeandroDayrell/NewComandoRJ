@@ -704,7 +704,7 @@ end
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterCommand("dv",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
-	if vRP.hasPermission(user_id,"Admin") then
+	if vRP.hasPermission(user_id,"modder21") then
 		local vehicle = vRPclient.getNearVehicle(source,15)
 		if vehicle then
 			vCLIENT.deleteVehicle(source,vehicle)
@@ -716,7 +716,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterCommand("rgarage",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
-	if vRP.hasPermission(user_id,"Admin") then
+	if vRP.hasPermission(user_id,"FundadorOwner") then
 		spanwedVehs[args[1]..args[2]] = nil
 	end
 end)
@@ -857,7 +857,7 @@ end
 RegisterCommand("car",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
  	if user_id then
-		if vRP.hasPermission(user_id,"Admin") and args[1] then
+		if vRP.hasPermission(user_id,"adms58") and args[1] then
       		local plate = "55DTA141"
 			TriggerClientEvent("adminVehicle",source,args[1],plate)
       		TriggerEvent("setPlateEveryone",plate)

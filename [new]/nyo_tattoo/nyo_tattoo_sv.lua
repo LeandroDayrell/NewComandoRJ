@@ -65,10 +65,9 @@ end
 
 AddEventHandler("vRP:playerSpawn",function(user_id,source,first_spawn)
     local source = source
-	if first_spawn and tattooStart then
+	if tattooStart then
 		local custom = {}
         local data = vRP.getUData(user_id,"vRP:tattoos")
-
         if data ~= '' then
             custom = json.decode(data)
             nyoTattooC.setTattoos(source,custom)
@@ -84,6 +83,6 @@ end)
 
 AddEventHandler("onResourceStart",function(resourceName)
     if GetCurrentResourceName() == resourceName then 
-        print("\27[32m ["..GetCurrentResourceName().."] - Desenvolvido por twitch.tv/NyoGamesYT! VENDA PROIBIDA\27[37m")
+        --print("\27[32m ["..GetCurrentResourceName().."] - Desenvolvido por twitch.tv/NyoGamesYT! VENDA PROIBIDA\27[37m")
     end
 end)

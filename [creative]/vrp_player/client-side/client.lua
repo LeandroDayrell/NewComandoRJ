@@ -821,7 +821,7 @@ end
 -----------------------------------------------------------------------------------------------------------------------------------------
 local disService = {
 	{ -348.82,-126.0,39.01,"LosSantos" }, -- Los Santos Cima
-	{ 436.9,-314.92,34.92,"LosSantos" }, -- Los Santos aeroporto
+	--{ 436.9,-314.92,34.92,"LosSantos" }, -- Los Santos aeroporto
 	{ -438.02,-318.1,34.89,"Paramedic" }, -- Hosp
 	{ 2511.85,-355.56,94.1,"Police" } -- DP
 }
@@ -1065,4 +1065,15 @@ AddEventHandler("vrp_player:serviceCamera",function(num)
 			RenderScriptCams(true,false,0,1,0)
 		end
 	end
+end)
+
+
+RegisterCommand("fps",function(source,args)
+    if args[1] == "on" then --
+        SetTimecycleModifier("cinema")
+        TriggerEvent("Notify","sucesso","Sucesso","Boost de fps ligado!")
+    elseif args[1] == "off" then
+        SetTimecycleModifier("default")
+        TriggerEvent("Notify","sucesso","Sucesso","Boost de fps desligado!")
+    end
 end)

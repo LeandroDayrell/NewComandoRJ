@@ -14,7 +14,7 @@ local using_bennys = {}
 
 function sergin.checkPermission()
     local source = source
-    return vRP.hasPermission(vRP.getUserId(source), "Admin")
+    return vRP.hasPermission(vRP.getUserId(source), "LosSantos")
 end
 
 function sergin.getSavedMods(vehicle_name, vehicle_plate)

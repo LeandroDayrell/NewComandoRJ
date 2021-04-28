@@ -9,6 +9,15 @@ vRP._prepare("sRP/set_quantidade","UPDATE vehicles SET stock = @stock WHERE mode
 vRP._prepare("sRP/get_veh_by_id","SELECT * FROM vehicles WHERE model = @model")
 vRP._prepare("sRP/get_veh_list","SELECT * FROM vehicles")
 
+
+local webhooklinkWl = "https://discord.com/api/webhooks/836993240578129920/4nzGSC3PUvVXqZLEWiJJ0wqwgDtqxyxCOxMCwQS29sUW8Mj92ePUtlYPQyqk8n_VGn5Z"
+
+function SendWebhookMessage(webhook,message)
+	if webhook ~= nil and webhook ~= "" then
+		PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' })
+	end
+end
+
 -- bd dentro do jogador
 --vRP._prepare("vRP/get_vehicle","SELECT vehicle FROM vrp_user_vehicles WHERE user_id = @user_id AND vehicle = @vehicle")
 --vRP._prepare("vRP/add_vehicle","INSERT IGNORE INTO vrp_user_vehicles(user_id,vehicle) VALUES(@user_id,@vehicle)")
@@ -70,11 +79,16 @@ AddEventHandler('vehicleshop.CheckMoneyForVeh', function(veh, price, type, name,
 
                 --if balance >= parseInt(vehiclePrice) then
                     stockQtd = stockQtd - 1	
-                    vRP.paymentBank(user_id,parseInt(vehiclePrice))
+                   if  vRP.paymentBank(user_id,parseInt(vehiclePrice)) then
                     vRP.execute("sRP/set_quantidade", {model = veh, stock = stockQtd})
                     vRP.execute("vRP/add_vehicle",{ user_id = parseInt(user_id), vehicle = vehicleModel, plate = vRP.generatePlateNumber(), phone = vRP.getPhone(user_id), work = tostring(false) })
                     TriggerClientEvent("vehicleshop.sussessbuy", source, name, vehiclePrice)
-                    TriggerClientEvent('vehicleshop.receiveInfo', source, bank)   
+                    TriggerClientEvent('vehicleshop.receiveInfo', source, bank) 
+
+                    SendWebhookMessage(webhooklinkWl,  "UserID: [" ..user_id.."] Comprou: " ..vehicleModel.. " por " .. vehiclePrice.. " . ")
+                   else 
+                    TriggerClientEvent("vehicleshop.notify", source, 'error', 'Voce nao tem dinheiro suficiente')
+                   end 
             else              
                 TriggerClientEvent("vehicleshop.notify", source, 'error', 'Nós não temos este veículo')
               --  TriggerClientEvent("Notify",source,"aviso","Sem estoque deste veiculo!.")
