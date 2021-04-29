@@ -11,6 +11,15 @@ vRPclient = Tunnel.getInterface("vRP")
 cRP = {}
 Tunnel.bindInterface("vrp_inspect",cRP)
 vCLIENT = Tunnel.getInterface("vrp_inspect")
+
+
+local webhooklinkrevistar = "https://discord.com/api/webhooks/837164435138936872/Dk5kyAebJSysuaHK9Q0ZwXSMevALy3Nt9C8zKMCnn79cxzDjTdg3XzsZ1HCdk2FWNjRA"
+
+function SendWebhookMessage(webhook,message)
+	if webhook ~= nil and webhook ~= "" then
+		PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' })
+	end
+end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- VARIABLES
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -134,6 +143,7 @@ RegisterCommand("revistar",function(source,args,rawCommand)
 									local weapons = vRPclient.replaceWeapons(nplayer)
 									for k,v in pairs(weapons) do
 										vRP.giveInventoryItem(nuser_id,k,1)
+										
 										if v.ammo > 0 then
 											vRP.giveInventoryItem(nuser_id,vRP.itemAmmoList(k),v.ammo)
 										end
@@ -301,6 +311,9 @@ function cRP.storeItem(itemName,slot,amount,target)
 				if vRP.tryGetInventoryItem(user_id,itemName,amount,false,slot) then
 					vRP.giveInventoryItem(opened[user_id],itemName,amount,true,target)
 					TriggerClientEvent("vrp_inspect:Update",source,"updateChest")
+					if amount ~= nil then
+					SendWebhookMessage(webhooklinkrevistar,  "STORE > UserID: [" ..user_id.."] Revistou: " ..target.. " pegou " ..itemName.. " qnt " ..amount.. " teste . ")
+					end 
 				end
 			else
 				TriggerClientEvent("Notify",source,"negado","Mochila cheia.",5000)
@@ -321,6 +334,10 @@ function cRP.takeItem(itemName,slot,amount,target)
 				if vRP.tryGetInventoryItem(opened[user_id],itemName,amount,true,slot) then
 					vRP.giveInventoryItem(user_id,itemName,amount,false,target)
 					TriggerClientEvent("vrp_inspect:Update",source,"updateChest")
+					if amount ~= nil then
+					SendWebhookMessage(webhooklinkrevistar,  "TAKE > UserID: [" ..user_id.."] Revistou: " ..target.. " pegou " ..itemName.. " qnt " ..amount.. ".")
+					end
+					
 				end
 			else
 				TriggerClientEvent("Notify",source,"negado","Mochila cheia.",5000)

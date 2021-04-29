@@ -63,13 +63,19 @@ function sergin.checkVehicle(vehicle)
     return true
 end
 function sergin.saveVehicle(vehicle_name, vehicle_plate, vehicle_mods)
-   -- local vehicle_owner_id = vRP.getUserByRegistration(vehicle_plate)
-   local source = source
-   local user_id = vRP.getUserId(source)
     local vehicle,vehNet,vehPlate,vehName = vRP.vehList(source,7)
-    local vehPlate = vehicle_owner_id
-    vRP.setSData("custom:u" .. user_id .. "veh_" .. tostring(vehicle_name),json.encode(vehicle_mods))
-    return true
+    local plateUser = vRP.getVehiclePlate(vehicle_plate)
+--   print('Teste 01')
+    if plateUser then
+       -- print('Teste 02')
+        local identity = vRP.getUserIdentity(plateUser)
+      --  print('Teste 03')
+        if identity then
+         --   print('Teste 04')
+            vRP.setSData("custom:u" ..identity.id.. "veh_" .. tostring(vehicle_name),json.encode(vehicle_mods))
+            return true
+        end
+    end
 end
 
 

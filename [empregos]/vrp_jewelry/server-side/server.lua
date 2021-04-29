@@ -37,7 +37,7 @@ function cRP.jewelryCheckItens()
 		end
 
 		local copAmount = vRP.numPermission("Police")
-		if parseInt(#copAmount) <= 0 then
+		if parseInt(#copAmount) <= 4 then
 			TriggerClientEvent("Notify",source,"aviso","Sistema indisponível no momento, tente mais tarde.",5000)
 			return false
 		end

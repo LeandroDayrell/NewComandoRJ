@@ -191,7 +191,6 @@ local shops = {
 			["rose"] = 50,
 			["compost"] = 10,
 			["silk"] = 3,
-			["coffee"] = 18,
 			["taurina"] = 80,
 			["paperbag"] = 50,
 			["firecracker"] = 1000

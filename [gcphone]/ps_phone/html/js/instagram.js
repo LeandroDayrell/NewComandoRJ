@@ -535,8 +535,8 @@ $(document).on('click', '.post-photo-filter .next', function(e) {
     var image = $(".post-photo-filter .image-preview-show img").attr('src');
     var filter = $(".post-photo-filter .image-preview-show figure").attr('class');
 
-    $(".post-preview .image-preview-show img").attr("src", image)
-    $(".post-preview .image-preview-show figure").removeClass().addClass(filter);
+    $(".post-preview .image-preview img").attr("src", image)
+    $(".post-preview .image-preview figure").removeClass().addClass(filter);
 
     $(".post-preview").animate({
         left: 0 + "vh"
@@ -549,8 +549,8 @@ $(document).on('click', '.post-photo-filter .next', function(e) {
 });
 
 $(document).on('click', '.post-preview .next', function(e) {
-    var image = $(".post-preview .image-preview-show img").attr('src');
-    var filter = $(".post-preview .image-preview-show figure").attr('class');
+    var image = $(".post-preview .image-preview img").attr('src');
+    var filter = $(".post-preview .image-preview figure").attr('class');
     var description = $(".post-preview .text textarea").val();
     var position = $(".post-preview #sendposition p").html();
 

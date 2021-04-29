@@ -242,8 +242,8 @@ RegisterCommand("atendimento",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
 		if not vCLIENT.getHandcuff(source) then
-			local service = vRP.prompt(source,"190: Polícia     |     192: Paramédico","")
-			if service == "" or (parseInt(service) ~= 190 and parseInt(service) ~= 192 and parseInt(service) ~= 443) then
+			local service = vRP.prompt(source,"190: Polícia   |   192: Paramédico   |   170: Mecanico   |   156: Prefeitura","")
+			if service == "" or (parseInt(service) ~= 190 and parseInt(service) ~= 192 and parseInt(service) ~= 156 and parseInt(service) ~= 170 and parseInt(service) ~= 443) then
 				return
 			end
 
@@ -258,6 +258,10 @@ RegisterCommand("atendimento",function(source,args,rawCommand)
 				players = vRP.numPermission("Police")
 			elseif parseInt(service) == 192 then
 				players = vRP.numPermission("Paramedic")
+			elseif parseInt(service) == 156 then
+				players = vRP.numPermission("sup2000")
+			elseif parseInt(service) == 170 then
+				players = vRP.numPermission("LosSantos")
 			end
 
 			TriggerClientEvent("Notify",source,"sucesso","Chamado efetuado com sucesso, aguarde no local.",5000)
@@ -342,12 +346,12 @@ RegisterCommand("placa",function(source,args,rawCommand)
 		if vRP.hasPermission(user_id,"Police") then
 			if vRPclient.getHealth(source) > 101 then
 				if args[1] then
-					local plateUser = vRP.getVehiclePlate(tostring(args[1]))
+					local plateUser = vRP.getVehiclePlate(tostring(args[1])) --
 					if plateUser then
 						local identity = vRP.getUserIdentity(plateUser)
 						if identity then
 							vRPclient.playSound(source,"Event_Message_Purple","GTAO_FM_Events_Soundset")
-							TriggerClientEvent("Notify",source,"importante","<b>Passaporte:</b> "..identity.id.."<br><b>RG:</b> "..identity.registration.."<br><b>Nome:</b> "..identity.name.." "..identity.name2.."<br><b>Telefone:</b> "..identity.phone,10000)
+							TriggerClientEvent("Notify",source,"importante","<b>Passaporte: x</b> "..identity.id.."<br><b>RG:</b> "..identity.registration.."<br><b>Nome:</b> "..identity.name.." "..identity.name2.."<br><b>Telefone:</b> "..identity.phone,10000)
 						end
 					else
 						if not plateSave[string.upper(args[1])] then
@@ -355,7 +359,7 @@ RegisterCommand("placa",function(source,args,rawCommand)
 						end
 
 						vRPclient.playSound(source,"Event_Message_Purple","GTAO_FM_Events_Soundset")
-						TriggerClientEvent("Notify",source,"importante","<b>Passaporte:</b> "..plateSave[args[1]][1].."<br><b>RG:</b> "..string.upper(args[1]).."<br><b>Nome:</b> "..plateSave[args[1]][2].."<br><b>Telefone:</b> "..plateSave[args[1]][3],10000)
+						TriggerClientEvent("Notify",source,"importante","<b>Passaporte xx:</b> "..plateSave[args[1]][1].."<br><b>RG:</b> "..string.upper(args[1]).."<br><b>Nome:</b> "..plateSave[args[1]][2].."<br><b>Telefone:</b> "..plateSave[args[1]][3],10000)
 					end
 				else
 					local vehicle,vehNet,vehPlate = vRPclient.vehList(source,7)
@@ -365,7 +369,7 @@ RegisterCommand("placa",function(source,args,rawCommand)
 							local identity = vRP.getUserIdentity(plateUser)
 							if identity then
 								vRPclient.playSound(source,"Event_Message_Purple","GTAO_FM_Events_Soundset")
-								TriggerClientEvent("Notify",source,"importante","<b>Passaporte:</b> "..identity.id.."<br><b>RG:</b> "..identity.registration.."<br><b>Nome:</b> "..identity.name.." "..identity.name2.."<br><b>Telefone:</b> "..identity.phone,10000)
+								TriggerClientEvent("Notify",source,"importante","<b>Passaporte xxx:</b> "..identity.id.."<br><b>RG:</b> "..identity.registration.."<br><b>Nome:</b> "..identity.name.." "..identity.name2.."<br><b>Telefone:</b> "..identity.phone,10000)
 							end
 						else
 							if not plateSave[vehPlate] then
@@ -373,7 +377,7 @@ RegisterCommand("placa",function(source,args,rawCommand)
 							end
 
 							vRPclient.playSound(source,"Event_Message_Purple","GTAO_FM_Events_Soundset")
-							TriggerClientEvent("Notify",source,"importante","<b>Passaporte:</b> "..plateSave[vehPlate][1].."<br><b>RG:</b> "..vehPlate.."<br><b>Nome:</b> "..plateSave[vehPlate][2].."<br><b>Telefone:</b> "..plateSave[vehPlate][3],10000)
+							TriggerClientEvent("Notify",source,"importante","<b>Passaporte: xxxx</b> "..plateSave[vehPlate][1].."<br><b>RG:</b> "..vehPlate.."<br><b>Nome:</b> "..plateSave[vehPlate][2].."<br><b>Telefone:</b> "..plateSave[vehPlate][3],10000)
 						end
 					end
 				end
