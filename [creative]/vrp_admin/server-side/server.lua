@@ -590,6 +590,24 @@ RegisterCommand("limpainv",function(source,args,rawCommand)
 			vCLIENT.limparinventory(source)
 		end
 end)
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- KICK ALL TERREMOTO
+-----------------------------------------------------------------------------------------------------------------------------------------
+RegisterCommand('terremoto',function(source,args,rawCommand)
+    local user_id = vRP.getUserId(source)
+    if vRP.hasPermission(user_id,"modder21") then
+        local users = vRP.getUsers()
+        for k,v in pairs(users) do
+            local id = vRP.getUserSource(parseInt(k))
+            if id then
+                vRP.kick(id,"Você foi vitima do terremoto.")
+            end
+        end
+    end
+end)
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- LIMPAREA
 -----------------------------------------------------------------------------------------------------------------------------------------

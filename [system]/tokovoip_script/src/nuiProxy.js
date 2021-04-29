@@ -1,4 +1,7 @@
-function doSendNuiMessage(event,payload){
-    SendNuiMessage(JSON.stringify({ type: event,payload }));
+function doSendNuiMessage(event, payload) {
+    SendNuiMessage(JSON.stringify({
+        type: event,
+        payload
+    }));
 }
-exports('doSendNuiMessage',doSendNuiMessage)
+exports('doSendNuiMessage', doSendNuiMessage)

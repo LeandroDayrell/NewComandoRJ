@@ -1,5 +1,10 @@
 TokoVoipConfig = {
 	channels = {
+		{name = "PD Radio", subscribers = {}},
+		{name = "EMS Radio", subscribers = {}},
+		{name = "PD/SO/EMS Shared Radio", subscribers = {}},
+		{name = "SO Radio", subscribers = {}},
+		{name = "PD/SO Shared Radio", subscribers = {}},
 		{ name = "Livre 001", subscribers = {} },
 		{ name = "Livre 002", subscribers = {} },
 		{ name = "Livre 003", subscribers = {} },
@@ -1000,4 +1005,4 @@ TokoVoipConfig = {
 		{ name = "Livre 998", subscribers = {} },
 		{ name = "Livre 999", subscribers = {} }
 	}
-}
+};

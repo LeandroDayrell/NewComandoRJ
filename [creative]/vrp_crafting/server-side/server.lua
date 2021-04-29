@@ -317,8 +317,8 @@ local craftList = {
 				["destroy"] = true,
 				["require"] = {
 					["aluminum"] = 30,
-					["copper"] = 10,
-					["plastic"] = 10
+					["copper"] = 30,
+					["plastic"] = 30
 				}
 			},
 			["raceticket"] = {

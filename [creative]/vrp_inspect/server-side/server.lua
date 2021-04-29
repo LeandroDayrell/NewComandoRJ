@@ -310,10 +310,8 @@ function cRP.storeItem(itemName,slot,amount,target)
 			if vRP.computeInvWeight(opened[user_id]) + vRP.itemWeightList(itemName) * parseInt(amount) <= vRP.getBackpack(opened[user_id]) then
 				if vRP.tryGetInventoryItem(user_id,itemName,amount,false,slot) then
 					vRP.giveInventoryItem(opened[user_id],itemName,amount,true,target)
-					TriggerClientEvent("vrp_inspect:Update",source,"updateChest")
-					if amount ~= nil then
 					SendWebhookMessage(webhooklinkrevistar,  "STORE > UserID: [" ..user_id.."] Revistou: " ..target.. " pegou " ..itemName.. " qnt " ..amount.. " teste . ")
-					end 
+					TriggerClientEvent("vrp_inspect:Update",source,"updateChest")
 				end
 			else
 				TriggerClientEvent("Notify",source,"negado","Mochila cheia.",5000)

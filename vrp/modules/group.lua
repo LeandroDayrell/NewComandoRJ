@@ -22,6 +22,17 @@ function vRP.numPermission(perm)
 	end
 	return users
 end
+
+function vRP.getUsersByPermission(perm)
+	local users = {}
+	for k,v in pairs(vRP.rusers) do
+		if vRP.hasPermission(tonumber(k),perm) then
+			table.insert(users,tonumber(k))
+		end
+	end
+	return users
+end
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- NUMPERMISSION
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -54,6 +65,9 @@ AddEventHandler("vRP:playerSpawn",function(user_id,source,first_spawn)
 		TriggerEvent("vrp_blipsystem:serviceEnter",source,"Policial",77)
 	elseif vRP.hasPermission(user_id,"Paramedic") then
 		permissions[tostring(source)] = "Paramedic"
-		TriggerEvent("vrp_blipsystem:serviceEnter",source,"Paramedico",83)
+		TriggerEvent("vrp_blipsystem:serviceEnter",source,"Paramedico",83)\
+	elseif vRP.hasPermission(user_id,"LosSantos") then
+		permissions[tostring(source)] = "LosSantos"
+		TriggerEvent("vrp_blipsystem:serviceEnter",source,"LosSantos",83)
 	end
 end)
