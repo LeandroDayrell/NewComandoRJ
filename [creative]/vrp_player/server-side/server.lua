@@ -279,23 +279,15 @@ RegisterCommand("atendimento",function(source,args,rawCommand)
 			elseif parseInt(service) == 170 then
 				players = vRP.numPermission("LosSantos")
 			end
-			print('print 01')
 
 			TriggerClientEvent("Notify",source,"sucesso","Chamado efetuado com sucesso, aguarde no local.",5000)
 
 			local x,y,z = vRPclient.getPositions(source)
 			local identity = vRP.getUserIdentity(user_id)
-			print(players)
 			for k,v in pairs(players) do
-				print('----------------------------')
-				print(k)
-				print(v)
-				print(players)
-				print('print 02')
 				local nuser_id = vRP.getUserId(v)
 				local identitys = vRP.getUserIdentity(nuser_id)
 				if v and v ~= source then
-					print('print 03')
 					async(function()
 						TriggerClientEvent("chatMessage",v,identity.name.." "..identity.name2,{107,182,84},description)
 						TriggerClientEvent("NotifyPush",v,{ code = 20, title = "Chamado", x = x, y = y, z = z, name = identity.name.." "..identity.name2, phone = identity.phone, rgba = {69,115,41} })
@@ -318,7 +310,7 @@ RegisterCommand("atendimento",function(source,args,rawCommand)
 end)
 
 
-RegisterCommand('chamar',function(source,args,rawCommand)
+--[[ egisterCommand('chamar',function(source,args,rawCommand)
 	local source = source
 	local answered = false
 	local user_id = vRP.getUserId(source)
@@ -339,28 +331,28 @@ RegisterCommand('chamar',function(source,args,rawCommand)
 		vRPclient._DeletarObjeto(source)
 		local especialidade = false
 		if args[1] == "190" then
-			players = vRP.numPermission("Police")
+			players = vRP.getUsersByPermission("Police")
 			especialidade = "<b>Policiais</b>"
 		elseif args[1] == "policia" then
-			players = vRP.numPermission("Police")
+			players = vRP.getUsersByPermission("Police")
 			especialidade = "<b>Policiais</b>"
 		elseif args[1] == "192" then
-			players = vRP.hasPermission("Paramedic")
+			players = vRP.getUsersByPermission("Paramedic")
 			especialidade = "Colaboradores do <b>SAMU</b>"
 		elseif args[1] == "mecanico" then
-			players = vRP.hasPermission("LosSantos")
+			players = vRP.getUsersByPermission("LosSantos")
 			especialidade = "<b>Mecânicos</b>"
 		elseif args[1] == "samu" then
-			players = vRP.numPermission("Paramedic")	
+			players = vRP.getUsersByPermission("Paramedic")	
 			especialidade = "Colaboradores do <b>SAMU</b>"
 		elseif args[1] == "adm" then
-			players = vRP.numPermission("modder21")	
+			players = vRP.getUsersByPermission("modder21")	
 			especialidade = "Administradores"
 		elseif args[1] == "deus" then
-			players = vRP.numPermission("modder21")	
+			players = vRP.getUsersByPermission("modder21")	
 			especialidade = "Administradores"
 		elseif args[1] == "god" then
-			players = vRP.numPermission("modder21")	
+			players = vRP.getUsersByPermission("modder21")	
 			especialidade = "Administradores"
 		else
 			TriggerClientEvent("Notify",source,"negado","Serviço <b>inexistente</b> na Cidade.")
@@ -377,6 +369,9 @@ RegisterCommand('chamar',function(source,args,rawCommand)
 			TriggerClientEvent("Notify",source,"importante","Não há "..especialidade.." em serviço.")
 		else
 			local identitys = vRP.getUserIdentity(user_id)
+			local identity = vRP.getUserIdentity(user_id)
+			local x,y,z = vRPclient.getPositions(user_id)
+			
 			TriggerClientEvent("Notify",source,"sucesso","O Seu <b>Chamado</b> foi enviado com sucesso.")
 			for l,w in pairs(players) do
 				local player = vRP.getUserSource(parseInt(w))
@@ -384,29 +379,38 @@ RegisterCommand('chamar',function(source,args,rawCommand)
 				if player and player ~= uplayer then
 					async(function()
 						vRPclient.playSound(player,"Out_Of_Area","DLC_Lowrider_Relay_Race_Sounds")
-						TriggerClientEvent('chatMessage',player,"Chamado ",{255,0,0},adm.." Enviado por ^1"..identitys.name.." "..identitys.firstname.."^0 ["..user_id.."], "..descricao)
-						local ok = vRP.request(player,"Aceitar o chamado de <b>"..identitys.name.." "..identitys.firstname.. " ["..user_id.."]</b>?",30)
+						--TriggerClientEvent('chatMessage',player,"Chamado ",{255,0,0},adm.." Enviado por ^1"..identitys.name.." "..identitys.firstname.."^0 ["..user_id.."], "..descricao)
+						--TriggerClientEvent("chatMessage",v,identity.name.." "..identity.name2,{107,182,84},description)
+						--TriggerClientEvent("NotifyPush",v,{ code = 20, title = "Chamado", x = x, y = y, z = z, name = identity.name.." "..identity.name2, rgba = {69,115,41} })
+						local ok = vRP.request(player,"Aceitar o chamado de <b>"..identitys.name.." "..identitys.name2.. " ["..user_id.."]</b>?",30)
+						--print('teste 01')
 						if ok then
+							print('teste 02')
 							if not answered then
+								print('teste 03')
 								answered = true
 								local identity = vRP.getUserIdentity(nuser_id)
-								TriggerClientEvent("Notify",source,"importante","Chamado atendido por <b>"..identity.name.." "..identity.firstname.."</b>, aguarde no local.")
+								print('teste 04')
+								TriggerClientEvent("Notify",source,"importante","Chamado atendido por <b>"..identity.name.." "..identity.name2.."</b>, aguarde no local.")
 								vRPclient.playSound(source,"Event_Message_Purple","GTAO_FM_Events_Soundset")
 								vRPclient._setGPS(player,x,y)
 							else
 								TriggerClientEvent("Notify",player,"negado","Chamado ja foi atendido por outra <b>pessoa.</b>")
 								vRPclient.playSound(player,"CHECKPOINT_MISSED","HUD_MINI_GAME_SOUNDSET")
+								print('teste 05')
 							end
 						end
-						local id = idgens:gen()
-						blips[id] = vRPclient.addBlip(player,x,y,z,543,27,"Chamado",0.6,false)
-						SetTimeout(300000,function() vRPclient.removeBlip(player,blips[id]) idgens:free(id) end)
+						--local id = idgens:gen()
+						print('teste 06')
+						TriggerClientEvent("NotifyPush",v,{ code = 20, title = "Chamado", x = x, y = y, z = z, name = identity.name.." "..identity.name2, rgba = {69,115,41} })
+						--blips[id] = vRPclient.addBlip(player,x,y,z,543,27,"Chamado",0.6,false)
+						--SetTimeout(300000,function() vRPclient.removeBlip(player,blips[id])end)
 					end)
 				end
 			end
 		end
 	end
-end)
+end) ]]
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- PR
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -443,6 +447,23 @@ RegisterCommand("hr",function(source,args,rawCommand)
 				end
 			end
 		end
+	end
+end)
+
+RegisterCommand("reparar",function(source,args,rawCommand)
+local user_id = vRP.getUserId(source)
+	if vRP.hasPermission(user_id,"LosSantos") then
+		if not vRPclient.inVehicle(source) then
+			local vehicle,vehNet = vRPclient.vehList(source,3)
+			if vehicle then
+				--TriggerClientEvent("vrp_inventory:repairVehicle",-1,vehNet,false)
+				TriggerClientEvent('reparar',source,vehicle)
+			end
+		else
+			TriggerClientEvent("Notify",source,"negado","Voce deve sair do veiculo",10000)
+		end
+	else
+		TriggerClientEvent("Notify",source,"negado","Voce nao tem permissao",10000)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------

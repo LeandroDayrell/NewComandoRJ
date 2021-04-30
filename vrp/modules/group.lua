@@ -65,7 +65,7 @@ AddEventHandler("vRP:playerSpawn",function(user_id,source,first_spawn)
 		TriggerEvent("vrp_blipsystem:serviceEnter",source,"Policial",77)
 	elseif vRP.hasPermission(user_id,"Paramedic") then
 		permissions[tostring(source)] = "Paramedic"
-		TriggerEvent("vrp_blipsystem:serviceEnter",source,"Paramedico",83)\
+		TriggerEvent("vrp_blipsystem:serviceEnter",source,"Paramedico",83)
 	elseif vRP.hasPermission(user_id,"LosSantos") then
 		permissions[tostring(source)] = "LosSantos"
 		TriggerEvent("vrp_blipsystem:serviceEnter",source,"LosSantos",83)
