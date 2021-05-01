@@ -220,8 +220,6 @@ local race = {
 		{ -1460.12,5048.27,61.19 },
 		{ -2289.95,4204.85,40.38 },
 		{ -2463.33,3767.07,18.06 },
-		{ -2996.26,3442.91,8.89 },
-		{ -2691.52,3086.97,26.28 },
 		{ -2642.71,2783.95,16.07 },
 		{ -3053.75,1406.81,21.32 },
 		{ -3228.27,1027.58,11.21 },
@@ -514,43 +512,6 @@ local race = {
 		{ -512.61,1326.78,301.27 },
 		{ -397.58,1228.33,325.01 }
 	},
-	[17] = {
-		{ 1822.3,3241.11,43.22 },
-		{ 2411.09,2906.42,48.92 },
-		{ 2370.25,1191.76,60.09 },
-		{ 2492.7,791.51,95.77 },
-		{ 2594.67,271.01,104.74 },
-		{ 2392.45,-287.55,84.52 },
-		{ 1760.82,-855.27,71.69 },
-		{ 1385.93,-1115.1,52.36 },
-		{ 1088.07,-1362.17,31.79 },
-		{ 1120.59,-1780.3,28.86 },
-		{ 1206.73,-1996.06,42.81 },
-		{ 991.06,-2081.3,30.74 },
-		{ 903.19,-2410.8,28.86 },
-		{ 728.77,-2591.07,18.26 },
-		{ 720.81,-3045.05,11.35 },
-		{ 1137.24,-3325.77,5.5 },
-		{ 1257.52,-3260.65,5.39 },
-		{ 1208.74,-3082.16,5.48 },
-		{ 1057.88,-2935.92,5.48 },
-		{ 632.52,-2891.58,5.63 },
-		{ 612.15,-2769.7,5.64 },
-		{ 467.7,-2499.58,5.92 },
-		{ 561.49,-2473.78,15.51 },
-		{ 746.36,-2449.76,19.55 },
-		{ 843.6,-1682.05,28.94 },
-		{ 775.51,-1176.24,27.91 },
-		{ 616.21,-1153.5,9.65 },
-		{ 797.09,-463.73,29.43 },
-		{ 1212.34,-592.3,35.94 },
-		{ 1519.83,-966.05,66.22 },
-		{ 1660.55,-923.12,64.95 },
-		{ 2159.34,-551.46,94.04 },
-		{ 2345.1,-440.23,72.81 },
-		{ 2599.94,-573.51,68.98 },
-		{ 2492.44,-287.81,92.57 }
-	},
 	
 }
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -573,7 +534,6 @@ local raceTimers = {
 	[14] = 240,
 	[15] = 280,
 	[16] = 280,
-	[17] = 420,
 }
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADSTARTRACE
@@ -594,14 +554,16 @@ Citizen.CreateThread(function()
 						local vehicle = GetVehiclePedIsUsing(ped)
 						if IsControlJustPressed(1,38) and timeSeconds <= 0 and GetPedInVehicleSeat(vehicle,-1) == ped then
 							timeSeconds = 2
-							if vSERVER.checkTicket() then
-								racePos = 1
-								inRace = true
-								raceSelect = vSERVER.startRace()
-								raceTime = parseInt(raceTimers[raceSelect])
-								makeBlipMarked(raceSelect)
-								SetNewWaypoint(race[raceSelect][racePos][1]+0.0001,race[raceSelect][racePos][2]+0.0001)
-							end
+							if vSERVER.checkPolice() then
+								if vSERVER.checkTicket() then
+									racePos = 1
+									inRace = true
+									raceSelect = vSERVER.startRace()
+									raceTime = parseInt(raceTimers[raceSelect])
+									makeBlipMarked(raceSelect)
+									SetNewWaypoint(race[raceSelect][racePos][1]+0.0001,race[raceSelect][racePos][2]+0.0001)
+								end
+							end	
 						end
 					end
 				end
@@ -634,8 +596,8 @@ Citizen.CreateThread(function()
 									local x,y,z = table.unpack(GetEntityCoords(ped))
 									--local x,y,z = vRPclient.getPositions(source)
 									vSERVER.callPolice(x,y,z)
-									print(random)
-									print('CHAMOU A POLICIA ZÉ')
+									--print(random)
+									--print('CHAMOU A POLICIA ZÉ')
 								end
 						end
 					end

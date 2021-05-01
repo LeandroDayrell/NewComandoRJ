@@ -725,6 +725,7 @@ local vehglobal = {
 	["furia"] = { "Furia",15,2000000,"cars" },
 	["sultan2"] = { "Sultan2",15,600000,"cars" },
 	["everon"] = { "Everon",100,1200000,"cars" },
+	["dl2016"] = { "Ram",100,1500000,"cars" },
 	["winky"] = { "Winky",15,80000,"cars" },
 	["verus"] = { "Verus",15,60000,"cars" },
 	["longfin"] = { "Longfin",50,1000000,"cars" },

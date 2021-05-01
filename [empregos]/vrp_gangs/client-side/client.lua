@@ -40,7 +40,7 @@ end)
 -- FUNCTIONS
 -----------------------------------------------------------------------------------------------------------------------------------------
 local functions = {
-	{ 1417.1,6339.17,24.4,-159.89,-1636.28,37.25 }, -- ECSTASY
+	{ 281.72,6789.69,15.87,-159.89,-1636.28,37.25 }, -- ECSTASY
 	{ 3725.43,4525.73,22.48,-830.41,-420.58,36.77 }, -- FUELTECH
 	{ -1593.11,5202.99,4.32,75.77,-1970.07,21.13 } -- LEAN
 }
@@ -102,6 +102,7 @@ Citizen.CreateThread(function()
 					local distance02 = #(coords - vector3(v[4],v[5],v[6]))
 					if distance01 <= 2 then
 						timeDistance = 4
+						DrawText3D(v[1],v[2],v[3],"~g~E~w~ PEGAR SUPRIMENTOS")
 
 						if distance01 <= 0.6 and IsControlJustPressed(1,38) then
 							if inPackage then
@@ -116,6 +117,7 @@ Citizen.CreateThread(function()
 
 					if distance02 <= 2 and handPackage then
 						timeDistance = 4
+						DrawText3D(v[4],v[5],v[6],"~g~E~w~ ENTREGAR SUPRIMENTOS")
 						if distance02 <= 0.6 and IsControlJustPressed(1,38) then
 							inPackage = false
 							handPackage = false

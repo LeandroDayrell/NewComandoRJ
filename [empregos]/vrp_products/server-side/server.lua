@@ -19,7 +19,7 @@ local amount = {}
 -----------------------------------------------------------------------------------------------------------------------------------------
 local itemList = {
 	{ item = "cocaine", priceMin = 2, priceMax = 10, randMin = 3, randMax = 6 },
-	{ item = "weedendolada", priceMin = 165, priceMax = 200, randMin = 3, randMax = 6 },
+	{ item = "weedendolada", priceMin = 185, priceMax = 220, randMin = 3, randMax = 6 },
 	{ item = "methendolada", priceMin = 210, priceMax = 270, randMin = 3, randMax = 6 },
 	{ item = "ecstasy", priceMin = 350, priceMax = 450, randMin = 3, randMax = 6 },
 	{ item = "lean", priceMin = 350, priceMax = 450, randMin = 3, randMax = 6 },
@@ -54,7 +54,7 @@ function cnVRP.checkAmount()
 					local copAmount = vRP.numPermission("Police")
 					for k,v in pairs(copAmount) do
 						async(function()
-							TriggerClientEvent("NotifyPush",v,{ --[[time = os.date("%H:%M:%S - %d/%m/%Y"),]] text = "Me ajuda um cara acabou de tentar me vender "..v.item.."!", code = 20, title = "Denúncia de Venda de Drogas", x = x, y = y, z = z, rgba = {41,76,119} })
+							TriggerClientEvent("NotifyPush",v,{ --[[time = os.date("%H:%M:%S - %d/%m/%Y"),]] text = "Me ajuda um cara acabou de tentar me vender droga!", code = 20, title = "Denúncia de Venda de Drogas", x = x, y = y, z = z, rgba = {41,76,119} })
 						end)
 					end
 				end

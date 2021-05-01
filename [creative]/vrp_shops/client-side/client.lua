@@ -91,7 +91,7 @@ local shopList = {
 	{ 318.89,-1076.95,29.48,"pharmacyStore" },
 	{ 1952.13,3841.69,32.18,"pharmacyStore" },
 	{ 93.07,-229.93,54.67,"pharmacyStore" },
-	{ 114.45,-4.89,67.82,"pharmacyStore" },
+	{ 150.78,6648.07,31.6,"pharmacyStore" },
 	{ 229.39,-369.77,-98.78,"registryStore" },
 	{ 46.66,-1749.79,29.64,"megaMallStore" },
 	{ -428.56,-1728.33,19.79,"recyclingSell" },

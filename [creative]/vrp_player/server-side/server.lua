@@ -258,7 +258,7 @@ RegisterCommand("atendimento",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
 		if not vCLIENT.getHandcuff(source) then
-			local service = vRP.prompt(source,"190: Polícia   |   192: Paramédico","")
+			local service = vRP.prompt(source,"190: Polícia   |   192: Paramédico   |   170: Mecanico","")
 			if service == "" then
 				return
 			end

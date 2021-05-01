@@ -429,6 +429,16 @@ RegisterCommand("cds",function(source,args,rawCommand)
 	if user_id then
 		if vRP.hasPermission(user_id,"sup2000") then
 			local x,y,z,h = vRPclient.getPositions(source)
+			vRP.prompt(source,"Coordinates:",x..","..y..","..z)
+		end
+	end
+end)
+
+RegisterCommand("cdsz",function(source,args,rawCommand)
+	local user_id = vRP.getUserId(source)
+	if user_id then
+		if vRP.hasPermission(user_id,"sup2000") then
+			local x,y,z,h = vRPclient.getPositions(source)
 			vRP.prompt(source,"Coordinates:",x..","..y..","..z..","..h)
 		end
 	end

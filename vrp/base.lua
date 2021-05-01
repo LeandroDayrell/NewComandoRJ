@@ -338,3 +338,20 @@ AddEventHandler("baseModule:idLoaded",function(source,user_id,model)
 		TriggerEvent("vRP:playerSpawn",user_id,source)
 	end
 end)
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- SAVESYNC
+-----------------------------------------------------------------------------------------------------------------------------------------
+function saveSync()
+    for k,v in pairs(vRP.user_tables) do
+        vRP.execute("vRP/set_userdata",{ user_id = parseInt(k), key = "Datatable", value = json.encode(v) })
+    end
+
+    SetTimeout(60000,saveSync)
+end
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- ASYNCFUNCTIONS
+-----------------------------------------------------------------------------------------------------------------------------------------
+async(function()
+    saveSync()
+end)

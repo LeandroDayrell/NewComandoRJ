@@ -2184,7 +2184,7 @@ local mobileTheft = {
 		[15] = { "legos",1 },
 		[16] = { "ominitrix",1 },
 		[17] = { "bracelet",1 },
-		[18] = { "dildo",math.random(1,3) },
+		[18] = { "bluecard",1 },
 	},
 	["MOBILE08"] = {
 		[1] = { "weedendolada",math.random(10) },
@@ -2204,7 +2204,7 @@ local mobileTheft = {
 		[15] = { "legos",1 },
 		[16] = { "ominitrix",1 },
 		[17] = { "bracelet",1 },
-		[18] = { "dildo",math.random(1,3) },
+		[18] = { "bluecard",1 },
 	},
 	["MOBILE09"] = {
 		[1] = { "weedendolada",math.random(10) },
@@ -2223,8 +2223,8 @@ local mobileTheft = {
 		[14] = { "xbox",1 },
 		[15] = { "legos",1 },
 		[16] = { "ominitrix",1 },
-		[17] = { "bracelet",1 },
-		[18] = { "dildo",math.random(1,3) },
+		[17] = { "bluecard",1 },
+		[18] = { "blackcard",1 },
 	},
 	["MOBILE10"] = {
 		[1] = { "weedendolada",math.random(10) },
@@ -2243,8 +2243,8 @@ local mobileTheft = {
 		[14] = { "xbox",1 },
 		[15] = { "legos",1 },
 		[16] = { "ominitrix",1 },
-		[17] = { "bracelet",1 },
-		[18] = { "dildo",math.random(1,3) },
+		[17] = { "bluecard",1 },
+		[18] = { "blackcard",1 },
 	},
 	["MOBILE11"] = {
 		[1] = { "weedendolada",math.random(10) },
@@ -2266,7 +2266,7 @@ local mobileTheft = {
 		[17] = { "bracelet",1 },
 		[18] = { "dildo",math.random(1,3) },
 		[19] = { "bluecard",1 },
-		[20] = { "blackcard",1 }
+		[20] = { "blackcard",1 },
 	},
 	["MOBILE12"] = {
 		[1] = { "weedendolada",math.random(10) },
@@ -2288,7 +2288,7 @@ local mobileTheft = {
 		[17] = { "bracelet",1 },
 		[18] = { "dildo",math.random(1,3) },
 		[19] = { "bluecard",1 },
-		[20] = { "blackcard",1 }
+		[20] = { "blackcard",1 },
 	},
 	["MOBILE13"] = {
 		[1] = { "weedendolada",math.random(10) },

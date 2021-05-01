@@ -16,12 +16,14 @@ vCLIENT = Tunnel.getInterface("vrp_streetrace")
 -----------------------------------------------------------------------------------------------------------------------------------------
 local race = 1
 local totalRaces = 18
+corridaStart = false
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- STARTRACE
 -----------------------------------------------------------------------------------------------------------------------------------------
 function cRP.checkTicket()
 	local source = source
 	local user_id = vRP.getUserId(source)
+	--local copAmount = vRP.numPermission("Police")
 	if user_id then
 		if vRP.wantedReturn(user_id) then
 			return false
@@ -35,10 +37,23 @@ function cRP.checkTicket()
 		return false
 	end
 end
+
+function cRP.checkPolice()
+	local source = source
+	local copAmount = vRP.numPermission("Police")
+	if parseInt(#copAmount) <= 4 then
+		TriggerClientEvent("Notify",source,"aviso","Sistema indisponível no momento, tente mais tarde.",5000)
+		return false
+		--TriggerClientEvent("Notify",source,"aviso","Sistema indisponível no momento, tente mais tarde.",5000)
+	else
+		TriggerClientEvent("Notify",source,"sucesso","CORRIDA INICIADA.",10000)
+		return true
+	end
+end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- STARTRACE
 -----------------------------------------------------------------------------------------------------------------------------------------
-function cRP.startRace()
+ function cRP.startRace()
 	local copAmount = vRP.numPermission("Police")
 	for k,v in pairs(copAmount) do
 		async(function() ---
@@ -46,7 +61,8 @@ function cRP.startRace()
 		end)
 	end
 	return parseInt(race)
-end
+end 
+
 
 function cRP.callPolice(x,y,z)
 	local copAmount = vRP.numPermission("Police")
