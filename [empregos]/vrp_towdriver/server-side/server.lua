@@ -36,7 +36,7 @@ end
 RegisterCommand("tow",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if vCLIENT.checkService(source) then
+		if vCLIENT.checkService(source) or vRP.hasPermission(user_id,"LosSantos") then
 			if vRPclient.getHealth(source) > 101 then
 				vCLIENT.towPlayer(source)
 				userList[user_id] = source

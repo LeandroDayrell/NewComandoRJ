@@ -333,7 +333,7 @@
 		<Item>
 			<modelName>mazdarx7</modelName>
 			<txdName>mazdarx7</txdName>
-			<handlingId>specter</handlingId>
+			<handlingId>BMCI</handlingId>
 			<gameName>MAZDA RX7</gameName>
 			<vehicleMakeName>mazdarx7</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>

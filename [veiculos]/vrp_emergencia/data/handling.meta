@@ -219,7 +219,7 @@
 				<Item type="NULL" />
 			</SubHandlingData>
 		</Item>
-		<Item type="CHandlingData">
+	<Item type="CHandlingData">
 			<handlingName>q8</handlingName>
 			<fMass value="1700.000000" />
 			<fInitialDragCoeff value="7.000000" />
@@ -341,7 +341,6 @@
         <Item type="NULL" />
       </SubHandlingData>
     </Item>
-    
     <Item type="CHandlingData">
       <handlingName>r1250rj</handlingName>
       <fMass value="300.000000" />
@@ -420,7 +419,6 @@
         <Item type="NULL" />
       </SubHandlingData>
     </Item>
-
     <Item type="CHandlingData">
       <handlingName>corollarj</handlingName>
       <fMass value="1600.000000" />
@@ -543,7 +541,6 @@
 				<Item type="NULL" />
 			</SubHandlingData>
 		</Item>
-	
     <Item type="CHandlingData">
       <handlingName>focusrj</handlingName>
       <fMass value="1650.000000" />
@@ -666,8 +663,6 @@
         <Item type="NULL" />
       </SubHandlingData>
     </Item>
-
-
 
   </HandlingData>
 </CHandlingDataMgr>

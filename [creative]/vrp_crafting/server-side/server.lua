@@ -37,11 +37,11 @@ local craftList = {
 				}
 			},
 			["WEAPON_RIFLE_AMMO"] = {
-				["amount"] = 10,
+				["amount"] = 20,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 25,
-					["glass"] = 25
+					["aluminum"] = 30,
+					["glass"] = 30
 				}
 			}
 		}
@@ -69,11 +69,11 @@ local craftList = {
 				}
 			},
 			["WEAPON_RIFLE_AMMO"] = {
-				["amount"] = 10,
+				["amount"] = 20,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 25,
-					["glass"] = 25
+					["aluminum"] = 30,
+					["glass"] = 30
 				}
 			}
 		}
@@ -112,11 +112,11 @@ local craftList = {
 				}
 			},
 			["WEAPON_PISTOL_AMMO"] = {
-				["amount"] = 10,
+				["amount"] = 20,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 15,
-					["glass"] = 15
+					["aluminum"] = 10,
+					["glass"] = 10
 				}
 			}
 		}
@@ -183,11 +183,11 @@ local craftList = {
 				}
 			},
 			["WEAPON_PISTOL_AMMO"] = {
-				["amount"] = 10,
+				["amount"] = 20,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 15,
-					["glass"] = 15
+					["aluminum"] = 10,
+					["glass"] = 10
 				}
 			}
 		}
@@ -206,11 +206,11 @@ local craftList = {
 				}
 			},
 			["WEAPON_PISTOL_AMMO"] = {
-				["amount"] = 10,
+				["amount"] = 20,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 15,
-					["glass"] = 15
+					["aluminum"] = 10,
+					["glass"] = 10
 				}
 			},
 			--[[ ["pendriveh"] = {
@@ -248,7 +248,7 @@ local craftList = {
 				}
 			},
 			["WEAPON_SMG_AMMO"] = {
-				["amount"] = 10,
+				["amount"] = 20,
 				["destroy"] = true,
 				["require"] = {
 					["aluminum"] = 20,
@@ -305,7 +305,7 @@ local craftList = {
 				}
 			},
 			["WEAPON_SMG_AMMO"] = {
-				["amount"] = 10,
+				["amount"] = 20,
 				["destroy"] = true,
 				["require"] = {
 					["aluminum"] = 20,
@@ -375,11 +375,11 @@ local craftList = {
 				}
 			},
 			["WEAPON_PISTOL_AMMO"] = {
-				["amount"] = 10,
+				["amount"] = 20,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 15,
-					["glass"] = 15
+					["aluminum"] = 10,
+					["glass"] = 10
 				}
 			},
 			["rope"] = {

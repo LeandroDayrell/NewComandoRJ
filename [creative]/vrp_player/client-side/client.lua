@@ -810,12 +810,20 @@ end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- LIVERY
 -----------------------------------------------------------------------------------------------------------------------------------------
-function cRP.toggleLivery(number)
+--[[ function cRP.toggleLivery(number)
 	local ped = PlayerPedId()
 	if IsPedInAnyVehicle(ped) then
 		SetVehicleLivery(GetVehiclePedIsUsing(ped),number)
 	end
-end
+end ]]
+
+RegisterCommand('livery', function(source, args, rawCommand)
+    local Veh = GetVehiclePedIsIn(PlayerPedId())
+  local livery = tonumber(args[1])
+
+  SetVehicleLivery(Veh, livery) --CHANGE livery(id)
+  drawNotification("Vehicle Livery ~r~"..livery.."~s~ loaded!")
+end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- DISTANCESERVICE
 -----------------------------------------------------------------------------------------------------------------------------------------

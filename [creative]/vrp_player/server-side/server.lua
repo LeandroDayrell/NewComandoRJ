@@ -1316,14 +1316,14 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- LIVERY
 -----------------------------------------------------------------------------------------------------------------------------------------
-RegisterCommand("livery",function(source,args,rawCommand)
+--[[ RegisterCommand("livery",function(source,args,rawCommand)
 	local user_id = vRP.hasPermission(source)
 	if user_id then
 		if (vRP.hasPermission(user_id,"Police") or vRP.hasPermission(user_id,"Paramedic")) and parseInt(args[1]) > 0 then
 			vCLIENT.toggleLivery(source,parseInt(args[1]))
 		end
 	end
-end)
+end) ]]
 
 
 
