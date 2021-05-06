@@ -33,7 +33,7 @@ local craftList = {
 					["aluminum"] = 250,
 					["copper"] = 150,
 					["pecadearma"] = 100,
-					["blackcard"] = 1
+					["bluecard"] = 1
 				}
 			},
 			["WEAPON_RIFLE_AMMO"] = {
@@ -65,7 +65,7 @@ local craftList = {
 					["aluminum"] = 250,
 					["copper"] = 150,
 					["pecadearma"] = 100,
-					["blackcard"] = 1
+					["bluecard"] = 1
 				}
 			},
 			["WEAPON_RIFLE_AMMO"] = {
@@ -98,7 +98,7 @@ local craftList = {
 					["aluminum"] = 150,
 					["copper"] = 100,
 					["pecadearma"] = 100,
-					["blackcard"] = 1
+					["bluecard"] = 1
 				}
 			},
 			["WEAPON_GUSENBERG"] = {
@@ -108,7 +108,7 @@ local craftList = {
 					["aluminum"] = 250,
 					["pecadearma"] = 100,
 					["copper"] = 150,
-					["blackcard"] = 1
+					["bluecard"] = 1
 				}
 			},
 			["WEAPON_PISTOL_AMMO"] = {
@@ -169,7 +169,7 @@ local craftList = {
 					["aluminum"] = 150,
 					["copper"] = 100,
 					["pecadearma"] = 100,
-					["blackcard"] = 1
+					["bluecard"] = 1
 				}
 			},
 			["WEAPON_GUSENBERG"] = {
@@ -179,7 +179,7 @@ local craftList = {
 					["aluminum"] = 250,
 					["copper"] = 150,
 					["pecadearma"] = 100,
-					["blackcard"] = 1
+					["bluecard"] = 1
 				}
 			},
 			["WEAPON_PISTOL_AMMO"] = {

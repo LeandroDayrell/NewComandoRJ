@@ -685,6 +685,7 @@ local vehglobal = {
 	["20ramambo"] = { "Ambulancia Bombeiro",15,100,nil },
 	["stretcher"] = { "Maca Hospitalar",15,100,nil },
 	["mercambulancia"] = { "Ambulancia Mercedes",15,100,nil },
+	["arrowladder"] = { "Caminhao bombeiro",15,100,nil },
 	["fordambulancia"] = { "Ambulancia Ford",15,100,nil },
 	["wheelchair"] = { "Cadeira de Rodas",1,100,nil },
 	["hiluxpolicia"] = { "Hilux",15,100,nil },

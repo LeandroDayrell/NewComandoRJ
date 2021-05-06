@@ -96,6 +96,7 @@ local garages = {
 	[44] = { ["name"] = "Police", ["payment"] = false, ["perm"] = "Police" },
 	[45] = { ["name"] = "PostOP", ["payment"] = false, ["public"] = true },
 	[46] = { ["name"] = "Fisherman", ["payment"] = false, ["public"] = true },
+	[47] = { ["name"] = "Bombeiro", ["payment"] = false, ["perm"] = "Paramedic" },
 	[501] = { ["name"] = "Middle001", ["payment"] = false, ["perm"] = false },
 	[502] = { ["name"] = "Middle002", ["payment"] = false, ["perm"] = false },
 	[503] = { ["name"] = "Middle003", ["payment"] = false, ["perm"] = false },
@@ -461,6 +462,11 @@ local workgarage = {
 		"marquis",
 		"seashark",
 		"dinghy"
+	},
+	["Bombeiro"] = {
+		"arrowladder",
+		"firetruk",
+		"lguard"
 	},
  	["PostOp"] = {
 		"boxville4"

@@ -24,7 +24,7 @@ function cRP.paymentMethod()
 	if user_id then
 		userList[user_id] = nil
 		vRP.upgradeStress(user_id,1)
-		local value = math.random(800,1500)
+		local value = math.random(800,1100)
 
 		vRP.giveInventoryItem(user_id,"dollars",parseInt(value),true)
 		TriggerClientEvent("vrp_sound:source",source,"coin",0.5)

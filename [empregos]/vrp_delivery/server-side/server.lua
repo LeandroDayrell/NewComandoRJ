@@ -37,7 +37,7 @@ function cRP.paymentMethod()
 		if vRP.tryGetInventoryItem(user_id,"delivery",1) then
 			local myBonus = vRP.bonusDelivery(user_id)
 			if vRP.getInventoryItemAmount(user_id,"dollars2") >= 10 then
-				local value = math.random(200,300)
+				local value = math.random(150,250)
 
 				vRP.giveInventoryItem(user_id,"dollars",parseInt(value+(value*myBonus/100)),true)
 

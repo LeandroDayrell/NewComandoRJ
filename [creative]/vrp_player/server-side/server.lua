@@ -1410,7 +1410,7 @@ RegisterCommand("add",function(source,args,rawCommand)
 	if user_id then
 		if parseInt(args[2]) > 0 then
 			if args[1] == "Police" then
-				if vRP.hasPermission(user_id,"PoliceCMD") then
+				if vRP.hasPermission(user_id,"PolMaster") then
 					vRP.execute("vRP/cle_group",{ user_id = parseInt(args[2]) })
 					vRP.execute("vRP/add_group",{ user_id = parseInt(args[2]), permiss = tostring("waitPolice") })
 					TriggerClientEvent("Notify",source,"sucesso","Passaporte <b>"..vRP.format(parseInt(args[2])).."</b> adicionado com sucesso.",5000)
@@ -1418,7 +1418,7 @@ RegisterCommand("add",function(source,args,rawCommand)
 			end
 
 			if args[1] == "Paramedic" then
-				if vRP.hasPermission(user_id,"ParamedicCMD") then
+				if vRP.hasPermission(user_id,"ParMaster") then
 					vRP.execute("vRP/cle_group",{ user_id = parseInt(args[2]) })
 					vRP.execute("vRP/add_group",{ user_id = parseInt(args[2]), permiss = tostring("waitParamedic") })
 					TriggerClientEvent("Notify",source,"sucesso","Passaporte <b>"..vRP.format(parseInt(args[2])).."</b> adicionado com sucesso.",5000)

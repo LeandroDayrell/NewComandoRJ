@@ -139,7 +139,7 @@ img { border: none; }
 	text-overflow: ellipsis;
 	text-transform: uppercase;
 	text-shadow: 1px 1px #000;
-	background: rgba(0,0,0,0.3);
+	background: rgb(93, 0, 136);
 }
 
 #nonebility {

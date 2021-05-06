@@ -339,7 +339,7 @@ local shops = {
 		["type"] = "Cash",
 		["list"] = {
 			["tires"] = 2500,
-			["toolbox"] = 6000
+			["toolbox"] = 3500
 		}
 	},
 --[[ 	["drugsSelling"] = {

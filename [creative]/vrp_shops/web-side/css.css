@@ -37,14 +37,14 @@ img { border: none; }
 }
 
 #myInfos b {
-	color: #fff;
+	color: #8405df;
 	display: block;
 	font-size: 24px;
 	padding-bottom: 15px;
 }
 
 #myInfos s {
-	color: #ffc937;
+	color: #b3b3b3;
 	font-weight: 700;
 	text-decoration: none;
 }
@@ -76,7 +76,7 @@ img { border: none; }
 	max-height: 5px;
 	min-width: 620px;
 	max-width: 620px;
-	background: #9b7a1f;
+	background: #8405df;
 }
 
 #chestWeight {
@@ -94,7 +94,7 @@ img { border: none; }
 	min-height: 5px;
 	max-height: 5px;
 	max-width: 620px;
-	background: #ffc937;
+	background: #53058c;
 }
 
 #invleft {
@@ -149,7 +149,7 @@ img { border: none; }
 	text-overflow: ellipsis;
 	text-transform: uppercase;
 	text-shadow: 1px 1px #000;
-	background: rgba(0,0,0,0.3);
+	background: rgb(93, 0, 136);
 }
 
 #nonebility {

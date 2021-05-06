@@ -19,19 +19,19 @@ local amount = {}
 -----------------------------------------------------------------------------------------------------------------------------------------
 local itemList = {
 	{ item = "cocaine", priceMin = 2, priceMax = 10, randMin = 3, randMax = 6 },
-	{ item = "weedendolada", priceMin = 185, priceMax = 220, randMin = 3, randMax = 6 },
-	{ item = "methendolada", priceMin = 210, priceMax = 270, randMin = 3, randMax = 6 },
-	{ item = "ecstasy", priceMin = 350, priceMax = 450, randMin = 3, randMax = 6 },
-	{ item = "lean", priceMin = 350, priceMax = 450, randMin = 3, randMax = 6 },
+	{ item = "weedendolada", priceMin = 245, priceMax = 250, randMin = 3, randMax = 6 },
+	{ item = "methendolada", priceMin = 280, priceMax = 290, randMin = 3, randMax = 6 },
+	{ item = "ecstasy", priceMin = 550, priceMax = 575, randMin = 3, randMax = 6 },
+	{ item = "lean", priceMin = 550, priceMax = 575, randMin = 3, randMax = 6 },
 	{ item = "keyboard", priceMin = 420, priceMax = 425, randMin = 1, randMax = 2 },
 	{ item = "mouse", priceMin = 380, priceMax = 385, randMin = 1, randMax = 2 },
 	{ item = "ring", priceMin = 335, priceMax = 345, randMin = 1, randMax = 2 },
-	{ item = "watch", priceMin =590, priceMax = 595, randMin = 1, randMax = 2 },
-	{ item = "playstation", priceMin = 670, priceMax = 680, randMin = 1, randMax = 1 },
-	{ item = "xbox", priceMin = 670, priceMax = 680, randMin = 1, randMax = 1 },
+	{ item = "watch", priceMin =590, priceMax = 700, randMin = 1, randMax = 2 },
+	{ item = "playstation", priceMin = 670, priceMax = 800, randMin = 1, randMax = 1 },
+	{ item = "xbox", priceMin = 670, priceMax = 800, randMin = 1, randMax = 1 },
 	{ item = "legos", priceMin = 330, priceMax = 340, randMin = 1, randMax = 1 },
 	{ item = "ominitrix", priceMin = 590, priceMax = 595, randMin = 1, randMax = 1 },
-	{ item = "bracelet", priceMin = 820, priceMax = 850, randMin = 1, randMax = 1 },
+	{ item = "bracelet", priceMin = 820, priceMax = 900, randMin = 1, randMax = 1 },
 	{ item = "dildo", priceMin = 420, priceMax = 425, randMin = 1, randMax = 1 }
 }
 -----------------------------------------------------------------------------------------------------------------------------------------

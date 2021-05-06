@@ -38,7 +38,7 @@ function cRP.checkTicket()
 	end
 end
 
-function cRP.checkPolice()
+ function cRP.checkPolice()
 	local source = source
 	local copAmount = vRP.numPermission("Police")
 	if parseInt(#copAmount) <= 4 then
@@ -49,7 +49,7 @@ function cRP.checkPolice()
 		TriggerClientEvent("Notify",source,"sucesso","CORRIDA INICIADA.",10000)
 		return true
 	end
-end
+end 
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- STARTRACE
 -----------------------------------------------------------------------------------------------------------------------------------------
