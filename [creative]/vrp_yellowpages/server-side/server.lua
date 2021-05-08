@@ -19,7 +19,7 @@ local array = {}
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- YP
 -----------------------------------------------------------------------------------------------------------------------------------------
-RegisterCommand("yp",function(source,args,rawCommand)
+RegisterCommand("olx",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
 		if vRPclient.getHealth(source) > 101 and not vPLAYER.getHandcuff(source) then
@@ -56,7 +56,7 @@ function cRP.updatePost(text)
 			table.insert(array,1,temp)
 		elseif text ~= "" then
 			local identity = vRP.getUserIdentity(user_id)
-			TriggerClientEvent("Notify",-1,"aviso","Nova postagem de <b>"..identity.name.." "..identity.name2.."</b>.",5000)
+			TriggerClientEvent("Notify",-1,"aviso","Nova postagem de <b>"..identity.name.." "..identity.name2.."</b> no /olx.",5000)
 			table.insert(array,1,{ phone = identity.phone, name = identity.name.." "..identity.name2, text = text, id = user_id })
 		end
 

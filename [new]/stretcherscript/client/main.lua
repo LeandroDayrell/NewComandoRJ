@@ -32,13 +32,13 @@ Citizen.CreateThread(function()
 	WarMenu.SetMenuFocusColor('hopital', 255, 255, 255, 255)
 	WarMenu.SetTitleBackgroundSprite('hopital', 'redneckmods', 'banner')
 	while true do
-		local sleep = 2000	
+		local crjSleep = 500	
 		local pedCoords = GetEntityCoords(PlayerPedId())
 		for _,i in pairs(lit) do
 			local closestObject = GetClosestVehicle(pedCoords, 3.0, GetHashKey("stretcher"), 70)
 		
 			if DoesEntityExist(closestObject) then
-				sleep = 5
+				crjSleep = 1
 				local propCoords = GetEntityCoords(closestObject)
 				local propForward = GetEntityForwardVector(closestObject)
 				local litCoords = (propCoords + propForward)
@@ -106,7 +106,7 @@ Citizen.CreateThread(function()
 				end
 			end
 		end
-		Citizen.Wait(sleep)
+		Citizen.Wait(crjSleep)
 	end
 end)
 

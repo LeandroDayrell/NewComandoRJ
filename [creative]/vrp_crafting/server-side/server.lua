@@ -40,7 +40,7 @@ local craftList = {
 				["amount"] = 20,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 30,
+					["copper"] = 30,
 					["glass"] = 30
 				}
 			}
@@ -72,7 +72,7 @@ local craftList = {
 				["amount"] = 20,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 30,
+					["copper"] = 30,
 					["glass"] = 30
 				}
 			}
@@ -115,7 +115,7 @@ local craftList = {
 				["amount"] = 20,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 10,
+					["copper"] = 10,
 					["glass"] = 10
 				}
 			}
@@ -186,7 +186,7 @@ local craftList = {
 				["amount"] = 20,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 10,
+					["copper"] = 10,
 					["glass"] = 10
 				}
 			}
@@ -202,14 +202,13 @@ local craftList = {
 					["aluminum"] = 200,
 					["copper"] = 150,
 					["pecadearma"] = 80,
-					["bluecard"] = 1
 				}
 			},
 			["WEAPON_PISTOL_AMMO"] = {
 				["amount"] = 20,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 10,
+					["copper"] = 10,
 					["glass"] = 10
 				}
 			},
@@ -244,14 +243,13 @@ local craftList = {
 					["aluminum"] = 100,
 					["copper"] = 75,
 					["pecadearma"] = 50,
-					["bluecard"] = 1
 				}
 			},
 			["WEAPON_SMG_AMMO"] = {
 				["amount"] = 20,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 20,
+					["copper"] = 20,
 					["glass"] = 20
 				}
 			},
@@ -259,9 +257,9 @@ local craftList = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 30,
-					["copper"] = 30,
-					["plastic"] = 30
+					["aluminum"] = 20,
+					["copper"] = 20,
+					["plastic"] = 20
 				}
 			},
 			["raceticket"] = {
@@ -301,14 +299,13 @@ local craftList = {
 					["aluminum"] = 200,
 					["copper"] = 150,
 					["pecadearma"] = 80,
-					["bluecard"] = 1
 				}
 			},
 			["WEAPON_SMG_AMMO"] = {
 				["amount"] = 20,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 20,
+					["copper"] = 20,
 					["glass"] = 20
 				}
 			},
@@ -316,9 +313,9 @@ local craftList = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 30,
-					["copper"] = 30,
-					["plastic"] = 30
+					["aluminum"] = 20,
+					["copper"] = 20,
+					["plastic"] = 20
 				}
 			},
 			["raceticket"] = {
@@ -371,14 +368,13 @@ local craftList = {
 					["aluminum"] = 200,
 					["copper"] = 150,
 					["pecadearma"] = 80,
-					["bluecard"] = 1
 				}
 			},
 			["WEAPON_PISTOL_AMMO"] = {
 				["amount"] = 20,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 10,
+					["copper"] = 10,
 					["glass"] = 10
 				}
 			},

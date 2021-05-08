@@ -44,7 +44,7 @@ img { border: none; }
 }
 
 #myInfos s {
-	color: #ffc937;
+	color: #8405df;
 	font-weight: 700;
 	text-decoration: none;
 }
@@ -76,7 +76,7 @@ img { border: none; }
 	max-height: 5px;
 	min-width: 620px;
 	max-width: 620px;
-	background: #9b7a1f;
+	background: #8405df;
 }
 
 #chestWeight {
@@ -85,7 +85,7 @@ img { border: none; }
 	max-height: 5px;
 	min-width: 620px;
 	max-width: 620px;
-	background: #9b7a1f;
+	background: #8405df;
 	margin-left: 150px;
 }
 
@@ -94,7 +94,7 @@ img { border: none; }
 	min-height: 5px;
 	max-height: 5px;
 	max-width: 620px;
-	background: #ffc937;
+	background: #8405df;
 }
 
 #invleft {
@@ -149,7 +149,7 @@ img { border: none; }
 	text-overflow: ellipsis;
 	text-transform: uppercase;
 	text-shadow: 1px 1px #000;
-	background: rgba(0,0,0,0.3);
+	background: rgb(93, 0, 136);
 }
 
 #nonebility {
