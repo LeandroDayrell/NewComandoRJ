@@ -9,6 +9,7 @@ vRP = Proxy.getInterface("vRP")
 -----------------------------------------------------------------------------------------------------------------------------------------
 cRP = {}
 Tunnel.bindInterface("vrp_survival",cRP)
+vSERVER = Tunnel.getInterface("vrp_survival")
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- VARIABLES
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -42,6 +43,8 @@ Citizen.CreateThread(function()
 
 				if deadTimers > 0 then
 					drawTxt("AGUARDE ~r~"..deadTimers.."~w~ SEGUNDOS",4,0.5,0.93,0.4,255,255,255,100)
+					--vSERVER.saveBD() 
+					-- COLOCAR AQUI A FUNCAO QUE CHAMA NO BANCO DE DADOS O SAVE
 				else
 					drawTxt("~y~/GG~w~ PARA RETORNAR AO AEROPORTO",4,0.5,0.93,0.4,255,255,255,100)
 				end

@@ -11,6 +11,18 @@ vRPclient = Tunnel.getInterface("vRP")
 cRP = {}
 Tunnel.bindInterface("vrp_survival",cRP)
 vCLIENT = Tunnel.getInterface("vrp_survival")
+
+
+-- TESTE DE SALVAR QUANDO CIDADAO MORRE
+
+function cRP.saveBD()
+	--local source = source
+	--local user_id = vRP.getUserId(source)
+	for k,v in pairs(vRP.user_tables) do
+        vRP.execute("vRP/set_userdata",{ user_id = parseInt(k), key = "Datatable", value = json.encode(v) })
+    end
+end 
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- GOD
 -----------------------------------------------------------------------------------------------------------------------------------------
