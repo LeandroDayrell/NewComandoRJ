@@ -596,9 +596,9 @@ AddEventHandler("vrp_inventory:useItem",function(slot,rAmount)
 					end
 
 					if itemName == "adrenaline" then
-						local distance = vCLIENT.adrenalineDistance(source)
+						--local distance = vCLIENT.adrenalineDistance(source)
 						local parAmount = vRP.numPermission("Paramedic")
-						if parseInt(#parAmount) > 0 and not distance then
+						if parseInt(#parAmount) > 0 --[[and distance]] then
 							return
 						end
 
@@ -628,6 +628,7 @@ AddEventHandler("vrp_inventory:useItem",function(slot,rAmount)
 												vRP.chemicalTimer(nuser_id,1)
 												vSURVIVAL._revivePlayer(nplayer,110)
 												TriggerClientEvent("resetBleeding",nplayer)
+												vRPclient._stopAnim(source,false)	
 											end
 										end
 										Citizen.Wait(0)

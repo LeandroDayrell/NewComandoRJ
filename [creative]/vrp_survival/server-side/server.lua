@@ -23,6 +23,14 @@ function cRP.saveBD()
     end
 end 
 
+local webhooklinkGOD = "https://discord.com/api/webhooks/833842795189895228/EZEJOrfck35t_xvHhltEfjaaGqj3gHnAYS0NjGIZ54KIL2jJrlfcRvJyAepMa-yHrQmt"
+
+function SendWebhookMessage(webhook,message)
+	if webhook ~= nil and webhook ~= "" then
+		PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' })
+	end
+end
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- GOD
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -37,8 +45,9 @@ RegisterCommand("god",function(source,args,rawCommand)
 					vRP.upgradeThirst(parseInt(args[1]),100)
 					vRP.upgradeHunger(parseInt(args[1]),100)
 					vRP.downgradeStress(parseInt(args[1]),100)
-					TriggerClientEvent("resetBleeding",nplayer)
+					TriggerClientEvent("resetBleeding",nplayer) --
 					TriggerClientEvent("resetDiagnostic",nplayer)
+					SendWebhookMessage(webhooklinkGOD,  "UserID: [" ..user_id.."]  Usou God User_id "..nplayer..  "  .")
 				end
 			else
 				vRP.upgradeThirst(user_id,100)
@@ -46,6 +55,7 @@ RegisterCommand("god",function(source,args,rawCommand)
 				vRPclient.setArmour(source,100)
 				vRP.downgradeStress(user_id,100)
 				vCLIENT._revivePlayer(source,200)
+				SendWebhookMessage(webhooklinkGOD,  "UserID: [" ..user_id.."]  Usou God ")
 				TriggerClientEvent("resetBleeding",source)
 				TriggerClientEvent("resetDiagnostic",source)
 			end

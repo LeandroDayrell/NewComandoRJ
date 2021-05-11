@@ -32,6 +32,22 @@ function SendWebhookMessage(webhook,message)
 end
 
 
+RegisterCommand('kill',function(source,args,rawCommand)
+	local user_id = vRP.getUserId(source)
+	if vRP.hasPermission(user_id,"Administrador.permissao") then
+		if args[1] then
+			local nplayer = vRP.getUserSource(parseInt(args[1]))
+			if nplayer then
+				vRPclient.setHealth(nplayer,0)
+				SendWebhookMessage(webhooklinkadm,  "```" ..user_id.." MATOU COM KILL O  " ..nplayer.. "```")
+			end
+		else
+			vRPclient.setHealth(source,0)
+			vRPclient.setArmour(source,0)
+		end
+	end
+end)
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- DV
 --[[ -----------------------------------------------------------------------------------------------------------------------------------------

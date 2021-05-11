@@ -26,6 +26,7 @@ local db_drivers = {}
 local cached_queries = {}
 local cached_prepares = {}
 local db_initialized = false
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- REGISTERDBDRIVER
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -245,8 +246,6 @@ function vRP.rejoinServer(source)
 			vRP.user_tables[user_id] = nil
 			vRP.rusers[user_id] = nil
 			showIds[source] = nil
-
-			TriggerClientEvent("vRP:showIds",-1,showIds)
 		end
 	end
 end
