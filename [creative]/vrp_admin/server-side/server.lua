@@ -34,7 +34,7 @@ end
 
 RegisterCommand('kill',function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
-	if vRP.hasPermission(user_id,"Administrador.permissao") then
+	if vRP.hasPermission(user_id,"FundadorOwner") then
 		if args[1] then
 			local nplayer = vRP.getUserSource(parseInt(args[1]))
 			if nplayer then

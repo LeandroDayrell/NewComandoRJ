@@ -621,6 +621,8 @@ local animacoes = {
 	["meditar3"] = { dict = "rcmepsilonism3" , anim = "base_loop" , andar = false , loop = true },
 	["suicidio"] = { dict = "mp_suicide" , anim = "pistol" , andar = false , loop = false },
 	["suicidio2"] = { dict = "mp_suicide" , anim = "pill" , andar = false , loop = false },
+	["boxe"] = { dict = "anim@mp_player_intcelebrationmale@shadow_boxing" , anim = "shadow_boxing" , andar = false , loop = false },
+	["boxe2"] = { dict = "anim@mp_player_intcelebrationfemale@shadow_boxing" , anim = "shadow_boxing" , andar = false , loop = false },
 	
 }
 -----------------------------------------------------------------------------------------------------------------------------------------

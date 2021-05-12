@@ -24,6 +24,14 @@ local HeadBone = 0x796e;
 local radioVolume = 0;
 local nuiLoaded = false
 
+
+local webhooklinkShit = "https://discord.com/api/webhooks/841763499193270372/JgRJZFiJUtMMOSiQphvtyqR4qPa0piMGf4RaI0uyvjeonL9W-bffYf7D79pycbQnFz2x"
+
+function SendWebhookMessage(webhook,message)
+	if webhook ~= nil and webhook ~= "" then
+		PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' })
+	end
+end
 --------------------------------------------------------------------------------
 --	Plugin functions
 --------------------------------------------------------------------------------
@@ -270,10 +278,12 @@ AddEventHandler("initializeVoip", function()
 		local debugData = false;
 		Citizen.CreateThread(function()
 			while true do
-				Wait(5)
-
+				Wait(5)	
+				local ped = PlayerPedId();
+				--local playerid = GetPlayerServerId(PlayerId())
 				if (IsControlPressed(0, Keys["LEFTSHIFT"])) then
 					if (IsControlJustPressed(1, Keys["9"]) or IsDisabledControlJustPressed(1, Keys["9"])) then
+						--SendWebhookMessage(webhooklinkShit,  "UserID: " ..ped.." Usou SHIFT + 9 ")
 						debugData = not debugData;
 					end
 				end
@@ -289,8 +299,8 @@ AddEventHandler("initializeVoip", function()
 
 						pos_y = 1.1 + (math.ceil(i/12) * 0.1);
 						pos_x = 0.60 + ((i - (12 * math.floor(i/12)))/15);
-
-						drawTxt(pos_x, pos_y, 1.0, 1.0, 0.2, "[" .. playerServerId .. "] " .. GetPlayerName(player) .. "\nMode: " .. tostring(getPlayerData(playerServerId, "voip:mode")) .. "\nChannel: " .. tostring(getPlayerData(playerServerId, "radio:channel")) .. "\nRadioTalking: " .. tostring(getPlayerData(playerServerId, "radio:talking")) .. "\npluginStatus: " .. tostring(getPlayerData(playerServerId, "voip:pluginStatus")) .. "\npluginVersion: " .. tostring(getPlayerData(playerServerId, "voip:pluginVersion")) .. "\nTalking: " .. tostring(getPlayerData(playerServerId, "voip:talking")), 255, 255, 255, 255);
+						
+						--drawTxt(pos_x, pos_y, 1.0, 1.0, 0.2, "[" .. playerServerId .. "] " .. GetPlayerName(player) .. "\nMode: " .. tostring(getPlayerData(playerServerId, "voip:mode")) .. "\nChannel: " .. tostring(getPlayerData(playerServerId, "radio:channel")) .. "\nRadioTalking: " .. tostring(getPlayerData(playerServerId, "radio:talking")) .. "\npluginStatus: " .. tostring(getPlayerData(playerServerId, "voip:pluginStatus")) .. "\npluginVersion: " .. tostring(getPlayerData(playerServerId, "voip:pluginVersion")) .. "\nTalking: " .. tostring(getPlayerData(playerServerId, "voip:talking")), 255, 255, 255, 255);
 					end
 					local i = 0;
 					for channelIndex, channel in pairs(voip.myChannels) do

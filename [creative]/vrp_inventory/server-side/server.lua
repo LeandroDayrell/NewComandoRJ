@@ -927,7 +927,7 @@ AddEventHandler("vrp_inventory:useItem",function(slot,rAmount)
 										SendWebhookMessage(webhooklinklockpick,  "VEICULO - LockPick UserID: [" ..user_id.."]  Placa: " ..vehPlate.. " Local: "..x..", "..y..", "..z..  "  . ")
 									end
 
-									if 100 >= 100 then
+									if 100 >= 70 then
 										local x,y,z = vRPclient.getPositions(source)
 										local copAmount = vRP.numPermission("Police")
 										for k,v in pairs(copAmount) do
@@ -937,8 +937,8 @@ AddEventHandler("vrp_inventory:useItem",function(slot,rAmount)
 										end
 									end
 								end
-
-								if parseInt(math.random(1000)) >= 950 then
+								
+								if parseInt(math.random(100)) >= 95 then
 									vRP.removeInventoryItem(user_id,itemName,1,true,slot)
 								end
 
@@ -956,7 +956,7 @@ AddEventHandler("vrp_inventory:useItem",function(slot,rAmount)
 								if taskResult then
 									vRP.upgradeStress(user_id,4)
 
-									if math.random(100) >= 50 then
+									if math.random(100) >= 40 then
 										TriggerEvent("setPlateEveryone",vehPlate)
 										TriggerClientEvent("vrp_inventory:lockpickVehicle",-1,vehNet)
 										--SendWebhookMessage(webhooklinklockpick,  "``` LockPick [" ..user_id.."]  Placa; " ..vehPlate.. " local "..x..","..y..","..z..  "```")
@@ -974,7 +974,7 @@ AddEventHandler("vrp_inventory:useItem",function(slot,rAmount)
 									end
 								end
 
-								if parseInt(math.random(1000)) >= 950 then
+								if parseInt(math.random(100)) >= 95 then
 									vRP.removeInventoryItem(user_id,itemName,1,true,slot)
 								end
 

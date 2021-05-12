@@ -26,7 +26,7 @@ local craftList = {
 					["tecido"] = 50
 				}
 			},
-			["WEAPON_ASSAULTSMG"] = {
+			["WEAPON_SMG"] = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
@@ -58,7 +58,7 @@ local craftList = {
 					["tecido"] = 50
 				}
 			},
-			["WEAPON_ASSAULTSMG"] = {
+			["WEAPON_SMG"] = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
@@ -236,13 +236,13 @@ local craftList = {
 	["lowriderCrafting"] = {
 		["perm"] = "Lowrider",
 		["list"] = {
-			["WEAPON_SNSPISTOL_MK2"] = {
+			["WEAPON_PISTOL_MK2"] = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 100,
-					["copper"] = 75,
-					["pecadearma"] = 50,
+					["aluminum"] = 150,
+					["copper"] = 120,
+					["pecadearma"] = 80,
 				}
 			},
 			["WEAPON_SMG_AMMO"] = {
@@ -274,7 +274,16 @@ local craftList = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 30
+					["aluminum"] = 15
+				}
+			},
+			["fueltech"] = {
+				["amount"] = 1,
+				["destroy"] = true,
+				["require"] = {
+					["rubber"] = 50,
+					["copper"] = 50,
+					["cpuchip"] = 1
 				}
 			},
 			["c4"] = {
@@ -296,8 +305,8 @@ local craftList = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 200,
-					["copper"] = 150,
+					["aluminum"] = 150,
+					["copper"] = 120,
 					["pecadearma"] = 80,
 				}
 			},
@@ -326,6 +335,13 @@ local craftList = {
 					["dollars2"] = 500
 				}
 			},
+			["plate"] = {
+				["amount"] = 1,
+				["destroy"] = true,
+				["require"] = {
+					["aluminum"] = 15
+				}
+			},
 			["fueltech"] = {
 				["amount"] = 1,
 				["destroy"] = true,
@@ -333,6 +349,16 @@ local craftList = {
 					["rubber"] = 50,
 					["copper"] = 50,
 					["cpuchip"] = 1
+				}
+			},
+			["c4"] = {
+				["amount"] = 1,
+				["destroy"] = true,
+				["require"] = {
+					["aluminum"] = 5,
+					["copper"] = 5,
+					["rubber"] = 5,
+					["glass"] = 30
 				}
 			}
 		}

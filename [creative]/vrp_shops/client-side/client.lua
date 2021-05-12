@@ -90,6 +90,7 @@ local shopList = {
 	{ -1591.95,-1005.87,13.03,"fishingSell" },
 	{ 318.89,-1076.95,29.48,"pharmacyStore" },
 	{ 1952.13,3841.69,32.18,"pharmacyStore" },
+	{ -491.37,-339.8,42.33,"pharmacyStore" },
 	{ 93.07,-229.93,54.67,"pharmacyStore" },
 	{ 150.78,6648.07,31.6,"pharmacyStore" },
 	{ 229.39,-369.77,-98.78,"registryStore" },

@@ -313,18 +313,18 @@ end)
 
 
 --local blips = {}
-RegisterCommand('teste01',function(source,args,rawCommand)
+RegisterCommand('chamar',function(source,args,rawCommand)
 	local source = source
 	local answered = false
 	local user_id = vRP.getUserId(source)
 	local uplayer = vRP.getUserSource(user_id)
 	vida = vRPclient.getHealth(source)
-	vRPclient._CarregarObjeto(source,"cellphone@","cellphone_call_to_text","prop_amb_phone",50,28422)
+--	vRPclient._CarregarObjeto(source,"cellphone@","cellphone_call_to_text","prop_amb_phone",50,28422)
 	if user_id then
 		local description = vRP.prompt(source,"Descrição:","")
 		if description == "" then
-			vRPclient._stopAnim(source,false)
-			vRPclient._DeletarObjeto(source)
+			--vRPclient._stopAnim(source,false)
+			--vRPclient._DeletarObjeto(source)
 			return
 		end
 
@@ -351,6 +351,7 @@ RegisterCommand('teste01',function(source,args,rawCommand)
 		if especialidade == "Administradores" then
 			adm = "[ADM]: "
 		end
+		print(players)
 		print("teste 01")
 		vRPclient.playSound(source,"Event_Message_Purple","GTAO_FM_Events_Soundset")
 		if #players == 0  and especialidade ~= "<b>Policiais</b>" and especialidade ~="<b>PoliciaCivil</b>" and especialidade ~="PoliciaisPRF" then

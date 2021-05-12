@@ -45,7 +45,7 @@ local shops = {
 			["warfarin"] = 25000,
 			["sinkalmy"] = 1500,
 			["ritmoneury"] = 2000,
-			["adrenaline"] = 15000
+			["adrenaline"] = 10000
 		}
 	},
 	["foodGrill"] = {

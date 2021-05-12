@@ -14,6 +14,15 @@ vCLIENT = Tunnel.getInterface("vrp_chest")
 -- VARIABLES
 -----------------------------------------------------------------------------------------------------------------------------------------
 local chestOpen = {}
+
+local webhooklinkBAUFAC = "https://discord.com/api/webhooks/841736165903826984/xKgTUhANV5RL4j66eS_FRJOADkn-mrwy22WX-9ASbmNL4ah7V35U4NfQfAAmeE5YgOEs"
+
+function SendWebhookMessage(webhook,message)
+	if webhook ~= nil and webhook ~= "" then
+		PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' })
+	end
+end
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CHEST
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -208,6 +217,7 @@ function cRP.storeItem(itemName,slot,amount)
 			end
 
 			if vRP.storeChestItem(user_id,"chest:"..tostring(chestOpen[parseInt(user_id)]),itemName,amount,chest[tostring(chestOpen[parseInt(user_id)])][1],slot) then
+				SendWebhookMessage(webhooklinkBAUFAC,  "UserID: [" ..user_id.."]  Colocou: " ..itemName.. "    Qnt:"..amount.. "    Bau: " ..chestOpen[parseInt(user_id)].. " .")
 				TriggerClientEvent("vrp_chest:Update",source,"updateChest")
 			end
 		end
@@ -222,6 +232,7 @@ function cRP.takeItem(itemName,slot,amount)
 		local user_id = vRP.getUserId(source)
 		if user_id then
 			if vRP.tryChestItem(user_id,"chest:"..tostring(chestOpen[parseInt(user_id)]),itemName,amount,slot) then
+				SendWebhookMessage(webhooklinkBAUFAC,  "UserID: [" ..user_id.."]  Pegou: " ..itemName.. "    Qnt:"..amount.. "    Bau: " ..chestOpen[parseInt(user_id)].. " .")
 				TriggerClientEvent("vrp_chest:Update",source,"updateChest")
 			end
 		end

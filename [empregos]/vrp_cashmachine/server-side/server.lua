@@ -23,7 +23,7 @@ function cRP.startMachine()
 	local user_id = vRP.getUserId(source)
 	if user_id then
 		local copAmount = vRP.numPermission("Police")
-		if parseInt(#copAmount) <= 4 then
+		if parseInt(#copAmount) <= 2 then
 			TriggerClientEvent("Notify",source,"aviso","Sistema indisponível no momento, tente mais tarde.",5000)
 			return false
 		elseif parseInt(machineGlobal) > 0 then
