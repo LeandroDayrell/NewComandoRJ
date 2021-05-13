@@ -45,7 +45,7 @@ local shops = {
 			["warfarin"] = 25000,
 			["sinkalmy"] = 1500,
 			["ritmoneury"] = 2000,
-			["adrenaline"] = 10000
+			["adrenaline"] = 4000
 		}
 	},
 	["foodGrill"] = {
@@ -338,8 +338,8 @@ local shops = {
 		["mode"] = "Buy",
 		["type"] = "Cash",
 		["list"] = {
-			["tires"] = 2500,
-			["toolbox"] = 3500
+			["tires"] = 2000,
+			["toolbox"] = 2500
 		}
 	},
 --[[ 	["drugsSelling"] = {

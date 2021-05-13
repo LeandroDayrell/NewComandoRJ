@@ -1085,3 +1085,24 @@ RegisterCommand("fps",function(source,args)
         TriggerEvent("Notify","sucesso","Sucesso","Boost de fps desligado!")
     end
 end)
+
+--------- DRIFT -------------
+Citizen.CreateThread(function()
+    while true do
+        Citizen.Wait(1)
+        local ped = PlayerPedId()
+        if IsPedInAnyVehicle(ped) then
+            local vehicle = GetVehiclePedIsIn(PlayerPedId())
+            local speed = GetEntitySpeed(vehicle) * 2.236936
+            if GetPedInVehicleSeat(vehicle,-1) == ped then
+                if speed <= 80.0 then
+                    if IsControlPressed(1,21) then
+                        SetVehicleReduceGrip(vehicle,true)
+                    else
+                        SetVehicleReduceGrip(vehicle,false)
+                    end
+                end
+            end
+        end
+    end
+end)

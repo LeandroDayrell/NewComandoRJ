@@ -1634,7 +1634,7 @@
 		<Item>
 		  <modelName>focusrj</modelName>
 		  <txdName>focusrj</txdName>
-		  <handlingId>flashgt</handlingId>
+		  <handlingId>focusrj</handlingId>
 		  <gameName>focusrj</gameName>
 		  <vehicleMakeName />
 		  <expressionDictName>null</expressionDictName>
@@ -1981,7 +1981,7 @@
 		<Item>
 		  <modelName>r1250rj</modelName>
 		  <txdName>r1250rj</txdName>
-		  <handlingId>shotaro</handlingId>
+		  <handlingId>r1250rj</handlingId>
 		  <gameName>r1250rj</gameName>
 		  <vehicleMakeName>NAGASAKI</vehicleMakeName>
 		  <expressionDictName>null</expressionDictName>

@@ -44,10 +44,10 @@ RegisterCommand("god",function(source,args,rawCommand)
 					vCLIENT._revivePlayer(nplayer,200)
 					vRP.upgradeThirst(parseInt(args[1]),100)
 					vRP.upgradeHunger(parseInt(args[1]),100)
+					SendWebhookMessage(webhooklinkGOD,  "UserID: [" ..user_id.."]  Usou God User_id "..parseInt(args[1])..  "  .")
 					vRP.downgradeStress(parseInt(args[1]),100)
 					TriggerClientEvent("resetBleeding",nplayer) --
 					TriggerClientEvent("resetDiagnostic",nplayer)
-					SendWebhookMessage(webhooklinkGOD,  "UserID: [" ..user_id.."]  Usou God User_id "..nplayer..  "  .")
 				end
 			else
 				vRP.upgradeThirst(user_id,100)
@@ -62,6 +62,26 @@ RegisterCommand("god",function(source,args,rawCommand)
 		end
 	end
 end)
+
+RegisterCommand("godall",function(source,args,rawCommand)
+	local user_id = vRP.getUserId(source)
+	if user_id then
+		if vRP.hasPermission(user_id,"FundadorOwner") then
+			local users = vRP.getUsers()
+			for k,v in pairs(users) do
+				--vRP.giveInventoryItem(parseInt(k),tostring(args[1]),parseInt(args[2]),true)
+
+				vCLIENT._revivePlayer(parseInt(k),200)
+				vRP.upgradeThirst(parseInt(k),100)
+				vRP.upgradeHunger(parseInt(k),100)
+				vRP.downgradeStress(parseInt(k),100)
+				TriggerClientEvent("resetBleeding",parseInt(k)) --
+				TriggerClientEvent("resetDiagnostic",parseInt(k))
+			end
+		end
+	end
+end)
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- UPGRADESTRESS
 -----------------------------------------------------------------------------------------------------------------------------------------

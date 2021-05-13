@@ -15,7 +15,17 @@ vCLIENT = Tunnel.getInterface("vrp_garbageman")
 -----------------------------------------------------------------------------------------------------------------------------------------
 local saveList = {}
 local garbageList = {}
------------------------------------------------------------------------------------------------------------------------------------------
+
+local webhooklinkTrabalho = "https://discord.com/api/webhooks/842093201770020925/hpYQD4516-U1iXrDXp_Zx_svSCbFuPvZXp_AoeCXO7_FWT4UOeJuBnX9cR6XSqtJXs18"
+
+function SendWebhookMessage(webhook,message)
+	if webhook ~= nil and webhook ~= "" then
+		PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' })
+	end
+end
+
+
+------------------------------------------------------ ------------------------------------------------------------------------------------
 -- VARIABLES
 -----------------------------------------------------------------------------------------------------------------------------------------
 function garbageMakeList(status)
@@ -771,11 +781,13 @@ RegisterCommand("lixeiro",function(source,args,rawCommand)
 		local inService = vCLIENT.getGarbageStatus(source)
 		if inService then
 			vCLIENT.stopGarbageman(source)
+			SendWebhookMessage(webhooklinkTrabalho,  "User_id: [" ..user_id.."] saiu do Lixeiro ")
 		else
 			vCLIENT.startGarbageman(source)
 			TriggerClientEvent("vrp_garbageman:insertBlips",source,saveList)
 			TriggerClientEvent("vrp_garbageman:updateGarbageList",source,saveList)
 			TriggerClientEvent("Notify",source,"sucesso","Você iniciou o emprego de <b>Lixeiro</b>.",3000)
+			SendWebhookMessage(webhooklinkTrabalho,  "User_id: [" ..user_id.."] iniciou Lixeiro ")
 		end
 	end
 end)
@@ -800,7 +812,7 @@ function cRP.paymentMethod(garbageId)
 		elseif parseInt(random) >= 26 and parseInt(random) <= 40 then
 			vRP.giveInventoryItem(user_id,"aluminum",math.random(9),true)
 		elseif parseInt(random) >= 10 and parseInt(random) <= 25 then
-			vRP.giveInventoryItem(user_id,"copper",math.random(8),true)
+			vRP.giveInventoryItem(user_id,"copper",math.random(9),true)
 		end
 
 		vRP.upgradeStress(user_id,1)

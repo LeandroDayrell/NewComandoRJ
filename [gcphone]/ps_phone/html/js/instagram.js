@@ -947,10 +947,13 @@ function printdate(date2) {
     return returno;
 }
 
-setInterval(function() {
+PS.Phone.Functions.RefreshPostsInstagram = function() {
     verifyopenposts();
+}
+
+PS.Phone.Functions.RefreshStoriesInstagram = function() {
     verifyopenstories();
-}, 5000);
+}
 
 function verifyopenposts() {
     var openposts = $('.insta-posts').is(':visible');

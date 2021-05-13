@@ -40,6 +40,7 @@ var iphost = "http://127.0.0.1/";
 PS.Phone.Audio = null;
 
 var CanOpenApp = true;
+var IsTyping = false;
 
 PS.Phone.Functions.SetupAppWarnings = function(AppData) {
     $.each(AppData, function(i, app) {
@@ -85,7 +86,7 @@ $(document).on('click', '.phone-application', function(e) {
 
                 PS.Phone.Data.currentApplication = PressedApplication;
 
-                if (PressedApplication != "bank") {
+                if (PressedApplication != "bank" || PressedApplication != "calculator") {
                     $(".phone-navigation .navigation-center").addClass("black");
                 } else {
                     $(".phone-navigation .navigation-center").removeClass("black");
@@ -123,6 +124,10 @@ $(document).on('click', '.phone-application', function(e) {
                 } else if (PressedApplication == "messages") {
                     $.post('http://ps_phone/GetMessages', JSON.stringify({}), function(messages) {
                         PS.Phone.Functions.LoadMessages(messages)
+                    });
+                } else if (PressedApplication == "help") {
+                    $.post('http://ps_phone/GetHelpList', JSON.stringify({}), function(helplist) {
+                        PS.Phone.Functions.LoadHelpList(helplist)
                     });
                 }
             }
@@ -481,6 +486,9 @@ $(document).ready(function() {
                 // case "LoadPhoneApplications":
                 //     PS.Phone.Functions.SetupApplications(event.data);
                 //     break;
+            case "close":
+                PS.Phone.Functions.Close();
+                break;
             case "LoadPhoneData":
                 PS.Phone.Functions.LoadPhoneData(event.data);
                 break;
@@ -512,6 +520,18 @@ $(document).ready(function() {
                     }
                 }
                 break;
+            case "RefreshChatWhatsApp":
+                PS.Phone.Functions.RefreshChatWhatsApp();
+                break;
+            case "RefreshGroupWhatsApp":
+                PS.Phone.Functions.RefreshGroupWhatsApp();
+                break;
+            case "RefreshPostsInstagram":
+                PS.Phone.Functions.RefreshPostsInstagram();
+                break;
+            case "RefreshStoriesInstagram":
+                PS.Phone.Functions.RefreshStoriesInstagram();
+                break;
             case "UpdateHashtags":
                 PS.Phone.Notifications.LoadHashtags(event.data.Hashtags);
                 break;
@@ -519,15 +539,15 @@ $(document).ready(function() {
                 PS.Phone.Functions.ReloadWhatsappAlerts(event.data.Chats);
                 break;
             case "CancelOutgoingCall":
+
+                if (PS.Phone.Audio) {
+                    PS.Phone.Audio.pause();
+                }
                 $.post('http://ps_phone/HasPhone', JSON.stringify({}), function(HasPhone) {
                     if (HasPhone) {
                         CancelOutgoingCall();
                     }
                 });
-
-                if (PS.Phone.Audio) {
-                    PS.Phone.Audio.pause();
-                }
                 break;
             case "IncomingCallAlert":
                 $.post('http://ps_phone/HasPhone', JSON.stringify({}), function(HasPhone) {
@@ -541,7 +561,31 @@ $(document).ready(function() {
                 }
                 break;
             case "SetupHomeCall":
+
+                if (event.data.CallData.CallType) {
+                    PS.Phone.Audio = new Audio("/html/sound/ring.ogg");
+                    PS.Phone.Audio.volume = 1;
+                    PS.Phone.Audio.loop = !0;
+                    PS.Phone.Audio.play();
+
+                    if (PS.Phone.Audio !== undefined) {
+                        PS.Phone.Audio.then(_ => {
+                                // Automatic playback started!
+                                // Show playing UI.
+                            })
+                            .catch(error => {
+                                // Auto-play was prevented
+                                // Show paused UI.
+                            });
+                    }
+                }
+
                 PS.Phone.Functions.SetupCurrentCall(event.data.CallData);
+                break;
+            case "CancelCallPhoneCLose":
+                if (PS.Phone.Audio) {
+                    PS.Phone.Audio.pause();
+                }
                 break;
             case "AnswerCall":
                 PS.Phone.Functions.AnswerCall(event.data.CallData);
@@ -565,6 +609,7 @@ $(document).ready(function() {
                             right: 5 + "vh"
                         });
                     }
+
                     $(".call-notifications-title").html("Em ligação (" + timeString + ")");
                     $(".call-notifications-content").html("No telefone com " + event.data.Name);
                     $(".call-notifications").removeClass('call-notifications-shake');
@@ -577,6 +622,8 @@ $(document).ready(function() {
                         });
                     });
                 }
+
+                $(".phone-call-ongoing-caller").html(event.data.Name);
 
                 $(".phone-call-ongoing-time").html(timeString);
                 $(".phone-currentcall-title").html("Em ligação (" + timeString + ")");
@@ -635,22 +682,53 @@ $(document).ready(function() {
 
 $(document).on('keydown', function() {
     switch (event.keyCode) {
-        case 27: // ESCAPE
-            PS.Phone.Functions.Close();
+        case 8: // BACKSPACE
+            if (!IsTyping) {
+                PS.Phone.Functions.Close();
+            }
             break;
     }
 });
 
-$(document).on('keyup', 'input', function(e) {
-    var value = $(this).val();
+$(document).ready(function() {
 
-    if (value.length > 0) {
-        $.post('http://ps_phone/ChangeIsTyping', JSON.stringify({
-            status: true
-        }), function(IsTyping) {});
-    } else {
-        $.post('http://ps_phone/ChangeIsTyping', JSON.stringify({
-            status: false
-        }), function(IsTyping) {});
-    }
+    $('input').blur(function() {
+            IsTyping = false;
+            $.post('http://ps_phone/ChangeIsTyping', JSON.stringify({
+                status: false
+            }), function(IsTyping) {});
+        })
+        .focus(function() {
+            IsTyping = true;
+            $.post('http://ps_phone/ChangeIsTyping', JSON.stringify({
+                status: true
+            }), function(IsTyping) {});
+        });
+
+    $('textarea').blur(function() {
+            IsTyping = false;
+            $.post('http://ps_phone/ChangeIsTyping', JSON.stringify({
+                status: false
+            }), function(IsTyping) {});
+        })
+        .focus(function() {
+            IsTyping = true;
+            $.post('http://ps_phone/ChangeIsTyping', JSON.stringify({
+                status: true
+            }), function(IsTyping) {});
+        });
+});
+
+$(document).on('blur', 'textarea', function(e) {
+    IsTyping = false;
+    $.post('http://ps_phone/ChangeIsTyping', JSON.stringify({
+        status: false
+    }), function(IsTyping) {});
+});
+
+$(document).on('focus', 'textarea', function(e) {
+    IsTyping = true;
+    $.post('http://ps_phone/ChangeIsTyping', JSON.stringify({
+        status: true
+    }), function(IsTyping) {});
 });

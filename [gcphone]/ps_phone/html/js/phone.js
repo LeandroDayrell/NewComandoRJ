@@ -246,12 +246,10 @@ $(document).on('click', ".phone-keypad-key-call", function(e) {
 
 $(document).on('click', ".phone-keypad-key-clear", function(e) {
     e.preventDefault();
-
-    $("#phone-keypad-input").text("Limpo")
-    ClearNumberTimer = setTimeout(function() {
-        $("#phone-keypad-input").text("");
-        ClearNumberTimer = null;
-    }, 750);
+    var numero = $("#phone-keypad-input").text()
+    numero = numero.slice(0, numero.length - 1)
+    $("#phone-keypad-input").text(numero);
+    ClearNumberTimer = null;
 });
 
 PS.Phone.Functions.LoadContacts = function(myContacts) {
@@ -639,6 +637,14 @@ SetupCall = function(cData) {
                 if (status.CanCall) {
                     if (!status.InCall) {
 
+                        if (cData.name == null || cData.name == undefined || cData.name == '' || cData.name == 'undefined') {
+                            name = cData.number;
+                        }
+
+                        if (cData.display == null || cData.display == undefined || cData.display == '' || cData.display == 'undefined') {
+                            name = cData.number;
+                        }
+
                         PS.Phone.Audio = new Audio("/html/sound/Phone_Call_Sound_Effect.ogg");
                         PS.Phone.Audio.volume = 1;
                         PS.Phone.Audio.loop = !0;
@@ -684,6 +690,10 @@ SetupCall = function(cData) {
 }
 
 CancelOutgoingCall = function() {
+    if (PS.Phone.Audio) {
+        PS.Phone.Audio.pause();
+    }
+
     if (PS.Phone.Data.currentApplication == "phone-call") {
         PS.Phone.Animations.TopSlideUp('.phone-application-container', 400, -160);
         PS.Phone.Animations.TopSlideUp('.' + PS.Phone.Data.currentApplication + "-app", 400, -160);
@@ -737,23 +747,27 @@ IncomingCallAlert = function(CallData, Canceled, AnonymousCall) {
                 var name = "";
 
                 if (CallData.name) {
-                    var name = CallData.name;
+                    name = CallData.name;
                 }
 
                 if (CallData.display) {
-                    var name = CallData.display;
+                    name = CallData.display;
                 }
+
+                if (CallData.name == null || CallData.name == undefined || CallData.name == '' || CallData.name == 'undefined') {
+                    name = CallData.number;
+                }
+
+                if (CallData.display == null || CallData.display == undefined || CallData.display == '' || CallData.display == 'undefined') {
+                    name = CallData.number;
+                }
+
 
                 var Label = "Você tem uma chamada recebida de " + name
 
                 if (AnonymousCall) {
                     Label = "Você tem uma chamada recebida de um número ânonimo"
                 }
-
-                PS.Phone.Audio = new Audio("/html/sound/ring.ogg");
-                PS.Phone.Audio.volume = 1;
-                PS.Phone.Audio.loop = !0;
-                PS.Phone.Audio.play();
 
                 $(".call-notifications-title").html("Chamada recebida ");
                 $(".call-notifications-content").html(Label);
@@ -901,6 +915,14 @@ $(document).on('click', '.phone-currentcall-container', function(e) {
         name = CallData.display;
     }
 
+    if (CallData.name == null || CallData.name == undefined || CallData.name == '' || CallData.name == 'undefined') {
+        name = CallData.number;
+    }
+
+    if (CallData.display == null || CallData.display == undefined || CallData.display == '' || CallData.display == 'undefined') {
+        name = CallData.number;
+    }
+
     $(".phone-call-ongoing-caller").html(name);
 
     PS.Phone.Functions.HeaderTextColor("white", 500);
@@ -922,6 +944,11 @@ $(document).on('click', '#incoming-answer', function(e) {
 });
 
 PS.Phone.Functions.AnswerCall = function(CallData) {
+
+    if (PS.Phone.Audio) {
+        PS.Phone.Audio.pause();
+    }
+
     $(".phone-call-incoming").css({
         "display": "none"
     });
@@ -940,6 +967,14 @@ PS.Phone.Functions.AnswerCall = function(CallData) {
 
     if (CallData.TargetData.display) {
         name = CallData.TargetData.display;
+    }
+
+    if (CallData.name == null || CallData.name == undefined || CallData.name == '' || CallData.name == 'undefined') {
+        name = CallData.number;
+    }
+
+    if (CallData.display == null || CallData.display == undefined || CallData.display == '' || CallData.display == 'undefined') {
+        name = CallData.number;
     }
 
     $(".phone-call-ongoing-caller").html(name);

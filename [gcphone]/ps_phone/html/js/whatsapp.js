@@ -768,10 +768,22 @@ function SetupChatMessages(cData, NewChatData) {
             OpenedChatData.phone = cData.phone;
         }
 
-        if (cData.contact_name != undefined || cData.contact_name != null || cData.contact_name != 'null') {
-            var name = cData.contact_name;
-        } else {
-            var name = cData.phone;
+        var name = cData.contact_name;
+
+        if (cData.contact_name == null) {
+            name = cData.phone;
+        }
+
+        if (cData.contact_name == undefined) {
+            name = cData.phone;
+        }
+
+        if (cData.contact_name == '') {
+            name = cData.phone;
+        }
+
+        if (cData.contact_name == 'undefined') {
+            name = cData.phone;
         }
 
         if (OpenedChatPicture == null) {
@@ -1545,22 +1557,19 @@ PS.Phone.Functions.ReceiveMyStorieWhatsApp = function(data) {
 
 
 setInterval(function() {
-    verifyopentabmessages();
-    verifyopentabgroups();
     verifyopentabstatus();
 
-    var audiochatcheck = $('.whatsapp-openedchat-message audio');
-    var audiogroupcheck = $('.whatsapp-openedgroup-message audio');
-
-    if (!audiochatcheck.play || audiochatcheck.paused || audiochatcheck.ended) {
-        verifyopenchat();
-    }
-
-    if (!audiogroupcheck.play || audiogroupcheck.paused || audiogroupcheck.ended) {
-        verifyopengroup();
-    }
-
 }, 5000);
+
+PS.Phone.Functions.RefreshChatWhatsApp = function() {
+    verifyopentabmessages();
+    verifyopenchat();
+}
+
+PS.Phone.Functions.RefreshGroupWhatsApp = function() {
+    verifyopentabgroups();
+    verifyopengroup();
+}
 
 function verifyopentabmessages() {
     var opentabmessages = $('.whatsapp-tabs #messages').is(':visible');
@@ -1593,7 +1602,7 @@ function verifyopentabstatus() {
 }
 
 function verifyopenchat() {
-    var openedchat = $('.whatsapp-openedchat-messages').is(':visible');
+    var openedchat = $('.whatsapp-openedchat').is(':visible');
 
     if (openedchat) {
         $.post('http://ps_phone/GetWhatsappChat', JSON.stringify({
@@ -1607,7 +1616,7 @@ function verifyopenchat() {
 }
 
 function verifyopengroup() {
-    var openedgroup = $('.whatsapp-openedgroup-messages').is(':visible');
+    var openedgroup = $('.whatsapp-openedgroup').is(':visible');
 
     if (openedgroup) {
         $.post('http://ps_phone/GetWhatsappGroupMessages', JSON.stringify({

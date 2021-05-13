@@ -133,26 +133,26 @@ $(document).on('click', '#accept-transfer', function(e) {
     var amountData = $(".bank-app-account-balance").data('balance');
 
     if (iban != "" && amount != "") {
-        if (amountData >= amount) {
-            $.post('http://ps_phone/TransferMoney', JSON.stringify({
-                iban: iban,
-                amount: amount
-            }), function(data) {
-                if (data.CanTransfer) {
-                    $("#bank-transfer-iban").val("");
-                    $("#bank-transfer-amount").val("");
-                    data.NewAmount = (data.NewAmount).toFixed();
-                    $(".bank-app-account-balance").html("&#36; " + data.NewAmount);
-                    $(".bank-app-account-balance").data('balance', data.NewAmount);
-                    PS.Phone.Notifications.Add("fas fa-university", "PSBank", "&#36; " + amount + ",- transferido!", "#badc58", 1500);
-                } else {
-                    PS.Phone.Notifications.Add("fas fa-university", "PSBank", "Você não tem saldo suficiente!", "#badc58", 1500);
-                }
-            })
-            PS.Phone.Animations.TopSlideUp(".bank-app-transfer", 400, -100);
-        } else {
-            PS.Phone.Notifications.Add("fas fa-university", "PSBank", "Você não tem saldo suficiente!", "#badc58", 1500);
-        }
+        // if (amountData >= amount) {
+        $.post('http://ps_phone/TransferMoney', JSON.stringify({
+            iban: iban,
+            amount: amount
+        }), function(data) {
+            if (data.CanTransfer) {
+                $("#bank-transfer-iban").val("");
+                $("#bank-transfer-amount").val("");
+                data.NewAmount = (data.NewAmount).toFixed();
+                $(".bank-app-account-balance").html("&#36; " + data.NewAmount);
+                $(".bank-app-account-balance").data('balance', data.NewAmount);
+                PS.Phone.Notifications.Add("fas fa-university", "PSBank", "&#36; " + amount + ",- transferido!", "#badc58", 1500);
+            } else {
+                PS.Phone.Notifications.Add("fas fa-university", "PSBank", "Error ao fazer a transferência, tente novamente", "#badc58", 1500);
+            }
+        })
+        PS.Phone.Animations.TopSlideUp(".bank-app-transfer", 400, -100);
+        // } else {
+        //     PS.Phone.Notifications.Add("fas fa-university", "PSBank", "Você não tem saldo suficiente!", "#badc58", 1500);
+        // }
     } else {
         PS.Phone.Notifications.Add("fas fa-university", "PSBank", "Preencha todos os campos! ", "#badc58", 1750);
     }

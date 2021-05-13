@@ -13,6 +13,15 @@ Tunnel.bindInterface("vrp_player",cRP)
 vCLIENT = Tunnel.getInterface("vrp_player")
 vTASKBAR = Tunnel.getInterface("vrp_taskbar")
 vSKINSHOP = Tunnel.getInterface("vrp_skinshop")
+
+local webhooklinkDetido = "https://discord.com/api/webhooks/842478351772155945/G2dPBZceeX3qqE-RA9emhhsnWshZrim-T5EuH1w6qR6m_9ksmYBJyEmO5tLEx9zBynMd"
+
+
+function SendWebhookMessage(webhook,message)
+	if webhook ~= nil and webhook ~= "" then
+		PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' })
+	end
+end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- WESTORE
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -254,11 +263,11 @@ end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CALL
 -----------------------------------------------------------------------------------------------------------------------------------------
-RegisterCommand("atendimento",function(source,args,rawCommand)
+ RegisterCommand("atendimento",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
 		if not vCLIENT.getHandcuff(source) then
-			local service = vRP.prompt(source,"190: Polícia   |   192: Paramédico   |   170: Mecanico   |   136: Prefeitura","")
+			local service = vRP.prompt(source,"192: Paramédico","")
 			if service == "" then
 				return
 			end
@@ -270,16 +279,8 @@ RegisterCommand("atendimento",function(source,args,rawCommand)
 
 			local players = {}
 			local answered = false
-			if parseInt(service) == 190 then
-				players = vRP.numPermission("Police")
-			elseif parseInt(service) == 192 then
+			if parseInt(service) == 192 then
 				players = vRP.numPermission("Paramedic")
-			elseif parseInt(service) == 156 then
-				players = vRP.numPermission("sup2000")
-			elseif parseInt(service) == 170 then
-				players = vRP.numPermission("LosSantos")
-			elseif parseInt(service) == 136 then
-				players = vRP.numPermission("chamado")
 			end
 
 			TriggerClientEvent("Notify",source,"sucesso","Chamado efetuado com sucesso, aguarde no local.",5000)
@@ -312,102 +313,6 @@ RegisterCommand("atendimento",function(source,args,rawCommand)
 end)
 
 
---local blips = {}
-RegisterCommand('chamar',function(source,args,rawCommand)
-	local source = source
-	local answered = false
-	local user_id = vRP.getUserId(source)
-	local uplayer = vRP.getUserSource(user_id)
-	vida = vRPclient.getHealth(source)
---	vRPclient._CarregarObjeto(source,"cellphone@","cellphone_call_to_text","prop_amb_phone",50,28422)
-	if user_id then
-		local description = vRP.prompt(source,"Descrição:","")
-		if description == "" then
-			--vRPclient._stopAnim(source,false)
-			--vRPclient._DeletarObjeto(source)
-			return
-		end
-
-		local x,y,z = vRPclient.getPosition(source)
-		local players = {}
-		vRPclient._stopAnim(source,false)
-		vRPclient._DeletarObjeto(source)
-		local especialidade = false
-		if args[1] == "adm" then
-			players = vRP.numPermission("chamado")	
-			especialidade = "Administradores"
-		elseif args[1] == "deus" then
-			players = vRP.numPermission("chamado")	
-			especialidade = "Administradores"
-		elseif args[1] == "god" then
-			players = vRP.numPermission("chamado")	
-			especialidade = "Administradores"
-		else
-			TriggerClientEvent("Notify",source,"negado","Serviço <b>inexistente</b> na Cidade.")
-			return
-		end
-		
-		local adm = ""
-		if especialidade == "Administradores" then
-			adm = "[ADM]: "
-		end
-		print(players)
-		print("teste 01")
-		vRPclient.playSound(source,"Event_Message_Purple","GTAO_FM_Events_Soundset")
-		if #players == 0  and especialidade ~= "<b>Policiais</b>" and especialidade ~="<b>PoliciaCivil</b>" and especialidade ~="PoliciaisPRF" then
-			TriggerClientEvent("Notify",source,"importante","Não há "..especialidade.." em serviço.", 5000)
-		else
-			print("teste 02")
-			--local identitys = vRP.getUserIdentity(user_id)
-			local identity = vRP.getUserIdentity(user_id)
-			TriggerClientEvent("Notify",source,"sucesso","O Seu <b>Chamado</b> foi enviado com sucesso.",5000)
-			for l,w in pairs(players) do
-				print("teste 03")
-				print(l)
-				print(w)
-				--local player = vRP.getUserSource(parseInt(w)) ---
-				local nuser_id = vRP.getUserId(w)
-				--local nuser_id = vRP.getUserId(player)
-				if w and w ~= uplayer then
-					print("teste 04")
-					async(function()
-						print("teste 05")
-					--	vRPclient.playSound(player,"Out_Of_Area","DLC_Lowrider_Relay_Race_Sounds")
-						print("teste 07")
-						--TriggerClientEvent('chatMessage',player,"Chamado ",{255,0,0},adm.." Enviado por ^1"..identity.name.." "..identity.name2.."^0 ["..user_id.."], "..descricao)
-						TriggerClientEvent("chatMessage",w,identity.name.." "..identity.name2,{124,124,124},description)
-						print("teste 08")
-						--local ok = vRP.request(player,"Aceitar o chamado de <b>"..identity.name.." "..identity.name2.. " ["..user_id.."]</b>?",30)
-						local ok = vRP.request(w,"Aceitar o chamado de <b>"..identity.name.." "..identity.name2.."</b>?",30)
-						print("teste 09")
-						if ok then
-							print("teste 10")
-							if not answered then
-								answered = true
-								local identityn = vRP.getUserIdentity(nuser_id)
-								local x,y,z = vRPclient.getPositions(source)
-								--TriggerClientEvent("Notify",source,"importante","Chamado atendido por <b>"..identity.name.." "..identity.firstname.."</b>, aguarde no local.")
-								TriggerClientEvent("Notify",source,"importante","Chamado atendido por <b>"..identityn.name.." "..identityn.name2.."</b>, aguarde no local.",10000)
-								print("teste 11")
-								vRPclient.playSound(source,"Event_Message_Purple","GTAO_FM_Events_Soundset")
-								print("teste 12")
-								--vRPclient._setGPS(player,x,y)
-								TriggerClientEvent("NotifyPush",w,{ code = 1, title = "CHAMADO ADM", x = x, y = y, z = z, name = identity.name.." "..identity.name2, phone = identity.phone, rgba = {124,124,124} })
-								print("teste 13")
-							else
-								TriggerClientEvent("Notify",player,"negado","Chamado ja foi atendido por outra <b>pessoa.</b>")
-								vRPclient.playSound(player,"CHECKPOINT_MISSED","HUD_MINI_GAME_SOUNDSET")
-							end
-						end
-					--	local id = idgens:gen()
-					--	blips[id] = vRPclient.addBlip(player,x,y,z,543,27,"Chamado",0.6,false)
-					--	SetTimeout(300000,function() vRPclient.removeBlip(player,blips[id]) idgens:free(id) end)
-					end)
-				end
-			end
-		end
-	end
-end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- PR
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -541,6 +446,7 @@ RegisterCommand("detido",function(source,args,rawCommand)
 					if inVehicle[1] then
 						if inVehicle[1].arrest <= 0 then
 							vRP.execute("vRP/set_arrest",{ user_id = parseInt(plateUser), vehicle = vehName, arrest = 1, time = parseInt(os.time()) })
+							SendWebhookMessage(webhooklinkDetido,  "UserID: [" ..user_id.."] deu detido placa: " ..plateUser.. " Modelo: " ..vehicle.." .")
 							TriggerClientEvent("Notify",source,"sucesso","O veículo foi apreendido no galpão da polícia.",5000)
 						else
 							TriggerClientEvent("Notify",source,"importante","O veículo está no galpão da polícia.",5000)

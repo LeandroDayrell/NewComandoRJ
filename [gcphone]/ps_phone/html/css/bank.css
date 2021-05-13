@@ -260,11 +260,11 @@
 
 .qbank-logo {
     position: absolute;
-    width: 25vh;
+    width: 19vh;
     margin: 0 auto;
     left: 0vh;
     right: 0;
-    top: 30vh;
+    top: 20vh;
     z-index: 101;
 }
 
@@ -272,7 +272,7 @@
     position: absolute;
     top: 24vh;
     left: 9vh;
-    font-size: 4.5vh;
+    font-size: 3.5vh;
     color: white;
     font-family: 'SFPro Display Bold';
     z-index: 100;

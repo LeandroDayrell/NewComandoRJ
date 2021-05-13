@@ -30,7 +30,7 @@ local craftList = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 250,
+					["aluminum"] = 230,
 					["copper"] = 150,
 					["pecadearma"] = 100,
 					["bluecard"] = 1
@@ -552,15 +552,15 @@ local craftList = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 10,
-					["rubber"] = 10,
+					["aluminum"] = 5,
+					["rubber"] = 5,
 				}
 			},
 			["tires"] = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
-					["rubber"] = 10					
+					["rubber"] = 3					
 				}
 			}
 		}

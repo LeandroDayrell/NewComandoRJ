@@ -133,7 +133,7 @@ PS.Phone.Notifications.LoadTweets = function(Tweets) {
             }
 
             if (Tweet.image == "" && Tweet.message != "") {
-                let TweetElement = '<div class="twitter-tweet" data-twtid = "' + Tweet.id + '" data-twthandler="@' + Tweet.username + '">' +
+                let TweetElement = '<div class="twitter-tweet" data-message="' + Tweet.message + '" data-twtid="' + Tweet.id + '" data-twthandler="@' + Tweet.username + '">' +
                     '<div class="tweet-tweeter">' + Tweet.name + ' &nbsp;<span>@' + Tweet.username + ' &middot; ' + TimeAgo + '</span></div>';
                 if (Tweet.mentions) {
                     TweetElement = TweetElement + '<div class="tweet-message">Menções: ' + Tweet.mentions + '</div>';
@@ -146,8 +146,8 @@ PS.Phone.Notifications.LoadTweets = function(Tweets) {
                     '<div class="tweet-reply"><i class="fas fa-reply"></i></div>'
                 '</div>';
                 $(".twitter-home-tab").append(TweetElement);
-            } else if (Tweet.image != "" && Tweet.message == "") {
-                let TweetElement = '<div class="twitter-tweet" data-twtid = "' + Tweet.id + '" data-twthandler="@' + Tweet.username + '">' +
+            } else if (Tweet.image != "") {
+                let TweetElement = '<div class="twitter-tweet" data-message="' + Tweet.message + '" data-twtid="' + Tweet.id + '" data-twthandler="@' + Tweet.username + '">' +
                     '<div class="tweet-tweeter">' + Tweet.name + ' &nbsp;<span>@' + Tweet.username + ' &middot; ' + TimeAgo + '</span></div>';
                 if (Tweet.mentions) {
                     TweetElement = TweetElement + '<div class="tweet-message">Menções: ' + Tweet.mentions + '</div>';
@@ -155,8 +155,10 @@ PS.Phone.Notifications.LoadTweets = function(Tweets) {
                 if (Tweet.hashtags) {
                     TweetElement = TweetElement + '<div class="tweet-message">Hashtags: ' + Tweet.hashtags + '</div>';
                 }
-                TweetElement = TweetElement + '<div class="tweet-message">' + Tweet.message + '</div>' +
-                    '<img class="image" src= "' + Tweet.image + '" style = " border-radius:2px; width: 70%; position:relative; z-index: 1; left:52px; margin:.6rem .5rem .6rem 1rem;height: auto;">' +
+                if (Tweet.message) {
+                    TweetElement = TweetElement + '<div class="tweet-message">' + Tweet.message + '</div>';
+                }
+                TweetElement = TweetElement + '<img class="image" src= "' + Tweet.image + '" style = "border-radius:2px;width: 60%;position:relative;left:52px;height: auto;">' +
                     '<div class="twt-img" style="top: 1vh;"><img src="' + PictureUrl + '" class="tweeter-image"></div>' +
                     '<div class="tweet-reply"><i class="fas fa-reply"></i></div>'
                 '</div>';
@@ -202,26 +204,36 @@ PS.Phone.Notifications.LoadSelfTweets = function(Tweets) {
             }
 
             if (Tweet.image == "" && Tweet.message != "") {
-                let TweetElement = '<div class="twitter-tweet" data-twtid = "' + Tweet.id + '" data-twthandler="@' + Tweet.username + '">' +
-                    '<div class="tweet-tweeter">' + Tweet.name + ' &nbsp;<span>@' + Tweet.username + ' &middot; ' + TimeAgo + '</span></div>' +
-                    '<div class="tweet-message">Menções: ' + Tweet.mentions + '</div>' +
-                    '<div class="tweet-message">Hashtags: ' + Tweet.hashtags + '</div>' +
-                    '<div class="tweet-message">' + Tweet.message + '</div>' +
+                let TweetElement = '<div class="twitter-tweet" data-message="' + Tweet.message + '" data-twtid="' + Tweet.id + '" data-twthandler="@' + Tweet.username + '">' +
+                    '<div class="tweet-tweeter">' + Tweet.name + ' &nbsp;<span>@' + Tweet.username + ' &middot; ' + TimeAgo + '</span></div>';
+                if (Tweet.mentions) {
+                    TweetElement = TweetElement + '<div class="tweet-message">Menções: ' + Tweet.mentions + '</div>';
+                }
+                if (Tweet.hashtags) {
+                    TweetElement = TweetElement + '<div class="tweet-message">Hashtags: ' + Tweet.hashtags + '</div>';
+                }
+                TweetElement = TweetElement + '<div class="tweet-message">' + Tweet.message + '</div>' +
                     '<div class="twt-img" style="top: 1vh;"><img src="' + PictureUrl + '" class="tweeter-image"></div>' +
                     '<div class="tweet-delete"><i class="fas fa-trash-alt"></i></div>'
                 '</div>';
-                $(".twitter-home-tab").append(TweetElement);
-            } else if (Tweet.image != "" && Tweet.message == "") {
-                let TweetElement = '<div class="twitter-tweet" data-twtid = "' + Tweet.id + '" data-twthandler="@' + Tweet.username + '">' +
-                    '<div class="tweet-tweeter">' + Tweet.name + ' &nbsp;<span>@' + Tweet.username + ' &middot; ' + TimeAgo + '</span></div>' +
-                    '<div class="tweet-message">Menções: ' + Tweet.mentions + '</div>' +
-                    '<div class="tweet-message">Hashtags: ' + Tweet.hashtags + '</div>' +
-                    '<div class="tweet-message">' + Tweet.message + '</div>' +
-                    '<img class="image" src= "' + Tweet.image + '" style = " border-radius:2px; width: 70%; position:relative; z-index: 1; left:52px; margin:.6rem .5rem .6rem 1rem;height: auto;">' +
+                $(".twitter-self-tab").append(TweetElement);
+            } else if (Tweet.image != "") {
+                let TweetElement = '<div class="twitter-tweet" data-message="' + Tweet.message + '" data-twtid="' + Tweet.id + '" data-twthandler="@' + Tweet.username + '">' +
+                    '<div class="tweet-tweeter">' + Tweet.name + ' &nbsp;<span>@' + Tweet.username + ' &middot; ' + TimeAgo + '</span></div>';
+                if (Tweet.mentions) {
+                    TweetElement = TweetElement + '<div class="tweet-message">Menções: ' + Tweet.mentions + '</div>';
+                }
+                if (Tweet.hashtags) {
+                    TweetElement = TweetElement + '<div class="tweet-message">Hashtags: ' + Tweet.hashtags + '</div>';
+                }
+                if (Tweet.message) {
+                    TweetElement = TweetElement + '<div class="tweet-message">' + Tweet.message + '</div>';
+                }
+                TweetElement = TweetElement + '<img class="image" src= "' + Tweet.image + '" style = "border-radius:2px;width: 60%;position:relative;left:52px;height: auto;">' +
                     '<div class="twt-img" style="top: 1vh;"><img src="' + PictureUrl + '" class="tweeter-image"></div>' +
                     '<div class="tweet-delete"><i class="fas fa-trash-alt"></i></div>'
                 '</div>';
-                $(".twitter-home-tab").append(TweetElement);
+                $(".twitter-self-tab").append(TweetElement);
             }
 
         });
@@ -236,8 +248,8 @@ PS.Phone.Notifications.LoadSelfTweets = function(Tweets) {
 $(document).on('click', '.tweet-reply', function(e) {
     e.preventDefault();
     var TwtName = $(this).parent().data('twthandler');
-    var text = $(this).parent().data();
-    $("#tweet-new-message").val(TwtName + " @" + text + "");
+    var text = $(this).parent().data('message');
+    $("#tweet-new-message").val("Re-Twitter: " + TwtName + " - " + text + "");
     PS.Phone.Animations.TopSlideDown(".twitter-new-tweet-tab", 450, 0);
 });
 
@@ -481,19 +493,24 @@ PS.Phone.Notifications.LoadHashtags = function(hashtags) {
     if (hashtags !== null) {
         $(".twitter-hashtags").html("");
         $.each(hashtags, function(i, hashtag) {
-            var Elem = '';
-            var TweetHandle = "Tweet";
-            if (hashtag.count > 1) {
-                TweetHandle = "Tweets";
-            }
-            if (hashtag.count >= MinimumTrending) {
-                Elem = '<div class="twitter-hashtag" id="tag-' + hashtag.name + '"><div class="twitter-hashtag-status">Trending</div> <div class="twitter-hashtag-tag">#' + hashtag.name + '</div> <div class="twitter-hashtag-messages">' + hashtag.count + ' ' + TweetHandle + '</div> </div>';
-            } else {
-                Elem = '<div class="twitter-hashtag" id="tag-' + hashtag.name + '"><div class="twitter-hashtag-status">Not Trending</div> <div class="twitter-hashtag-tag">#' + hashtag.name + '</div> <div class="twitter-hashtag-messages">' + hashtag.count + ' ' + TweetHandle + '</div> </div>';
-            }
 
-            $(".twitter-hashtags").append(Elem);
-            $("#tag-" + hashtag.hashtag).data('tagData', hashtag);
+            if (hashtag.name != '') {
+
+                var Elem = '';
+                var TweetHandle = "Tweet";
+                if (hashtag.count > 1) {
+                    TweetHandle = "Tweets";
+                }
+                if (hashtag.count >= MinimumTrending) {
+                    Elem = '<div class="twitter-hashtag" id="tag-' + hashtag.name + '"><div class="twitter-hashtag-status">Tendência</div> <div class="twitter-hashtag-tag">#' + hashtag.name + '</div> <div class="twitter-hashtag-messages">' + TweetHandle + '</div> </div>';
+                } else {
+                    Elem = '<div class="twitter-hashtag" id="tag-' + hashtag.name + '"><div class="twitter-hashtag-status">Não é tendência</div> <div class="twitter-hashtag-tag">#' + hashtag.name + '</div> <div class="twitter-hashtag-messages">' + TweetHandle + '</div> </div>';
+                }
+
+                $(".twitter-hashtags").append(Elem);
+                $("#tag-" + hashtag.hashtag).data('tagData', hashtag);
+
+            }
         });
     }
 }

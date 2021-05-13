@@ -16,6 +16,16 @@ vCLIENT = Tunnel.getInterface("vrp_robberys")
 local robberyProgress = {}
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- VARIABLES
+
+
+local webhooklinkRouboalojinha = "https://discord.com/api/webhooks/842099865780748328/oKulkeDv1r1jTQ4n6QJbPC_1nCqt4NVaR4wHYaEahQe-NeW79yEMB34e-GJCk2903uk1"
+
+function SendWebhookMessage(webhook,message)
+	if webhook ~= nil and webhook ~= "" then
+		PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' })
+	end
+end
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 local vars = {
 	[1] = {
@@ -30,7 +40,7 @@ local vars = {
 		["name"] = "Loja de Departamento",
 		["required"] = "bluecard",
 		["itens"] = {
-			{ ["item"] = "dollars2", ["min"] = 110000, ["max"] = 120000 }
+			{ ["item"] = "dollars2", ["min"] = 170000, ["max"] = 210000 }
 		}
 	},
 	[2] = {
@@ -45,7 +55,7 @@ local vars = {
 		["name"] = "Loja de Departamento",
 		["required"] = "bluecard",
 		["itens"] = {
-			{ ["item"] = "dollars2", ["min"] = 110000, ["max"] = 120000 }
+			{ ["item"] = "dollars2", ["min"] = 170000, ["max"] = 210000 }
 		}
 	},
 	[3] = {
@@ -60,7 +70,7 @@ local vars = {
 		["name"] = "Loja de Departamento",
 		["required"] = "bluecard",
 		["itens"] = {
-			{ ["item"] = "dollars2", ["min"] = 110000, ["max"] = 120000 }
+			{ ["item"] = "dollars2", ["min"] = 170000, ["max"] = 210000 }
 		}
 	},
 	[4] = {
@@ -75,7 +85,7 @@ local vars = {
 		["name"] = "Loja de Departamento",
 		["required"] = "bluecard",
 		["itens"] = {
-			{ ["item"] = "dollars2", ["min"] = 110000, ["max"] = 120000 }
+			{ ["item"] = "dollars2", ["min"] = 170000, ["max"] = 210000 }
 		}
 	},
 	[5] = {
@@ -90,7 +100,7 @@ local vars = {
 		["name"] = "Loja de Departamento",
 		["required"] = "bluecard",
 		["itens"] = {
-			{ ["item"] = "dollars2", ["min"] = 110000, ["max"] = 120000 }
+			{ ["item"] = "dollars2", ["min"] = 170000, ["max"] = 210000 }
 		}
 	},
 	[6] = {
@@ -105,7 +115,7 @@ local vars = {
 		["name"] = "Loja de Departamento",
 		["required"] = "bluecard",
 		["itens"] = {
-			{ ["item"] = "dollars2", ["min"] = 110000, ["max"] = 120000 }
+			{ ["item"] = "dollars2", ["min"] = 170000, ["max"] = 210000 }
 		}
 	},
 	[7] = {
@@ -120,7 +130,7 @@ local vars = {
 		["name"] = "Loja de Departamento",
 		["required"] = "bluecard",
 		["itens"] = {
-			{ ["item"] = "dollars2", ["min"] = 110000, ["max"] = 120000 }
+			{ ["item"] = "dollars2", ["min"] = 170000, ["max"] = 210000 }
 		}
 	},
 	[8] = {
@@ -135,7 +145,7 @@ local vars = {
 		["name"] = "Loja de Departamento",
 		["required"] = "bluecard",
 		["itens"] = {
-			{ ["item"] = "dollars2", ["min"] = 110000, ["max"] = 120000 }
+			{ ["item"] = "dollars2", ["min"] = 170000, ["max"] = 210000 }
 		}
 	},
 	[9] = {
@@ -150,7 +160,7 @@ local vars = {
 		["name"] = "Loja de Departamento",
 		["required"] = "bluecard",
 		["itens"] = {
-			{ ["item"] = "dollars2", ["min"] = 110000, ["max"] = 120000 }
+			{ ["item"] = "dollars2", ["min"] = 170000, ["max"] = 210000 }
 		}
 	},
 	[10] = {
@@ -165,7 +175,7 @@ local vars = {
 		["name"] = "Loja de Departamento",
 		["required"] = "bluecard",
 		["itens"] = {
-			{ ["item"] = "dollars2", ["min"] = 110000, ["max"] = 120000 }
+			{ ["item"] = "dollars2", ["min"] = 170000, ["max"] = 210000 }
 		}
 	},
 	[11] = {
@@ -180,7 +190,7 @@ local vars = {
 		["name"] = "Loja de Departamento",
 		["required"] = "bluecard",
 		["itens"] = {
-			{ ["item"] = "dollars2", ["min"] = 110000, ["max"] = 120000 }
+			{ ["item"] = "dollars2", ["min"] = 170000, ["max"] = 210000 }
 		}
 	},
 	[12] = {
@@ -195,7 +205,7 @@ local vars = {
 		["name"] = "Loja de Departamento",
 		["required"] = "bluecard",
 		["itens"] = {
-			{ ["item"] = "dollars2", ["min"] = 110000, ["max"] = 120000 }
+			{ ["item"] = "dollars2", ["min"] = 170000, ["max"] = 210000 }
 		}
 	},
 	[13] = {
@@ -210,7 +220,7 @@ local vars = {
 		["name"] = "Loja de Departamento",
 		["required"] = "bluecard",
 		["itens"] = {
-			{ ["item"] = "dollars2", ["min"] = 110000, ["max"] = 120000 }
+			{ ["item"] = "dollars2", ["min"] = 170000, ["max"] = 210000 }
 		}
 	},
 	[14] = {
@@ -225,7 +235,7 @@ local vars = {
 		["name"] = "Loja de Departamento",
 		["required"] = "bluecard",
 		["itens"] = {
-			{ ["item"] = "dollars2", ["min"] = 110000, ["max"] = 120000 }
+			{ ["item"] = "dollars2", ["min"] = 170000, ["max"] = 210000 }
 		}
 	},
 	[15] = {
@@ -240,7 +250,7 @@ local vars = {
 		["name"] = "Loja de Departamento",
 		["required"] = "bluecard",
 		["itens"] = {
-			{ ["item"] = "dollars2", ["min"] = 110000, ["max"] = 120000 }
+			{ ["item"] = "dollars2", ["min"] = 170000, ["max"] = 210000 }
 		}
 	},
 	[16] = {
@@ -255,7 +265,7 @@ local vars = {
 		["name"] = "Loja de Departamento",
 		["required"] = "bluecard",
 		["itens"] = {
-			{ ["item"] = "dollars2", ["min"] = 110000, ["max"] = 120000 }
+			{ ["item"] = "dollars2", ["min"] = 170000, ["max"] = 210000 }
 		}
 	},
 	[17] = {
@@ -270,7 +280,7 @@ local vars = {
 		["name"] = "Loja de Departamento",
 		["required"] = "bluecard",
 		["itens"] = {
-			{ ["item"] = "dollars2", ["min"] = 110000, ["max"] = 120000 }
+			{ ["item"] = "dollars2", ["min"] = 170000, ["max"] = 210000 }
 		}
 	},
 	[18] = {
@@ -285,7 +295,7 @@ local vars = {
 		["name"] = "Loja de Departamento",
 		["required"] = "bluecard",
 		["itens"] = {
-			{ ["item"] = "dollars2", ["min"] = 110000, ["max"] = 120000 }
+			{ ["item"] = "dollars2", ["min"] = 170000, ["max"] = 210000 }
 		}
 	},
 	[19] = {
@@ -300,7 +310,7 @@ local vars = {
 		["name"] = "Loja de Departamento",
 		["required"] = "bluecard",
 		["itens"] = {
-			{ ["item"] = "dollars2", ["min"] = 110000, ["max"] = 120000 }
+			{ ["item"] = "dollars2", ["min"] = 170000, ["max"] = 210000 }
 		}
 	},
 	[20] = {
@@ -315,8 +325,7 @@ local vars = {
 		["name"] = "Loja de Armas",
 		["required"] = "bluecard",
 		["itens"] = {
-			{ ["item"] = "WEAPON_SNSPISTOL", ["min"] = 1, ["max"] = 2 },
-			{ ["item"] = "dollars2", ["min"] = 40000, ["max"] = 50000 }
+			{ ["item"] = "dollars2", ["min"] = 120000, ["max"] = 135000 }
 		}
 	},
 	[21] = {
@@ -331,8 +340,7 @@ local vars = {
 		["name"] = "Loja de Armas",
 		["required"] = "bluecard",
 		["itens"] = {
-			{ ["item"] = "WEAPON_SNSPISTOL", ["min"] = 1, ["max"] = 2 },
-			{ ["item"] = "dollars2", ["min"] = 40000, ["max"] = 50000 }
+			{ ["item"] = "dollars2", ["min"] = 120000, ["max"] = 135000 }
 		}
 	},
 	[22] = {
@@ -347,8 +355,7 @@ local vars = {
 		["name"] = "Loja de Armas",
 		["required"] = "bluecard",
 		["itens"] = {
-			{ ["item"] = "WEAPON_SNSPISTOL", ["min"] = 1, ["max"] = 2 },
-			{ ["item"] = "dollars2", ["min"] = 40000, ["max"] = 50000 }
+			{ ["item"] = "dollars2", ["min"] = 120000, ["max"] = 135000 }
 		}
 	},
 	[23] = {
@@ -363,8 +370,7 @@ local vars = {
 		["name"] = "Loja de Armas",
 		["required"] = "bluecard",
 		["itens"] = {
-			{ ["item"] = "WEAPON_SNSPISTOL", ["min"] = 1, ["max"] = 2 },
-			{ ["item"] = "dollars2", ["min"] = 40000, ["max"] = 50000 }
+			{ ["item"] = "dollars2", ["min"] = 120000, ["max"] = 135000 }
 		}
 	},
 	[24] = {
@@ -379,8 +385,7 @@ local vars = {
 		["name"] = "Loja de Armas",
 		["required"] = "bluecard",
 		["itens"] = {
-			{ ["item"] = "WEAPON_SNSPISTOL", ["min"] = 1, ["max"] = 2 },
-			{ ["item"] = "dollars2", ["min"] = 40000, ["max"] = 50000 }
+			{ ["item"] = "dollars2", ["min"] = 120000, ["max"] = 135000 }
 		}
 	},
 	[25] = {
@@ -395,8 +400,7 @@ local vars = {
 		["name"] = "Loja de Armas",
 		["required"] = "bluecard",
 		["itens"] = {
-			{ ["item"] = "WEAPON_SNSPISTOL", ["min"] = 1, ["max"] = 2 },
-			{ ["item"] = "dollars2", ["min"] = 40000, ["max"] = 50000 }
+			{ ["item"] = "dollars2", ["min"] = 120000, ["max"] = 135000 }
 		}
 	},
 	[26] = {
@@ -411,8 +415,7 @@ local vars = {
 		["name"] = "Loja de Armas",
 		["required"] = "bluecard",
 		["itens"] = {
-			{ ["item"] = "WEAPON_SNSPISTOL", ["min"] = 1, ["max"] = 2 },
-			{ ["item"] = "dollars2", ["min"] = 40000, ["max"] = 50000 }
+			{ ["item"] = "dollars2", ["min"] = 120000, ["max"] = 135000 }
 		}
 	},
 	[27] = {
@@ -427,8 +430,7 @@ local vars = {
 		["name"] = "Loja de Armas",
 		["required"] = "bluecard",
 		["itens"] = {
-			{ ["item"] = "WEAPON_SNSPISTOL", ["min"] = 1, ["max"] = 2 },
-			{ ["item"] = "dollars2", ["min"] = 40000, ["max"] = 50000 }
+			{ ["item"] = "dollars2", ["min"] = 120000, ["max"] = 135000 }
 		}
 	},
 	[28] = {
@@ -443,8 +445,7 @@ local vars = {
 		["name"] = "Loja de Armas",
 		["required"] = "bluecard",
 		["itens"] = {
-			{ ["item"] = "WEAPON_SNSPISTOL", ["min"] = 1, ["max"] = 2 },
-			{ ["item"] = "dollars2", ["min"] = 40000, ["max"] = 50000 }
+			{ ["item"] = "dollars2", ["min"] = 120000, ["max"] = 135000 }
 		}
 	},
 	[29] = {
@@ -459,8 +460,7 @@ local vars = {
 		["name"] = "Loja de Armas",
 		["required"] = "bluecard",
 		["itens"] = {
-			{ ["item"] = "WEAPON_SNSPISTOL", ["min"] = 1, ["max"] = 2 },
-			{ ["item"] = "dollars2", ["min"] = 40000, ["max"] = 50000 }
+			{ ["item"] = "dollars2", ["min"] = 120000, ["max"] = 135000 }
 		}
 	},
 	[30] = {
@@ -475,8 +475,7 @@ local vars = {
 		["name"] = "Loja de Armas",
 		["required"] = "bluecard",
 		["itens"] = {
-			{ ["item"] = "WEAPON_SNSPISTOL", ["min"] = 1, ["max"] = 2 },
-			{ ["item"] = "dollars2", ["min"] = 40000, ["max"] = 50000 }
+			{ ["item"] = "dollars2", ["min"] = 120000, ["max"] = 135000 }
 		}
 	},
 --[[	[31] = {
@@ -551,7 +550,7 @@ local vars = {
 		["name"] = "Banco Fleeca",
 		["required"] = "blackcard",
 		["itens"] = {
-			{ ["item"] = "goldbar", ["min"] = 4, ["max"] = 5 }
+			{ ["item"] = "goldbar", ["min"] = 7, ["max"] = 8 }
 		}
 	},
 	--[[[36] = {
@@ -671,7 +670,7 @@ local vars = {
 		["name"] = "Vinewood Vault",
 		["required"] = "blackcard",
 		["itens"] = {
-			{ ["item"] = "goldbar", ["min"] = 9, ["max"] = 11 }
+			{ ["item"] = "goldbar", ["min"] = 15, ["max"] = 20 }
 		}
 	},
 	[44] = {
@@ -686,7 +685,7 @@ local vars = {
 		["name"] = "Savings Bank",
 		["required"] = "blackcard",
 		["itens"] = {
-			{ ["item"] = "goldbar", ["min"] = 7, ["max"] = 9 }
+			{ ["item"] = "goldbar", ["min"] = 12, ["max"] = 15 }
 		}
 	},
 	[45] = {
@@ -701,7 +700,7 @@ local vars = {
 		["name"] = "CIMED",
 		["required"] = "blackcard",
 		["itens"] = {
-			{ ["item"] = "dollars2", ["min"] = 850000, ["max"] = 950000 }
+			{ ["item"] = "dollars2", ["min"] = 1200000, ["max"] = 1500000 }
 		}
 	},
 	[46] = {
@@ -746,7 +745,7 @@ local vars = {
 		["name"] = "YellowJack",
 		["required"] = "bluecard",
 		["itens"] = {
-			{ ["item"] = "dollars2", ["min"] = 120000, ["max"] = 150000 }
+			{ ["item"] = "dollars2", ["min"] = 170000, ["max"] = 210000 }
 		}
 	},
 	[49] = {
@@ -761,7 +760,7 @@ local vars = {
 		["name"] = "Joalheria",
 		["required"] = "blackcard",
 		["itens"] = {
-			{ ["item"] = "goldbar", ["min"] = 3, ["max"] = 4 }
+			{ ["item"] = "goldbar", ["min"] = 5, ["max"] = 7 }
 		}
 	}
 }
@@ -789,7 +788,7 @@ function cRP.checkPolice(robberyId,coords)
 					TriggerClientEvent("NotifyPush",v,{ code = 31, title = "Roubo a "..vars[robberyId].name, x = coords.x, y = coords.y, z = coords.z, rgba = {0,150,90} })
 				end)
 			end
-
+			SendWebhookMessage(webhooklinkRouboalojinha,  "User_id: [" ..user_id.."] Iniciou roubo a lojinha " ..vars[robberyId].name.. " Cds" ..x..","..y..","..z.. "  .")
 			robberyProgress[vars[robberyId].type] = vars[robberyId].cooldown
 
 			return true

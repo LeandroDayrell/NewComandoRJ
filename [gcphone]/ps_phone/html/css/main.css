@@ -27,6 +27,7 @@ body {
 }
 
 .phone-time-giga {
+    display: none;
     position: absolute;
     width: 100%;
     float: left;
@@ -156,7 +157,7 @@ body {
 
 .phone-frame {
     position: absolute;
-    width: 40vh;
+    width: 30vh;
     bottom: 0;
     right: 0;
     margin: 5vh;
@@ -165,8 +166,8 @@ body {
 }
 
 .phone-container {
-    height: 78.1vh;
-    width: 36vh;
+    height: 58.1vh;
+    width: 27vh;
     bottom: 1vh;
     border-radius: 3vh;
     right: 1.7vh;
@@ -203,14 +204,15 @@ body {
 #phone-time {
     font-family: 'SFPro Display Regular';
     font-size: 1.3vh;
-    padding: 2.3vh 0 0 1.9vh;
+    padding: 1.3vh 0 0 1.9vh;
     float: left;
+    text-shadow: 0 0 2px black
 }
 
 #phone-icons {
     font-family: 'SFPro Display Regular';
     font-size: 0.95vh;
-    padding: 2.5vh 1.9vh 0 0vh;
+    padding: 1.5vh 1.9vh 0 0vh;
     float: right;
 }
 
@@ -311,14 +313,14 @@ body {
 
 .phone-application {
     position: relative;
-    height: 6.4vh;
-    width: 6.4vh;
+    height: 4.4vh;
+    width: 4.4vh;
     left: 1vh;
     float: left;
     margin-left: 1vh;
     margin-right: 1vh;
     margin-top: 1.5vh;
-    border-radius: 2vh;
+    border-radius: 1vh;
     text-align: center;
     box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.13);
     opacity: 0.9;
@@ -329,13 +331,24 @@ body {
     opacity: 1.0;
 }
 
+.phone-application .phone-application-icon {
+    width: 100%;
+    height: 100%;
+}
+
+.phone-application .phone-application-name {
+    font-size: 9px;
+    color: #fff;
+    text-shadow: 0 0 2px black
+}
+
 .phone-footer-applications {
     position: absolute;
-    width: 89%;
-    bottom: 3vh;
+    width: 91%;
+    bottom: 2.5vh;
     background: rgba(255, 255, 255, 0.5);
     margin: 10px -66px 0 15px;
-    padding-bottom: 10px;
+    padding-bottom: 7px;
     border-radius: 10px;
 }
 
@@ -352,7 +365,7 @@ body {
 .phone-home-applications {
     position: absolute;
     width: 100%;
-    bottom: 13vh;
+    top: 4vh;
 }
 
 .phone-application>i {
@@ -892,12 +905,17 @@ body {
     background-size: cover;
 }
 
+.icon-help {
+    background: url("../img/icons/help.png");
+    background-size: cover;
+}
+
 
 /*Navigation*/
 
 .phone-navigation {
     list-style: none;
-    padding: 0 65px;
+    padding: 0 50px;
     z-index: 9999999;
     position: relative;
 }
@@ -905,7 +923,7 @@ body {
 .phone-navigation li {
     display: inline-block;
     width: 15px;
-    height: 38px;
+    height: 0;
     cursor: pointer;
     opacity: 0.8;
 }

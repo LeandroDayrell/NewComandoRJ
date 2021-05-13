@@ -14,8 +14,8 @@ vCLIENT = Tunnel.getInterface("vrp_prison")
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- VARIABLES
 -----------------------------------------------------------------------------------------------------------------------------------------
-local records = "https://discordapp.com/api/webhooks/720509199016001577/ItUB6rFpnyZjYKWpOZvX798HeKaJG5A1piLHaP-NiRkqA4vhZLleyzktT6g_IGEPI3Jz"
-local fines = "https://discordapp.com/api/webhooks/720509293761134623/8QxolDcd3RNcxJ5ym6QH9tjJfxM3ivmiZlfwamxR9XpbEtytj3b8Bsco2sITphfl6NLq"
+local records = "https://discord.com/api/webhooks/842478717258825748/6smsqeZ7ikslfketdfeBeVDhC-dVbuGZiqyKOg_1ToJMTZPQW-v8wFqL4-f_u-ldDcBo"
+local fines = "https://discord.com/api/webhooks/842478621725425664/SKrM1AznzLb_C2Pss3lb4FA3jZykPZEvve3b_wpyuJ_PKE_gU7wMk6kpZ5APm_inILQu"
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- PRISON
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -23,12 +23,12 @@ RegisterCommand("prender",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
 		if vRP.hasPermission(user_id,"Police") then
-			local nuser_id = vRP.prompt(source,"Passport:","")
+			local nuser_id = vRP.prompt(source,"Passaporte:","")
 			if nuser_id == "" then
 				return
 			end
 
-			local services = vRP.prompt(source,"Services:","")
+			local services = vRP.prompt(source,"Servicos:","")
 			if services == "" then
 				return
 			end
@@ -38,7 +38,7 @@ RegisterCommand("prender",function(source,args,rawCommand)
 				return
 			end
 
-			local locate = vRP.prompt(source,"1 = Departament / 2 = Prison","")
+			local locate = vRP.prompt(source,"1 = Departament / 2 = Prisao","")
 			if (locate == "" or parseInt(locate) > 2) then
 				return
 			end
@@ -70,12 +70,12 @@ RegisterCommand("rprender",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
 		if vRP.hasPermission(user_id,"Police") then
-			local nuser_id = vRP.prompt(source,"Passport:","")
+			local nuser_id = vRP.prompt(source,"Passaport:","")
 			if nuser_id == "" then
 				return
 			end
 
-			local services = vRP.prompt(source,"Services:","")
+			local services = vRP.prompt(source,"Servicos:","")
 			if services == "" then
 				return
 			end
@@ -164,6 +164,7 @@ RegisterCommand("multar",function(source,args,rawCommand)
 				vRPclient.playSound(source,"Event_Message_Purple","GTAO_FM_Events_Soundset")
 				TriggerClientEvent("Notify",source,"importante","Multa aplicada em <b>"..identity.name.." "..identity.name2.."</b> no valor de <b>$"..vRP.format(parseInt(value)).." dólares</b>.",5000)
 				creativeLogs(fines,"```PASSPORT: "..parseInt(nuser_id).."\nNAME: "..identity.name.." "..identity.name2.."\nVALUE: $"..vRP.format(parseInt(value)).."\nCRIMES: "..reason.."\nBY: "..identity2.name.." "..identity2.name2.."```")
+				
 			end
 		end
 	end

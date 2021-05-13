@@ -31,7 +31,7 @@ function cRP.paymentCheckin()
 			return true
 		end
 
-		local value = 1000
+		local value = 300
 		if GetEntityHealth(GetPlayerPed(source)) <= 101 then
 			value = value + 3000
 		end

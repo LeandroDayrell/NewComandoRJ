@@ -17,6 +17,9 @@ local startRobbery = false
 local robberyTimer = 0
 local robberyId = 0
 local vars = {}
+
+
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADINIT
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -40,6 +43,7 @@ Citizen.CreateThread(function()
 								robberyId = k
 								startRobbery = true
 								robberyTimer = v.time
+								--SendWebhookMessage(webhooklinkRouboalojinha,  "User_id: [" ..user_id.."] Iniciou roubo a lojinha " ..robberyId.. " .")
 							end
 						end
 					else

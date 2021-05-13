@@ -11,6 +11,7 @@ var PressedBackground = null;
 var PressedBackgroundObject = null;
 var OldBackground = null;
 var IsChecked = null;
+var PercentZoom = 100;
 
 $(document).on('click', '.settings-app-tab', function(e) {
     e.preventDefault();
@@ -43,6 +44,16 @@ $(document).on('click', '.settings-app-tab', function(e) {
         } else {
             $("#noturnmode > p").html('Ativado');
             $("body").addClass("noturnmode");
+        }
+    } else if (PressedTab == "zoom") {
+        if (PercentZoom != 120) {
+            PercentZoom += 5
+            $("body").css("zoom", `${PercentZoom}%`)
+            $(".zoom-porcent").text(PercentZoom + "%")
+        } else {
+            PercentZoom = 70
+            $("body").css("zoom", `${PercentZoom}%`)
+            $(".zoom-porcent").text(PercentZoom + "%")
         }
     }
 });

@@ -9,12 +9,92 @@ Config.Webhook       = "https://discord.com/api/webhooks/831322802400788530/mlew
 Config.Field         = "files[]"
 Config.VerifyItem    = true
 Config.ItemPhone     = "cellphone"
-Config.CallSystem    = "tokovoip" --tokovoip | mumblevoip | saltychat
-Config.UseInvoices   = false --true | false
+Config.CallSystem    = "tokovoip" --tokovoip | mumblevoip | saltychat | pmavoice
+Config.UseInvoices   = true --true | false
 Config.CheckLife     = 101
 Config.IPAddress     = "http://131.196.198.113/"
-Config.Permission    = "Admin" -- Grupo de Permisssão para adicionar verificado
+Config.Permission    = "FundadorOwner" -- Grupo de Permisssão para adicionar verificado
 Config.NotifyAll     = true -- Ativar notificaçõpes globais no servidor
+Config.ButtonDisable = { --https://docs.fivem.net/docs/game-references/controls/
+    0,
+    1,
+    2,
+    22,
+    24, 
+    26, 
+    36, 
+    37, 
+    60, 
+    62, 
+    106,
+    114,
+    121,
+    140,
+    141,
+    142,
+    199,
+    245,
+    257,
+    263,
+    264,
+    309,
+    331,
+}
+
+Config.HelpList = {
+    ['policia'] = {
+        name        = "Emergência",
+        description = "PMERJ",
+        text        = "Chame uma Unidade movél",
+        message     = "Descreva a situação:",
+        emergency   = true,
+        staff       = false,
+        image       = "https://cdn.discordapp.com/attachments/705812876396331609/842075473194516520/unknown.png",
+        style       = "top: 30px;",
+        groups      = {
+            "Police"
+        }
+    },
+    ['ems'] = {
+        name        = "Emergência",
+        description = "Chame uma unidade móvel",
+        text        = "Chame uma Unidade movél",
+        message     = "Descreva a situação:",
+        emergency   = true,
+        staff       = false,
+        image       = "https://gtapolicemods.com/uploads/monthly_2020_11/Rambulance.png.d24e5be1cafdffe6786dd1f8dcd64678.png",
+        style       = "top: 370px;",
+        groups      = {
+            "Paramedic"
+        }
+    },
+    ['mecanico'] = {
+        name        = "Los Santos Customs",
+        description = "Chame um Mecânico(a)",
+        text        = "Chame um profissional mais próximo",
+        message     = "Descreva seu problema:",
+        emergency   = true,
+        staff       = false,
+        image       = "https://cdn.discordapp.com/attachments/705812876396331609/842076531429867540/unknown.png",
+        style       = "top: 730px;",
+        groups      = {
+            "LosSantos"
+        }
+    },
+    ['staff'] = {
+        name        = "FALAR COM A",
+        description = "Prefeitura",
+        text        = "Chame alguem da prefeitura",
+        message     = "Descreva a situação:",
+        emergency   = true,
+        staff       = true,
+        image       = "https://cdn.discordapp.com/attachments/705812876396331609/842077631683231794/unknown.png",
+        style       = "top: 1000px;",
+        groups      = {
+            "chamado"
+        }
+    }
+}
 
 Config.checkItemPhone = function(user_id, item)
     if vRP.getInventoryItemAmount(user_id, item) >= 1 then
@@ -26,7 +106,7 @@ Config.checkItemPhone = function(user_id, item)
 end
 
 Config.getBankUser = function(user_id)
-    return vRP.getBank(user_id)
+    return vRP.getBankMoney(user_id)
 end
 
 Config.paymentBank = function(source, user_id, nsource, nuser_id, amount)
@@ -34,15 +114,16 @@ Config.paymentBank = function(source, user_id, nsource, nuser_id, amount)
 
         if parseInt(amount) > 0 then
 
-            local bank = vRP.getBank(user_id)
+            local bank = vRP.getBankMoney(user_id)
+            local bank_sender = vRP.getBankMoney(nuser_id)
 
             if bank >= parseInt(amount) then
 
                 --remove bank
-                vRP.paymentBank(user_id, parseInt(amount))
+                vRP.setBankMoney(user_id, parseInt(bank - amount))
         
                 --add bank
-                vRP.addBank(nuser_id, parseInt(amount))
+                vRP.setBankMoney(nuser_id, parseInt(bank_sender + amount))
 
                 TriggerClientEvent("Notify",source,"sucesso","Enviou <b>$"..vRP.format(parseInt(amount)).." dólares</b> ao passaporte <b>"..parseInt(nuser_id).."</b>.",8000)
 
@@ -62,6 +143,43 @@ Config.paymentBank = function(source, user_id, nsource, nuser_id, amount)
         end
     end
     return false
+end
+
+Config.AddRecentCall = function(source, identity, anonymous, label, type)
+    if source and identity and label and type then
+        TriggerClientEvent('ps_phone:AddRecentCall', source, {
+            name = identity.name .. " " ..identity.name2,
+            number = identity.phone,
+            anonymous = anonymous
+        }, label, type)
+    end
+    return false
+end
+
+Config.HelpAccept = function(answered, source, player, user_id, nuser_id, identityrequest, adm, message)
+    TriggerClientEvent('chatMessage',player,"CHAMADO",{19,197,43},adm.."Enviado por ^1"..identityrequest.name.." "..identityrequest.name2.."^0 ["..user_id.."], "..message)
+    local ok = vRP.request(player,"Aceitar o chamado de <b>"..identityrequest.name.." "..identityrequest.name2.."</b>?",30)
+    if ok then
+        if not answered then
+            --local source = source
+           -- local user_id = vRP.getUserId(source) 
+            local identityuser = vRP.getUserIdentity(nuser_id)
+            local x,y,z = vRPclient.getPositions(source)
+            TriggerClientEvent("Notify",source,"importante","Chamado atendido por <b>"..identityuser.name.." "..identityuser.name2.."</b>, aguarde no local.")
+            vRPclient.playSound(source,"Event_Message_Purple","GTAO_FM_Events_Soundset")
+           -- vRPclient._setGPS(player,x,y)
+            print(player)
+            print(x)
+            print(y)
+            TriggerClientEvent("NotifyPush",player,{ code = 1, title = "Chamado", x = x, y = y, z = z, name = identityrequest.name.." "..identityrequest.name2, rgba = {124,124,124} })
+            
+            return true
+        else
+            TriggerClientEvent("Notify",player,"importante","Chamado ja foi atendido por outra pessoa.")
+            vRPclient.playSound(player,"CHECKPOINT_MISSED","HUD_MINI_GAME_SOUNDSET")
+            return false
+        end
+    end
 end
 
 return Config

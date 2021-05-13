@@ -3,12 +3,13 @@ games { 'gta5' }
 
 author 'Pequi Shop'
 description 'Script for phone'
-version '1.0.12'
+version '1.0.15'
 
 ui_page "html/index.html"
 
 client_scripts {
 	"@vrp/lib/utils.lua",
+    '@cs-video-call/client/hooks/core.lua',
     'client/main.lua',
     'client/animation.lua',
     'client/photo.lua',	
@@ -18,6 +19,7 @@ client_scripts {
 server_scripts {
 	"@vrp/lib/utils.lua",
 	"@mysql-async/lib/MySQL.lua",
+    '@cs-video-call/server/hooks/core.lua',
     'server/main.lua',
 }
 
