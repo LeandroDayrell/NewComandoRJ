@@ -325,7 +325,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(120*60000)
+		Citizen.Wait(120*30000)
 		mineradorMakeList(true)
 		Citizen.Wait(1000)
 		TriggerClientEvent("vrp_minerador:insertBlips",-1,saveList)
@@ -363,15 +363,15 @@ function cRP.paymentMethod(MineradorId)
 		--- ADICIONAR AQUI A ANIMACAO 
 		local random = math.random(100)
 		if parseInt(random) >= 81 then
-			vRP.giveInventoryItem(user_id,"pepitadeprata",math.random(5),true)
+			vRP.giveInventoryItem(user_id,"pepitadeprata",math.random(7),true)
 		elseif parseInt(random) >= 61 and parseInt(random) <= 80 then
-			vRP.giveInventoryItem(user_id,"pepitadeouro",math.random(5),true)
+			vRP.giveInventoryItem(user_id,"pepitadeouro",math.random(7),true)
 		elseif parseInt(random) >= 41 and parseInt(random) <= 60 then
-			vRP.giveInventoryItem(user_id,"copper",math.random(4),true)
+			vRP.giveInventoryItem(user_id,"copper",math.random(8),true)
 		elseif parseInt(random) >= 26 and parseInt(random) <= 40 then
-			vRP.giveInventoryItem(user_id,"aluminum",math.random(5),true)
+			vRP.giveInventoryItem(user_id,"aluminum",math.random(9),true)
 		elseif parseInt(random) >= 10 and parseInt(random) <= 25 then
-			vRP.giveInventoryItem(user_id,"pepitadebronze",math.random(5),true)
+			vRP.giveInventoryItem(user_id,"pepitadebronze",math.random(9),true) 
 		end
 
 		vRP.upgradeStress(user_id,1)

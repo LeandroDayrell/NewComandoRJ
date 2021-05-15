@@ -499,7 +499,7 @@ config.locais = {
 } ]]
 
 
--- config.repair_price = 0 -- preço para reparar veículo
+--config.repair_price = 0 -- preço para reparar veículo
 
 config.permissao = 	"LosSantos"
 
@@ -548,7 +548,7 @@ config.getModPrice = function(modType, vehicle)
 	local hash = GetEntityModel(vehicle)
 	local vehPrice = nation.getVehiclePrice(hash)
 	if vehPrice and price.startprice then
-		local startprice = price.startprice + vehPrice * 0.001 -- 5% do valor do veiculo
+		local startprice = price.startprice --(tirar parentes e o comentario para funcionar no primeiro nivel) + vehPrice * 0.001 -- 5% do valor do veiculo
 		local increaseby = (price.increaseby or 0) + vehPrice * 0.001
 		price = { startprice = startprice, increaseby = increaseby }
 	end

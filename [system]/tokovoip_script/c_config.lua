@@ -18,7 +18,7 @@ TokoVoipConfig = {
 	radioClickMaxChannel = 10000, -- Set the max amount of radio channels that will have local radio clicks enabled
 	radioAnim = true, -- Enable or disable the radio animation
 	radioEnabled = true, -- Enable or disable using the radio
-	wsServer = "131.196.198.113:33250", -- Address of the websocket server
+	wsServer = "131.196.198.113:30169", -- Address of the websocket server
 
 	plugin_data = {
 		-- TeamSpeak channel name used by the voip
