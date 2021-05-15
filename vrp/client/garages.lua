@@ -821,21 +821,75 @@ local vehList = {
 	[-1728685474] = { "coquette4",false },
 	[1106910537] = { "fordmustanggt",false }
 }
------------------------------------------------------------------------------------------------------------------------------------------
--- VEHLIST
------------------------------------------------------------------------------------------------------------------------------------------
-function tvRP.vehList(radius)
-	local veh = nil
-	local ped = PlayerPedId()
-	if IsPedInAnyVehicle(ped) then
-		veh = GetVehiclePedIsUsing(ped)
-	else
-		veh = tvRP.getNearVehicle(radius)
-	end
 
+
+local Proxy = module("vrp","lib/Proxy")
+local garage = Proxy.getInterface("nation_garages")
+
+function tvRP.ModelName(radius)
+	local veh = tvRP.getNearVehicle(radius)
+	if IsEntityAVehicle(veh) then
+		local lock = GetVehicleDoorLockStatus(veh) >= 2
+		local x,y,z = table.unpack(GetEntityCoords(PlayerPedId()))
+		local model = GetEntityModel(veh)
+		local vehInfo = garage.getVehicleInfo(model)
+		if vehInfo then
+			local name = vehInfo.name
+			local price = vehInfo.price
+			local banido = vehInfo.banido
+			return GetVehicleNumberPlateText(veh),name,VehToNet(veh),parseInt(price),banido,lock,GetDisplayNameFromVehicleModel(name),GetStreetNameFromHashKey(GetStreetNameAtCoord(x,y,z))
+		end
+	end
+end
+
+function tvRP.ModelName2()
+	local veh = GetVehiclePedIsUsing(PlayerPedId())
 	if IsEntityAVehicle(veh) then
 		local model = GetEntityModel(veh)
-		return veh,VehToNet(veh),GetVehicleNumberPlateText(veh),vehList[model][1],GetVehicleDoorsLockedForPlayer(veh,PlayerId()),vehList[model][2],GetVehicleBodyHealth(veh),model,GetVehicleClass(veh)
+		local vehInfo = garage.getVehicleInfo(model)
+		if vehInfo then
+			local name = vehInfo.name
+			local price = vehInfo.price
+			local banido = vehInfo.banido
+			return GetVehicleNumberPlateText(veh),name,parseInt(price),banido,VehToNet(veh),veh
+		end
+	end
+end
+
+function tvRP.vehListHash()
+	local ped = PlayerPedId()
+	local veh = GetVehiclePedIsUsing(ped)
+	if not IsPedInAnyVehicle(ped) then
+		veh = GetPlayersLastVehicle()
+	end
+	if IsEntityAVehicle(veh) then
+		local model = GetEntityModel(veh)
+		local vehInfo = garage.getVehicleInfo(model)
+		if vehInfo then
+			local hash = vehInfo.hash 
+			local name = vehInfo.name
+			return veh,hash,GetVehicleNumberPlateText(veh),name
+		end
+	end
+end
+
+function tvRP.vehList(radius)
+	local ped = PlayerPedId()
+	local veh = GetVehiclePedIsUsing(ped)
+	if not IsPedInAnyVehicle(ped) then
+		veh = tvRP.getNearVehicle(radius)
+	end
+	if IsEntityAVehicle(veh) then
+		local lock = GetVehicleDoorLockStatus(veh) >= 2--GetVehicleDoorsLockedForPlayer(veh,PlayerId())
+		local trunk = GetVehicleDoorAngleRatio(v,5)
+		local x,y,z = table.unpack(GetEntityCoords(ped))
+		local model = GetEntityModel(veh)
+		local vehInfo = garage.getVehicleInfo(model)
+		if vehInfo then
+			local name = vehInfo.name
+			local banned = vehInfo.banido
+			return veh,VehToNet(veh),GetVehicleNumberPlateText(veh),name,lock,banned,GetVehicleBodyHealth(veh),model,GetVehicleClass(veh)
+		end
 	end
 end
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -848,7 +902,18 @@ function tvRP.vehiclePlate()
 		return GetVehicleNumberPlateText(veh)
 	end
 end
-
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- MODELNAME
+-----------------------------------------------------------------------------------------------------------------------------------------
+function tvRP.getModelName(veh)
+	if IsEntityAVehicle(veh) then
+		local model = GetEntityModel(veh)
+		local vehInfo = garage.getVehicleInfo(model)
+		if vehInfo then
+			return vehInfo.name
+		end
+	end
+end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- NAO SEI
 -----------------------------------------------------------------------------------------------------------------------------------------

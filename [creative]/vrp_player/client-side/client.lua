@@ -947,7 +947,7 @@ AddEventHandler("vrp_player:EnterTrunk",function()
 				local distance = #(coords - coordsEnt)
 				if distance <= 3.0 then
 					timeDistance = 4
-					if GetVehicleDoorAngleRatio(vehicle,5) < 0.9 and GetVehicleDoorsLockedForPlayer(vehicle,PlayerId()) ~= 1 then
+					if GetVehicleDoorAngleRatio(vehicle,5) < 0.9 and GetVehicleDoorLockStatus(vehicle) < 2 then
 						SetCarBootOpen(vehicle)
 						SetEntityVisible(ped,false,false)
 						Citizen.Wait(750)

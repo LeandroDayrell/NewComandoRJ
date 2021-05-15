@@ -40,9 +40,9 @@ AddEventHandler("__cfx_internal:commandFallback",function(command)
 		return
 	end
 
-	if not WasEventCanceled() then
+	--[[ if not WasEventCanceled() then
 		TriggerClientEvent("Notify",source,"importante","Comando não encontrado.",5000)
-	end
+	end ]]
 	CancelEvent()
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------

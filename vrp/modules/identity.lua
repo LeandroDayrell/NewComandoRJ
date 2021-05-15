@@ -12,6 +12,8 @@ function vRP.getUserRegistration(user_id)
 	local rows = vRP.getInformation(user_id)
 	return rows[1].registration
 end
+
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- GETUSERGEMS
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -33,6 +35,10 @@ function vRP.getUserIdRegistration(registration)
 		return rows[1].id
 	end
 end
+
+function vRP.getUserByRegistration(registration)
+	return vRP.getUserIdRegistration(registration)
+end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- GETVEHICLEPLATE
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -40,6 +46,8 @@ function vRP.getVehiclePlate(plate)
 	local rows = vRP.query("vRP/get_vehicle_plate",{ plate = plate })
 	if rows[1] then
 		return rows[1].user_id
+	else 
+		return vRP.getUserIdRegistration(plate)
 	end
 end
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -119,3 +127,11 @@ function vRP.generatePhoneNumber()
 
 	return phone
 end
+
+
+AddEventHandler("vRP:playerSpawn",function(user_id, source, first_spawn)
+	local identity = vRP.getUserIdentity(user_id)
+	if identity then
+		vRPclient._setRegistrationNumber(source,identity.registration or "AA000AAA")
+	end
+end)

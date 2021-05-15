@@ -8,8 +8,8 @@ vRPclient = Tunnel.getInterface("vRP")
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CONNECTION
 -----------------------------------------------------------------------------------------------------------------------------------------
-cnVRP = {}
-Tunnel.bindInterface("vrp_trunkchest",cnVRP)
+cRP = {}
+Tunnel.bindInterface("vrp_trunkchest",cRP)
 vCLIENT = Tunnel.getInterface("vrp_trunkchest")
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- VARIABLES
@@ -18,20 +18,10 @@ local vehChest = {}
 local vehNames = {}
 local vehWeight = {}
 local chestOpen = {}
-
-
-local webhooklinkBAU = "https://discord.com/api/webhooks/833835000650137620/7_5QVpyFoL2NZeaF5VGraYc7qAF3giAV5xWG_6laAwpe27Y9SCQwTFDBdh8fRgQ_K1aq"
-
-function SendWebhookMessage(webhook,message)
-	if webhook ~= nil and webhook ~= "" then
-		PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' })
-	end
-end
-
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- MOCHILA
 -----------------------------------------------------------------------------------------------------------------------------------------
-function cnVRP.Mochila()
+function cRP.Mochila()
 	local source = source
 	local user_id = vRP.getUserId(source)
 	local identity = vRP.getUserIdentity(user_id)
@@ -80,7 +70,7 @@ function cnVRP.Mochila()
 					myinventory[k] = v
 				end
 
-				return myinventory,myvehicle,vRP.computeInvWeight(user_id),vRP.getBackpack(user_id),vRP.computeChestWeight(sdata),parseInt(vehWeight[user_id]),{ identity.name.." "..identity.name2,parseInt(user_id),parseInt(identity.bank),parseInt(vRP.getGmsId(user_id)),identity.phone,identity.registration }
+				return myinventory,myvehicle,vRP.computeInvWeight(user_id),vRP.getBackpack(user_id),vRP.computeChestWeight(sdata),parseInt(vehWeight[user_id]),{ identity.name.." "..identity.name2,parseInt(user_id),parseInt(identity.bank),parseInt(vRP.getUserGems(user_id)),identity.phone,identity.registration }
 			end
 		end
 	end
@@ -127,15 +117,6 @@ local storeVehs = {
 	},
 	["stockade"] = {
 		["pouch"] = true
-	},
-	["dinghy"] = {
-		["bait"] = true
-	},
-	["marquis"] = {
-		["bait"] = true
-	},
-	["seashark"] = {
-		["bait"] = true
 	},
 	["trash"] = {
 		["plastic"] = true,
@@ -209,11 +190,10 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- STOREITEM
 -----------------------------------------------------------------------------------------------------------------------------------------
-function cnVRP.storeItem(itemName,slot,amount)
+function cRP.storeItem(itemName,slot,amount)
 	if itemName then
 		local source = source
 		local user_id = vRP.getUserId(source)
-		local vehicle,vehNet,vehPlate,vehName = vRPclient.vehList(source,7)
 		if user_id then
 			if storeVehs[vehNames[parseInt(user_id)]] then
 				if not storeVehs[vehNames[parseInt(user_id)]][itemName] then
@@ -228,7 +208,6 @@ function cnVRP.storeItem(itemName,slot,amount)
 			end
 
 			if vRP.storeChestItem(user_id,vehChest[parseInt(user_id)],itemName,amount,parseInt(vehWeight[user_id]),slot) then
-				SendWebhookMessage(webhooklinkBAU,  "UserID: [" ..user_id.."]  Colocou: " ..itemName.. "    Qnt:"..amount.. "    Placa: " ..vehPlate.. " .")
 				TriggerClientEvent("vrp_trunkchest:Update",source,"updateMochila")
 			end
 		end
@@ -237,14 +216,12 @@ end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- TAKEITEM
 -----------------------------------------------------------------------------------------------------------------------------------------
-function cnVRP.takeItem(itemName,slot,amount)
+function cRP.takeItem(itemName,slot,amount)
 	if itemName then
 		local source = source
 		local user_id = vRP.getUserId(source)
-		local vehicle,vehNet,vehPlate,vehName = vRPclient.vehList(source,7)
 		if user_id then
 			if vRP.tryChestItem(user_id,vehChest[parseInt(user_id)],itemName,amount,slot) then
-				SendWebhookMessage(webhooklinkBAU,  "UserID: [" ..user_id.."]  Pegou: " ..itemName.. "    Qnt:"..amount.. "    Placa: " ..vehPlate.. " .")
 				TriggerClientEvent("vrp_trunkchest:Update",source,"updateMochila")
 			end
 		end
@@ -253,7 +230,7 @@ end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CHESTCLOSE
 -----------------------------------------------------------------------------------------------------------------------------------------
-function cnVRP.chestClose()
+function cRP.chestClose()
 	local source = source
 	local user_id = vRP.getUserId(source)
 	if user_id then

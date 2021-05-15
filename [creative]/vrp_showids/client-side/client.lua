@@ -6,13 +6,7 @@ local Proxy = module("vrp","lib/Proxy")
 vRP = Proxy.getInterface("vRP")
 
 
-local webhooklinkWl = "https://discord.com/api/webhooks/842214985785671680/wl-RgMmHbdArf5GxJ_XverSnXeO_VkHjR76qCLe892tFeJoz-82fQb-GfykFAn6DKUWh"
 
-function SendWebhookMessage(webhook,message)
-	if webhook ~= nil and webhook ~= "" then
-		PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' })
-	end
-end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- TREADBLIPS
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -22,7 +16,7 @@ Citizen.CreateThread(function()
 		local timeDistance = 100
 		if IsControlPressed(1,168) then
 			local players = vRP.nearestPlayersBlips()
-			SendWebhookMessage(webhooklinkWl,  "UserID: [" ..ped.."] Utilizou F7 . ")
+			--SendWebhookMessage(webhooklinkWl,  "UserID: [" ..ped.."] Utilizou F7 . ")
 			for k,v in pairs(players) do
 				timeDistance = 4
 				dwText(v[2],v[3],v[4]+1.05,v[1])

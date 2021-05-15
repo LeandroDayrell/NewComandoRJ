@@ -788,7 +788,7 @@ function cRP.checkPolice(robberyId,coords)
 					TriggerClientEvent("NotifyPush",v,{ code = 31, title = "Roubo a "..vars[robberyId].name, x = coords.x, y = coords.y, z = coords.z, rgba = {0,150,90} })
 				end)
 			end
-			SendWebhookMessage(webhooklinkRouboalojinha,  "User_id: [" ..user_id.."] Iniciou roubo a lojinha " ..vars[robberyId].name.. " Cds" ..x..","..y..","..z.. "  .")
+			SendWebhookMessage(webhooklinkRouboalojinha,  "User_id: [" ..user_id.."] Iniciou roubo a lojinha " ..vars[robberyId].name..  " .")
 			robberyProgress[vars[robberyId].type] = vars[robberyId].cooldown
 
 			return true

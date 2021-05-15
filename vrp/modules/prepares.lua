@@ -84,6 +84,7 @@ vRP.prepare("vRP/move_vehicle","UPDATE vrp_vehicles SET user_id = @nuser_id WHER
 vRP.prepare("vRP/add_vehicle","INSERT IGNORE INTO vrp_vehicles(user_id,vehicle,plate,work) VALUES(@user_id,@vehicle,@plate,@work)")
 vRP.prepare("vRP/con_maxvehs","SELECT COUNT(vehicle) as qtd FROM vrp_vehicles WHERE user_id = @user_id AND work = 'false'")
 vRP.prepare("vRP/rem_srv_data","DELETE FROM vrp_srv_data WHERE dkey = @dkey")
+vRP.prepare("vRP/get_garages","SELECT garage FROM vrp_users WHERE id = @user_id")
 vRP.prepare("vRP/update_garages","UPDATE vrp_users SET garage = garage + 1 WHERE id = @id")
 vRP.prepare("vRP/update_plate_vehicle","UPDATE vrp_vehicles SET plate = @plate WHERE user_id = @user_id AND vehicle = @vehicle")
 vRP.prepare('vRP/SetPlayerTuningVehicle', 'UPDATE vrp_vehicles SET tuning = @tuning WHERE plate = @plate')

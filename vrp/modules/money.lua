@@ -31,6 +31,19 @@ function vRP.getBank(user_id)
 		return consult[1].bank
 	end
 end
+
+
+function vRP.getBankMoney(user_id)
+	return vRP.getBank(user_id)
+end
+
+function vRP.getMoney(user_id)
+	return vRP.getInventoryItemAmount(user_id,"dollars")
+end
+
+function vRP.giveMoney(user_id,amount)
+	vRP.giveInventoryItem(user_id,"dollars",amount,true)
+end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- PAYMENTBANK
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -50,6 +63,14 @@ function vRP.paymentBank(user_id,amount)
 		end
 	end
 	return false
+end
+
+function vRP.tryPayment(user_id,amount)
+	return vRP.tryGetInventoryItem(user_id,"dollars", amount)
+end
+
+function vRP.tryFullPayment(user_id, amount)
+	return vRP.paymentBank(user_id,amount)
 end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- WITHDRAWCASH

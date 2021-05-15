@@ -25,7 +25,7 @@ local animDict = "anim@amb@clubhouse@tutorial@bkr_tut_ig3@"
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- SPAWN
 -----------------------------------------------------------------------------------------------------------------------------------------
-local spawn = {
+--[[ local spawn = {
 	[1] = { 55.43,-876.19,30.66,"Garage",
 		["1"] = { 50.66,-873.02,30.45,159.65 },
 		["2"] = { 47.34,-871.81,30.45,159.65 },
@@ -984,7 +984,7 @@ local spawn = {
 	[758] = { 1346.93,-1760.9,60.49,"Middle258",
 		["1"] = { 1351.27,-1773.04,60.22,100.05 }
 	},
-}
+} ]]
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- VEHELETRIC
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -1210,9 +1210,8 @@ function cnVRP.spawnVehicle(vehname,plate,vehengine,vehbody,vehfuel,custom,vehWi
 				else
 					SetVehicleFuelLevel(nveh,vehfuel+0.0)
 				end
-				TriggerEvent("nation:applymods",nveh,vehname)
-
-				--cnVRP.vehicleMods(nveh,custom)
+				--TriggerEvent("nation:applymods",nveh,vehname) SE FOR COLOCAR O NATION
+				cnVRP.vehicleMods(nveh,custom)
 
 				vehicle[vehname] = true
 
@@ -1329,12 +1328,22 @@ end)
 RegisterNetEvent("vrp_garages:vehicleClientLock")
 AddEventHandler("vrp_garages:vehicleClientLock",function(index,lock)
 	if NetworkDoesNetworkIdExist(index) then
-		local v = NetToEnt(index)
+		local v = NetToVeh(index)
 		if DoesEntityExist(v) then
-			if lock == 1 then
-				SetVehicleDoorsLockedForAllPlayers(v,false)
-			else
-				SetVehicleDoorsLockedForAllPlayers(v,true)
+			if IsEntityAVehicle(v) then
+				local locked = GetVehicleDoorLockStatus(v)
+				if locked == 1 then
+					SetVehicleDoorsLocked(v,2)
+				else
+					SetVehicleDoorsLocked(v,1)
+				end
+				SetVehicleLights(v,2)
+				Wait(200)
+				SetVehicleLights(v,0)
+				Wait(200)
+				SetVehicleLights(v,2)
+				Wait(200)
+				SetVehicleLights(v,0)
 			end
 		end
 	end
@@ -1342,7 +1351,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- BUTTONS
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+--[[ Citizen.CreateThread(function()
 	SetNuiFocus(false,false)
 
 	while true do
@@ -1367,7 +1376,7 @@ Citizen.CreateThread(function()
 
 		Citizen.Wait(timeDistance)
 	end
-end)
+end) ]]
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- COOLDOWN
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -1382,7 +1391,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- BUTTONLOCK
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+--[[ Citizen.CreateThread(function()
 	while true do
 		local timeDistance = 500
 		if cooldown <= 0 then
@@ -1395,7 +1404,7 @@ Citizen.CreateThread(function()
 
 		Citizen.Wait(timeDistance)
 	end
-end)
+end) ]]
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- SYNCTRYDOORS
 -----------------------------------------------------------------------------------------------------------------------------------------

@@ -185,23 +185,23 @@ end)
 RegisterNetEvent("vrp_inventory:lockpickVehicle")
 AddEventHandler("vrp_inventory:lockpickVehicle",function(index)
 	if NetworkDoesNetworkIdExist(index) then
-		local v = NetToEnt(index)
+		local v = NetToVeh(index)
 		if DoesEntityExist(v) then
-			SetEntityAsMissionEntity(v,true,true)
-			if GetVehicleDoorsLockedForPlayer(v,PlayerId()) == 1 then
-				SetVehicleDoorsLocked(v,false)
-				SetVehicleDoorsLockedForAllPlayers(v,false)
-			else
-				SetVehicleDoorsLocked(v,true)
-				SetVehicleDoorsLockedForAllPlayers(v,true)
+			if IsEntityAVehicle(v) then
+				local locked = GetVehicleDoorLockStatus(v)
+				if locked == 1 then
+					SetVehicleDoorsLocked(v,2)
+				else
+					SetVehicleDoorsLocked(v,1)
+				end
+				SetVehicleLights(v,2)
+				Wait(200)
+				SetVehicleLights(v,0)
+				Wait(200)
+				SetVehicleLights(v,2)
+				Wait(200)
+				SetVehicleLights(v,0)
 			end
-			SetVehicleLights(v,2)
-			Wait(200)
-			SetVehicleLights(v,0)
-			Wait(200)
-			SetVehicleLights(v,2)
-			Wait(200)
-			SetVehicleLights(v,0)
 		end
 	end
 end)

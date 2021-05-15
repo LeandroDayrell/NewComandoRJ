@@ -31,6 +31,7 @@ client_scripts {
 	"client/gui.lua",
 	"client/player_state.lua",
 	"client/map.lua",
+	"client/identity.lua",
 	"client/police.lua"
 }
 

@@ -7,8 +7,8 @@ vRP = Proxy.getInterface("vRP")
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CONNECTION
 -----------------------------------------------------------------------------------------------------------------------------------------
-cnVRP = {}
-Tunnel.bindInterface("vrp_trunkchest",cnVRP)
+cRP = {}
+Tunnel.bindInterface("vrp_trunkchest",cRP)
 vSERVER = Tunnel.getInterface("vrp_trunkchest")
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- STARTFOCUS
@@ -22,15 +22,13 @@ end)
 RegisterNUICallback("invClose",function(data,cb)
 	vSERVER.chestClose()
 	SetNuiFocus(false,false)
-	TransitionFromBlurred(1000)
   SendNUIMessage({ action = "hideMenu" })
   cb("ok")
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- TRUNK
 -----------------------------------------------------------------------------------------------------------------------------------------
-function cnVRP.trunkOpen()
-	TransitionToBlurred(1000)
+function cRP.trunkOpen()
 	SetNuiFocus(true,true)
 	SendNUIMessage({ action = "showMenu" })
 end

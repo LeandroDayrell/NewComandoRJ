@@ -618,7 +618,7 @@ function cnVRP.spawnVehicles(name,use) --
 			if parseInt(vehicle[1].desmanche) >= 1 then
 				local status = vRP.request(source,"Veículo foi DESMANCHADO, deseja acionar o seguro pagando <b>$"..vRP.format(parseInt(vRP.vehiclePrice(name)*0.1)).."</b> dólares?",60)
 				if status then
-					if vRP.paymentBank(user_id,parseInt(vRP.vehiclePrice(name)*0.04)) then
+					if vRP.paymentBank(user_id,parseInt(vRP.vehiclePrice(name)*0.02)) then
 						vRP.execute("vRP/set_desmanche",{ user_id = parseInt(user_id), vehicle = name, desmanche = 0, time = 0 })
 					else
 						TriggerClientEvent("Notify",source,"negado","Dinheiro insuficiente.",5000)
@@ -628,7 +628,7 @@ function cnVRP.spawnVehicles(name,use) --
 			elseif parseInt(os.time()) <= parseInt(vehicle[1].time+24*60*60) then
 					local status = vRP.request(source,"Veículo detido, deseja acionar o seguro pagando <b>$"..vRP.format(parseInt(vRP.vehiclePrice(name)*0.04)).."</b> dólares?",60)
 					if status then
-						if vRP.paymentBank(user_id,parseInt(vRP.vehiclePrice(name)*0.04)) then
+						if vRP.paymentBank(user_id,parseInt(vRP.vehiclePrice(name)*0.02)) then
 							vRP.execute("vRP/set_arrest",{ user_id = parseInt(user_id), vehicle = name, arrest = 0, time = 0 })
 						else
 							TriggerClientEvent("Notify",source,"negado","Dinheiro insuficiente.",5000)
@@ -637,7 +637,7 @@ function cnVRP.spawnVehicles(name,use) --
 			elseif parseInt(vehicle[1].arrest) >= 1 then
 				local status = vRP.request(source,"Veículo detido, deseja acionar o seguro pagando <b>$"..vRP.format(parseInt(vRP.vehiclePrice(name)*0.04)).."</b> dólares?",60)
 				if status then
-					if vRP.paymentBank(user_id,parseInt(vRP.vehiclePrice(name)*0.04)) then
+					if vRP.paymentBank(user_id,parseInt(vRP.vehiclePrice(name)*0.02)) then
 						vRP.execute("vRP/set_arrest",{ user_id = parseInt(user_id), vehicle = name, arrest = 0, time = 0 })
 					else
 						TriggerClientEvent("Notify",source,"negado","Dinheiro insuficiente.",5000)
@@ -710,7 +710,7 @@ end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- DV
 -----------------------------------------------------------------------------------------------------------------------------------------
-RegisterCommand("dv",function(source,args,rawCommand)
+--[[ RegisterCommand("dv",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if vRP.hasPermission(user_id,"modder21") then
 		local vehicle = vRPclient.getNearVehicle(source,15)
@@ -718,7 +718,7 @@ RegisterCommand("dv",function(source,args,rawCommand)
 			vCLIENT.deleteVehicle(source,vehicle)
 		end
 	end
-end)
+end) ]]
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- FGARAGE
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -866,7 +866,7 @@ RegisterCommand("car",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
  	if user_id then
 		if vRP.hasPermission(user_id,"adms58") and args[1] then
-      		local plate = "55DTA141"
+      		local plate = vRP.getUserRegistration(user_id)
 			TriggerClientEvent("adminVehicle",source,args[1],plate)
       		TriggerEvent("setPlateEveryone",plate)
 			TriggerEvent("setPlatePlayers",plate,user_id)
@@ -876,7 +876,11 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- VEHS
 -----------------------------------------------------------------------------------------------------------------------------------------
---[[ RegisterCommand("vehs",function(source,args,rawCommand)
+
+
+local nation = Proxy.getInterface("nation_garages")
+
+RegisterCommand("vehs",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
 		if args[1] == "transfer" and parseInt(args[3]) > 0 then
@@ -896,6 +900,13 @@ end)
 					end
 				end
 
+				local tipo = nation.getVehicleType(args[2])
+
+				if tipo and tipo == "exclusive" then
+					TriggerClientEvent("Notify",source,"negado","Veículo vip.",5000)
+					return
+				end
+
 				local identity = vRP.getUserIdentity(parseInt(args[3]))
 				if vRP.request(source,"Deseja transferir o veículo <b>"..vRP.vehicleName(tostring(args[2])).."</b> para <b>"..identity.name.."</b>?",30) then
 					local vehicle = vRP.query("vRP/get_vehicles",{ user_id = parseInt(args[3]), vehicle = tostring(args[2]) })
@@ -904,11 +915,11 @@ end)
 					else
 						vRP.execute("vRP/move_vehicle",{ user_id = parseInt(user_id), nuser_id = parseInt(args[3]), vehicle = tostring(args[2]) })
 
-						local custom = vRP.getSData("custom:"..parseInt(user_id)..":"..tostring(args[2]))
+						local custom = vRP.getSData("custom:u"..parseInt(user_id).."veh_"..tostring(args[2]))
 						local custom2 = json.decode(custom) or {}
 						if custom and custom2 ~= nil then
-							vRP.setSData("custom:"..parseInt(args[3])..":"..tostring(args[2]),json.encode(custom2))
-							vRP.execute("vRP/rem_srv_data",{ dkey = "custom:"..parseInt(user_id)..":"..tostring(args[2]) })
+							vRP.setSData("custom:u"..parseInt(args[3]).."veh_"..tostring(args[2]),json.encode(custom2))
+							vRP.execute("vRP/rem_srv_data",{ dkey = "custom:u"..parseInt(user_id).."veh_"..tostring(args[2]) })
 						end
 
 						local chest = vRP.getSData("chest:"..parseInt(user_id)..":"..tostring(args[2]))
@@ -930,4 +941,4 @@ end)
 			end
 		end
 	end
-end) ]]
+end)

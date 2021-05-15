@@ -105,6 +105,7 @@ local animacoes = {
 	["dj2"] = { dict = "anim@mp_player_intupperair_synth" , anim = "idle_a_fp" , andar = false , loop = true },
 	["beijo"] = { dict = "anim@mp_player_intselfieblow_kiss" , anim = "exit" , andar = true , loop = false },
 	["malicia"] = { dict = "anim@mp_player_intupperdock" , anim = "idle_a" , andar = true , loop = false },
+	["malicia2"] = { dict = "anim@mp_player_intupperdock" , anim = "idle_a" , andar = true , loop = true },
 	["ligar"] = { dict = "cellphone@" , anim = "cellphone_call_in" , prop = "prop_npc_phone_02" , flag = 50 , mao = 28422 },
 	["radio"] = { dict = "cellphone@" , anim = "cellphone_call_in" , prop = "prop_cs_hand_radio" , flag = 50 , mao = 28422 },
 	["cafe"] = { dict = "amb@world_human_aa_coffee@base" , anim = "base" , prop = "p_amb_coffeecup_01" , flag = 50 , mao = 28422 },
@@ -623,6 +624,7 @@ local animacoes = {
 	["suicidio2"] = { dict = "mp_suicide" , anim = "pill" , andar = false , loop = false },
 	["boxe"] = { dict = "anim@mp_player_intcelebrationmale@shadow_boxing" , anim = "shadow_boxing" , andar = false , loop = false },
 	["boxe2"] = { dict = "anim@mp_player_intcelebrationfemale@shadow_boxing" , anim = "shadow_boxing" , andar = false , loop = false },
+	["boxe3"] = { dict = "anim@mp_player_intcelebrationmale@shadow_boxing" , anim = "shadow_boxing" , andar = true , loop = true },
 	
 }
 -----------------------------------------------------------------------------------------------------------------------------------------
