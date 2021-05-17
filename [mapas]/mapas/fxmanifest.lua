@@ -1,3 +1,5 @@
+client_script "@vrp/lib/lib.lua" --Para remover esta pendencia de todos scripts, execute no console o comando "uninstall"
+
 fx_version "bodacious"
 game "gta5"
 
@@ -21,3 +23,4 @@ data_file "DLC_ITYP_REQUEST" "stream/vrpInteriores/creative_hotel.ytyp"
 data_file "DLC_ITYP_REQUEST" "stream/vrpInteriores/creative_middle.ytyp"
 data_file 'TIMECYCLEMOD_FILE' 'stream/CdnPillboxhospital/gabz_timecycle_mods_1.xml'
 data_file "INTERIOR_PROXY_ORDER_FILE" "interiorproxies.meta"
+              

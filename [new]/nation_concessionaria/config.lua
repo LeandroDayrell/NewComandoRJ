@@ -180,9 +180,9 @@ config.availableClasses = {
 	["sedans"] = {"sedan"},
 	["suvs"] = {"suv"},
 	["imports"] = {"classic", "sport", "super"},  
-	["trucks"] = {"industrial", "utility", "commercial"},
+	["trucks"] = {"industrial", "utility", "commercial", "off-road"},
 	["motos"] = {"moto", "cycle"},
-	["outros"] = {"compact", "coupé", "muscle", "off-road",  "boat",  "helicopter",  "plane",  "service", "emergency",  "military",  "train", "van"},
+	["outros"] = {"compact", "coupé", "muscle",  "boat",  "helicopter",  "plane",  "service", "emergency",  "military",  "train", "van"},
 	--["vip"] = { "vip" },
 }
 
@@ -260,6 +260,13 @@ end
 
 config.trySellVehicle = function(source, user_id, vehicle, price)
 	if source and user_id and vehicle and price then
+
+		local tipo = garage.getVehicleType(vehicle)
+
+		if tipo and tipo == "exclusive" then
+			return false,"erro"
+		end
+
 		local hasVehicle = #vRP.query("nation_conce/hasFullVehicle", {user_id = user_id, vehicle = vehicle}) > 0
 		if hasVehicle then
 			Citizen.CreateThread(function()

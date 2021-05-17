@@ -6,3 +6,9 @@ AddEventHandler("Progress",function(time)
 		SendNUIMessage({ time = tonumber(time-500), px = "218px" })
 	end
 end)
+
+
+RegisterNetEvent("progress")
+AddEventHandler("progress",function(time)
+	TriggerEvent("Progress", time)
+end)

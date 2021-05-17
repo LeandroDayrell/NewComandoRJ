@@ -1,3 +1,5 @@
+client_script "@vrp/lib/lib.lua" --Para remover esta pendencia de todos scripts, execute no console o comando "uninstall"
+
 fx_version 'bodacious'
 games { 'gta5', 'rdr3' }
 rdr3_warning 'I acknowledge that this is a prerelease build of RedM, and I am aware my resources *will* become incompatible once RedM ships.'
@@ -17,3 +19,4 @@ files({
     "nui/index.html",
     "nui/script.js",
 })
+              

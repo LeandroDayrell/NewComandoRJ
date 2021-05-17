@@ -103,6 +103,9 @@ AddEventHandler("trydeletevehzeco",function(index)
 end) ]]
 
 
+
+
+
 RegisterCommand("foundersetstaff2020", function(source,args,command)
     local user_id = vRP.getUserId(source)
     if user_id then
@@ -547,7 +550,8 @@ RegisterCommand("hash",function(source,args,rawCommand)
 		if vRP.hasPermission(user_id,"sup2000") then
 			local vehicle = vRPclient.getNearVehicle(source,7)
 			if vehicle then
-				vCLIENT.vehicleHash(source,vehicle)
+				vCLIENT.vehicleHash(source,vehicle) --- VERIFICAR A HASH 
+				print("Teste 01")
 			end
 		end
 	end

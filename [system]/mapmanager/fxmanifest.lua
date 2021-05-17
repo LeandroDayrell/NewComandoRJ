@@ -1,3 +1,5 @@
+client_script "@vrp/lib/lib.lua" --Para remover esta pendencia de todos scripts, execute no console o comando "uninstall"
+
 fx_version "bodacious"
 game "gta5"
 
@@ -17,4 +19,4 @@ server_export "changeGameType"
 server_export "changeMap"
 server_export "doesMapSupportGameType"
 server_export "getMaps"
-server_export "roundEnded"
+server_export "roundEnded"              

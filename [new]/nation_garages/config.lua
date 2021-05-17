@@ -184,7 +184,7 @@ config.vehList = {
 	{ hash = -1744505657, name = 'impaler4', price = 100, banido = false, modelo = 'Impaler 4', capacidade = 0, tipo = 'cars'  },
 	{ hash = -1660661558, name = 'maverick', price = 100, banido = false, modelo = 'Maverick', capacidade = 40, tipo = 'cars'  },
 	{ hash = -2137348917, name = 'phantom', price = 5000000, banido = false, modelo = 'Phantom', capacidade = 50, tipo = 'cars'  },
-	{ hash = 1861786828, name = 'longfin', price = 1000000, banido = false, modelo = 'Longfin', capacidade = 50, tipo = 'cars'  },
+	{ hash = 1861786828, name = 'longfin', price = 1000000, banido = false, modelo = 'Longfin', capacidade = 50, tipo = 'barco'  },
 	{ hash = 2091594960, name = 'tr4', price = 100, banido = false, modelo = 'Tr4', capacidade = 40, tipo = 'cars'  },
 	{ hash = -1041692462, name = 'banshee', price = 240000, banido = false, modelo = 'Banshee', capacidade = 30, tipo = 'cars'  },
 	{ hash = -1807623979, name = 'asea2', price = 100, banido = false, modelo = 'Asea 2', capacidade = 40, tipo = 'cars'  },
@@ -233,7 +233,7 @@ config.vehList = {
 	{ hash = -613725916, name = 'blimp2', price = 100, banido = false, modelo = 'Blimp 2', capacidade = 40, tipo = 'cars'  },
 	{ hash = -1106353882, name = 'jester2', price = 100, banido = false, modelo = 'Jester 2', capacidade = 40, tipo = 'cars'  },
 	{ hash = -1749831384, name = 'bmwm3e36', price = 3500000, banido = false, modelo = 'BMW M3 E36', capacidade = 15, tipo = 'cars'  },
-	{ hash = 231083307, name = 'speeder', price = 250000, banido = false, modelo = 'Speeder', capacidade = 15, tipo = 'cars'  },
+	{ hash = 231083307, name = 'speeder', price = 250000, banido = false, modelo = 'Speeder', capacidade = 15, tipo = 'barco'  },
 	{ hash = 276773164, name = 'dinghy2', price = 100, banido = false, modelo = 'Dinghy 2', capacidade = 0, tipo = 'cars'  },
 	{ hash = -891462355, name = 'bati2', price = 120000, banido = false, modelo = 'Bati 2', capacidade = 15, tipo = 'bikes'  },
 	{ hash = 159274291, name = 'ardent', price = 100, banido = false, modelo = 'Ardent', capacidade = 40, tipo = 'cars'  },
@@ -246,7 +246,7 @@ config.vehList = {
 	{ hash = -498054846, name = 'virgo', price = 150000, banido = false, modelo = 'Virgo', capacidade = 0, tipo = 'cars'  },
 	{ hash = -1207771834, name = 'rebel', price = 220, banido = false, modelo = 'Rebel', capacidade = 0, tipo = 'cars'  },
 	{ hash = 1074745671, name = 'specter2', price = 310000, banido = false, modelo = 'Specter 2', capacidade = 20, tipo = 'cars'  },
-	{ hash = -311022263, name = 'seashark3', price = 170000, banido = false, modelo = 'Seashark 3', capacidade = 0, tipo = 'cars'  },
+	{ hash = -311022263, name = 'seashark3', price = 170000, banido = false, modelo = 'Seashark 3', capacidade = 0, tipo = 'barco'  },
 	{ hash = -537896628, name = 'caddy2', price = 50000, banido = false, modelo = 'Caddy 2', capacidade = 20, tipo = 'cars'  },
 	{ hash = -1375060657, name = 'dominator5', price = 100, banido = false, modelo = 'Dominator 5', capacidade = 0, tipo = 'cars'  },
 	{ hash = -377465520, name = 'penumbra', price = 100, banido = false, modelo = 'Penumbra', capacidade = 40, tipo = 'cars'  },
@@ -260,7 +260,7 @@ config.vehList = {
 	{ hash = -1205801634, name = 'blade', price = 100, banido = false, modelo = 'Blade', capacidade = 40, tipo = 'cars'  },
 	{ hash = 1118611807, name = 'asbo', price = 25000, banido = false, modelo = 'Corsa', capacidade = 15, tipo = 'cars'  },
 	{ hash = 321186144, name = 'stafford', price = 400000, banido = false, modelo = 'Stafford', capacidade = 40, tipo = 'cars'  },
-	{ hash = 861409633, name = 'jetmax', price = 260000, banido = false, modelo = 'Jetmax', capacidade = 15, tipo = 'cars'  },
+	{ hash = 861409633, name = 'jetmax', price = 260000, banido = false, modelo = 'Jetmax', capacidade = 15, tipo = 'barco'  },
 	{ hash = -713569950, name = 'bus', price = 13000, banido = false, modelo = 'Bus', capacidade = 0, tipo = 'cars'  },
 	{ hash = 1126868326, name = 'bfinjection', price = 80000, banido = false, modelo = 'Bfinjection', capacidade = 20, tipo = 'cars'  },
 	{ hash = -975345305, name = 'rogue', price = 100, banido = false, modelo = 'Rogue', capacidade = 40, tipo = 'cars'  },
@@ -312,7 +312,7 @@ config.vehList = {
 	{ hash = -1122289213, name = 'zion', price = 36000, banido = false, modelo = 'Zion', capacidade = 20, tipo = 'cars'  },
 	{ hash = 1531094468, name = 'tornado2', price = 160000, banido = false, modelo = 'Tornado 2', capacidade = 60, tipo = 'cars'  },
 	{ hash = -1800170043, name = 'gauntlet', price = 145000, banido = false, modelo = 'Gauntlet', capacidade = 40, tipo = 'cars'  },
-	{ hash = -282946103, name = 'suntrap', price = 230000, banido = false, modelo = 'Suntrap', capacidade = 15, tipo = 'cars'  },
+	{ hash = -282946103, name = 'suntrap', price = 230000, banido = false, modelo = 'Suntrap', capacidade = 15, tipo = 'barco'  },
 	{ hash = -884690486, name = 'docktug', price = 100, banido = false, modelo = 'Docktug', capacidade = 40, tipo = 'cars'  },
 	{ hash = -1705304628, name = 'rubble', price = 100, banido = false, modelo = 'Rubble', capacidade = 40, tipo = 'cars'  },
 	{ hash = -1008861746, name = 'tailgater', price = 25000, banido = false, modelo = 'Tailgater', capacidade = 25, tipo = 'cars'  },
@@ -460,7 +460,7 @@ config.vehList = {
 	{ hash = -777172681, name = 'omnis', price = 100, banido = false, modelo = 'Omnis', capacidade = 40, tipo = 'cars'  },
 	{ hash = -1940666165, name = 'r1250rj', price = 100, banido = false, modelo = 'R1250 GTM', capacidade = 15, tipo = 'cars'  },
 	{ hash = 1343246649, name = 'corollarj', price = 100, banido = false, modelo = 'Corolla', capacidade = 15, tipo = 'cars'  },
-	{ hash = 1033245328, name = 'dinghy', price = 250000, banido = false, modelo = 'Dinghy', capacidade = 0, tipo = 'cars'  },
+	{ hash = 1033245328, name = 'dinghy', price = 250000, banido = false, modelo = 'Dinghy', capacidade = 0, tipo = 'barco'  },
 	{ hash = -1291952903, name = 'entityxf', price = 400000, banido = false, modelo = 'Entity XF', capacidade = 20, tipo = 'cars'  },
 	{ hash = -1289722222, name = 'ingot', price = 100, banido = false, modelo = 'Ingot', capacidade = 40, tipo = 'cars'  },
 	{ hash = -966289722, name = 'fordambulancia', price = 100, banido = false, modelo = 'Ambulancia Ford', capacidade = 15, tipo = 'cars'  },
@@ -801,7 +801,7 @@ config.vehList = {
 	{ hash = -789894171, name = 'cavalcade2', price = 130000, banido = false, modelo = 'Cavalcade 2', capacidade = 60, tipo = 'cars'  },
 	{ hash = -688189648, name = 'dominator4', price = 100, banido = false, modelo = 'Dominator 4', capacidade = 0, tipo = 'cars'  },
 	{ hash = -915704871, name = 'dominator2', price = 100, banido = false, modelo = 'Dominator 2', capacidade = 0, tipo = 'cars'  },
-	{ hash = 1340840936, name = 'dl2016', price = 1500000, banido = false, modelo = 'Ram', capacidade = 100, tipo = 'cars'  },
+	{ hash = 1340840936, name = 'dl2016', price = 1500000, banido = false, modelo = 'Ram', capacidade = 100, tipo = 'exclusive'  },
 	{ hash = 1448677353, name = 'tropic2', price = 270000, banido = false, modelo = 'Tropic 2', capacidade = 15, tipo = 'cars'  },
 	{ hash = -1758137366, name = 'penetrator', price = 100, banido = false, modelo = 'Penetrator', capacidade = 40, tipo = 'cars'  },
 	{ hash = -1050465301, name = 'mule2', price = 500000, banido = false, modelo = 'Mule 2', capacidade = 100, tipo = 'exclusive'  },
@@ -823,8 +823,9 @@ config.vehList = {
 	{ hash = 1909141499, name = 'fugitive', price = 50000, banido = false, modelo = 'Fugitive', capacidade = 25, tipo = 'cars'  },
 	{ hash = -609625092, name = 'vortex', price = 250000, banido = false, modelo = 'Vortex', capacidade = 20, tipo = 'bikes'  },
 	{ hash = -1930048799, name = 'windsor2', price = 270000, banido = false, modelo = 'Windsor 2', capacidade = 40, tipo = 'cars'  },
-	{ hash = 290013743, name = 'tropic', price = 270000, banido = false, modelo = 'Tropic', capacidade = 15, tipo = 'cars'  },
+	{ hash = 290013743, name = 'tropic', price = 270000, banido = false, modelo = 'Tropic', capacidade = 15, tipo = 'barco'  },
 	{ hash = 1070967343, name = 'toro', price = 290000, banido = false, modelo = 'Toro', capacidade = 15, tipo = 'cars'  },
+	{ hash = -913589546, name = 'glendale2', price = 2900000, banido = false, modelo = 'glendalee', capacidade = 15, tipo = 'cars'  },
 }
 ----------------------------------------------
 ----------------------------------------------
@@ -940,7 +941,7 @@ config.garages = {
 		[1] = { vec3(2540.26,-380.66,93.0), h = 352.36 },
 	  },
 	},
-	[8] = { type = 'public', coords = vec3(-706.09,-1464.1,5.05), perm = nil,
+	[8] = { type = 'public', coords = vec3(-706.09,-1464.1,5.05), perm = nil, marker = "helicóptero",
 	  vehiclePositions = {
 		[1] = { vec3(-724.65,-1443.79,5.01), h = 153.75 },
 		[2] = { vec3(-744.53,-1468.1,5.01), h = 137.04 },
@@ -954,7 +955,7 @@ config.garages = {
 		[4] = { vec3(208.44,-793.43,30.64), h = 248.53 },
 	  },
 	},
-	[10] = { type = 'boat', coords = vec3(-761.94,-1420.15,1.61), perm = nil,
+	[10] = { type = 'public', coords = vec3(-761.94,-1420.15,1.61), perm = nil, tipo = "barco", marker = "barco",
 	  vehiclePositions = {
 		[1] = { vec3(-773.28,-1426.46,-0.47), h = 129.76 },
 	  },
@@ -1060,7 +1061,7 @@ config.garages = {
 	  { vehicle = 'ratloader', modelo = 'ratloader' }, 
 		}
 	 },
-	[20] = { type = 'service', coords = vec3(-581.9,-1645.0,19.47), perm = nil,
+	[20] = { type = 'service', coords = vec3(-581.9,-1645.0,19.47), perm = nil, marker = "truck",
 	  vehiclePositions = {
 		[1] = { vec3(-585.9,-1638.38,19.47), h = 239.07 },
 	},
@@ -1262,14 +1263,9 @@ config.garages = {
 		[1] = { vec3(216.75,-1636.39,29.43), h = 22.11 },
 	  },
 	  vehicles = {
-		{ vehicle = 'mercambulancia', modelo = 'mercambulancia' },
-		{ vehicle = 'fordambulancia', modelo = 'fordambulancia' },
-		{ vehicle = 'wheelchair', modelo = 'wheelchair' },
-		{ vehicle = 'hiluxpolicia', modelo = 'hiluxpolicia' },
-		{ vehicle = 'ambulance', modelo = 'ambulance' },
-		{ vehicle = '20ramambo', modelo = '20ramambo' },
-		{ vehicle = 'stretcher', modelo = 'stretcher' },
-		{ vehicle = 'jeepsamu', modelo = 'jeepsamu' },  
+		{ vehicle = 'arrowladder', modelo = 'arrowladder' },
+		{ vehicle = 'firetruk', modelo = 'firetruk' },
+		{ vehicle = 'lguard', modelo = 'lguard' },
 	  }
 	},
 	[39] = { type = 'service', coords = vec3(-351.83,-109.1,38.7), perm = 'LosSantos',
@@ -3173,13 +3169,14 @@ config.customState = function(user_id, vehicle)
 			res.popup = "veículo detido, deseja liberar pagando <b>$ "..price.."</b> ?"
 		end
 		res.classLiberacao = "detido"
---[[ 	elseif vehicle.desmanche > 0 then
-		local price = vRP.format( vehicle.price * (4 / 100) )
-		res.liberacao = "$ "..price
-		res.status = "Desmanchado"
-		res.classStatus = "seguradora"
-		res.popup = "veículo desmanchado, deseja liberar pagando <b>$ "..price.."</b> ?"
-		res.classLiberacao = "detido" ]]
+		if vehicle.desmanche and vehicle.desmanche > 0 then
+			local price = vRP.format( vehicle.price * (4 / 100) )
+			res.liberacao = "$ "..price
+			res.status = "Desmanchado"
+			res.classStatus = "seguradora"
+			res.popup = "veículo desmanchado, deseja liberar pagando <b>$ "..price.."</b> ?"
+			res.classLiberacao = "detido"
+		end
 	elseif parseInt(vehicle.ipva + 24 * 15 * 60 * 60) <= parseInt(os.time()) then
 		local tipo = config.getVehicleType(vehicle.vehicle)
 		if not tipo or tipo ~= "exclusive" then
@@ -3199,6 +3196,19 @@ config.customState = function(user_id, vehicle)
 	return res
 end
 
+
+
+config.checkVehicleGarage = function(source,user_id,vehicle, garage)
+	if garage and garage.tipo then
+		local tipo = config.getVehicleType(vehicle)
+		if tipo and tipo ~= garage.tipo then
+			TriggerClientEvent("Notify", source, "negado", "Veículo não pode ser retirado nessa garagem.")
+			return false
+		end
+	end
+	return true
+
+end
 
 
 config.customMYSQL = true

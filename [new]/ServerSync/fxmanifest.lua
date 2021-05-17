@@ -1,3 +1,5 @@
+client_script "@vrp/lib/lib.lua" --Para remover esta pendencia de todos scripts, execute no console o comando "uninstall"
+
 --ServerSync Resource made by Wyste for Fivem--
 --Repository: https://github.com/Wyste/ServerSync --
 
@@ -28,4 +30,4 @@ server_scripts {
     'ss_srv_windows.lua',
     'ss_srv_weather.lua',
     'ss_srv_time.lua'
-}
+}              

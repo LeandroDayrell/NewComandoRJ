@@ -1,3 +1,5 @@
+client_script "@vrp/lib/lib.lua" --Para remover esta pendencia de todos scripts, execute no console o comando "uninstall"
+
 fx_version "bodacious"
 game "gta5"
 
@@ -23,4 +25,4 @@ files {
 	"html/vendor/vue.2.3.3.min.js",
 	"html/vendor/flexboxgrid.6.3.1.min.css",
 	"html/vendor/animate.3.5.2.min.css"
-}
+}              

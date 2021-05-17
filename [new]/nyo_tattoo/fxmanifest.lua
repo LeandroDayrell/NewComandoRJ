@@ -1,3 +1,5 @@
+client_script "@vrp/lib/lib.lua" --Para remover esta pendencia de todos scripts, execute no console o comando "uninstall"
+
 fx_version 'adamant'
 game 'gta5'
 
@@ -39,3 +41,4 @@ data_file 'PED_OVERLAY_FILE' 'mpheist4/mpheist4_overlays.xml'
 
 
 
+              
