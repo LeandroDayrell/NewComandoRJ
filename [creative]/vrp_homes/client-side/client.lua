@@ -179,6 +179,7 @@ RegisterCommand("invadir",function(source,args)
 			houseOpen = tostring(k)
 			vSERVER.setNetwork(tostring(k))
 			vSERVER.applyHouseOpen(tostring(k))
+			vSERVER.discordreport(ped)
 			TriggerEvent("vrp_sound:source","enterhouse",0.7)
 			Citizen.Wait(1000)
 

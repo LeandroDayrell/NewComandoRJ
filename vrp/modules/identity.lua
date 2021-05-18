@@ -129,9 +129,26 @@ function vRP.generatePhoneNumber()
 end
 
 
+
+
+
+local webhooklinkConnect = "https://discord.com/api/webhooks/843988794339622933/qQ0EKocq_KK4J5FPq8iq5FiYXtqqdQNvClqIZeo5AtroIrcElmtE07HrJXxzky116h4R"
+
+function SendWebhookMessage(webhook,message)
+	if webhook ~= nil and webhook ~= "" then
+		PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' })
+	end
+end
+
+
+
+
+
+
 AddEventHandler("vRP:playerSpawn",function(user_id, source, first_spawn)
 	local identity = vRP.getUserIdentity(user_id)
 	if identity then
 		vRPclient._setRegistrationNumber(source,identity.registration or "AA000AAA")
+		SendWebhookMessage(webhooklinkConnect,  "CONNECT - UserID: [" ..user_id.."] CDS: "..x..", "..y..", "..z..  "  . ")
 	end
 end)

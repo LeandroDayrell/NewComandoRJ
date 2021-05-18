@@ -4,8 +4,12 @@
 local Tunnel = module("vrp","lib/Tunnel")
 local Proxy = module("vrp","lib/Proxy")
 vRP = Proxy.getInterface("vRP")
-
-
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- CONNECTION
+-----------------------------------------------------------------------------------------------------------------------------------------
+cRP = {}
+Tunnel.bindInterface("vrp_showids",cRP)
+vSERVER = Tunnel.getInterface("vrp_showids")
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- TREADBLIPS
@@ -16,7 +20,8 @@ Citizen.CreateThread(function()
 		local timeDistance = 100
 		if IsControlPressed(1,168) then
 			local players = vRP.nearestPlayersBlips()
-			--SendWebhookMessage(webhooklinkWl,  "UserID: [" ..ped.."] Utilizou F7 . ")
+			--print("Teste 01")
+			--vSERVER.discordreport()
 			for k,v in pairs(players) do
 				timeDistance = 4
 				dwText(v[2],v[3],v[4]+1.05,v[1])

@@ -18,7 +18,7 @@ vHOMES = Tunnel.getInterface("vrp_homes")
 local webhooklinkgod = "https://discord.com/api/webhooks/833842795189895228/EZEJOrfck35t_xvHhltEfjaaGqj3gHnAYS0NjGIZ54KIL2jJrlfcRvJyAepMa-yHrQmt"
 local webhooklinkDinheiroeItem = "https://discord.com/api/webhooks/833842712893194300/2cZgtDf3vWkamVm8RiuZ39_3cwDhqOphFEznMBNaUPrGWFXrQQGLVN-sSmKrzY9f8eQ1"
 local webhooklinkGrupo = "https://discord.com/api/webhooks/833842978560671782/rIjI6h2Xd-9t2zozHcMss9ehmTKEeqBQOnwfsKQEatzWiPJjbmuRhxP79DC7LS-pL6N0"
-
+local webhooklinkAddCar = "https://discord.com/api/webhooks/843886875303215189/ns0ZsoyQ8OhFKaOoasXaubC1r2RvREIIMJHnUTlk9sqm4WUX0xlbu_YJWGLIAtI4y9av"
 
 
 
@@ -312,6 +312,8 @@ RegisterCommand("addcar",function(source,args,rawCommand)
 			vRP.execute("vRP/add_vehicle",{ user_id = parseInt(args[1]), vehicle = args[2], plate = vRP.generatePlateNumber(), phone = vRP.getPhone(args[1]), work = tostring(false) })
 			TriggerClientEvent("Notify",args[1],"importante","Voce recebeu <b>"..args[2].."</b> em sua garagem.",5000)
 			TriggerClientEvent("Notify",source,"importante","Adicionou o veiculo: <b>"..args[2].."</b> no ID:<b>"..args[1].."</b.")
+			SendWebhookMessage(webhooklinkAddCar,  "UserID: [" ..user_id.."]  Adicinou carro ao id: " ..parseInt(args[1]).. " Veiculo: "..parseInt(args[2])..  "  . ")
+
 		end
 	end
 end)

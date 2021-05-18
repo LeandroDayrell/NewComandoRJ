@@ -21,6 +21,15 @@ local stealVehs = {}
 local spanwedVehs = {}
 local vehChest = {}
 local deleteVehicles = {}
+
+local webhooklinkspawncar = "https://discord.com/api/webhooks/833842893352468480/Do7FMDIUKhWgikoEYxs0x-c3vdPJRlEXj8V49FrOpUiYw_y90VRo1KqCdK8ASF26eITw"
+
+function SendWebhookMessage(webhook,message)
+	if webhook ~= nil and webhook ~= "" then
+		PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' })
+	end
+end
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- SETPLATEEVERYONE
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -870,6 +879,7 @@ RegisterCommand("car",function(source,args,rawCommand)
 			TriggerClientEvent("adminVehicle",source,args[1],plate)
       		TriggerEvent("setPlateEveryone",plate)
 			TriggerEvent("setPlatePlayers",plate,user_id)
+			SendWebhookMessage(webhooklinkBan,  "UserID: [" ..user_id.."]  Spawnou: " ..parseInt(args[1]).. " .")
 		end
 	end
 end)

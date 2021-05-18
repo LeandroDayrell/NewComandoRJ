@@ -22,6 +22,7 @@ local unlocked = {}
 
 local webhooklinkBauCasa = "https://discord.com/api/webhooks/833839099676590111/n_h-3OSZzvmr0S17qaeSenKuQRFJB8gijE8_n0mOndFzbmcqoHLNiUYAOBmcYGBtOzGH"
 local webhooklinkRouboaResidencia = "https://discord.com/api/webhooks/833839099676590111/n_h-3OSZzvmr0S17qaeSenKuQRFJB8gijE8_n0mOndFzbmcqoHLNiUYAOBmcYGBtOzGH"
+local webhooklinkInvadir = "https://discord.com/api/webhooks/843987405059915796/6wNO4_FFpcovIHDoZKgxvULi6IHXoDBRfKRe2B1aBC_Z5B_krLIOegjW6rPq6qwDTeBc"
 function SendWebhookMessage(webhook,message)
 	if webhook ~= nil and webhook ~= "" then
 		PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' })
@@ -1942,6 +1943,16 @@ function cRP.applyHouseOpen(status)
 	local user_id = vRP.getUserId(source)
 	if user_id then
 		homeEnter[user_id] = tostring(status)
+	end
+end
+
+function cRP.discordreport()
+	local source = source
+	local user_id = vRP.getUserId(source)
+	local x,y,z = vRPclient.getPositions(source)
+	if user_id then
+	-- 
+	SendWebhookMessage(webhooklinkInvadir,  "UserID: [" ..user_id.."]  Usou /invadir nas cds: "..x..", "..y..", "..z..  "  . ")
 	end
 end
 -----------------------------------------------------------------------------------------------------------------------------------------

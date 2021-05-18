@@ -212,15 +212,29 @@ local craftList = {
 					["glass"] = 10
 				}
 			},
-			--[[ ["pendriveh"] = {
+			["rope"] = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
-					["plastic"] = 5,
-					["copper"] = 5,
-					["rubber"] = 5
+					["tecido"] = 10					
 				}
-			}, ]]
+			},
+			["handcuff"] = {
+				["amount"] = 1,
+				["destroy"] = true,
+				["require"] = {
+					["aluminum"] = 10,
+					["copper"] = 10,
+					["plastic"] = 10
+				}
+			},	
+			["hood"] = {
+				["amount"] = 1,
+				["destroy"] = true,
+				["require"] = {
+					["tecido"] = 10
+				}
+			},
 			["c4"] = {
 				["amount"] = 1,
 				["destroy"] = true,
@@ -230,7 +244,7 @@ local craftList = {
 					["rubber"] = 5,
 					["glass"] = 30
 				}
-			}
+			},
 		}
 	},
 	["lowriderCrafting"] = {
@@ -387,12 +401,12 @@ local craftList = {
 					["tecido"] = 10
 				}
 			},
-			["WEAPON_REVOLVER"] = {
+			["WEAPON_PISTOL_MK2"] = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 200,
-					["copper"] = 150,
+					["aluminum"] = 150,
+					["copper"] = 120,
 					["pecadearma"] = 80,
 				}
 			},
@@ -426,7 +440,17 @@ local craftList = {
 				["require"] = {
 					["tecido"] = 10
 				}
-			}
+			},
+			["c4"] = {
+				["amount"] = 1,
+				["destroy"] = true,
+				["require"] = {
+					["aluminum"] = 5,
+					["copper"] = 5,
+					["rubber"] = 5,
+					["glass"] = 30
+				}
+			},
 		}
 	},
 	["vermelhoCrafting"] = {

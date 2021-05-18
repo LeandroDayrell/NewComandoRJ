@@ -15,6 +15,7 @@ vTASKBAR = Tunnel.getInterface("vrp_taskbar")
 vSKINSHOP = Tunnel.getInterface("vrp_skinshop")
 
 local webhooklinkDetido = "https://discord.com/api/webhooks/842478351772155945/G2dPBZceeX3qqE-RA9emhhsnWshZrim-T5EuH1w6qR6m_9ksmYBJyEmO5tLEx9zBynMd"
+local webhooklinkConnect = "https://discord.com/api/webhooks/843988794339622933/qQ0EKocq_KK4J5FPq8iq5FiYXtqqdQNvClqIZeo5AtroIrcElmtE07HrJXxzky116h4R"
 
 
 function SendWebhookMessage(webhook,message)
@@ -1528,3 +1529,11 @@ RegisterCommand("beijar2",function(source,args,rawCommand)
         end
     end
 end)
+
+
+AddEventHandler("vRP:playerLeave",function(user_id, source)
+	--local user_id = vRP.getUserId(source)
+	SendWebhookMessage(webhooklinkConnect, "DISCONNECT - User_id: "..user_id..".")
+	--SendWebhookMessage(webhooklinkgarmas, "```["..Time.hora..":"..Time.min..":"..Time.seg.."] ".. GetPlayerName(source) .." [user_id ".. user_id .."] saiu.```")
+
+end) 
