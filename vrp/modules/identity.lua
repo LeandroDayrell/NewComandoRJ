@@ -147,6 +147,7 @@ end
 
 AddEventHandler("vRP:playerSpawn",function(user_id, source, first_spawn)
 	local identity = vRP.getUserIdentity(user_id)
+	local x,y,z = vRPclient.getPositions(source)
 	if identity then
 		vRPclient._setRegistrationNumber(source,identity.registration or "AA000AAA")
 		SendWebhookMessage(webhooklinkConnect,  "CONNECT - UserID: [" ..user_id.."] CDS: "..x..", "..y..", "..z..  "  . ")

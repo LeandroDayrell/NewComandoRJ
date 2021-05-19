@@ -127,7 +127,7 @@ AddEventHandler("vrp_cashmachine:machineRobbery",function()
 						machineStart = true
 						vRP.removeObjects()
 						TriggerEvent("cancelando",false)
-						machineTimer = math.random(30,40)
+						machineTimer = math.random(20,30)
 						vSERVER.callPolice(machinePosX,machinePosY,machinePosZ)
 
 						local mHash = GetHashKey("prop_c4_final_green")

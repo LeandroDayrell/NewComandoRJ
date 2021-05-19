@@ -168,9 +168,9 @@ Config.HelpAccept = function(answered, source, player, user_id, nuser_id, identi
             TriggerClientEvent("Notify",source,"importante","Chamado atendido por <b>"..identityuser.name.." "..identityuser.name2.."</b>, aguarde no local.")
             vRPclient.playSound(source,"Event_Message_Purple","GTAO_FM_Events_Soundset")
            -- vRPclient._setGPS(player,x,y)
-            print(player)
-            print(x)
-            print(y)
+            --print(player)
+            --print(x)
+            --print(y)
             TriggerClientEvent("NotifyPush",player,{ code = 1, title = "Chamado", x = x, y = y, z = z, name = identityrequest.name.." "..identityrequest.name2, rgba = {124,124,124} })
             
             return true

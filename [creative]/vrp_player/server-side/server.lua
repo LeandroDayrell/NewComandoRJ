@@ -15,6 +15,7 @@ vTASKBAR = Tunnel.getInterface("vrp_taskbar")
 vSKINSHOP = Tunnel.getInterface("vrp_skinshop")
 
 local webhooklinkDetido = "https://discord.com/api/webhooks/842478351772155945/G2dPBZceeX3qqE-RA9emhhsnWshZrim-T5EuH1w6qR6m_9ksmYBJyEmO5tLEx9zBynMd"
+local webhooklinkCobrar = "https://discord.com/api/webhooks/844431247065612319/m8FXPuUkyeLl_IyBVmCW6chU5pa1wd_eT5_x-IPUwt7tE8yF-xdtp6Bnvla2xT9b07XM"
 local webhooklinkConnect = "https://discord.com/api/webhooks/843988794339622933/qQ0EKocq_KK4J5FPq8iq5FiYXtqqdQNvClqIZeo5AtroIrcElmtE07HrJXxzky116h4R"
 
 
@@ -364,7 +365,7 @@ local user_id = vRP.getUserId(source)
 			local vehicle,vehNet = vRPclient.vehList(source,3)
 			if vehicle then
 				--TriggerClientEvent("vrp_inventory:repairVehicle",-1,vehNet,false)
-				print("Teste 1")
+				--print("Teste 1")
 				--vRPclient._playAnim(user_id,true,{"mini@repair","fixing_a_player"},true)
 				vRPclient._playAnim(source,true,{"mini@repair","fixing_a_player"},true)    
 				Wait(10000)
@@ -1179,7 +1180,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- FATURAS
 -----------------------------------------------------------------------------------------------------------------------------------------
-RegisterCommand("faturas",function(source,args,rawCommand)
+--[[ RegisterCommand("faturas",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
 		local nuser_id = vRP.prompt(source,"Passport:","")
@@ -1209,7 +1210,50 @@ RegisterCommand("faturas",function(source,args,rawCommand)
 			end
 		end
 	end
+end) ]]
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- COBRAR
+-----------------------------------------------------------------------------------------------------------------------------------------
+RegisterCommand("cobrar",function(source,args,rawCommand)
+	local user_id = vRP.getUserId(source)
+	if user_id then
+		local nuser_id = vRP.prompt(source,"Passaporte","")
+		if nuser_id == "" or parseInt(nuser_id) <= 0 then
+			return
+		end
+
+		local price = vRP.prompt(source,"Preco:","")
+		if price == "" or parseInt(price) <= 0 then
+			return
+		end
+
+		local reason = vRP.prompt(source,"Motivo:","")
+		if reason == "" then
+			return
+		end
+
+		local nplayer = vRP.getUserSource(parseInt(nuser_id))
+		local banco = vRP.getBankMoney(nuser_id)
+		if nplayer then
+			--print("Teste 01")
+			local identity = vRP.getUserIdentity(user_id)
+			local answered = vRP.request(nplayer,"Deseja pagar para <b>"..identity.name.." "..identity.name2.."</b> oo valor de <b>$"..vRP.format(parseInt(price)).." dólares</b>? Motivo: "..reason.. "",30)
+			if answered then
+				if vRP.paymentBank(nuser_id,parseInt(price)) then
+				vRP.addBank(user_id,parseInt(price))
+				SendWebhookMessage(webhooklinkCobrar,  "UserID: [" ..user_id.."] cobrou de UserID "..nuser_id.. " valor " ..parseInt(price).. " Motivo: " ..reason.." .")
+				TriggerClientEvent("Notify",source,"sucesso","Fatura aceita com sucesso.",5000)
+				
+			else 
+				TriggerClientEvent("Notify",source,"negado","Cidadao nao tem esse valor.",5000)
+			end
+			else
+				TriggerClientEvent("Notify",source,"negado","Fatura rejeitada pelo cliente.",5000)
+			end
+		end
+	end
 end)
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- GARAGEM
 -----------------------------------------------------------------------------------------------------------------------------------------

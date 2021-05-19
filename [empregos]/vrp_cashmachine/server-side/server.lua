@@ -32,7 +32,7 @@ function cRP.startMachine()
 		else
 			if not machineStart then
 				machineStart = true
-				machineGlobal = 1200
+				machineGlobal = 600
 				vRP.upgradeStress(user_id,10)
 				vRP.wantedTimer(parseInt(user_id),300)
 				vRP.removeInventoryItem(user_id,"c4",1)
@@ -66,14 +66,10 @@ function cRP.stopMachine(x,y,z)
 			TriggerEvent("vrp_itemdrop:Create","dollars2",parseInt(math.random(15000,17500)),x,y,z,grid)
 
 			local random = math.random(100)
-			if parseInt(random) >= 75 then
-				TriggerEvent("vrp_itemdrop:Create","aluminum",parseInt(math.random(10,20)),x,y,z,grid)
-			elseif parseInt(random) >= 50 and parseInt(random) <= 74 then
-				TriggerEvent("vrp_itemdrop:Create","rubber",parseInt(math.random(25,50)),x,y,z,grid)
-			elseif parseInt(random) >= 25 and parseInt(random) <= 49 then
-				TriggerEvent("vrp_itemdrop:Create","plastic",parseInt(math.random(25,50)),x,y,z,grid)
-			elseif parseInt(random) <= 24 then
-				TriggerEvent("vrp_itemdrop:Create","copper",parseInt(math.random(10,20)),x,y,z,grid)
+			if parseInt(random) >= 50 then
+				TriggerEvent("vrp_itemdrop:Create","aluminum",parseInt(math.random(35,50)),x,y,z,grid)
+			elseif parseInt(random) <= 50 then
+				TriggerEvent("vrp_itemdrop:Create","copper",parseInt(math.random(35,50)),x,y,z,grid)
 			end
 		end
 	end

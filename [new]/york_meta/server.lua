@@ -10,10 +10,19 @@ Tunnel.bindInterface("york_meta",func)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- FUNÇÕES
 -----------------------------------------------------------------------------------------------------------------------------------------
-function func.checkPermission(perm)
+--[[ function func.checkPermission(perm)
 	local source = source
 	local user_id = vRP.getUserId(source)
 	return vRP.hasPermission(user_id,perm)
+end ]]
+
+function cRP.checkPermission()
+	local source = source
+	local user_id = vRP.getUserId(source)
+	--return vRP.hasPermission(user_id,"Medic")
+	if vRP.hasPermission(user_id,"Verde") or vRP.hasPermission(user_id,"Vermelho") or vRP.hasPermission(user_id,"Azul") or vRP.hasPermission(user_id,"Laranja") then
+        return true
+    end
 end
 
 local src = {

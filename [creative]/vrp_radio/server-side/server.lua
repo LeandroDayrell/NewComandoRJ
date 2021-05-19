@@ -41,7 +41,7 @@ function cRP.activeFrequency(freq)
 				end
 			else
 				vCLIENT.startFrequency(source,parseInt(freq))
-				print('TESTE 04')
+				--print('TESTE 04')
 				TriggerClientEvent("vrp_hud:RadioDisplay",source,parseInt(freq))
 				TriggerClientEvent("Notify",source,"sucesso","Rádio <b>"..parseInt(freq)..".0Mhz</b>.",5000)
 			end

@@ -26,7 +26,7 @@ Citizen.CreateThread(function()
 			local x,y,z = table.unpack(GetEntityCoords(ped))
 			local bowz,cdz = GetGroundZFor_3dCoord(v.x,v.y,v.z)
 			local distance = GetDistanceBetweenCoords(v.x,v.y,cdz,x,y,z,true)
-			if distance <= 1.2 and not processo then
+			if distance <= 1.2 and not processo and vSERVER.checkPermission() then
 				crjsleep = 1
 				drawTxt("Pressione  ~r~E~w~  para "..v.text,4,0.5,0.93,0.50,255,255,255,180)
 				if IsControlJustPressed(0,38) then

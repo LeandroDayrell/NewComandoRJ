@@ -38,6 +38,7 @@ local webhooklinkitemenviar = "https://discord.com/api/webhooks/8338264306639176
 local webhooklinkitemusar = "https://discord.com/api/webhooks/833826430663917640/Y80lpsnILWuQYw7koL72dJ1sadsHuMH5_Fdlk_9tAaeh2WS6lYPKlZESbbgar_pnpTu9"
 local webhooklinklockpick = "https://discord.com/api/webhooks/833831615565398037/yecnePzu8K_b4CWMfsCmY3ykAEjQnAwJdrPub0C0XD_dtI-ESq38CqURjZihLjKZ4l-s"
 local webhooklinkRouboaResidencia = "https://discord.com/api/webhooks/833839099676590111/n_h-3OSZzvmr0S17qaeSenKuQRFJB8gijE8_n0mOndFzbmcqoHLNiUYAOBmcYGBtOzGH"
+local webhooklinkDropePickItem = "https://discord.com/api/webhooks/844323096742592582/FYx-D1dTaXjx3MtVIaqdizzIm5a7SE2wzbmw86zUr3-zkj8DYphO6_li9IwTbMqvFF_o"
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -181,13 +182,13 @@ AddEventHandler("vrp_inventory:dropItem",function(itemName,slot,amount)
 			if not vRP.wantedReturn(user_id) then
 				if vRP.tryGetInventoryItem(user_id,itemName,amount,false,slot) then
 					TriggerClientEvent("vrp_inventory:Update",source,"updateMochila")
-
 					local x,y,z,h = vRPclient.getPositions(source)
 					local grid = vRP.getGridzone(x,y)
+					SendWebhookMessage(webhooklinkDropePickItem,  "DROP ITEM - UserID: [" ..user_id.."]  Item: " ..itemName.. " Qnt:" ..amount.. " Local: "..x..", "..y..", "..z..  "  . ")
 					if dropList[grid] == nil then
 						dropList[grid] = {}
 					end
-
+						
 					table.insert(dropList[grid],{ itemName,amount,x,y,z,1800 })
 
 					TriggerClientEvent("vrp_inventory:dropUpdates",-1,dropList)
@@ -227,10 +228,10 @@ function cRP.itemPickup(grid,id)
 					if dropList[grid][id] == nil then
 						return
 					end
-
 					vRP.giveInventoryItem(user_id,tostring(dropList[grid][id][1]),parseInt(dropList[grid][id][2]),true)
 					dropList[grid][id] = nil
-
+				--	local x,y,z,h = vRPclient.getPositions(source)
+					--SendWebhookMessage(webhooklinkDropePickItem,  "DROP ITEM - UserID: [" ..user_id.."]  Item: " ..dropList[grid][id][1].. " Qnt:" ..dropList[grid][id][2].. " Local: "..x..", "..y..", "..z..  "  . ")
 					vRPclient._playAnim(source,true,{"pickup_object","putdown_low"},false)
 					TriggerClientEvent("vrp_inventory:Update",source,"updateMochila")
 					TriggerClientEvent("vrp_inventory:dropUpdates",-1,dropList)
