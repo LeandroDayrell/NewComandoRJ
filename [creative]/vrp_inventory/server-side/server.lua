@@ -499,7 +499,7 @@ AddEventHandler("vrp_inventory:useItem",function(slot,rAmount)
 						repeat
 							if active[user_id] == 0 then
 								active[user_id] = nil
-								vRP.downgradeStress(user_id,10)
+								vRP.downgradeStress(user_id,13)
 								vCLIENT.blockButtons(source,false)
 								vRPclient._removeObjects(source,"one")
 							end

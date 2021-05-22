@@ -1064,6 +1064,7 @@ config.garages = {
 	[20] = { type = 'service', coords = vec3(-581.9,-1645.0,19.47), perm = nil, marker = "truck",
 	  vehiclePositions = {
 		[1] = { vec3(-585.9,-1638.38,19.47), h = 239.07 },
+		[2] = { vec3(-574.8,-1641.93,19.42), h = 229.69 },
 	},
 	vehicles = {
 	  { vehicle = 'trash', modelo = 'trash' },  

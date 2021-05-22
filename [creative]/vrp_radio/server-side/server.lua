@@ -18,19 +18,19 @@ function cRP.activeFrequency(freq)
 	local user_id = vRP.getUserId(source)
 	if user_id then
 		if parseInt(freq) >= 1 and parseInt(freq) <= 999 then
-			if parseInt(freq) == 190 then
+			if parseInt(freq) == 911 then
 				--print('TESTE 01')
 				if vRP.hasPermission(user_id,"Police") then
 					--print('TESTE 02')
-					vCLIENT.startFrequency(source,190)
-					TriggerClientEvent("vrp_hud:RadioDisplay",source,190)
+					vCLIENT.startFrequency(source,911)
+					TriggerClientEvent("vrp_hud:RadioDisplay",source,911)
 					TriggerClientEvent("Notify",source,"sucesso","Rádio <b>"..parseInt(freq)..".0Mhz</b>.",5000)
 					--print('TESTE 03')
 				end
-			elseif parseInt(freq) == 191 then
+			elseif parseInt(freq) == 912 then
 				if vRP.hasPermission(user_id,"Police") then
-					vCLIENT.startFrequency(source,191)
-					TriggerClientEvent("vrp_hud:RadioDisplay",source,191)
+					vCLIENT.startFrequency(source,912)
+					TriggerClientEvent("vrp_hud:RadioDisplay",source,912)
 					TriggerClientEvent("Notify",source,"sucesso","Rádio <b>"..parseInt(freq)..".0Mhz</b>.",5000)
 				end
 			elseif parseInt(freq) == 192 then

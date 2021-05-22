@@ -1,6 +1,12 @@
 local Tunnel = module("vrp","lib/Tunnel")
 local Proxy = module("vrp","lib/Proxy")
 func = Tunnel.getInterface("york_meta")
+
+cRP = {}
+Tunnel.bindInterface("york_meta",cRP)
+vSERVER = Tunnel.getInterface("york_meta")
+
+
 --https://github.com/eboraci
 --York#2030
 --discord: https://discord.gg/fK5c6V5
@@ -13,9 +19,9 @@ local processo = false
 -----------------------------------------------------------------------------------------------------------------------------------------
 local locais = { 
 
-	{ ['id'] = 1, ['x'] =  1493.17, ['y'] = 6390.24, ['z'] = 21.26, ['text'] = "colocar os ingredientes", ['perm'] = "Admin" },
-	{ ['id'] = 2, ['x'] = 1504.89, ['y'] = 6393.25, ['z'] = 20.79, ['text'] = "quebrar metanfetamina", ['perm'] = "Admin" }, 
-	{ ['id'] = 3, ['x'] = 1500.67, ['y'] = 6394.03, ['z'] = 20.79, ['text'] = "embalar metanfetamina", ['perm'] = "Admin" },
+	{ ['id'] = 1, ['x'] =  1493.17, ['y'] = 6390.24, ['z'] = 21.26, ['text'] = "colocar os ingredientes", ['perm'] = "faccao" },
+	{ ['id'] = 2, ['x'] = 1504.89, ['y'] = 6393.25, ['z'] = 20.79, ['text'] = "quebrar metanfetamina", ['perm'] = "faccao" }, 
+	{ ['id'] = 3, ['x'] = 1500.67, ['y'] = 6394.03, ['z'] = 20.79, ['text'] = "embalar metanfetamina", ['perm'] = "faccao" },
 } 
 
 Citizen.CreateThread(function()
@@ -26,27 +32,27 @@ Citizen.CreateThread(function()
 			local x,y,z = table.unpack(GetEntityCoords(ped))
 			local bowz,cdz = GetGroundZFor_3dCoord(v.x,v.y,v.z)
 			local distance = GetDistanceBetweenCoords(v.x,v.y,cdz,x,y,z,true)
-			if distance <= 1.2 and not processo and vSERVER.checkPermission() then
+			if distance <= 1.2 and not processo then
 				crjsleep = 1
 				drawTxt("Pressione  ~r~E~w~  para "..v.text,4,0.5,0.93,0.50,255,255,255,180)
-				if IsControlJustPressed(0,38) then
-					if v.id == 1 then
-						if func.checkPayment(v.id) then
-							processo = true
-							liquidos()
+				if IsControlJustPressed(0,38) and func.checkPermission(v.perm) then
+						if v.id == 1 then
+							if func.checkPayment(v.id) then
+								processo = true
+								liquidos()
+							end
+						elseif v.id == 2 then
+							if func.checkPayment(v.id) then
+								processo = true
+								quebrando()
+							end
+						elseif v.id == 3 then
+							if func.checkPayment(v.id) then
+								processo = true
+								embalando()
+							end
 						end
-					elseif v.id == 2 then
-						if func.checkPayment(v.id) then
-							processo = true
-							quebrando()
-						end
-					elseif v.id == 3 then
-						if func.checkPayment(v.id) then
-							processo = true
-							embalando()
-						end
-					end
-				end
+				end 
 			end
 		end
 		Citizen.Wait(crjsleep)

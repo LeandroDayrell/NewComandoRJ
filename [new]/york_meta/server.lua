@@ -4,26 +4,21 @@ vRP = Proxy.getInterface("vRP")
 vRPclient = Tunnel.getInterface("vRP")
 func = {}
 Tunnel.bindInterface("york_meta",func)
+cRP = {}
+Tunnel.bindInterface("york_meta",cRP)
 --https://github.com/eboraci
 --York#2030
 --discord: https://discord.gg/fK5c6V5
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- FUNÇÕES
 -----------------------------------------------------------------------------------------------------------------------------------------
---[[ function func.checkPermission(perm)
-	local source = source
-	local user_id = vRP.getUserId(source)
-	return vRP.hasPermission(user_id,perm)
-end ]]
-
-function cRP.checkPermission()
-	local source = source
-	local user_id = vRP.getUserId(source)
-	--return vRP.hasPermission(user_id,"Medic")
-	if vRP.hasPermission(user_id,"Verde") or vRP.hasPermission(user_id,"Vermelho") or vRP.hasPermission(user_id,"Azul") or vRP.hasPermission(user_id,"Laranja") then
+function cRP.checkPermissao()
+    local source = source
+    local user_id = vRP.getUserId(source)
+    if vRP.hasPermission(user_id,"Vermelho") or vRP.hasPermission(user_id,"Azul") or vRP.hasPermission(user_id,"Verde") or vRP.hasPermission(user_id,"Laranja") then
         return true
     end
-end
+end --
 
 local src = {
 

@@ -204,7 +204,7 @@ local itemlist = {
 		index = "pecadearma",
 		name = "Peça de Arma",
 		type = "use",
-		weight = 0.1
+		weight = 0.01
 	},
 	["lean"] = {
 		index = "lean",
