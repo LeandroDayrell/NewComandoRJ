@@ -1,3 +1,5 @@
+client_script "@vrp/lib/lib.lua" --Para remover esta pendencia de todos scripts, execute no console o comando "uninstall"
+
 fx_version 'bodacious'
 games { 'gta5' }
 
@@ -18,4 +20,4 @@ files {
 data_file 'DLC_ITYP_REQUEST' 'stream/supplyline.ytyp'
 
 -- Join the London Studios Discord Server here: https://discord.gg/F2zmUTD
--- Ensure you have the latest version of HoseLS Downloaded
+-- Ensure you have the latest version of HoseLS Downloaded              

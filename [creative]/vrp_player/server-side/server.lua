@@ -210,12 +210,34 @@ AddEventHandler("vrp_player:salary",function()
 			vRP.setSalary(parseInt(user_id),500)
 			TriggerClientEvent("Notify",source,"sucesso","Voce recebeu seu salario.",5000)
 		end
-
-		if vRP.hasPermission(parseInt(user_id),"Paramedic") then
-			vRP.setSalary(parseInt(user_id),6000)
+		 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------- SALARIO MEDICO --------------------------------------------------
+		if vRP.hasPermission(parseInt(user_id),"SamuDiretor") then
+			vRP.setSalary(parseInt(user_id),8000)
 			TriggerClientEvent("Notify",source,"sucesso","Voce recebeu seu salario.",5000)
 		end
 
+		if vRP.hasPermission(parseInt(user_id),"SamuViceDiretor") then
+			vRP.setSalary(parseInt(user_id),7500)
+			TriggerClientEvent("Notify",source,"sucesso","Voce recebeu seu salario.",5000)
+		end
+
+		if vRP.hasPermission(parseInt(user_id),"SamuCoordenador") then
+			vRP.setSalary(parseInt(user_id),7000)
+			TriggerClientEvent("Notify",source,"sucesso","Voce recebeu seu salario.",5000)
+		end
+
+		if vRP.hasPermission(parseInt(user_id),"SamuMedico") then
+			vRP.setSalary(parseInt(user_id),6500)
+			TriggerClientEvent("Notify",source,"sucesso","Voce recebeu seu salario.",5000)
+		end
+
+		if vRP.hasPermission(parseInt(user_id),"SamuEnfermeiro") then
+			vRP.setSalary(parseInt(user_id),6000)
+			TriggerClientEvent("Notify",source,"sucesso","Voce recebeu seu salario.",5000)
+		end
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 		if vRP.hasPermission(parseInt(user_id),"VIPBronze") then
 			vRP.setSalary(parseInt(user_id),650)
 			TriggerClientEvent("Notify",source,"sucesso","Voce recebeu seu salario.",650)

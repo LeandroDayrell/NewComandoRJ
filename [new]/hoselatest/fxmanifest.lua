@@ -1,3 +1,5 @@
+client_script "@vrp/lib/lib.lua" --Para remover esta pendencia de todos scripts, execute no console o comando "uninstall"
+
 fx_version 'bodacious'
 games { 'gta5' }
 
@@ -34,4 +36,4 @@ data_file 'PED_PERSONALITY_FILE' 'hose/pedpersonality.meta'
 -- Join the London Studios Discord here: https://discord.gg/F2zmUTD
 
 -- Purchase the new Supply Line to integrate in with HoseLS here: https://store.londonstudios.net/category/1704957
--- The Supply Line resource removes the infinite water supply, requiring you to setup supply lines with fire vehicles
+-- The Supply Line resource removes the infinite water supply, requiring you to setup supply lines with fire vehicles              

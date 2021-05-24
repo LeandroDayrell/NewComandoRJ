@@ -410,14 +410,6 @@ local craftList = {
 					["pecadearma"] = 80,
 				}
 			},
-			["WEAPON_PISTOL_AMMO"] = {
-				["amount"] = 20,
-				["destroy"] = true,
-				["require"] = {
-					["copper"] = 10,
-					["glass"] = 10
-				}
-			},
 			["rope"] = {
 				["amount"] = 1,
 				["destroy"] = true,
@@ -439,16 +431,6 @@ local craftList = {
 				["destroy"] = true,
 				["require"] = {
 					["tecido"] = 10
-				}
-			},
-			["c4"] = {
-				["amount"] = 1,
-				["destroy"] = true,
-				["require"] = {
-					["aluminum"] = 5,
-					["copper"] = 5,
-					["rubber"] = 5,
-					["glass"] = 30
 				}
 			},
 		}
