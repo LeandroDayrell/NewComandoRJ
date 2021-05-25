@@ -40,8 +40,8 @@ local craftList = {
 				["amount"] = 20,
 				["destroy"] = true,
 				["require"] = {
-					["copper"] = 30,
-					["glass"] = 30
+					["copper"] = 20,
+					["glass"] = 20
 				}
 			}
 		}
@@ -72,8 +72,8 @@ local craftList = {
 				["amount"] = 20,
 				["destroy"] = true,
 				["require"] = {
-					["copper"] = 30,
-					["glass"] = 30
+					["copper"] = 20,
+					["glass"] = 20
 				}
 			}
 		}
@@ -195,21 +195,13 @@ local craftList = {
 	["unktecCrafting"] = {
 		["perm"] = "Unktec",
 		["list"] = {
-			["WEAPON_PISTOL_MK2"] = {
+			["WEAPON_VINTAGEPISTOL"] = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 200,
-					["copper"] = 150,
-					["pecadearma"] = 80,
-				}
-			},
-			["WEAPON_PISTOL_AMMO"] = {
-				["amount"] = 20,
-				["destroy"] = true,
-				["require"] = {
-					["copper"] = 10,
-					["glass"] = 10
+					["aluminum"] = 125,
+					["copper"] = 125,
+					["pecadearma"] = 60,
 				}
 			},
 			["rope"] = {
@@ -235,16 +227,6 @@ local craftList = {
 					["tecido"] = 10
 				}
 			},
-			["c4"] = {
-				["amount"] = 1,
-				["destroy"] = true,
-				["require"] = {
-					["aluminum"] = 5,
-					["copper"] = 5,
-					["rubber"] = 5,
-					["glass"] = 30
-				}
-			},
 		}
 	},
 	["lowriderCrafting"] = {
@@ -263,8 +245,8 @@ local craftList = {
 				["amount"] = 20,
 				["destroy"] = true,
 				["require"] = {
-					["copper"] = 20,
-					["glass"] = 20
+					["copper"] = 15,
+					["glass"] = 15
 				}
 			},
 			["lockpick"] = {
@@ -328,8 +310,8 @@ local craftList = {
 				["amount"] = 20,
 				["destroy"] = true,
 				["require"] = {
-					["copper"] = 20,
-					["glass"] = 20
+					["copper"] = 15,
+					["glass"] = 15
 				}
 			},
 			["lockpick"] = {
@@ -401,13 +383,13 @@ local craftList = {
 					["tecido"] = 10
 				}
 			},
-			["WEAPON_PISTOL_MK2"] = {
+			["WEAPON_VINTAGEPISTOL"] = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 150,
-					["copper"] = 120,
-					["pecadearma"] = 80,
+					["aluminum"] = 125,
+					["copper"] = 125,
+					["pecadearma"] = 60,
 				}
 			},
 			["rope"] = {

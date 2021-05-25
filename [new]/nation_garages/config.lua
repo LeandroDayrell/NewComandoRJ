@@ -1286,6 +1286,15 @@ config.garages = {
 		{ vehicle = 'gburrito2', modelo = 'gburrito2' },
 	  }
 	},
+	[41] = { type = 'service', coords = vec3(463.42,-982.79,43.7), perm = 'Police',
+	  vehiclePositions = {
+		[1] = { vec3(449.66,-981.3,43.7), h = 319.78 },
+	  },
+	  vehicles = {
+		{ vehicle = 'polmav', modelo = 'polmav' },
+		{ vehicle = 'swift', modelo = 'swift' }, 
+	  }
+	},
 }
   
 -----------------------------------------------------------------

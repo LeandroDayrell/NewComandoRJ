@@ -4,8 +4,19 @@ CREATE TABLE `ps_phone_insta_account` (
 	`username` VARCHAR(50) NOT NULL,
 	`password` VARCHAR(50) NOT NULL,
 	`avatar` TEXT NULL DEFAULT NULL,
-	`description` TEXT NULL DEFAULT NULL
+	`description` TEXT NULL DEFAULT NULL,
+	`verify` TINYINT(1) NULL DEFAULT '0'
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `ps_phone_insta_comments` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`post_id` INT(11) NOT NULL,
+	`username` VARCHAR(50) NOT NULL,
+	`description` TEXT NULL DEFAULT NULL,
+	`created` DATETIME NULL DEFAULT NULL,
+	PRIMARY KEY (`id`) USING BTREE
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 CREATE TABLE `ps_phone_insta_followers` (
 	`id` INT(11) NOT NULL AUTO_INCREMENT,
@@ -13,6 +24,14 @@ CREATE TABLE `ps_phone_insta_followers` (
 	`followed` VARCHAR(50) NOT NULL,
 	PRIMARY KEY (`id`) USING BTREE
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `ps_phone_insta_likes` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`post_id` INT(11) NOT NULL,
+	`username` VARCHAR(50) NOT NULL,
+	PRIMARY KEY (`id`) USING BTREE
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 CREATE TABLE `ps_phone_insta_stories` (
 	`id` INT(11) NOT NULL AUTO_INCREMENT,
