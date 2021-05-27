@@ -213,22 +213,22 @@ AddEventHandler("vrp_player:salary",function()
 		 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ---------------- SALARIO MEDICO --------------------------------------------------
 		if vRP.hasPermission(parseInt(user_id),"SamuDiretor") then
-			vRP.setSalary(parseInt(user_id),8000)
+			vRP.setSalary(parseInt(user_id),9000)
 			TriggerClientEvent("Notify",source,"sucesso","Voce recebeu seu salario.",5000)
 		end
 
 		if vRP.hasPermission(parseInt(user_id),"SamuViceDiretor") then
-			vRP.setSalary(parseInt(user_id),7500)
+			vRP.setSalary(parseInt(user_id),8500)
 			TriggerClientEvent("Notify",source,"sucesso","Voce recebeu seu salario.",5000)
 		end
 
 		if vRP.hasPermission(parseInt(user_id),"SamuCoordenador") then
-			vRP.setSalary(parseInt(user_id),7000)
+			vRP.setSalary(parseInt(user_id),7500)
 			TriggerClientEvent("Notify",source,"sucesso","Voce recebeu seu salario.",5000)
 		end
 
 		if vRP.hasPermission(parseInt(user_id),"SamuMedico") then
-			vRP.setSalary(parseInt(user_id),6500)
+			vRP.setSalary(parseInt(user_id),7000)
 			TriggerClientEvent("Notify",source,"sucesso","Voce recebeu seu salario.",5000)
 		end
 
@@ -1079,6 +1079,31 @@ RegisterCommand("outfit",function(source,args,rawCommand)
 		end
 	end
 end)
+
+RegisterCommand("outfitstaff",function(source,args,rawCommand)
+	local source = source
+	local user_id = vRP.getUserId(source)
+	if user_id then
+		if vRP.hasPermission(user_id,"sup2000") then
+			if args[1] then
+				if args[1] == "save" then
+					local custom = vSKINSHOP.getCustomization(source)
+					if custom then
+						vRP.setSData("saveClothes:"..parseInt(user_id),json.encode(custom))
+						TriggerClientEvent("Notify",source,"sucesso","Outfit STAFF salvo com sucesso.",3000)
+					end
+				end
+			else
+				local consult = vRP.getSData("saveClothes:"..parseInt(user_id))
+				local result = json.decode(consult)
+				if result then
+					TriggerClientEvent("updateRoupas",source,result)
+					TriggerClientEvent("Notify",source,"sucesso","Outfit STAFF aplicado com sucesso.",3000)
+				end
+			end
+		end
+	end
+end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- PREMIUMFIT
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -1262,7 +1287,7 @@ RegisterCommand("cobrar",function(source,args,rawCommand)
 			local answered = vRP.request(nplayer,"Deseja pagar para <b>"..identity.name.." "..identity.name2.."</b> oo valor de <b>$"..vRP.format(parseInt(price)).." dólares</b>? Motivo: "..reason.. "",30)
 			if answered then
 				if vRP.paymentBank(nuser_id,parseInt(price)) then
-				vRP.addBank(user_id,parseInt(price))
+				vRP.addBank(user_id,parseInt(price)) ---
 				SendWebhookMessage(webhooklinkCobrar,  "UserID: [" ..user_id.."] cobrou de UserID "..nuser_id.. " valor " ..parseInt(price).. " Motivo: " ..reason.." .")
 				TriggerClientEvent("Notify",source,"sucesso","Fatura aceita com sucesso.",5000)
 				

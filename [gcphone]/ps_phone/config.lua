@@ -123,16 +123,16 @@ Config.paymentBank = function(source, user_id, nsource, nuser_id, amount)
             if bank >= parseInt(amount) then
 
                 --remove bank
-                vRP.setBankMoney(user_id, parseInt(bank - amount))
+                vRP.paymentBank(user_id, parseInt(bank - amount))
         
                 --add bank
-                vRP.setBankMoney(nuser_id, parseInt(bank_sender + amount))
+                vRP.addBank(nuser_id, parseInt(amount))
 
                 TriggerClientEvent("Notify",source,"sucesso","Enviou <b>$"..vRP.format(parseInt(amount)).." dólares</b> ao passaporte <b>"..parseInt(nuser_id).."</b>.",8000)
 
                 local identity2 = vRP.getUserIdentity(user_id)
                 if identity2 ~= nil then
-                    TriggerClientEvent("Notify", nsource, "importante","<b>"..identity2.name.." "..identity2.firstname.."</b> transferiu <b>$"..vRP.format(parseInt(amount)).." dólares</b> para sua conta.",8000)
+                    TriggerClientEvent("Notify", nsource, "importante","<b>"..identity2.name2.." "..identity2.name2.."</b> transferiu <b>$"..vRP.format(parseInt(amount)).." dólares</b> para sua conta.",8000)
                 end
 
                 local time = os.date("%d/%m/%Y %H:%M:%S")

@@ -18,13 +18,13 @@ local robberyProgress = {}
 -- VARIABLES
 
 
-local webhooklinkRouboalojinha = "https://discord.com/api/webhooks/842099865780748328/oKulkeDv1r1jTQ4n6QJbPC_1nCqt4NVaR4wHYaEahQe-NeW79yEMB34e-GJCk2903uk1"
+--[[ local webhooklinkRouboalojinha = "https://discord.com/api/webhooks/842099865780748328/oKulkeDv1r1jTQ4n6QJbPC_1nCqt4NVaR4wHYaEahQe-NeW79yEMB34e-GJCk2903uk1"
 
 function SendWebhookMessage(webhook,message)
 	if webhook ~= nil and webhook ~= "" then
 		PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' })
 	end
-end
+end ]]
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 local vars = {
@@ -677,7 +677,7 @@ local vars = {
 		["x"] = -104.386,
 		["y"] = 6477.150,
 		["z"] = 31.83,
-		["cops"] = 9,
+		["cops"] = 8,
 		["time"] = 600,
 		["distance"] = 12,
 		["type"] = "bank",
@@ -788,7 +788,7 @@ function cRP.checkPolice(robberyId,coords)
 					TriggerClientEvent("NotifyPush",v,{ code = 31, title = "Roubo a "..vars[robberyId].name, x = coords.x, y = coords.y, z = coords.z, rgba = {0,150,90} })
 				end)
 			end
-			SendWebhookMessage(webhooklinkRouboalojinha,  "User_id: [" ..user_id.."] Iniciou roubo a lojinha " ..vars[robberyId].name..  " .")
+			--SendWebhookMessage(webhooklinkRouboalojinha,  "User_id: [" ..user_id.."] Iniciou roubo a lojinha " ..vars[robberyId].name..  " .")
 			robberyProgress[vars[robberyId].type] = vars[robberyId].cooldown
 
 			return true
