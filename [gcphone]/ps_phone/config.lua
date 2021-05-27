@@ -123,7 +123,7 @@ Config.paymentBank = function(source, user_id, nsource, nuser_id, amount)
             if bank >= parseInt(amount) then
 
                 --remove bank
-                vRP.paymentBank(user_id, parseInt(bank - amount))
+                vRP.paymentBank(user_id, parseInt(amount))
         
                 --add bank
                 vRP.addBank(nuser_id, parseInt(amount))

@@ -174,7 +174,7 @@ local itemlist = {
 		index = "bucket",
 		name = "Balde",
 		type = "use",
-		weight = 1.0
+		weight = 0.4
 	},
 	["compost"] = {
 		index = "compost",

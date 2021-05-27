@@ -1089,12 +1089,12 @@ RegisterCommand("outfitstaff",function(source,args,rawCommand)
 				if args[1] == "save" then
 					local custom = vSKINSHOP.getCustomization(source)
 					if custom then
-						vRP.setSData("saveClothes:"..parseInt(user_id),json.encode(custom))
+						vRP.setSData("saveClothesStaff:"..parseInt(user_id),json.encode(custom))
 						TriggerClientEvent("Notify",source,"sucesso","Outfit STAFF salvo com sucesso.",3000)
 					end
 				end
 			else
-				local consult = vRP.getSData("saveClothes:"..parseInt(user_id))
+				local consult = vRP.getSData("saveClothesStaff:"..parseInt(user_id))
 				local result = json.decode(consult)
 				if result then
 					TriggerClientEvent("updateRoupas",source,result)
