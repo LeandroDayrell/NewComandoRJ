@@ -1295,6 +1295,40 @@ config.garages = {
 		{ vehicle = 'swift', modelo = 'swift' }, 
 	  }
 	},
+	[42] = { type = 'service', coords = vec3(-1053.86,-841.98,5.05,41.5), perm = 'Police',
+	  vehiclePositions = {
+		[1] = { vec3(-1051.83,-847.53,4.87), h = 214.98 },
+		[2] = { vec3(-1055.33,-849.34,4.87), h = 214.41 },
+		[3] = { vec3(-1039.74,-854.98,4.88), h = 56.0 },
+		[4] = { vec3(-1045.02,-861.49,4.93), h = 56.0 },
+	  },
+	  vehicles = {
+		{ vehicle = 'corollarj', modelo = 'corollarj' },
+		{ vehicle = 'r1250rj', modelo = 'r1250rj' },
+		{ vehicle = 'xtz', modelo = 'xtz' },
+		{ vehicle = 'focusrj', modelo = 'focusrj' },
+		{ vehicle = 'urusrj', modelo = 'urusrj' },
+		{ vehicle = 'frontierrj', modelo = 'frontierrj' },
+		{ vehicle = 'hiluxpolicia', modelo = 'hiluxpolicia' },
+		{ vehicle = 'bmwm8prf', modelo = 'bmwm8prf' },
+		{ vehicle = 'amarokprf', modelo = 'amarokprf' },
+		{ vehicle = 'q8pc', modelo = 'q8pc' },
+		{ vehicle = 'pranger', modelo = 'pranger' },
+		{ vehicle = 'pbus', modelo = 'pbus' },
+		{ vehicle = 'policet', modelo = 'policet' },
+		{ vehicle = 'caveiraobope', modelo = 'caveiraobope' },
+		{ vehicle = 'riot', modelo = 'riot' },
+		{ vehicle = 'frontierbope', modelo = 'frontierbope' },
+		{ vehicle = 'amarokrj', modelo = 'amarokrj' },  
+	  }
+	},
+	[43] = { type = 'public', coords = vec3(-1082.53,-866.54,5.05), perm = nil,
+	  vehiclePositions = {
+		[1] = { vec3(-1079.54,-884.25,4.61), h = 29.13 },
+		[2] = { vec3(-1076.14,-882.48,4.68), h = 25.02 },
+		[3] = { vec3(-1073.05,-879.93,4.77), h = 27.34 },
+	  },
+	},
 }
   
 -----------------------------------------------------------------

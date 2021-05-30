@@ -20,7 +20,7 @@
     }
   },
   "requireOnlineToDelivery": false,
-  "plugins": ["@comandorj","@raiocity","creative2"],
+  "plugins": ["@raiocity","creative2"],
   "chat": {
     "enabled": true,
     "global": true,

@@ -212,16 +212,11 @@ Config.HelpAccept = function(answered, source, player, user_id, nuser_id, identi
     local ok = vRP.request(player,"Aceitar o chamado de <b>"..identityrequest.name.." "..identityrequest.name2.."</b>?",30)
     if ok then
         if not answered then
-            --local source = source
-           -- local user_id = vRP.getUserId(source) 
             local identityuser = vRP.getUserIdentity(nuser_id)
             local x,y,z = vRPclient.getPositions(source)
             TriggerClientEvent("Notify",source,"importante","Chamado atendido por <b>"..identityuser.name.." "..identityuser.name2.."</b>, aguarde no local.")
             vRPclient.playSound(source,"Event_Message_Purple","GTAO_FM_Events_Soundset")
            -- vRPclient._setGPS(player,x,y)
-            --print(player)
-            --print(x)
-            --print(y)
             TriggerClientEvent("NotifyPush",player,{ code = 1, title = "Chamado", x = x, y = y, z = z, name = identityrequest.name.." "..identityrequest.name2, rgba = {124,124,124} })
             
             return true
