@@ -13,13 +13,13 @@ config.prices = {
 
 ----------cor secundária custom--------
 	["cor-secundaria"] = {
-		startprice = 0,
+		startprice = 1,
 		item = 'tinta', 
 		amount = 30
 	},	
 ----------cor primaria custom--------
 	["cor-primaria"] = {
-		startprice = 0,
+		startprice = 1,
 		item = 'tinta', 
 		amount = 30
 	},
@@ -37,7 +37,7 @@ config.prices = {
 	},
 ----------Perolado--------
 	["perolado"] = {
-		startprice = 0,
+		startprice = 1,
 		item = 'tinta', 
 		amount = 30
 	},
