@@ -8,7 +8,7 @@ Tunnel.bindInterface("blzr_desmanchar2", blzr)
 
 vCLIENT = Tunnel.getInterface("blzr_desmanchar2")
 
-local webhooklinkdesmanche = "https://discord.com/api/webhooks/833842893352468480/Do7FMDIUKhWgikoEYxs0x-c3vdPJRlEXj8V49FrOpUiYw_y90VRo1KqCdK8ASF26eITw"
+local webhooklinkdesmanche = "https://discord.com/api/webhooks/849672334763098172/6C9HvZa_TX0em4CVSbu7Wt-jj54fVxRtYKcR4s634_MgIcuoArnMagL0n5uZgQfk0a2O"
 
 function SendWebhookMessage(webhook,message)
 	if webhook ~= nil and webhook ~= "" then
@@ -33,110 +33,110 @@ local CarrosDesmanches = {
 ----- CONCESSIONÁRIA ----------------------------------------------------|
 -------------------------------------------------------------------------| 
     
-    ['adder'] = 40000 ,
-    ['akuma'] = 40000 ,
-    ['asbo'] = 4000 ,
-    ['baller3'] = 6000 ,
-    ['bati'] = 36000 ,
-    ['bestiagts'] = 60000 ,
-    ['bf400'] = 38800 ,
-    ['blista2'] = 4000 ,
-    ['bmwm3e36'] = 140000 ,
-    ['brioso'] = 4000 ,
-    ['buccaneer2'] = 10000 ,
-    ['caracara2'] = 48000 ,
-    ['carbonizzare'] = 40000 ,
-    ['carbonrs'] = 12000 ,
-    ['contender'] = 6000 ,
-    ['coquette'] = 16000 ,
-    ['coquette2'] = 20000 ,
-    ['coquette4'] = 80000 ,
-    ['cyclone'] = 60000 ,
-    ['daemon'] = 8000 ,
-    ['diablous'] = 24000 ,
-    ['dinghy'] = 10000 ,
-    ['dodgechargersrt'] = 140000 ,
-    ['dominator3'] = 28000 ,
-    ['double'] = 40000 ,
-    ['dubsta'] = 4000 ,
-    ['ellie'] = 9200 ,
-    ['emerus'] = 60000 ,
-    ['esskey'] = 12800 ,
-    ['everon'] = 40000 ,
-    ['exemplar'] = 22000 ,
-    ['f620'] = 16000 ,
-    ['faggio'] = 4000 ,
-    ['felon2'] = 6800 ,
-    ['freecrawler'] = 28000 ,
-    ['fugitive'] = 4000 ,
-    ['furia'] = 80000 ,
-    ['gresley'] = 3200 ,
-    ['guardian'] = 7200 ,
-    ['hakuchou'] = 40000 ,
-    ['hakuchou2'] = 60000 ,
-    ['imorgon'] = 40000 ,
-    ['impaler'] = 4000 ,
-    ['italigto'] = 80000 ,
-    ['italirsx'] = 140000 ,
-    ['jester3'] = 30000 ,
-    ['jetmax'] = 10400 ,
-    ['jugular'] = 68000 ,
-    ['kamacho'] = 6000 ,
-    ['komoda'] = 60000 ,
-    ['lancerevolutionx'] = 180000 ,
-    ['longfin'] = 40000 ,
-    ['manchez'] = 20000 ,
-    ['mesa3'] = 24000 ,
-    ['minivan'] = 4000 ,
-    ['neon'] = 40000 ,
-    ['nightblade'] = 20000 ,
-    ['novak'] = 40000 ,
-    ['oracle2'] = 12000 ,
-    ['osiris'] = 64000 ,
-    ['panto'] = 4000 ,
-    ['paradise'] = 3800 ,
-    ['pcj'] = 4000 ,
-    ['picador'] = 4000 ,
-    ['raiden'] = 40000 ,
-    ['reaper'] = 40000 ,
-    ['rebla'] = 60000 ,
-    ['regina'] = 4000 ,
-    ['ruffian'] = 18000 ,
-    ['rumpo3'] = 28000 ,
-    ['sabregt2'] = 12000 ,
-    ['sanchez2'] = 8800 ,
-    ['sandking2'] = 10000 ,
-    ['schlagen'] = 60000 ,
-    ['seashark3'] = 6800 ,
-    ['serrano'] = 4000 ,
-    ['silvias15'] = 80000 ,
-    ['speeder2'] = 10000 ,
-    ['speedo'] = 9200 ,
-    ['stratum'] = 4000 ,
-    ['sultanrs'] = 20000 ,
-    ['suntrap'] = 9200 ,
-    ['t20'] = 100000 ,
-    ['tailgater'] = 4000 ,
-    ['taipan'] = 40000 ,
-    ['thrax'] = 80000 ,
-    ['tropic'] = 10800 ,
-    ['turismo2'] = 28000 ,
-    ['turismor'] = 84000 ,
-    ['tyrant'] = 60000 ,
-    ['vader'] = 4000 ,
-    ['vamos'] = 4000 ,
-    ['voltic'] = 12800 ,
-    ['vortex'] = 10000 ,
-    ['weevil'] = 4000 ,
-    ['windsor2'] = 10800 ,
-    ['wolfsbane'] = 6000 ,
-    ['xa21'] = 80000 ,
-    ['xls'] = 6000 ,
-    ['youga2'] = 32000 ,
-    ['zentorno'] = 60000 ,
-    ['zion2'] = 6800 ,
-    ['zombieb'] = 10000 ,
-    ['zorrusso'] = 100000 ,
+    ['adder'] = 40000,
+    ['akuma'] = 40000,
+    ['asbo'] = 4000,
+    ['baller3'] = 6000,
+    ['bati'] = 36000,
+    ['bestiagts'] = 60000,
+    ['bf400'] = 38800,
+    ['blista2'] = 4000,
+    ['bmwm3e36'] = 140000,
+    ['brioso'] = 4000,
+    ['buccaneer2'] = 10000,
+    ['caracara2'] = 48000,
+    ['carbonizzare'] = 40000,
+    ['carbonrs'] = 12000,
+    ['contender'] = 6000,
+    ['coquette'] = 16000,
+    ['coquette2'] = 20000,
+    ['coquette4'] = 80000,
+    ['cyclone'] = 60000,
+    ['daemon'] = 8000,
+    ['diablous'] = 24000,
+    ['dinghy'] = 10000,
+    ['dodgechargersrt'] = 140000,
+    ['dominator3'] = 28000,
+    ['double'] = 40000,
+    ['dubsta'] = 4000,
+    ['ellie'] = 9200,
+    ['emerus'] = 60000,
+    ['esskey'] = 12800,
+    ['everon'] = 40000,
+    ['exemplar'] = 22000,
+    ['f620'] = 16000,
+    ['faggio'] = 4000,
+    ['felon2'] = 6800,
+    ['freecrawler'] = 28000,
+    ['fugitive'] = 4000,
+    ['furia'] = 80000,
+    ['gresley'] = 3200,
+    ['guardian'] = 7200,
+    ['hakuchou'] = 40000,
+    ['hakuchou2'] = 60000,
+    ['imorgon'] = 40000,
+    ['impaler'] = 4000,
+    ['italigto'] = 80000,
+    ['italirsx'] = 140000,
+    ['jester3'] = 30000,
+    ['jetmax'] = 10400,
+    ['jugular'] = 68000,
+    ['kamacho'] = 6000,
+    ['komoda'] = 60000,
+    ['lancerevolutionx'] = 180000,
+    ['longfin'] = 40000,
+    ['manchez'] = 20000,
+    ['mesa3'] = 24000,
+    ['minivan'] = 4000,
+    ['neon'] = 40000,
+    ['nightblade'] = 20000,
+    ['novak'] = 40000,
+    ['oracle2'] = 12000,
+    ['osiris'] = 64000,
+    ['panto'] = 4000,
+    ['paradise'] = 3800,
+    ['pcj'] = 4000,
+    ['picador'] = 4000,
+    ['raiden'] = 40000,
+    ['reaper'] = 40000,
+    ['rebla'] = 60000,
+    ['regina'] = 4000,
+    ['ruffian'] = 18000,
+    ['rumpo3'] = 28000,
+    ['sabregt2'] = 12000,
+    ['sanchez2'] = 8800,
+    ['sandking2'] = 10000,
+    ['schlagen'] = 60000,
+    ['seashark3'] = 6800,
+    ['serrano'] = 4000,
+    ['silvias15'] = 80000,
+    ['speeder2'] = 10000,
+    ['speedo'] = 9200,
+    ['stratum'] = 4000,
+    ['sultanrs'] = 20000,
+    ['suntrap'] = 9200,
+    ['t20'] = 100000,
+    ['tailgater'] = 4000,
+    ['taipan'] = 40000,
+    ['thrax'] = 80000,
+    ['tropic'] = 10800,
+    ['turismo2'] = 28000,
+    ['turismor'] = 84000,
+    ['tyrant'] = 60000,
+    ['vader'] = 4000,
+    ['vamos'] = 4000,
+    ['voltic'] = 12800,
+    ['vortex'] = 10000,
+    ['weevil'] = 4000,
+    ['windsor2'] = 10800,
+    ['wolfsbane'] = 6000,
+    ['xa21'] = 80000,
+    ['xls'] = 6000,
+    ['youga2'] = 32000,
+    ['zentorno'] = 60000,
+    ['zion2'] = 6800,
+    ['zombieb'] = 10000,
+    ['zorrusso'] = 100000,
         
     ----------------------------------------------------------------------|
     ----- CARROS VIPS ----------------------------------------------------|
@@ -208,11 +208,8 @@ local CarrosDesmanches = {
     ['rmodgt63'] = 80000,
     ['fordmustanggt'] = 80000,
     ['kuruma'] = 1000,
-
-    
-
-
-
+    ['banshee'] = 1000,
+    ['mamba'] = 1000,
 
 }
 
@@ -255,31 +252,38 @@ function blzr.CheckItem()
     return true
 end
 
-
+local nation = Proxy.getInterface("nation_garages")
 -- FUNÇÃO PARA GERAR O PAGAMENTO E OS ITENS
 function blzr.GerarPagamento(placa, nomeFeio, nomeBonito)
     local source = source
     local user_id = vRP.getUserId(source)
-    local identity = vRP.getUserIdentity(user_id)
-    
-    for k, v in pairs(CarrosDesmanches) do
-        if string.upper(k) == string.upper(nomeFeio) then
-            local pagamento = v
-            
-            --if vRP.paymentBank(user_id,parseInt(vRP.vehiclePrice(name)*0.1)) then
-            --vRP.giveInventoryItem(user_id,'dollars2',pagamento,true) -- DINHEIRO SUJO BACKUP
-            --ocal vehicle = vRP.query("vRP/get_vehicles",{ user_id = parseInt(user_id), vehicle = name })
-            vRP.giveInventoryItem(user_id,'dollars2',pagamento,true) -- DINHEIRO SUJO
-            
-            local vehicle,vehNet,vehName = vRPclient.vehList(source,7)
-            local plateUser = placa
-            local vehName = nomeFeio
-             vRP.execute("vRP/set_desmanche",{ user_id = parseInt(user_id), vehicle = vehName, desmanche = 1, time = parseInt(os.time()) }) 
-             SendWebhookMessage(webhooklinkWl,  "UserID: [" ..user_id.."] Desmanchou " ..vehicle.. " Placa: " ..plateUser.. " . ")
-            vCLIENT.deleteVehicle(source,vehicle)
-        end
-    end
+    local price = vRP.vehiclePrice(nomeFeio)
+    vRP.giveInventoryItem(user_id,'dollars2',price*(3 / 100),true) -- DINHEIRO SUJO
+    local vehicle,vehNet,vehName = vRPclient.vehList(source,7)
+    local plateUser = placa
+    local vehName = nomeFeio ---
+    vRP.execute("vRP/set_desmanche",{ user_id = parseInt(user_id), vehicle = vehName, desmanche = 1, time = parseInt(os.time()) }) 
+    TriggerClientEvent("Notify",source,"sucesso","Veiculo anunciado com sucesso",5000)
+    SendWebhookMessage(webhooklinkdesmanche,  "User_id: [" ..user_id.."] desmanchou Modelo" ..plateUser.. " Placa: "..plateUser.. "    .")
+    --vCLIENT.deleteVehicle(source,vehicle)
 end  
+
+function blzr.verificarvehicleplayer(placa)
+    local plateUser = vRP.getVehiclePlate(placa) --
+    if plateUser then --
+    local identity = vRP.getUserIdentity(plateUser)
+        if identity then
+            return true
+        end
+    else
+        TriggerClientEvent("Notify",source,"importante","Veiculo sem dono",10000)
+        return false
+       
+    end
+    return true
+end
+
+
 
 
 

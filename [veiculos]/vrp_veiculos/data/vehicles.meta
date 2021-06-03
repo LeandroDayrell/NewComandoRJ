@@ -7,7 +7,7 @@
 			<modelName>ferrariitalia</modelName>
 			<txdName>ferrariitalia</txdName>
 			<handlingId>italigto</handlingId>
-			<gameName>FERRARI</gameName>
+			<gameName>ferrariitalia</gameName>
 			<vehicleMakeName>ferrariitalia</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -116,7 +116,7 @@
 			<modelName>fordmustang</modelName>
 			<txdName>fordmustang</txdName>
 			<handlingId>dominator3</handlingId>
-			<gameName>MUSTANG</gameName>
+			<gameName>fordmustang</gameName>
 			<vehicleMakeName>fordmustang</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -225,7 +225,7 @@
 			<modelName>nissanskyliner34</modelName>
 			<txdName>nissanskyliner34</txdName>
 			<handlingId>elegy</handlingId>
-			<gameName>SKYLINE</gameName>
+			<gameName>nissanskyliner34</gameName>
 			<vehicleMakeName>nissanskyliner34</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -334,7 +334,7 @@
 			<modelName>mazdarx7</modelName>
 			<txdName>mazdarx7</txdName>
 			<handlingId>BMCI</handlingId>
-			<gameName>MAZDA RX7</gameName>
+			<gameName>mazdarx7</gameName>
 			<vehicleMakeName>mazdarx7</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -443,7 +443,7 @@
 			<modelName>nissangtrnismo</modelName>
 			<txdName>nissangtrnismo</txdName>
 			<handlingId>elegy2</handlingId>
-			<gameName>GTR NISMO</gameName>
+			<gameName>nissangtrnismo</gameName>
 			<vehicleMakeName>nissangtrnismo</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -552,7 +552,7 @@
 			<modelName>lancerevolutionx</modelName>
 			<txdName>lancerevolutionx</txdName>
 			<handlingId>kuruma</handlingId>
-			<gameName>LANCER</gameName>
+			<gameName>lancerevolutionx</gameName>
 			<vehicleMakeName>lancerevolutionx</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -772,7 +772,7 @@
 		  <modelName>x6m</modelName>
 		  <txdName>x6m</txdName>
 		  <handlingId>rebla</handlingId>
-		  <gameName>X6M</gameName>
+		  <gameName>x6m</gameName>
 		  <vehicleMakeName>BMW X6M 2016</vehicleMakeName>
 		  <expressionDictName>null</expressionDictName>
 		  <expressionName>null</expressionName>
@@ -1555,7 +1555,7 @@
 			<modelName>r1</modelName>
 			<txdName>r1</txdName>
 			<handlingId>akuma</handlingId>
-			<gameName>R1</gameName>
+			<gameName>r1</gameName>
 			<vehicleMakeName>Yamaha</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -1663,7 +1663,7 @@
 			<modelName>g65</modelName>
 			<txdName>g65</txdName>
 			<handlingId>dubsta2</handlingId>
-			<gameName>G65</gameName>
+			<gameName>g65</gameName>
 			<vehicleMakeName>MERC</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -2342,7 +2342,7 @@
 		  <modelName>pistaspider19</modelName>
 		  <txdName>pistaspider19</txdName>
 		  <handlingId>italirsx</handlingId>
-		  <gameName>ferrari_pista_spider</gameName>
+		  <gameName>pistaspider19</gameName>
 		  <vehicleMakeName>cyberdynesystems_edition</vehicleMakeName>
 		  <expressionDictName>null</expressionDictName>
 		  <expressionName>null</expressionName>
@@ -2451,7 +2451,7 @@
 		  <modelName>bmci</modelName>
 		  <txdName>bmci</txdName>
 		  <handlingId>BMCI</handlingId>
-		  <gameName>M5</gameName>
+		  <gameName>bmci</gameName>
 		  <vehicleMakeName>BMW</vehicleMakeName>
 		  <expressionDictName>null</expressionDictName>
 		  <expressionName>null</expressionName>
@@ -2681,7 +2681,7 @@
 		  <modelName>fc15</modelName>
 		  <txdName>fc15</txdName>
 		  <handlingId>carbonizzare</handlingId>
-		  <gameName>CALIFORNIAT</gameName>
+		  <gameName>fc15</gameName>
 		  <vehicleMakeName>FERRARI</vehicleMakeName>
 		  <expressionDictName>null</expressionDictName>
 		  <expressionName>null</expressionName>
@@ -3244,7 +3244,7 @@
 		  <modelName>zr380s</modelName>
 		  <txdName>zr380s</txdName>
 		  <handlingId>zr3803</handlingId>
-		  <gameName>ZR380S</gameName>
+		  <gameName>zr380s</gameName>
 		  <vehicleMakeName>ANNIS</vehicleMakeName>
 		  <expressionDictName>null</expressionDictName>
 		  <expressionName>null</expressionName>
@@ -3347,7 +3347,7 @@
 		  <modelName>huracan</modelName>
 		  <txdName>huracan</txdName>
 		  <handlingId>reaper</handlingId>
-		  <gameName>ALPHA</gameName>
+		  <gameName>huracan</gameName>
 		  <vehicleMakeName>ALBANY</vehicleMakeName>
 		  <expressionDictName>null</expressionDictName>
 		  <expressionName>null</expressionName>
@@ -3452,7 +3452,7 @@
 		  <modelName>fxxk16</modelName>
 		  <txdName>fxxk16</txdName>
 		  <handlingId>prototipo</handlingId>
-		  <gameName>TURISMOR</gameName>
+		  <gameName>fxxk16</gameName>
 		  <vehicleMakeName>GROTTI</vehicleMakeName>
 		  <expressionDictName>null</expressionDictName>
 		  <expressionName>null</expressionName>
@@ -3557,7 +3557,7 @@
 		  <modelName>raptor2017</modelName>
 		  <txdName>raptor2017</txdName>
 		  <handlingId>raptor2017</handlingId>
-		  <gameName>RAPTOR2017</gameName>
+		  <gameName>raptor2017</gameName>
 		  <vehicleMakeName>VAPID</vehicleMakeName>
 		  <expressionDictName>null</expressionDictName>
 		  <expressionName>null</expressionName>
@@ -3668,7 +3668,7 @@
 		  <modelName>aventador</modelName>
 		  <txdName>aventador</txdName>
 		  <handlingId>zentorno</handlingId>
-		  <gameName>ZENTORNO</gameName>
+		  <gameName>aventador</gameName>
 		  <vehicleMakeName>PEGASSI</vehicleMakeName>
 		  <expressionDictName>null</expressionDictName>
 		  <expressionName>null</expressionName>
@@ -3777,7 +3777,7 @@
 		  <modelName>hilux1</modelName>
 		  <txdName>hilux1</txdName>
 		  <handlingId>everon</handlingId>
-		  <gameName>HILUX1</gameName>
+		  <gameName>hilux1</gameName>
 		  <vehicleMakeName>TOYOTA</vehicleMakeName>
 		  <expressionDictName>null</expressionDictName>
 		  <expressionName>null</expressionName>
@@ -3900,7 +3900,7 @@
 		  <modelName>dl2016</modelName>
 		  <txdName>dl2016</txdName>
 		  <handlingId>everon</handlingId>
-		  <gameName>DL2016</gameName>
+		  <gameName>dl2016</gameName>
 		  <vehicleMakeName>DODGE</vehicleMakeName>
 		  <expressionDictName>null</expressionDictName>
 		  <expressionName>null</expressionName>
@@ -4021,7 +4021,7 @@
 		  <modelName>cb500x</modelName>
 		  <txdName>cb500x</txdName>
 		  <handlingId>akuma</handlingId>
-		  <gameName>CB500X</gameName>
+		  <gameName>cb500x</gameName>
 		  <vehicleMakeName>HONDA</vehicleMakeName>
 		  <expressionDictName>null</expressionDictName>
 		  <expressionName>null</expressionName>

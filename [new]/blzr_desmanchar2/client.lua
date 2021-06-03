@@ -19,10 +19,10 @@ vRPclient = Proxy.getInterface("vRP")
 -- CONFIG
 ---------------------------------------------------------------------
 -- FV
-local IniciarServico = {1549.85,3513.42,36.0} -- Onde se inicia o serviço e verifica a existência de um carro
+local IniciarServico = {1538.72,3532.92,35.37} -- Onde se inicia o serviço e verifica a existência de um carro
 local LocalDesmancharCarro = {1534.2850341797,3547.125,36.959651947021} -- Onde deve haver o carro que será desmanchado para poder continuar o desmanche
-local LocalFerramentas = {1553.51,3515.0,36.01} -- Local onde 'pegará' as ferramentas
-local AnuncioChassi = {1556.33,3523.36,36.12} -- Onde finalizará a missão para entregar o chassi e receber dinheiro e itens
+local LocalFerramentas = {1539.33,3537.04,35.37} -- Local onde 'pegará' as ferramentas
+local AnuncioChassi = {1541.83,3535.87,35.37} -- Onde finalizará a missão para entregar o chassi e receber dinheiro e itens
 local Computador = {1, 1, 1} -- Local onde ficará o computador de venda
 ---------------------------------------------------------------------
 --VARIAVEIS
@@ -68,37 +68,42 @@ Citizen.CreateThread(function()
                                 nomeCarro = GetDisplayNameFromVehicleModel(GetEntityModel(veh))
                                 modeloCarro = GetLabelText(nomeCarro)
                                 if VehPermitido then 
-                                    if CheckVehPermitido(nomeCarro) then
-                                        if vSERVER.CheckItem() then    
-                                            if ClasseVeh == 8 then
-                                                TipoVeh = 'moto'
+                                   -- if CheckVehPermitido(nomeCarro) then
+                                    if vSERVER.verificarvehicleplayer(placa) then
+                                       -- if CheckVehPermitido(nomeCarro) then
+                                            if vSERVER.CheckItem() then    
+                                                if ClasseVeh == 8 then
+                                                    TipoVeh = 'moto'
+                                                else
+                                                    TipoVeh = 'carro'
+                                                end
+                                                
+                                                -- NOTIFICACAO AQUI
+                                                
+                                              --  TriggerEvent('Notify', 'sucesso ', 'CONTINUANDO SERVIÇO!', 'Veículo identificado: <br>Veículo: <b>' .. modeloCarro .. ' (' .. nomeCarro.. ')</b><br>Placa: <b>'..placa..'</b><br><br>Continue. Pegue as ferramentas para desmanchar o veículo.')
+                                                etapa = 1
+                                                FreezeEntityPosition(veh, true)
+                                                SetVehicleDoorsLocked(veh, 4)
+                                                
                                             else
-                                                TipoVeh = 'carro'
-                                            end
-                                            
-                                            -- NOTIFICACAO AQUI
-                                            
-                                            TriggerEvent('Notify', 'sucesso ', 'CONTINUANDO SERVIÇO!', 'Veículo identificado: <br>Veículo: <b>' .. modeloCarro .. ' (' .. nomeCarro.. ')</b><br>Placa: <b>'..placa..'</b><br><br>Continue. Pegue as ferramentas para desmanchar o veículo.')
-                                            etapa = 1
-                                            FreezeEntityPosition(veh, true)
-                                            SetVehicleDoorsLocked(veh, 4)
-                                            
+                                                TriggerEvent('Notify', 'negado', 'ERRO AO INICIAR O SERVIÇO! 1', 5000)
+                                            end -- VERIFICAR CHECK ITEM 
                                         else
-                                            TriggerEvent('Notify', 'negado', 'ERRO AO INICIAR O SERVIÇO! 1', 'Você necessita de um <b>cartão de desmanche</b> para iniciar o serviço.')
-                                        end
-                                    else
-                                        TriggerEvent('Notify', 'negado', 'ERRO AO INICIAR O SERVIÇO! 2', 'Esse veículo não pode ser desmanchado.')
-                                    end
+                                            TriggerEvent('Notify', 'negado', 'Erro! Esse veiculo é de um carioca',5000)
+                                        end -- VERIFICAR SE O PLAYER E DONO DO VEICULO > verificarvehicleplayer
+                                   --[[  else
+                                        TriggerEvent('Notify', 'negado', 'ERRO AO INICIAR O SERVIÇO! 2',5000)
+                                    end -- VERIFICAR  CheckVehPermitido ]]
                                 else
                                     TriggerEvent('Notify', 'negado', 'ERRO AO INICIAR O SERVIÇO! 3', 'O veículo precisa ser um carro, van ou moto.')
-                                end
+                                end -- VERIFICAR SE O VEICULO ~E PERMITIDO VehPermitido
                             else 
                                 -- NOTIFICACAO AQUI
-                                TriggerEvent('Notify', 'negado ', 'ERRO AO INICIAR O SERVIÇO! 4', 'Não há nenhum carro próximo para ser desmanchado.')
-                            end
-                        end
-                    end
-                end
+                                TriggerEvent('Notify', 'negado ', 'ERRO AO INICIAR O SERVIÇO! 4',5000)
+                            end -- SE O VEICULO ESTÃ NO LOCAL 
+                        end -- VERIFICAR SE APERTOU O BOTAO
+                    end -- DIANTANCIA MENOR QUE 1
+                end -- DISTANCIA MENOR QUE 10
             elseif etapa == 1 then
                 local dist = Vdist(pedCoords, LocalFerramentas[1], LocalFerramentas[2], LocalFerramentas[3])
                 if dist < 10 then
@@ -123,7 +128,7 @@ Citizen.CreateThread(function()
                             end
                             FreezeEntityPosition(ped, true)
                             SetEntityHeading(ped, LocalFerramentas[4])
-                            vRP._playAnim(false,{"anim@amb@clubhouse@tutorial@bkr_tut_ig3@","machinic_loop_mechandplayer"},true)
+                            vRP._playAnim(false,{"anim@amb@clubhouse@tutorial@bkr_tut_ig3@","machinic_loop_mechandplayer"},true) -- PEGANDO FERRAMENTAS
                             TriggerEvent('progress', 5000, 'PEGANDO FERRAMENTAS')
 
                             Wait(5000) 
@@ -152,11 +157,18 @@ Citizen.CreateThread(function()
                                 text3D(x, y, z+0.5, '~y~[E] ~w~PARA DESMANCHAR')
                                 if IsControlJustPressed(0, 38) then
                                     if k == 'Capo' or k == 'pMalas' then
-                                        vRP.playAnim(false, {{"mini@repair" , "fixing_a_player"}}, true)
+                                        vRP._playAnim(false, {{"mini@repair" , "fixing_a_player"}}, true)
                                     elseif k == 'Porta_Direita' or k == 'Porta_Esquerda' or k == 'Banco' then
                                         vRP._playAnim(false,{task='WORLD_HUMAN_WELDING'},true)
+                                        TriggerEvent('progress', 5000, 'PEGANDO FERRAMENTAS')
+                                        Wait(5000)
+                                        ClearPedTasks(ped)
                                     else
-                                        vRP.playAnim(false, {{"amb@medic@standing@tendtodead@idle_a" , "idle_a"}}, true)
+                                        --vRP._playAanim(false, {{"amb@medic@standing@tendtodead@idle_a" , "idle_a"}}, true)
+                                        vRP._playAnim(false,{"anim@amb@clubhouse@tutorial@bkr_tut_ig3@","machinic_loop_mechandplayer"},true)
+                                        TriggerEvent('progress', 2000, 'PEGANDO FERRAMENTAS')
+                                        Wait(2000)
+                                        ClearPedTasks(ped)
                                     end
                                     -- -- Wait(5000)  TESTEEEEE  TESTEEEEE
                                     ClearPedTasks(ped)
@@ -303,8 +315,11 @@ end
 
 function CheckVehPermitido(nomeCarro)
     local vehs = vSERVER.GetVehs()
+    --print("Teste 01 CHECK PERMISSION")
     for k , v in pairs(vehs) do
+        --print("Teste 02 CHECK PERMISSION")
         if string.upper(nomeCarro) == string.upper(k) then
+            --print("Teste 03 CHECK PERMISSION")
             return true
         end
     end

@@ -2983,7 +2983,7 @@ config.checkTax = function(source,user_id,vehicle,type, garage, home)
                 price = parseInt(price * (config.detido / 100))
             end
 		elseif vehicleInfo[1].desmanche > 0 then
-			price = parseInt(price * (4 / 100))
+			price = parseInt(price * (3 / 100))
         elseif type and type == "exclusive" then
             vRP.execute("vRP/setIpva", { user_id = user_id, vehicle = vehicle, ipva = parseInt(os.time())})
             return true
@@ -3213,12 +3213,13 @@ config.customState = function(user_id, vehicle)
 			res.popup = "veículo detido, deseja liberar pagando <b>$ "..price.."</b> ?"
 		end
 		res.classLiberacao = "detido"
-		if vehicle.desmanche and vehicle.desmanche > 0 then
+	elseif vehicle.desmanche and vehicle.desmanche > 0 then
 			local price = vRP.format( vehicle.price * (4 / 100) )
 			res.liberacao = "$ "..price
 			res.status = "Desmanchado"
 			res.classStatus = "seguradora"
-			res.popup = "veículo desmanchado, deseja liberar pagando <b>$ "..price.."</b> ?"
+			res.po
+			pup = "veículo desmanchado, deseja liberar pagando <b>$ "..price.."</b> ?"
 			res.classLiberacao = "detido"
 		end
 	elseif parseInt(vehicle.ipva + 24 * 15 * 60 * 60) <= parseInt(os.time()) then

@@ -555,6 +555,7 @@ RegisterCommand("algemar",function(source,args,rawCommand)
 							vRPclient._stopAnim(nplayer,false)
 							TriggerClientEvent("vrp_sound:source",source,"uncuff",0.5)
 							TriggerClientEvent("vrp_sound:source",nplayer,"uncuff",0.5)
+							vCLIENT.closeInventory(nplayer)
 						else
 							poCuff[user_id] = true
 							local taskResult = vTASKBAR.taskHandcuff(nplayer)
@@ -563,6 +564,7 @@ RegisterCommand("algemar",function(source,args,rawCommand)
 								TriggerClientEvent("vrp_sound:source",source,"cuff",0.5)
 								TriggerClientEvent("vrp_sound:source",nplayer,"cuff",0.5)
 								vRPclient._playAnim(nplayer,true,{"mp_arresting","idle"},true)
+								vCLIENT.closeInventory(nplayer)
 							end
 							poCuff[user_id] = nil
 						end

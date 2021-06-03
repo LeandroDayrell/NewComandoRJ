@@ -6,8 +6,8 @@
 		<Item>
 			<modelName>ninef</modelName>
 			<txdName>ninef</txdName>
-			<handlingId>NINEF</handlingId>
-			<gameName>NINEF</gameName>
+			<handlingId>ninef</handlingId>
+			<gameName>ninef</gameName>
 			<vehicleMakeName>OBEY</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -112,7 +112,7 @@
 			<modelName>ninef2</modelName>
 			<txdName>ninef2</txdName>
 			<handlingId>NINEF</handlingId>
-			<gameName>NINEF2</gameName>
+			<gameName>ninef2</gameName>
 			<vehicleMakeName>OBEY</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -220,7 +220,7 @@
 			<modelName>blista</modelName>
 			<txdName>blista</txdName>
 			<handlingId>BLISTA</handlingId>
-			<gameName>BLISTA</gameName>
+			<gameName>blista</gameName>
 			<vehicleMakeName>DINKA</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -325,7 +325,7 @@
 			<modelName>asea</modelName>
 			<txdName>asea</txdName>
 			<handlingId>ASEA</handlingId>
-			<gameName>ASEA</gameName>
+			<gameName>asea</gameName>
 			<vehicleMakeName>DECLASSE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -440,7 +440,7 @@
 			<modelName>asea2</modelName>
 			<txdName>asea2</txdName>
 			<handlingId>ASEA</handlingId>
-			<gameName>ASEA</gameName>
+			<gameName>asea2</gameName>
 			<vehicleMakeName>DECLASSE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -564,7 +564,7 @@
 			<modelName>boattrailer</modelName>
 			<txdName>vehshare_truck</txdName>
 			<handlingId>BOATTRAILER</handlingId>
-			<gameName>BOATTRAILER</gameName>
+			<gameName>boattrailer</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -658,7 +658,7 @@
 			<modelName>bus</modelName>
 			<txdName>bus</txdName>
 			<handlingId>BUS</handlingId>
-			<gameName>BUS</gameName>
+			<gameName>bus</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -765,7 +765,7 @@
 			<modelName>armytanker</modelName>
 			<txdName>armytanker</txdName>
 			<handlingId>TANKER</handlingId>
-			<gameName>ARMYTRAILER</gameName>
+			<gameName>armytanker</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -868,7 +868,7 @@
 			<modelName>armytrailer</modelName>
 			<txdName>armytrailer</txdName>
 			<handlingId>ARMYTRAILER</handlingId>
-			<gameName>ARMYTRAILER</gameName>
+			<gameName>armytrailer</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -962,7 +962,7 @@
 			<modelName>armytrailer2</modelName>
 			<txdName>armytrailer2</txdName>
 			<handlingId>ARMYTRAILER</handlingId>
-			<gameName>ARMYTRAILER</gameName>
+			<gameName>armytrailer2</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -1056,7 +1056,7 @@
 			<modelName>freighttrailer</modelName>
 			<txdName>freighttrailer</txdName>
 			<handlingId>ARMYTRAILER</handlingId>
-			<gameName>FREIGHTTRAILER</gameName>
+			<gameName>freighttrailer</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -1150,7 +1150,7 @@
 			<modelName>coach</modelName>
 			<txdName>coach</txdName>
 			<handlingId>COACH</handlingId>
-			<gameName>COACH</gameName>
+			<gameName>coach</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -1257,7 +1257,7 @@
 			<modelName>airbus</modelName>
 			<txdName>airbus</txdName>
 			<handlingId>AIRBUS</handlingId>
-			<gameName>AIRBUS</gameName>
+			<gameName>airbus</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -1364,7 +1364,7 @@
 			<modelName>asterope</modelName>
 			<txdName>asterope</txdName>
 			<handlingId>ASTEROPE</handlingId>
-			<gameName>ASTROPE</gameName>
+			<gameName>asterope</gameName>
 			<vehicleMakeName>KARIN</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -1478,7 +1478,7 @@
 			<modelName>airtug</modelName>
 			<txdName>airtug</txdName>
 			<handlingId>AIRTUG</handlingId>
-			<gameName>AIRTUG</gameName>
+			<gameName>airtug</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -1587,7 +1587,7 @@
 			<modelName>ambulance</modelName>
 			<txdName>ambulance</txdName>
 			<handlingId>AMBULAN</handlingId>
-			<gameName>AMBULAN</gameName>
+			<gameName>ambulance</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -1705,7 +1705,7 @@
 			<modelName>barracks</modelName>
 			<txdName>barracks</txdName>
 			<handlingId>BARRACKS</handlingId>
-			<gameName>BARRACKS</gameName>
+			<gameName>barracks</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -1821,7 +1821,7 @@
 			<modelName>barracks2</modelName>
 			<txdName>barracks2</txdName>
 			<handlingId>BARRACKS2</handlingId>
-			<gameName>BARRACKS2</gameName>
+			<gameName>barracks2</gameName>
 			<vehicleMakeName>HVY</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -1951,7 +1951,7 @@
 			<modelName>baller</modelName>
 			<txdName>baller</txdName>
 			<handlingId>BALLER</handlingId>
-			<gameName>BALLER</gameName>
+			<gameName>baller</gameName>
 			<vehicleMakeName>GALLIVAN</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -2066,7 +2066,7 @@
 			<modelName>baller2</modelName>
 			<txdName>baller2</txdName>
 			<handlingId>BALLER2</handlingId>
-			<gameName>BALLER2</gameName>
+			<gameName>baller2</gameName>
 			<vehicleMakeName>GALLIVAN</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -2181,7 +2181,7 @@
 			<modelName>bjxl</modelName>
 			<txdName>bjxl</txdName>
 			<handlingId>BJXL</handlingId>
-			<gameName>BJXL</gameName>
+			<gameName>bjxl</gameName>
 			<vehicleMakeName>KARIN</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -2299,7 +2299,7 @@
 			<modelName>banshee</modelName>
 			<txdName>banshee</txdName>
 			<handlingId>BANSHEE</handlingId>
-			<gameName>BANSHEE</gameName>
+			<gameName>banshee</gameName>
 			<vehicleMakeName>BRAVADO</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -2404,7 +2404,7 @@
 			<modelName>benson</modelName>
 			<txdName>benson</txdName>
 			<handlingId>BENSON</handlingId>
-			<gameName>BENSON</gameName>
+			<gameName>benson</gameName>
 			<vehicleMakeName>VAPID</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -2521,7 +2521,7 @@
 			<modelName>bfinjection</modelName>
 			<txdName>bfinjection</txdName>
 			<handlingId>BFINJECT</handlingId>
-			<gameName>BFINJECT</gameName>
+			<gameName>bfinjection</gameName>
 			<vehicleMakeName>BF</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -2626,7 +2626,7 @@
 			<modelName>biff</modelName>
 			<txdName>biff</txdName>
 			<handlingId>BIFF</handlingId>
-			<gameName>BIFF</gameName>
+			<gameName>biff</gameName>
 			<vehicleMakeName>HVY</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -2756,7 +2756,7 @@
 			<modelName>blazer</modelName>
 			<txdName>blazer</txdName>
 			<handlingId>BLAZER</handlingId>
-			<gameName>BLAZER</gameName>
+			<gameName>blazer</gameName>
 			<vehicleMakeName>NAGASAKI</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -2860,7 +2860,7 @@
 			<modelName>blazer2</modelName>
 			<txdName>blazer2</txdName>
 			<handlingId>BLAZER2</handlingId>
-			<gameName>BLAZER2</gameName>
+			<gameName>blazer2</gameName>
 			<vehicleMakeName>NAGASAKI</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -2973,7 +2973,7 @@
 			<modelName>blazer3</modelName>
 			<txdName>blazer3</txdName>
 			<handlingId>BLAZER</handlingId>
-			<gameName>BLAZER3</gameName>
+			<gameName>blazer3</gameName>
 			<vehicleMakeName>NAGASAKI</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -3077,7 +3077,7 @@
 			<modelName>bison</modelName>
 			<txdName>bison</txdName>
 			<handlingId>BISON</handlingId>
-			<gameName>BISON</gameName>
+			<gameName>bison</gameName>
 			<vehicleMakeName>BRAVADO</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -3210,7 +3210,7 @@
 			<modelName>bison2</modelName>
 			<txdName>bison2</txdName>
 			<handlingId>BISON</handlingId>
-			<gameName>BISON</gameName>
+			<gameName>bison2</gameName>
 			<vehicleMakeName>BRAVADO</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -3334,7 +3334,7 @@
 			<modelName>bison3</modelName>
 			<txdName>bison3</txdName>
 			<handlingId>BISON</handlingId>
-			<gameName>BISON</gameName>
+			<gameName>bison3</gameName>
 			<vehicleMakeName>BRAVADO</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -3455,7 +3455,7 @@
 			<modelName>boxville</modelName>
 			<txdName>boxville</txdName>
 			<handlingId>BOXVILLE</handlingId>
-			<gameName>BOXVILLE</gameName>
+			<gameName>boxville</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -3575,7 +3575,7 @@
 			<modelName>boxville2</modelName>
 			<txdName>boxville2</txdName>
 			<handlingId>BOXVILLE</handlingId>
-			<gameName>BOXVILLE</gameName>
+			<gameName>boxville2</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -3695,7 +3695,7 @@
 			<modelName>boxville3</modelName>
 			<txdName>boxville3</txdName>
 			<handlingId>BOXVILLE</handlingId>
-			<gameName>BOXVILLE</gameName>
+			<gameName>boxville3</gameName>
 			<vehicleMakeName>BRUTE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -3818,7 +3818,7 @@
 			<modelName>bobcatxl</modelName>
 			<txdName>bobcatxl</txdName>
 			<handlingId>BOBCATXL</handlingId>
-			<gameName>BOBCATXL</gameName>
+			<gameName>bobcatxl</gameName>
 			<vehicleMakeName>VAPID</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -3928,7 +3928,7 @@
 			<modelName>bodhi2</modelName>
 			<txdName>bodhi2</txdName>
 			<handlingId>BODHI2</handlingId>
-			<gameName>BODHI2</gameName>
+			<gameName>bodhi2</gameName>
 			<vehicleMakeName>CANIS</vehicleMakeName>
 			<expressionDictName>vehicle</expressionDictName>
 			<expressionName>bodhi2</expressionName>
@@ -4049,7 +4049,7 @@
 			<modelName>buccaneer</modelName>
 			<txdName>buccaneer</txdName>
 			<handlingId>BUCCANEE</handlingId>
-			<gameName>BUCCANEE</gameName>
+			<gameName>buccaneer</gameName>
 			<vehicleMakeName>ALBANY</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -4154,7 +4154,7 @@
 			<modelName>buffalo</modelName>
 			<txdName>buffalo</txdName>
 			<handlingId>BUFFALO</handlingId>
-			<gameName>BUFFALO</gameName>
+			<gameName>buffalo</gameName>
 			<vehicleMakeName>BRAVADO</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -4271,7 +4271,7 @@
 			<modelName>buffalo2</modelName>
 			<txdName>buffalo2</txdName>
 			<handlingId>BUFFALO2</handlingId>
-			<gameName>BUFFALO2</gameName>
+			<gameName>buffalo2</gameName>
 			<vehicleMakeName>BRAVADO</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -4386,7 +4386,7 @@
 			<modelName>bulldozer</modelName>
 			<txdName>bulldozer</txdName>
 			<handlingId>BULLDOZE</handlingId>
-			<gameName>BULLDOZE</gameName>
+			<gameName>bulldozer</gameName>
 			<vehicleMakeName>HVY</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -4507,7 +4507,7 @@
 			<modelName>bullet</modelName>
 			<txdName>bullet</txdName>
 			<handlingId>BULLET</handlingId>
-			<gameName>BULLET</gameName>
+			<gameName>bullet</gameName>
 			<vehicleMakeName>VAPID</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -4612,7 +4612,7 @@
 			<modelName>blimp</modelName>
 			<txdName>blimp</txdName>
 			<handlingId>BLIMP</handlingId>
-			<gameName>BLIMP</gameName>
+			<gameName>blimp</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -4715,7 +4715,7 @@
 			<modelName>burrito</modelName>
 			<txdName>burrito</txdName>
 			<handlingId>BURRITO</handlingId>
-			<gameName>BURRITO</gameName>
+			<gameName>burrito</gameName>
 			<vehicleMakeName>DECLASSE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -4841,7 +4841,7 @@
 			<modelName>burrito2</modelName>
 			<txdName>burrito2</txdName>
 			<handlingId>BURRITO</handlingId>
-			<gameName>BURRITO</gameName>
+			<gameName>burrito2</gameName>
 			<vehicleMakeName>DECLASSE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -4954,7 +4954,7 @@
 			<modelName>burrito3</modelName>
 			<txdName>burrito3</txdName>
 			<handlingId>BURRITO</handlingId>
-			<gameName>BURRITO</gameName>
+			<gameName>burrito3</gameName>
 			<vehicleMakeName>DECLASSE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -5080,7 +5080,7 @@
 			<modelName>burrito4</modelName>
 			<txdName>burrito4</txdName>
 			<handlingId>BURRITO</handlingId>
-			<gameName>BURRITO</gameName>
+			<gameName>burrito4</gameName>
 			<vehicleMakeName>DECLASSE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -5206,7 +5206,7 @@
 			<modelName>burrito5</modelName>
 			<txdName>burrito5</txdName>
 			<handlingId>BURRITO</handlingId>
-			<gameName>BURRITO</gameName>
+			<gameName>burrito5</gameName>
 			<vehicleMakeName>DECLASSE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -5329,7 +5329,7 @@
 			<modelName>cavalcade</modelName>
 			<txdName>cavalcade</txdName>
 			<handlingId>CAVCADE</handlingId>
-			<gameName>CAVCADE</gameName>
+			<gameName>cavalcade</gameName>
 			<vehicleMakeName>ALBANY</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -5434,7 +5434,7 @@
 			<modelName>cavalcade2</modelName>
 			<txdName>cavalcade2</txdName>
 			<handlingId>CAVCADE</handlingId>
-			<gameName>CAVCADE</gameName>
+			<gameName>cavalcade2</gameName>
 			<vehicleMakeName>ALBANY</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -5539,7 +5539,7 @@
 			<modelName>policet</modelName>
 			<txdName>policet</txdName>
 			<handlingId>POLICET</handlingId>
-			<gameName>POLICET</gameName>
+			<gameName>policet</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -5657,7 +5657,7 @@
 			<modelName>gburrito</modelName>
 			<txdName>gburrito</txdName>
 			<handlingId>BURRITO</handlingId>
-			<gameName>GBURRITO</gameName>
+			<gameName>gburrito</gameName>
 			<vehicleMakeName>DECLASSE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -5773,7 +5773,7 @@
 			<modelName>cablecar</modelName>
 			<txdName>cablecar</txdName>
 			<handlingId>FREIGHT</handlingId>
-			<gameName>CABLECAR</gameName>
+			<gameName>cablecar</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -5873,7 +5873,7 @@
 			<modelName>caddy</modelName>
 			<txdName>caddy</txdName>
 			<handlingId>CADDY</handlingId>
-			<gameName>CADDY</gameName>
+			<gameName>caddy</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -5990,7 +5990,7 @@
 			<modelName>caddy2</modelName>
 			<txdName>caddy2</txdName>
 			<handlingId>CADDY2</handlingId>
-			<gameName>CADDY</gameName>
+			<gameName>caddy2</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -6094,7 +6094,7 @@
 			<modelName>camper</modelName>
 			<txdName>camper</txdName>
 			<handlingId>CAMPER</handlingId>
-			<gameName>CAMPER</gameName>
+			<gameName>camper</gameName>
 			<vehicleMakeName>BRUTE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -6197,7 +6197,7 @@
 			<modelName>carbonizzare</modelName>
 			<txdName>carbonizzare</txdName>
 			<handlingId>CARBONIZ</handlingId>
-			<gameName>CARBONIZ</gameName>
+			<gameName>carbonizzare</gameName>
 			<vehicleMakeName>GROTTI</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -6308,7 +6308,7 @@
 			<modelName>cheetah</modelName>
 			<txdName>cheetah</txdName>
 			<handlingId>CHEETAH</handlingId>
-			<gameName>CHEETAH</gameName>
+			<gameName>cheetah</gameName>
 			<vehicleMakeName>GROTTI</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -6413,7 +6413,7 @@
 			<modelName>comet2</modelName>
 			<txdName>comet2</txdName>
 			<handlingId>COMET</handlingId>
-			<gameName>COMET2</gameName>
+			<gameName>comet2</gameName>
 			<vehicleMakeName>PFISTER</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -6518,7 +6518,7 @@
 			<modelName>cogcabrio</modelName>
 			<txdName>cogcabrio</txdName>
 			<handlingId>COGCABRIO</handlingId>
-			<gameName>COGCABRI</gameName>
+			<gameName>cogcabrio</gameName>
 			<vehicleMakeName>ENUS</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -6628,7 +6628,7 @@
 			<modelName>coquette</modelName>
 			<txdName>coquette</txdName>
 			<handlingId>COQUETTE</handlingId>
-			<gameName>COQUETTE</gameName>
+			<gameName>coquette</gameName>
 			<vehicleMakeName>INVERTO</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -6733,7 +6733,7 @@
 			<modelName>cutter</modelName>
 			<txdName>cutter</txdName>
 			<handlingId>CUTTER</handlingId>
-			<gameName>CUTTER</gameName>
+			<gameName>cutter</gameName>
 			<vehicleMakeName>HVY</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -6831,7 +6831,7 @@
 			<modelName>gresley</modelName>
 			<txdName>gresley</txdName>
 			<handlingId>GRESLEY</handlingId>
-			<gameName>GRESLEY</gameName>
+			<gameName>gresley</gameName>
 			<vehicleMakeName>BRAVADO</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -6946,7 +6946,7 @@
 			<modelName>dilettante</modelName>
 			<txdName>dilettante</txdName>
 			<handlingId>DILETTANTE</handlingId>
-			<gameName>DILETTAN</gameName>
+			<gameName>dilettante</gameName>
 			<vehicleMakeName>KARIN</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -7061,7 +7061,7 @@
 			<modelName>dilettante2</modelName>
 			<txdName>dilettante2</txdName>
 			<handlingId>DILETTANTE</handlingId>
-			<gameName>DILETTAN</gameName>
+			<gameName>dilettante2</gameName>
 			<vehicleMakeName>KARIN</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -7176,7 +7176,7 @@
 			<modelName>dune</modelName>
 			<txdName>dune</txdName>
 			<handlingId>DUNE</handlingId>
-			<gameName>DUNE</gameName>
+			<gameName>dune</gameName>
 			<vehicleMakeName>BF</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -7289,7 +7289,7 @@
 			<modelName>dune2</modelName>
 			<txdName>dune2</txdName>
 			<handlingId>DUNE2</handlingId>
-			<gameName>DUNE2</gameName>
+			<gameName>dune2</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -7402,7 +7402,7 @@
 			<modelName>hotknife</modelName>
 			<txdName>hotknife</txdName>
 			<handlingId>HOTKNIFE</handlingId>
-			<gameName>HOTKNIFE</gameName>
+			<gameName>hotknife</gameName>
 			<vehicleMakeName>VAPID</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -7509,7 +7509,7 @@
 			<modelName>dloader</modelName>
 			<txdName>dloader</txdName>
 			<handlingId>DLOADER</handlingId>
-			<gameName>DLOADER</gameName>
+			<gameName>dloader</gameName>
 			<vehicleMakeName>BRAVADO</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -7625,7 +7625,7 @@
 			<modelName>dubsta</modelName>
 			<txdName>dubsta</txdName>
 			<handlingId>DUBSTA</handlingId>
-			<gameName>DUBSTA</gameName>
+			<gameName>dubsta</gameName>
 			<vehicleMakeName>BENEFAC</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -7730,7 +7730,7 @@
 			<modelName>dubsta2</modelName>
 			<txdName>dubsta2</txdName>
 			<handlingId>DUBSTA</handlingId>
-			<gameName>DUBSTA</gameName>
+			<gameName>dubsta2</gameName>
 			<vehicleMakeName>BENEFAC</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -7835,7 +7835,7 @@
 			<modelName>dump</modelName>
 			<txdName>dump</txdName>
 			<handlingId>DUMP</handlingId>
-			<gameName>DUMP</gameName>
+			<gameName>dump</gameName>
 			<vehicleMakeName>HVY</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -7950,7 +7950,7 @@
 			<modelName>rubble</modelName>
 			<txdName>rubble</txdName>
 			<handlingId>RUBBLE</handlingId>
-			<gameName>RUBBLE</gameName>
+			<gameName>rubble</gameName>
 			<vehicleMakeName>JOBUILT</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -8068,7 +8068,7 @@
 			<modelName>docktug</modelName>
 			<txdName>docktug</txdName>
 			<handlingId>DOCKTUG</handlingId>
-			<gameName>DOCKTUG</gameName>
+			<gameName>docktug</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -8197,7 +8197,7 @@
 			<modelName>dominator</modelName>
 			<txdName>dominator</txdName>
 			<handlingId>DOMINATOR</handlingId>
-			<gameName>DOMINATOR</gameName>
+			<gameName>dominator</gameName>
 			<vehicleMakeName>VAPID</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -8302,7 +8302,7 @@
 			<modelName>emperor</modelName>
 			<txdName>emperor</txdName>
 			<handlingId>EMPEROR</handlingId>
-			<gameName>EMPEROR</gameName>
+			<gameName>emperor</gameName>
 			<vehicleMakeName>ALBANY</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -8417,7 +8417,7 @@
 			<modelName>emperor2</modelName>
 			<txdName>emperor2</txdName>
 			<handlingId>EMPEROR</handlingId>
-			<gameName>EMPEROR</gameName>
+			<gameName>emperor2</gameName>
 			<vehicleMakeName>ALBANY</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -8532,7 +8532,7 @@
 			<modelName>emperor3</modelName>
 			<txdName>emperor3</txdName>
 			<handlingId>EMPEROR</handlingId>
-			<gameName>EMPEROR</gameName>
+			<gameName>emperor3</gameName>
 			<vehicleMakeName>ALBANY</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -8657,7 +8657,7 @@
 			<modelName>entityxf</modelName>
 			<txdName>entityxf</txdName>
 			<handlingId>ENTITYXF</handlingId>
-			<gameName>ENTITYXF</gameName>
+			<gameName>entityxf</gameName>
 			<vehicleMakeName>OVERFLOD</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -8762,7 +8762,7 @@
 			<modelName>exemplar</modelName>
 			<txdName>exemplar</txdName>
 			<handlingId>EXEMPLAR</handlingId>
-			<gameName>EXEMPLAR</gameName>
+			<gameName>exemplar</gameName>
 			<vehicleMakeName>DEWBAUCH</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -8877,7 +8877,7 @@
 			<modelName>elegy2</modelName>
 			<txdName>elegy2</txdName>
 			<handlingId>ELEGY2</handlingId>
-			<gameName>ELEGY2</gameName>
+			<gameName>elegy2</gameName>
 			<vehicleMakeName>ANNIS</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -8982,7 +8982,7 @@
 			<modelName>f620</modelName>
 			<txdName>f620</txdName>
 			<handlingId>F620</handlingId>
-			<gameName>F620</gameName>
+			<gameName>f620</gameName>
 			<vehicleMakeName>OCELOT</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -9087,7 +9087,7 @@
 			<modelName>fbi</modelName>
 			<txdName>fbi</txdName>
 			<handlingId>FBI</handlingId>
-			<gameName>FBI</gameName>
+			<gameName>fbi</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -9211,7 +9211,7 @@
 			<modelName>fbi2</modelName>
 			<txdName>fbi2</txdName>
 			<handlingId>FBI2</handlingId>
-			<gameName>FBI2</gameName>
+			<gameName>fbi2</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -9325,7 +9325,7 @@
 			<modelName>felon</modelName>
 			<txdName>felon</txdName>
 			<handlingId>FELON</handlingId>
-			<gameName>FELON</gameName>
+			<gameName>felon</gameName>
 			<vehicleMakeName>LAMPADA</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -9439,7 +9439,7 @@
 			<modelName>felon2</modelName>
 			<txdName>felon2</txdName>
 			<handlingId>FELON2</handlingId>
-			<gameName>FELON2</gameName>
+			<gameName>felon2</gameName>
 			<vehicleMakeName>LAMPADA</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -9549,7 +9549,7 @@
 			<modelName>feltzer2</modelName>
 			<txdName>feltzer2</txdName>
 			<handlingId>FELTZER</handlingId>
-			<gameName>FELTZER</gameName>
+			<gameName>feltzer2</gameName>
 			<vehicleMakeName>BENEFAC</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -9654,7 +9654,7 @@
 			<modelName>firetruk</modelName>
 			<txdName>firetruk</txdName>
 			<handlingId>FIRETRUK</handlingId>
-			<gameName>FIRETRUK</gameName>
+			<gameName>firetruk</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -9764,7 +9764,7 @@
 			<modelName>flatbed</modelName>
 			<txdName>flatbed</txdName>
 			<handlingId>FLATBED</handlingId>
-			<gameName>FLATBED</gameName>
+			<gameName>flatbed</gameName>
 			<vehicleMakeName>MTL</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -9874,7 +9874,7 @@
 			<modelName>forklift</modelName>
 			<txdName>forklift</txdName>
 			<handlingId>FORKLIFT</handlingId>
-			<gameName>FORK</gameName>
+			<gameName>forklift</gameName>
 			<vehicleMakeName>HVY</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -9988,7 +9988,7 @@
 			<modelName>fq2</modelName>
 			<txdName>fq2</txdName>
 			<handlingId>FQ2</handlingId>
-			<gameName>FQ2</gameName>
+			<gameName>fq2</gameName>
 			<vehicleMakeName>FATHOM</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -10103,7 +10103,7 @@
 			<modelName>fusilade</modelName>
 			<txdName>fusilade</txdName>
 			<handlingId>FUSILADE</handlingId>
-			<gameName>FUSILADE</gameName>
+			<gameName>fusilade</gameName>
 			<vehicleMakeName>SCHYSTER</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -10208,7 +10208,7 @@
 			<modelName>fugitive</modelName>
 			<txdName>fugitive</txdName>
 			<handlingId>FUGITIVE</handlingId>
-			<gameName>FUGITIVE</gameName>
+			<gameName>fugitive</gameName>
 			<vehicleMakeName>CHEVAL</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -10323,7 +10323,7 @@
 			<modelName>futo</modelName>
 			<txdName>futo</txdName>
 			<handlingId>FUTO</handlingId>
-			<gameName>FUTO</gameName>
+			<gameName>futo</gameName>
 			<vehicleMakeName>KARIN</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -10428,7 +10428,7 @@
 			<modelName>granger</modelName>
 			<txdName>granger</txdName>
 			<handlingId>GRANGER</handlingId>
-			<gameName>GRANGER</gameName>
+			<gameName>granger</gameName>
 			<vehicleMakeName>DECLASSE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -10533,7 +10533,7 @@
 			<modelName>gauntlet</modelName>
 			<txdName>gauntlet</txdName>
 			<handlingId>GAUNTLET</handlingId>
-			<gameName>GAUNTLET</gameName>
+			<gameName>gauntlet</gameName>
 			<vehicleMakeName>BRAVADO</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -10638,7 +10638,7 @@
 			<modelName>habanero</modelName>
 			<txdName>habanero</txdName>
 			<handlingId>HABANERO</handlingId>
-			<gameName>HABANERO</gameName>
+			<gameName>habanero</gameName>
 			<vehicleMakeName>EMPEROR</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -10753,7 +10753,7 @@
 			<modelName>hauler</modelName>
 			<txdName>hauler</txdName>
 			<handlingId>HAULER</handlingId>
-			<gameName>HAULER</gameName>
+			<gameName>hauler</gameName>
 			<vehicleMakeName>JOBUILT</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -10875,7 +10875,7 @@
 			<modelName>handler</modelName>
 			<txdName>handler</txdName>
 			<handlingId>HANDLER</handlingId>
-			<gameName>HANDLER</gameName>
+			<gameName>handler</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -10990,7 +10990,7 @@
 			<modelName>infernus</modelName>
 			<txdName>infernus</txdName>
 			<handlingId>INFERNUS</handlingId>
-			<gameName>INFERNUS</gameName>
+			<gameName>infernus</gameName>
 			<vehicleMakeName>PEGASSI</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -11095,7 +11095,7 @@
 			<modelName>ingot</modelName>
 			<txdName>ingot</txdName>
 			<handlingId>INGOT</handlingId>
-			<gameName>INGOT</gameName>
+			<gameName>ingot</gameName>
 			<vehicleMakeName>VULCAR</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -11210,7 +11210,7 @@
 			<modelName>intruder</modelName>
 			<txdName>intruder</txdName>
 			<handlingId>INTRUDER</handlingId>
-			<gameName>INTRUDER</gameName>
+			<gameName>intruder</gameName>
 			<vehicleMakeName>KARIN</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -11325,7 +11325,7 @@
 			<modelName>issi2</modelName>
 			<txdName>issi2</txdName>
 			<handlingId>ISSI</handlingId>
-			<gameName>ISSI2</gameName>
+			<gameName>issi2</gameName>
 			<vehicleMakeName>WEENY</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -11435,7 +11435,7 @@
 			<modelName>Jackal</modelName>
 			<txdName>Jackal</txdName>
 			<handlingId>JACKAL</handlingId>
-			<gameName>JACKAL</gameName>
+			<gameName>Jackal</gameName>
 			<vehicleMakeName>OCELOT</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -11551,7 +11551,7 @@
 			<modelName>journey</modelName>
 			<txdName>journey</txdName>
 			<handlingId>JOURNEY</handlingId>
-			<gameName>JOURNEY</gameName>
+			<gameName>journey</gameName>
 			<vehicleMakeName>ZIRCONIU</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -11672,7 +11672,7 @@
 			<modelName>jb700</modelName>
 			<txdName>jb700</txdName>
 			<handlingId>JB700</handlingId>
-			<gameName>JB700</gameName>
+			<gameName>jb700</gameName>
 			<vehicleMakeName>DEWBAUCH</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -11777,7 +11777,7 @@
 			<modelName>khamelion</modelName>
 			<txdName>khamelion</txdName>
 			<handlingId>KHAMEL</handlingId>
-			<gameName>KHAMEL</gameName>
+			<gameName>khamelion</gameName>
 			<vehicleMakeName>HIJAK</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -11882,7 +11882,7 @@
 			<modelName>landstalker</modelName>
 			<txdName>landstalker</txdName>
 			<handlingId>LANDSTALKER</handlingId>
-			<gameName>LANDSTAL</gameName>
+			<gameName>landstalker</gameName>
 			<vehicleMakeName>DUNDREAR</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -11997,7 +11997,7 @@
 			<modelName>lguard</modelName>
 			<txdName>lguard</txdName>
 			<handlingId>LGUARD</handlingId>
-			<gameName>LGUARD</gameName>
+			<gameName>lguard</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -12111,7 +12111,7 @@
 			<modelName>manana</modelName>
 			<txdName>manana</txdName>
 			<handlingId>MANANA</handlingId>
-			<gameName>MANANA</gameName>
+			<gameName>manana</gameName>
 			<vehicleMakeName>ALBANY</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -12216,7 +12216,7 @@
 			<modelName>mesa</modelName>
 			<txdName>mesa</txdName>
 			<handlingId>MESA</handlingId>
-			<gameName>MESA</gameName>
+			<gameName>mesa</gameName>
 			<vehicleMakeName>CANIS</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -12331,7 +12331,7 @@
 			<modelName>mesa2</modelName>
 			<txdName>mesa2</txdName>
 			<handlingId>MESA</handlingId>
-			<gameName>MESA</gameName>
+			<gameName>mesa2</gameName>
 			<vehicleMakeName>CANIS</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -12456,7 +12456,7 @@
 			<modelName>mesa3</modelName>
 			<txdName>mesa3</txdName>
 			<handlingId>MESA</handlingId>
-			<gameName>MESA</gameName>
+			<gameName>mesa3</gameName>
 			<vehicleMakeName>CANIS</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -12571,7 +12571,7 @@
 			<modelName>crusader</modelName>
 			<txdName>crusader</txdName>
 			<handlingId>CRUSADER</handlingId>
-			<gameName>CRUSADER</gameName>
+			<gameName>crusader</gameName>
 			<vehicleMakeName>CANIS</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -12685,7 +12685,7 @@
 			<modelName>minivan</modelName>
 			<txdName>minivan</txdName>
 			<handlingId>MINIVAN</handlingId>
-			<gameName>MINIVAN</gameName>
+			<gameName>minivan</gameName>
 			<vehicleMakeName>VAPID</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -12800,7 +12800,7 @@
 			<modelName>mixer</modelName>
 			<txdName>mixer</txdName>
 			<handlingId>MIXER</handlingId>
-			<gameName>MIXER</gameName>
+			<gameName>mixer</gameName>
 			<vehicleMakeName>HVY</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -12918,7 +12918,7 @@
 			<modelName>mixer2</modelName>
 			<txdName>mixer2</txdName>
 			<handlingId>MIXER2</handlingId>
-			<gameName>MIXER2</gameName>
+			<gameName>mixer2</gameName>
 			<vehicleMakeName>HVY</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -13036,7 +13036,7 @@
 			<modelName>monroe</modelName>
 			<txdName>monroe</txdName>
 			<handlingId>MONROE</handlingId>
-			<gameName>MONROE</gameName>
+			<gameName>monroe</gameName>
 			<vehicleMakeName>PEGASSI</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -13141,7 +13141,7 @@
 			<modelName>mower</modelName>
 			<txdName>mower</txdName>
 			<handlingId>MOWER</handlingId>
-			<gameName>MOWER</gameName>
+			<gameName>mower</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -13248,7 +13248,7 @@
 			<modelName>mule</modelName>
 			<txdName>mule</txdName>
 			<handlingId>MULE</handlingId>
-			<gameName>MULE</gameName>
+			<gameName>mule</gameName>
 			<vehicleMakeName>MAIBATSU</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -13364,7 +13364,7 @@
 			<modelName>mule2</modelName>
 			<txdName>mule2</txdName>
 			<handlingId>MULE</handlingId>
-			<gameName>MULE</gameName>
+			<gameName>mule2</gameName>
 			<vehicleMakeName>MAIBATSU</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -13479,7 +13479,7 @@
 			<modelName>oracle</modelName>
 			<txdName>oracle</txdName>
 			<handlingId>ORACLE</handlingId>
-			<gameName>ORACLE</gameName>
+			<gameName>oracle</gameName>
 			<vehicleMakeName>UBERMACH</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -13594,7 +13594,7 @@
 			<modelName>oracle2</modelName>
 			<txdName>oracle2</txdName>
 			<handlingId>ORACLE2</handlingId>
-			<gameName>ORACLE</gameName>
+			<gameName>oracle2</gameName>
 			<vehicleMakeName>UBERMACH</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -13709,7 +13709,7 @@
 			<modelName>packer</modelName>
 			<txdName>packer</txdName>
 			<handlingId>PACKER</handlingId>
-			<gameName>PACKER</gameName>
+			<gameName>packer</gameName>
 			<vehicleMakeName>MTL</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -13834,7 +13834,7 @@
 			<modelName>patriot</modelName>
 			<txdName>patriot</txdName>
 			<handlingId>PATRIOT</handlingId>
-			<gameName>PATRIOT</gameName>
+			<gameName>patriot</gameName>
 			<vehicleMakeName>MAMMOTH</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -13945,7 +13945,7 @@
 			<modelName>pbus</modelName>
 			<txdName>pbus</txdName>
 			<handlingId>PBUS</handlingId>
-			<gameName>PBUS</gameName>
+			<gameName>pbus</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -14052,7 +14052,7 @@
 			<modelName>penumbra</modelName>
 			<txdName>penumbra</txdName>
 			<handlingId>PENUMBRA</handlingId>
-			<gameName>PENUMBRA</gameName>
+			<gameName>penumbra</gameName>
 			<vehicleMakeName>MAIBATSU</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -14157,7 +14157,7 @@
 			<modelName>peyote</modelName>
 			<txdName>peyote</txdName>
 			<handlingId>PEYOTE</handlingId>
-			<gameName>PEYOTE</gameName>
+			<gameName>peyote</gameName>
 			<vehicleMakeName>VAPID</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -14262,7 +14262,7 @@
 			<modelName>phantom</modelName>
 			<txdName>phantom</txdName>
 			<handlingId>PHANTOM</handlingId>
-			<gameName>PHANTOM</gameName>
+			<gameName>phantom</gameName>
 			<vehicleMakeName>JOBUILT</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -14386,7 +14386,7 @@
 			<modelName>phoenix</modelName>
 			<txdName>phoenix</txdName>
 			<handlingId>PHOENIX</handlingId>
-			<gameName>PHOENIX</gameName>
+			<gameName>phoenix</gameName>
 			<vehicleMakeName>IMPONTE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -14491,7 +14491,7 @@
 			<modelName>picador</modelName>
 			<txdName>picador</txdName>
 			<handlingId>PICADOR</handlingId>
-			<gameName>PICADOR</gameName>
+			<gameName>picador</gameName>
 			<vehicleMakeName>CHEVAL</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -14598,7 +14598,7 @@
 			<modelName>pounder</modelName>
 			<txdName>pounder</txdName>
 			<handlingId>POUNDER</handlingId>
-			<gameName>POUNDER</gameName>
+			<gameName>pounder</gameName>
 			<vehicleMakeName>MTL</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -14706,7 +14706,7 @@
 			<modelName>police</modelName>
 			<txdName>police</txdName>
 			<handlingId>POLICE</handlingId>
-			<gameName>POLICE</gameName>
+			<gameName>police</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -14826,7 +14826,7 @@
 			<modelName>police4</modelName>
 			<txdName>police4</txdName>
 			<handlingId>POLICE</handlingId>
-			<gameName>POLICE4</gameName>
+			<gameName>police4</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -14946,7 +14946,7 @@
 			<modelName>police2</modelName>
 			<txdName>police2</txdName>
 			<handlingId>POLICE2</handlingId>
-			<gameName>POLICE2</gameName>
+			<gameName>police2</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -15066,7 +15066,7 @@
 			<modelName>police3</modelName>
 			<txdName>police3</txdName>
 			<handlingId>POLICE3</handlingId>
-			<gameName>POLICE</gameName>
+			<gameName>police3</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -15186,7 +15186,7 @@
 			<modelName>policeold1</modelName>
 			<txdName>policeold1</txdName>
 			<handlingId>POLICEOLD</handlingId>
-			<gameName>POLICEO1</gameName>
+			<gameName>policeold1</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -15301,7 +15301,7 @@
 			<modelName>policeold2</modelName>
 			<txdName>policeold2</txdName>
 			<handlingId>POLICEOL2</handlingId>
-			<gameName>POLICEO2</gameName>
+			<gameName>policeold2</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -15426,7 +15426,7 @@
 			<modelName>pony</modelName>
 			<txdName>pony</txdName>
 			<handlingId>PONY</handlingId>
-			<gameName>PONY</gameName>
+			<gameName>pony</gameName>
 			<vehicleMakeName>BRUTE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -15554,7 +15554,7 @@
 			<modelName>pony2</modelName>
 			<txdName>pony2</txdName>
 			<handlingId>PONY</handlingId>
-			<gameName>PONY</gameName>
+			<gameName>pony2</gameName>
 			<vehicleMakeName>BRUTE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -15669,7 +15669,7 @@
 			<modelName>prairie</modelName>
 			<txdName>prairie</txdName>
 			<handlingId>PRAIRIE</handlingId>
-			<gameName>PRAIRIE</gameName>
+			<gameName>prairie</gameName>
 			<vehicleMakeName>BOLLOKAN</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -15774,7 +15774,7 @@
 			<modelName>pranger</modelName>
 			<txdName>pranger</txdName>
 			<handlingId>PRANGER</handlingId>
-			<gameName>PRANGER</gameName>
+			<gameName>pranger</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -15896,7 +15896,7 @@
 			<modelName>premier</modelName>
 			<txdName>premier</txdName>
 			<handlingId>PREMIER</handlingId>
-			<gameName>PREMIER</gameName>
+			<gameName>premier</gameName>
 			<vehicleMakeName>DECLASSE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -16011,7 +16011,7 @@
 			<modelName>primo</modelName>
 			<txdName>primo</txdName>
 			<handlingId>PRIMO</handlingId>
-			<gameName>PRIMO</gameName>
+			<gameName>primo</gameName>
 			<vehicleMakeName>ALBANY</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -16220,7 +16220,7 @@
 			<modelName>rancherxl</modelName>
 			<txdName>rancherxl</txdName>
 			<handlingId>RANCHERXL</handlingId>
-			<gameName>RANCHERX</gameName>
+			<gameName>rancherxl</gameName>
 			<vehicleMakeName>DECLASSE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -16328,7 +16328,7 @@
 			<modelName>rancherxl2</modelName>
 			<txdName>rancherxl2</txdName>
 			<handlingId>RANCHERXL</handlingId>
-			<gameName>RANCHERX</gameName>
+			<gameName>rancherxl2</gameName>
 			<vehicleMakeName>DECLASSE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -16443,7 +16443,7 @@
 			<modelName>rapidgt</modelName>
 			<txdName>rapidgt</txdName>
 			<handlingId>RAPIDGT</handlingId>
-			<gameName>RAPIDGT</gameName>
+			<gameName>rapidgt</gameName>
 			<vehicleMakeName>DEWBAUCH</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -16548,7 +16548,7 @@
 			<modelName>rapidgt2</modelName>
 			<txdName>rapidgt2</txdName>
 			<handlingId>RAPIDGT</handlingId>
-			<gameName>RAPIDGT</gameName>
+			<gameName>rapidgt2</gameName>
 			<vehicleMakeName>DEWBAUCH</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -16656,7 +16656,7 @@
 			<modelName>radi</modelName>
 			<txdName>radi</txdName>
 			<handlingId>RADI</handlingId>
-			<gameName>RADI</gameName>
+			<gameName>radi</gameName>
 			<vehicleMakeName>VAPID</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -16771,7 +16771,7 @@
 			<modelName>ratloader</modelName>
 			<txdName>ratloader</txdName>
 			<handlingId>RLOADER</handlingId>
-			<gameName>RLOADER</gameName>
+			<gameName>ratloader</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -16876,7 +16876,7 @@
 			<modelName>rebel</modelName>
 			<txdName>rebel</txdName>
 			<handlingId>REBEL</handlingId>
-			<gameName>REBEL01</gameName>
+			<gameName>rebel</gameName>
 			<vehicleMakeName>KARIN</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -16983,7 +16983,7 @@
 			<modelName>regina</modelName>
 			<txdName>regina</txdName>
 			<handlingId>REGINA</handlingId>
-			<gameName>REGINA</gameName>
+			<gameName>regina</gameName>
 			<vehicleMakeName>DUNDREAR</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -17099,7 +17099,7 @@
 			<modelName>rebel2</modelName>
 			<txdName>rebel2</txdName>
 			<handlingId>REBEL</handlingId>
-			<gameName>REBEL2</gameName>
+			<gameName>rebel2</gameName>
 			<vehicleMakeName>KARIN</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -17206,7 +17206,7 @@
 			<modelName>rentalbus</modelName>
 			<txdName>rentalbus</txdName>
 			<handlingId>TOURBUS</handlingId>
-			<gameName>RENTBUS</gameName>
+			<gameName>rentalbus</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -17448,7 +17448,7 @@
 			<modelName>rumpo</modelName>
 			<txdName>rumpo</txdName>
 			<handlingId>RUMPO</handlingId>
-			<gameName>RUMPO</gameName>
+			<gameName>rumpo</gameName>
 			<vehicleMakeName>BRAVADO</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -17563,7 +17563,7 @@
 			<modelName>rumpo2</modelName>
 			<txdName>rumpo2</txdName>
 			<handlingId>RUMPO</handlingId>
-			<gameName>RUMPO</gameName>
+			<gameName>rumpo2</gameName>
 			<vehicleMakeName>BRAVADO</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -17668,7 +17668,7 @@
 			<modelName>rhino</modelName>
 			<txdName>rhino</txdName>
 			<handlingId>RHINO</handlingId>
-			<gameName>RHINO</gameName>
+			<gameName>rhino</gameName>
 			<vehicleMakeName />
 			<expressionDictName>vehicle</expressionDictName>
 			<expressionName>rhino</expressionName>
@@ -17773,7 +17773,7 @@
 			<modelName>riot</modelName>
 			<txdName>riot</txdName>
 			<handlingId>RIOT</handlingId>
-			<gameName>RIOT</gameName>
+			<gameName>riot</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -17893,7 +17893,7 @@
 			<modelName>ripley</modelName>
 			<txdName>ripley</txdName>
 			<handlingId>RIPLEY</handlingId>
-			<gameName>RIPLEY</gameName>
+			<gameName>ripley</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -18108,7 +18108,7 @@
 			<modelName>romero</modelName>
 			<txdName>romero</txdName>
 			<handlingId>ROMERO</handlingId>
-			<gameName>ROMERO</gameName>
+			<gameName>romero</gameName>
 			<vehicleMakeName>CHARIOT</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -18213,7 +18213,7 @@
 			<modelName>sabregt</modelName>
 			<txdName>sabregt</txdName>
 			<handlingId>SABREGT</handlingId>
-			<gameName>SABREGT</gameName>
+			<gameName>sabregt</gameName>
 			<vehicleMakeName>DECLASSE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -18318,7 +18318,7 @@
 			<modelName>sadler</modelName>
 			<txdName>sadler</txdName>
 			<handlingId>SADLER</handlingId>
-			<gameName>SADLER</gameName>
+			<gameName>sadler</gameName>
 			<vehicleMakeName>VAPID</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -18441,7 +18441,7 @@
 			<modelName>sadler2</modelName>
 			<txdName>sadler2</txdName>
 			<handlingId>SADLER</handlingId>
-			<gameName>SADLER</gameName>
+			<gameName>sadler2</gameName>
 			<vehicleMakeName>VAPID</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -18574,7 +18574,7 @@
 			<modelName>sandking</modelName>
 			<txdName>sandking</txdName>
 			<handlingId>SANDKING</handlingId>
-			<gameName>SANDKING</gameName>
+			<gameName>sandking</gameName>
 			<vehicleMakeName>VAPID</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -18679,7 +18679,7 @@
 			<modelName>sandking2</modelName>
 			<txdName>sandking2</txdName>
 			<handlingId>SANDKING</handlingId>
-			<gameName>SANDKIN2</gameName>
+			<gameName>sandking2</gameName>
 			<vehicleMakeName>VAPID</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -18784,7 +18784,7 @@
 			<modelName>schafter2</modelName>
 			<txdName>schafter2</txdName>
 			<handlingId>SCHAFTER2</handlingId>
-			<gameName>SCHAFTER</gameName>
+			<gameName>schafter2</gameName>
 			<vehicleMakeName>BENEFAC</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -18889,7 +18889,7 @@
 			<modelName>schwarzer</modelName>
 			<txdName>schwarzer</txdName>
 			<handlingId>SCHWARZE</handlingId>
-			<gameName>SCHWARZE</gameName>
+			<gameName>schwarzer</gameName>
 			<vehicleMakeName>BENEFAC</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -18994,7 +18994,7 @@
 			<modelName>scrap</modelName>
 			<txdName>scrap</txdName>
 			<handlingId>SCRAP</handlingId>
-			<gameName>SCRAP</gameName>
+			<gameName>scrap</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -19104,7 +19104,7 @@
 			<modelName>seminole</modelName>
 			<txdName>seminole</txdName>
 			<handlingId>SEMINOLE</handlingId>
-			<gameName>SEMINOLE</gameName>
+			<gameName>seminole</gameName>
 			<vehicleMakeName>CANIS</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -19222,7 +19222,7 @@
 			<modelName>sentinel</modelName>
 			<txdName>sentinel</txdName>
 			<handlingId>SENTINEL</handlingId>
-			<gameName>SENTINEL</gameName>
+			<gameName>sentinel</gameName>
 			<vehicleMakeName>UBERMACH</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -19327,7 +19327,7 @@
 			<modelName>sentinel2</modelName>
 			<txdName>sentinel2</txdName>
 			<handlingId>SENTINEL</handlingId>
-			<gameName>SENTINEL2</gameName>
+			<gameName>sentinel2</gameName>
 			<vehicleMakeName>UBERMACH</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -19437,7 +19437,7 @@
 			<modelName>zion</modelName>
 			<txdName>zion</txdName>
 			<handlingId>ZION</handlingId>
-			<gameName>ZION</gameName>
+			<gameName>zion</gameName>
 			<vehicleMakeName>UBERMACH</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -19542,7 +19542,7 @@
 			<modelName>zion2</modelName>
 			<txdName>zion2</txdName>
 			<handlingId>ZION</handlingId>
-			<gameName>ZION2</gameName>
+			<gameName>zion2</gameName>
 			<vehicleMakeName>UBERMACH</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -19652,7 +19652,7 @@
 			<modelName>serrano</modelName>
 			<txdName>serrano</txdName>
 			<handlingId>SERRANO</handlingId>
-			<gameName>SERRANO</gameName>
+			<gameName>serrano</gameName>
 			<vehicleMakeName>BENEFAC</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -19757,7 +19757,7 @@
 			<modelName>sheriff</modelName>
 			<txdName>sheriff</txdName>
 			<handlingId>SHERIFF</handlingId>
-			<gameName>SHERIFF</gameName>
+			<gameName>sheriff</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -19877,7 +19877,7 @@
 			<modelName>sheriff2</modelName>
 			<txdName>sheriff2</txdName>
 			<handlingId>FBI2</handlingId>
-			<gameName>SHERIFF2</gameName>
+			<gameName>sheriff2</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -19987,7 +19987,7 @@
 			<modelName>speedo</modelName>
 			<txdName>speedo</txdName>
 			<handlingId>SPEEDO</handlingId>
-			<gameName>SPEEDO</gameName>
+			<gameName>speedo</gameName>
 			<vehicleMakeName>VAPID</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -20115,7 +20115,7 @@
 			<modelName>speedo2</modelName>
 			<txdName>speedo2</txdName>
 			<handlingId>SPEEDO</handlingId>
-			<gameName>SPEEDO2</gameName>
+			<gameName>speedo2</gameName>
 			<vehicleMakeName>VAPID</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -20235,7 +20235,7 @@
 			<modelName>stanier</modelName>
 			<txdName>stanier</txdName>
 			<handlingId>STANIER</handlingId>
-			<gameName>STANIER</gameName>
+			<gameName>stanier</gameName>
 			<vehicleMakeName>VAPID</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -20350,7 +20350,7 @@
 			<modelName>stinger</modelName>
 			<txdName>stinger</txdName>
 			<handlingId>STINGER</handlingId>
-			<gameName>STINGER</gameName>
+			<gameName>stinger</gameName>
 			<vehicleMakeName>GROTTI</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -20455,7 +20455,7 @@
 			<modelName>stingergt</modelName>
 			<txdName>stingergt</txdName>
 			<handlingId>STINGERGT</handlingId>
-			<gameName>STINGERG</gameName>
+			<gameName>stingergt</gameName>
 			<vehicleMakeName>GROTTI</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -20560,7 +20560,7 @@
 			<modelName>stockade</modelName>
 			<txdName>stockade</txdName>
 			<handlingId>STOCKADE</handlingId>
-			<gameName>STOCKADE</gameName>
+			<gameName>stockade</gameName>
 			<vehicleMakeName>BRUTE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -20686,7 +20686,7 @@
 			<modelName>stockade3</modelName>
 			<txdName>stockade3</txdName>
 			<handlingId>STOCKADE</handlingId>
-			<gameName>STOCKADE</gameName>
+			<gameName>stockade3</gameName>
 			<vehicleMakeName>BRUTE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -20811,7 +20811,7 @@
 			<modelName>stratum</modelName>
 			<txdName>stratum</txdName>
 			<handlingId>STRATUM</handlingId>
-			<gameName>STRATUM</gameName>
+			<gameName>stratum</gameName>
 			<vehicleMakeName>ZIRCONIU</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -20926,7 +20926,7 @@
 			<modelName>sultan</modelName>
 			<txdName>sultan</txdName>
 			<handlingId>SULTAN</handlingId>
-			<gameName>SULTAN</gameName>
+			<gameName>sultan</gameName>
 			<vehicleMakeName>KARIN</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -21041,7 +21041,7 @@
 			<modelName>superd</modelName>
 			<txdName>superd</txdName>
 			<handlingId>SUPERD</handlingId>
-			<gameName>SUPERD</gameName>
+			<gameName>superd</gameName>
 			<vehicleMakeName>ENUS</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -21156,7 +21156,7 @@
 			<modelName>surano</modelName>
 			<txdName>surano</txdName>
 			<handlingId>SURANO</handlingId>
-			<gameName>SURANO</gameName>
+			<gameName>surano</gameName>
 			<vehicleMakeName>BENEFAC</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -21264,7 +21264,7 @@
 			<modelName>surfer</modelName>
 			<txdName>surfer</txdName>
 			<handlingId>SURFER</handlingId>
-			<gameName>SURFER</gameName>
+			<gameName>surfer</gameName>
 			<vehicleMakeName>BF</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -21369,7 +21369,7 @@
 			<modelName>surfer2</modelName>
 			<txdName>surfer2</txdName>
 			<handlingId>SURFER</handlingId>
-			<gameName>SURFER2</gameName>
+			<gameName>surfer2</gameName>
 			<vehicleMakeName>BF</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -21474,7 +21474,7 @@
 			<modelName>surge</modelName>
 			<txdName>surge</txdName>
 			<handlingId>SURGE</handlingId>
-			<gameName>SURGE</gameName>
+			<gameName>surge</gameName>
 			<vehicleMakeName>CHEVAL</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -21590,7 +21590,7 @@
 			<modelName>taco</modelName>
 			<txdName>taco</txdName>
 			<handlingId>TACO</handlingId>
-			<gameName>TACO</gameName>
+			<gameName>taco</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -21697,7 +21697,7 @@
 			<modelName>tailgater</modelName>
 			<txdName>tailgater</txdName>
 			<handlingId>TAILGATE</handlingId>
-			<gameName>TAILGATE</gameName>
+			<gameName>tailgater</gameName>
 			<vehicleMakeName>OBEY</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -21813,7 +21813,7 @@
 			<modelName>taxi</modelName>
 			<txdName>taxi</txdName>
 			<handlingId>TAXI</handlingId>
-			<gameName>TAXI</gameName>
+			<gameName>taxi</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -21934,7 +21934,7 @@
 			<modelName>trash</modelName>
 			<txdName>trash</txdName>
 			<handlingId>TRASH</handlingId>
-			<gameName>TRASH</gameName>
+			<gameName>trash</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -22044,7 +22044,7 @@
 			<modelName>tractor</modelName>
 			<txdName>tractor</txdName>
 			<handlingId>TRACTOR</handlingId>
-			<gameName>TRACTOR</gameName>
+			<gameName>tractor</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -22150,7 +22150,7 @@
 			<modelName>tractor2</modelName>
 			<txdName>tractor2</txdName>
 			<handlingId>TRACTOR2</handlingId>
-			<gameName>TRACTOR2</gameName>
+			<gameName>tractor2</gameName>
 			<vehicleMakeName>STANLEY</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -22264,7 +22264,7 @@
 			<modelName>tractor3</modelName>
 			<txdName>tractor3</txdName>
 			<handlingId>TRACTOR2</handlingId>
-			<gameName>TRACTOR2</gameName>
+			<gameName>tractor3</gameName>
 			<vehicleMakeName>STANLEY</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -22388,7 +22388,7 @@
 			<modelName>graintrailer</modelName>
 			<txdName>graintrailer</txdName>
 			<handlingId>GRAINTRAIL</handlingId>
-			<gameName>GRAINTRAILER</gameName>
+			<gameName>graintrailer</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -22481,7 +22481,7 @@
 			<modelName>baletrailer</modelName>
 			<txdName>baletrailer</txdName>
 			<handlingId>BALETRAILER</handlingId>
-			<gameName>BALETRAILER</gameName>
+			<gameName>baletrailer</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -22572,7 +22572,7 @@
 			<modelName>tiptruck</modelName>
 			<txdName>tiptruck</txdName>
 			<handlingId>TIPTRUCK</handlingId>
-			<gameName>TIPTRUCK</gameName>
+			<gameName>tiptruck</gameName>
 			<vehicleMakeName>BRUTE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -22693,7 +22693,7 @@
 			<modelName>tiptruck2</modelName>
 			<txdName>tiptruck2</txdName>
 			<handlingId>TIPTRUCK2</handlingId>
-			<gameName>TIPTRUCK2</gameName>
+			<gameName>tiptruck2</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -22814,7 +22814,7 @@
 			<modelName>tornado</modelName>
 			<txdName>tornado</txdName>
 			<handlingId>TORNADO</handlingId>
-			<gameName>TORNADO</gameName>
+			<gameName>tornado</gameName>
 			<vehicleMakeName>DECLASSE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -22919,7 +22919,7 @@
 			<modelName>tornado2</modelName>
 			<txdName>tornado2</txdName>
 			<handlingId>TORNADO</handlingId>
-			<gameName>TORNADO2</gameName>
+			<gameName>tornado2</gameName>
 			<vehicleMakeName>DECLASSE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -23029,7 +23029,7 @@
 			<modelName>tornado3</modelName>
 			<txdName>tornado3</txdName>
 			<handlingId>TORNADO</handlingId>
-			<gameName>TORNADO3</gameName>
+			<gameName>tornado3</gameName>
 			<vehicleMakeName>DECLASSE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -23134,7 +23134,7 @@
 			<modelName>tornado4</modelName>
 			<txdName>tornado4</txdName>
 			<handlingId>TORNADO</handlingId>
-			<gameName>TORNADO</gameName>
+			<gameName>tornado4</gameName>
 			<vehicleMakeName>DECLASSE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -23239,7 +23239,7 @@
 			<modelName>tourbus</modelName>
 			<txdName>tourbus</txdName>
 			<handlingId>TOURBUS</handlingId>
-			<gameName>TOURBUS</gameName>
+			<gameName>tourbus</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -23381,7 +23381,7 @@
 			<modelName>towtruck</modelName>
 			<txdName>towtruck</txdName>
 			<handlingId>TOWTRUCK</handlingId>
-			<gameName>TOWTRUCK</gameName>
+			<gameName>towtruck</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -23495,7 +23495,7 @@
 			<modelName>towtruck2</modelName>
 			<txdName>towtruck2</txdName>
 			<handlingId>TOWTRUCK2</handlingId>
-			<gameName>TOWTRUCK</gameName>
+			<gameName>towtruck2</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -23609,7 +23609,7 @@
 			<modelName>utillitruck</modelName>
 			<txdName>utillitruck</txdName>
 			<handlingId>UTILTRUC</handlingId>
-			<gameName>UTILTRUC</gameName>
+			<gameName>utillitruck</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -23727,7 +23727,7 @@
 			<modelName>utillitruck2</modelName>
 			<txdName>utillitruck2</txdName>
 			<handlingId>UTILTRUC2</handlingId>
-			<gameName>UTILTRUC</gameName>
+			<gameName>utillitruck2</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -23843,7 +23843,7 @@
 			<modelName>utillitruck3</modelName>
 			<txdName>utillitruck3</txdName>
 			<handlingId>UTILTRUC3</handlingId>
-			<gameName>UTILTRUC</gameName>
+			<gameName>utillitruck3</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -23959,7 +23959,7 @@
 			<modelName>voodoo2</modelName>
 			<txdName>voodoo2</txdName>
 			<handlingId>VOODOO2</handlingId>
-			<gameName>VOODOO</gameName>
+			<gameName>voodoo2</gameName>
 			<vehicleMakeName>DECLASSE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -24064,7 +24064,7 @@
 			<modelName>impaler3</modelName>
 			<txdName>impaler3</txdName>
 			<handlingId>IMPALER3</handlingId>
-			<gameName>IMPALER3</gameName>
+			<gameName>impaler3</gameName>
 			<vehicleMakeName>DECLASSE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -24168,7 +24168,7 @@
 			<modelName>monster4</modelName>
 			<txdName>monster4</txdName>
 			<handlingId>MONSTER3</handlingId>
-			<gameName>MONSTER4</gameName>
+			<gameName>monster4</gameName>
 			<vehicleMakeName>BRAVADO</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -24269,7 +24269,7 @@
 			<modelName>monster5</modelName>
 			<txdName>monster5</txdName>
 			<handlingId>MONSTER3</handlingId>
-			<gameName>MONSTER5</gameName>
+			<gameName>monster5</gameName>
 			<vehicleMakeName>BRAVADO</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -24370,7 +24370,7 @@
 			<modelName>slamvan6</modelName>
 			<txdName>slamvan6</txdName>
 			<handlingId>SLAMVAN4</handlingId>
-			<gameName>SLAMVAN6</gameName>
+			<gameName>slamvan6</gameName>
 			<vehicleMakeName>VAPID</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -24473,7 +24473,7 @@
 			<modelName>issi6</modelName>
 			<txdName>issi6</txdName>
 			<handlingId>ISSI4</handlingId>
-			<gameName>ISSI6</gameName>
+			<gameName>issi6</gameName>
 			<vehicleMakeName>WEENY</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -24785,7 +24785,7 @@
 			<modelName>deathbike2</modelName>
 			<txdName>deathbike2</txdName>
 			<handlingId>DEATHBIKE2</handlingId>
-			<gameName>DEATHBIKE2</gameName>
+			<gameName>deathbike2</gameName>
 			<vehicleMakeName>WESTERN</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -24894,7 +24894,7 @@
 			<modelName>dominator6</modelName>
 			<txdName>dominator6</txdName>
 			<handlingId>DOMINATOR4</handlingId>
-			<gameName>DOMINATOR6</gameName>
+			<gameName>dominator6</gameName>
 			<vehicleMakeName>VAPID</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -24996,7 +24996,7 @@
 			<modelName>deathbike3</modelName>
 			<txdName>deathbike3</txdName>
 			<handlingId>DEATHBIKE</handlingId>
-			<gameName>DEATHBIKE3</gameName>
+			<gameName>deathbike3</gameName>
 			<vehicleMakeName>WESTERN</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -25105,7 +25105,7 @@
 			<modelName>impaler4</modelName>
 			<txdName>impaler4</txdName>
 			<handlingId>IMPALER2</handlingId>
-			<gameName>IMPALER4</gameName>
+			<gameName>impaler4</gameName>
 			<vehicleMakeName>DECLASSE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -25209,7 +25209,7 @@
 			<modelName>slamvan4</modelName>
 			<txdName>slamvan4</txdName>
 			<handlingId>SLAMVAN4</handlingId>
-			<gameName>SLAMVAN4</gameName>
+			<gameName>slamvan4</gameName>
 			<vehicleMakeName>VAPID</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -25312,7 +25312,7 @@
 			<modelName>slamvan5</modelName>
 			<txdName>slamvan5</txdName>
 			<handlingId>SLAMVAN5</handlingId>
-			<gameName>SLAMVAN5</gameName>
+			<gameName>slamvan5</gameName>
 			<vehicleMakeName>VAPID</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -25415,7 +25415,7 @@
 			<modelName>brutus</modelName>
 			<txdName>brutus</txdName>
 			<handlingId>BRUTUS</handlingId>
-			<gameName>BRUTUS</gameName>
+			<gameName>brutus</gameName>
 			<vehicleMakeName>DECLASSE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -25519,7 +25519,7 @@
 			<modelName>brutus2</modelName>
 			<txdName>brutus2</txdName>
 			<handlingId>BRUTUS2</handlingId>
-			<gameName>BRUTUS2</gameName>
+			<gameName>brutus2</gameName>
 			<vehicleMakeName>DECLASSE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -25623,7 +25623,7 @@
 			<modelName>brutus3</modelName>
 			<txdName>brutus3</txdName>
 			<handlingId>BRUTUS</handlingId>
-			<gameName>BRUTUS3</gameName>
+			<gameName>brutus3</gameName>
 			<vehicleMakeName>DECLASSE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -25727,7 +25727,7 @@
 			<modelName>deathbike</modelName>
 			<txdName>deathbike</txdName>
 			<handlingId>DEATHBIKE</handlingId>
-			<gameName>DEATHBIKE</gameName>
+			<gameName>deathbike</gameName>
 			<vehicleMakeName>WESTERN</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -25836,7 +25836,7 @@
 			<modelName>dominator4</modelName>
 			<txdName>dominator4</txdName>
 			<handlingId>DOMINATOR4</handlingId>
-			<gameName>DOMINATOR4</gameName>
+			<gameName>dominator4</gameName>
 			<vehicleMakeName>VAPID</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -25938,7 +25938,7 @@
 			<modelName>dominator5</modelName>
 			<txdName>dominator5</txdName>
 			<handlingId>DOMINATOR5</handlingId>
-			<gameName>DOMINATOR5</gameName>
+			<gameName>dominator5</gameName>
 			<vehicleMakeName>VAPID</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -26040,7 +26040,7 @@
 			<modelName>bruiser</modelName>
 			<txdName>bruiser</txdName>
 			<handlingId>BRUISER</handlingId>
-			<gameName>BRUISER</gameName>
+			<gameName>bruiser</gameName>
 			<vehicleMakeName>BENEFAC</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -26161,7 +26161,7 @@
 			<modelName>bruiser2</modelName>
 			<txdName>bruiser2</txdName>
 			<handlingId>BRUISER2</handlingId>
-			<gameName>BRUISER2</gameName>
+			<gameName>bruiser2</gameName>
 			<vehicleMakeName>BENEFAC</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -26282,7 +26282,7 @@
 			<modelName>bruiser3</modelName>
 			<txdName>bruiser3</txdName>
 			<handlingId>BRUISER</handlingId>
-			<gameName>BRUISER3</gameName>
+			<gameName>bruiser3</gameName>
 			<vehicleMakeName>BENEFAC</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -26403,7 +26403,7 @@
 			<modelName>rcbandito</modelName>
 			<txdName>rcbandito</txdName>
 			<handlingId>RCBANDITO</handlingId>
-			<gameName>RCBANDITO</gameName>
+			<gameName>rcbandito</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -26491,7 +26491,7 @@
 			<modelName>italigto</modelName>
 			<txdName>italigto</txdName>
 			<handlingId>ITALIGTO</handlingId>
-			<gameName>ITALIGTO</gameName>
+			<gameName>italigto</gameName>
 			<vehicleMakeName>GROTTI</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -26698,7 +26698,7 @@
 			<modelName>impaler2</modelName>
 			<txdName>impaler2</txdName>
 			<handlingId>IMPALER2</handlingId>
-			<gameName>IMPALER2</gameName>
+			<gameName>impaler2</gameName>
 			<vehicleMakeName>DECLASSE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -26802,7 +26802,7 @@
 			<modelName>monster3</modelName>
 			<txdName>monster3</txdName>
 			<handlingId>MONSTER3</handlingId>
-			<gameName>MONSTER3</gameName>
+			<gameName>monster3</gameName>
 			<vehicleMakeName>BRAVADO</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -26903,7 +26903,7 @@
 			<modelName>tulip</modelName>
 			<txdName>tulip</txdName>
 			<handlingId>TULIP</handlingId>
-			<gameName>TULIP</gameName>
+			<gameName>tulip</gameName>
 			<vehicleMakeName>DECLASSE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -27024,7 +27024,7 @@
 			<modelName>scarab</modelName>
 			<txdName>scarab</txdName>
 			<handlingId>SCARAB</handlingId>
-			<gameName>SCARAB</gameName>
+			<gameName>scarab</gameName>
 			<vehicleMakeName>HVY</vehicleMakeName>
 			<expressionDictName>vehicle</expressionDictName>
 			<expressionName>rhino</expressionName>
@@ -27144,7 +27144,7 @@
 			<modelName>scarab2</modelName>
 			<txdName>scarab2</txdName>
 			<handlingId>SCARAB2</handlingId>
-			<gameName>SCARAB2</gameName>
+			<gameName>scarab2</gameName>
 			<vehicleMakeName>HVY</vehicleMakeName>
 			<expressionDictName>vehicle</expressionDictName>
 			<expressionName>rhino</expressionName>
@@ -27264,7 +27264,7 @@
 			<modelName>scarab3</modelName>
 			<txdName>scarab3</txdName>
 			<handlingId>SCARAB</handlingId>
-			<gameName>SCARAB3</gameName>
+			<gameName>scarab3</gameName>
 			<vehicleMakeName>HVY</vehicleMakeName>
 			<expressionDictName>vehicle</expressionDictName>
 			<expressionName>rhino</expressionName>
@@ -27384,7 +27384,7 @@
 			<modelName>issi4</modelName>
 			<txdName>issi4</txdName>
 			<handlingId>ISSI4</handlingId>
-			<gameName>ISSI4</gameName>
+			<gameName>issi4</gameName>
 			<vehicleMakeName>WEENY</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -27488,7 +27488,7 @@
 			<modelName>issi5</modelName>
 			<txdName>issi5</txdName>
 			<handlingId>ISSI5</handlingId>
-			<gameName>ISSI5</gameName>
+			<gameName>issi5</gameName>
 			<vehicleMakeName>WEENY</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -27592,7 +27592,7 @@
 			<modelName>clique</modelName>
 			<txdName>clique</txdName>
 			<handlingId>CLIQUE</handlingId>
-			<gameName>CLIQUE</gameName>
+			<gameName>clique</gameName>
 			<vehicleMakeName>VAPID</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -27697,7 +27697,7 @@
 			<modelName>deveste</modelName>
 			<txdName>deveste</txdName>
 			<handlingId>DEVESTE</handlingId>
-			<gameName>DEVESTE</gameName>
+			<gameName>deveste</gameName>
 			<vehicleMakeName>PRINCIPL</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -27802,7 +27802,7 @@
 			<modelName>vamos</modelName>
 			<txdName>vamos</txdName>
 			<handlingId>VAMOS</handlingId>
-			<gameName>VAMOS</gameName>
+			<gameName>vamos</gameName>
 			<vehicleMakeName>DECLASSE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -27906,7 +27906,7 @@
 			<modelName>imperator</modelName>
 			<txdName>imperator</txdName>
 			<handlingId>IMPERATOR</handlingId>
-			<gameName>IMPERATOR</gameName>
+			<gameName>imperator</gameName>
 			<vehicleMakeName>VAPID</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -28010,7 +28010,7 @@
 			<modelName>imperator2</modelName>
 			<txdName>imperator2</txdName>
 			<handlingId>IMPERATOR2</handlingId>
-			<gameName>IMPERATOR2</gameName>
+			<gameName>imperator2</gameName>
 			<vehicleMakeName>VAPID</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -28114,7 +28114,7 @@
 			<modelName>imperator3</modelName>
 			<txdName>imperator3</txdName>
 			<handlingId>IMPERATOR</handlingId>
-			<gameName>IMPERATOR3</gameName>
+			<gameName>imperator3</gameName>
 			<vehicleMakeName>VAPID</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -28218,7 +28218,7 @@
 			<modelName>toros</modelName>
 			<txdName>toros</txdName>
 			<handlingId>TOROS</handlingId>
-			<gameName>TOROS</gameName>
+			<gameName>toros</gameName>
 			<vehicleMakeName>PEGASSI</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -28339,7 +28339,7 @@
 			<modelName>deviant</modelName>
 			<txdName>deviant</txdName>
 			<handlingId>DEVIANT</handlingId>
-			<gameName>DEVIANT</gameName>
+			<gameName>deviant</gameName>
 			<vehicleMakeName>SCHYSTER</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -28443,7 +28443,7 @@
 			<modelName>schlagen</modelName>
 			<txdName>schlagen</txdName>
 			<handlingId>SCHLAGEN</handlingId>
-			<gameName>SCHLAGEN</gameName>
+			<gameName>schlagen</gameName>
 			<vehicleMakeName>BENEFACTOR</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -28546,7 +28546,7 @@
 			<modelName>impaler</modelName>
 			<txdName>impaler</txdName>
 			<handlingId>IMPALER</handlingId>
-			<gameName>IMPALER</gameName>
+			<gameName>impaler</gameName>
 			<vehicleMakeName>DECLASSE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -28651,7 +28651,7 @@
 			<modelName>zr380</modelName>
 			<txdName>zr380</txdName>
 			<handlingId>ZR380</handlingId>
-			<gameName>ZR380</gameName>
+			<gameName>zr380</gameName>
 			<vehicleMakeName>ANNIS</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -28754,7 +28754,7 @@
 			<modelName>zr3802</modelName>
 			<txdName>zr3802</txdName>
 			<handlingId>ZR3802</handlingId>
-			<gameName>ZR3802</gameName>
+			<gameName>zr3802</gameName>
 			<vehicleMakeName>ANNIS</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -28857,7 +28857,7 @@
 			<modelName>zr3803</modelName>
 			<txdName>zr3803</txdName>
 			<handlingId>ZR380</handlingId>
-			<gameName>ZR3803</gameName>
+			<gameName>zr3803</gameName>
 			<vehicleMakeName>ANNIS</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -28960,7 +28960,7 @@
 			<modelName>washington</modelName>
 			<txdName>washington</txdName>
 			<handlingId>WASHINGTON</handlingId>
-			<gameName>WASHINGT</gameName>
+			<gameName>washington</gameName>
 			<vehicleMakeName>ALBANY</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -29075,7 +29075,7 @@
 			<modelName>stretch</modelName>
 			<txdName>stretch</txdName>
 			<handlingId>STRETCH</handlingId>
-			<gameName>STRETCH</gameName>
+			<gameName>stretch</gameName>
 			<vehicleMakeName>DUNDREAR</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -29185,7 +29185,7 @@
 			<modelName>youga</modelName>
 			<txdName>youga</txdName>
 			<handlingId>YOUGA</handlingId>
-			<gameName>YOUGA</gameName>
+			<gameName>youga</gameName>
 			<vehicleMakeName>BRAVADO</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -29288,7 +29288,7 @@
 			<modelName>ztype</modelName>
 			<txdName>ztype</txdName>
 			<handlingId>ZTYPE</handlingId>
-			<gameName>ZTYPE</gameName>
+			<gameName>ztype</gameName>
 			<vehicleMakeName>TRUFFADE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -29393,7 +29393,7 @@
 			<modelName>sanchez</modelName>
 			<txdName>sanchez</txdName>
 			<handlingId>SANCHEZ</handlingId>
-			<gameName>SANCHEZ01</gameName>
+			<gameName>sanchez</gameName>
 			<vehicleMakeName>MAIBATSU</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -29503,7 +29503,7 @@
 			<modelName>sanchez2</modelName>
 			<txdName>sanchez2</txdName>
 			<handlingId>SANCHEZ</handlingId>
-			<gameName>SANCHEZ2</gameName>
+			<gameName>sanchez2</gameName>
 			<vehicleMakeName>MAIBATSU</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -29613,7 +29613,7 @@
 			<modelName>scorcher</modelName>
 			<txdName>scorcher</txdName>
 			<handlingId>SCORCHER</handlingId>
-			<gameName>SCORCHER</gameName>
+			<gameName>scorcher</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -29716,7 +29716,7 @@
 			<modelName>tribike</modelName>
 			<txdName>tribike</txdName>
 			<handlingId>TRIBIKE</handlingId>
-			<gameName>TRIBIKE</gameName>
+			<gameName>tribike</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -29817,7 +29817,7 @@
 			<modelName>tribike2</modelName>
 			<txdName>tribike2</txdName>
 			<handlingId>TRIBIKE</handlingId>
-			<gameName>TRIBIKE2</gameName>
+			<gameName>tribike2</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -29918,7 +29918,7 @@
 			<modelName>tribike3</modelName>
 			<txdName>tribike3</txdName>
 			<handlingId>TRIBIKE</handlingId>
-			<gameName>TRIBIKE3</gameName>
+			<gameName>tribike3</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -30019,7 +30019,7 @@
 			<modelName>fixter</modelName>
 			<txdName>fixter</txdName>
 			<handlingId>FIXTER</handlingId>
-			<gameName>FIXTER</gameName>
+			<gameName>fixter</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -30120,7 +30120,7 @@
 			<modelName>cruiser</modelName>
 			<txdName>cruiser</txdName>
 			<handlingId>CRUISER</handlingId>
-			<gameName>CRUISER</gameName>
+			<gameName>cruiser</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -30447,7 +30447,7 @@
 			<modelName>akuma</modelName>
 			<txdName>akuma</txdName>
 			<handlingId>AKUMA</handlingId>
-			<gameName>AKUMA</gameName>
+			<gameName>akuma</gameName>
 			<vehicleMakeName>DINKA</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -30552,7 +30552,7 @@
 			<modelName>carbonrs</modelName>
 			<txdName>carbonrs</txdName>
 			<handlingId>CARBON</handlingId>
-			<gameName>CARBON</gameName>
+			<gameName>carbonrs</gameName>
 			<vehicleMakeName>NAGASAKI</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -30657,7 +30657,7 @@
 			<modelName>bagger</modelName>
 			<txdName>bagger</txdName>
 			<handlingId>BAGGER</handlingId>
-			<gameName>BAGGER</gameName>
+			<gameName>bagger</gameName>
 			<vehicleMakeName>WESTERN</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -30760,7 +30760,7 @@
 			<modelName>bati</modelName>
 			<txdName>bati</txdName>
 			<handlingId>BATI</handlingId>
-			<gameName>BATI</gameName>
+			<gameName>bati</gameName>
 			<vehicleMakeName>PEGASSI</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -30862,7 +30862,7 @@
 			<modelName>bati2</modelName>
 			<txdName>bati2</txdName>
 			<handlingId>BATI</handlingId>
-			<gameName>BATI2</gameName>
+			<gameName>bati2</gameName>
 			<vehicleMakeName>PEGASSI</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -30965,7 +30965,7 @@
 			<modelName>ruffian</modelName>
 			<txdName>ruffian</txdName>
 			<handlingId>RUFFIAN</handlingId>
-			<gameName>RUFFIAN</gameName>
+			<gameName>ruffian</gameName>
 			<vehicleMakeName>PEGASSI</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -31068,7 +31068,7 @@
 			<modelName>daemon</modelName>
 			<txdName>daemon</txdName>
 			<handlingId>DAEMON</handlingId>
-			<gameName>DAEMON</gameName>
+			<gameName>daemon</gameName>
 			<vehicleMakeName>WESTERN</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -31171,7 +31171,7 @@
 			<modelName>double</modelName>
 			<txdName>double</txdName>
 			<handlingId>DOUBLE</handlingId>
-			<gameName>DOUBLE</gameName>
+			<gameName>double</gameName>
 			<vehicleMakeName>DINKA</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -31274,7 +31274,7 @@
 			<modelName>pcj</modelName>
 			<txdName>pcj</txdName>
 			<handlingId>PCJ</handlingId>
-			<gameName>PCJ</gameName>
+			<gameName>pcj</gameName>
 			<vehicleMakeName>SHITZU</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -31377,7 +31377,7 @@
 			<modelName>vader</modelName>
 			<txdName>vader</txdName>
 			<handlingId>VADER</handlingId>
-			<gameName>VADER</gameName>
+			<gameName>vader</gameName>
 			<vehicleMakeName>SHITZU</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -31479,7 +31479,7 @@
 			<modelName>vigero</modelName>
 			<txdName>vigero</txdName>
 			<handlingId>VIGERO</handlingId>
-			<gameName>VIGERO</gameName>
+			<gameName>vigero</gameName>
 			<vehicleMakeName>DECLASSE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -31584,7 +31584,7 @@
 			<modelName>faggio2</modelName>
 			<txdName>faggio2</txdName>
 			<handlingId>FAGGIO</handlingId>
-			<gameName>FAGGIO</gameName>
+			<gameName>faggio2</gameName>
 			<vehicleMakeName>PEGASSI</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -31687,7 +31687,7 @@
 			<modelName>hexer</modelName>
 			<txdName>hexer</txdName>
 			<handlingId>HEXER</handlingId>
-			<gameName>HEXER</gameName>
+			<gameName>hexer</gameName>
 			<vehicleMakeName>LCC</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -31789,7 +31789,7 @@
 			<modelName>annihilator</modelName>
 			<txdName>annihilator</txdName>
 			<handlingId>ANNIHL</handlingId>
-			<gameName>ANNIHL</gameName>
+			<gameName>annihilator</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -31908,7 +31908,7 @@
 			<modelName>buzzard</modelName>
 			<txdName>buzzard</txdName>
 			<handlingId>BUZZARD</handlingId>
-			<gameName>BUZZARD</gameName>
+			<gameName>buzzard</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -32027,7 +32027,7 @@
 			<modelName>buzzard2</modelName>
 			<txdName>buzzard2</txdName>
 			<handlingId>BUZZARD2</handlingId>
-			<gameName>BUZZARD2</gameName>
+			<gameName>buzzard2</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -32146,7 +32146,7 @@
 			<modelName>cargobob</modelName>
 			<txdName>cargobob</txdName>
 			<handlingId>CARGOBOB</handlingId>
-			<gameName>CARGOBOB</gameName>
+			<gameName>cargobob</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -32268,7 +32268,7 @@
 			<modelName>cargobob2</modelName>
 			<txdName>cargobob2</txdName>
 			<handlingId>CARGOBOB</handlingId>
-			<gameName>CARGOBOB</gameName>
+			<gameName>cargobob2</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -32385,7 +32385,7 @@
 			<modelName>cargobob3</modelName>
 			<txdName>cargobob3</txdName>
 			<handlingId>CARGOBOB</handlingId>
-			<gameName>CARGOBOB</gameName>
+			<gameName>cargobob3</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -32507,7 +32507,7 @@
 			<modelName>skylift</modelName>
 			<txdName>skylift</txdName>
 			<handlingId>SKYLIFT</handlingId>
-			<gameName>SKYLIFT</gameName>
+			<gameName>skylift</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -33061,7 +33061,7 @@
 			<modelName>frogger2</modelName>
 			<txdName>frogger2</txdName>
 			<handlingId>FROGGER</handlingId>
-			<gameName>FROGGER</gameName>
+			<gameName>frogger2</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -33170,7 +33170,7 @@
 			<modelName>cuban800</modelName>
 			<txdName>cuban800</txdName>
 			<handlingId>CUBAN800</handlingId>
-			<gameName>CUBAN800</gameName>
+			<gameName>cuban800</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -33280,7 +33280,7 @@
 			<modelName>duster</modelName>
 			<txdName>duster</txdName>
 			<handlingId>DUSTER</handlingId>
-			<gameName>DUSTER</gameName>
+			<gameName>duster</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -33613,7 +33613,7 @@
 			<modelName>jet</modelName>
 			<txdName>jet</txdName>
 			<handlingId>JET</handlingId>
-			<gameName>JET</gameName>
+			<gameName>jet</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -33721,7 +33721,7 @@
 			<modelName>shamal</modelName>
 			<txdName>shamal</txdName>
 			<handlingId>SHAMAL</handlingId>
-			<gameName>SHAMAL</gameName>
+			<gameName>shamal</gameName>
 			<vehicleMakeName>BUCKING</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -33831,7 +33831,7 @@
 			<modelName>luxor</modelName>
 			<txdName>luxor</txdName>
 			<handlingId>LUXOR</handlingId>
-			<gameName>LUXOR</gameName>
+			<gameName>luxor</gameName>
 			<vehicleMakeName>BUCKING</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -33941,7 +33941,7 @@
 			<modelName>titan</modelName>
 			<txdName>titan</txdName>
 			<handlingId>TITAN</handlingId>
-			<gameName>TITAN</gameName>
+			<gameName>titan</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -35127,7 +35127,7 @@
 			<modelName>seashark2</modelName>
 			<txdName>seashark2</txdName>
 			<handlingId>SEASHARK</handlingId>
-			<gameName>SEASHARK</gameName>
+			<gameName>seashark2</gameName>
 			<vehicleMakeName>SPEEDOPH</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -35238,7 +35238,7 @@
 			<modelName>submersible</modelName>
 			<txdName>submersible</txdName>
 			<handlingId>SUBMERSIBLE</handlingId>
-			<gameName>SUBMERS</gameName>
+			<gameName>submersible</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -35330,7 +35330,7 @@
 			<modelName>freightcar</modelName>
 			<txdName>freightcar</txdName>
 			<handlingId>FREIGHTCAR</handlingId>
-			<gameName>FREIGHT</gameName>
+			<gameName>freightcar</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -35421,7 +35421,7 @@
 			<modelName>freight</modelName>
 			<txdName>freight</txdName>
 			<handlingId>FREIGHT</handlingId>
-			<gameName>FREIGHT</gameName>
+			<gameName>freight</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -35521,7 +35521,7 @@
 			<modelName>freightcont1</modelName>
 			<txdName>freightcont1</txdName>
 			<handlingId>FREIGHT</handlingId>
-			<gameName>FREIGHT</gameName>
+			<gameName>freightcont1</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -35613,7 +35613,7 @@
 			<modelName>freightcont2</modelName>
 			<txdName>freightcont2</txdName>
 			<handlingId>FREIGHT</handlingId>
-			<gameName>FREIGHT</gameName>
+			<gameName>freightcont2</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -35705,7 +35705,7 @@
 			<modelName>freightgrain</modelName>
 			<txdName>freightgrain</txdName>
 			<handlingId>FREIGHT</handlingId>
-			<gameName>FREIGHT</gameName>
+			<gameName>freightgrain</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -35797,7 +35797,7 @@
 			<modelName>tankercar</modelName>
 			<txdName>tankercar</txdName>
 			<handlingId>FREIGHT</handlingId>
-			<gameName>FREIGHT</gameName>
+			<gameName>tankercar</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -35889,7 +35889,7 @@
 			<modelName>metrotrain</modelName>
 			<txdName>metrotrain</txdName>
 			<handlingId>METROTRAIN</handlingId>
-			<gameName>FREIGHT</gameName>
+			<gameName>metrotrain</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -35994,7 +35994,7 @@
 			<modelName>docktrailer</modelName>
 			<txdName>docktrailer</txdName>
 			<handlingId>DOCKTRAILER</handlingId>
-			<gameName>DOCKTRAILER</gameName>
+			<gameName>docktrailer</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -36085,7 +36085,7 @@
 			<modelName>trailers</modelName>
 			<txdName>trailers</txdName>
 			<handlingId>TRAILER</handlingId>
-			<gameName>TRAILER</gameName>
+			<gameName>trailers</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -36176,7 +36176,7 @@
 			<modelName>trailers2</modelName>
 			<txdName>trailers2</txdName>
 			<handlingId>TRAILER</handlingId>
-			<gameName>TRAILER</gameName>
+			<gameName>trailers2</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -36363,7 +36363,7 @@
 			<modelName>tvtrailer</modelName>
 			<txdName>tvtrailer</txdName>
 			<handlingId>TRAILER</handlingId>
-			<gameName>TRAILER</gameName>
+			<gameName>tvtrailer</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -36457,7 +36457,7 @@
 			<modelName>raketrailer</modelName>
 			<txdName>null</txdName>
 			<handlingId>raketrailer</handlingId>
-			<gameName>TRAILER</gameName>
+			<gameName>raketrailer</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -36548,7 +36548,7 @@
 			<modelName>tanker</modelName>
 			<txdName>tanker</txdName>
 			<handlingId>TANKER</handlingId>
-			<gameName>TRAILER</gameName>
+			<gameName>tanker</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -36639,7 +36639,7 @@
 			<modelName>trailerlogs</modelName>
 			<txdName>trailerlogs</txdName>
 			<handlingId>TRAILERL</handlingId>
-			<gameName>TRAILER</gameName>
+			<gameName>trailerlogs</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -36730,7 +36730,7 @@
 			<modelName>tr2</modelName>
 			<txdName>tr2</txdName>
 			<handlingId>TR2</handlingId>
-			<gameName>TRAILER</gameName>
+			<gameName>tr2</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -36827,7 +36827,7 @@
 			<modelName>tr3</modelName>
 			<txdName>tr3</txdName>
 			<handlingId>TR3</handlingId>
-			<gameName>TRAILER</gameName>
+			<gameName>tr3</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -36918,7 +36918,7 @@
 			<modelName>tr4</modelName>
 			<txdName>tr4</txdName>
 			<handlingId>TR2</handlingId>
-			<gameName>TRAILER</gameName>
+			<gameName>tr4</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -37015,7 +37015,7 @@
 			<modelName>trflat</modelName>
 			<txdName>trflat</txdName>
 			<handlingId>TRAILER</handlingId>
-			<gameName>TRAILER</gameName>
+			<gameName>trflat</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -37106,7 +37106,7 @@
 			<modelName>trailersmall</modelName>
 			<txdName>trailersmall</txdName>
 			<handlingId>TRAILERSMALL</handlingId>
-			<gameName>TRAILER</gameName>
+			<gameName>trailersmall</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -37197,7 +37197,7 @@
 			<modelName>velum</modelName>
 			<txdName>velum</txdName>
 			<handlingId>VELUM</handlingId>
-			<gameName>VELUM</gameName>
+			<gameName>velum</gameName>
 			<vehicleMakeName />
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -37317,7 +37317,7 @@
 			<modelName>adder</modelName>
 			<txdName>adder</txdName>
 			<handlingId>ADDER</handlingId>
-			<gameName>ADDER</gameName>
+			<gameName>adder</gameName>
 			<vehicleMakeName>TRUFFADE</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -37632,7 +37632,7 @@
 			<modelName>suntrap</modelName>
 			<txdName>suntrap</txdName>
 			<handlingId>SUNTRAP</handlingId>
-			<gameName>SUNTRAP</gameName>
+			<gameName>suntrap</gameName>
 			<vehicleMakeName>SHITZU</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -37838,7 +37838,7 @@
 			<modelName>crownvictoria</modelName>
 			<txdName>crownvictoria</txdName>
 			<handlingId>crownvictoria</handlingId>
-			<gameName>VICTORIA</gameName>
+			<gameName>crownvictoria</gameName>
 			<vehicleMakeName>crownvictoria</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -37960,7 +37960,7 @@
 			<modelName>fordtaurus</modelName>
 			<txdName>fordtaurus</txdName>
 			<handlingId>fordtaurus</handlingId>
-			<gameName>TAURUS</gameName>
+			<gameName>fordtaurus</gameName>
 			<vehicleMakeName>fordtaurus</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -38088,7 +38088,7 @@
 			<modelName>dodgecharger2014</modelName>
 			<txdName>dodgecharger2014</txdName>
 			<handlingId>dodgecharger2014</handlingId>
-			<gameName>CHARGER 2014</gameName>
+			<gameName>dodgecharger2014</gameName>
 			<vehicleMakeName>dodgecharger2014</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -38216,7 +38216,7 @@
 			<modelName>dodgecharger2015</modelName>
 			<txdName>dodgecharger2015</txdName>
 			<handlingId>dodgecharger2015</handlingId>
-			<gameName>CHARGER 2015</gameName>
+			<gameName>dodgecharger2015</gameName>
 			<vehicleMakeName>dodgecharger2015</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -38344,7 +38344,7 @@
 			<modelName>fordexplorer</modelName>
 			<txdName>fordexplorer</txdName>
 			<handlingId>fordexplorer</handlingId>
-			<gameName>EXPLORER</gameName>
+			<gameName>fordexplorer</gameName>
 			<vehicleMakeName>fordexplorer</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -38472,7 +38472,7 @@
 			<modelName>fordraptor</modelName>
 			<txdName>fordraptor</txdName>
 			<handlingId>fordraptor</handlingId>
-			<gameName>RAPTOR</gameName>
+			<gameName>fordraptor</gameName>
 			<vehicleMakeName>fordraptor</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -38590,7 +38590,7 @@
 			<modelName>fordmustanggt</modelName>
 			<txdName>fordmustanggt</txdName>
 			<handlingId>fordmustanggt</handlingId>
-			<gameName>MUSTANG GT</gameName>
+			<gameName>fordmustanggt</gameName>
 			<vehicleMakeName>fordmustanggt</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -38713,7 +38713,7 @@
 			<modelName>nissangtr</modelName>
 			<txdName>nissangtr</txdName>
 			<handlingId>nissangtr</handlingId>
-			<gameName>NISSAN GTR</gameName>
+			<gameName>nissangtr</gameName>
 			<vehicleMakeName>nissangtr</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -38824,7 +38824,7 @@
 			<modelName>nissangtr2</modelName>
 			<txdName>nissangtr2</txdName>
 			<handlingId>nissangtr2</handlingId>
-			<gameName>NISSAN GTR2</gameName>
+			<gameName>nissangtr2</gameName>
 			<vehicleMakeName>nissangtr2</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -38935,7 +38935,7 @@
 			<modelName>nissangtrnismo</modelName>
 			<txdName>nissangtrnismo</txdName>
 			<handlingId>nissangtrnismo</handlingId>
-			<gameName>GTR NISMO</gameName>
+			<gameName>nissangtrnismo</gameName>
 			<vehicleMakeName>nissangtrnismo</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -39046,7 +39046,7 @@
 			<modelName>dodgechargersrt</modelName>
 			<txdName>dodgechargersrt</txdName>
 			<handlingId>dodgechargersrt</handlingId>
-			<gameName>CHARGER SRT</gameName>
+			<gameName>dodgechargersrt</gameName>
 			<vehicleMakeName>dodgechargersrt</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -39167,7 +39167,7 @@
 			<modelName>ferrariitalia</modelName>
 			<txdName>ferrariitalia</txdName>
 			<handlingId>ferrariitalia</handlingId>
-			<gameName>FERRARI 458</gameName>
+			<gameName>ferrariitalia</gameName>
 			<vehicleMakeName>ferrariitalia</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -39276,7 +39276,7 @@
 			<modelName>fordmustang</modelName>
 			<txdName>fordmustang</txdName>
 			<handlingId>fordmustang</handlingId>
-			<gameName>MUSTANG</gameName>
+			<gameName>fordmustang</gameName>
 			<vehicleMakeName>fordmustang</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -39387,7 +39387,7 @@
 			<modelName>skyliner34</modelName>
 			<txdName>skyliner34</txdName>
 			<handlingId>skyliner34</handlingId>
-			<gameName>R34</gameName>
+			<gameName>skyliner34</gameName>
 			<vehicleMakeName>skyliner34</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -39496,7 +39496,7 @@
 			<modelName>teslaprior</modelName>
 			<txdName>teslaprior</txdName>
 			<handlingId>teslaprior</handlingId>
-			<gameName>TESLA</gameName>
+			<gameName>teslaprior</gameName>
 			<vehicleMakeName>teslaprior</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -39619,7 +39619,7 @@
 			<modelName>audirs6</modelName>
 			<txdName>audirs6</txdName>
 			<handlingId>audirs6</handlingId>
-			<gameName>AUDI RS6</gameName>
+			<gameName>audirs6</gameName>
 			<vehicleMakeName>audirs6</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -39730,7 +39730,7 @@
 			<modelName>lamborghinihuracan</modelName>
 			<txdName>lamborghinihuracan</txdName>
 			<handlingId>lamborghinihuracan</handlingId>
-			<gameName>HURACAN</gameName>
+			<gameName>lamborghinihuracan</gameName>
 			<vehicleMakeName>lamborghinihuracan</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -39839,7 +39839,7 @@
 			<modelName>mazdarx7</modelName>
 			<txdName>mazdarx7</txdName>
 			<handlingId>mazdarx7</handlingId>
-			<gameName>MAZDA RX7</gameName>
+			<gameName>mazdarx7</gameName>
 			<vehicleMakeName>mazdarx7</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -39950,7 +39950,7 @@
 			<modelName>bmwm4gts</modelName>
 			<txdName>bmwm4gts</txdName>
 			<handlingId>bmwm4gts</handlingId>
-			<gameName>BMW M4GTS</gameName>
+			<gameName>bmwm4gts</gameName>
 			<vehicleMakeName>bmwm4gts</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -40061,7 +40061,7 @@
 			<modelName>lancerevolutionx</modelName>
 			<txdName>lancerevolutionx</txdName>
 			<handlingId>lancerevolutionx</handlingId>
-			<gameName>LANCER EVOX</gameName>
+			<gameName>lancerevolutionx</gameName>
 			<vehicleMakeName>lancerevolutionx</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -40174,7 +40174,7 @@
 			<modelName>civictyper</modelName>
 			<txdName>civictyper</txdName>
 			<handlingId>civictyper</handlingId>
-			<gameName>TYPE-R</gameName>
+			<gameName>civictyper</gameName>
 			<vehicleMakeName>civictyper</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -40285,7 +40285,7 @@
 			<modelName>toyotasupra</modelName>
 			<txdName>toyotasupra</txdName>
 			<handlingId>toyotasupra</handlingId>
-			<gameName>SUPRA</gameName>
+			<gameName>toyotasupra</gameName>
 			<vehicleMakeName>toyotasupra</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -40396,7 +40396,7 @@
 			<modelName>bmwm3e36</modelName>
 			<txdName>bmwm3e36</txdName>
 			<handlingId>bmwm3e36</handlingId>
-			<gameName>BMW M3 E36</gameName>
+			<gameName>bmwm3e36</gameName>
 			<vehicleMakeName>bmwm3e36</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -40505,7 +40505,7 @@
 			<modelName>mercedesgt63</modelName>
 			<txdName>mercedesgt63</txdName>
 			<handlingId>mercedesgt63</handlingId>
-			<gameName>MERC GT63</gameName>
+			<gameName>mercedesgt63</gameName>
 			<vehicleMakeName>mercedesgt63</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -40616,7 +40616,7 @@
 			<modelName>ferrarif12</modelName>
 			<txdName>ferrarif12</txdName>
 			<handlingId>ferrarif12</handlingId>
-			<gameName>FERRARI F12</gameName>
+			<gameName>ferrarif12</gameName>
 			<vehicleMakeName>ferrarif12</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -40725,7 +40725,7 @@
 			<modelName>bmwi8</modelName>
 			<txdName>bmwi8</txdName>
 			<handlingId>bmwi8</handlingId>
-			<gameName>BMW I8</gameName>
+			<gameName>bmwi8</gameName>
 			<vehicleMakeName>bmwi8</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -40833,7 +40833,7 @@
 			<modelName>silvias15</modelName>
 			<txdName>silvias15</txdName>
 			<handlingId>silvias15</handlingId>
-			<gameName>SILVIA S15</gameName>
+			<gameName>silvias15 S15</gameName>
 			<vehicleMakeName>silvias15</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -40942,7 +40942,7 @@
 			<modelName>fordmustanggt</modelName>
 			<txdName>fordmustanggt</txdName>
 			<handlingId>fordmustanggt</handlingId>
-			<gameName>MUSTANG GT</gameName>
+			<gameName>fordmustanggt</gameName>
 			<vehicleMakeName>fordmustanggt</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -41063,7 +41063,7 @@
 			<modelName>mclarenp1</modelName>
 			<txdName>mclarenp1</txdName>
 			<handlingId>mclarenp1</handlingId>
-			<gameName>MCLAREN P1</gameName>
+			<gameName>mclarenp1</gameName>
 			<vehicleMakeName>mclarenp1</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -41174,7 +41174,7 @@
 			<modelName>mclarensenna</modelName>
 			<txdName>mclarensenna</txdName>
 			<handlingId>mclarensenna</handlingId>
-			<gameName>SENNA</gameName>
+			<gameName>mclarensenna</gameName>
 			<vehicleMakeName>mclarensenna</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -41285,7 +41285,7 @@
 			<modelName>ferrari812</modelName>
 			<txdName>ferrari812</txdName>
 			<handlingId>ferrari812</handlingId>
-			<gameName>FERRARI 812</gameName>
+			<gameName>ferrari812</gameName>
 			<vehicleMakeName>ferrari812</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -41396,7 +41396,7 @@
 			<modelName>subaruimpreza</modelName>
 			<txdName>subaruimpreza</txdName>
 			<handlingId>subaruimpreza</handlingId>
-			<gameName>SUBARU WRX</gameName>
+			<gameName>subaruimpreza</gameName>
 			<vehicleMakeName>subaruimpreza</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>
@@ -41506,7 +41506,7 @@
 			<modelName>mustangfast</modelName>
 			<txdName>mustangfast</txdName>
 			<handlingId>mustangfast</handlingId>
-			<gameName>FASTBACK</gameName>
+			<gameName>mustangfast</gameName>
 			<vehicleMakeName>mustangfast</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>
 			<expressionName>null</expressionName>

@@ -290,6 +290,7 @@ local shops = {
 		["perm"] = "Police",
 		["list"] = {
 			["vest"] = 5,
+			["energetic"] = 1000,
 			["gsrkit"] = 2,
 			["gdtkit"] = 2,
 			["WEAPON_SMG"] = 100,
