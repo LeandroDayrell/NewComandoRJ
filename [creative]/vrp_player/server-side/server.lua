@@ -17,6 +17,7 @@ vSKINSHOP = Tunnel.getInterface("vrp_skinshop")
 local webhooklinkDetido = "https://discord.com/api/webhooks/842478351772155945/G2dPBZceeX3qqE-RA9emhhsnWshZrim-T5EuH1w6qR6m_9ksmYBJyEmO5tLEx9zBynMd"
 local webhooklinkCobrar = "https://discord.com/api/webhooks/844431247065612319/m8FXPuUkyeLl_IyBVmCW6chU5pa1wd_eT5_x-IPUwt7tE8yF-xdtp6Bnvla2xT9b07XM"
 local webhooklinkConnect = "https://discord.com/api/webhooks/843988794339622933/qQ0EKocq_KK4J5FPq8iq5FiYXtqqdQNvClqIZeo5AtroIrcElmtE07HrJXxzky116h4R"
+local webhooklinkServicoPM = "https://discord.com/api/webhooks/850096678726795305/DuQ2_iLOy269kWO1aTcYhsT9dXVmByAdsimV-Ot3SfyRJUx3UdbpAonB_cp2dWeQGybe"
 
 
 function SendWebhookMessage(webhook,message)
@@ -497,12 +498,16 @@ RegisterCommand("servico",function(source,args,rawCommand)
 						TriggerClientEvent("vrp_tencode:StatusService",source,false)
 						TriggerClientEvent("Notify",source,"importante","Você saiu de serviço.",5000)
 						vRP.execute("vRP/upd_group",{ user_id = user_id, permiss = "Police", newpermiss = "waitPolice" })
+						SendWebhookMessage(webhooklinkServicoPM,  "UserID: [" ..user_id.."] Saiu de servico.")
 					elseif vRP.hasPermission(user_id,"waitPolice") then
 						vRP.insertPermission(source,"Police")
 						TriggerClientEvent("vrp_tencode:StatusService",source,true)
 						TriggerEvent("vrp_blipsystem:serviceEnter",source,"Policial",77)
 						TriggerClientEvent("Notify",source,"importante","Você entrou em serviço.",5000)
 						vRP.execute("vRP/upd_group",{ user_id = user_id, permiss = "waitPolice", newpermiss = "Police" })
+						SendWebhookMessage(webhooklinkServicoPM,  "UserID: [" ..user_id.."] Entrou em servico.")
+
+
 					end
 				end
 
@@ -517,6 +522,20 @@ RegisterCommand("servico",function(source,args,rawCommand)
 						TriggerEvent("vrp_blipsystem:serviceEnter",source,"Paramedico",83)
 						TriggerClientEvent("Notify",source,"importante","Você entrou em serviço.",5000)
 						vRP.execute("vRP/upd_group",{ user_id = user_id, permiss = "waitParamedic", newpermiss = "Paramedic" })
+					end
+				end
+
+				if service == "Taxista" then
+					if vRP.hasPermission(user_id,"Taxista") then --
+						vRP.removePermission(source,"Taxista")
+						TriggerEvent("vrp_blipsystem:serviceExit",source)
+						TriggerClientEvent("Notify",source,"importante","Você saiu de serviço.",5000)
+						vRP.execute("vRP/upd_group",{ user_id = user_id, permiss = "Taxista", newpermiss = "waitTaxista" })
+					elseif vRP.hasPermission(user_id,"waitTaxista") then
+						vRP.insertPermission(source,"Taxista")
+						TriggerEvent("vrp_blipsystem:serviceEnter",source,"Taxistao",83)
+						TriggerClientEvent("Notify",source,"importante","Você entrou em serviço.",5000)
+						vRP.execute("vRP/upd_group",{ user_id = user_id, permiss = "waitTaxista", newpermiss = "Taxista" })
 					end
 				end
 
@@ -1548,6 +1567,29 @@ RegisterCommand("lsid",function(source,args,rawCommand)
 
 				--if vRP.hasPermission(user_id,"Paramedic") then
 					service = vRP.numPermission("LosSantos")
+				--end
+
+				for k,v in pairs(service) do
+					local nuser_id = vRP.getUserId(v)
+					local identity = vRP.getUserIdentity(nuser_id)
+
+					onDuty = onDuty.."<b>Passaporte:</b> "..vRP.format(parseInt(nuser_id)).."<br>"
+				end
+
+				TriggerClientEvent("Notify",source,"importante",onDuty,30000)
+		end
+	end
+end)
+
+RegisterCommand("taxiid",function(source,args,rawCommand)
+	local user_id = vRP.getUserId(source)
+	if user_id then
+		if vRPclient.getHealth(source) > 101 and not vCLIENT.getHandcuff(source) then
+				local onDuty = ""
+				local service = {}
+
+				--if vRP.hasPermission(user_id,"Paramedic") then
+					service = vRP.numPermission("Taxista")
 				--end
 
 				for k,v in pairs(service) do

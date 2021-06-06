@@ -84,6 +84,21 @@ Config.HelpList = {
             "LosSantos"
         }
     },
+
+    ['taxi'] = {
+        name        = "Taxista",
+        description = "Chame um taxi",
+        text        = "Chame um profissional mais próximo",
+        message     = "Descreva seu problema:",
+        emergency   = true,
+        staff       = false,
+        image       = "https://static.fecam.net.br/uploads/327/imagens/2429818.jpeg",
+        style       = "top: 730px;",
+        groups      = {
+            "Taxista"
+        }
+    },
+
     ['staff'] = {
         name        = "FALAR COM A",
         description = "Prefeitura",

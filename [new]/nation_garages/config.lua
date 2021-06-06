@@ -1329,6 +1329,13 @@ config.garages = {
 		[3] = { vec3(-1073.05,-879.93,4.77), h = 27.34 },
 	  },
 	},
+
+	[44] = { type = 'public', coords = vec3(1702.74,4937.15,42.08), perm = nil,
+	  vehiclePositions = {
+		[1] = { vec3(1700.24,4945.11,42.31), h = 48.28 },
+		[2] = { vec3(1695.99,4941.64,42.21), h = 48.28 },
+	  },
+	},
 }
   
 -----------------------------------------------------------------
@@ -2973,7 +2980,7 @@ config.checkTax = function(source,user_id,vehicle,type, garage, home)
     local vehicleInfo = vRP.query("vRP/getVehicle", {user_id = user_id, vehicle = vehicle})
     if vehicleInfo and #vehicleInfo > 0 then
         local price = getVehiclePrice(vehicle)
-        if vehicleInfo[1].arrest == 0 and parseInt(tonumber(vehicleInfo[1].ipva) + 24 * 15 * 60 * 60) > parseInt(os.time()) and not config.getVehicleTax then
+        if vehicleInfo[1].arrest == 0 and vehicleInfo[1].desmanche == 0 and parseInt(tonumber(vehicleInfo[1].ipva) + 24 * 15 * 60 * 60) > parseInt(os.time()) and not config.getVehicleTax then
             return true
         end
         if vehicleInfo[1].arrest > 0 then
@@ -3214,14 +3221,13 @@ config.customState = function(user_id, vehicle)
 		end
 		res.classLiberacao = "detido"
 	elseif vehicle.desmanche and vehicle.desmanche > 0 then
-			local price = vRP.format( vehicle.price * (4 / 100) )
+			local price = vRP.format( vehicle.price * (3 / 100) )
 			res.liberacao = "$ "..price
 			res.status = "Desmanchado"
 			res.classStatus = "seguradora"
-			res.po
-			pup = "veículo desmanchado, deseja liberar pagando <b>$ "..price.."</b> ?"
+			res.popup = "veículo desmanchado, deseja liberar pagando <b>$ "..price.."</b> ?"
 			res.classLiberacao = "detido"
-		end
+	--end
 	elseif parseInt(vehicle.ipva + 24 * 15 * 60 * 60) <= parseInt(os.time()) then
 		local tipo = config.getVehicleType(vehicle.vehicle)
 		if not tipo or tipo ~= "exclusive" then

@@ -19,10 +19,10 @@ vRPclient = Proxy.getInterface("vRP")
 -- CONFIG
 ---------------------------------------------------------------------
 -- FV
-local IniciarServico = {1538.72,3532.92,35.37} -- Onde se inicia o serviço e verifica a existência de um carro
+local IniciarServico = {1549.7,3513.19,36.0} -- Onde se inicia o serviço e verifica a existência de um carro
 local LocalDesmancharCarro = {1534.2850341797,3547.125,36.959651947021} -- Onde deve haver o carro que será desmanchado para poder continuar o desmanche
-local LocalFerramentas = {1539.33,3537.04,35.37} -- Local onde 'pegará' as ferramentas
-local AnuncioChassi = {1541.83,3535.87,35.37} -- Onde finalizará a missão para entregar o chassi e receber dinheiro e itens
+local LocalFerramentas = {1553.31,3515.12,36.01} -- Local onde 'pegará' as ferramentas
+local AnuncioChassi = {1556.33,3523.29,36.12} -- Onde finalizará a missão para entregar o chassi e receber dinheiro e itens
 local Computador = {1, 1, 1} -- Local onde ficará o computador de venda
 ---------------------------------------------------------------------
 --VARIAVEIS
@@ -60,7 +60,7 @@ Citizen.CreateThread(function()
                     DrawMarker(21, IniciarServico[1], IniciarServico[2], IniciarServico[3]-0.5, 0, 0, 0, 180.0, 0, 0, 0.4, 0.4, 0.4, 207, 158, 25, 150, 0, 0, 0, 1)
                     if dist < 1 then
                         text3D(IniciarServico[1], IniciarServico[2], IniciarServico[3]-0.5, '~y~[E] ~w~PARA DESMANCHAR O VEÍCULO')
-                        if IsControlJustPressed(0,38) then
+                        if IsControlJustPressed(0,38) and vSERVER.CheckPerm() then -- PERMISSAO
                             veh = CheckVeiculo(LocalDesmancharCarro[1], LocalDesmancharCarro[2], LocalDesmancharCarro[3])
                             if veh then 
                                 local VehPermitido, ClasseVeh = CheckClasse(veh)

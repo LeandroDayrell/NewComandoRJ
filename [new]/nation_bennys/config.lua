@@ -269,14 +269,14 @@ config.prices = {
 	},
 ---------Back Wheels---------
 	[24] = {
-		startprice = 5000,
+		startprice = 1,
 		increaseby = 0,
 		item = 'roda', 
 		amount = 30
 	},
 ---------Front Wheels---------
 	[23] = {
-		startprice = 5000,
+		startprice = 1,
 		increaseby = 0,
 		item = 'roda', 
 		amount = 30
@@ -549,7 +549,7 @@ config.getModPrice = function(modType, vehicle)
 	local vehPrice = nation.getVehiclePrice(hash)
 	if vehPrice and price.startprice then
 		local startprice = price.startprice --(tirar parentes e o comentario para funcionar no primeiro nivel) + vehPrice * 0.001 -- 5% do valor do veiculo
-		local increaseby = (price.increaseby or 0) + vehPrice * 0.001
+		local increaseby = (price.increaseby or 0) + vehPrice * 0.0005
 		price = { startprice = startprice, increaseby = increaseby }
 	end
 	return price

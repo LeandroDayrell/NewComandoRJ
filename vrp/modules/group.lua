@@ -71,6 +71,9 @@ AddEventHandler("vRP:playerSpawn",function(user_id,source,first_spawn)
 	elseif vRP.hasPermission(user_id,"LosSantos") then
 		permissions[tostring(source)] = "LosSantos"
 		TriggerEvent("vrp_blipsystem:serviceEnter",source,"LosSantos",56)
+	elseif vRP.hasPermission(user_id,"Taxista") then
+		permissions[tostring(source)] = "Taxista"
+		TriggerEvent("vrp_blipsystem:serviceEnter",source,"Taxista",5)
 	elseif vRP.hasPermission(user_id,"sup2000") then
 		permissions[tostring(source)] = "sup2000"
 	elseif vRP.hasPermission(user_id,"modder21") then

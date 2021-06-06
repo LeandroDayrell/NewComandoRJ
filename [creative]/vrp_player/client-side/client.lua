@@ -831,6 +831,7 @@ local disService = {
 	{ -348.82,-126.0,39.01,"LosSantos" }, -- Los Santos Cima
 	{ 444.48,-975.37,30.69,"Police" }, -- Los Santos aeroporto
 	{ -432.24,-318.82,34.92,"Paramedic" }, -- Hosp
+	{ 2511.85,-355.56,94.1,"Police" },-- DP
 	{ 2511.85,-355.56,94.1,"Police" } -- DP
 }
 ------------------------------------------------------------------------------------------------------------------------------------------
@@ -1104,5 +1105,22 @@ Citizen.CreateThread(function()
                 end
             end
         end
+    end
+end)
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- NPC CONTROL
+-----------------------------------------------------------------------------------------------------------------------------------------
+trafficDensity = 0.1  -- 0.1  aqui voce coooloca a quantidade de npc CARROS
+pedDensity = 0.2  -- 0.5 aqui voce coooloca a quantidade de npc APE
+Citizen.CreateThread(function()
+    while true do
+        SetVehicleDensityMultiplierThisFrame(trafficDensity)
+        SetPedDensityMultiplierThisFrame(pedDensity)
+        SetRandomVehicleDensityMultiplierThisFrame(trafficDensity)
+        SetParkedVehicleDensityMultiplierThisFrame(trafficDensity)
+        SetScenarioPedDensityMultiplierThisFrame(pedDensity, pedDensity)
+    Citizen.Wait(0)
     end
 end)
