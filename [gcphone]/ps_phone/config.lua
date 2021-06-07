@@ -68,7 +68,7 @@ Config.HelpList = {
         image       = "https://gtapolicemods.com/uploads/monthly_2020_11/Rambulance.png.d24e5be1cafdffe6786dd1f8dcd64678.png",
         style       = "top: 370px;",
         groups      = {
-            "Paramedic"
+            "SamuEnfermeiro", "SamuMedico", "SamuCoordenador", "SamuViceDiretor", "SamuDiretor"
         }
     },
     ['mecanico'] = {
@@ -85,7 +85,7 @@ Config.HelpList = {
         }
     },
 
-    ['taxi'] = {
+    ['taxista'] = {
         name        = "Taxista",
         description = "Chame um taxi",
         text        = "Chame um profissional mais próximo",
@@ -105,7 +105,7 @@ Config.HelpList = {
         text        = "Chame alguem da prefeitura",
         message     = "Descreva a situação:",
         emergency   = true,
-        staff       = true,
+        staff       = false,
         image       = "https://cdn.discordapp.com/attachments/705812876396331609/842077631683231794/unknown.png",
         style       = "top: 1000px;",
         groups      = {
@@ -147,7 +147,7 @@ Config.paymentBank = function(source, user_id, nsource, nuser_id, amount)
 
                 local identity2 = vRP.getUserIdentity(user_id)
                 if identity2 ~= nil then
-                    TriggerClientEvent("Notify", nsource, "importante","<b>"..identity2.name2.." "..identity2.name2.."</b> transferiu <b>$"..vRP.format(parseInt(amount)).." dólares</b> para sua conta.",8000)
+                    TriggerClientEvent("Notify", nsource, "importante","<b>"..identity2.name.." "..identity2.name2.."</b> transferiu <b>$"..vRP.format(parseInt(amount)).." dólares</b> para sua conta.",8000)
                 end
 
                 local time = os.date("%d/%m/%Y %H:%M:%S")
@@ -182,7 +182,7 @@ end
 Config.AddRecentCall = function(source, identity, anonymous, label, type)
     if source and identity and label and type then
         TriggerClientEvent('ps_phone:AddRecentCall', source, {
-            name = identity.name .. " " ..identity.firstname,
+            name = identity.name .. " " ..identity.name2,
             number = identity.phone,
             anonymous = anonymous
         }, label, type)

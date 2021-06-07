@@ -162,7 +162,7 @@ local shops = {
 			["identity"] = 600
 		}
 	},
-	["digitalDen"] = {
+--[[ 	["digitalDen"] = {
 		["mode"] = "Buy",
 		["type"] = "Cash",
 		["list"] = {
@@ -172,7 +172,7 @@ local shops = {
 			["camera"] = 2000,
 			["vape"] = 30000
 		}
-	},
+	}, ]]
 	["megaMallStore"] = {
 		["mode"] = "Buy",
 		["type"] = "Cash",
@@ -193,7 +193,12 @@ local shops = {
 			["silk"] = 3,
 			["taurina"] = 80,
 			["paperbag"] = 50,
-			["firecracker"] = 1000
+			["firecracker"] = 1000,
+			["radio"] = 4000,
+			["cellphone"] = 2000,
+			["binoculars"] = 1000,
+			["camera"] = 2000,
+			["vape"] = 30000
 		}
 	},
 	["comedyBar"] = {

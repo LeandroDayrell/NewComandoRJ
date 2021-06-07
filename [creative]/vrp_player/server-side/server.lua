@@ -511,19 +511,75 @@ RegisterCommand("servico",function(source,args,rawCommand)
 					end
 				end
 
-				if service == "Paramedic" then
-					if vRP.hasPermission(user_id,"Paramedic") then
-						vRP.removePermission(source,"Paramedic")
+				if service == "SamuEnfermeiro" then
+					if vRP.hasPermission(user_id,"SamuEnfermeiro") then
+						vRP.removePermission(source,"SamuEnfermeiro")
 						TriggerEvent("vrp_blipsystem:serviceExit",source)
 						TriggerClientEvent("Notify",source,"importante","Você saiu de serviço.",5000)
-						vRP.execute("vRP/upd_group",{ user_id = user_id, permiss = "Paramedic", newpermiss = "waitParamedic" })
-					elseif vRP.hasPermission(user_id,"waitParamedic") then
-						vRP.insertPermission(source,"Paramedic")
-						TriggerEvent("vrp_blipsystem:serviceEnter",source,"Paramedico",83)
+						vRP.execute("vRP/upd_group",{ user_id = user_id, permiss = "SamuEnfermeiro", newpermiss = "waitParamedic" })
+					elseif vRP.hasPermission(user_id,"waitSamuEnfermeiro") then
+						vRP.insertPermission(source,"SamuEnfermeiro")
+						TriggerEvent("vrp_blipsystem:serviceEnter",source,"Paramedico",25)
 						TriggerClientEvent("Notify",source,"importante","Você entrou em serviço.",5000)
-						vRP.execute("vRP/upd_group",{ user_id = user_id, permiss = "waitParamedic", newpermiss = "Paramedic" })
+						vRP.execute("vRP/upd_group",{ user_id = user_id, permiss = "waitSamuEnfermeiro", newpermiss = "SamuEnfermeiro" })
 					end
 				end
+				if service == "SamuMedico" then
+					if vRP.hasPermission(user_id,"SamuMedico") then
+						vRP.removePermission(source,"SamuMedico")
+						TriggerEvent("vrp_blipsystem:serviceExit",source)
+						TriggerClientEvent("Notify",source,"importante","Você saiu de serviço.",5000)
+						vRP.execute("vRP/upd_group",{ user_id = user_id, permiss = "SamuMedico", newpermiss = "waitSamuMedico" })
+					elseif vRP.hasPermission(user_id,"waitSamuMedico") then
+						vRP.insertPermission(source,"SamuMedico")
+						TriggerEvent("vrp_blipsystem:serviceEnter",source,"Paramedico",25)
+						TriggerClientEvent("Notify",source,"importante","Você entrou em serviço.",5000)
+						vRP.execute("vRP/upd_group",{ user_id = user_id, permiss = "waitSamuMedico", newpermiss = "SamuMedico" })
+					end
+				end
+				if service == "SamuCoordenador" then
+					if vRP.hasPermission(user_id,"SamuCoordenador") then
+						vRP.removePermission(source,"SamuCoordenador")
+						TriggerEvent("vrp_blipsystem:serviceExit",source)
+						TriggerClientEvent("Notify",source,"importante","Você saiu de serviço.",5000)
+						vRP.execute("vRP/upd_group",{ user_id = user_id, permiss = "SamuCoordenador", newpermiss = "waitSamuCoordenador" })
+					elseif vRP.hasPermission(user_id,"waitSamuCoordenador") then
+						vRP.insertPermission(source,"SamuCoordenador")
+						TriggerEvent("vrp_blipsystem:serviceEnter",source,"Paramedico",25)
+						TriggerClientEvent("Notify",source,"importante","Você entrou em serviço.",5000)
+						vRP.execute("vRP/upd_group",{ user_id = user_id, permiss = "waitSamuCoordenador", newpermiss = "SamuCoordenador" })
+					end
+				end
+				if service == "SamuViceDiretor" then
+					if vRP.hasPermission(user_id,"SamuViceDiretor") then
+						vRP.removePermission(source,"SamuViceDiretor")
+						TriggerEvent("vrp_blipsystem:serviceExit",source)
+						TriggerClientEvent("Notify",source,"importante","Você saiu de serviço.",5000)
+						vRP.execute("vRP/upd_group",{ user_id = user_id, permiss = "SamuViceDiretor", newpermiss = "waitSamuViceDiretor" })
+					elseif vRP.hasPermission(user_id,"waitSamuViceDiretor") then
+						vRP.insertPermission(source,"SamuViceDiretor")
+						TriggerEvent("vrp_blipsystem:serviceEnter",source,"Paramedico",25)
+						TriggerClientEvent("Notify",source,"importante","Você entrou em serviço.",5000)
+						vRP.execute("vRP/upd_group",{ user_id = user_id, permiss = "waitSamuViceDiretor", newpermiss = "SamuViceDiretor" })
+					end
+				end
+				if service == "SamuDiretor" then
+					if vRP.hasPermission(user_id,"SamuDiretor") then
+						vRP.removePermission(source,"SamuDiretor")
+						TriggerEvent("vrp_blipsystem:serviceExit",source)
+						TriggerClientEvent("Notify",source,"importante","Você saiu de serviço.",5000)
+						vRP.execute("vRP/upd_group",{ user_id = user_id, permiss = "SamuDiretor", newpermiss = "waitSamuDiretor" })
+					elseif vRP.hasPermission(user_id,"waitSamuDiretor") then
+						vRP.insertPermission(source,"SamuDiretor")
+						TriggerEvent("vrp_blipsystem:serviceEnter",source,"Paramedico",25)
+						TriggerClientEvent("Notify",source,"importante","Você entrou em serviço.",5000)
+						vRP.execute("vRP/upd_group",{ user_id = user_id, permiss = "waitSamuDiretor", newpermiss = "SamuDiretor" })
+					end
+				end
+
+
+
+				
 
 				if service == "Taxista" then
 					if vRP.hasPermission(user_id,"Taxista") then --
@@ -532,8 +588,8 @@ RegisterCommand("servico",function(source,args,rawCommand)
 						TriggerClientEvent("Notify",source,"importante","Você saiu de serviço.",5000)
 						vRP.execute("vRP/upd_group",{ user_id = user_id, permiss = "Taxista", newpermiss = "waitTaxista" })
 					elseif vRP.hasPermission(user_id,"waitTaxista") then
-						vRP.insertPermission(source,"Taxista")
-						TriggerEvent("vrp_blipsystem:serviceEnter",source,"Taxistao",83)
+						vRP.insertPermission(source,"Taxista") --
+						TriggerEvent("vrp_blipsystem:serviceEnter",source,"Taxistao",5)
 						TriggerClientEvent("Notify",source,"importante","Você entrou em serviço.",5000)
 						vRP.execute("vRP/upd_group",{ user_id = user_id, permiss = "waitTaxista", newpermiss = "Taxista" })
 					end
@@ -548,7 +604,7 @@ RegisterCommand("servico",function(source,args,rawCommand)
 						vRP.execute("vRP/upd_group",{ user_id = user_id, permiss = "LosSantos", newpermiss = "waitLosSantos" })
 					elseif vRP.hasPermission(user_id,"waitLosSantos") then
 						vRP.insertPermission(source,"LosSantos")
-						TriggerEvent("vrp_blipsystem:serviceEnter",source,"LosSantos",83)
+						TriggerEvent("vrp_blipsystem:serviceEnter",source,"LosSantos",56)
 						TriggerClientEvent("Notify",source,"importante","Você entrou em serviço.",5000)
 						vRP.execute("vRP/upd_group",{ user_id = user_id, permiss = "waitLosSantos", newpermiss = "LosSantos" })
 					end
