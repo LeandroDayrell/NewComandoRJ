@@ -1861,7 +1861,7 @@ AddEventHandler("vrp_inventory:useItem",function(slot,rAmount)
 						if identity then
 							if vRP.tryGetInventoryItem(user_id,itemName,1,true,slot) then
 								if not vRP.getPremium(user_id) then
-									vRP.execute("vRP/set_premium",{ steam = identity.steam, premium = parseInt(os.time()), predays = 15, priority = 40 })
+									vRP.execute("vRP/set_premium",{ steam = identity.steam, premium = parseInt(os.time()), predays = 30, priority = 40 })
 								else
 									vRP.execute("vRP/update_premium",{ steam = identity.steam, predays = 30 })
 								end

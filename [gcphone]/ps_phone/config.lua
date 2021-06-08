@@ -85,7 +85,7 @@ Config.HelpList = {
         }
     },
 
-    ['taxista'] = {
+    --[[ ['taxista'] = {
         name        = "Taxista",
         description = "Chame um taxi",
         text        = "Chame um profissional mais próximo",
@@ -97,7 +97,7 @@ Config.HelpList = {
         groups      = {
             "Taxista"
         }
-    },
+    }, ]]
 
     ['staff'] = {
         name        = "FALAR COM A",
