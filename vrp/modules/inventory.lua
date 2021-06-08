@@ -6,19 +6,19 @@ local itemlist = {
 		index = "bonusDelivery",
 		name = "+ Tacos",
 		type = "use",
-		weight = 0.5
+		weight = 0.4
 	},
 	["bonusPostOp"] = {
 		index = "bonusPostOp",
 		name = "+ Entregador",
 		type = "use",
-		weight = 0.5
+		weight = 0.4
 	},
 	["radio"] = {
 		index = "radio",
 		name = "Rádio",
 		type = "use",
-		weight = 1.0
+		weight = 0.8
 	},
 	["vest"] = {
 		index = "vest",
@@ -30,19 +30,19 @@ local itemlist = {
 		index = "bandage",
 		name = "Bandagem",
 		type = "use",
-		weight = 0.5
+		weight = 0.4
 	},
 	["warfarin"] = {
 		index = "warfarin",
 		name = "Kit Médico",
 		type = "use",
-		weight = 0.5
+		weight = 0.4
 	},
 	["adrenaline"] = {
 		index = "adrenaline",
 		name = "Adrenalina",
 		type = "use",
-		weight = 0.6
+		weight = 0.5
 	},
 	["raceticket"] = {
 		index = "raceticket",
@@ -54,13 +54,13 @@ local itemlist = {
 		index = "pouch",
 		name = "Malote",
 		type = "use",
-		weight = 0.5
+		weight = 0.4
 	},
 	["graos"] = {
 		index = "graos",
 		name = "Graos",
 		type = "use",
-		weight = 0.5
+		weight = 0.4
 	},
 	["ouro"] = {
 		index = "ouro",
@@ -102,37 +102,37 @@ local itemlist = {
 		index = "graosimpuros",
 		name = "Graos Impuros",
 		type = "use",
-		weight = 0.5
+		weight = 0.4
 	},
 	["perolatratada"] = {
 		index = "perolatratada",
 		name = "Perola Tratada",
 		type = "use",
-		weight = 0.5
+		weight = 0.4
 	},
 	["perola"] = {
 		index = "perola",
 		name = "Perola",
 		type = "use",
-		weight = 0.5
+		weight = 0.4
 	},
 	["tapafuro"] = {
 		index = "tapafuro",
 		name = "Reparo",
 		type = "use",
-		weight = 0.5
+		weight = 0.4
 	},
 	["efidrina"] = {
 		index = "efidrina",
 		name = "Efidrina",
 		type = "use",
-		weight = 0.5
+		weight = 0.4
 	},
 	["woodlog"] = {
 		index = "woodlog",
 		name = "Tora de Madeira",
 		type = "use",
-		weight = 0.5
+		weight = 0.4
 	},
 	["fishingrod"] = {
 		index = "fishingrod",
@@ -144,61 +144,61 @@ local itemlist = {
 		index = "octopus",
 		name = "Polvo",
 		type = "use",
-		weight = 0.6
+		weight = 0.5
 	},
 	["shrimp"] = {
 		index = "shrimp",
 		name = "Camarão",
 		type = "use",
-		weight = 0.4
+		weight = 0.3
 	},
 	["carp"] = {
 		index = "carp",
 		name = "Carpa",
 		type = "use",
-		weight = 0.5
+		weight = 0.4
 	},
 	["bait"] = {
 		index = "bait",
 		name = "Isca",
 		type = "use",
-		weight = 0.3
+		weight = 0.2
 	},
 	["cannabisseed"] = {
 		index = "cannabisseed",
 		name = "Sementes de maconha",
 		type = "use",
-		weight = 0.3
+		weight = 0.2
 	},
 	["bucket"] = {
 		index = "bucket",
 		name = "Balde",
 		type = "use",
-		weight = 0.4
+		weight = 0.3
 	},
 	["compost"] = {
 		index = "compost",
 		name = "Adubo",
 		type = "use",
-		weight = 0.3
+		weight = 0.2
 	},
 	["weed"] = {
 		index = "weed",
 		name = "Maconha",
 		type = "use",
-		weight = 0.5
+		weight = 0.4
 	},
 	["weedendolada"] = {
 		index = "weedendolada",
 		name = "Maconha Endolada",
 		type = "use",
-		weight = 0.5
+		weight = 0.4
 	},
 	["joint"] = {
 		index = "joint",
 		name = "Baseado",
 		type = "use",
-		weight = 0.5
+		weight = 0.4
 	},
 	["pecadearma"] = {
 		index = "pecadearma",
@@ -228,37 +228,37 @@ local itemlist = {
 		index = "methendolada",
 		name = "Meta Endolada",
 		type = "use",
-		weight = 0.5
+		weight = 0.4
 	},
 	["metil"] = {
 		index = "metil",
 		name = "Metil",
 		type = "use",
-		weight = 0.4
+		weight = 0.3
 	},
 	["meth"] = {
 		index = "meth",
 		name = "Metanfetamina",
 		type = "use",
-		weight = 0.5
+		weight = 0.4
 	},
 	["methliquid"] = {
 		index = "methliquid",
 		name = "Meta Líquida",
 		type = "use",
-		weight = 0.4
+		weight = 0.3
 	},
 	["silk"] = {
 		index = "silk",
 		name = "Seda",
 		type = "use",
-		weight = 0.3
+		weight = 0.2
 	},
 	["backpackp"] = {
 		index = "backpackp",
 		name = "Mochila P",
 		type = "use",
-		weight = 1.0
+		weight = 0.8
 	},
 	["backpackm"] = {
 		index = "backpackm",
@@ -318,13 +318,13 @@ local itemlist = {
 		index = "taurina",
 		name = "Taurina",
 		type = "use",
-		weight = 0.3
+		weight = 0.2
 	},
 	["energetic"] = {
 		index = "energetic",
 		name = "Energético",
 		type = "use",
-		weight = 0.5
+		weight = 0.2
 	},
 	["delivery"] = {
 		index = "delivery",
@@ -342,13 +342,13 @@ local itemlist = {
 		index = "water",
 		name = "Água",
 		type = "use",
-		weight = 0.4
+		weight = 0.3
 	},
 	["dirtywater"] = {
 		index = "dirtywater",
 		name = "Água Suja",
 		type = "use",
-		weight = 0.3
+		weight = 0.2
 	},
 	["emptybottle"] = {
 		index = "emptybottle",
@@ -360,43 +360,43 @@ local itemlist = {
 		index = "coffee",
 		name = "Café",
 		type = "use",
-		weight = 0.3
+		weight = 0.2
 	},
 	["cola"] = {
 		index = "cola",
 		name = "Coca-Cola",
 		type = "use",
-		weight = 0.3
+		weight = 0.2
 	},
 	["tacos"] = {
 		index = "tacos",
 		name = "Tacos",
 		type = "use",
-		weight = 0.5
+		weight = 0.4
 	},
 	["fries"] = {
 		index = "fries",
 		name = "Fritas",
 		type = "use",
-		weight = 0.3
+		weight = 0.2
 	},
 	["soda"] = {
 		index = "soda",
 		name = "Soda",
 		type = "use",
-		weight = 0.3
+		weight = 0.2
 	},
 	["hamburger"] = {
 		index = "hamburger",
 		name = "Hamburger",
 		type = "use",
-		weight = 0.5
+		weight = 0.4
 	},
 	["hotdog"] = {
 		index = "hotdog",
 		name = "Cachorro-Quente",
 		type = "use",
-		weight = 0.3
+		weight = 0.2
 	},
 	["donut"] = {
 		index = "donut",
@@ -432,7 +432,7 @@ local itemlist = {
 		index = "postit",
 		name = "Bloco de Notas",
 		type = "use",
-		weight = 0.1
+		weight = 0.08
 	},
 	["tires"] = {
 		index = "tires",
@@ -444,7 +444,7 @@ local itemlist = {
 		index = "cellphone",
 		name = "Telefone",
 		type = "use",
-		weight = 1.0
+		weight = 0.8
 	},
 	["divingsuit"] = {
 		index = "divingsuit",
@@ -456,13 +456,13 @@ local itemlist = {
 		index = "pendriveh",
 		name = "Pen Drive Hacker",
 		type = "use",
-		weight = 0.5
+		weight = 0.4
 	},
 	["handcuff"] = {
 		index = "handcuff",
 		name = "Algemas",
 		type = "use",
-		weight = 0.75
+		weight = 0.65
 	},
 	["rope"] = {
 		index = "rope",
@@ -480,19 +480,19 @@ local itemlist = {
 		index = "tecido",
 		name = "Tecido",
 		type = "use",
-		weight = 1.0
+		weight = 0.8
 	},
 	["plastic"] = {
 		index = "plastic",
 		name = "Plástico",
 		type = "use",
-		weight = 0.05
+		weight = 0.03
 	},
 	["glass"] = {
 		index = "glass",
 		name = "Polvora",
 		type = "use",
-		weight = 0.1
+		weight = 0.05
 	},
 	["rubber"] = {
 		index = "rubber",
@@ -504,13 +504,13 @@ local itemlist = {
 		index = "aluminum",
 		name = "Alúminio",
 		type = "use",
-		weight = 0.10
+		weight = 0.05
 	},
 	["copper"] = {
 		index = "copper",
 		name = "Cobre",
 		type = "use",
-		weight = 0.10
+		weight = 0.05
 	},
 	["eletronics"] = {
 		index = "eletronics",
@@ -528,7 +528,7 @@ local itemlist = {
 		index = "keyboard",
 		name = "Teclado",
 		type = "use",
-		weight = 0.4
+		weight = 0.3
 	},
 	["mouse"] = {
 		index = "mouse",
@@ -540,13 +540,13 @@ local itemlist = {
 		index = "ring",
 		name = "Anel",
 		type = "use",
-		weight = 0.1
+		weight = 0.08
 	},
 	["watch"] = {
 		index = "watch",
 		name = "Relógio",
 		type = "use",
-		weight = 0.3
+		weight = 0.2
 	},
 	["c4"] = {
 		index = "c4",
@@ -558,31 +558,31 @@ local itemlist = {
 		index = "ritmoneury",
 		name = "Ritmoneury",
 		type = "use",
-		weight = 0.3
+		weight = 0.2
 	},
 	["sinkalmy"] = {
 		index = "sinkalmy",
 		name = "Sinkalmy",
 		type = "use",
-		weight = 0.3
+		weight = 0.2
 	},
 	["cigarette"] = {
 		index = "cigarette",
 		name = "Cigarro",
 		type = "use",
-		weight = 0.1
+		weight = 0.08
 	},
 	["lighter"] = {
 		index = "lighter",
 		name = "Isqueiro",
 		type = "use",
-		weight = 0.3
+		weight = 0.2
 	},
 	["vape"] = {
 		index = "vape",
 		name = "Vape",
 		type = "use",
-		weight = 0.8
+		weight = 0.7
 	},
 	["dollars"] = {
 		index = "dollars",
@@ -600,31 +600,31 @@ local itemlist = {
 		index = "blackcard",
 		name = "Cartão Preto",
 		type = "use",
-		weight = 0.1
+		weight = 0.08
 	},
 	["laptop_h"] = {
 		index = "laptop_h",
 		name = "Laptop Hacker",
 		type = "use",
-		weight = 1.0
+		weight = 0.8
 	},
 	["diamond"] = {
 		index = "diamond",
 		name = "Diamante",
 		type = "use",
-		weight = 0.1
+		weight = 0.08
 	},
 	["thermal_charge"] = {
 		index = "thermal_charge",
 		name = "Thermal",
 		type = "use",
-		weight = 1.0
+		weight = 0.8
 	},
 	["bluecard"] = {
 		index = "bluecard",
 		name = "Cartão Azul",
 		type = "use",
-		weight = 0.1
+		weight = 0.08
 	},
 	["chocolate"] = {
 		index = "chocolate",
@@ -642,13 +642,13 @@ local itemlist = {
 		index = "rose",
 		name = "Rosa",
 		type = "use",
-		weight = 0.1
+		weight = 0.08
 	},
 	["teddy"] = {
 		index = "teddy",
 		name = "Teddy",
 		type = "use",
-		weight = 0.8
+		weight = 0.7
 	},
 	["absolut"] = {
 		index = "absolut",
@@ -684,13 +684,13 @@ local itemlist = {
 		index = "goldbar",
 		name = "Barra de Ouro",
 		type = "use",
-		weight = 1.0
+		weight = 0.8
 	},
 	["binoculars"] = {
 		index = "binoculars",
 		name = "Binóculos",
 		type = "use",
-		weight = 1.0
+		weight = 0.8
 	},
 	["camera"] = {
 		index = "camera",
@@ -714,13 +714,13 @@ local itemlist = {
 		index = "legos",
 		name = "Legos",
 		type = "use",
-		weight = 0.1
+		weight = 0.08
 	},
 	["ominitrix"] = {
 		index = "ominitrix",
 		name = "Ominitrix",
 		type = "use",
-		weight = 0.5
+		weight = 0.4
 	},
 	["bracelet"] = {
 		index = "bracelet",
@@ -732,109 +732,109 @@ local itemlist = {
 		index = "dildo",
 		name = "Vibrador",
 		type = "use",
-		weight = 0.3
+		weight = 0.2
 	},
 	["WEAPON_KNIFE"] = {
 		index = "knife",
 		name = "Faca",
 		type = "equip",
-		weight = 0.50
+		weight = 0.40
 	},
 	["WEAPON_HATCHET"] = {
 		index = "hatchet",
 		name = "Machado",
 		type = "equip",
-		weight = 0.75
+		weight = 0.65
 	},
 	["WEAPON_BAT"] = {
 		index = "bat",
 		name = "Bastão de Beisebol",
 		type = "equip",
-		weight = 0.75
+		weight = 0.65
 	},
 	["WEAPON_BATTLEAXE"] = {
 		index = "battleaxe",
 		name = "Machado de Batalha",
 		type = "equip",
-		weight = 0.75
+		weight = 0.65
 	},
 	["WEAPON_BOTTLE"] = {
 		index = "bottle",
 		name = "Garrafa",
 		type = "equip",
-		weight = 0.75
+		weight = 0.65
 	},
 	["WEAPON_CROWBAR"] = {
 		index = "crowbar",
 		name = "Pé de Cabra",
 		type = "equip",
-		weight = 0.75
+		weight = 0.65
 	},
 	["WEAPON_DAGGER"] = {
 		index = "dagger",
 		name = "Adaga",
 		type = "equip",
-		weight = 0.50
+		weight = 0.40
 	},
 	["WEAPON_GOLFCLUB"] = {
 		index = "golfclub",
 		name = "Taco de Golf",
 		type = "equip",
-		weight = 0.75
+		weight = 0.65
 	},
 	["WEAPON_HAMMER"] = {
 		index = "hammer",
 		name = "Martelo",
 		type = "equip",
-		weight = 0.75
+		weight = 0.65
 	},
 	["WEAPON_MACHETE"] = {
 		index = "machete",
 		name = "Facão",
 		type = "equip",
-		weight = 0.75
+		weight = 0.65
 	},
 	["WEAPON_POOLCUE"] = {
 		index = "poolcue",
 		name = "Taco de Sinuca",
 		type = "equip",
-		weight = 0.75
+		weight = 0.65
 	},
 	["WEAPON_STONE_HATCHET"] = {
 		index = "stonehatchet",
 		name = "Machado de Pedra",
 		type = "equip",
-		weight = 0.75
+		weight = 0.65
 	},
 	["WEAPON_SWITCHBLADE"] = {
 		index = "switchblade",
 		name = "Canivete",
 		type = "equip",
-		weight = 0.50
+		weight = 0.40
 	},
 	["WEAPON_WRENCH"] = {
 		index = "wrench",
 		name = "Chave Inglesa",
 		type = "equip",
-		weight = 0.75
+		weight = 0.65
 	},
 	["WEAPON_KNUCKLE"] = {
 		index = "knuckle",
 		name = "Soco Inglês",
 		type = "equip",
-		weight = 0.50
+		weight = 0.40
 	},
 	["WEAPON_FLASHLIGHT"] = {
 		index = "flashlight",
 		name = "Lanterna",
 		type = "equip",
-		weight = 0.50
+		weight = 0.40
 	},
 	["WEAPON_NIGHTSTICK"] = {
 		index = "nightstick",
 		name = "Cassetete",
 		type = "equip",
-		weight = 0.75
+		weight = 0.65
 	},
 	["WEAPON_PISTOL"] = {
 		index = "m1911",
@@ -910,21 +910,21 @@ local itemlist = {
 		name = "AMT 380",
 		type = "equip",
 		ammo = "WEAPON_PISTOL_AMMO",
-		weight = 1.0
+		weight = 0.8
 	},
 	["WEAPON_SNSPISTOL_MK2"] = {
 		index = "hkp7m10",
 		name = "HK P7M10",
 		type = "equip",
 		ammo = "WEAPON_PISTOL_AMMO",
-		weight = 1.0
+		weight = 0.8
 	},
 	["WEAPON_VINTAGEPISTOL"] = {
 		index = "m1922",
 		name = "M1922",
 		type = "equip",
 		ammo = "WEAPON_PISTOL_AMMO",
-		weight = 1.0
+		weight = 0.8
 	},
 	["WEAPON_PISTOL50"] = {
 		index = "desert",
@@ -945,7 +945,7 @@ local itemlist = {
 		name = "Glock",
 		type = "equip",
 		ammo = "WEAPON_PISTOL_AMMO",
-		weight = 1.0
+		weight = 0.8
 	},
 	["WEAPON_CARBINERIFLE"] = {
 		index = "m4a1",
@@ -1027,7 +1027,7 @@ local itemlist = {
 		index = "stungun",
 		name = "Tazer",
 		type = "equip",
-		weight = 0.75
+		weight = 0.65
 	},
 	["WEAPON_FIREEXTINGUISHER"] = {
 		index = "extinguisher",
@@ -1069,7 +1069,7 @@ local itemlist = {
 		index = "pager",
 		name = "Pager",
 		type = "use",
-		weight = 1.0
+		weight = 0.8
 	},
 	["firecracker"] = {
 		index = "firecracker",
@@ -1093,13 +1093,13 @@ local itemlist = {
 		index = "gsrkit",
 		name = "Kit Residual",
 		type = "use",
-		weight = 0.75
+		weight = 0.65
 	},
 	["gdtkit"] = {
 		index = "gdtkit",
 		name = "Kit Químico",
 		type = "use",
-		weight = 0.75
+		weight = 0.65
 	},
 	["fueltech"] = {
 		index = "fueltech",
@@ -1111,7 +1111,7 @@ local itemlist = {
 		index = "cpuchip",
 		name = "Processador",
 		type = "use",
-		weight = 0.75
+		weight = 0.65
 	}
 }
 -----------------------------------------------------------------------------------------------------------------------------------------

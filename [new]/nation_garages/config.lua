@@ -1070,15 +1070,15 @@ config.garages = {
 	  { vehicle = 'trash', modelo = 'trash' },  
 	}
   },
-	[21] = { type = 'service', coords = vec3(34.58,-1617.54,29.3), perm = nil,
+	[21] = { type = 'service', coords = vec3(114.94,277.32,109.98), perm = nil, -- TACO
 	  vehiclePositions = {
-		[1] = { vec3(36.68,-1623.71,29.19), h = 319.79 },
-		[2] = { vec3(39.08,-1625.68,29.19), h = 319.71 },
-		[3] = { vec3(41.4,-1627.67,29.19), h = 320.07 },
-		[4] = { vec3(43.76,-1629.64,29.19), h = 320.08 },
+		[1] = { vec3(121.08,287.8,109.98), h = 69.31 },
+		[2] = { vec3(107.53,286.44,109.98), h = 251.26 },
+		[3] = { vec3(108.64,290.32,109.98), h = 244.69 },
+		--[4] = { vec3(43.76,-1629.64,29.19), h = 320.08 },
 	},
 	vehicles = {
-	  { vehicle = 'taco', modelo = 'taco' },  
+	  { vehicle = 'faggio2', modelo = 'faggio2' },  
 	}
   },
 	[22] = { type = 'service', coords = vec3(407.89,-1624.71,29.3), perm = nil,
