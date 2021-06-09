@@ -195,15 +195,16 @@ local craftList = {
 	["unktecCrafting"] = {
 		["perm"] = "Unktec",
 		["list"] = {
-			["WEAPON_VINTAGEPISTOL"] = {
+			["WEAPON_PISTOL_MK2"] = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 125,
-					["copper"] = 125,
-					["pecadearma"] = 60,
+					["aluminum"] = 150,
+					["copper"] = 120,
+					["pecadearma"] = 80,
 				}
 			},
+
 			["rope"] = {
 				["amount"] = 1,
 				["destroy"] = true,
@@ -232,13 +233,13 @@ local craftList = {
 	["lowriderCrafting"] = {
 		["perm"] = "Lowrider",
 		["list"] = {
-			["WEAPON_PISTOL_MK2"] = {
+			["WEAPON_VINTAGEPISTOL"] = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 150,
-					["copper"] = 120,
-					["pecadearma"] = 80,
+					["aluminum"] = 125,
+					["copper"] = 125,
+					["pecadearma"] = 60,
 				}
 			},
 			["WEAPON_SMG_AMMO"] = {
@@ -297,13 +298,13 @@ local craftList = {
 	["bennysCrafting"] = {
 		["perm"] = "Bennys",
 		["list"] = {
-			["WEAPON_PISTOL_MK2"] = {
+			["WEAPON_VINTAGEPISTOL"] = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 150,
-					["copper"] = 120,
-					["pecadearma"] = 80,
+					["aluminum"] = 125,
+					["copper"] = 125,
+					["pecadearma"] = 60,
 				}
 			},
 			["WEAPON_SMG_AMMO"] = {
@@ -383,13 +384,13 @@ local craftList = {
 					["tecido"] = 10
 				}
 			},
-			["WEAPON_VINTAGEPISTOL"] = {
+			["WEAPON_PISTOL_MK2"] = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 125,
-					["copper"] = 125,
-					["pecadearma"] = 60,
+					["aluminum"] = 150,
+					["copper"] = 120,
+					["pecadearma"] = 80,
 				}
 			},
 			["rope"] = {
