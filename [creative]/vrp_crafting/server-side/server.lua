@@ -85,7 +85,7 @@ local craftList = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 350,
+					["aluminum"] = 320,
 					["copper"] = 200,
 					["pecadearma"] = 200,
 					["blackcard"] = 1
@@ -115,8 +115,8 @@ local craftList = {
 				["amount"] = 20,
 				["destroy"] = true,
 				["require"] = {
-					["copper"] = 10,
-					["glass"] = 10
+					["copper"] = 5,
+					["glass"] = 5
 				}
 			}
 		}
@@ -156,7 +156,7 @@ local craftList = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 400,
+					["aluminum"] = 370,
 					["pecadearma"] = 250,
 					["copper"] = 250,
 					["blackcard"] = 1
@@ -186,8 +186,8 @@ local craftList = {
 				["amount"] = 20,
 				["destroy"] = true,
 				["require"] = {
-					["copper"] = 10,
-					["glass"] = 10
+					["copper"] = 5,
+					["glass"] = 5
 				}
 			}
 		}

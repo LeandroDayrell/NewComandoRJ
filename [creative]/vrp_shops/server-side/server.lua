@@ -19,7 +19,7 @@ local shops = {
 		["type"] = "Cash",
 		["list"] = {
 			["postit"] = 20,
-			["hamburger"] = 30,
+			["hamburger"] = 20,
 			["emptybottle"] = 40,
 			["cigarette"] = 20,
 			["lighter"] = 600,
@@ -53,7 +53,7 @@ local shops = {
 		["type"] = "Cash",
 		["list"] = {
 			["tacos"] = 28,
-			["hamburger"] = 25,
+			["hamburger"] = 20,
 			["hotdog"] = 18,
 			["soda"] = 18,
 			["cola"] = 18,
@@ -179,7 +179,7 @@ local shops = {
 		["list"] = {
 			["postit"] = 20,
 			["tecido"] = 5,
-			["hamburger"] = 30,
+			--["hamburger"] = 50,
 			["emptybottle"] = 40,
 			["cigarette"] = 20,
 			["lighter"] = 600,
@@ -218,12 +218,22 @@ local shops = {
 		["mode"] = "Buy",
 		["type"] = "Cash",
 		["list"] = {
-			["coffee"] = 2500
+			["coffee"] = 1000
+		}
+	},
+	["McDonalds"] = {
+		["mode"] = "Buy",
+		["type"] = "Cash",
+		["list"] = {
+			["coffee"] = 1000,
+			["hamburger"] = 20,
+			["fries"] = 10,
+			["cola"] = 18,
 		}
 	},
 	["sodaMachine"] = {
 		["mode"] = "Buy",
-		["type"] = "Cash",
+		["type"] = "Cash", 
 		["list"] = {
 			["soda"] = 18
 		}
@@ -247,7 +257,7 @@ local shops = {
 		["mode"] = "Buy",
 		["type"] = "Cash",
 		["list"] = {
-			["hamburger"] = 25
+			["hamburger"] = 20
 		}
 	},
 	["hotdogMachine"] = {
@@ -295,7 +305,7 @@ local shops = {
 		["perm"] = "Police",
 		["list"] = {
 			["vest"] = 5,
-			["energetic"] = 1000,
+			["energetic"] = 200,
 			["gsrkit"] = 2,
 			["gdtkit"] = 2,
 			["WEAPON_SMG"] = 100,
