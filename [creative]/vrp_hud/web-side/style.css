@@ -212,13 +212,13 @@ svg {
     margin-top: -80px; */
     position: relative;
     border-radius: 100%;
-    border: 4px solid rgba(112, 32, 77, 0.5);
+    border: 4px solid rgba(153, 35, 102, 0.5);
 }
 
 .stressDisplay {
     stroke: #9c336f;
     stroke-width: 4;
-    margin-right: -34px;
+    margin-right: -33px;
     margin-top: -80px;
     fill: transparent;
     position: absolute;

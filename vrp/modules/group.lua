@@ -65,15 +65,39 @@ AddEventHandler("vRP:playerSpawn",function(user_id,source,first_spawn)
 		TriggerEvent("vrp_blipsystem:serviceEnter",source,"Policial",77)
 	elseif vRP.hasPermission(user_id,"chamado") then
 		permissions[tostring(source)] = "chamado" 
+
+
+	-- PARAMEDICOS
+	elseif vRP.hasPermission(user_id,"SamuEnfermeiro") then
+		permissions[tostring(source)] = "SamuEnfermeiro"
+		TriggerEvent("vrp_blipsystem:serviceEnter",source,"Paramedico",25)
+	elseif vRP.hasPermission(user_id,"SamuMedico") then
+		permissions[tostring(source)] = "SamuMedico"
+		TriggerEvent("vrp_blipsystem:serviceEnter",source,"Paramedico",25)
+	elseif vRP.hasPermission(user_id,"SamuCoordenador") then
+		permissions[tostring(source)] = "SamuCoordenador"
+		TriggerEvent("vrp_blipsystem:serviceEnter",source,"Paramedico",25)
+	elseif vRP.hasPermission(user_id,"SamuViceDiretor") then
+		permissions[tostring(source)] = "SamuViceDiretor"
+		TriggerEvent("vrp_blipsystem:serviceEnter",source,"Paramedico",25)
+	elseif vRP.hasPermission(user_id,"SamuDiretor") then
+		permissions[tostring(source)] = "SamuDiretor"
+		TriggerEvent("vrp_blipsystem:serviceEnter",source,"Paramedico",25)
 	elseif vRP.hasPermission(user_id,"Paramedic") then
 		permissions[tostring(source)] = "Paramedic"
-		TriggerEvent("vrp_blipsystem:serviceEnter",source,"Paramedico",25)
+		TriggerEvent("vrp_blipsystem:serviceEnter",source,"Paramedico",25)	
+
+		-- LOS SANTOS
 	elseif vRP.hasPermission(user_id,"LosSantos") then
 		permissions[tostring(source)] = "LosSantos"
 		TriggerEvent("vrp_blipsystem:serviceEnter",source,"LosSantos",56)
+
+	-- TAXISTA
 	elseif vRP.hasPermission(user_id,"Taxista") then
 		permissions[tostring(source)] = "Taxista"
 		TriggerEvent("vrp_blipsystem:serviceEnter",source,"Taxista",5)
+
+	-- ADMINISTRACAO
 	elseif vRP.hasPermission(user_id,"sup2000") then
 		permissions[tostring(source)] = "sup2000"
 	elseif vRP.hasPermission(user_id,"modder21") then

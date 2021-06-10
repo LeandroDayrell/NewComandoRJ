@@ -118,6 +118,7 @@ local animacoes = {
 	["porta"] = { dict = "anim@heists@box_carry@" , anim = "idle" , prop = "prop_car_door_01" , flag = 50 , mao = 28422, altura = -0.19 , pos1 = -0.17 , pos2 = -0.10 , pos3 = 0, pos4 = 0, pos5 = 180.0},
 	["carrinho"] = { dict = "anim@heists@box_carry@" , anim = "idle" , prop = "prop_skid_trolley_2" , flag = 50 , mao = 28422, altura = 0 , pos1 = -0.6 , pos2 = -0.70 , pos3 = 0, pos4 = 0.50, pos5 = 0},
 	["engradado"] = { dict = "anim@heists@box_carry@" , anim = "idle" , prop = "prop_crate_11e" , flag = 50 , mao = 28422 , altura = 0 , pos1 = -0.3 , pos2 = -0.20 , pos3 = -0.30, pos4 = 0.50, pos5 = 0},
+	["escudo"] = { dict = "amb@world_human_bum_freeway@male@base" , anim = "base" , prop = "prop_ballistic_shield" , flag = 50 , mao = 28422 , altura = 0.0 , pos1 = -0.1 , pos2 = 0.2 , pos3 = 1.5, pos4 = 0.90, pos5 = 0},
 
 	-------------------- TESTE 01
 	--["teste01"] = { dict = "anim@heists@box_carry@" , anim = "idle" , prop = "prop_gascyl_04a" , flag = 50 , mao = 28422 },
