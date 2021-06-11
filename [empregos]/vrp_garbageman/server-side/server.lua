@@ -804,15 +804,15 @@ function cRP.paymentMethod(garbageId)
 		end 
 		local random = math.random(100)
 		if parseInt(random) >= 81 then
-			vRP.giveInventoryItem(user_id,"plastic",math.random(2,7),true)
+			vRP.giveInventoryItem(user_id,"plastic",math.random(3,8),true)
 		elseif parseInt(random) >= 61 and parseInt(random) <= 80 then
-			vRP.giveInventoryItem(user_id,"glass",math.random(2,7),true)
+			vRP.giveInventoryItem(user_id,"glass",math.random(3,8),true)
 		elseif parseInt(random) >= 41 and parseInt(random) <= 60 then
-			vRP.giveInventoryItem(user_id,"rubber",math.random(2,7),true)
+			vRP.giveInventoryItem(user_id,"rubber",math.random(4,8),true)
 		elseif parseInt(random) >= 26 and parseInt(random) <= 40 then
-			vRP.giveInventoryItem(user_id,"aluminum",math.random(3,12),true)
+			vRP.giveInventoryItem(user_id,"aluminum",math.random(4,13),true)
 		elseif parseInt(random) >= 0 and parseInt(random) <= 25 then
-			vRP.giveInventoryItem(user_id,"copper",math.random(2,11),true)
+			vRP.giveInventoryItem(user_id,"copper",math.random(3,12),true)
 		end
 
 		vRP.upgradeStress(user_id,1)

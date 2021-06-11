@@ -63,13 +63,13 @@ function cRP.stopMachine(x,y,z)
 		if machineStart then
 			machineStart = false
 			local grid = vRP.getGridzone(x,y)
-			TriggerEvent("vrp_itemdrop:Create","dollars2",parseInt(math.random(15000,17500)),x,y,z,grid)
+			TriggerEvent("vrp_itemdrop:Create","dollars2",parseInt(math.random(18000,20500)),x,y,z,grid)
 
 			local random = math.random(100)
 			if parseInt(random) >= 50 then
-				TriggerEvent("vrp_itemdrop:Create","aluminum",parseInt(math.random(35,50)),x,y,z,grid)
+				TriggerEvent("vrp_itemdrop:Create","aluminum",parseInt(math.random(40,70)),x,y,z,grid)
 			elseif parseInt(random) <= 50 then
-				TriggerEvent("vrp_itemdrop:Create","copper",parseInt(math.random(35,50)),x,y,z,grid)
+				TriggerEvent("vrp_itemdrop:Create","copper",parseInt(math.random(40,70)),x,y,z,grid)
 			end
 		end
 	end

@@ -198,7 +198,7 @@ AddEventHandler("vrp_player:salary",function()
 		end ]]
 
 		if vRP.hasPermission(parseInt(user_id),"Police") then
-			vRP.setSalary(parseInt(user_id),5000)
+			vRP.setSalary(parseInt(user_id),6500)
 			TriggerClientEvent("Notify",source,"sucesso","Voce recebeu seu salario.",5000)
 		end
 
@@ -207,34 +207,39 @@ AddEventHandler("vrp_player:salary",function()
 			TriggerClientEvent("Notify",source,"sucesso","Voce recebeu seu salario.",5000)
 		end ]]
 
-		if vRP.hasPermission(parseInt(user_id),"Taxi") then
+		if vRP.hasPermission(parseInt(user_id),"Taxista") then
 			vRP.setSalary(parseInt(user_id),500)
+			TriggerClientEvent("Notify",source,"sucesso","Voce recebeu seu salario.",5000)
+		end
+
+		if vRP.hasPermission(parseInt(user_id),"LosSantos") then
+			vRP.setSalary(parseInt(user_id),700)
 			TriggerClientEvent("Notify",source,"sucesso","Voce recebeu seu salario.",5000)
 		end
 		 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ---------------- SALARIO MEDICO --------------------------------------------------
 		if vRP.hasPermission(parseInt(user_id),"SamuDiretor") then
-			vRP.setSalary(parseInt(user_id),9000)
+			vRP.setSalary(parseInt(user_id),10000)
 			TriggerClientEvent("Notify",source,"sucesso","Voce recebeu seu salario.",5000)
 		end
 
 		if vRP.hasPermission(parseInt(user_id),"SamuViceDiretor") then
-			vRP.setSalary(parseInt(user_id),8500)
+			vRP.setSalary(parseInt(user_id),9500)
 			TriggerClientEvent("Notify",source,"sucesso","Voce recebeu seu salario.",5000)
 		end
 
 		if vRP.hasPermission(parseInt(user_id),"SamuCoordenador") then
-			vRP.setSalary(parseInt(user_id),7500)
+			vRP.setSalary(parseInt(user_id),8500)
 			TriggerClientEvent("Notify",source,"sucesso","Voce recebeu seu salario.",5000)
 		end
 
 		if vRP.hasPermission(parseInt(user_id),"SamuMedico") then
-			vRP.setSalary(parseInt(user_id),7000)
+			vRP.setSalary(parseInt(user_id),8000)
 			TriggerClientEvent("Notify",source,"sucesso","Voce recebeu seu salario.",5000)
 		end
 
 		if vRP.hasPermission(parseInt(user_id),"SamuEnfermeiro") then
-			vRP.setSalary(parseInt(user_id),6000)
+			vRP.setSalary(parseInt(user_id),7000)
 			TriggerClientEvent("Notify",source,"sucesso","Voce recebeu seu salario.",5000)
 		end
  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
