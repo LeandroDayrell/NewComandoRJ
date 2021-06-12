@@ -516,6 +516,20 @@ RegisterCommand("servico",function(source,args,rawCommand)
 					end
 				end
 
+				if service == "Paramedic" then
+					if vRP.hasPermission(user_id,"Paramedic") then
+						vRP.removePermission(source,"Paramedic")
+						TriggerEvent("vrp_blipsystem:serviceExit",source)
+						TriggerClientEvent("Notify",source,"importante","Você saiu de serviço.",5000)
+						vRP.execute("vRP/upd_group",{ user_id = user_id, permiss = "Paramedic", newpermiss = "waitParamedic" })
+					elseif vRP.hasPermission(user_id,"waitParamedic") then
+						vRP.insertPermission(source,"Paramedic")
+						TriggerEvent("vrp_blipsystem:serviceEnter",source,"Paramedico",83)
+						TriggerClientEvent("Notify",source,"importante","Você entrou em serviço.",5000)
+						vRP.execute("vRP/upd_group",{ user_id = user_id, permiss = "waitParamedic", newpermiss = "Paramedic" })
+					end
+				end
+
 				if service == "SamuEnfermeiro" then
 					if vRP.hasPermission(user_id,"SamuEnfermeiro") then
 						vRP.removePermission(source,"SamuEnfermeiro")
@@ -568,13 +582,17 @@ RegisterCommand("servico",function(source,args,rawCommand)
 						vRP.execute("vRP/upd_group",{ user_id = user_id, permiss = "waitSamuViceDiretor", newpermiss = "SamuViceDiretor" })
 					end
 				end
+				--print("Teste 01")
 				if service == "SamuDiretor" then
+					--print("Teste 02")
 					if vRP.hasPermission(user_id,"SamuDiretor") then
 						vRP.removePermission(source,"SamuDiretor")
+						--print("Teste 03")
 						TriggerEvent("vrp_blipsystem:serviceExit",source)
 						TriggerClientEvent("Notify",source,"importante","Você saiu de serviço.",5000)
 						vRP.execute("vRP/upd_group",{ user_id = user_id, permiss = "SamuDiretor", newpermiss = "waitSamuDiretor" })
 					elseif vRP.hasPermission(user_id,"waitSamuDiretor") then
+					--	print("Teste 04")
 						vRP.insertPermission(source,"SamuDiretor")
 						TriggerEvent("vrp_blipsystem:serviceEnter",source,"Paramedico",25)
 						TriggerClientEvent("Notify",source,"importante","Você entrou em serviço.",5000)

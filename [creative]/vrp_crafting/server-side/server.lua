@@ -21,18 +21,18 @@ local craftList = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 50,
-					["rubber"] = 50,
-					["tecido"] = 50
+					["aluminum"] = 40,
+					["rubber"] = 40,
+					["tecido"] = 40
 				}
 			},
 			["WEAPON_SMG"] = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 230,
-					["copper"] = 150,
-					["pecadearma"] = 100,
+					["aluminum"] = 190,
+					["copper"] = 140,
+					["pecadearma"] = 80,
 					["bluecard"] = 1
 				}
 			},
@@ -53,18 +53,18 @@ local craftList = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 50,
-					["rubber"] = 50,
-					["tecido"] = 50
+					["aluminum"] = 40,
+					["rubber"] = 40,
+					["tecido"] = 40
 				}
 			},
 			["WEAPON_SMG"] = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 250,
-					["copper"] = 150,
-					["pecadearma"] = 100,
+					["aluminum"] = 190,
+					["copper"] = 140,
+					["pecadearma"] = 80,
 					["bluecard"] = 1
 				}
 			},
@@ -85,9 +85,9 @@ local craftList = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 320,
-					["copper"] = 200,
-					["pecadearma"] = 200,
+					["aluminum"] = 250,
+					["copper"] = 180,
+					["pecadearma"] = 150,
 					["blackcard"] = 1
 				}
 			},
@@ -95,9 +95,9 @@ local craftList = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 150,
-					["copper"] = 100,
-					["pecadearma"] = 100,
+					["aluminum"] = 140,
+					["copper"] = 120,
+					["pecadearma"] = 70,
 					["bluecard"] = 1
 				}
 			},
@@ -156,9 +156,9 @@ local craftList = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 370,
-					["pecadearma"] = 250,
-					["copper"] = 250,
+					["aluminum"] = 290,
+					["pecadearma"] = 150,
+					["copper"] = 210,
 					["blackcard"] = 1
 				}
 			},
@@ -199,9 +199,9 @@ local craftList = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 150,
-					["copper"] = 120,
-					["pecadearma"] = 80,
+					["aluminum"] = 110,
+					["copper"] = 110,
+					["pecadearma"] = 60,
 				}
 			},
 
@@ -237,9 +237,9 @@ local craftList = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 125,
-					["copper"] = 125,
-					["pecadearma"] = 60,
+					["aluminum"] = 100,
+					["copper"] = 100,
+					["pecadearma"] = 50,
 				}
 			},
 			["WEAPON_SMG_AMMO"] = {
@@ -302,9 +302,9 @@ local craftList = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 125,
-					["copper"] = 125,
-					["pecadearma"] = 60,
+					["aluminum"] = 100,
+					["copper"] = 100,
+					["pecadearma"] = 50,
 				}
 			},
 			["WEAPON_SMG_AMMO"] = {
@@ -388,9 +388,9 @@ local craftList = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
-					["aluminum"] = 150,
-					["copper"] = 120,
-					["pecadearma"] = 80,
+					["aluminum"] = 110,
+					["copper"] = 110,
+					["pecadearma"] = 60,
 				}
 			},
 			["rope"] = {
@@ -433,8 +433,8 @@ local craftList = {
                 ["amount"] = 1,
                 ["destroy"] = true,
                 ["require"] = {
-                    ["plastic"] = 20,
-                    ["dollars"] = 150
+                    ["plastic"] = 15,
+                    ["dollars"] = 100
 				}
 			},
 			["methendolada"] = {
@@ -462,8 +462,8 @@ local craftList = {
                 ["amount"] = 1,
                 ["destroy"] = true,
                 ["require"] = {
-                    ["plastic"] = 20,
-                    ["dollars"] = 150
+                    ["plastic"] = 15,
+                    ["dollars"] = 100
 				}
 			},
 			["methendolada"] = {
@@ -491,8 +491,8 @@ local craftList = {
                 ["amount"] = 1,
                 ["destroy"] = true,
                 ["require"] = {
-                    ["plastic"] = 20,
-                    ["dollars"] = 150
+                    ["plastic"] = 15,
+                    ["dollars"] = 100
 				}
 			},
 			["methendolada"] = {
@@ -520,8 +520,8 @@ local craftList = {
                 ["amount"] = 1,
                 ["destroy"] = true,
                 ["require"] = {
-                    ["plastic"] = 20,
-                    ["dollars"] = 150
+                    ["plastic"] = 15,
+                    ["dollars"] = 100
 				}
 			},
 			["methendolada"] = {

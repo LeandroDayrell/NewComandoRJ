@@ -703,7 +703,7 @@ end)
 RegisterCommand("itemall",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if vRP.hasPermission(user_id,"FundadorOwner") then
+		if vRP.hasPermission(user_id,"adms58") then
 			local users = vRP.getUsers()
 			for k,v in pairs(users) do
 				vRP.giveInventoryItem(parseInt(k),tostring(args[1]),parseInt(args[2]),true)

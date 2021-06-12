@@ -161,7 +161,7 @@ local blips = {
 	{ 909.8,-176.49,74.23,56,4,"Taxista",0.6 },
 	{ -439.03,-2796.89,7.3,478,4,"Entregador",0.6 },
 	--{ 136.33,-762.05,45.76,590,40,"Irmandade",0.6 },
-	--{ -545.0,5313.05,108.86,644,1,"FIM DO EVENTO",0.6 },
+	{ -982.71,6242.41,3.05,644,1,"FIM DO EVENTO",0.6 },
 	{ -1384.77,-618.53,29.93,93,5,"BAHAMAS",0.5 },
 }
 
@@ -308,8 +308,8 @@ end)
 		N_0x4757f00bc6323cfe(GetHashKey("WEAPON_ASSAULTSMG"),1.2)
 		N_0x4757f00bc6323cfe(GetHashKey("WEAPON_SMG"),1.2)
 		N_0x4757f00bc6323cfe(GetHashKey("WEAPON_GUSENBERG"),0.7)
-		N_0x4757f00bc6323cfe(GetHashKey("WEAPON_SAWNOFFSHOTGUN"),1.3)
-		N_0x4757f00bc6323cfe(GetHashKey("WEAPON_PUMPSHOTGUN"),2.0)
+		N_0x4757f00bc6323cfe(GetHashKey("WEAPON_SAWNOFFSHOTGUN"),1.0)
+		N_0x4757f00bc6323cfe(GetHashKey("WEAPON_PUMPSHOTGUN"),1.0)
 		N_0x4757f00bc6323cfe(GetHashKey("WEAPON_RAYPISTOL"),2.0)
 
 		--ClearAreaOfPeds(GetEntityCoords(PlayerPedId()),1000.0,1)

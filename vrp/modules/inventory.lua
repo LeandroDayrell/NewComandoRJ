@@ -126,7 +126,7 @@ local itemlist = {
 		index = "efidrina",
 		name = "Efidrina",
 		type = "use",
-		weight = 0.4
+		weight = 0.2
 	},
 	["woodlog"] = {
 		index = "woodlog",
@@ -180,7 +180,7 @@ local itemlist = {
 		index = "compost",
 		name = "Adubo",
 		type = "use",
-		weight = 0.2
+		weight = 0.1
 	},
 	["weed"] = {
 		index = "weed",
