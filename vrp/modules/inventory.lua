@@ -24,7 +24,7 @@ local itemlist = {
 		index = "vest",
 		name = "Colete",
 		type = "use",
-		weight = 5.0
+		weight = 3.0
 	},
 	["bandage"] = {
 		index = "bandage",
@@ -408,25 +408,25 @@ local itemlist = {
 		index = "plate",
 		name = "Placa",
 		type = "use",
-		weight = 5.0
+		weight = 2.0
 	},
 	["premiumplate"] = {
 		index = "plate",
 		name = "Placa Premium",
 		type = "use",
-		weight = 5.0
+		weight = 2.0
 	},
 	["lockpick"] = {
 		index = "lockpick",
 		name = "Lockpick",
 		type = "use",
-		weight = 5.0
+		weight = 2.0
 	},
 	["toolbox"] = {
 		index = "toolbox",
 		name = "Caixa de Ferramentas",
 		type = "use",
-		weight = 5.0
+		weight = 2.0
 	},
 	["postit"] = {
 		index = "postit",
@@ -450,7 +450,7 @@ local itemlist = {
 		index = "divingsuit",
 		name = "Roupa de Mergulho",
 		type = "use",
-		weight = 5.0
+		weight = 2.0
 	},
 	["pendriveh"] = {
 		index = "pendriveh",

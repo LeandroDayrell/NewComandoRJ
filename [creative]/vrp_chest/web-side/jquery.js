@@ -176,7 +176,7 @@ const updateChest = () => {
 			</div>
 		`);
 
-		/* const nameList2 = data.inventario2.sort((a,b) => (a.name > b.name) ? 1: -1); */
+		 const nameList2 = data.inventario2.sort((a,b) => (a.name > b.name) ? 1: -1); 
 
 		$("#invleft").html("");
 		$("#invright").html("");
@@ -205,10 +205,10 @@ const updateChest = () => {
 		for (let x=1; x <= inSlots; x++) {
 			const slot = x.toString();
 
-			/* if (nameList2[x-1] !== undefined) {
-				const v = nameList2[x-1]; */
-				if (data.inventario2[slot] !== undefined) {
-					const v = data.inventario2[slot];
+			if (nameList2[x-1] !== undefined) {
+				const v = nameList2[x-1];
+				/* if (data.inventario2[slot] !== undefined) {
+					const v = data.inventario2[slot]; */
 
 				const item = `<div class="item2 populated" style="background-image: url('http://131.196.198.113/imagens/${v.index}.png');" data-item-key="${v.key}" data-name-key="${v.name}" data-slot="${slot}">
 					<div id="peso">${(v.peso*v.amount).toFixed(2)}</div>

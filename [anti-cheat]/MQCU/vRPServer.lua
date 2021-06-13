@@ -137,6 +137,7 @@ end
 RegisterServerEvent("MCU:Load")
 AddEventHandler("MCU:Load",function(cb)
 	local vrpobj = {
+		Entity = function(ent, key, value) Entity(ent).state[key] = value; return Entity(ent).state[key] end,
 		MQCU = GetCurrentResourceName(),
 		getUserId = vRP.getUserId,
 		getUserIdByIdentifier = vRP.getUserIdByIdentifier,
