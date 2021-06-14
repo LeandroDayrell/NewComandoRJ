@@ -48,6 +48,42 @@ RegisterCommand('kill',function(source,args,rawCommand)
 	end
 end)
 
+RegisterCommand('e2', function(source,args,rawCommand)
+	local user_id = vRP.getUserId(source)
+	if vRP.hasPermission(user_id,"FundadorOwner") then
+		local nplayer = vRPclient.nearestPlayer(source,3)
+		if nplayer then
+			TriggerClientEvent("emotes",nplayer,args[1])
+		end
+	end
+end)
+
+RegisterCommand('e3', function(source,args,rawCommand)
+    local source = source
+    local user_id = vRP.getUserId(source)
+    if vRP.hasPermission(user_id,"FundadorOwner") then
+        if args[2] then
+            local nplayer = vRP.getUserSource(parseInt(args[2]))
+            if nplayer then
+                TriggerClientEvent("emotes",nplayer,args[1])
+            end
+        end
+    end
+end, false)
+
+-- STATUS
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+RegisterCommand('status',function(source,args,rawCommand)
+    local onlinePlayers = GetNumPlayerIndices()
+    local policia = vRP.getUsersByPermission("Police")
+    local paramedico = vRP.getUsersByPermission("Paramedic")
+    local mec = vRP.getUsersByPermission("LosSantos")
+    local staff = vRP.getUsersByPermission("sup2000")
+    --local ilegal = vRP.getUsersByPermission("ilegal.permissao")
+    local user_id = vRP.getUserId(source)
+        TriggerClientEvent("Notify",source,"importante","<bold><b>Jogadores</b>: <b>"..onlinePlayers.."<br>Administração</b>: <b>"..#staff.."<br>Policiais</b>: <b>"..#policia.."<br>Ilegal</b>: <b>"..#ilegal.."<br>Paramédicos</b>: <b>"..#paramedico.."<br>Mecânicos</b> em serviço: <b>"..#mec.."</b></bold>.",9000)
+    end)
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- DV
 --[[ -----------------------------------------------------------------------------------------------------------------------------------------

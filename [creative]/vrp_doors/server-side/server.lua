@@ -92,7 +92,7 @@ local doors = {
 	[47] = { ["x"] = -1088.797, ["y"] = -830.2533, ["z"] = 5.63, ["hash"] = 631614199, ["lock"] = true, ["text"] = true, ["distance"] = 5, ["press"] = 1.5, ["perm"] = "Police", ["sound"] = true },
 	[48] = { ["x"] = -1087.752, ["y"] = -829.8747, ["z"] = 5.63, ["hash"] = 631614199, ["lock"] = true, ["text"] = true, ["distance"] = 5, ["press"] = 1.5, ["perm"] = "Police", ["sound"] = true },
 	[49] = { ["x"] = -1094.097, ["y"] = -816.2119, ["z"] = 5.63, ["hash"] = -2023754432, ["lock"] = true, ["text"] = true, ["distance"] = 5, ["press"] = 1.5, ["perm"] = "Police", ["sound"] = true },
-	[50] = { ["x"] = -1092.52, ["y"] = -816.274, ["z"] = 5.63, ["hash"] = -2023754432, ["lock"] = true, ["text"] = true, ["distance"] = 5, ["press"] = 1.5, ["perm"] = "Police", ["sound"] = true },
+	--[50] = { ["x"] = -1092.52, ["y"] = -816.274, ["z"] = 5.63, ["hash"] = -2023754432, ["lock"] = true, ["text"] = true, ["distance"] = 5, ["press"] = 1.5, ["perm"] = "Police", ["sound"] = true },
 	
 	-- PORTAO DE FORA 
 	[51] = { ["x"] = -1053.862, ["y"] = -873.1184, ["z"] = 4.1154, ["hash"] = -655468553, ["lock"] = false, ["text"] = true, ["distance"] = 30, ["press"] = 1.5, ["perm"] = "Police", ["sound"] = true },

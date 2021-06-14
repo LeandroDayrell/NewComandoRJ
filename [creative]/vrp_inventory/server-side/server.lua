@@ -386,7 +386,7 @@ AddEventHandler("vrp_inventory:useItem",function(slot,rAmount)
 									vRP.weedTimer(user_id,1)
 									vRP.downgradeHunger(user_id,10)
 									vRP.downgradeThirst(user_id,10)
-									vRP.downgradeStress(user_id,15)
+									vRP.downgradeStress(user_id,22)
 									vPLAYER.movementClip(source,"move_m@shadyped@a")
 								end
 							end

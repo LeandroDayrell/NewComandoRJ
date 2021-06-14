@@ -86,6 +86,7 @@ local animacoes = {
 	["cuidar2"] = { dict = "mini@cpr@char_a@cpr_str" , anim = "cpr_kol" , andar = true , loop = true },
 	["cuidar3"] = { dict = "mini@cpr@char_a@cpr_str" , anim = "cpr_kol_idle" , andar = true , loop = true },
 	["cansado"] = { dict = "rcmbarry" , anim = "idle_d" , andar = false , loop = true },
+	["cansado2"] = { dict = "rcmbarry" , anim = "idle_d" , andar = true , loop = true },
 	["alongar2"] = { dict = "mini@triathlon" , anim = "idle_e" , andar = false , loop = true },
 	["meleca"] = { dict = "anim@mp_player_intuppernose_pick" , anim = "idle_a" , andar = true , loop = true },
 	["bora"] = { dict = "missfam4" , anim = "say_hurry_up_a_trevor" , andar = true , loop = false },
@@ -119,7 +120,8 @@ local animacoes = {
 	["carrinho"] = { dict = "anim@heists@box_carry@" , anim = "idle" , prop = "prop_skid_trolley_2" , flag = 50 , mao = 28422, altura = 0 , pos1 = -0.6 , pos2 = -0.70 , pos3 = 0, pos4 = 0.50, pos5 = 0},
 	["engradado"] = { dict = "anim@heists@box_carry@" , anim = "idle" , prop = "prop_crate_11e" , flag = 50 , mao = 28422 , altura = 0 , pos1 = -0.3 , pos2 = -0.20 , pos3 = -0.30, pos4 = 0.50, pos5 = 0},
 	["escudo"] = { dict = "amb@world_human_bum_freeway@male@base" , anim = "base" , prop = "prop_ballistic_shield" , flag = 50 , mao = 28422 , altura = 0.0 , pos1 = -0.1 , pos2 = 0.2 , pos3 = 1.5, pos4 = 0.90, pos5 = 0},
-
+	--["cachorro"] = { dict = "random@peyote@dog" , anim = "wakeup" , flag = 50 , mao = 28422 , altura = 0 , pos1 = -0.3 , pos2 = -0.20 , pos3 = -0.30, pos4 = 0.50, pos5 = 0},
+	["cachorro"] = { dict = "random@peyote@dog" , anim = "wakeup" , andar = false , loop = true },
 	-------------------- TESTE 01
 	--["teste01"] = { dict = "anim@heists@box_carry@" , anim = "idle" , prop = "prop_gascyl_04a" , flag = 50 , mao = 28422 },
 	--["teste06"] = { dict = "anim@heists@box_carry@" , anim = "idle" , prop = "prop_rub_tyre_01" , flag = 50 , mao = 28422 },
@@ -171,6 +173,7 @@ local animacoes = {
 	["mapa"] = { dict = "amb@world_human_clipboard@male@base" , anim = "base" , prop = "prop_tourist_map_01" , flag = 50 , mao = 60309 },
 	["anotar"] = { dict = "amb@medic@standing@timeofdeath@base" , anim = "base" , prop = "prop_notepad_01" , flag = 49 , mao = 60309 },
 	["paz"] = { dict = "mp_player_int_upperpeace_sign" , anim = "mp_player_int_peace_sign" , andar = true , loop = true },
+	["mochila"] = { dict = "move_m@hiking" , anim = "idle" , andar = true , loop = true },
 	["deitar"] = { dict = "anim@gangops@morgue@table@" , anim = "body_search" , andar = false , loop = true , extra = function()
 		local ped = PlayerPedId()
 		local x,y,z = table.unpack(GetEntityCoords(ped))
@@ -184,6 +187,54 @@ local animacoes = {
 			end
 		end
 	end },
+
+
+	--["rebolada"] = { dict = "switch@trevor@mocks_lapdance" , anim = "001443_01_trvs_28_idle_stripper" , andar = true, loop = true, extra = function() 
+	["rebolada"] = { dict = "switch@trevor@mocks_lapdance" , anim = "001443_01_trvs_28_idle_stripper" , andar = false , loop = true , extra = function()
+        local ped = GetPlayerPed()
+        if IsPedArmed(ped, 7) then
+            SetCurrentPedWeapon(ped, 0xA2719263, true)
+        end
+
+        RequestAnimDict("switch@trevor@mocks_lapdance")
+        while not HasAnimDictLoaded("switch@trevor@mocks_lapdance") and
+            not handCuffed do Citizen.Wait(0) end
+
+        if IsEntityPlayingAnim(ped, "switch@trevor@mocks_lapdance",
+                               "001443_01_trvs_28_idle_stripper", 3) then
+            ClearPedSecondaryTask(ped)
+        else
+            local animLength = GetAnimDuration("switch@trevor@mocks_lapdance",
+                                               "001443_01_trvs_28_idle_stripper")
+            TaskPlayAnim(PlayerPedId(), 'switch@trevor@mocks_lapdance',
+                         '001443_01_trvs_28_idle_stripper', 1.0, 4.0,
+                         animLength, 1, 0, 0, 0, 0)
+        end
+    end },
+
+	["rebolada2"] = { dict = "switch@trevor@mocks_lapdance" , anim = "001443_01_trvs_28_idle_stripper" , andar = true , loop = true , extra = function()
+        local ped = GetPlayerPed()
+        if IsPedArmed(ped, 7) then
+            SetCurrentPedWeapon(ped, 0xA2719263, true)
+        end
+
+        RequestAnimDict("switch@trevor@mocks_lapdance")
+        while not HasAnimDictLoaded("switch@trevor@mocks_lapdance") and
+            not handCuffed do Citizen.Wait(0) end
+
+        if IsEntityPlayingAnim(ped, "switch@trevor@mocks_lapdance",
+                               "001443_01_trvs_28_idle_stripper", 3) then
+            ClearPedSecondaryTask(ped)
+        else
+            local animLength = GetAnimDuration("switch@trevor@mocks_lapdance",
+                                               "001443_01_trvs_28_idle_stripper")
+            TaskPlayAnim(PlayerPedId(), 'switch@trevor@mocks_lapdance',
+                         '001443_01_trvs_28_idle_stripper', 1.0, 4.0,
+                         animLength, 1, 0, 0, 0, 0)
+        end
+    end },
+
+
 	["deitar2"] = { dict = "amb@world_human_sunbathe@female@front@idle_a" , anim = "idle_a" , andar = false , loop = true },
 	["deitar3"] = { dict = "amb@world_human_sunbathe@male@back@idle_a" , anim = "idle_a" , andar = false , loop = true },
 	["deitar4"] = { dict = "amb@world_human_sunbathe@male@front@idle_a" , anim = "idle_a" , andar = false , loop = true },
@@ -456,7 +507,7 @@ local animacoes = {
 	["rastejar"] = { dict = "move_injured_ground" , anim = "front_loop" , andar = false , loop = true },
 	["flip"] = { dict = "anim@arena@celeb@flat@solo@no_props@" , anim = "cap_a_player_a" , andar = false , loop = false },
 	["flip2"] = { dict = "anim@arena@celeb@flat@solo@no_props@" , anim = "flip_a_player_a" , andar = false , loop = false },
-	--["meditate"] = { dict = "rcmcollect_paperleadinout@" , anim = "meditiate_idle" , andar = false , loop = true },
+	["meditate"] = { dict = "rcmcollect_paperleadinout@" , anim = "meditiate_idle" , andar = false , loop = true },
 	["paz2"] = { dict = "anim@mp_player_intupperpeace" , anim = "idle_a" , andar = true , loop = true },
 	["deitar6"] = { dict = "missfbi3_sniping" , anim = "prone_dave" , andar = false , loop = true },
 	["inspecionar"] = { dict = "random@train_tracks" , anim = "idle_e" , andar = false , loop = false },

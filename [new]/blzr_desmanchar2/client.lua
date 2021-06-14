@@ -59,19 +59,25 @@ Citizen.CreateThread(function()
                 if dist < 10 then
                     DrawMarker(21, IniciarServico[1], IniciarServico[2], IniciarServico[3]-0.5, 0, 0, 0, 180.0, 0, 0, 0.4, 0.4, 0.4, 207, 158, 25, 150, 0, 0, 0, 1)
                     if dist < 1 then
+                        print("Teste 01")
                         text3D(IniciarServico[1], IniciarServico[2], IniciarServico[3]-0.5, '~y~[E] ~w~PARA DESMANCHAR O VEÍCULO')
                         if IsControlJustPressed(0,38) and vSERVER.CheckPerm() then -- PERMISSAO
+                            print("Teste 02")
                             veh = CheckVeiculo(LocalDesmancharCarro[1], LocalDesmancharCarro[2], LocalDesmancharCarro[3])
                             if veh then 
+                                print("Teste 03")
                                 local VehPermitido, ClasseVeh = CheckClasse(veh)
                                 placa = GetVehicleNumberPlateText(veh)
                                 nomeCarro = GetDisplayNameFromVehicleModel(GetEntityModel(veh))
                                 modeloCarro = GetLabelText(nomeCarro)
                                 if VehPermitido then 
+                                    print("Teste 04")
                                    -- if CheckVehPermitido(nomeCarro) then
                                     if vSERVER.verificarvehicleplayer(placa) then
+                                        print("Teste 05")
                                        -- if CheckVehPermitido(nomeCarro) then
-                                            if vSERVER.CheckItem() then    
+                                            if vSERVER.CheckItem() then   
+                                                print("Teste 06") 
                                                 if ClasseVeh == 8 then
                                                     TipoVeh = 'moto'
                                                 else

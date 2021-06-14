@@ -765,7 +765,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(120*30000)
+		Citizen.Wait(120*15000)
 		garbageMakeList(true)
 		Citizen.Wait(1000)
 		TriggerClientEvent("vrp_garbageman:insertBlips",-1,saveList)
