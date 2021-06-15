@@ -1578,17 +1578,17 @@ RegisterCommand("homes",function(source,args,rawCommand)
 					end
 				end
 			end
-		elseif args[1] == "vault" and homes[tostring(args[2])] then
+		elseif args[1] == "bau" and homes[tostring(args[2])] then
 			local myHomes = vRP.query("vRP/get_homeuserowner",{ user_id = parseInt(user_id), home = tostring(args[2]) })
 			if myHomes[1] then
 				if vRP.paymentBank(user_id,100000) then
-					vRP.execute("vRP/upd_vaulthomes",{ home = tostring(args[2]), vault = 50 })
+					vRP.execute("vRP/upd_vaulthomes",{ home = tostring(args[2]), vault = 75 })
 					TriggerClientEvent("Notify",source,"sucesso","Compra de espaço efetuada com sucesso.",5000)
 				else
 					TriggerClientEvent("Notify",source,"negado","Dinheiro insuficiente.",5000)
 				end
 			end
-		elseif args[1] == "check" and homes[tostring(args[2])] then
+		elseif args[1] == "verificar" and homes[tostring(args[2])] then
 			local myHomes = vRP.query("vRP/get_homeuserowner",{ user_id = parseInt(user_id), home = tostring(args[2]) })
 			if myHomes[1] then
 				local userHomes = vRP.query("vRP/get_homepermissions",{ home = tostring(args[2]) })
@@ -1608,7 +1608,7 @@ RegisterCommand("homes",function(source,args,rawCommand)
 					TriggerClientEvent("Notify",source,"negado","Nenhuma permissão encontrada.",5000)
 				end
 			end
-		elseif args[1] == "sell" and homes[tostring(args[2])] then
+		elseif args[1] == "vender" and homes[tostring(args[2])] then
 			local myHomes = vRP.query("vRP/get_homeuserowner",{ user_id = parseInt(user_id), home = tostring(args[2]) })
 			if myHomes[1] then
 				vRP.execute("vRP/rem_allpermissions",{ home = tostring(args[2]) })
@@ -1616,7 +1616,7 @@ RegisterCommand("homes",function(source,args,rawCommand)
 				vRP.execute("vRP/rem_srv_data",{ dkey = "wardrobe:"..tostring(args[2]) })
 				vRP.addBank(user_id,parseInt(homes[tostring(args[2])][2]*0.7))
 			end
-		elseif args[1] == "transfer" and homes[tostring(args[2])] and parseInt(args[3]) > 0 then
+		elseif args[1] == "transferir" and homes[tostring(args[2])] and parseInt(args[3]) > 0 then
 			local myHomes = vRP.query("vRP/get_homeuserowner",{ user_id = parseInt(user_id), home = tostring(args[2]) })
 			if myHomes[1] then
 				local identity = vRP.getUserIdentity(parseInt(args[3]))
