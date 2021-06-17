@@ -114,7 +114,7 @@ config.defaultImg = "https://svgsilh.com/svg/160895.svg" -- IMAGEM DEFAULT (SER√
 
 config.openconce_permission = nil -- permissao para abrir a concessionaria
 
-config.updateconce_permission = "Admin" -- permissao para abrir o menu de gerenciamento da conce
+config.updateconce_permission = "FundadorOwner" -- permissao para abrir o menu de gerenciamento da conce
 
 config.porcentagem_venda = 50 -- porcentagem de venda dos ve√≠culos possuidos
 

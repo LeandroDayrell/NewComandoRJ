@@ -154,7 +154,7 @@ svg {
     margin-top: -80px;
     position: relative;
     border-radius: 100%;
-    border: 4px solid rgba(28, 68, 113, 0.5);
+    border: 4px solid rgba(28, 68, 113, 0.3);
 }
 
 .waterDisplay {

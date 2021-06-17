@@ -94,15 +94,47 @@ RegisterCommand("e",function(source,args,rawCommand)
 		end
 	end
 end)
+
+RegisterCommand("p",function(source,args,rawCommand)
+	local user_id = vRP.getUserId(source)
+	if user_id then
+		if not vCLIENT.getHandcuff(source) then
+				local identity = vRP.getUserIdentity(user_id)
+				local nplayer = vRPclient.nearestPlayer(source,5)
+				if nplayer then
+					if vRPclient.getHealth(nplayer) > 101 and not vCLIENT.getHandcuff(nplayer) then
+						local request = vRP.request(nplayer,"Você aceita o pedido de <b>"..identity.name.." "..identity.name2.."</b> da animação <b>"..args[1].."</b>?",30)
+						if request then
+							TriggerClientEvent("emotes",nplayer,args[1])
+							TriggerClientEvent("emotes",source,args[1])
+						end
+					end
+				end
+		end
+	end
+end)
+
+--[[ RegisterCommand("p",function(source,args,rawCommand)
+	local user_id = vRP.getUserId(source)
+	if user_id then 
+		if vRP.hasPermission(user_id,"adms58") then
+			local players = vRP.nearestPlayersEmotes()
+			for k,v in pairs(players) do
+				TriggerClientEvent("emotes",players,args[1])
+			end
+		end
+	end
+end)	 ]]	
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- EMOTES2
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterCommand("e2",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if vRP.hasPermission(user_id,"Paramedic") then
+		if vRP.hasPermission(user_id,"adms58") then
 			if vRPclient.getHealth(source) > 101 and not vCLIENT.getHandcuff(source) then
-				local nplayer = vRPclient.nearestPlayer(source,2)
+				local nplayer = vRPclient.nearestPlayer(source,10)
 				if nplayer then
 					TriggerClientEvent("emotes",nplayer,args[1])
 				end
@@ -1071,15 +1103,15 @@ local preset = {
 			},
 			["mulher"] = {
 				["hat"] = { item = -1, texture = 0, defaultItem = -1, defaultTexture = 0 },
-				["pants"] = { item = 6, texture = 0, defaultItem = 0, defaultTexture = 0 },
+				["pants"] = { item = 48, texture = 0, defaultItem = 0, defaultTexture = 0 },
 				["vest"] = { item = 0, texture = 0, defaultItem = 0, defaultTexture = 0 },
 				["bracelet"] = { item = -1, texture = 0, defaultItem = -1, defaultTexture = 0 },
 				["decals"] = { item = 0, texture = 0, defaultItem = 0, defaultTexture = 0 },
 				["mask"] = { item = -1, texture = 0, defaultItem = 0, defaultTexture = 0 },
-				["shoes"] = { item = 6, texture = 3, defaultItem = 1, defaultTexture = 0 },
-				["t-shirt"] = { item = 101, texture = 1, defaultItem = 1, defaultTexture = 0 },
+				["shoes"] = { item = 10, texture = 1, defaultItem = 1, defaultTexture = 0 },
+				["t-shirt"] = { item = 89, texture = 0, defaultItem = 1, defaultTexture = 0 },
 				["bag"] = { item = 0, texture = 0, defaultItem = 0, defaultTexture = 0 },
-				["torso2"] = { item = 416, texture = 5, defaultItem = 0, defaultTexture = 0 },
+				["torso2"] = { item = 52, texture = 0, defaultItem = 0, defaultTexture = 0 },
 				["accessory"] = { item = 146, texture = 0, defaultItem = 0, defaultTexture = 0 },
 				["watch"] = { item = -1, texture = 0, defaultItem = -1, defaultTexture = 0 },
 				["arms"] = { item = 113, texture = 0, defaultItem = 0, defaultTexture = 0 },
@@ -1107,18 +1139,18 @@ local preset = {
 			},
 			["mulher"] = {
 				["hat"] = { item = -1, texture = 2, defaultItem = -1, defaultTexture = 0 },
-				["pants"] = { item = 48, texture = 3, defaultItem = 0, defaultTexture = 0 },
+				["pants"] = { item = 48, texture = 0, defaultItem = 0, defaultTexture = 0 },
 				["vest"] = { item = 0, texture = 0, defaultItem = 0, defaultTexture = 0 },
 				["bracelet"] = { item = -1, texture = 0, defaultItem = -1, defaultTexture = 0 },
 				["decals"] = { item = 0, texture = 0, defaultItem = 0, defaultTexture = 0 },
 				["mask"] = { item = -1, texture = 0, defaultItem = 0, defaultTexture = 0 },
 				["shoes"] = { item = 34, texture = 0, defaultItem = 1, defaultTexture = 0 },
-				["t-shirt"] = { item = -1, texture = 0, defaultItem = 1, defaultTexture = 0 },
+				["t-shirt"] = { item = 10, texture = 1, defaultItem = 1, defaultTexture = 0 },
 				["bag"] = { item = 0, texture = 0, defaultItem = 0, defaultTexture = 0 },
-				["torso2"] = { item = 336, texture = 0, defaultItem = 0, defaultTexture = 0 },
+				["torso2"] = { item = 9, texture = 1, defaultItem = 0, defaultTexture = 0 },
 				["accessory"] = { item = 146, texture = 0, defaultItem = 0, defaultTexture = 0 },
 				["watch"] = { item = -1, texture = 0, defaultItem = -1, defaultTexture = 0 },
-				["arms"] = { item = 110, texture = 0, defaultItem = 0, defaultTexture = 0 },
+				["arms"] = { item = 118, texture = 0, defaultItem = 0, defaultTexture = 0 },
 				["glass"] = { item = 0, texture = 0, defaultItem = 0, defaultTexture = 0 },
 				["ear"] = { item = -1, texture = 0, defaultItem = -1, defaultTexture = 0 }
 			}

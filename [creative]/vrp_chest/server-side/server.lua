@@ -28,19 +28,19 @@ end
 -----------------------------------------------------------------------------------------------------------------------------------------
 local chest = {
 	["Police"] = { 5000,"Police" },
-	["Mafia"] = { 2000,"Mafia" },
-	["Verde"] = { 2000,"Verde" },
-	["Lowrider"] = { 2000,"Lowrider" },
-	["Bennys"] = { 2000,"Bennys" },
-	["Yakuza"] = { 2000,"Yakuza" },
-	["Bahamas"] = { 2000,"Bahamas" },
-	["Unktec"] = { 2000,"Unktec" },
-	["Vermelho"] = { 2000,"Vermelho" },
-	["Laranja"] = { 2000,"Laranja" },
-	["Azul"] = { 2000,"Azul" },
-	["Milicia"] = { 2000,"Milicia" },
-	["TheLost"] = { 2000,"TheLost" },
-	["LosSantos"] = { 2000,"LosSantos" },
+	["Mafia"] = { 2500,"Mafia" },
+	["Verde"] = { 2500,"Verde" },
+	["Lowrider"] = { 2500,"Lowrider" },
+	["Bennys"] = { 2500,"Bennys" },
+	["Yakuza"] = { 2500,"Yakuza" },
+	["Bahamas"] = { 2500,"Bahamas" },
+	["Unktec"] = { 2500,"Unktec" },
+	["Vermelho"] = { 2500,"Vermelho" },
+	["Laranja"] = { 2500,"Laranja" },
+	["Azul"] = { 2500,"Azul" },
+	["Milicia"] = { 2500,"Milicia" },
+	["TheLost"] = { 2500,"TheLost" },
+	["LosSantos"] = { 2500,"LosSantos" },
 }
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CHECKINTPERMISSIONS

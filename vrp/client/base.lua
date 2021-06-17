@@ -103,6 +103,29 @@ function tvRP.nearestPlayersBlips()
 	end
 	return r
 end
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- NEARESTPLAYERS PARA CRIAR COMANDO DE DANCAR EMOTES
+-----------------------------------------------------------------------------------------------------------------------------------------
+function tvRP.nearestPlayersEmotes()
+	local r = {}
+	for k,v in pairs(showblips) do
+		local player = GetPlayerFromServerId(k) 
+		if player ~= PlayerId() and NetworkIsPlayerConnected(player) then
+			local oped = GetPlayerPed(player)
+			local coords = GetEntityCoords(oped)
+			local coordsPed = GetEntityCoords(PlayerPedId())
+			local healt = GetEntityHealth(oped)
+			local armour = GetPedArmour(oped)
+
+			local distance = #(coords - coordsPed)
+			if distance <= 50 then
+				r[GetPlayerServerId(player)] = { v,coords.x,coords.y,coords.z,healt,armour }
+			end
+		end
+	end
+	return r
+end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- NEARESTPLAYER
 -----------------------------------------------------------------------------------------------------------------------------------------

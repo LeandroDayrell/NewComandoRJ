@@ -496,29 +496,34 @@ local animacoes = {
 	["dancar253"] = { dict = "mini@strip_club@private_dance@idle" , anim = "priv_dance_idle" , andar = false , loop = true },
 	["dancar254"] = { dict = "mini@strip_club@lap_dance_2g@ld_2g_p1" , anim = "ld_2g_p1_s2" , andar = false , loop = true },
 	["dancar255"] = { dict = "mini@strip_club@lap_dance@ld_girl_a_song_a_p1" , anim = "ld_girl_a_song_a_p1_f" , andar = false , loop = true },
+	
+
+	["escorar"] = { dict = "timetable@mime@01_gc" , anim = "idle_a" , andar = false , loop = true },
+	["escorar1"] = { dict = "misscarstealfinale" , anim = "packer_idle_1_trevor" , andar = false , loop = true },
+	["escorar2"] = { dict = "misscarstealfinalecar_5_ig_1" , anim = "waitloop_lamar" , andar = false , loop = true },
+	["escorar3"] = { dict = "rcmjosh2" , anim = "josh_2_intp1_base" , andar = false , loop = true },
+	
+	
+
 	["argue"] = { dict = "misscarsteal4@actor" , anim = "actor_berating_loop" , andar = true , loop = true },
 	["bird"] = { dict = "random@peyote@bird" , anim = "wakeup" , andar = true , loop = true },
 	["blowkiss"] = { dict = "anim@mp_player_intcelebrationfemale@blow_kiss" , anim = "blow_kiss" , andar = true , loop = true },
 	["bringiton"] = { dict = "misscommon@response" , anim = "bring_it_on" , andar = true , loop = false },
 	["chill"] = { dict = "switch@trevor@scares_tramp" , anim = "trev_scares_tramp_idle_tramp" , andar = false , loop = true },
 	
-	["clapangry"] = { dict = "anim@arena@celeb@flat@solo@no_props@" , anim = "angry_clap_a_player_a" , andar = true , loop = true },
-	["comeatmebro"] = { dict = "mini@triathlon" , anim = "want_some_of_this" , andar = true , loop = true },
+	["palmas5"] = { dict = "anim@arena@celeb@flat@solo@no_props@" , anim = "angry_clap_a_player_a" , andar = true , loop = true },
+	["puto"] = { dict0o = "mini@triathlon" , anim = "want_some_of_this" , andar = true , loop = true },
 	["rastejar"] = { dict = "move_injured_ground" , anim = "front_loop" , andar = false , loop = true },
-	["flip"] = { dict = "anim@arena@celeb@flat@solo@no_props@" , anim = "cap_a_player_a" , andar = false , loop = false },
-	["flip2"] = { dict = "anim@arena@celeb@flat@solo@no_props@" , anim = "flip_a_player_a" , andar = false , loop = false },
-	["meditate"] = { dict = "rcmcollect_paperleadinout@" , anim = "meditiate_idle" , andar = false , loop = true },
+	["pirueta"] = { dict = "anim@arena@celeb@flat@solo@no_props@" , anim = "cap_a_player_a" , andar = false , loop = false },
+	["pirueta2"] = { dict = "anim@arena@celeb@flat@solo@no_props@" , anim = "flip_a_player_a" , andar = false , loop = false },
+	--["meditate"] = { dict = "rcmcollect_paperleadinout@" , anim = "meditiate_idle" , andar = false , loop = true },
 	["paz2"] = { dict = "anim@mp_player_intupperpeace" , anim = "idle_a" , andar = true , loop = true },
 	["deitar6"] = { dict = "missfbi3_sniping" , anim = "prone_dave" , andar = false , loop = true },
 	["inspecionar"] = { dict = "random@train_tracks" , anim = "idle_e" , andar = false , loop = false },
-	
-	["sitchair"] = { dict = "timetable@ron@ig_5_p3" , anim = "ig_5_p3_base" , andar = false , loop = true },
-	["sitchair2"] = { dict = "timetable@reunited@ig_10" , anim = "base_amanda" , andar = false , loop = true },
-	["sitchair3"] = { dict = "timetable@ron@ig_3_couch" , anim = "base" , andar = false , loop = true },
-	["sitchair4"] = { dict = "timetable@jimmy@mics3_ig_15@" , anim = "mics3_15_base_tracy" , andar = false , loop = true },
-	["sitchair5"] = { dict = "timetable@maid@couch@" , anim = "base" , andar = false , loop = true },
-	["superhero"] = { dict = "rcmbarry" , anim = "base" , andar = true , loop = true },
-	["type"] = { dict = "anim@heists@prison_heiststation@cop_reactions" , anim = "cop_b_idle" , andar = true , loop = true },
+	["sentar22"] = { dict = "timetable@jimmy@mics3_ig_15@" , anim = "mics3_15_base_tracy" , andar = false , loop = true },
+	["sentar23"] = { dict = "timetable@maid@couch@" , anim = "base" , andar = false , loop = true },
+	["heroi"] = { dict = "rcmbarry" , anim = "base" , andar = true , loop = true },
+	["postura"] = { dict = "anim@heists@prison_heiststation@cop_reactions" , anim = "cop_b_idle" , andar = true , loop = true },
 	["yeah"] = { dict = "anim@mp_player_intupperair_shagging" , anim = "idle_a" , andar = true , loop = true },
 	["sexo"] = { dict = "rcmpaparazzo_2" , anim = "shag_loop_poppy" , andar = false , loop = true },
 	["sexo2"] = { dict = "rcmpaparazzo_2" , anim = "shag_loop_a" , andar = false , loop = true },
@@ -551,7 +556,7 @@ local animacoes = {
 	["consertar"] = { anim = "WORLD_HUMAN_WELDING" },
 	["bracos"] = { dict = "anim@heists@heist_corona@single_team" , anim = "single_team_loop_boss" , andar = true , loop = true },
 	["postura3"] = { dict = "mini@strip_club@idles@bouncer@base" , anim = "base" , andar = true , loop = true },
-	["dedos"] = { dict = "anim@mp_player_intupperfinger" , anim = "idle_a_fp" , andar = true , loop = true },
+	["dedo1"] = { dict = "anim@mp_player_intupperfinger" , anim = "idle_a_fp" , andar = true , loop = true },
 	["dormir"] = { dict = "anim@heists@ornate_bank@hostages@hit" , anim = "hit_react_die_loop_ped_a" , andar = false , loop = true },
 	["dormir2"] = { dict = "anim@heists@ornate_bank@hostages@hit" , anim = "hit_react_die_loop_ped_e" , andar = false , loop = true },
 	["dormir3"] = { dict = "anim@heists@ornate_bank@hostages@hit" , anim = "hit_react_die_loop_ped_h" , andar = false , loop = true },
@@ -563,8 +568,6 @@ local animacoes = {
 	["fumar2"] = { anim = "WORLD_HUMAN_PROSTITUTE_HIGH_CLASS" },
 	["fumar3"] = { anim = "WORLD_HUMAN_AA_SMOKE" },
 	["fumar4"] = { anim = "WORLD_HUMAN_SMOKING_POT" },
-	["pamonha"] = { anim = "WORLD_HUMAN_PICNIC" },
-	["pamonha1"] = { anim = "WORLD_HUMAN_CLIPBOARD" },
 	["fumar5"] = { dict = "amb@world_human_aa_smoke@male@idle_a" , anim = "idle_c" , prop = "prop_cs_ciggy_01" , flag = 49 , mao = 28422 },
 	["fumar6"] = { dict = "amb@world_human_aa_smoke@male@idle_a" , anim = "idle_b" , prop = "prop_cs_ciggy_01" , flag = 49 , mao = 28422 },
 	["fumar7"] = { dict = "amb@world_human_smoking@female@idle_a" , anim = "idle_b" , prop = "prop_cs_ciggy_01" , flag = 49 , mao = 28422 },
@@ -591,7 +594,72 @@ local animacoes = {
 	["tapa"] = { dict = "melee@unarmed@streamed_variations" , anim = "plyr_takedown_front_slap" , andar = false , loop = false },
 	["mecanico4"] = { dict = "anim@amb@clubhouse@tutorial@bkr_tut_ig3@" , anim = "machinic_loop_mechandplayer" , andar = false , loop = true },
 	["xiu"] = { dict = "anim@mp_player_intincarshushbodhi@ds@" , anim = "idle_a_fp" , andar = true , loop = true },
-	["hotwired"] = { dict = "anim@amb@clubhouse@tutorial@bkr_tut_ig3@" , anim = "machinic_loop_mechandplayer" , andar = true , loop = true , cars = true },
+
+
+
+
+	["outros"] = { dict = "anim@amb@nightclub@mini@dance@dance_solo@female@var_b@" , anim = "low_center_down" , andar = true , loop = true },
+	["outros1"] = { dict = "anim@amb@nightclub@mini@dance@dance_solo@male@var_b@" , anim = "low_center" , andar = true , loop = true },
+	["outros2"] = { dict = "anim@amb@nightclub@mini@dance@dance_solo@female@var_a@" , anim = "med_center_up" , andar = true , loop = true },	
+	["outros3"] = { dict = "anim@mp_player_intcelebrationfemale@air_shagging" , anim = "air_shagging" , andar = true , loop = true },
+	["outros4"] = { dict = "amb@world_human_push_ups@male@base" , anim = "base" , andar = true , loop = true },
+	["outros5"] = { dict = "mini@strip_club@backroom@" , anim = "stripper_b_backroom_idle_b" , andar = true , loop = false },
+	["outros6"] = { dict = "missfam4leadinoutmcs2" , anim = "tracy_loop" , andar = true , loop = true },
+	["outros7"] = { dict = "melee@unarmed@streamed_variations" , anim = "plyr_takedown_front_slap" , andar = true , loop = false },
+	["outros8"] = { dict = "anim@mp_player_intupperthumbs_up" , anim = "idle_a" , andar = true , loop = true },
+	["outros9"] = { dict = "amb@world_human_stand_fire@male@idle_a" , anim = "idle_a" , andar = true , loop = true },
+	["outros10"] = { dict = "taxi_hail" , anim = "hail_taxi" , andar = true , loop = true },
+	["outros11"] = { dict = "club_intro2-0" , anim = "csb_englishdave_dual-0" , andar = true , loop = true },
+	["outros12"] = { dict = "anim@arena@celeb@podium@no_prop@" , anim = "regal_a_1st" , andar = false , loop = true },
+    ["outros13"] = { dict = "mini@triathlon" , anim = "idle_d" , andar = true , loop = true },
+    ["outros14"] = { dict = "rcmfanatic1maryann_stretchidle_b" , anim = "idle_e" , andar = true , loop = true },
+    ["outros15"] = { dict = "rcmfanatic1celebrate" , anim = "celebrate" , andar = true , loop = true },
+    ["outros16"] = { dict = "mp_missheist_countrybank@nervous" , anim = "nervous_idle" , andar = true , loop = true },
+    ["outros17"] = { dict = "mp_arresting" , anim = "a_uncuff" , andar = true , loop = true },
+    ["outros18"] = { dict = "random@atmrobberygen" , anim = "b_atm_mugging" , andar = true , loop = true },
+    ["outros19"] = { dict = "random@arrests" , anim = "generic_radio_chatter" , andar = true , loop = true },
+    ["outros20"] = { dict = "missexile3" , anim = "ex03_train_roof_idle" , andar = false , loop = true },
+    ["outros21"] = { dict = "special_ped@jane@monologue_5@monologue_5c" , anim = "brotheradrianhasshown_2" , andar = true , loop = true },
+    ["outros22"] = { dict = "missmic4" , anim = "michael_tux_fidget" , andar = true , loop = true },
+    ["outros23"] = { dict = "missminuteman_1ig_2" , anim = "handsup_base" , andar = true , loop = true },
+
+
+
+	["taxi"] = { dict = "random@hitch_lift" , anim = "idle_f" , andar = true , loop = true },
+	["rir"] = { dict = "anim@arena@celeb@flat@paired@no_props@" , anim = "laugh_a_player_b" , andar = true , loop = true },
+	["rir2"] = { dict = "anim@arena@celeb@flat@solo@no_props@" , anim = "giggle_a_player_b" , andar = false , loop = true },
+	["pensar3"] = { dict = "fra_0_int-1" , anim = "cs_lamardavis_dual-1" , andar = true , loop = true },
+	---["outros16"] = { dict = "missarmenian2" , anim = "drunk_loop" , andar = false , loop = true },
+	----
+	["rock3"] = { dict = "anim@arena@celeb@flat@solo@no_props@" , anim = "slide_a_player_a" , andar = false , loop = true },
+	["rock4"] = { dict = "anim@arena@celeb@flat@solo@no_props@" , anim = "slide_b_player_a" , andar = false , loop = true },
+	["rock5"] = { dict = "anim@arena@celeb@flat@solo@no_props@" , anim = "slide_c_player_a" , andar = false , loop = true },
+	["taco"] = { dict = "anim@arena@celeb@flat@solo@no_props@" , anim = "slugger_a_player_a" , andar = false , loop = true },
+	["dedo"] = { dict = "anim@arena@celeb@podium@no_prop@" , anim = "flip_off_a_1st" , andar = false , loop = true },
+
+	
+ 	["golf"] = { dict = "rcmnigel1d" , anim = "swing_a_mark" , andar = false , loop = true },
+	["armado"] = { dict = "move_m@intimidation@cop@unarmed" , anim = "idle" , andar = true , loop = true },
+
+
+
+
+	["abrirporta"] = { dict = "random@paparazzi@peek" , anim = "left_peek_a" , andar = false , loop = true },
+   -- ["outros26"] = { dict = "mini@triathlon" , anim = "idle_e" , andar = false , loop = true },
+    ["espelho"] = { dict = "mp_clothing@female@trousers" , anim = "try_trousers_neutral_a" , andar = false , loop = true },
+    ["espelho1"] = { dict = "mp_clothing@female@shirt" , anim = "try_shirt_positive_a" , andar = false , loop = true },
+    ["espelho2"] = { dict = "mp_clothing@female@shoes" , anim = "try_shoes_positive_a" , andar = true , loop = true },
+    ["fone"] = { dict = "amb@world_human_bum_standing@twitchy@idle_a" , anim = "idle_c" , andar = true , loop = true },
+    ["roubar"] = { dict = "random@mugging4" , anim = "struggle_loop_b_thief" , andar = false , loop = false },
+    ["cagar"] = { dict = "random@peyote@rabbit" , anim = "wakeup" , andar = false , loop = false },
+    ["mijar"] = { dict = "misscarsteal2peeing" , anim = "peeing_loop" , andar = false , loop = true },
+
+
+
+
+
+
+	--["hotwired"] = { dict = "anim@amb@clubhouse@tutorial@bkr_tut_ig3@" , anim = "machinic_loop_mechandplayer" , andar = true , loop = true , cars = true },
 	["pano2"] = { dict = "timetable@floyd@clean_kitchen@base" , anim = "base" , prop = "prop_rag_01" , flag = 49 , mao = 28422 , extra = function()
 		local vehicle = vRP.getNearVehicle(7)
 		if vehicle then
@@ -635,6 +703,34 @@ local animacoes = {
 			end
 		end
 	end },
+	["bong"] = { dict = "anim@safehouse@bong" , anim = "bong_stage1" , prop = "prop_bong_01" , flag = 50 , mao = 60309 , extra = function()
+		if not IsPedInAnyVehicle(PlayerPedId()) then
+			TriggerEvent('cancelando',true)
+			TriggerEvent("progress",9000,"fumando")
+			TriggerEvent("vrp_sound:source",'bong',0.5)
+			SetTimeout(8700,function()
+				vRP._DeletarObjeto()
+				TriggerServerEvent("tryCleanEntity",VehToNet(vehicle))
+				vRP.removeObjects("one")
+				ShakeGameplayCam('SMALL_EXPLOSION_SHAKE',0.5)
+			end)
+			SetTimeout(9000,function()
+				vRP.loadAnimSet("MOVE_M@DRUNK@VERYDRUNK")
+				---SetTimecycleModifier("AmbientPUSH")
+				SetTimecycleModifier("hud_def_desat_Trevor")
+				ShakeGameplayCam("FAMILY5_DRUG_TRIP_SHAKE",1.0)
+				StartScreenEffect("DMT_flight",30000,false)
+				Wait(30000)
+				TriggerEvent('cancelando',false)
+				SetTimecycleModifier("")
+				SetTransitionTimecycleModifier("")
+				StopGameplayCamShaking()
+				ResetPedMovementClipset(PlayerPedId())
+			end)
+		end
+	end },
+
+
 	["cruzar"] = { dict = "random@street_race", anim = "_car_b_lookout" , andar = true , loop = true },
 	["cruzar2"] = { dict = "anim@amb@nightclub@peds@", anim = "rcmme_amanda1_stand_loop_cop" , andar = true , loop = true },
 	["wait"] = { dict = "random@shop_tattoo", anim = "_idle_a" , andar = true , loop = true },
@@ -647,19 +743,19 @@ local animacoes = {
 	["no2"] = { dict = "anim@heists@ornate_bank@chat_manager", anim = "fail" , andar = true , loop = false },
 	["ok"] = { dict = "anim@mp_player_intselfiedock", anim = "idle_a" , andar = true , loop = false },
 	["screwyou"] = { dict = "misscommon@response", anim = "screw_you" , andar = true , loop = false },
-	["think"] = { dict = "misscarsteal4@aliens", anim = "rehearsal_base_idle_director" , andar = true , loop = true },
-	["think2"] = { dict = "missheist_jewelleadinout", anim = "jh_int_outro_loop_a" , andar = true , loop = true },
-	["think3"] = { dict = "timetable@tracy@ig_8@base", anim = "base" , andar = true , loop = true },
+	["pensar"] = { dict = "misscarsteal4@aliens", anim = "rehearsal_base_idle_director" , andar = true , loop = true },
+	["pensar1"] = { dict = "missheist_jewelleadinout", anim = "jh_int_outro_loop_a" , andar = true , loop = true },
+	["pensar2"] = { dict = "timetable@tracy@ig_8@base", anim = "base" , andar = true , loop = true },
 	["wave"] = { dict = "random@mugging5", anim = "001445_01_gangintimidation_1_female_idle_b" , andar = true , loop = true },
 	["wave2"] = { dict = "friends@fra@ig_1", anim = "over_here_idle_a" , andar = true , loop = true },
 	["wave3"] = { dict = "friends@frj@ig_1", anim = "wave_e" , andar = true , loop = true },
 	["gangsign"] = { dict = "mp_player_int_uppergang_sign_a", anim = "mp_player_int_gang_sign_a" , andar = true , loop = true },
 	["gangsign2"] = { dict = "mp_player_int_uppergang_sign_b", anim = "mp_player_int_gang_sign_b" , andar = true , loop = true },
-	["flipoff"] = { dict = "anim@arena@celeb@podium@no_prop@", anim = "flip_off_c_1st" , andar = true , loop = true },
+	["dedo2"] = { dict = "anim@arena@celeb@podium@no_prop@", anim = "flip_off_c_1st" , andar = true , loop = true },
 	["bow"] = { dict = "anim@arena@celeb@podium@no_prop@", anim = "regal_c_1st" , andar = true , loop = false },
-	["headbutt"] = { dict = "melee@unarmed@streamed_variations", anim = "plyr_takedown_front_headbutt" , andar = true , loop = false },
-	["airplane"] = { dict = "missfbi1", anim = "ledge_loop" , andar = true , loop = true },
-	["cough"] = { dict = "timetable@gardener@smoking_joint", anim = "idle_cough" , andar = true , loop = true },
+	["cabecada"] = { dict = "melee@unarmed@streamed_variations", anim = "plyr_takedown_front_headbutt" , andar = true , loop = false },
+	["aviao"] = { dict = "missfbi1", anim = "ledge_loop" , andar = true , loop = true },
+	["tosse"] = { dict = "timetable@gardener@smoking_joint", anim = "idle_cough" , andar = true , loop = true },
 	["alongamento"] = { dict = "mini@triathlon", anim = "idle_f" , andar = true , loop = true },
 	["soco"] = { dict = "rcmextreme2", anim = "loop_punching" , andar = true , loop = true },
 	["mindcontrol"] = { dict = "rcmbarry", anim = "bar_1_attack_idle_aln" , andar = true , loop = true },
