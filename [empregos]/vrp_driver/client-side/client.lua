@@ -113,7 +113,7 @@ Citizen.CreateThread(function()
 					DrawMarker(21,coords[driverPosition][1],coords[driverPosition][2],coords[driverPosition][3]+0.60,0,0,0,0,180.0,130.0,2.0,2.0,1.0,121,206,121,100,1,0,0,1)
 					if distance <= 15 then
 						local speed = GetEntitySpeed(veh) * 3.605936
-						if IsControlJustPressed(1,38) and speed <= 40 and timeSeconds <= 0 then
+						if IsControlJustPressed(1,38) and speed <= 100 and timeSeconds <= 0 then
 							timeSeconds = 2
 							if driverPosition == #coords then
 								driverPosition = 1

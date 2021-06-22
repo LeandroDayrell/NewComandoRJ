@@ -6627,7 +6627,7 @@
 		<Item>
 			<modelName>coquette</modelName>
 			<txdName>coquette</txdName>
-			<handlingId>COQUETTE</handlingId>
+			<handlingId>coquette</handlingId>
 			<gameName>coquette</gameName>
 			<vehicleMakeName>INVERTO</vehicleMakeName>
 			<expressionDictName>null</expressionDictName>

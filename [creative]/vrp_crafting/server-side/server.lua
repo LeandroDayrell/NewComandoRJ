@@ -242,6 +242,16 @@ local craftList = {
 					["pecadearma"] = 50,
 				}
 			},
+
+			["WEAPON_PISTOL_MK2"] = {
+				["amount"] = 1,
+				["destroy"] = true,
+				["require"] = {
+					["aluminum"] = 110,
+					["copper"] = 110,
+					["pecadearma"] = 60,
+				}
+			},
 			["WEAPON_SMG_AMMO"] = {
 				["amount"] = 20,
 				["destroy"] = true,
@@ -305,6 +315,15 @@ local craftList = {
 					["aluminum"] = 100,
 					["copper"] = 100,
 					["pecadearma"] = 50,
+				}
+			},
+			["WEAPON_PISTOL_MK2"] = {
+				["amount"] = 1,
+				["destroy"] = true,
+				["require"] = {
+					["aluminum"] = 110,
+					["copper"] = 110,
+					["pecadearma"] = 60,
 				}
 			},
 			["WEAPON_SMG_AMMO"] = {
@@ -553,7 +572,34 @@ local craftList = {
 				}
 			}
 		}
-	}
+	},
+	["musketIlegal"] = {
+		["perm"] = nil,
+		["list"] = {
+			["WEAPON_MUSKET_AMMO"] = {
+				["amount"] = 20,
+				["destroy"] = true,
+				["require"] = {
+					["copper"] = 30,
+					["glass"] = 30
+				}
+			},
+			["WEAPON_MUSKET"] = {
+				["amount"] = 1,
+				["destroy"] = true,
+				["require"] = {
+					["dollars2"] = 300000					
+				}
+			},
+			["tires"] = {
+				["amount"] = 1,
+				["destroy"] = true,
+				["require"] = {
+					["rubber"] = 3					
+				}
+			},
+		}
+	},
 }
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- REQUESTPERM

@@ -81,6 +81,9 @@ local blips = {
 	{ 1702.72,4937.87,42.08,357,13,"Garagem",0.6 },
 	{ -706.09,-1464.1,5.05,43,13,"Heliponto",0.6 },
 	{ -761.94,-1420.15,1.61,410,13,"Barcos",0.6 },
+	{ -1802.08,-1228.21,1.63,410,13,"Barcos",0.6 },
+	{ 13.78,-2799.96,2.53,410,13,"Barcos",0.6 },
+
 	{ -360.86,-134.0,38.68,544,37,"Los Santos Customs",0.8 },
 	{ -1337.96,-1278.12,4.88,586,36,"Mochila",0.6 },
 	{ -1061.94,-852.89,4.87,60,4,"Departamento Policial",0.6 },
@@ -303,6 +306,7 @@ end)
 		N_0x4757f00bc6323cfe(GetHashKey("WEAPON_VINTAGEPISTOL"),0.6)
 		N_0x4757f00bc6323cfe(GetHashKey("WEAPON_CARBINERIFLE"),0.9)
 		N_0x4757f00bc6323cfe(GetHashKey("WEAPON_SPECIALCARBINE"),1.3)
+		N_0x4757f00bc6323cfe(GetHashKey("WEAPON_SPECIALCARBINE_MK2"),1.5)
 		N_0x4757f00bc6323cfe(GetHashKey("WEAPON_ASSAULTRIFLE"),1.2)
 		N_0x4757f00bc6323cfe(GetHashKey("WEAPON_ASSAULTRIFLE_MK2"),1.3)
 		N_0x4757f00bc6323cfe(GetHashKey("WEAPON_ASSAULTSMG"),1.2)

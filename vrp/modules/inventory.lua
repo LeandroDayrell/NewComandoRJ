@@ -138,43 +138,43 @@ local itemlist = {
 		index = "fishingrod",
 		name = "Vara de Pescar",
 		type = "use",
-		weight = 3.0
+		weight = 1.0
 	},
 	["octopus"] = {
 		index = "octopus",
 		name = "Polvo",
 		type = "use",
-		weight = 0.5
+		weight = 0.2
 	},
 	["shrimp"] = {
 		index = "shrimp",
 		name = "Camarão",
 		type = "use",
-		weight = 0.3
+		weight = 0.1
 	},
 	["carp"] = {
 		index = "carp",
 		name = "Carpa",
 		type = "use",
-		weight = 0.4
+		weight = 0.2
 	},
 	["bait"] = {
 		index = "bait",
 		name = "Isca",
 		type = "use",
-		weight = 0.2
+		weight = 0.1
 	},
 	["cannabisseed"] = {
 		index = "cannabisseed",
 		name = "Sementes de maconha",
 		type = "use",
-		weight = 0.2
+		weight = 0.1
 	},
 	["bucket"] = {
 		index = "bucket",
 		name = "Balde",
 		type = "use",
-		weight = 0.3
+		weight = 0.2
 	},
 	["compost"] = {
 		index = "compost",
@@ -186,19 +186,19 @@ local itemlist = {
 		index = "weed",
 		name = "Maconha",
 		type = "use",
-		weight = 0.4
+		weight = 0.1
 	},
 	["weedendolada"] = {
 		index = "weedendolada",
 		name = "Maconha Endolada",
 		type = "use",
-		weight = 0.4
+		weight = 0.1
 	},
 	["joint"] = {
 		index = "joint",
 		name = "Baseado",
 		type = "use",
-		weight = 0.4
+		weight = 0.1
 	},
 	["pecadearma"] = {
 		index = "pecadearma",
@@ -210,73 +210,73 @@ local itemlist = {
 		index = "lean",
 		name = "Lean",
 		type = "use",
-		weight = 0.2
+		weight = 0.1
 	},
 	["ecstasy"] = {
 		index = "ecstasy",
 		name = "Ecstasy",
 		type = "use",
-		weight = 0.2
+		weight = 0.1
 	},
 	["cocaine"] = {
 		index = "cocaine",
 		name = "Cocaina",
 		type = "use",
-		weight = 0.2
+		weight = 0.1
 	},
 	["methendolada"] = {
 		index = "methendolada",
 		name = "Meta Endolada",
 		type = "use",
-		weight = 0.4
+		weight = 0.1
 	},
 	["metil"] = {
 		index = "metil",
 		name = "Metil",
 		type = "use",
-		weight = 0.3
+		weight = 0.1
 	},
 	["meth"] = {
 		index = "meth",
 		name = "Metanfetamina",
 		type = "use",
-		weight = 0.4
+		weight = 0.1
 	},
 	["methliquid"] = {
 		index = "methliquid",
 		name = "Meta Líquida",
 		type = "use",
-		weight = 0.3
+		weight = 0.1
 	},
 	["silk"] = {
 		index = "silk",
 		name = "Seda",
 		type = "use",
-		weight = 0.2
+		weight = 0.1
 	},
 	["backpackp"] = {
 		index = "backpackp",
 		name = "Mochila P",
 		type = "use",
-		weight = 0.8
+		weight = 0.3
 	},
 	["backpackm"] = {
 		index = "backpackm",
 		name = "Mochila M",
 		type = "use",
-		weight = 2.0
+		weight = 1.0
 	},
 	["backpackg"] = {
 		index = "backpackg",
 		name = "Mochila G",
 		type = "use",
-		weight = 3.0
+		weight = 1.0
 	},
 	["backpackx"] = {
 		index = "backpackx",
 		name = "Mochila X",
 		type = "use",
-		weight = 4.0
+		weight = 1.0
 	},
 	["premium01"] = {
 		index = "premium01",
@@ -330,7 +330,7 @@ local itemlist = {
 		index = "delivery",
 		name = "Pacote",
 		type = "use",
-		weight = 2.5
+		weight = 1.5
 	},
 	["paperbag"] = {
 		index = "paperbag",
@@ -372,7 +372,7 @@ local itemlist = {
 		index = "tacos",
 		name = "Tacos",
 		type = "use",
-		weight = 0.4
+		weight = 0.2
 	},
 	["fries"] = {
 		index = "fries",
@@ -390,7 +390,7 @@ local itemlist = {
 		index = "hamburger",
 		name = "Hamburger",
 		type = "use",
-		weight = 0.4
+		weight = 0.2
 	},
 	["hotdog"] = {
 		index = "hotdog",
@@ -957,6 +957,13 @@ local itemlist = {
 	["WEAPON_SPECIALCARBINE"] = {
 		index = "parafal",
 		name = "Parafal",
+		type = "equip",
+		ammo = "WEAPON_RIFLE_AMMO",
+		weight = 8.0
+	},
+	["WEAPON_SPECIALCARBINE_MK2"] = {
+		index = "G3",
+		name = "G3",
 		type = "equip",
 		ammo = "WEAPON_RIFLE_AMMO",
 		weight = 8.0

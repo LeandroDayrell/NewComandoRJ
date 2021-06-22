@@ -103,8 +103,8 @@ config.prices = {
 	
 ----------Tank--------
 	[45] = {
-		startprice = 20000,
-		increaseby = 20000,
+		startprice = 15000,
+		increaseby = 15000,
 		item = 'tanque', 
 		amount = 30
 	},
@@ -297,8 +297,8 @@ config.prices = {
 	
 -----------Armor-------------
 	[16] = {
-		startprice = 10000,
-		increaseby = 10000,
+		startprice = 8000,
+		increaseby = 8000,
 		item = 'blindagem', 
 		amount = 30
 	},
@@ -319,8 +319,8 @@ config.prices = {
     },
 -----------Transmission-------------
     [13] = {
-        startprice = 10000,
-		increaseby = 10000,
+        startprice = 8000,
+		increaseby = 8000,
 		item = 'transmissão', 
 		amount = 30
 	},

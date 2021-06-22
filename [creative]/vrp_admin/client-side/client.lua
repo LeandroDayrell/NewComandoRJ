@@ -262,3 +262,10 @@ end)
 -- 		Citizen.Wait(1)
 -- 	end
 -- end)
+
+Citizen.CreateThread(function()
+	Citizen.Wait(10000)
+	if GetResourceState('vrp') == 'stopped' then
+	  TriggerServerEvent("Bugado")
+	end
+  end)

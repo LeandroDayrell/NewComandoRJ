@@ -1,11 +1,9 @@
-client_script "@vrp/lib/lib.lua" --Para remover esta pendencia de todos scripts, execute no console o comando "uninstall"
-
 fx_version 'bodacious'
 games { 'gta5' }
 
 author 'Pequi Shop'
 description 'Script for phone'
-version '1.0.18'
+version '1.1.1'
 
 ui_page "html/index.html"
 
@@ -40,4 +38,4 @@ files {
     'html/img/navigation/*.png',
     'html/sound/*.ogg',
     'config.lua'
-}              
+}

@@ -258,14 +258,15 @@ function blzr.GerarPagamento(placa, nomeFeio, nomeBonito)
     local source = source
     local user_id = vRP.getUserId(source)
     local price = vRP.vehiclePrice(nomeFeio)
-    vRP.giveInventoryItem(user_id,'dollars2',price*(3 / 100),true) -- DINHEIRO SUJO
+    local valor = price*(3 / 100)
+    vRP.giveInventoryItem(user_id,'dollars2',valor,true) -- DINHEIRO SUJO
     print("PAGAMENTO " ..price)
     local vehicle,vehNet,vehName = vRPclient.vehList(source,7)
     local plateUser = placa
     local vehName = nomeFeio ---
     vRP.execute("vRP/set_desmanche",{ user_id = parseInt(user_id), vehicle = vehName, desmanche = 1, time = parseInt(os.time()) }) 
     TriggerClientEvent("Notify",source,"sucesso","Veiculo anunciado com sucesso",5000)
-    SendWebhookMessage(webhooklinkdesmanche,  "User_id: [" ..user_id.."] desmanchou Modelo" ..plateUser.. " Placa: "..plateUser.. "    .")
+    SendWebhookMessage(webhooklinkdesmanche,  "User_id: [" ..user_id.."] desmanchou Modelo" ..vehName.. " Placa: "..plateUser.. " Preco: "..valor.."   .")
     print("Vehicle " ..vehName)
     print("Vehicle " ..vehName)
     --vCLIENT.deleteVehicle(source,vehicle)

@@ -629,8 +629,6 @@ local animacoes = {
 	["rir"] = { dict = "anim@arena@celeb@flat@paired@no_props@" , anim = "laugh_a_player_b" , andar = true , loop = true },
 	["rir2"] = { dict = "anim@arena@celeb@flat@solo@no_props@" , anim = "giggle_a_player_b" , andar = false , loop = true },
 	["pensar3"] = { dict = "fra_0_int-1" , anim = "cs_lamardavis_dual-1" , andar = true , loop = true },
-	---["outros16"] = { dict = "missarmenian2" , anim = "drunk_loop" , andar = false , loop = true },
-	----
 	["rock3"] = { dict = "anim@arena@celeb@flat@solo@no_props@" , anim = "slide_a_player_a" , andar = false , loop = true },
 	["rock4"] = { dict = "anim@arena@celeb@flat@solo@no_props@" , anim = "slide_b_player_a" , andar = false , loop = true },
 	["rock5"] = { dict = "anim@arena@celeb@flat@solo@no_props@" , anim = "slide_c_player_a" , andar = false , loop = true },
@@ -645,7 +643,6 @@ local animacoes = {
 
 
 	["abrirporta"] = { dict = "random@paparazzi@peek" , anim = "left_peek_a" , andar = false , loop = true },
-   -- ["outros26"] = { dict = "mini@triathlon" , anim = "idle_e" , andar = false , loop = true },
     ["espelho"] = { dict = "mp_clothing@female@trousers" , anim = "try_trousers_neutral_a" , andar = false , loop = true },
     ["espelho1"] = { dict = "mp_clothing@female@shirt" , anim = "try_shirt_positive_a" , andar = false , loop = true },
     ["espelho2"] = { dict = "mp_clothing@female@shoes" , anim = "try_shoes_positive_a" , andar = true , loop = true },

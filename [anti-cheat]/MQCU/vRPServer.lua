@@ -47,8 +47,8 @@ sistemas["[Multiplicador_Dano]"]=true
 sistemas["[SPAWN_DINHEIRO]"]=true
 sistemas["[OUTROS4]"]=true
 sistemas["[TELEPORT]"]=true
-sistemas["[STOPCLIENT]"]=true
-sistemas["[STOPCLIENT2]"]=true
+sistemas["[STOPCLIENT]"]=false
+sistemas["[STOPCLIENT2]"]=false
 sistemas["[STOPCLIENT3]"]=false
 
 sistemas["[WALL2]"]=false

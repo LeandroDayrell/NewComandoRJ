@@ -331,7 +331,7 @@ local shops = {
 		["perm"] = "TheLost",
 		["list"] = {
 			["goldbar"] = 80000,
-			["dollars2"] = 0.8
+			["dollars2"] = 0.95
 		}
 	},
 	["mochilax"] = {
@@ -347,7 +347,7 @@ local shops = {
 		["perm"] = "Yakuza",
 		["list"] = {
 			["goldbar"] = 80000,
-			["dollars2"] = 0.8
+			["dollars2"] = 0.95
 		}
 	},
 	["lossantos"] = {

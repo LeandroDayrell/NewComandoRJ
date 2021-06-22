@@ -40136,7 +40136,7 @@
 			</SubHandlingData>
 		</Item>
 		<Item type="CHandlingData">
-			<handlingName>COQUETTE</handlingName>
+			<handlingName>coquette</handlingName>
 			<fMass value="1400.000000" />
 			<fInitialDragCoeff value="8.700000" />
 			<fPercentSubmerged value="85.000000" />

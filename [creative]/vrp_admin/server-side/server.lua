@@ -766,3 +766,9 @@ AddEventHandler('LOG:ARMAS2235', function(weapons)
 		PerformHttpRequest(webhooksuspeito, function(err, text, headers) end, 'POST', json.encode({content = msg}), { ['Content-Type'] = 'application/json' })
     end
 end)
+
+
+RegisterServerEvent('Bugado')
+AddEventHandler('Bugado', function()
+  DropPlayer(source,"[MQCU]  VOCÊ ESTÁ BUGADO, DESATIVE A OPÇÃO CANARY PARA DESBUGAR")
+end)

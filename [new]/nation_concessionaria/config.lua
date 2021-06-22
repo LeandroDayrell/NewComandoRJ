@@ -97,11 +97,10 @@ end
 -- LISTA DOS VEÍCULOS EM DESTAQUE
 
 config.topVehicles = {	 
-	"i8", 
-	"laferrari15", 
-	"nissangtr", 
-	"z4", 
-	"por911"
+	"passat", 
+	"megane4", 
+	"amarok17", 
+	"frontier"
 }
 
 getTopList() -- pega os veículos mais caros da conce e coloca na lista de destaque
@@ -118,13 +117,13 @@ config.updateconce_permission = "FundadorOwner" -- permissao para abrir o menu d
 
 config.porcentagem_venda = 50 -- porcentagem de venda dos veículos possuidos
 
-config.porcentagem_testdrive = 0.1 -- porcentagem do valor do veículo paga para a realização do test drive
+config.porcentagem_testdrive = 0.01 -- porcentagem do valor do veículo paga para a realização do test drive
 
 config.tempo_testdrive = 30 -- tempo de duração do test drive em segundos
 
 config.maxDistance = 300 -- distância máxima (em radius(raio)) que o player poderá ir quando estiver realizando o test drive
 
-config.porcentagem_aluguel = 20 -- porcentagem do valor do veículo paga para alugar
+config.porcentagem_aluguel = 10 -- porcentagem do valor do veículo paga para alugar
 
 
 -- NOMES DAS CLASSES DOS VEÍCULOS

@@ -12,9 +12,9 @@ Proxy.addInterface("nation_garages", config)
 config.detido = 4 -- taxa para ser paga quando o veiculo for detido (porcentagem do valor do veiculo)
 config.seguradora = 4 -- taxa para ser paga quando o veiculo estiver apreendido (porcentagem do valor do veiculo)
 config.ipva = 1 -- taxa para ser paga quando o veiculo estiver com o ipva atrasado (porcentagem do valor do veiculo)
-config.use_tryFullPayment = false -- quando true, aceita pagamentos de taxas com o dinheiro do banco
+config.use_tryFullPayment = true -- quando true, aceita pagamentos de taxas com o dinheiro do banco
 config.dv_permission = "modder21" -- permissao para dv
-config.guardar_veiculo_proximo = false -- mostrar botão de guardar veículo próximo
+config.guardar_veiculo_proximo = true -- mostrar botão de guardar veículo próximo
 config.client_vehicle = true -- spawn via client side
 
 ----------------------------------------------
@@ -140,7 +140,7 @@ config.vehList = {
 	{ hash = 908897389, name = 'toro2', price = 290000, banido = false, modelo = 'Toro 2', capacidade = 85, tipo = 'cars'  },
 	{ hash = 741586030, name = 'pranger', price = 100, banido = false, modelo = 'Pranger', capacidade = 85, tipo = 'cars'  },
 	{ hash = -2122757008, name = 'stunt', price = 100, banido = false, modelo = 'Stunt', capacidade = 120, tipo = 'cars'  },
-	{ hash = -2052737935, name = 'mule3', price = 1, banido = false, modelo = 'Mule 3', capacidade = 50, tipo = 'exclusive'  },
+	{ hash = -2052737935, name = 'mule3', price = 700000, banido = false, modelo = 'Mule 3', capacidade = 500, tipo = 'exclusive'  },
 	{ hash = -313185164, name = 'autarch', price = 100, banido = false, modelo = 'Autarch', capacidade = 120, tipo = 'cars'  },
 	{ hash = 48339065, name = 'tiptruck', price = 100, banido = false, modelo = 'Tiptruck', capacidade = 120, tipo = 'cars'  },
 	{ hash = 444171386, name = 'boxville4', price = 100, banido = true, modelo = 'Boxville 4', capacidade = 50, tipo = 'cars'  },
@@ -442,7 +442,7 @@ config.vehList = {
 	{ hash = -899509638, name = 'virgo2', price = 250000, banido = false, modelo = 'Virgo 2', capacidade = 40, tipo = 'cars'  },
 	{ hash = 547134075, name = 'mclarenp1', price = 2000000, banido = false, modelo = 'Mc Laren P1', capacidade = 110, tipo = 'exclusive'  },
 	{ hash = -1078631178, name = 'urusrj', price = 100, banido = false, modelo = 'Urus Comando', capacidade = 85, tipo = 'cars'  },
-	{ hash = 2112052861, name = 'pounder', price = 1200000, banido = false, modelo = 'Pounder', capacidade = 700, tipo = 'exclusive'  },
+	{ hash = 2112052861, name = 'pounder', price = 900000, banido = false, modelo = 'Pounder', capacidade = 700, tipo = 'exclusive'  },
 	--{ hash = -1098847618, name = 'amarokrj', price = 1, banido = false, modelo = 'amarokrj', capacidade = 1, tipo = 'cars'  },
 	{ hash = -1370111350, name = '720s', price = 800000, banido = false, modelo = '720s', capacidade = 110, tipo = 'exclusive'  },
 	{ hash = 1611740349, name = 'caveiraobope', price = 100, banido = false, modelo = 'Caveirão 2', capacidade = 40, tipo = 'cars'  },
@@ -826,7 +826,34 @@ config.vehList = {
 	{ hash = 290013743, name = 'tropic', price = 270000, banido = false, modelo = 'Tropic', capacidade = 85, tipo = 'barco'  },
 	{ hash = 1070967343, name = 'toro', price = 290000, banido = false, modelo = 'Toro', capacidade = 85, tipo = 'cars'  },
 	{ hash = -913589546, name = 'glendale2', price = 2900000, banido = false, modelo = 'glendalee', capacidade = 85, tipo = 'cars'  },
+
+
+	---------------- CARROS BRASILEIROS ADICIONADOS DIA 21
+
+	{ hash = -1773424714, name = 'passat', price = 270000, banido = false, modelo = 'Passat', capacidade = 120, tipo = 'cars'  },
+	{ hash = -1702326766, name = 'corolla ', price = 250000, banido = false, modelo = 'Corolla', capacidade = 120, tipo = 'cars'  },
+	{ hash = -1927169751, name = 'megane4', price = 230000, banido = false, modelo = 'Megane', capacidade = 120, tipo = 'cars'  },
+	{ hash = 1042517460, name = 'frontier17', price = 150000, banido = false, modelo = 'Frontier 2017', capacidade = 200, tipo = 'cars'  },
+	{ hash = -1947578251, name = 'amarok17', price = 140000, banido = false, modelo = 'Amarok 2017', capacidade = 200, tipo = 'cars'  },
+	{ hash = -252643265, name = 'ftoro', price = 95000, banido = false, modelo = 'Fiat Toro', capacidade = 120, tipo = 'cars'  },
+	{ hash = -361155694, name = 'punto', price = 95000, banido = false, modelo = 'Punto', capacidade = 120, tipo = 'cars'  },
+	{ hash = -1090954194, name = 'pajero4', price = 80000, banido = false, modelo = 'Pajero', capacidade = 150, tipo = 'cars'  },
+	{ hash = -2019386221, name = 'golfgti', price = 70000, banido = false, modelo = 'Golf Gti', capacidade = 120, tipo = 'cars'  },
+	--{ hash = 999999999, name = 'rrs08', price = 2900000, banido = false, modelo = 'glendalee', capacidade = 85, tipo = 'cars'  },
+	{ hash = -1642332635, name = '208', price = 50000, banido = false, modelo = 'Peugeot 208', capacidade = 120, tipo = 'cars'  },
+	{ hash = -854631421, name = '206', price = 45000, banido = false, modelo = 'Peugeot 206', capacidade = 120, tipo = 'cars'  },
+	{ hash = -493679946, name = 'civc', price = 40000, banido = false, modelo = 'Civic 2003', capacidade = 120, tipo = 'cars'  },
+	--{ hash = 999999999, name = 'honda', price = 2900000, banido = false, modelo = 'glendalee', capacidade = 85, tipo = 'cars'  },
+	--{ hash = -1777553685, name = 'xr3', price = 2900000, banido = false, modelo = 'glendalee', capacidade = 85, tipo = 'cars'  },
+	--{ hash = 999999999, name = 'glendale2', price = 2900000, banido = false, modelo = 'glendalee', capacidade = 85, tipo = 'cars'  },
+	{ hash = -723997994, name = 'kombi', price = 30000, banido = false, modelo = 'VW Kombi', capacidade = 85, tipo = 'cars'  },
+	{ hash = 1924372706, name = 'fusca', price = 25000, banido = false, modelo = 'VW Fusca', capacidade = 85, tipo = 'cars'  },
+
+-------------- MOTOS NOVAS BRASILEIRAS
+	{ hash = 1088829493, name = 'cg160', price = 25000, banido = false, modelo = 'CG Titan 160', capacidade = 20, tipo = 'cars'  },
 }
+
+
 ----------------------------------------------
 ----------------------------------------------
 
@@ -1144,9 +1171,9 @@ config.garages = {
 		{ vehicle = 'gargoyle', modelo = 'gargoyle' },  
 	  }
 	},
-	[29] = { type = 'service', coords = vec3(-1151.62,-1989.1,13.17), perm = 'Lowrider',
+	[29] = { type = 'service', coords = vec3(992.72,-1541.05,30.84), perm = 'Lowrider',
 	  vehiclePositions = {
-		[1] = { vec3(-1147.05,-1982.25,13.17), h = 159.65 },
+		[1] = { vec3(988.66,-1534.63,30.8), h = 86.87 },
 	  },
 	  vehicles = {
 		{ vehicle = 'faction2', modelo = 'faction2' },
@@ -1256,7 +1283,7 @@ config.garages = {
 		[1] = { vec3(-1549.42,-988.01,13.02), h = 22.11 },
 	  },
 	  vehicles = {
-		{ vehicle = 'mule3', modelo = 'mule3' }, 
+		{ vehicle = 'mule2', modelo = 'mule2' }, 
 	  }
 	},
 	[38] = { type = 'service', coords = vec3(209.86,-1640.46,29.8), perm = 'Paramedic',
@@ -1350,6 +1377,62 @@ config.garages = {
 	  vehicles = {
 		{ vehicle = 'polmav', modelo = 'polmav' },
 		{ vehicle = 'swift', modelo = 'swift' }, 
+	  }
+	},
+
+	[46] = { type = 'public', coords = vec3(-1033.59,-2733.13,20.17), perm = nil,
+	  vehiclePositions = {
+		[1] = { vec3(-1029.35,-2732.12,20.11), h = 238.31 },
+		[2] = { vec3(-1037.42,-2727.14,20.12), h = 241.11 },
+	  },
+	},
+	-- VERDE
+	[47] = { type = 'public', coords = vec3(1001.55,903.13,210.38), perm = nil,
+	  vehiclePositions = {
+		[1] = { vec3(1004.74,898.49,210.0), h = 134.66 },
+	  },
+	},
+	-- AZUL
+	[48] = { type = 'public', coords = vec3(-1033.59,-2733.13,20.17), perm = nil,
+	  vehiclePositions = {
+		[1] = { vec3(3053.45,5050.87,25.3), h = 238.31 },
+		[2] = { vec3(3058.39,5051.03,25.29), h = 169.44 },
+	  },
+	},
+	-- VERMELHO
+	[49] = { type = 'public', coords = vec3(1217.09,-278.24,69.22), perm = nil,
+	  vehiclePositions = {
+		[1] = { vec3(1222.22,-282.79,69.56), h = 107.71 },
+	  },
+	},
+	-- LARANJA
+	[50] = { type = 'public', coords = vec3(-82.06,1514.02,282.91), perm = nil,
+	  vehiclePositions = {
+		[1] = { vec3(-76.44,1515.03,282.58), h = 201.81 },
+	  },
+	},
+	-- BARCOS BOAT
+	[51] = { type = 'service', coords = vec3(13.78,-2799.96,2.53), perm = nil,
+	  vehiclePositions = {
+		[1] = { vec3(11.18,-2805.79,-0.04), h = 83.67 },
+	  },
+	  vehicles = {
+		{ vehicle = 'dinghy', modelo = 'dinghy' },
+		{ vehicle = 'jetmax', modelo = 'jetmax' }, 
+		{ vehicle = 'speeder', modelo = 'speeder' }, 
+		{ vehicle = 'seashark3', modelo = 'seashark3' }, 
+	  }
+	},
+
+	[52] = { type = 'service', coords = vec3(-1802.08,-1228.21,1.63), perm = nil,
+	  vehiclePositions = {
+		[1] = { vec3(-1799.69,-1231.88,-0.47), h = 325.31 },
+	  },
+	  vehicles = {
+		{ vehicle = 'dinghy', modelo = 'dinghy' },
+		{ vehicle = 'jetmax', modelo = 'jetmax' }, 
+		{ vehicle = 'speeder', modelo = 'speeder' }, 
+		{ vehicle = 'seashark3', modelo = 'seashark3' }, 
 	  }
 	},
 }

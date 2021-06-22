@@ -19,20 +19,20 @@ local amount = {}
 -----------------------------------------------------------------------------------------------------------------------------------------
 local itemList = {
 	{ item = "cocaine", priceMin = 2, priceMax = 10, randMin = 3, randMax = 7 },
-	{ item = "weedendolada", priceMin = 470, priceMax = 500, randMin = 4, randMax = 7 },
-	{ item = "methendolada", priceMin = 570, priceMax = 600, randMin = 4, randMax = 7 },
-	{ item = "ecstasy", priceMin = 720, priceMax = 740, randMin = 4, randMax = 7 },
-	{ item = "lean", priceMin = 720, priceMax = 740, randMin = 4, randMax = 7 },
-	{ item = "keyboard", priceMin = 420, priceMax = 425, randMin = 1, randMax = 2 },
-	{ item = "mouse", priceMin = 380, priceMax = 385, randMin = 1, randMax = 2 },
-	{ item = "ring", priceMin = 335, priceMax = 345, randMin = 1, randMax = 2 },
-	{ item = "watch", priceMin =590, priceMax = 700, randMin = 1, randMax = 2 },
-	{ item = "playstation", priceMin = 670, priceMax = 800, randMin = 1, randMax = 1 },
-	{ item = "xbox", priceMin = 670, priceMax = 800, randMin = 1, randMax = 1 },
-	{ item = "legos", priceMin = 330, priceMax = 340, randMin = 1, randMax = 1 },
-	{ item = "ominitrix", priceMin = 590, priceMax = 595, randMin = 1, randMax = 1 },
-	{ item = "bracelet", priceMin = 820, priceMax = 900, randMin = 1, randMax = 1 },
-	{ item = "dildo", priceMin = 420, priceMax = 425, randMin = 1, randMax = 1 }
+	{ item = "weedendolada", priceMin = 570, priceMax = 600, randMin = 4, randMax = 7 },
+	{ item = "methendolada", priceMin = 670, priceMax = 700, randMin = 4, randMax = 7 },
+	{ item = "ecstasy", priceMin = 860, priceMax = 890, randMin = 4, randMax = 7 },
+	{ item = "lean", priceMin = 860, priceMax = 890, randMin = 4, randMax = 7 },
+	{ item = "keyboard", priceMin = 1420, priceMax = 425, randMin = 1, randMax = 2 },
+	{ item = "mouse", priceMin = 1380, priceMax = 385, randMin = 1, randMax = 2 },
+	{ item = "ring", priceMin = 1335, priceMax = 345, randMin = 1, randMax = 2 },
+	{ item = "watch", priceMin =1590, priceMax = 700, randMin = 1, randMax = 2 },
+	{ item = "playstation", priceMin = 1670, priceMax = 800, randMin = 1, randMax = 1 },
+	{ item = "xbox", priceMin = 1670, priceMax = 800, randMin = 1, randMax = 1 },
+	{ item = "legos", priceMin = 1330, priceMax = 340, randMin = 1, randMax = 1 },
+	{ item = "ominitrix", priceMin = 1590, priceMax = 595, randMin = 1, randMax = 1 },
+	{ item = "bracelet", priceMin = 1820, priceMax = 900, randMin = 1, randMax = 1 },
+	{ item = "dildo", priceMin = 1420, priceMax = 425, randMin = 1, randMax = 1 }
 }
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CHECKAMOUNT

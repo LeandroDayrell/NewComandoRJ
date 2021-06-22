@@ -224,20 +224,11 @@ AddEventHandler("vrp_player:salary",function()
 	local user_id = vRP.getUserId(source)
 	vRP.antiflood(source,"vrp_player:salary",3)
 	if user_id then
-		--[[ if vRP.getPremium(parseInt(user_id)) then
-			vRP.setSalary(parseInt(user_id),1000)
-			TriggerClientEvent("Notify",source,"sucesso","Voce recebeu seu salario.",5000)
-		end ]]
 
 		if vRP.hasPermission(parseInt(user_id),"Police") then
-			vRP.setSalary(parseInt(user_id),6500)
+			vRP.setSalary(parseInt(user_id),7000)
 			TriggerClientEvent("Notify",source,"sucesso","Voce recebeu seu salario.",5000)
 		end
-
-		--[[ if vRP.hasPermission(parseInt(user_id),"Mechanic") then
-			vRP.setSalary(parseInt(user_id),3000)
-			TriggerClientEvent("Notify",source,"sucesso","Voce recebeu seu salario.",5000)
-		end ]]
 
 		if vRP.hasPermission(parseInt(user_id),"Taxista") then
 			vRP.setSalary(parseInt(user_id),500)
@@ -245,7 +236,7 @@ AddEventHandler("vrp_player:salary",function()
 		end
 
 		if vRP.hasPermission(parseInt(user_id),"LosSantos") then
-			vRP.setSalary(parseInt(user_id),700)
+			vRP.setSalary(parseInt(user_id),1400)
 			TriggerClientEvent("Notify",source,"sucesso","Voce recebeu seu salario.",5000)
 		end
 		 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

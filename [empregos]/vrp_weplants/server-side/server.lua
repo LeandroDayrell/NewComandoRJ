@@ -86,7 +86,7 @@ end
 function cRP.amountService()
 	local source = source
 	if weAmount[source] == nil then
-		weAmount[source] = math.random(9,12)
+		weAmount[source] = math.random(13,17)
 	end
 end
 -----------------------------------------------------------------------------------------------------------------------------------------
