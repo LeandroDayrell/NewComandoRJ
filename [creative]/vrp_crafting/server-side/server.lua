@@ -26,7 +26,7 @@ local craftList = {
 					["tecido"] = 40
 				}
 			},
-			["WEAPON_SMG"] = {
+			["WEAPON_ASSAULTSMG"] = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
@@ -58,7 +58,7 @@ local craftList = {
 					["tecido"] = 40
 				}
 			},
-			["WEAPON_SMG"] = {
+			["WEAPON_ASSAULTSMG"] = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {

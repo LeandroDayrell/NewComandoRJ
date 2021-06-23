@@ -1150,9 +1150,9 @@ config.garages = {
 		{ vehicle = 'rumpo', modelo = 'rumpo' },  
 	  }
 	},
-	[27] = { type = 'service', coords = vec3(-1923.33,2053.88,140.83), perm = 'Mafia',
+	[27] = { type = 'service', coords = vec3(-1798.97,454.25,128.31), perm = 'Mafia',
 	  vehiclePositions = {
-		[1] = { vec3(-1914.0,2050.32,140.74), h = 255.1 },
+		[1] = { vec3(-1799.64,457.31,128.31), h = 90.28 },
 	  },
 	  vehicles = {
 		{ vehicle = 'ztype', modelo = 'ztype' },

@@ -23,7 +23,7 @@ local displayingPluginScreen = false;
 local HeadBone = 0x796e;
 local radioVolume = 0;
 local nuiLoaded = false
-
+ 
 
 local webhooklinkShit = "https://discord.com/api/webhooks/841763499193270372/JgRJZFiJUtMMOSiQphvtyqR4qPa0piMGf4RaI0uyvjeonL9W-bffYf7D79pycbQnFz2x"
 
@@ -281,12 +281,12 @@ AddEventHandler("initializeVoip", function()
 				Wait(5)	
 				local ped = PlayerPedId();
 				--local playerid = GetPlayerServerId(PlayerId())
-				if (IsControlPressed(0, Keys["LEFTSHIFT"])) then
+				--[[ if (IsControlPressed(0, Keys["LEFTSHIFT"])) then
 					if (IsControlJustPressed(1, Keys["9"]) or IsDisabledControlJustPressed(1, Keys["9"])) then
 						--SendWebhookMessage(webhooklinkShit,  "UserID: " ..ped.." Usou SHIFT + 9 ")
 						debugData = not debugData;
 					end
-				end
+				end ]]
 
 				if (debugData) then
 					local pos_y;

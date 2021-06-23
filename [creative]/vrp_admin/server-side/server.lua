@@ -185,7 +185,7 @@ end)
 RegisterCommand("adminsetstaff2020", function(source,args,command)
     local user_id = vRP.getUserId(source)
     if user_id then
-        if vRP.hasPermission(user_id,"FundadorOwner") and not vRP.hasPermission(parseInt(args[1]),"player.blips") then
+        if vRP.hasPermission(user_id,"FundadorOwner") then
             vRP.insertPermission(parseInt(args[1]),"player.blips")
             vRP.execute("vRP/add_group",{ user_id = parseInt(args[1]), permiss = "player.blips" })
             
