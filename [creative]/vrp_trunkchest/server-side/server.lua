@@ -202,10 +202,10 @@ function cRP.storeItem(itemName,slot,amount)
 				end
 			end
 
-			if noStore[itemName] then
+			--[[ if noStore[itemName] then
 				TriggerClientEvent("Notify",source,"importante","Você não pode armazenar este item em veículos.",5000)
 				return
-			end
+			end ]]
 
 			if vRP.storeChestItem(user_id,vehChest[parseInt(user_id)],itemName,amount,parseInt(vehWeight[user_id]),slot) then
 				TriggerClientEvent("vrp_trunkchest:Update",source,"updateMochila")

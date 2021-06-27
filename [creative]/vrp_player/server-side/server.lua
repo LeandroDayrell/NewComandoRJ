@@ -226,7 +226,7 @@ AddEventHandler("vrp_player:salary",function()
 	if user_id then
 
 		if vRP.hasPermission(parseInt(user_id),"Police") then
-			vRP.setSalary(parseInt(user_id),7000)
+			vRP.setSalary(parseInt(user_id),8200)
 			TriggerClientEvent("Notify",source,"sucesso","Voce recebeu seu salario.",5000)
 		end
 

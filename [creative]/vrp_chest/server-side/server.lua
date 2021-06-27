@@ -211,10 +211,10 @@ function cRP.storeItem(itemName,slot,amount)
 		local source = source
 		local user_id = vRP.getUserId(source)
 		if user_id then
-			if noStore[itemName] then
+			--[[ if noStore[itemName] then
 				TriggerClientEvent("Notify",source,"importante","Você não pode armazenar este item em baús.",5000)
 				return
-			end
+			end ]]
 
 			if vRP.storeChestItem(user_id,"chest:"..tostring(chestOpen[parseInt(user_id)]),itemName,amount,chest[tostring(chestOpen[parseInt(user_id)])][1],slot) then
 				SendWebhookMessage(webhooklinkBAUFAC,  "UserID: [" ..user_id.."]  Colocou: " ..itemName.. "    Qnt:"..amount.. "    Bau: " ..chestOpen[parseInt(user_id)].. " .")

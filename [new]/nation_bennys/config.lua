@@ -483,11 +483,11 @@ config.locais = {
 			{ nome = "design", img = "https://cdn.discordapp.com/attachments/744470864455532604/799842114623897620/TrimDesign.png", id = "trim"},
 		}
 	}, ]]
-	{ vec3(-323.93,-134.31,39.01), perm = "LosSantos" },
-	{ vec3(-340.12,-117.75,39.05), perm = "LosSantos" },
-	{ vec3(-339.57,-108.59,39.01), perm = "LosSantos" },
+	{ vec3(-323.93,-134.31,39.01)},
+	{ vec3(-340.12,-117.75,39.05)},
+	{ vec3(-339.57,-108.59,39.01)},
 
-	{ vec3(-328.62,-131.65,39.01), perm = "LosSantos"},
+	{ vec3(-328.62,-131.65,39.01)},
 }
 
 --[[ config.locais = {
@@ -499,9 +499,9 @@ config.locais = {
 } ]]
 
 
---config.repair_price = 0 -- preço para reparar veículo
+config.repair_price = 2000 -- preço para reparar veículo
 
-config.permissao = 	"LosSantos"
+config.permissao = 	nil
 
 config.logo = "https://vignette.wikia.nocookie.net/gtawiki/images/b/be/BennysOriginalMotorWorks-GTAO-Logo.png/revision/latest?cb=20160623123158"
 
@@ -549,7 +549,7 @@ config.getModPrice = function(modType, vehicle)
 	local vehPrice = nation.getVehiclePrice(hash)
 	if vehPrice and price.startprice then
 		local startprice = price.startprice --(tirar parentes e o comentario para funcionar no primeiro nivel) + vehPrice * 0.001 -- 5% do valor do veiculo
-		local increaseby = (price.increaseby or 0) + vehPrice * 0.0005
+		local increaseby = (price.increaseby or 0) + vehPrice * 0.0003
 		price = { startprice = startprice, increaseby = increaseby }
 	end
 	return price
