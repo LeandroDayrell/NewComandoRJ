@@ -996,6 +996,13 @@ local itemlist = {
 		ammo = "WEAPON_RIFLE_AMMO",
 		weight = 8.0
 	},
+	["WEAPON_MUSKET"] = {
+		index = "musket",
+		name = "Musket",
+		type = "equip",
+		ammo = "WEAPON_MUSKET_AMMO",
+		weight = 8.0
+	},
 	["WEAPON_ASSAULTRIFLE_MK2"] = {
 		index = "ak74",
 		name = "AK-74",

@@ -315,6 +315,7 @@ end)
 		N_0x4757f00bc6323cfe(GetHashKey("WEAPON_SAWNOFFSHOTGUN"),1.0)
 		N_0x4757f00bc6323cfe(GetHashKey("WEAPON_PUMPSHOTGUN"),1.0)
 		N_0x4757f00bc6323cfe(GetHashKey("WEAPON_RAYPISTOL"),2.0)
+		N_0x4757f00bc6323cfe(GetHashKey("WEAPON_MUSKET"),2.0)
 
 		--ClearAreaOfPeds(GetEntityCoords(PlayerPedId()),1000.0,1)
 	end
