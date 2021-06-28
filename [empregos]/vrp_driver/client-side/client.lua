@@ -17,6 +17,7 @@ local blip = nil
 local inService = false
 local startX = 453.87
 local startY = -600.47
+--local racePos = 0
 local startZ = 28.59
 local driverPosition = 1
 local timeSeconds = 0
@@ -118,9 +119,11 @@ Citizen.CreateThread(function()
 							if driverPosition == #coords then
 								driverPosition = 1
 								vSERVER.paymentMethod(true)
+								SetNewWaypoint(coords[driverPosition][1]+0.0001,coords[driverPosition][2]+0.0001)
 							else
 								driverPosition = driverPosition + 1
 								vSERVER.paymentMethod(false)
+								SetNewWaypoint(coords[driverPosition][1]+0.0001,coords[driverPosition][2]+0.0001)
 							end
 							makeBlipsPosition()
 						end
@@ -153,9 +156,10 @@ function makeBlipsPosition()
 
 	if not DoesBlipExist(blip) then
 		blip = AddBlipForRadius(coords[driverPosition][1],coords[driverPosition][2],coords[driverPosition][3],50.0)
+		--blip = AddBlipForCoord(coords[driverPosition][1],coords[driverPosition][2],coords[driverPosition][3])
 		SetBlipHighDetail(blip,true)
 		SetBlipColour(blip,69)
 		SetBlipAlpha(blip,150)
-		SetBlipAsShortRange(blip,true)
+		SetBlipAsShortRange(blip,true)  
 	end
 end

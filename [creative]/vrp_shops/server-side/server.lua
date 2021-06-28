@@ -19,7 +19,7 @@ local shops = {
 		["type"] = "Cash",
 		["list"] = {
 			["postit"] = 20,
-			["hamburger"] = 20,
+			--["hamburger"] = 20,
 			["emptybottle"] = 40,
 			["cigarette"] = 20,
 			["lighter"] = 600,
@@ -253,13 +253,13 @@ local shops = {
 			["chocolate"] = 9
 		}
 	},
-	["burgerMachine"] = {
+	--[[ ["burgerMachine"] = {
 		["mode"] = "Buy",
 		["type"] = "Cash",
 		["list"] = {
 			["hamburger"] = 20
 		}
-	},
+	}, ]]
 	["hotdogMachine"] = {
 		["mode"] = "Buy",
 		["type"] = "Cash",

@@ -1067,6 +1067,12 @@ local itemlist = {
 		type = "recharge",
 		weight = 0.04
 	},
+	["WEAPON_MUSKET_AMMO"] = {
+		index = "musketammo",
+		name = "M. Musket",
+		type = "recharge",
+		weight = 0.04
+	},
 	["WEAPON_SHOTGUN_AMMO"] = {
 		index = "shotgunammo",
 		name = "M. Escopeta",

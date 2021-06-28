@@ -22,7 +22,7 @@ local webhooklinkAddCar = "https://discord.com/api/webhooks/843886875303215189/n
 
 
 
-local webhooklinkBan = "https://discord.com/api/webhooks/833842858234478652/XFI6DF2jJwk2rF4j9Ge0Q1_nNpYf76DJUBL9e-9njwduyETWalCaEE_aeB15Iw9dY83S"
+local webhooklinkBanUnban = "https://discord.com/api/webhooks/859122710579118100/Cme2aikfnXGzP-DpFNAkQ1MCeH0o-ZlOEqtZnYqMqxfxB-Nn4AjY-A7gO8LUk3IEubog"
 local webhooklinkWl = "https://discord.com/api/webhooks/833842893352468480/Do7FMDIUKhWgikoEYxs0x-c3vdPJRlEXj8V49FrOpUiYw_y90VRo1KqCdK8ASF26eITw"
 
 function SendWebhookMessage(webhook,message)
@@ -395,7 +395,7 @@ RegisterCommand("ban",function(source,args,rawCommand)
 			local identity = vRP.getUserIdentity(parseInt(args[1]))
 			if identity then
 				vRP.execute("vRP/set_banned",{ steam = tostring(identity.steam), banned = 1 })
-				SendWebhookMessage(webhooklinkBan,  "UserID: [" ..user_id.."]  Aplicou ban em: " ..parseInt(args[1]).. "  Steam: " ..steam.. " . ")
+				SendWebhookMessage(webhooklinkBanUnban,  "UserID: [" ..user_id.."]  Aplicou ban em: " ..parseInt(args[1]).. "  Steam: " ..steam.. " . ")
 
 			end
 		end
@@ -449,11 +449,18 @@ end)
 RegisterCommand("unban",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
+		print("Teste Unban 1 ")
 		if vRP.hasPermission(user_id,"modder21") and parseInt(args[1]) > 0 then
+			print("Teste Unban 2 ")
 			local identity = vRP.getUserIdentity(parseInt(args[1]))
 			if identity then
 				vRP.execute("vRP/set_banned",{ steam = tostring(identity.steam), banned = 0 })
-				SendWebhookMessage(webhooklinkBan,  "UserID: [" ..user_id.."]  Removeu ban em: " ..parseInt(args[1]).. "  Steam: " ..steam.. " . ")
+				print("Teste Unban 3")
+				print(user_id)
+				print(parseInt(args[1]))
+				print(steam)
+				SendWebhookMessage(webhooklinkBanUnban,  "UserID: " ..user_id.."  Removeu ban em: " ..parseInt(args[1]).. "    . ")
+				SendWebhookMessage(webhooklinkBanUnban,  "UserID:" ..user_id.. " Desbaniu ")
 			end
 		end
 	end
