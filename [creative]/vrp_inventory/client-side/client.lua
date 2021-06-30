@@ -370,8 +370,6 @@ local wComponents = {
 		"COMPONENT_AT_SCOPE_MACRO",
 		"COMPONENT_AT_AR_AFGRIP"
 	},
-	["WEAPON_MUSKET"] = {
-	},
 	["WEAPON_MACHINEPISTOL"] = {
 		"COMPONENT_AT_PI_SUPP"
 	},

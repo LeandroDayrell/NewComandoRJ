@@ -34,7 +34,7 @@ local chest = {
 	["Bennys"] = { 2500,"Bennys" },
 	["Yakuza"] = { 2500,"Yakuza" },
 	["Bahamas"] = { 2500,"Bahamas" },
-	["Unktec"] = { 2500,"Unktec" },
+	["Vanilla"] = { 2500,"Vanilla" },
 	["Vermelho"] = { 2500,"Vermelho" },
 	["Laranja"] = { 2500,"Laranja" },
 	["Azul"] = { 2500,"Azul" },
@@ -122,26 +122,7 @@ end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- NOSTORE
 -----------------------------------------------------------------------------------------------------------------------------------------
-local noStore = {
-	["water"] = true,
-	["dirtywater"] = true,
-	["coffee"] = true,
-	["hamburger"] = true,
-	["cola"] = true,
-	["tacos"] = true,
-	["fries"] = true,
-	["soda"] = true,
-	["hotdog"] = true,
-	["sandwich"] = true,
-	["chocolate"] = true,
-	["donut"] = true,
-	["ritmoneury"] = true,
-	["sinkalmy"] = true,
-	["absolut"] = true,
-	["chandon"] = true,
-	["dewars"] = true,
-	["hennessy"] = true,
-	["identity"] = true
+local noStore = { -- desabilitei direto da solicitacao do script
 }
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- POPULATESLOT

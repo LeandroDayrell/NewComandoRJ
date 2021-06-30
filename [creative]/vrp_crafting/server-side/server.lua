@@ -588,7 +588,7 @@ local craftList = {
 				["amount"] = 1,
 				["destroy"] = true,
 				["require"] = {
-					["dollars2"] = 300000					
+					["dollars2"] = 250000					
 				}
 			},
 			["tires"] = {
