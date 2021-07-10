@@ -71,7 +71,7 @@ AddEventHandler("vrp_spawn:createChar",function(name,name2,sex)
 	local steam = vRP.getSteam(source)
 	local persons = getPlayerCharacters(steam)
 
-	if not vRP.getPremium2(steam) and parseInt(#persons) >= 1 then
+	if parseInt(#persons) >= 1 then
 		TriggerClientEvent("Notify",source,"importante","Você atingiu o limite de personagens.",5000)
 		TriggerClientEvent("vrp_spawn:maxChars",source)
 		return

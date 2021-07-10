@@ -144,7 +144,10 @@ local shops = {
 			["ominitrix"] = 1750,
 			["bracelet"] = 1300,
 			["dildo"] = 800,
-			["postit"] = 10
+			["postit"] = 10,
+			["bluecard"] = 25000,
+			["blackcard"] = 45000,
+
 		}
 	},
 	["fishingStore"] = {

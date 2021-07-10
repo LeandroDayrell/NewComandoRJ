@@ -60,7 +60,7 @@ Citizen.CreateThread(function()
 				local distance = #(coords - vector3(v[1],v[2],v[3]))
 				if distance <= 2 then
 					timeDistance = 4
-					if IsControlJustPressed(1,47) and vSERVER.jewelryCheckItens() then
+					if IsControlJustPressed(1,38) and vSERVER.jewelryCheckItens() then --
 						local mHash = GetHashKey("prop_c4_final_green")
 
 						RequestModel(mHash)
@@ -90,7 +90,7 @@ Citizen.CreateThread(function()
 				if distance <= 2 then
 					timeDistance = 4
 					DrawText3Ds(v[1],v[2],v[3],"~g~E~w~   ROUBAR")
-					if distance <= 0.6 and IsControlJustPressed(1,38) then
+					if distance <= 0.6 and IsControlJustPressed(1,121) then
 						SetEntityHeading(ped,v[4])
 						vSERVER.openDrawer(k)
 					end
